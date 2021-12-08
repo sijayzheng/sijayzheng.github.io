@@ -4,8 +4,8 @@ baseurl: ""
 lang: zh-CN
 timezone: Asia/Shanghai
 # jekyll-seo-tag settings
-title: Sijay Zheng
-tagline: 懂了，但没完全懂
+title: 郑世杰
+tagline: 略懂略懂
 description: >-
   芝士的力量
 url: https://sijayzheng.github.io
@@ -16,7 +16,7 @@ social:
   email: sijayzheng@hotmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    # - https://twitter.com/username # change to your twitter homepage
     - https://github.com/sijayzheng # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
