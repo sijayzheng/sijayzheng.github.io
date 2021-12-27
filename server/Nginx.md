@@ -48,7 +48,7 @@ nginx.conf 配置文件如下：
 
 注：conf / nginx.conf 是 nginx 的默认配置文件。你也可以使用 nginx -c 指定你的配置文件
 
-```
+```ini
 #运行用户
 #user somebody;
 

@@ -195,13 +195,13 @@ checking，点击 Apply
 
 ## 问题解决
 
-### myeclipse 编辑器由于行太长，光标自动向左跑到最左边的问题
+### 编辑器由于行太长，光标自动向左跑到最左边的问题
 
 Preference -> File and Editors -> Common Editor Preferences
 
 取消勾选 enable folding
 
-### MyEclipse 样式修改
+### 样式修改
 
 解决方案：
 
@@ -212,7 +212,7 @@ Close，并重新启动 MyEclipse
 
 ![](img/pic19.png)
 
-### MyEclipse 需要 5 天内激活
+### 需要 5 天内激活
 
 ![](img/pic24.png)
 
@@ -220,6 +220,17 @@ Close，并重新启动 MyEclipse
 
 删除 C:\\User\\Administrator\\.myeclipse.properties（Administrator 为当前用户的用户名），并重新激活。
 
-### MyEclipse 进入后界面缺失
+### 进入后界面缺失
 
 解决方案：重新安装，安装按完成后先启动 MyEclipse，选择试用，然后等待 MyEclipse 中的 Progress 完成后，关闭 MyEclipse，然后删除 C:\\User\\Administrator\\.myeclipse.properties（Administrator 为当前用户的用户名），并激活。
+
+### 卡顿
+
+```bash
+mkdir disabled
+mkdir disabled\features
+mkdir disabled\plugins
+
+move plugins\org.eclipse.jpt.* disabled\plugins
+move features\org.eclipse.jpt.* disabled\features
+```

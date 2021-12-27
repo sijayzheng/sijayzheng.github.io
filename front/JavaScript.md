@@ -165,8 +165,6 @@ https://codepen.io/SteveJRobertson/pen/emGWaR
 
 ## 常见异常
 
-### provisional headers are shown
-
 ### Uncaught TypeError: Cannot read property
 
 常见于在渲染 UI 组件时对于状态的初始化操作不当
@@ -194,3 +192,15 @@ https://codepen.io/SteveJRobertson/pen/emGWaR
 ### ReferenceError: event is not defined
 
 访问未定义的变量或超出当前范围的变量
+
+### Uncaught SyntaxError: Unexpected identifier
+
+语法错误，缺少符号
+
+### Uncaught SyntaxError: Unexpected token ILLEGAL
+
+语法错误，引号不匹配
+
+### Uncaught SyntaxError: Unexpected token o
+
+    JSON.parse(s)中的 s 不是字符串
