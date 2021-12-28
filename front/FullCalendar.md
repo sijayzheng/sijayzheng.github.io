@@ -1,4 +1,4 @@
-- fullcalendar 基本目录结构
+## fullcalendar 基本目录结构
 
 > core _核心_
 >
@@ -30,7 +30,7 @@
 >
 > main.css
 
-- 最简单的日历初始化
+## 最简单的日历初始化
 
 只需要加载 core 和 daygrid 的 js 和 css 即可
 
@@ -53,7 +53,7 @@
 </html>
 ```
 
-- 文档
+## 文档
 
 Fullcalendar 中文文档：通用显示
 

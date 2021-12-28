@@ -1,8 +1,8 @@
 ## Vue 生命周期
 
-<img src="https://vuejs.bootcss.com/images/lifecycle.png" alt="Vue 实例生命周期" style="zoom: 50%;" />
+<img src="img/lifecycle.png" alt="Vue 实例生命周期" style="zoom: 50%;" />
 
-<img src="https://img-blog.csdnimg.cn/img_convert/3aac48106dfd000f3aec4349289cfbbf.png" alt="3aac48106dfd000f3aec4349289cfbbf.png" style="zoom:50%;" />
+<img src="img/3aac48106dfd000f3aec4349289cfbbf.png" alt="3aac48106dfd000f3aec4349289cfbbf.png" style="zoom:50%;" />
 
 ## Vue data 声明方式
 
@@ -455,7 +455,7 @@ let vue2 = new Vue({
 
   ```
   var version = Number(Vue.version.split('.')0)
-
+  
   if (version === 2) {
     // Vue v2.x.x
   } else if (version === 1) {
@@ -578,7 +578,7 @@ let vue2 = new Vue({
     props: 'msg',
     template: '<div>{{ msg }}</div>'
   })
-
+  
   var vm = new Comp({
     propsData: {
       msg: 'hello'
@@ -1054,7 +1054,7 @@ let vue2 = new Vue({
 
   ```
   var CompA = { ... }
-
+  
   // 在没有调用 `Vue.extend` 时候继承 CompA
   var CompB = {
     extends: CompA,
@@ -1100,7 +1100,7 @@ let vue2 = new Vue({
     },
     // ...
   }
-
+  
   // 子组件注入 'foo'
   var Child = {
     inject: 'foo',
@@ -1115,7 +1115,7 @@ let vue2 = new Vue({
 
   ```
   const s = Symbol()
-
+  
   const Provider = {
     provide () {
       return {
@@ -1123,7 +1123,7 @@ let vue2 = new Vue({
       }
     }
   }
-
+  
   const Child = {
     inject: { s },
     // ...
@@ -1228,7 +1228,7 @@ let vue2 = new Vue({
   new Vue({
     delimiters: '${', '}'
   })
-
+  
   // 分隔符变成了 ES6 模板字符串的风格
   ```
 
@@ -2710,7 +2710,7 @@ let vue2 = new Vue({
 ## 组件通信
 
 组件是 vue.js 最强大的功能之一，而组件实例的作用域是相互独立的，这就意味着不同组件之间的数据无法相互引用。一般来说，组件可以有以下几种关系：
-![image](img/pic3.png)
+![image](../img/pic3.png)
 
 如上图所示，A 和 B、B 和 C、B 和 D 都是父子关系，C 和 D 是兄弟关系，A 和 C 是隔代关系（可能隔多代）。
 
@@ -2777,7 +2777,7 @@ let vue2 = new Vue({
 
 接下来我们通过一个例子，说明子组件如何向父组件传递值：当我们点击“Vue.js Demo”后，子组件向父组件传递值，文字由原来的“传递的是一个值”变成“子向父组件传值”，实现子组件向父组件值的传递。
 
-![子组件向父组件传值之前](img/pic4.png)
+![子组件向父组件传值之前](../img/pic4.png)
 
 ```html
 // 子组件
@@ -2930,12 +2930,12 @@ let vue2 = new Vue({
 </script>
 ```
 
-![image](img/pic5.png)
+![image](../img/pic5.png)
 `$on` 监听了自定义事件 data-a 和 data-b，因为有时不确定何时会触发事件，一般会在 mounted 或 created 钩子中来监听。
 
 ### vuex
 
-![image](img/pic6.png)
+![image](../img/pic6.png)
 
 #### 1.简要介绍 Vuex 原理
 
@@ -3080,7 +3080,7 @@ JSON.parse(window.localStorage.getItem("subscribeList"));    // string -> array
 </script>
 ```
 
-![image](img/pic7.png)
+![image](../img/pic7.png)
 如上图所示`$attrs`表示没有继承数据的对象，格式为{属性名：属性值}。Vue2.4 提供了`$attrs` , `$listeners` 来传递数据与事件，跨级组件之间的通讯变得更简单。
 
 简单来说：`$attrs`与`$listeners` 是两个对象，`$attrs` 里存放的是父组件中绑定的非 Props 属性，`$listeners`里存放的是父组件中绑定的非原生事件。
@@ -3126,7 +3126,7 @@ export default {
 
 我们来看个例子：孙组件 D、E 和 F 获取 A 组件传递过来的 color 值，并能实现数据响应式变化，即 A 组件的 color 变化后，组件 D、E、F 会跟着变（核心代码如下：）
 
-![image](img/pic8.png)
+![image](../img/pic8.png)
 
 ```html
 // A 组件

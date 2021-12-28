@@ -78,7 +78,7 @@ docker exec -it gitlab-runner gitlab-runner register
 
 在项目的 管理区域->runners 中可以找到(这里注册的是 share 类型 runner)
 
-![image.gif](img/1596076652630-c82e2194-9c02-4240-a294-fb7dfce12c86.gif)![image](img/pic12.png)
+![image](img/pic12.png)
 
 4. 输入描述,如：test
 

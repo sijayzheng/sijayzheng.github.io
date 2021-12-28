@@ -80,7 +80,7 @@ select \* from emp where name = 'Jefabc';
 
 explain select \* from emp where name = 'Jefabc';
 
-![image](img/pic11.png)
+![image](../img/pic11.png)
 
 expain 出来的信息有 10 列，分别是 id、select_type、table、type、possible_keys、key、key_len、ref、rows、Extra
 
@@ -128,7 +128,7 @@ SELECT 识别符。这是 SELECT 的查询序列号
 
 explain select e.no, e.name from emp e left join dept d on e.dept_no = d.no where e.name like 'Jef%' and d.name = '研发部';
 
-![image](img/pic10.png)
+![image](../img/pic10.png)
 
 **二、select_type**
 

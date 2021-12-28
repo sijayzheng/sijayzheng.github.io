@@ -295,13 +295,13 @@
 - mousemove(eventHandler) 监听鼠标移动事件
 - mousedrag(eventHandler) 监听鼠标拖拽事件
 
-### 主要参数及方法
+## 主要参数及方法
 
 - zIndex_Container: 1//默认容器图层
 - zIndex_Link: 2//默认连线图层
 - zIndex_Node: 3//默认节点图层
 
-#### 对象
+### 对象
 
 - Stage
 
@@ -321,7 +321,7 @@
   - 参数:[节点文本]
   - 结果:Container 容器对象
 
-#### 节点
+### 节点
 
 - AnimateNode//动画节点
 
@@ -365,7 +365,7 @@
   - 参数:无
   - 结果:
 
-#### 连线
+### 连线
 
 - CurveLink//曲线
 
@@ -391,7 +391,7 @@
   - 参数:起始节点，终止节点，[连线文本]
   - 结果:
 
-#### 从 JSON 中创建整个拓扑
+### 从 JSON 中创建整个拓扑
 
 - createStageFromJson
 
@@ -399,7 +399,7 @@
   - 参数:JSON 字符串，canvasDOM 对象
   - 结果:
 
-#### 旋转动画
+### 旋转动画
 
 - rotate//自旋
 
@@ -413,7 +413,7 @@
   - 参数:节点，动作方式，动作间隔，是否循环，[是否往复(默认 false)]
   - 结果:
 
-#### 布局方式
+### 布局方式
 
 - AutoBoundLayout
 
@@ -493,7 +493,7 @@
   - 参数:
   - 结果:
 
-#### 从 JSON 中创建舞台
+### 从 JSON 中创建舞台
 
 - loadStageFromJson
 
@@ -501,7 +501,7 @@
   - 参数:JSON 字符串，canvasDOM 对象
   - 结果:
 
-#### 其他方法
+### 其他方法
 
 - randomColor//获得随机颜色
 

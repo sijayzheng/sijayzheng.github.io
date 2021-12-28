@@ -1,4 +1,4 @@
-![image](../img/pic13.png)
+![image](img/pic13.png)
 
 ## 核心容器：包括 Core、Beans、Context、EL 模块
 

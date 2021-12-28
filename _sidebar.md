@@ -1,61 +1,58 @@
 - 后台
 
-  - [Hibernate](back\Hibernate.md)
-  - [Java](back\Java.md)
-  - [Log4j](back\Log4j.md)
-  - [Maven](back\Maven.md)
-  - [MyBatis](back\MyBatis.md)
-  - [Spring](back\Spring.md)
-  - [SpringBoot](back\SpringBoot.md)
-  - [SpringMVC](back\SpringMVC.md)
-  - [struts2](back\struts2.md)
-  - [注解](back\注解.md)
+  - [Hibernate](back/Hibernate.md)
+  - [Java](back/Java.md)
+  - [Log4j](back/Log4j.md)
+  - [Maven](back/Maven.md)
+  - [MyBatis](back/MyBatis.md)
+  - [Spring](back/Spring.md)
+  - [SpringBoot](back/SpringBoot.md)
+  - [SpringMVC](back/SpringMVC.md)
+  - [struts2](back/struts2.md)
+  - [注解](back/注解.md)
 
 - 数据库
 
-  - [DB2](db\DB2.md)
-  - [MySQL](db\MySQL.md)
+  - [DB2](db/DB2.md)
+  - [MySQL](db/MySQL.md)
 
 - 前端
 
-  - [Autocomplete](front\Autocomplete.md)
-  - [Axios](front\Axios.md)
-  - [CSS](front\CSS.md)
-  - [css 选择器](front\css选择器.md)
-  - [EasyUI](front\EasyUI.md)
-  - [eCharts](front\eCharts.md)
-  - [ElementUI](front\ElementUI.md)
-  - [FullCalendar](front\FullCalendar.md)
-  - [HTML](front\HTML.md)
-  - [JavaScript](front\JavaScript.md)
-  - [jQuery](front\jQuery.md)
-  - [jTopo](front\jTopo.md)
-  - [Vue](front\Vue.md)
+  - [Autocomplete](front/Autocomplete.md)
+  - [Axios](front/Axios.md)
+  - [CSS](front/CSS.md)
+  - [EasyUI](front/EasyUI.md)
+  - [eCharts](front/eCharts.md)
+  - [ElementUI](front/ElementUI.md)
+  - [FullCalendar](front/FullCalendar.md)
+  - [HTML](front/HTML.md)
+  - [JavaScript](front/JavaScript.md)
+  - [jQuery](front/jQuery.md)
+  - [jTopo](front/jTopo.md)
+  - [Vue](front/Vue.md)
 
 - 服务器
 
-  - [Nginx](server\Nginx.md)
-  - [Tomcat](server\Tomcat.md)
+  - [Nginx](server/Nginx.md)
+  - [Tomcat](server/Tomcat.md)
 
 - 工具
 
-  - [Git](tool\Git.md)
-  - [GitLab](tool\GitLab.md)
-  - [GitLabRunner](tool\GitLabRunner.md)
-  - [IDEA](tool\IDEA.md)
-  - [MyEclipse](tool\MyEclipse.md)
-  - [VSCode](tool\VSCode.md)
+  - [Git](tool/Git.md)
+  - [GitLab](tool/GitLab.md)
+  - [GitLabRunner](tool/GitLabRunner.md)
+  - [IDEA](tool/IDEA.md)
+  - [MyEclipse](tool/MyEclipse.md)
+  - [VSCode](tool/VSCode.md)
 
 - 操作系统
 
-  - [Linux](os\Linux.md)
-  - [Windows](os\Windows.md)
-  - [WSL](os\WSL.md)
+  - [Linux](os/Linux.md)
+  - [Windows](os/Windows.md)
+  - [WSL](os/WSL.md)
 
 - 其他
 
-  - [markdown](other\markdown语法.md)
-  - [常用正则](other\常用正则.md)
-  - [杂记](other\杂记.md)
-  - [正则表达式](other\正则表达式.md)
-  - [网址收藏](other\网址收藏.md)
+  - [杂记](other/杂记.md)
+  - [正则表达式](other/正则表达式.md)
+  - [网址收藏](other/网址收藏.md)
