@@ -36,15 +36,6 @@
   - [Nginx](server/Nginx.md)
   - [Tomcat](server/Tomcat.md)
 
-- 工具
-
-  - [Git](tool/Git.md)
-  - [GitLab](tool/GitLab.md)
-  - [GitLabRunner](tool/GitLabRunner.md)
-  - [IDEA](tool/IDEA.md)
-  - [MyEclipse](tool/MyEclipse.md)
-  - [VSCode](tool/VSCode.md)
-
 - 操作系统
 
   - [Linux](os/Linux.md)
@@ -56,3 +47,10 @@
   - [杂记](other/杂记.md)
   - [正则表达式](other/正则表达式.md)
   - [网址收藏](other/网址收藏.md)
+  - [Git](other/Git.md)
+  - [GitLab](other/GitLab.md)
+  - [GitHub](other/GitHub.md)
+  - [GitLabRunner](other/GitLabRunner.md)
+  - [IDEA](other/IDEA.md)
+  - [MyEclipse](other/MyEclipse.md)
+  - [VSCode](other/VSCode.md)

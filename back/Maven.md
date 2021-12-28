@@ -838,3 +838,32 @@ maven 引用本地 jar 包
     <systemPath>${project.basedir}/lib/jarname.jar</systemPath>
 </dependency>
 ```
+
+## pom 文件
+
+maven 因为约定大于配置，所以可能会存在配置文件无法导出或生效的问题，解决方案：
+
+```xml
+<build>
+    <resources>
+        <resource>
+            <directory>
+                src/main/resources
+            </directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+</build>
+```
