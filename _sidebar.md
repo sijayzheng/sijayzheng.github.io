@@ -54,3 +54,4 @@
   - [IDEA](other/IDEA.md)
   - [MyEclipse](other/MyEclipse.md)
   - [VSCode](other/VSCode.md)
+  - [Typora](other/Typora.md)
