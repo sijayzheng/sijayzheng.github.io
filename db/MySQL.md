@@ -40,13 +40,29 @@ port=3306
 default-character-set=utf8mb4
 ```
 
-通过命令行进入 mysql/bin 目录，执行`mysqld --initialize --console`进行初始化，然后通过`mysqld -install`安装 mysql 服务。
+- 通过命令行进入 mysql/bin 目录，执行`mysqld --initialize --console`进行初始化
 
-密码再命令行中会有显示，登录之后修改 root 用户密码：`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'aaaaaa';flush privileges;update user set host='%' where user='root';`
+- 然后通过`mysqld -install`安装 mysql 服务。
+
+- 密码在命令行中会有显示，登录之后修改 root 用户密码：
+
+```bash
+use mysql;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'aaaaaa';
+flush privileges;
+```
+
+- 设置任意主机都可连接`update user set host='%' where user='root';`
 
 ### Linux
 
-`apt install mysql-server`
+#### 在 WSL 中
+
+1. 先更新包`apt update`
+2. 通过 apt 安装`apt install mysql-server -y`
+3. 确认安装的版本`mysql --version`
+4. 启动 mysql`sudo /etc/init.d/mysql start`
+5. 启动数据库安全脚本(进行密码及用户设置等)`mysql_secure_installation`
 
 ## 问题记录
 
@@ -62,11 +78,13 @@ MySQL 的连接 url 需要配置 userSSL
 
 ```bash
 mysqld --console --skip-grant-tables --shared-memory 或 mysqld --skip-grant-tables
-
 mysql
-
 flush privileges
 ```
+
+### 启动提示:su: warning: cannot change directory to /nonexistent: No such file or directory
+
+`usermod -d /var/lib/mysql/ mysql`设置mysql用户主目录
 
 ## MySQL Explain 详解
 

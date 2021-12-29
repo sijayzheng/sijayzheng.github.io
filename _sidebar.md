@@ -15,6 +15,7 @@
 
   - [DB2](db/DB2.md)
   - [MySQL](db/MySQL.md)
+  - [Redis](db/Redis.md)
 
 - 前端
 
