@@ -267,14 +267,33 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-    <typeAliases>
-        <package name="com.example.domain"/>
+<configuration><!--配置-->
+    <properties><!--属性-->
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value=""/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
+    </properties>
+    <settings><!--设置-->
+        <setting name="" value=""/>
+    </settings>
+    <typeAliases><!--类型别名-->
+        <package name=""/>
     </typeAliases>
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
+    <typeHandlers><!--类型处理器-->
+        <typeHandler handler=""/>
+        <package name=""/>
+    </typeHandlers>
+    <objectFactory type=""><!--对象工厂-->
+        <property name="" value=""/>
+    </objectFactory>
+    <plugins><!-- 插件-->
+        <plugin interceptor=""></plugin>
+    </plugins>
+    <environments default="development"><!--环境配置-->
+        <environment id="development"><!--环境变量-->
+            <transactionManager type="JDBC"/><!--事务管理器-->
+            <dataSource type="POOLED"><!--数据源-->
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
                 <property name="username" value="${username}"/>
@@ -282,9 +301,13 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
             </dataSource>
         </environment>
     </environments>
+    <databaseIdProvider type=""><!--数据库厂商标识-->
+        <property name="" value=""/>
+    </databaseIdProvider>
     <!--注册Mapper.xml-->
-    <mappers>
-        <mapper resource="UserMapper.xml"/>
+    <mappers><!-- 映射器-->
+        <mapper resource=""/>
+        <package name=""/>
     </mappers>
 </configuration>
 ```
