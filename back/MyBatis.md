@@ -76,19 +76,42 @@ public class UserPO {
 
 ```java
 public interface UserMapper {
-    /**
+     /**
      * 获取所有用户
-     * @return
+     *
+     * @return 用户列表
      */
     List<UserPO> listUser();
 
     /**
      * 根据id查询用户信息
+     *
+     * @param id 用户id
+     * @return 用户
+     */
+    UserPO getUserById(int id);
+
+    /**
+     * 添加
+     * @param user
+     * @return
+     */
+    int addUser(UserPO user);
+
+    /**
+     * 修改
+     * @param user
+     * @return
+     */
+    int updateUser(UserPO user);
+
+    /**
+     * 删除
      * @param id
      * @return
      */
-    @Select("select * from user where id=#{id}")
-    UserPO getUserById(int id);
+    @Delete("delete from user where id=#{id}")
+    int deleteUser(int id);
 }
 ```
 
@@ -100,8 +123,25 @@ public interface UserMapper {
 <!--绑定相应的Mapper接口-->
 <mapper namespace="zheng.sijay.mapper.UserMapper">
     <select id="listUser" resultType="UserPO">
-        select * from user
+        select *
+        from user
     </select>
+    <select id="getUserById" resultType="UserPO">
+        select *
+        from user
+        where id = #{id}
+    </select>
+    <!--    对象的属性可以直接取出-->
+    <insert id="addUser" parameterType="UserPO">
+        insert into user (id, name, pwd)
+        values (#{id}, #{name}, #{pwd});
+    </insert>
+    <update id="updateUser">
+        update user
+        set name = #{name},
+            pwd=#{pwd}
+        where id = #{id};
+    </update>
 </mapper>
 
 ```
@@ -110,8 +150,8 @@ public interface UserMapper {
 
 ```java
 public class UserMapperTest {
-    @Test
-    public void test(){
+        @Test
+    public void listUser() {
         // 从 SqlSessionFactory 中获取 SqlSession
         try (SqlSession sqlSession = MyBatisUtils.getSqlSessionFactory().openSession()) {
             // 获取接口
@@ -121,8 +161,62 @@ public class UserMapperTest {
             sqlSession.selectList("zheng.sijay.mapper.UserMapper.listUser").forEach(System.out::println);
             // 新写法
             mapper.listUser().forEach(System.out::println);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void getUserById() {
+        // 从 SqlSessionFactory 中获取 SqlSession
+        try (SqlSession sqlSession = MyBatisUtils.getSqlSessionFactory().openSession()) {
+            // 获取接口
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
             // 执行SQL
             System.out.println(mapper.getUserById(2));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void addUser(){
+        // 从 SqlSessionFactory 中获取 SqlSession
+        try (SqlSession sqlSession = MyBatisUtils.getSqlSessionFactory().openSession()) {
+            // 获取接口
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            UserPO po = new UserPO(10,"tom","123456");
+            // 执行SQL
+            System.out.println(mapper.addUser(po));
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void updateUser(){
+        // 从 SqlSessionFactory 中获取 SqlSession
+        try (SqlSession sqlSession = MyBatisUtils.getSqlSessionFactory().openSession()) {
+            // 获取接口
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            UserPO po = new UserPO(10,"tom L","654321");
+            // 执行SQL
+            System.out.println(mapper.updateUser(po));
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void deleteUser(){
+        // 从 SqlSessionFactory 中获取 SqlSession
+        try (SqlSession sqlSession = MyBatisUtils.getSqlSessionFactory().openSession()) {
+            // 获取接口
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            // 执行SQL
+            System.out.println(mapper.deleteUser(3));
+            sqlSession.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -166,7 +260,7 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 }
 ```
 
-## mybatis-config.xml
+## 配置文件（默认 mybatis-config.xml）
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -230,6 +324,8 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 </mapper>
 ```
 
+> 注意：添加、修改、删除需要提交事务
+
 ### namespace
 
 - 利用更长的全限定名将不同的语句隔离
@@ -240,18 +336,22 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 > - 全限定名将呗直接用于查找及使用
 > - 短名称也可以作为一个单独的引用，但在不唯一的情况下会产生“段名称不唯一”的错误
 
-#### select
+### select
 
 查询语句
 
 - `id`：映射器中的方法名
 - `resultType`：sql 的返回值，返回一个
 - `parameterType`：参数类型
+  - map（多参数）：取key值
+  - 实体类：取属性值
+  - 基本类型（可忽略不写）：取参数名
+
 - `resultMap`：sql 的返回值，返回多个
 
-// TODO
+模糊查询拼接通配符时可以在代码中也可以在sql中
 
-## CURD
+// TODO
 
 ## 错误、异常
 
@@ -269,3 +369,9 @@ mybatis-config.xml 配置文件中的 mappers 错误
 
 - > Error building SqlSession.
   > Cause: org.apache.ibatis.builder.BuilderException: Error creating document instance. Cause: org.xml.sax.SAXParseException; lineNumber: 24; columnNumber: 17; 元素类型为 "configuration" 的内容必须匹配 "(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,objectWrapperFactory?,reflectorFactory?,plugins?,environments?,databaseIdProvider?,mappers?)"。
+
+配置文件错误
+
+- > Mapper method 'zheng.sijay.mapper.UserMapper.addUser attempted to return null from a method with a primitive return type (int).
+
+mapper.xml中的标签错误，如添加语句使用了select
