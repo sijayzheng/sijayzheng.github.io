@@ -268,7 +268,7 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration><!--配置-->
-    <properties><!--属性-->
+    <properties resource="" url=""><!--属性-->
         <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value=""/>
         <property name="username" value=""/>
@@ -316,7 +316,35 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 
 该配置文件中包含了对 MyBatis 系统的核心设置，包括获取数据库连接实例的数据源（DataSource）以及决定事务作用域和控制方式的事务管理器（TransactionManager）
 
-### typeAliases
+### configuration(配置)
+
+mybatis配置的根节点，有且仅有一个，其他所有的节点都需在该节点下
+
+### properties(属性)
+
+可以在外部进行配置，进行动态替换。可以在 properties 中设置也可以在 Java 属性文件中设置
+
+同名属性的加载顺序为：
+
+1. properties 元素体内指定的属性
+2. properties 元素中的 resource 属性指定类路径或根据 url 属性指定路径下的属性文件，并覆盖之前读取过的同名属性。
+3. 作为方法参数传递的属性，并覆盖之前读取过的同名属性`new SqlSessionFactoryBuilder().build(inputStream,properties);`
+
+属性优先级和加载顺序相反：
+
+1. 作为方法参数传递的属性
+2. properties 元素中的 resource 属性指定类路径或根据 url 属性指定路径下的属性文件中的属性
+3. properties 元素体内指定的属性
+
+
+
+### settings(设置)
+
+11
+
+### typeAliases(类型别名)
+
+11
 
 ```xml
 <typeAliases>
@@ -326,15 +354,45 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 
 配置别名之后，在 mapper.xml 中可以不使用全限定名
 
-### environments
+### typeHandlers(类型处理器)
 
+11
+
+### objectFactory(对象工厂)
+
+11
+
+### plugins(插件)
+
+11
+
+### environments(环境配置)
+
+11
 配置事务管理和连接池
 
-### mappers
+#### environment(环境变量)
 
+11
+
+##### transactionManager(事务管理器)
+
+11
+
+##### dataSource(数据源)
+
+11
+
+### databaseIdProvider(数据库厂商标识)
+
+11
+
+### mappers( 映射器)
+
+11
 配置映射器
 
-## mapper.xml
+## 映射器 mapper.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -366,13 +424,14 @@ try (SqlSession session = sqlSessionFactory.openSession()) {
 - `id`：映射器中的方法名
 - `resultType`：sql 的返回值，返回一个
 - `parameterType`：参数类型
-  - map（多参数）：取key值
+
+  - map（多参数）：取 key 值
   - 实体类：取属性值
   - 基本类型（可忽略不写）：取参数名
 
 - `resultMap`：sql 的返回值，返回多个
 
-模糊查询拼接通配符时可以在代码中也可以在sql中
+模糊查询拼接通配符时可以在代码中也可以在 sql 中
 
 // TODO
 
@@ -397,4 +456,4 @@ mybatis-config.xml 配置文件中的 mappers 错误
 
 - > Mapper method 'zheng.sijay.mapper.UserMapper.addUser attempted to return null from a method with a primitive return type (int).
 
-mapper.xml中的标签错误，如添加语句使用了select
+mapper.xml 中的标签错误，如添加语句使用了 select

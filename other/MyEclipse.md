@@ -222,11 +222,7 @@ Close，并重新启动 MyEclipse
 
 ### 卡顿
 
-```bash
-mkdir disabled
-mkdir disabled\features
-mkdir disabled\plugins
-
-move plugins\org.eclipse.jpt.* disabled\plugins
-move features\org.eclipse.jpt.* disabled\features
-```
+1. 关闭 MyEclipse
+1. 进入 MyEclipse 的安装目录
+1. 然后新建目录`disabled`，在`disabled`下新建目录`features`和`plugins`
+1. 将`features`下以`org.eclipse.jpt.`开头的文件和文件夹移动到`disabled/features`下，将`plugins`下以`org.eclipse.jpt.`开头的文件和文件夹移动到`disabled/plugins`下
