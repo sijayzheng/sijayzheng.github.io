@@ -1684,7 +1684,7 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
 - 表名作参数时，必须用 ${}。
 - order by 时，必须用 ${}。
 
-## 6.动态SQL
+## 6.动态 SQL
 
 ### 6.1.if
 
@@ -1726,19 +1726,21 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
 
 ### 6.3.trim、where、set
 
-*where* 元素只会在子元素存在的情况下才插入 “WHERE” 子句，*where* 元素会去除子句开头的 “AND” 或 “OR”。
+_where_ 元素只会在子元素存在的情况下才插入 “WHERE” 子句，_where_ 元素会去除子句开头的 “AND” 或 “OR”。
 
-*where* 元素等价的自定义 trim 元素为：
+_where_ 元素等价的自定义 trim 元素为：
 
-```
+```xml
 <trim prefix="WHERE" prefixOverrides="AND |OR ">
   ...
 </trim>
 ```
 
-*prefixOverrides* 属性会忽略通过管道符分隔的文本序列（注意此例中的空格是必要的）。移除所有 *prefixOverrides* 属性中指定的内容，并且插入 *prefix* 属性中指定的内容。
+_prefixOverrides_ 属性会将*prefixOverrides* 属性匹配的前缀替换为 _prefix_ 属性中的内容。
 
-用于动态更新语句的类似解决方案叫做 *set*。*set* 元素可以用于动态包含需要更新的列，忽略其它不更新的列。比如：
+_suffixOverrides_ 属性会将*suffixOverrides* 属性匹配的后缀替换为 _suffix_ 属性中的内容。
+
+*set*用于动态更新语句，可以用于动态包含需要更新的列，忽略其它不更新的列。比如：
 
 ```xml
 <update id="updateAuthorIfNecessary">
@@ -1753,45 +1755,36 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
 </update>
 ```
 
-这个例子中，*set* 元素会动态地在行首插入 SET 关键字，并会删掉额外的逗号（这些逗号是在使用条件语句给列赋值时引入的）。
+_set_ 元素会动态地在行首插入 SET 关键字，并会删掉多余的逗号。
 
-来看看与 *set* 元素等价的自定义 *trim* 元素吧：
+与 _set_ 元素等价的自定义 _trim_ 元素：
 
-```
+```xml
 <trim prefix="SET" suffixOverrides=",">
   ...
 </trim>
 ```
 
-注意，我们覆盖了后缀值设置，并且自定义了前缀值。
+### 6.4.foreach
 
-### foreach
-
-动态 SQL 的另一个常见使用场景是对集合进行遍历（尤其是在构建 IN 条件语句的时候）。比如：
-
-```
+```xml
 <select id="selectPostIn" resultType="domain.blog.Post">
-  SELECT *
-  FROM POST P
-  WHERE ID in
-  <foreach item="item" index="index" collection="list"
-      open="(" separator="," close=")">
-        #{item}
+  SELECT * FROM POST P WHERE ID in
+  <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+    #{item}
   </foreach>
 </select>
 ```
 
-*foreach* 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及集合项迭代之间的分隔符。这个元素也不会错误地添加多余的分隔符，看它多智能！
+_foreach_ 允许指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量，指定开头与结尾的字符串以及集合项迭代之间的分隔符。
 
-**提示** 你可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象作为集合参数传递给 *foreach*。当使用可迭代对象或者数组时，index 是当前迭代的序号，item 的值是本次迭代获取到的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。
+**提示** 当可迭代集合或者数组时，index 是元素索引，item 的是元素。当为对象时，index 是键，item 是值。
 
-至此，我们已经完成了与 XML 配置及映射文件相关的讨论。下一章将详细探讨 Java API，以便你能充分利用已经创建的映射配置。
+### 6.5.script
 
-### script
+要在带注解的映射器接口类中使用动态 SQL，可以使用 _script_ 元素。比如:
 
-要在带注解的映射器接口类中使用动态 SQL，可以使用 *script* 元素。比如:
-
-```
+```java
     @Update({"<script>",
       "update Author",
       "  <set>",
@@ -1805,11 +1798,11 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
     void updateAuthorValues(Author author);
 ```
 
-### bind
+### 6.6.bind
 
 `bind` 元素允许你在 OGNL 表达式以外创建一个变量，并将其绑定到当前的上下文。比如：
 
-```
+```xml
 <select id="selectBlogsLike" resultType="Blog">
   <bind name="pattern" value="'%' + _parameter.getTitle() + '%'" />
   SELECT * FROM BLOG
@@ -1817,11 +1810,11 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
 </select>
 ```
 
-### 多数据库支持
+### 6.7.多数据库支持
 
-如果配置了 databaseIdProvider，你就可以在动态代码中使用名为 “_databaseId” 的变量来为不同的数据库构建特定的语句。比如下面的例子：
+配置 databaseIdProvider 后，在动态代码中使用名为 “\_databaseId” 的变量来为不同的数据库构建特定的语句。比如下面的例子：
 
-```
+```xml
 <insert id="insert">
   <selectKey keyProperty="id" resultType="int" order="BEFORE">
     <if test="_databaseId == 'oracle'">
@@ -1835,13 +1828,13 @@ mode 属性允许你指定 `IN`，`OUT` 或 `INOUT` 参数。如果参数的 `mo
 </insert>
 ```
 
-### 动态 SQL 中的插入脚本语言
+### 6.8.动态 SQL 中的插入脚本语言
 
 MyBatis 从 3.2 版本开始支持插入脚本语言，这允许你插入一种语言驱动，并基于这种语言来编写动态 SQL 查询语句。
 
 可以通过实现以下接口来插入一种语言：
 
-```
+```java
 public interface LanguageDriver {
   ParameterHandler createParameterHandler(MappedStatement mappedStatement, Object parameterObject, BoundSql boundSql);
   SqlSource createSqlSource(Configuration configuration, XNode script, Class<?> parameterType);
@@ -1851,7 +1844,7 @@ public interface LanguageDriver {
 
 实现自定义语言驱动后，你就可以在 mybatis-config.xml 文件中将它设置为默认语言：
 
-```
+```xml
 <typeAliases>
   <typeAlias type="org.sample.MyLanguageDriver" alias="myLanguage"/>
 </typeAliases>
@@ -1862,7 +1855,7 @@ public interface LanguageDriver {
 
 或者，你也可以使用 `lang` 属性为特定的语句指定语言：
 
-```
+```xml
 <select id="selectBlog" lang="myLanguage">
   SELECT * FROM BLOG
 </select>
@@ -1870,7 +1863,7 @@ public interface LanguageDriver {
 
 或者，在你的 mapper 接口上添加 `@Lang` 注解：
 
-```
+```java
 public interface Mapper {
   @Lang(MyLanguageDriver.class)
   @Select("SELECT * FROM BLOG")
@@ -1878,13 +1871,7 @@ public interface Mapper {
 }
 ```
 
-**提示** 可以使用 Apache Velocity 作为动态语言，更多细节请参考 MyBatis-Velocity 项目。
-
-你前面看到的所有 xml 标签都由默认 MyBatis 语言提供，而它由语言驱动 `org.apache.ibatis.scripting.xmltags.XmlLanguageDriver`（别名为 `xml`）所提供。
-
-[MyBatis中文网](https://mybatis.net.cn/)
-
-顶部
+所有 xml 标签都由默认 MyBatis 语言提供，而它由语言驱动 `org.apache.ibatis.scripting.xmltags.XmlLanguageDriver`（别名为 `xml`）所提供。
 
 ## 10.错误、异常
 
