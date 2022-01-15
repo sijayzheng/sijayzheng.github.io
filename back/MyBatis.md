@@ -14,7 +14,7 @@
 
 - 简化 JDBC 操作
 
-## 2.HelloMyBatis
+## 2.简单的CURD
 
 1. [搭建数据库](db/MySQL.md)
 
@@ -1062,11 +1062,11 @@ public interface InitializingObject {
 
 ### 5.3.resultMap
 
-- constructor \- 用于在实例化类时，注入结果到构造方法中
-  - `idArg` - ID 参数；标记出作为 ID 的结果可以帮助提高整体性能
-  - `arg` - 将被注入到构造方法的一个普通结果
 - `id` – 一个 ID 结果；标记出作为 ID 的结果可以帮助提高整体性能
 - `result` – 注入到字段或 JavaBean 属性的普通结果
+- `constructor`\- 用于在实例化类时，注入结果到构造方法中
+  - `idArg` - ID 参数；标记出作为 ID 的结果可以帮助提高整体性能
+  - `arg` - 将被注入到构造方法的一个普通结果
 - `association` – 一个复杂类型的关联；许多结果将包装成这种类型
   - 嵌套结果映射 – 关联可以是 `resultMap` 元素，或是对其它结果映射的引用
 - `collection `– 一个复杂类型的集合
@@ -1830,7 +1830,7 @@ _foreach_ 允许指定一个集合，声明可以在元素体内使用的集合�
 
 ### 6.8.动态 SQL 中的插入脚本语言
 
-MyBatis 从 3.2 版本开始支持插入脚本语言，这允许你插入一种语言驱动，并基于这种语言来编写动态 SQL 查询语句。
+MyBatis 从 3.2 版本开始支持插入脚本语言，允许插入一种语言驱动，并基于这种语言来编写动态 SQL 查询语句。
 
 可以通过实现以下接口来插入一种语言：
 
@@ -1842,7 +1842,7 @@ public interface LanguageDriver {
 }
 ```
 
-实现自定义语言驱动后，你就可以在 mybatis-config.xml 文件中将它设置为默认语言：
+实现自定义语言驱动后，在 mybatis-config.xml 文件中将它设置为默认语言：
 
 ```xml
 <typeAliases>
@@ -1853,7 +1853,7 @@ public interface LanguageDriver {
 </settings>
 ```
 
-或者，你也可以使用 `lang` 属性为特定的语句指定语言：
+或使用 `lang` 属性为特定的语句指定语言：
 
 ```xml
 <select id="selectBlog" lang="myLanguage">
@@ -1861,7 +1861,7 @@ public interface LanguageDriver {
 </select>
 ```
 
-或者，在你的 mapper 接口上添加 `@Lang` 注解：
+或在 mapper 接口上添加 `@Lang` 注解：
 
 ```java
 public interface Mapper {
