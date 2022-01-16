@@ -14,7 +14,7 @@
 
 - 简化 JDBC 操作
 
-## 2.简单的CURD
+## 2.简单的 CURD
 
 1. [搭建数据库](db/MySQL.md)
 
@@ -1872,6 +1872,66 @@ public interface Mapper {
 ```
 
 所有 xml 标签都由默认 MyBatis 语言提供，而它由语言驱动 `org.apache.ibatis.scripting.xmltags.XmlLanguageDriver`（别名为 `xml`）所提供。
+
+## 7.日志
+
+内置日志工厂：
+
+- SLF4J
+- Apache Commons Logging
+- Log4j 2
+- Log4j
+- JDK logging
+
+MyBatis 内置日志工厂会基于运行时检测信息选择日志委托实现。按上面罗列的顺序使用第一个查找到的实现。当没有找到这些实现时，将会禁用日志功能。
+
+指定日志实现的工厂，在 MyBatis 配置文件中添加 setting
+
+```xml
+<configuration>
+  <settings>
+    <setting name="logImpl" value="LOG4J"/>
+  </settings>
+</configuration>
+```
+
+可选的值有：SLF4J、LOG4J、LOG4J2、JDK_LOGGING、COMMONS_LOGGING、STDOUT_LOGGING、NO_LOGGING，或者是实现了 `org.apache.ibatis.logging.Log` 接口，且构造方法以字符串为参数的类完全限定名。
+
+## 8.分页
+
+- 通过 sql 分页
+
+```xml
+<select id="pageList" parameterType="map" resultType="userPO">
+  select * from user limit #{start}, #{size};
+</select>
+```
+
+传参为起始数和页大小
+
+- 通过分页插件
+
+  PageHelper等
+
+## 9.注解
+
+@Mapper
+
+用于数据库操作接口mapper.java
+
+@Select
+
+@Insert
+
+@Delete
+
+@Update
+
+@
+
+
+
+
 
 ## 10.错误、异常
 

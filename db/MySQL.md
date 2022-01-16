@@ -48,7 +48,7 @@ default-character-set=utf8mb4
 
 ```bash
 use mysql;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'aaaaaa';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'RWit12#$';
 flush privileges;
 ```
 
@@ -56,13 +56,11 @@ flush privileges;
 
 ### Linux
 
-#### 在 WSL 中
-
 1. 先更新包`apt update`
 2. 通过 apt 安装`apt install mysql-server -y`
 3. 确认安装的版本`mysql --version`
-4. 启动 mysql`sudo /etc/init.d/mysql start`
-5. 启动数据库安全脚本(进行密码及用户设置等)`mysql_secure_installation`
+4. 如果mysql没有启动，通过`sudo service mysql start`启动mysql
+5. mysql8默认没有密码可以直接从终端登录
 
 ## 问题记录
 
