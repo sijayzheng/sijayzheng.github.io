@@ -89,8 +89,6 @@ console.log(arr);
 </html>
 ```
 
-![image.gif](../img/1593759022390-4fb106c4-b71e-4537-8dc3-eff0ed871c13.gif)
-
 对于此语音合成对象：
 
 `new SpeechSynthesisUtterance();`//获取文本转换后的语音对象

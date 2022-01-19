@@ -275,24 +275,24 @@ ConsoleAppender 比较简单，就是把日志写入 System.out 或者 System.er
 
 Console 一般使用基本配置就可以，唯一要注意的就是输出格式 pattern，pattern 的配置释义如下：
 
-| 参数                             | 描述                                                                                                                                                                                                                                                   |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| %c 或%logger                     | 输出 logName，如 Logger log = LoggerFactory.getLogger(“com.test.logName”); 则输出为“com.test.logName” ，如果格式为%c{参数}，则输出内容参考官网：![image](../img/pic14.png)                                                                             |
-| %C 或%class                      | 输出为所在类的全路径名                                                                                                                                                                                                                                 |
-| d{pattern}或 date{pattern}       | 输出时间，其中 pattern 可以是保留字，也可以是 SimpleDateFormat 中的字符。如 %d{DEFAULT} --> 2012-11-02 14:34:02,781 %d{DEFAULT_MICROS} --> 2012-11-02 14:34:02,123456 %d{yyyy-MM-dd HH:mm:ss.SSS} --> 2020-03-31 23:25:13.321 详见 log4j PatternLayout |
-| %F 或%file                       | 输出所在类名.java，如所在类为 com.test.LogTest，则输出为 LogTest.java                                                                                                                                                                                  |
-| %l                               | 输出错误的完整位置，全路径类名.方法名(类名.java:行号)，如，com.test.LogTest.testLog(LogTest.java:31)                                                                                                                                                   |
-| %L                               | 输出行号                                                                                                                                                                                                                                               |
-| %m 或%msg 或%message             | 输出 log.error(text)中的 text 内容                                                                                                                                                                                                                     |
-| %M 或%method                     | 输出方法名                                                                                                                                                                                                                                             |
-| %n                               | 换行符                                                                                                                                                                                                                                                 |
-| %t 或%thread                     | 输出线程名                                                                                                                                                                                                                                             |
-| %u{“RANDOM”\| “TIME”}或 uuid     | 输出 uuid                                                                                                                                                                                                                                              |
-| %sn 或%sequenceNumber            | 输出自增序列                                                                                                                                                                                                                                           |
-| %r 或%relative                   | 输出从 JVM 启动到当前时刻的毫秒数                                                                                                                                                                                                                      |
-| %T 或%tid 或%threadId            | 输出线程 id                                                                                                                                                                                                                                            |
-| %t 或%tn 或%thread 或%threadName | 输出线程 id                                                                                                                                                                                                                                            |
-| %tp 或%threadPriority            | 输出线程优先级                                                                                                                                                                                                                                         |
+| 参数                             | 描述                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------- |
+| %c 或%logger                     | 输出 logName                                                              |
+| %C 或%class                      | 输出为所在类的全路径名                                                    |
+| d{pattern}或 date{pattern}       | 输出时间，其中 pattern 可以是保留字，也可以是 SimpleDateFormat 中的字符。 |
+| %F 或%file                       | 输出所在类名.java                                                         |
+| %l                               | 输出错误的完整位置，全路径类名.方法名(类名.java:行号)，                   |
+| %L                               | 输出行号                                                                  |
+| %m 或%msg 或%message             | 输出 log.error(text)中的 text 内容                                        |
+| %M 或%method                     | 输出方法名                                                                |
+| %n                               | 换行符                                                                    |
+| %t 或%thread                     | 输出线程名                                                                |
+| %u{“RANDOM”\| “TIME”}或 uuid     | 输出 uuid                                                                 |
+| %sn 或%sequenceNumber            | 输出自增序列                                                              |
+| %r 或%relative                   | 输出从 JVM 启动到当前时刻的毫秒数                                         |
+| %T 或%tid 或%threadId            | 输出线程 id                                                               |
+| %t 或%tn 或%thread 或%threadName | 输出线程 id                                                               |
+| %tp 或%threadPriority            | 输出线程优先级                                                            |
 
 #### RollingFileAppender
 

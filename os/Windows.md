@@ -24,11 +24,9 @@ AllowEncryptionOracle 32 位、DWORD 值 2
 
 ![img](./img/pic38.jpg)
 
+## 删除 3D Object 等文件夹
 
-## 删除3D Object等文件夹 
-
-在注册表编辑器中转到以下路径`算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`，
-删除以下相应的数据
+在注册表编辑器中转到以下路径`算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`，删除以下相应的数据
 
 [下载] 088e3905-0323-4b02-9826-5d99428e115f}
 
