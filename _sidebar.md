@@ -9,7 +9,6 @@
   - [SpringBoot](back/SpringBoot.md)
   - [SpringMVC](back/SpringMVC.md)
   - [struts2](back/struts2.md)
-  - [注解](back/注解.md)
 
 - 数据库
 
@@ -37,14 +36,11 @@
   - [Nginx](server/Nginx.md)
   - [Tomcat](server/Tomcat.md)
 
-- 操作系统
-
-  - [Linux](os/Linux.md)
-  - [Windows](os/Windows.md)
-  - [WSL](os/WSL.md)
-
 - 其他
 
+  - [Linux](other/Linux.md)
+  - [Windows](other/Windows.md)
+  - [WSL](other/WSL.md)
   - [杂记](other/杂记.md)
   - [正则表达式](other/正则表达式.md)
   - [网址收藏](other/网址收藏.md)
