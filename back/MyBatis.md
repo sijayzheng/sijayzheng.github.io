@@ -1946,7 +1946,7 @@ MyBatis 内置日志工厂会基于运行时检测信息选择日志委托实现
 
 - > org.apache.ibatis.binding.BindingException: Type interface \*\*\*Mapper is not known to the MapperRegistry.
 
-未注册\*\*\*Mapper.xml
+未注册\*\*\*Mapper.xml，需要在配置文件中进行 mapper.xml 的注册绑定
 
 - > Error building SqlSession.
   > The error may exist in zheng/sijay/mapper/UserMapper
@@ -1964,3 +1964,7 @@ mybatis-config.xml 配置文件中的 mappers 错误
 - > Mapper method 'zheng.sijay.mapper.UserMapper.addUser attempted to return null from a method with a primitive return type (int).
 
 mapper.xml 中的标签错误，如添加语句使用了 select
+
+- > Could not find resource mybatis-config.xml
+
+maven 导出资源不正确或未生效，详见[maven#pom](back/Maven.md)
