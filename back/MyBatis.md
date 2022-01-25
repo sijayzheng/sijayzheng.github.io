@@ -18,7 +18,7 @@
 
 1. [搭建数据库](db/MySQL.md)
 
-- 建一个测试库`create database mybatistest`
+- 建一个测试库`create database learn`
 
 - 建一个测试表
 
