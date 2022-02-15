@@ -1967,4 +1967,4 @@ mapper.xml 中的标签错误，如添加语句使用了 select
 
 - > Could not find resource mybatis-config.xml
 
-maven 导出资源不正确或未生效，详见[maven#pom](back/Maven.md)
+maven 导出资源不正确或未生效，详见[maven#问题](back/Maven.md)

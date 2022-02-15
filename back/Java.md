@@ -4,7 +4,9 @@
 
 String… strings 为可变长度参数列表，表示 0 或多个 String 类型的对象或是 String[]，具体类型为一个数组
 
-String.split()中“.” “\” "|" "\*" "+"需要转义
+String.split()中**`.` `\` `|` `*` `+`**需要转义
+
+String.format() 格式化字符串,String.format("%s-%s","str1","str2");
 
 ### Map
 
@@ -19,14 +21,14 @@ String.split()中“.” “\” "|" "\*" "+"需要转义
 
 - 合并两个相同类型的 List 并去重
 
-```
+```java
 list1.removeAll(list2);
 list1.addAll(list2);
 ```
 
 - 排序
 
-```
+```java
 Comparator.comparingInt(Integer::intValue).reversed() ``// 倒序
 Comparator.comparingInt(Integer::intValue) ``// 正序
 ```
