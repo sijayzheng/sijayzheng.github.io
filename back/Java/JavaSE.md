@@ -334,6 +334,55 @@ a = a ^ b;
 synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 每次线程访问会给 Obj 加锁
 
+#### Lock
+
+- 显示定义同步锁
+- 每次只能有一个线程对 Lock 加锁，开始访问共享资源前应先获得 Lock 对象
+- ReentrantLock（可重入锁）实现了 Lock，与 synchronized 有相同语义
+
+| synchronized     | Lock                   |
+| ---------------- | ---------------------- |
+| 隐式锁           | 显式锁                 |
+| 出作用域自动释放 | 手动开启关闭           |
+| 用于代码块和方法 | 只能用于代码块         |
+| 性能一般         | JVM 花费时间少，性能好 |
+|                  | 扩展性好               |
+
+使用顺序：Lock>同步代码块>同步方法
+
+### 线程通信
+
+| 方法               | 作用                                                   |
+| ------------------ | ------------------------------------------------------ |
+| wait()             | 线程一直等待，直到其他线程通知                         |
+| wait(long timeout) | 等待指定的毫秒数                                       |
+| notify()           | 唤醒一个处于等待状态的线程                             |
+| notifyAll()        | 唤醒一个对象上所有调用 wait 的线程，优先级高的优先调度 |
+
+生产者消费者问题：
+
+- 管程法 通过缓冲区
+- 信号灯法 通过标志位
+
+### 线程池
+
+- 提高响应速度
+- 降低资源消耗
+- 便于线程管理
+
+  - corePoolSize 核心池大小
+  - maximumPoolSize 最大线程数
+  - keepAliveTime 线程没任务最多保留多长时间
+
+- ExecutorService 线程池接口
+
+  - void execute(Runnable command);无返回的执行
+  - Future<?> submit(Runnable task);有返回的执行
+  - void shutdown();关闭线程池
+
+- Executors
+  用于创建不同类型的线程池
+
 ## 注解
 
 - 不是程序本身，可对程序作出解释
@@ -557,6 +606,8 @@ Comparator.comparingInt(Integer::intValue) ``// 正序
 - 单行方法体时可省略大括号
 
 ## JVM
+
+## 设计模式
 
 ## 内存
 
