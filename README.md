@@ -1,7 +1,6 @@
-## 关于子秀
+## 关于
 
-子秀很秀
 
 ## 关于文档中的代码
 
-[去看看八阿哥](https://github.com/sijayzheng/learn)
+[去看看bug吧](https://github.com/sijayzheng/learn)
