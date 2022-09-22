@@ -53,3 +53,4 @@
   - [website](other/website.md)
   - [Windows](other/Windows.md)
   - [WSL](other/WSL.md)
+  - [Vim](other/Vim.md)
