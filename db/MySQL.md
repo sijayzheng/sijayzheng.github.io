@@ -48,7 +48,7 @@ default-character-set=utf8mb4
 
 ```bash
 use mysql;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'RWit12#$';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 flush privileges;
 ```
 
@@ -59,8 +59,8 @@ flush privileges;
 1. 先更新包`apt update`
 2. 通过 apt 安装`apt install mysql-server -y`
 3. 确认安装的版本`mysql --version`
-4. 如果mysql没有启动，通过`sudo service mysql start`启动mysql
-5. mysql8默认没有密码可以直接从终端登录
+4. 如果 mysql 没有启动，通过`sudo service mysql start`启动 mysql
+5. mysql8 默认没有密码可以直接从终端登录
 
 ## 问题记录
 
@@ -82,7 +82,7 @@ flush privileges
 
 ### 启动提示:su: warning: cannot change directory to /nonexistent: No such file or directory
 
-`usermod -d /var/lib/mysql/ mysql`设置mysql用户主目录
+`usermod -d /var/lib/mysql/ mysql`设置 mysql 用户主目录
 
 ## MySQL Explain 详解
 
