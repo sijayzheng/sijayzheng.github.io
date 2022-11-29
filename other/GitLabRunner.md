@@ -97,3 +97,51 @@ docker exec -it gitlab-runner gitlab-runner register
 9. 选择默认使用的镜像： docker:stable
 
 在注册完之后，我们可以在 GitLab 获取 gitlab-ci token 的页面看到我们刚刚注册的这个 runner
+
+安装 gitlab-runner
+
+# 下载
+
+wget -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+
+# 分配运行权限
+
+chmod +x /usr/local/bin/ gitlab-runner
+
+# 创建用户
+
+useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+
+# 安装
+
+gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+
+# 运行
+
+gitlab-runner start
+新建 runner
+
+# 注册 runner
+
+gitlab-runner register
+
+# 输入 gitlab 的访问地址
+
+http://192.168.26.139:1874
+
+# 输入 runner token，把开 http://192.168.26.139:1874/admin/runners 页面查看
+
+63AyFAthj7s7sNy3JDwu
+
+# runner 描述，随便填
+
+测试 webpack-vue 项目部署
+
+# runner tag
+
+webpack-vue-cicd
+
+# 输入（选择） shell
+
+shell
+注册完成后，就可以在 http://192.168.26.139:1874/admin/runners 里面看到创建的 runner。
