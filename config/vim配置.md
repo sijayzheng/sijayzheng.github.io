@@ -1,4 +1,5 @@
-.vimrc
+idea vim 配置
+
 ```
 syntax on
 map Q gq
