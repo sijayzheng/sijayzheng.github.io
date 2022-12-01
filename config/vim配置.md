@@ -1,5 +1,4 @@
-idea vim 配置
-
+.vimrc
 ```
 syntax on
 map Q gq
@@ -14,9 +13,6 @@ set hlsearch
 set smartcase
 set showmode
 set showcmd
-set argtextobj
-set multiple-cursors
-set highlightedyank
 set clipboard=unnamedplus
 
 nnoremap L $

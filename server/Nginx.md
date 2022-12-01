@@ -29,11 +29,16 @@ nginx -V            显示 nginx 的版本，编译器版本和配置参数。
 
 如果不想每次都敲命令，可以在 nginx 安装目录下新添一个启动批处理文件 startup.bat，双击即可运行。内容如下：
 
-```
-@echo offrem 如果启动前已经启动nginx并记录下pid文件，会kill指定进程nginx.exe -s stop
-rem 测试配置文件语法正确性nginx.exe -t -c conf/nginx.conf
-rem 显示版本信息nginx.exe -v
-rem 按照指定配置去启动nginxnginx.exe -c conf/nginx.conf
+```bat
+@echo off
+rem 如果启动前已经启动nginx并记录下pid文件，会kill指定进程
+nginx.exe -s stop
+rem 测试配置文件语法正确性
+nginx.exe -t -c conf/nginx.conf
+rem 显示版本信息
+nginx.exe -v
+rem 按照指定配置去启动nginx 
+nginx.exe -c conf/nginx.conf
 ```
 
 如果是运行在 Linux 下，写一个 shell 脚本，大同小异。
@@ -56,12 +61,12 @@ nginx.conf 配置文件如下：
 worker_processes  1;
 
 #全局错误日志
-error_log  D:/Tools/nginx-1.10.1/logs/error.log;
-error_log  D:/Tools/nginx-1.10.1/logs/notice.log  notice;
-error_log  D:/Tools/nginx-1.10.1/logs/info.log  info;
+error_log  ~/nginx/logs/error.log;
+error_log  ~/nginx/logs/notice.log  notice;
+error_log  ~/nginx/logs/info.log  info;
 
 #PID文件，记录当前启动的nginx的进程ID
-pid     D:/Tools/nginx-1.10.1/logs/nginx.pid;
+pid     ~/nginx/logs/nginx.pid;
 
 #工作模式及连接数上限
 events {    worker_connections 1024;
@@ -70,13 +75,13 @@ events {    worker_connections 1024;
 #设定http服务器，利用它的反向代理功能提供负载均衡支持
 http {
     #设定mime类型(邮件支持类型),类型由mime.types文件定义
-    include    D:/Tools/nginx-1.10.1/conf/mime.types;
+    include    ~/nginx/conf/mime.types;
     default_type  application/octet-stream;
 
     #设定日志
     log_format  main  '[$remote_addr] - [$remote_user] [$time_local] "$request" ' '$status $body_bytes_sent "$http_referer" ' '"$http_user_agent" "$http_x_forwarded_for"';
 
-    access_log  D:/Tools/nginx-1.10.1/logs/access.log main;
+    access_log  ~/nginx/logs/access.log main;
     rewrite_log  on;
 
     #sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，对于普通应用，    #必须设为 on,如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，以平衡磁盘与网络I/O处理速度，降低系统的uptime.
@@ -104,7 +109,7 @@ http {
         #首页
          index index.html
         #指向webapp的目录
-        root D:\01_Workspace\Project\github\zp\SpringNotes\spring-security\spring-shiro\src\main\webapp;
+        root /var/www/html;
 
         #编码格式
         charset utf-8;
@@ -122,7 +127,7 @@ http {
         }
         #静态文件，nginx自己处理
         location ~ ^/(images|javascript|js|css|flash|media|static)/ {
-            root D:\01_Workspace\Project\github\zp\SpringNotes\spring-security\spring-shiro\src\main\webapp\views;
+            root /var/www/html/static;
             #过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。
             expires 30d;
         }

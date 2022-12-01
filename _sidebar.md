@@ -1,6 +1,7 @@
 - 技能树
   - Java
     - [JavaSE](java/JavaSE.md)
+  - [设计模式](other/designPattern.md)
 <!-- - 后台
   - [annotion](back/annotion.md)
   - [Hibernate](back/Hibernate.md)
