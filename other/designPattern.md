@@ -27,7 +27,11 @@
 
 ### 3. 单例模式（Singleton Pattern）
 
+对象从创建到被销毁都是唯一的
+
 ### 4. 建造者模式（Builder Pattern）
+
+通过 builder 类返回依赖类有共同点的对象
 
 ### 5. 原型模式（Prototype Pattern）
 
