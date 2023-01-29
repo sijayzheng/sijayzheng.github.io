@@ -1,9 +1,9 @@
-- Java
-  - [JavaSE](java/JavaSE.md)
-  - [Java](back/Java.md)
+- **Java**
+  - [JavaSE](doc/JavaSE.md)
+  - [Java]()
   - [Java 核心]()
   - [Java 源码]()
-  - [annotion](back/annotion.md)
+  - [annotion](doc/annotion.md)
   - [并发]()
   - [锁]()
   - [线程池]()
@@ -13,17 +13,17 @@
   - [JVM]()
   - [GC 算法和垃圾回收器]()
   - [JVM 调优]()
-- 框架
-  - [Hibernate](back/Hibernate.md)
-  - [Log4j](back/Log4j.md)
-  - [Lombok](back/Lombok.md)
-  - [Maven](back/Maven.md)
-  - [MyBatis](back/MyBatis.md)
-  - [MyBatisPlus](back/MyBatisPlus.md)
-  - [Spring](back/Spring.md)
-  - [SpringBoot](back/SpringBoot.md)
-  - [SpringMVC](back/SpringMVC.md)
-  - [struts2](back/struts2.md)
+- **框架**
+  - [Hibernate](doc/Hibernate.md)
+  - [Log4j](doc/Log4j.md)
+  - [Lombok](doc/Lombok.md)
+  - [Maven](doc/Maven.md)
+  - [MyBatis](doc/MyBatis.md)
+  - [MyBatisPlus](doc/MyBatisPlus.md)
+  - [Spring](doc/Spring.md)
+  - [SpringBoot](doc/SpringBoot.md)
+  - [SpringMVC](doc/SpringMVC.md)
+  - [struts2](doc/struts2.md)
   - [Spring]()
   - [SpringMVC]()
   - [SpringBoot]()
@@ -36,64 +36,65 @@
   - [zookeeper：底层原理和实现机制，paxos、zab 算法]()
   - [网络编程：HTTP，HTTPS，Socket]()
   - [操作系统，IO]()
-- 设计模式
-  - [设计模式](other/designPattern.md)
-- 其他语言
-  - [PHP](back/PHP.md)
-  - [regex](other/regex.md)
-  - [JavaScript](front/JavaScript.md)
-  - [HTML](front/HTML.md)
-  - [CSS](front/CSS.md)
-- 数据库
+- **设计模式**
+  - [设计模式](doc/designPattern.md)
+- **其他语言**
+  - [PHP](doc/PHP.md)
+  - [regex](doc/regex.md)
+  - [JavaScript](doc/JavaScript.md)
+  - [HTML](doc/HTML.md)
+  - [CSS](doc/CSS.md)
+  - [markdown](doc/markdown.md)
+- **数据库**
   - [SQL]()
-  - 关系型数据库
-    - [DB2](db/DB2.md)
-    - [MySQL](db/MySQL.md)
+  - *关系型数据库*
+    - [DB2](doc/DB2.md)
+    - [MySQL](doc/MySQL.md)
     - [mysqlL：事物、锁、索引、存储引擎、线上调优、分库分表]()
-  - 非关系型数据库
-    - [Redis](db/Redis.md)
+  - *非关系型数据库*
+    - [Redis](doc/Redis.md)
     - [Redis：底层磁盘及 IO 模型，数据持久化机制，单机和集群模式]()
     - [MongoDB]()
-- 消息中间件
+- **消息中间件**
   - [Kafka：核心原理，底层刷盘机制，集群分片机制，消息丢失和消息重复的对应方案]()
   - [RabbitMQ]()
   - [RocketMQ]()
-- ElasticSearch
+- **ElasticSearch**
   - [ElasticSearch]()
-- 服务器
-  - [Apache](server/Apache.md)
-  - [Nginx](server/Nginx.md)
-  - [Tomcat](server/Tomcat.md)
+- **服务器**
+  - [Apache](doc/Apache.md)
+  - [Nginx](doc/Nginx.md)
+  - [Tomcat](doc/Tomcat.md)
   - [Nginx：Lvs，Lua]()
-- 容器
+- **容器**
   - [docker]()
   - [k8s]()
-- Linux
-  - [Linux](other/Linux.md)
-  - [WSL](other/WSL.md)
-  - [Vim](other/Vim.md)
-- 工具
-  - [Git](other/Git.md)
-  - [Github](other/Github.md)
-  - [GitLab](other/GitLab.md)
-  - [IDEA](other/IDEA.md)
-  - [markdown](other/markdown.md)
-  - [MyEclipse](other/MyEclipse.md)
-  - [SpringToolSuite](other/SpringToolSuite.md)
-  - [VSCode](other/VSCode.md)
-  - [Windows](other/Windows.md)
-  - [EsLint](front/EsLint.md)
-  - [Nodejs](front/Nodejs.md)
-  - [webpack](front/webpack.md)
-- [杂记](other/emmm.md)
-- 前端框架
-- 前端库
-  - [jQuery](front/jQuery.md)
-  - [EasyUI](front/EasyUI.md)
-  - [Vue](front/Vue.md)
-  - [Axios](front/Axios.md)
-  - [eCharts](front/eCharts.md)
-  - [ElementUI](front/ElementUI.md)
-  - [Autocomplete](front/Autocomplete.md)
-  - [FullCalendar](front/FullCalendar.md)
-  - [jTopo](front/jTopo.md)
+- **Linux**
+  - [Linux](doc/Linux.md)
+  - [WSL](doc/WSL.md)
+  - [Vim](doc/Vim.md)
+- **工具**
+  - [Git](doc/Git.md)
+  - [Github](doc/Github.md)
+  - [GitLab](doc/GitLab.md)
+  - [IDEA](doc/IDEA.md)
+  - [markdown](doc/markdown.md)
+  - [MyEclipse](doc/MyEclipse.md)
+  - [SpringToolSuite](doc/SpringToolSuite.md)
+  - [VSCode](doc/VSCode.md)
+  - [Windows](doc/Windows.md)
+  - [EsLint](doc/EsLint.md)
+  - [Nodejs](doc/Nodejs.md)
+  - [webpack](doc/webpack.md)
+- [杂记](doc/emmm.md)
+- **前端框架**
+- **前端库**
+  - [jQuery](doc/jQuery.md)
+  - [EasyUI](doc/EasyUI.md)
+  - [Vue](doc/Vue.md)
+  - [Axios](doc/Axios.md)
+  - [eCharts](doc/eCharts.md)
+  - [ElementUI](doc/ElementUI.md)
+  - [Autocomplete](doc/Autocomplete.md)
+  - [FullCalendar](doc/FullCalendar.md)
+  - [jTopo](doc/jTopo.md)
