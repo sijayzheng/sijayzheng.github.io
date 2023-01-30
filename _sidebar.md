@@ -38,7 +38,7 @@
   - [操作系统，IO]()
 - **设计模式**
   - [设计模式](doc/designPattern.md)
-- **其他语言**
+- **其他语言、语法**
   - [PHP](doc/PHP.md)
   - [regex](doc/regex.md)
   - [JavaScript](doc/JavaScript.md)

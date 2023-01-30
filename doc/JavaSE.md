@@ -2,6 +2,11 @@
 
 **jdk 和 jre**
 ![image-20220309230401673](../img/image-20220309230401673.png)
+JDK：Java Development Kit 的简称，java 开发工具包，提供了 java 的开发环境和运行环境。
+
+JRE：Java Runtime Environment 的简称，java 运行环境，为 java 的运行提供了所需环境。
+
+JDK 包含了 JRE，同时还包含了编译 java 源码的编译器 javac，还包含了很多 java 程序调试和分析的工具。简单来说：如果你需要运行 java 程序，只需安装 JRE 就可以了，如果你需要编写 java 程序，需要安装 JDK。
 
 ### Java 跨平台的原理
 
@@ -89,7 +94,7 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 
 ### 最常用的引用类型 String
 
-- 字符串常量使用`""`引起来的，连接字符串使用 “+” 符号
+- 字符串常量使用`""`引起来的，连接字符串使用 “`+`” 符号
 - 字符串拼接：字符串可以和**任何基本类型的值或 Java 对象**进行连接运算，结果都是**字符串类型**（基本类型的值将自动类型转换为字符串类型，系统自动调用 Java 对象 toString() 方法）
 
 ### 基本类型的类型转换
@@ -560,6 +565,17 @@ String.split()中**`.` `\` `|` `*` `+`**需要转义
 
 String.format() 格式化字符串,String.format("%s-%s","str1","str2");
 
+StringBuffer.reverse()或StringBuilder.reverse() 反转字符串
+
+String str="i"与 String str=new String("i")内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到常量池中；而 String str=new String("i") 则会被分到堆内存中。
+
+
+
+
+#### String、StringBuffer、StringBuilder
+
+String 和 StringBuffer、StringBuilder 的区别在于 String 声明的是不可变的对象，每次操作都会生成新的 String 对象，然后将指针指向新的 String 对象，而 StringBuffer、StringBuilder 可以在原有对象的基础上进行操作，所以在经常改变字符串内容的情况下最好不要使用 String。StringBuffer 和 StringBuilder 最大的区别在于，StringBuffer 是线程安全的，而 StringBuilder 是非线程安全的，但 StringBuilder 的性能却高于 StringBuffer，所以在单线程环境下推荐使用 StringBuilder，多线程环境下推荐使用 StringBuffer。
+
 ### Map
 
 |               | 有序 | 顺序         | null 值            |
@@ -584,6 +600,8 @@ list1.addAll(list2);
 Comparator.comparingInt(Integer::intValue).reversed() ``// 倒序
 Comparator.comparingInt(Integer::intValue) ``// 正序
 ```
+
+### Math
 
 ## 函数式编程
 

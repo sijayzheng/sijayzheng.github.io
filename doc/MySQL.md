@@ -14,9 +14,9 @@
 # 设置3306端口
 port=3306
 # 设置mysql的安装目录
-basedir=D:\\MySQL
+basedir=D:\\mysql
 # 设置mysql数据库的数据的存放目录
-datadir=D:\\MySQL\\data
+datadir=D:\\mysql\\data
 # 允许最大连接数
 max_connections=1000
 # 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
@@ -40,11 +40,11 @@ port=3306
 default-character-set=utf8mb4
 ```
 
-- 通过命令行进入 mysql/bin 目录，执行`mysqld --initialize --console`进行初始化
+- 通过命令行进入 `mysql/bin` 目录，执行`mysqld --initialize --console`进行初始化
 
-- 然后通过`mysqld -install`安装 mysql 服务。
+- 使用管理员身份通过`mysqld -install`安装 mysql 服务。
 
-- 密码在命令行中会有显示，登录之后修改 root 用户密码：
+- 初始化生成的密码会在命令行中显示，登录之后修改 root 用户密码：
 
 ```bash
 use mysql;
@@ -61,6 +61,24 @@ flush privileges;
 3. 确认安装的版本`mysql --version`
 4. 如果 mysql 没有启动，通过`sudo service mysql start`启动 mysql
 5. mysql8 默认没有密码可以直接从终端登录
+
+## 参数
+
+### max_connections
+
+|||
+|--|--|
+|Command-Line Format|--max-connections=#|
+|System Variable|max_connections|
+|Scope|Global|
+|Dynamic|Yes|
+|SET_VAR Hint Applies|No|
+|Type|Integer|
+|Default Value|151|
+|Minimum Value|1|
+|Maximum Value|100000|
+
+默认值151，包括1个供具有coonection_admin权限的管理员使用、150个供所有有访问权限的客户端使用
 
 ## 问题记录
 
