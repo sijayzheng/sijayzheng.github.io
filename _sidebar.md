@@ -13,21 +13,17 @@
   - [JVM]()
   - [GC 算法和垃圾回收器]()
   - [JVM 调优]()
-- **框架**
+- **框架、库**
   - [Hibernate](doc/Hibernate.md)
   - [Log4j](doc/Log4j.md)
   - [Lombok](doc/Lombok.md)
   - [Maven](doc/Maven.md)
+  - [struts2](doc/struts2.md)
+  - [Spring](doc/Spring.md)
+  - [SpringMVC](doc/SpringMVC.md)
+  - [SpringBoot](doc/SpringBoot.md)
   - [MyBatis](doc/MyBatis.md)
   - [MyBatisPlus](doc/MyBatisPlus.md)
-  - [Spring](doc/Spring.md)
-  - [SpringBoot](doc/SpringBoot.md)
-  - [SpringMVC](doc/SpringMVC.md)
-  - [struts2](doc/struts2.md)
-  - [Spring]()
-  - [SpringMVC]()
-  - [SpringBoot]()
-  - [MyBatis]()
   - [SringCloud]()
   - [Dubbo]()
   - [Nacos]()
@@ -47,11 +43,11 @@
   - [markdown](doc/markdown.md)
 - **数据库**
   - [SQL]()
-  - *关系型数据库*
+  - _关系型数据库_
     - [DB2](doc/DB2.md)
     - [MySQL](doc/MySQL.md)
     - [mysqlL：事物、锁、索引、存储引擎、线上调优、分库分表]()
-  - *非关系型数据库*
+  - _非关系型数据库_
     - [Redis](doc/Redis.md)
     - [Redis：底层磁盘及 IO 模型，数据持久化机制，单机和集群模式]()
     - [MongoDB]()
@@ -78,7 +74,6 @@
   - [Github](doc/Github.md)
   - [GitLab](doc/GitLab.md)
   - [IDEA](doc/IDEA.md)
-  - [markdown](doc/markdown.md)
   - [MyEclipse](doc/MyEclipse.md)
   - [SpringToolSuite](doc/SpringToolSuite.md)
   - [VSCode](doc/VSCode.md)
@@ -86,7 +81,6 @@
   - [EsLint](doc/EsLint.md)
   - [Nodejs](doc/Nodejs.md)
   - [webpack](doc/webpack.md)
-- [杂记](doc/emmm.md)
 - **前端框架**
 - **前端库**
   - [jQuery](doc/jQuery.md)
@@ -98,3 +92,6 @@
   - [Autocomplete](doc/Autocomplete.md)
   - [FullCalendar](doc/FullCalendar.md)
   - [jTopo](doc/jTopo.md)
+- [杂记](doc/emmm.md)
+- **算法**
+  - [杂记](doc/emmm.md)

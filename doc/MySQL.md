@@ -2,11 +2,11 @@
 
 ### Windows
 
-下载完成后解压，并将其全部移到 D 盘根目录，并分别重命名为 mysql；
+- 下载完成后解压，并将其全部移到 D 盘根目录，并重命名为 mysql；
 
-以管理员身份打开命令行并进入 D 盘
+- 以管理员身份打开命令行并进入 D 盘
 
-进入 mysql 文件夹，新建文本文件并重命名为 my.ini，并写入
+- 进入 mysql 文件夹，新建文本文件并重命名为 my.ini，并写入
 
 ```ini
 [mysqld]
@@ -48,7 +48,7 @@ default-character-set=utf8mb4
 
 ```bash
 use mysql;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 flush privileges;
 ```
 
