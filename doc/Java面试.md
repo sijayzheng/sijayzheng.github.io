@@ -6,14 +6,12 @@
 
 > - 封装
 
-## ArrayList和LinkedList
+## ArrayList 和 LinkedList
 
 |            | 插入 | 删除 | 访问 |
 | ---------- | ---- | ---- | ---- |
 | ArrayList  |      |      |      |
 | LinkedList |      |      |      |
-
-
 
 ## 高并发中的集合
 
@@ -21,4 +19,16 @@ AQS
 
 CQS
 
+1. ==和 equals
+   `==` 对于基本类型来说是值比较，对于引用类型来说是比较的是引用；
+   `equals` 默认情况下是引用比较，只是很多类重新了 equals 方法，比如 String、Integer 等把它变成了值比较，所以一般情况下 equals 比较的是值是否相等。
 
+1. 两个对象的 hashCode()相同， equals()不一定 true,因为在散列表中，hashCode()相等即两个键值对的哈希值相等，然而哈希值相等，并不一定能得出键值对相等。
+
+1. final 在 java 中有什么作用？
+
+final 修饰的类叫最终类，该类不能被继承。
+
+final 修饰的方法不能被重写。
+
+final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改。

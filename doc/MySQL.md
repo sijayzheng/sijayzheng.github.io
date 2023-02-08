@@ -66,19 +66,31 @@ flush privileges;
 
 ### max_connections
 
-|||
-|--|--|
-|Command-Line Format|--max-connections=#|
-|System Variable|max_connections|
-|Scope|Global|
-|Dynamic|Yes|
-|SET_VAR Hint Applies|No|
-|Type|Integer|
-|Default Value|151|
-|Minimum Value|1|
-|Maximum Value|100000|
+|                      |                     |
+| -------------------- | ------------------- |
+| Command-Line Format  | --max-connections=# |
+| System Variable      | max_connections     |
+| Scope                | Global              |
+| Dynamic              | Yes                 |
+| SET_VAR Hint Applies | No                  |
+| Type                 | Integer             |
+| Default Value        | 151                 |
+| Minimum Value        | 1                   |
+| Maximum Value        | 100000              |
 
-默认值151，包括1个供具有coonection_admin权限的管理员使用、150个供所有有访问权限的客户端使用
+默认值 151，包括 1 个供具有 coonection_admin 权限的管理员使用、150 个供所有有访问权限的客户端使用
+
+## 事务
+
+## 锁
+
+## 索引
+
+## 存储引擎
+
+## 线上调优
+
+## 分库分表
 
 ## 问题记录
 
