@@ -11,30 +11,15 @@ npm config set prefix "安装目录路径\node_global"
 npm config set cache "安装目录路径\node_cache"
 ```
 
-### 升级node到最新版本
+### linux 升级 node 版本
 
-1. 清除缓存信息
-
-    ```bash
-    sudo npm cache clean -f
-    ```
-
-2. 下载node安装包
-    
-    ```bash
-    sudo npm install -g n
-    ```
-
-3. 升级到nodejs最新稳定版本
-
-    ```bash
-    sudo n stable
-    ```
-
-4. 查看当前版本
-    
-    ```bash
-    node -v
-    ```
-
-                
+```bash
+# 第一步：先清除npm缓存：
+npm cache clean -f
+# 第二步：安装n模块(n模块专门用来管理nodejs的版本)：
+npm install -g n
+# 第三步：升级node.js到最新稳定版：
+n stable
+# 第四步：查看当前版本
+node -v
+```

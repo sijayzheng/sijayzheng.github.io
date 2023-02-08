@@ -8,11 +8,11 @@
   - [网络编程](doc/net.md)
   - [IO](doc/IO.md)
   - [Java 面试](doc/Java面试.md)
+  - [服务划分、服务治理、服务分层](doc/service.md)
 - **框架、库**
   - [Hibernate](doc/Hibernate.md)
   - [Log4j](doc/Log4j.md)
   - [Lombok](doc/Lombok.md)
-  - [Maven](doc/Maven.md)
   - [struts2](doc/struts2.md)
   - [Spring](doc/Spring.md)
   - [SpringMVC](doc/SpringMVC.md)
@@ -23,7 +23,6 @@
   - [Dubbo](doc/Dubbo.md)
   - [Nacos](doc/nacos.md)
   - [Sentinel](doc/Sentinel.md)
-  - [服务划分、服务治理、服务分层](doc/service.md)
   - [zookeeper](doc/zookeeper.md)
   - [Swagger](doc/Swagger.md)
 - **设计模式**
@@ -66,6 +65,7 @@
   - [Github](doc/Github.md)
   - [GitLab](doc/GitLab.md)
   - [GitLabRunner](doc/GitLabRunner.md)
+  - [Maven](doc/Maven.md)
   - [IDEA](doc/IDEA.md)
   - [MyEclipse](doc/MyEclipse.md)
   - [SpringToolSuite](doc/SpringToolSuite.md)

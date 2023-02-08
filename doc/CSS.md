@@ -55,7 +55,6 @@
 | `:valid`                 | `:valid`                | 用于匹配输入值为合法的元素                                   |
 | `:invalid`               | `:invalid`              | 用于匹配输入值为非法的元素                                   |
 
-
 ## cssgrid 布局
 
 ### Container 属性
@@ -171,4 +170,22 @@
 <div style="width:500px;height:500px;display: flex;justify-content: center;align-items: center;">
   <div style="width:100px;height:100px;background:red;">middle center</div>
 </div>
+```
+
+## table 表格
+
+细边框表格
+
+```html
+<table border="1" style="border-collapse:collapse;">
+  <tr>
+    <td>1.1</td>
+    <td>1.2</td>
+  </tr>
+  <tr>
+    <td>2.1</td>
+    <td>2.2</td>
+  </tr>
+  <table></table>
+</table>
 ```

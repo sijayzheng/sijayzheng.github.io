@@ -34,10 +34,9 @@
 
 只需要加载 core 和 daygrid 的 js 和 css 即可
 
-```
+```html
 <html lang="zh">
     <head>
-
     </head>
     <body>
         <div id='calendar'></div>

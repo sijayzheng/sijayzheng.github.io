@@ -52,7 +52,7 @@
 
 - 国内阿里镜像源
 
-```
+```xml
 <mirror>
     <id>aliyun-public</id>
     <mirrorOf>*</mirrorOf>
@@ -841,7 +841,72 @@ maven 引用本地 jar 包
 
 ## pom 文件
 
+# hello world
 
+## 1. new Maven project
+
+勾选Create a simple project，next
+
+填写Group Id和Artifact Id，其它默认即可，finish
+
+- Group ld:组织名
+- Artifact ld:项目标识符
+- Version:版本
+- Packaging:打包方式
+- Compiler Level:编译等级
+- Name:项目名（一般为项目标识符）
+- Description:描述
+
+## 2. 修改pom.xml
+
+修改为如下内容
+
+注意groupid、artifactid、name修改为自己的
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+    </parent>
+    <groupId>com.sijay</groupId>
+    <artifactId>helloworld</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>helloworld</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version><!-- 不加容易导致报错unknown -->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
 
 ## 问题
 
