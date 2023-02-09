@@ -1,7 +1,5 @@
 # ReadeMe
 
-
-## for
 1. [ ] Java 核心
 2. [ ] Java 源码
 3. [ ] 设计模式
