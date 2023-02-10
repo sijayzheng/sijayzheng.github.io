@@ -1,9 +1,6 @@
 # ReadeMe
 
-[sijayzheng.github.io](https://sijayzheng.github.io/)
-
 - **语言**
-    - [PHP](doc/PHP.md)
     - [regex](doc/regex.md)
     - [JavaScript](doc/JavaScript.md)
     - [HTML](doc/HTML.md)

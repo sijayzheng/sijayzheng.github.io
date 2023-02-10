@@ -1,5 +1,4 @@
 - **语言**
-    - [PHP](doc/PHP.md)
     - [regex](doc/regex.md)
     - [JavaScript](doc/JavaScript.md)
     - [HTML](doc/HTML.md)
