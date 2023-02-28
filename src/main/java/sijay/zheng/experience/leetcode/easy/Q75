@@ -1,0 +1,56 @@
+package sijay.zheng.experience.leetcode.easy;
+/**
+ 题目75：左叶子之和
+<p>给定二叉树的根节点<code>root</code>，返回所有左叶子之和。</p>
+
+<p></p>
+
+<p><strong>示例 1：</strong></p>
+
+<p><img src="https://assets.leetcode.com/uploads/2021/04/08/leftsum-tree.jpg" /></p>
+
+<pre>
+<strong>输入:</strong> root = [3,9,20,null,null,15,7] 
+<strong>输出:</strong> 24 
+<strong>解释:</strong> 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24
+</pre>
+
+<p><strong>示例2:</strong></p>
+
+<pre>
+<strong>输入:</strong> root = [1]
+<strong>输出:</strong> 0
+</pre>
+
+<p></p>
+
+<p><strong>提示:</strong></p>
+
+<ul>
+	<li>节点数在<code>[1, 1000]</code>范围内</li>
+	<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+
+<p></p>
+
+*/
+ class Q75 {public static void main(String[] args) {}
+//Definition for a binary tree node.
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+ class Solution {
+    public int sumOfLeftLeaves(TreeNode root) {
+
+    }
+}
+}

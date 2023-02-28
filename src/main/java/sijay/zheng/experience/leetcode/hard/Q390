@@ -1,0 +1,58 @@
+package sijay.zheng.experience.leetcode.hard;
+/**
+ 题目390：构造字符串的总得分和
+<p>你需要从空字符串开始<strong>构造</strong> 一个长度为 <code>n</code>的字符串 <code>s</code>，构造的过程为每次给当前字符串 <strong>前面</strong>添加 <strong>一个</strong> 字符。构造过程中得到的所有字符串编号为 <code>1</code>到 <code>n</code>，其中长度为 <code>i</code>的字符串编号为 <code>s<sub>i</sub></code>。</p>
+
+<ul>
+	<li>比方说，<code>s = "abaca"</code>，<code>s<sub>1</sub> == "a"</code>，<code>s<sub>2</sub> == "ca"</code>，<code>s<sub>3</sub> == "aca"</code>依次类推。</li>
+</ul>
+
+<p><code>s<sub>i</sub></code>的 <strong>得分</strong>为<code>s<sub>i</sub></code> 和<code>s<sub>n</sub></code>的 <strong>最长公共前缀</strong> 的长度（注意<code>s == s<sub>n</sub></code>）。</p>
+
+<p>给你最终的字符串<code>s</code>，请你返回每一个<em></em><code>s<sub>i</sub></code>的<strong>得分之和</strong>。</p>
+
+<p></p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre>
+<b>输入：</b>s = "babab"
+<b>输出：</b>9
+<b>解释：</b>
+s<sub>1</sub> == "b" ，最长公共前缀是 "b" ，得分为 1 。
+s<sub>2</sub> == "ab" ，没有公共前缀，得分为 0 。
+s<sub>3</sub> == "bab" ，最长公共前缀为 "bab" ，得分为 3 。
+s<sub>4</sub> == "abab" ，没有公共前缀，得分为 0 。
+s<sub>5</sub> == "babab" ，最长公共前缀为 "babab" ，得分为 5 。
+得分和为 1 + 0 + 3 + 0 + 5 = 9 ，所以我们返回 9 。</pre>
+
+<p><strong>示例 2 ：</strong></p>
+
+<pre>
+<b>输入：</b>s = "azbazbzaz"
+<b>输出：</b>14
+<b>解释：</b>
+s<sub>2</sub> == "az" ，最长公共前缀为 "az" ，得分为 2 。
+s<sub>6</sub> == "azbzaz" ，最长公共前缀为 "azb" ，得分为 3 。
+s<sub>9</sub> == "azbazbzaz" ，最长公共前缀为 "azbazbzaz" ，得分为 9 。
+其他 s<sub>i</sub> 得分均为 0 。
+得分和为 2 + 3 + 9 = 14 ，所以我们返回 14 。
+</pre>
+
+<p></p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>s</code>只包含小写英文字母。</li>
+</ul>
+
+*/
+ class Q390 {public static void main(String[] args) {}
+class Solution {
+    public long sumScores(String s) {
+
+    }
+}
+}

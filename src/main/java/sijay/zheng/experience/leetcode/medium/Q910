@@ -1,0 +1,53 @@
+package sijay.zheng.experience.leetcode.medium;
+/**
+ 题目910：数组的三角和
+<p>给你一个下标从 <strong>0</strong>开始的整数数组<code>nums</code>，其中<code>nums[i]</code>是 <code>0</code>到 <code>9</code>之间（两者都包含）的一个数字。</p>
+
+<p><code>nums</code>的 <strong>三角和</strong>是执行以下操作以后最后剩下元素的值：</p>
+
+<ol>
+	<li><code>nums</code>初始包含<code>n</code>个元素。如果<code>n == 1</code>，<strong>终止</strong>操作。否则，<strong>创建</strong>一个新的下标从<strong>0</strong>开始的长度为 <code>n - 1</code>的整数数组<code>newNums</code>。</li>
+	<li>对于满足<code>0 &lt;= i &lt;n - 1</code>的下标<code>i</code>，<code>newNums[i]</code> <strong>赋值</strong>为<code>(nums[i] + nums[i+1]) % 10</code>，<code>%</code>表示取余运算。</li>
+	<li>将<code>newNums</code><strong>替换</strong> 数组<code>nums</code>。</li>
+	<li>从步骤 1 开始<strong>重复</strong>整个过程。</li>
+</ol>
+
+<p>请你返回<code>nums</code>的三角和。</p>
+
+<p></p>
+
+<p><strong>示例 1：</strong></p>
+
+<p><img alt="" src="https://assets.leetcode.com/uploads/2022/02/22/ex1drawio.png" style="width: 250px; height: 250px;" /></p>
+
+<pre>
+<b>输入：</b>nums = [1,2,3,4,5]
+<b>输出：</b>8
+<strong>解释：</strong>
+上图展示了得到数组三角和的过程。</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<b>输入：</b>nums = [5]
+<b>输出：</b>5
+<b>解释：</b>
+由于 nums 中只有一个元素，数组的三角和为这个元素自己。</pre>
+
+<p></p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 9</code></li>
+</ul>
+
+*/
+ class Q910 {public static void main(String[] args) {}
+class Solution {
+    public int triangularSum(int[] nums) {
+
+    }
+}
+}
