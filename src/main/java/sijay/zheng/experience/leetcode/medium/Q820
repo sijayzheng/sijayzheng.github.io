@@ -39,8 +39,8 @@ i=3, nums[i] = 2, 两相邻元素平均值为 (6+0) / 2 = 3
 </ul>
 
 */
- class Q820 {public static void main(String[] args) {}
-class Solution {
+ class Q820 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] rearrangeArray(int[] nums) {
 
     }

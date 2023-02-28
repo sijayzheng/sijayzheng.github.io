@@ -45,7 +45,7 @@ wordDictionary.search("b.."); // 返回 True
 </ul>
 
 */
- class Q112 {public static void main(String[] args) {}
+ class Q112 {public static void main(String[] args) {Solution solution=new Solution();}
 class WordDictionary {
 
     public WordDictionary() {

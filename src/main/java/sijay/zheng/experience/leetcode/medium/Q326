@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q326 {public static void main(String[] args) {}
-class Solution {
+ class Q326 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int numTilings(int n) {
 
     }

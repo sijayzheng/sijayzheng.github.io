@@ -13,8 +13,8 @@ package sijay.zheng.experience.leetcode.easy;
 </pre>
 
 */
- class Q81 {public static void main(String[] args) {}
-class Solution {
+ class Q81 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int countSegments(String s) {
 
     }

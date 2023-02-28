@@ -21,14 +21,14 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>注意</strong>：本题与主站 206 题相同：<a href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a></p>
 
 */
- class Q530 {public static void main(String[] args) {}
+ class Q530 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public ListNode reverseList(ListNode head) {
 
     }

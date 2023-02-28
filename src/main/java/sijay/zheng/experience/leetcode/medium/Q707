@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q707 {public static void main(String[] args) {}
-class Solution {
+ class Q707 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int countVowelStrings(int n) {
 
     }

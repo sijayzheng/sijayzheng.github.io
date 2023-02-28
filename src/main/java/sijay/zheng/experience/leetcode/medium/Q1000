@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q1000 {public static void main(String[] args) {}
-class Solution {
+ class Q1000 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int subarrayLCM(int[] nums, int k) {
 
     }

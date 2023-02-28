@@ -42,7 +42,7 @@ dataStream.consec(3); // 最后 k 个整数分别是 [4,4,3] 。
 </ul>
 
 */
- class Q1025 {public static void main(String[] args) {}
+ class Q1025 {public static void main(String[] args) {Solution solution=new Solution();}
 class DataStream {
 
     public DataStream(int value, int k) {

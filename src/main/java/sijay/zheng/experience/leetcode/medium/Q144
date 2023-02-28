@@ -32,8 +32,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>注意：</strong>该题与 1081 <a href="https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters">https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters</a> 相同</p>
 
 */
- class Q144 {public static void main(String[] args) {}
-class Solution {
+ class Q144 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String removeDuplicateLetters(String s) {
 
     }

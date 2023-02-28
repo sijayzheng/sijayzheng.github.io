@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q452 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] answerQueries(int[] nums, int[] queries) {
 
     }

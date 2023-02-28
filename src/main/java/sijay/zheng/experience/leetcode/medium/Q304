@@ -51,8 +51,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q304 {public static void main(String[] args) {}
-class Solution {
+ class Q304 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int openLock(String[] deadends, String target) {
 
     }

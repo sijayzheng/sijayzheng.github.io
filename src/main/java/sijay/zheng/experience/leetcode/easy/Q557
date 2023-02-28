@@ -15,14 +15,14 @@ package sijay.zheng.experience.leetcode.easy;
 <p>给定的 <em>k</em>保证是有效的。</p>
 
 */
- class Q557 {public static void main(String[] args) {}
+ class Q557 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int kthToLast(ListNode head, int k) {
 
     }

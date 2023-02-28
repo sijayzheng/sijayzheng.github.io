@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p>注意：本题与主站 154 题相同：<a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/</a></p>
 
 */
- class Q519 {public static void main(String[] args) {}
-class Solution {
+ class Q519 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minArray(int[] numbers) {
 
     }

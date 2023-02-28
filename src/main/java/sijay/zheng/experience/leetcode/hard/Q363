@@ -64,8 +64,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q363 {public static void main(String[] args) {}
-class Solution {
+ class Q363 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean[] friendRequests(int n, int[][] restrictions, int[][] requests) {
 
     }

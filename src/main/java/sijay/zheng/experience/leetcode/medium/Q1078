@@ -34,8 +34,8 @@ push(5), pop() -&gt; 5, pop() -&gt; 3, pop() -&gt; 2, pop() -&gt; 1
 <p>注意：本题与主站 946 题相同：<a href="https://leetcode-cn.com/problems/validate-stack-sequences/">https://leetcode-cn.com/problems/validate-stack-sequences/</a></p>
 
 */
- class Q1078 {public static void main(String[] args) {}
-class Solution {
+ class Q1078 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
 
     }

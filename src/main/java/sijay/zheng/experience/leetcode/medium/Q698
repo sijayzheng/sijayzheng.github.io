@@ -51,7 +51,7 @@ b<sub>prefix</sub> = "jiz", b<sub>suffix</sub> = "alu"
 
 */
  class Q698 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean checkPalindromeFormation(String a, String b) {
 
     }

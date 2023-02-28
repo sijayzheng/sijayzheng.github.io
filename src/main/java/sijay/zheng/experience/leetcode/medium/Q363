@@ -66,8 +66,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>很容易想到时间复杂度 <code>O(n)</code> 的解决方案，你可以设计一个 <code>O(log(n))</code> 的解决方案吗？</p>
 
 */
- class Q363 {public static void main(String[] args) {}
-class Solution {
+ class Q363 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int peakIndexInMountainArray(int[] arr) {
 
     }

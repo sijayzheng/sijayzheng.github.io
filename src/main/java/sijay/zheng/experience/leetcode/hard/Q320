@@ -59,7 +59,7 @@ obj.calculateMKAverage(); // 最后 3 个元素为 [5,5,5]
 </ul>
 
 */
- class Q320 {public static void main(String[] args) {}
+ class Q320 {public static void main(String[] args) {Solution solution=new Solution();}
 class MKAverage {
 
     public MKAverage(int m, int k) {

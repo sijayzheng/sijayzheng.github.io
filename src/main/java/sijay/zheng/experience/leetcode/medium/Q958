@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q958 {public static void main(String[] args) {}
-class Solution {
+ class Q958 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int reachableNodes(int n, int[][] edges, int[] restricted) {
 
     }

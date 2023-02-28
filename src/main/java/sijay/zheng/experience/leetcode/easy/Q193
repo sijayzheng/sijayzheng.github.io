@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q193 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
 
     }

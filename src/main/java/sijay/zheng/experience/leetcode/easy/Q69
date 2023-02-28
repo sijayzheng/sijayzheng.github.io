@@ -68,7 +68,7 @@ Forward declaration of guess API.
 int guess(int num);
  */
 
-class Solution extends GuessGame {
+static class Solution extends GuessGame {
     public int guessNumber(int n) {
         
     }

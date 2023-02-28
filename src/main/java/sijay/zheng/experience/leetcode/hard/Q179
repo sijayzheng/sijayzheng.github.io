@@ -28,7 +28,7 @@ str2 = &quot;cab&quot; 是 &quot;cabac&quot; 的一个子串，因为我们可�
 
 */
  class Q179 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String shortestCommonSupersequence(String str1, String str2) {
 
     }

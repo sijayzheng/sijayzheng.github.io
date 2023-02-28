@@ -60,8 +60,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p>注意：本题与主站 8 题相同：<a href="https://leetcode-cn.com/problems/string-to-integer-atoi/">https://leetcode-cn.com/problems/string-to-integer-atoi/</a></p>
 
 */
- class Q1095 {public static void main(String[] args) {}
-class Solution {
+ class Q1095 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int strToInt(String str) {
 
     }

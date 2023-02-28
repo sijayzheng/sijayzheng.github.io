@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q948 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long minSumSquareDiff(int[] nums1, int[] nums2, int k1, int k2) {
 
     }

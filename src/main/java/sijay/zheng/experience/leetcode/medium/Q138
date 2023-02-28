@@ -49,7 +49,7 @@ numMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和)
 </ul>
 
 */
- class Q138 {public static void main(String[] args) {}
+ class Q138 {public static void main(String[] args) {Solution solution=new Solution();}
 class NumMatrix {
 
     public NumMatrix(int[][] matrix) {

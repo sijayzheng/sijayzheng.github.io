@@ -27,8 +27,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q539 {public static void main(String[] args) {}
-class Solution {
+ class Q539 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] twoSum(int[] nums, int target) {
 
     }

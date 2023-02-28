@@ -42,7 +42,7 @@ L<sub>0</sub> → L<sub>n</sub> → L<sub>1</sub> → L<sub>n - 1</sub> → L<su
 </ul>
 
 */
- class Q85 {public static void main(String[] args) {}
+ class Q85 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -51,7 +51,7 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
- class Solution {
+ static class Solution {
     public void reorderList(ListNode head) {
 
     }

@@ -49,7 +49,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q601 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int minimumSwitchingTimes(int[][] source, int[][] target) {
 
     }

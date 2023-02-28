@@ -38,7 +38,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q149 {public static void main(String[] args) {}
+ class Q149 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -47,7 +47,7 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
- class Solution {
+ static class Solution {
     public ListNode oddEvenList(ListNode head) {
 
     }

@@ -88,7 +88,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q292 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int boxDelivering(int[][] boxes, int portsCount, int maxBoxes, int maxWeight) {
 
     }

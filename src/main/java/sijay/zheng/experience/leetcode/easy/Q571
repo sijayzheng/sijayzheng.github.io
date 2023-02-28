@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.easy;
 + `1 <= x <= 2*10^5`
 */
  class Q571 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int breakfastNumber(int[] staple, int[] drinks, int x) {
 
     }

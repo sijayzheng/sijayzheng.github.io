@@ -48,8 +48,8 @@ nums[0] 和 nums[1] 形成一个数对，并从 nums 中移除，nums = [2] 。
 </ul>
 
 */
- class Q443 {public static void main(String[] args) {}
-class Solution {
+ class Q443 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] numberOfPairs(int[] nums) {
 
     }

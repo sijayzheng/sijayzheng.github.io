@@ -24,7 +24,7 @@ cache.get(4);       // 返回  4
 </pre>
 
 */
- class Q1116 {public static void main(String[] args) {}
+ class Q1116 {public static void main(String[] args) {Solution solution=new Solution();}
 class LRUCache {
 
     public LRUCache(int capacity) {

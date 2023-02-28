@@ -41,8 +41,8 @@ X 矩阵应该满足：绿色元素（对角线上）都不是 0 ，红色元素
 </ul>
 
 */
- class Q438 {public static void main(String[] args) {}
-class Solution {
+ class Q438 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean checkXMatrix(int[][] grid) {
 
     }

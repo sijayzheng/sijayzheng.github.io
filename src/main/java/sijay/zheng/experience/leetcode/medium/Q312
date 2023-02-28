@@ -106,7 +106,7 @@ class Node {
 </ul>
 
 */
- class Q312 {public static void main(String[] args) {}
+ class Q312 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a QuadTree node.
 class Node {
     public boolean val;
@@ -127,7 +127,7 @@ class Node {
         bottomRight = _bottomRight;
     }
 }
- class Solution {
+ static class Solution {
     public Node intersect(Node quadTree1, Node quadTree2) {
         
     }

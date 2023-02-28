@@ -53,8 +53,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p><meta charset="UTF-8" />注意：本题与主站 269题相同：<a href="https://leetcode-cn.com/problems/alien-dictionary/">https://leetcode-cn.com/problems/alien-dictionary/</a></p>
 
 */
- class Q505 {public static void main(String[] args) {}
-class Solution {
+ class Q505 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String alienOrder(String[] words) {
 
     }

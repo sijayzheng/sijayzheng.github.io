@@ -54,7 +54,7 @@ detectSquares.count([11, 10]); // 返回 2 。你可以选择：
 </ul>
 
 */
- class Q841 {public static void main(String[] args) {}
+ class Q841 {public static void main(String[] args) {Solution solution=new Solution();}
 class DetectSquares {
 
     public DetectSquares() {

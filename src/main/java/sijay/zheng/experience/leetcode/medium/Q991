@@ -36,8 +36,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q991 {public static void main(String[] args) {}
-class Solution {
+ class Q991 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int xorAllNums(int[] nums1, int[] nums2) {
 
     }

@@ -27,8 +27,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ol>
 
 */
- class Q76 {public static void main(String[] args) {}
-class Solution {
+ class Q76 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int reversePairs(int[] nums) {
 
     }

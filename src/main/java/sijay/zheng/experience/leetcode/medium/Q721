@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q721 {public static void main(String[] args) {}
-class Solution {
+ class Q721 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxOperations(int[] nums, int k) {
 
     }

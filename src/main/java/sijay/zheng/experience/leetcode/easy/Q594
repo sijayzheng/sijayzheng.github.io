@@ -48,7 +48,7 @@ kthLargest.add(4);   // return 8
 <p><meta charset="UTF-8" />注意：本题与主站 703题相同：<a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/</a></p>
 
 */
- class Q594 {public static void main(String[] args) {}
+ class Q594 {public static void main(String[] args) {Solution solution=new Solution();}
 class KthLargest {
 
     public KthLargest(int k, int[] nums) {

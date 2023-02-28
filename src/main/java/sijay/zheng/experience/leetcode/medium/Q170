@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q170 {public static void main(String[] args) {}
+ class Q170 {public static void main(String[] args) {Solution solution=new Solution();}
 /**
 // This is the interface that allows for creating nested lists.
 // You should not implement it, or speculate about its implementation
@@ -68,7 +68,7 @@ public interface NestedInteger {
     // Return empty list if this NestedInteger holds a single integer
     public List<NestedInteger> getList();
 }
- class Solution {
+ static class Solution {
     public NestedInteger deserialize(String s) {
 
     }

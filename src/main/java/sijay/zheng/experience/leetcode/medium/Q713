@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q713 {public static void main(String[] args) {}
-class Solution {
+ class Q713 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minOperations(int[] nums, int x) {
 
     }

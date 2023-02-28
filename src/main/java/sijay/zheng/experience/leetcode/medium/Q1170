@@ -47,8 +47,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><meta charset="UTF-8" />注意：本题与主站 926题相同：<a href="https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/">https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/</a></p>
 
 */
- class Q1170 {public static void main(String[] args) {}
-class Solution {
+ class Q1170 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minFlipsMonoIncr(String s) {
 
     }

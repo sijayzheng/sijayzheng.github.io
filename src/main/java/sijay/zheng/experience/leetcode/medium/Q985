@@ -46,7 +46,7 @@ server.longest();                    // 前缀 [1,2,3] 是最长上传前缀，�
 </ul>
 
 */
- class Q985 {public static void main(String[] args) {}
+ class Q985 {public static void main(String[] args) {Solution solution=new Solution();}
 class LUPrefix {
 
     public LUPrefix(int n) {

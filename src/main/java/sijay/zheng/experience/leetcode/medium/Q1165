@@ -100,7 +100,7 @@ class Node {
     public Node next;
     public Node child;
 }
- class Solution {
+ static class Solution {
     public Node flatten(Node head) {
         
     }

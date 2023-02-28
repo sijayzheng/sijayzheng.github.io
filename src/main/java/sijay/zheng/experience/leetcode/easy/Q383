@@ -61,8 +61,8 @@ X--：X 减 1 ，X = 1 - 1 = 0
 </ul>
 
 */
- class Q383 {public static void main(String[] args) {}
-class Solution {
+ class Q383 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int finalValueAfterOperations(String[] operations) {
 
     }

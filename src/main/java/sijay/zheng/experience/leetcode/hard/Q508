@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.hard;
 - `1 <= challenge[i] <= 10^18`
 */
  class Q508 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long ringGame(long[] challenge) {
 
     }

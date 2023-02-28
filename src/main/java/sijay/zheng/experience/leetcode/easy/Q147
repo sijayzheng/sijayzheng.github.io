@@ -43,7 +43,7 @@ kthLargest.add(4);   // return 8
 </ul>
 
 */
- class Q147 {public static void main(String[] args) {}
+ class Q147 {public static void main(String[] args) {Solution solution=new Solution();}
 class KthLargest {
 
     public KthLargest(int k, int[] nums) {

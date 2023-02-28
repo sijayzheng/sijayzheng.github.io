@@ -43,8 +43,8 @@ word2 表示的字符串为 "a" + "bc" -> "abc"
 </ul>
 
 */
- class Q318 {public static void main(String[] args) {}
-class Solution {
+ class Q318 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
 
     }

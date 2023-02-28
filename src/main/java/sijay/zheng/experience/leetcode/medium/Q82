@@ -71,7 +71,7 @@ class Node {
         this.random = null;
     }
 }
- class Solution {
+ static class Solution {
     public Node copyRandomList(Node head) {
         
     }

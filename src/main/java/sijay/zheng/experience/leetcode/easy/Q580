@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 746题相同：<a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/">https://leetcode-cn.com/problems/min-cost-climbing-stairs/</a></p>
 
 */
- class Q580 {public static void main(String[] args) {}
-class Solution {
+ class Q580 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minCostClimbingStairs(int[] cost) {
 
     }

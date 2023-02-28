@@ -36,8 +36,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ol>
 
 */
- class Q440 {public static void main(String[] args) {}
-class Solution {
+ class Q440 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] sumEvenAfterQueries(int[] nums, int[][] queries) {
 
     }

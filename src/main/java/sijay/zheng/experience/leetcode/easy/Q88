@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>注意：</strong>本题与 1009 <a href="https://leetcode-cn.com/problems/complement-of-base-10-integer/">https://leetcode-cn.com/problems/complement-of-base-10-integer/</a> 相同</p>
 
 */
- class Q88 {public static void main(String[] args) {}
-class Solution {
+ class Q88 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int findComplement(int num) {
 
     }

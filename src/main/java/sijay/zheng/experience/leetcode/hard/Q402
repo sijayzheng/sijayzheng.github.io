@@ -59,7 +59,7 @@ bms.scatter(5, 1); // 返回 False
 </ul>
 
 */
- class Q402 {public static void main(String[] args) {}
+ class Q402 {public static void main(String[] args) {Solution solution=new Solution();}
 class BookMyShow {
 
     public BookMyShow(int n, int m) {

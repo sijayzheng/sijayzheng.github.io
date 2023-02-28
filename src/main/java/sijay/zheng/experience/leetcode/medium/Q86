@@ -53,7 +53,7 @@ lRUCache.get(4);    // 返回 4
 </ul>
 
 */
- class Q86 {public static void main(String[] args) {}
+ class Q86 {public static void main(String[] args) {Solution solution=new Solution();}
 class LRUCache {
 
     public LRUCache(int capacity) {

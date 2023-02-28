@@ -63,7 +63,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p></p>
 
 */
- class Q446 {public static void main(String[] args) {}
+ class Q446 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -77,7 +77,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode insertIntoMaxTree(TreeNode root, int val) {
 
     }

@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q388 {public static void main(String[] args) {}
-class Solution {
+ class Q388 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] longestRepeating(String s, String queryCharacters, int[] queryIndices) {
 
     }

@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q24 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
 
     }

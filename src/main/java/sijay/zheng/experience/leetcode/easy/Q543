@@ -33,8 +33,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>注意：</strong>本题与主站 34 题相同（仅返回值不同）：<a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/">https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/</a></p>
 
 */
- class Q543 {public static void main(String[] args) {}
-class Solution {
+ class Q543 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int search(int[] nums, int target) {
 
     }

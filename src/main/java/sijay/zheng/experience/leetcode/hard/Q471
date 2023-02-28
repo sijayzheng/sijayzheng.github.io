@@ -28,7 +28,7 @@ findMedian() -&gt; 2
 </pre>
 
 */
- class Q471 {public static void main(String[] args) {}
+ class Q471 {public static void main(String[] args) {Solution solution=new Solution();}
 class MedianFinder {
 
     /** initialize your data structure here. */

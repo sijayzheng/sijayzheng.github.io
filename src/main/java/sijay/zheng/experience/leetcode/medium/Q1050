@@ -48,8 +48,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>注意</strong>：本题与主站 48 题相同：<a href="https://leetcode-cn.com/problems/rotate-image/">https://leetcode-cn.com/problems/rotate-image/</a></p>
 
 */
- class Q1050 {public static void main(String[] args) {}
-class Solution {
+ class Q1050 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public void rotate(int[][] matrix) {
 
     }

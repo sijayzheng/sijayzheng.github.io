@@ -53,7 +53,7 @@ collection.getRandom(); // getRandom 应该返回 1 或 2，两者的可能性�
 </ul>
 
 */
- class Q58 {public static void main(String[] args) {}
+ class Q58 {public static void main(String[] args) {Solution solution=new Solution();}
 class RandomizedCollection {
 
     public RandomizedCollection() {

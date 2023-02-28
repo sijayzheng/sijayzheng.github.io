@@ -47,7 +47,7 @@ mapSum.sum("ap");           // 返回 5 (<u>ap</u>ple + <u>ap</u>p = 3 + 2 = 5)
 </ul>
 
 */
- class Q279 {public static void main(String[] args) {}
+ class Q279 {public static void main(String[] args) {Solution solution=new Solution();}
 class MapSum {
 
     public MapSum() {

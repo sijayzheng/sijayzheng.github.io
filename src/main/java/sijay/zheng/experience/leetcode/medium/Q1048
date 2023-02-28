@@ -32,7 +32,7 @@ package sijay.zheng.experience.leetcode.medium;
 p、q 为不同节点且均存在于给定的二叉树中。</pre>
 
 */
- class Q1048 {public static void main(String[] args) {}
+ class Q1048 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -40,7 +40,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
     }

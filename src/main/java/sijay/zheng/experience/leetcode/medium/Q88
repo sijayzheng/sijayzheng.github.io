@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p><b>进阶：</b>你可以在<code>O(nlogn)</code> 时间复杂度和常数级空间复杂度下，对链表进行排序吗？</p>
 
 */
- class Q88 {public static void main(String[] args) {}
+ class Q88 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -52,7 +52,7 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
- class Solution {
+ static class Solution {
     public ListNode sortList(ListNode head) {
 
     }

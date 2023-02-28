@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p>注意：本题与主站 113题相同：<a href="https://leetcode-cn.com/problems/path-sum-ii/">https://leetcode-cn.com/problems/path-sum-ii/</a></p>
 
 */
- class Q1084 {public static void main(String[] args) {}
+ class Q1084 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -59,7 +59,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int target) {
 
     }

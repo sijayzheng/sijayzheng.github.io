@@ -47,8 +47,8 @@ s 中没有 "01" 存在，整个过程花费 0 秒。
 <p>你能以 O(n) 的时间复杂度解决这个问题吗？</p>
 
 */
- class Q963 {public static void main(String[] args) {}
-class Solution {
+ class Q963 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int secondsToRemoveOccurrences(String s) {
 
     }

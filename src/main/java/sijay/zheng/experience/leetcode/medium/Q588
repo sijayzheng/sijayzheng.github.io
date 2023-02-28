@@ -53,8 +53,8 @@ C -&gt; 2
 </ul>
 
 */
- class Q588 {public static void main(String[] args) {}
-class Solution {
+ class Q588 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<String> watchedVideosByFriends(List<List<String>> watchedVideos, int[][] friends, int id, int level) {
 
     }

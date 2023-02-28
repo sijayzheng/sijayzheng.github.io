@@ -57,7 +57,7 @@ public class Foo {
 </ul>
 
 */
- class Q215 {public static void main(String[] args) {}
+ class Q215 {public static void main(String[] args) {Solution solution=new Solution();}
 class Foo {
 
     public Foo() {

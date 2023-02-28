@@ -69,7 +69,7 @@ D.pop()            // 返回 -1。仍然没有栈。
 </ul>
 
 */
- class Q192 {public static void main(String[] args) {}
+ class Q192 {public static void main(String[] args) {Solution solution=new Solution();}
 class DinnerPlates {
 
     public DinnerPlates(int capacity) {

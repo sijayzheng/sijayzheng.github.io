@@ -48,8 +48,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q53 {public static void main(String[] args) {}
-class Solution {
+ class Q53 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> grayCode(int n) {
 
     }

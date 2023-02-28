@@ -40,8 +40,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q108 {public static void main(String[] args) {}
-class Solution {
+ class Q108 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
     }

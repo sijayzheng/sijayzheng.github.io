@@ -36,8 +36,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q756 {public static void main(String[] args) {}
-class Solution {
+ class Q756 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minElements(int[] nums, int limit, int goal) {
 
     }

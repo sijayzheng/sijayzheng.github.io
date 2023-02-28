@@ -56,7 +56,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q345 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] recoverArray(int n, int[] sums) {
 
     }

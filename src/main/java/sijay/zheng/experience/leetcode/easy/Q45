@@ -56,7 +56,7 @@ myStack.empty(); // 返回 False
 <p><strong>进阶：</strong>你能否仅用一个队列来实现栈。</p>
 
 */
- class Q45 {public static void main(String[] args) {}
+ class Q45 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyStack {
 
     public MyStack() {

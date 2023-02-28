@@ -36,7 +36,7 @@ sr = 1, sc = 1, newColor = 2
 
 */
  class Q510 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
 
     }

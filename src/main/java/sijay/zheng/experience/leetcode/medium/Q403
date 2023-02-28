@@ -48,7 +48,7 @@ cBTInserter.get_root(); // 返回 [1, 2, 3, 4]</pre>
 </ul>
 
 */
- class Q403 {public static void main(String[] args) {}
+ class Q403 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;

@@ -16,8 +16,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q555 {public static void main(String[] args) {}
-class Solution {
+ class Q555 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] masterMind(String solution, String guess) {
 
     }

@@ -47,8 +47,8 @@ words[2] = &quot;bell&quot; ，s 开始于 indices[2] = 5 到下一个 &#39;#&#3
 <p><meta charset="UTF-8" />注意：本题与主站 820题相同：<a href="https://leetcode-cn.com/problems/short-encoding-of-words/">https://leetcode-cn.com/problems/short-encoding-of-words/</a></p>
 
 */
- class Q1212 {public static void main(String[] args) {}
-class Solution {
+ class Q1212 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumLengthEncoding(String[] words) {
 
     }

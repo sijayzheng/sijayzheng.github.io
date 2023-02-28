@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.medium;
 
 
 */
- class Q1229 {public static void main(String[] args) {}
-class Solution {
+ class Q1229 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int conveyorBelt(String[] matrix, int[] start, int[] end) {
 
     }

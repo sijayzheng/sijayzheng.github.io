@@ -38,7 +38,7 @@ queries[4] :子串 = &quot;abcda&quot;，可以变成回文的 &quot;abcba&quot;
 
 */
  class Q528 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<Boolean> canMakePaliQueries(String s, int[][] queries) {
 
     }

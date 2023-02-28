@@ -50,8 +50,8 @@ word2：    p   q
 </ul>
 
 */
- class Q338 {public static void main(String[] args) {}
-class Solution {
+ class Q338 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String mergeAlternately(String word1, String word2) {
 
     }

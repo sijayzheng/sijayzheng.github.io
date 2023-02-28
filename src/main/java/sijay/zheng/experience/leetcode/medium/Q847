@@ -58,8 +58,8 @@ Alice 输掉游戏，因为已移除石子值总和（15）可以被 3 整除，
 </ul>
 
 */
- class Q847 {public static void main(String[] args) {}
-class Solution {
+ class Q847 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean stoneGameIX(int[] stones) {
 
     }

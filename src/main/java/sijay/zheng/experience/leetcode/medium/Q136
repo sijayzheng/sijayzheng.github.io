@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q136 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String getHint(String secret, String guess) {
 
     }

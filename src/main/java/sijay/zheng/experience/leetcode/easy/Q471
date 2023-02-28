@@ -44,7 +44,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q471 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int pivotInteger(int n) {
 
     }

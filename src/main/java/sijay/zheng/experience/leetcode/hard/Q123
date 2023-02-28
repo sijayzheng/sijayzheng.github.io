@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q123 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int numBusesToDestination(int[][] routes, int source, int target) {
 
     }

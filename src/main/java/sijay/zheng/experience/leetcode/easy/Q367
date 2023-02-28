@@ -36,8 +36,8 @@ ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]]
 </ul>
 
 */
- class Q367 {public static void main(String[] args) {}
-class Solution {
+ class Q367 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] buildArray(int[] nums) {
 
     }

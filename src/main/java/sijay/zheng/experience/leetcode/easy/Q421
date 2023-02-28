@@ -44,8 +44,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q421 {public static void main(String[] args) {}
-class Solution {
+ class Q421 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> findKDistantIndices(int[] nums, int key, int k) {
 
     }

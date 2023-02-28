@@ -26,8 +26,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q475 {public static void main(String[] args) {}
-class Solution {
+ class Q475 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] getMaxMatrix(int[][] matrix) {
 
     }

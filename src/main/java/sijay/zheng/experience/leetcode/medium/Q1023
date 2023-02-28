@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q1023 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean isItPossible(String word1, String word2) {
 
     }

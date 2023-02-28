@@ -48,7 +48,7 @@ freqStack.pop ();//返回 4 ，因为 4, 5 和 7 出现频率最高，但 4 是�
 </ul>
 
 */
- class Q144 {public static void main(String[] args) {}
+ class Q144 {public static void main(String[] args) {Solution solution=new Solution();}
 class FreqStack {
 
     public FreqStack() {

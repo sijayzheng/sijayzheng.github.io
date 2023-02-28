@@ -44,8 +44,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q332 {public static void main(String[] args) {}
-class Solution {
+ class Q332 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double champagneTower(int poured, int query_row, int query_glass) {
 
     }

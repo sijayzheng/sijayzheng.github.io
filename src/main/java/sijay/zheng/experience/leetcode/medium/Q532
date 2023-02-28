@@ -42,7 +42,7 @@ rangeFreqQuery.query(0, 11, 33); // 返回 2 。33 在整个子数组中出现 2
 </ul>
 
 */
- class Q532 {public static void main(String[] args) {}
+ class Q532 {public static void main(String[] args) {Solution solution=new Solution();}
 class RangeFreqQuery {
 
     public RangeFreqQuery(int[] arr) {

@@ -51,7 +51,7 @@ struct Node {
 </ul>
 
 */
- class Q72 {public static void main(String[] args) {}
+ class Q72 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     public int val;
@@ -72,7 +72,7 @@ class Node {
         next = _next;
     }
 }
- class Solution {
+ static class Solution {
     public Node connect(Node root) {
         
     }

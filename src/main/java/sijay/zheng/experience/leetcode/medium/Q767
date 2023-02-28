@@ -57,7 +57,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q767 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] getMaximumXor(int[] nums, int maximumBit) {
 
     }

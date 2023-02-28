@@ -43,7 +43,7 @@ arr[i] = 1, arr[j] = arr[k] = 2 出现 12 次：
 
 */
  class Q405 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int threeSumMulti(int[] arr, int target) {
 
     }

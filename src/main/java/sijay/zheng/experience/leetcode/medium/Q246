@@ -30,8 +30,8 @@ S[0] = {A[0], A[5], A[6], A[2]} = {5, 6, 2, 0}
 </ul>
 
 */
- class Q246 {public static void main(String[] args) {}
-class Solution {
+ class Q246 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int arrayNesting(int[] nums) {
 
     }

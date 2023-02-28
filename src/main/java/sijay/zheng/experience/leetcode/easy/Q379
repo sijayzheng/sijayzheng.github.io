@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q379 {public static void main(String[] args) {}
-class Solution {
+ class Q379 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
 
     }

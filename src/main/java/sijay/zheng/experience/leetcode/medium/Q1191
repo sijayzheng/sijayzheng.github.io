@@ -42,7 +42,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p><meta charset="UTF-8" />注意：本题与主站 199题相同：<a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">https://leetcode-cn.com/problems/binary-tree-right-side-view/</a></p>
 
 */
- class Q1191 {public static void main(String[] args) {}
+ class Q1191 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -56,7 +56,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public List<Integer> rightSideView(TreeNode root) {
 
     }

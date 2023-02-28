@@ -65,8 +65,8 @@ solution.pickIndex(); // 返回 0，返回下标 0，返回该下标概率为 1/
 <p><meta charset="UTF-8" />注意：本题与主站 528题相同：<a href="https://leetcode-cn.com/problems/random-pick-with-weight/">https://leetcode-cn.com/problems/random-pick-with-weight/</a></p>
 
 */
- class Q1216 {public static void main(String[] args) {}
-class Solution {
+ class Q1216 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
 
     public Solution(int[] w) {
 

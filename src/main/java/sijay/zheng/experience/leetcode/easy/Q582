@@ -36,7 +36,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q582 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean isPalindrome(String s) {
 
     }

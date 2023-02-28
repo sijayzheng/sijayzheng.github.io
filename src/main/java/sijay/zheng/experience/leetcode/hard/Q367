@@ -73,7 +73,7 @@ tracker.get();              // 从好到坏的景点为：branford, orlando, alp
 </ul>
 
 */
- class Q367 {public static void main(String[] args) {}
+ class Q367 {public static void main(String[] args) {Solution solution=new Solution();}
 class SORTracker {
 
     public SORTracker() {

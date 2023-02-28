@@ -38,7 +38,7 @@ banned = [&quot;hit&quot;]
 
 */
  class Q156 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String mostCommonWord(String paragraph, String[] banned) {
 
     }

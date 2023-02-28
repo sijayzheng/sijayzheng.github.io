@@ -60,8 +60,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q428 {public static void main(String[] args) {}
-class Solution {
+ class Q428 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String[] spellchecker(String[] wordlist, String[] queries) {
 
     }

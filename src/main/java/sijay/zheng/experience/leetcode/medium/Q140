@@ -48,7 +48,7 @@ numArray.sumRange(0, 2); // 返回 1 + 2 + 5 = 8
 </ul>
 
 */
- class Q140 {public static void main(String[] args) {}
+ class Q140 {public static void main(String[] args) {Solution solution=new Solution();}
 class NumArray {
 
     public NumArray(int[] nums) {

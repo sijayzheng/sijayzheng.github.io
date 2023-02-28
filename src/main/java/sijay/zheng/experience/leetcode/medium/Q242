@@ -54,7 +54,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q242 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String optimalDivision(int[] nums) {
 
     }

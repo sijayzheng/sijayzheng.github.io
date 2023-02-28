@@ -29,8 +29,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q477 {public static void main(String[] args) {}
-class Solution {
+ class Q477 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<String> computeSimilarities(int[][] docs) {
 
     }

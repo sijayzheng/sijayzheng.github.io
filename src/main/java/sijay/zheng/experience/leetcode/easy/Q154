@@ -40,8 +40,8 @@ S = &quot;bbbcccdddaaa&quot;
 </ul>
 
 */
- class Q154 {public static void main(String[] args) {}
-class Solution {
+ class Q154 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] numberOfLines(int[] widths, String s) {
 
     }

@@ -53,8 +53,8 @@ package sijay.zheng.experience.leetcode.medium;
 </div>
 
 */
- class Q352 {public static void main(String[] args) {}
-class Solution {
+ class Q352 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int largestOverlap(int[][] img1, int[][] img2) {
 
     }

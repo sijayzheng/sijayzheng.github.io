@@ -47,7 +47,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q1036 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int monkeyMove(int n) {
 
     }

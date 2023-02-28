@@ -67,8 +67,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q1005 {public static void main(String[] args) {}
-class Solution {
+ class Q1005 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long minimumFuelCost(int[][] roads, int seats) {
 
     }

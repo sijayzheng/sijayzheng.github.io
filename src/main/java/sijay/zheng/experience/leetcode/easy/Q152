@@ -45,7 +45,7 @@ myHashMap.get(2);    // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
 </ul>
 
 */
- class Q152 {public static void main(String[] args) {}
+ class Q152 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyHashMap {
 
     public MyHashMap() {

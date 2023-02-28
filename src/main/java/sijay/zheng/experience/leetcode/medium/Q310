@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q310 {public static void main(String[] args) {}
-class Solution {
+ class Q310 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int orderOfLargestPlusSign(int n, int[][] mines) {
 
     }

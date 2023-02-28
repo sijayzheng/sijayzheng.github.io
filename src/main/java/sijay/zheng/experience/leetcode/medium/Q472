@@ -44,7 +44,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>注意：</strong>该题目与 538:<a href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/">https://leetcode-cn.com/problems/convert-bst-to-greater-tree/ </a>相同</p>
 
 */
- class Q472 {public static void main(String[] args) {}
+ class Q472 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -58,7 +58,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode bstToGst(TreeNode root) {
 
     }

@@ -62,7 +62,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q421 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) {
 
     }

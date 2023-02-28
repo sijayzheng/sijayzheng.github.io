@@ -47,7 +47,7 @@ treeAncestor.getKthAncestor(6, 3);  // 返回 -1 因为不存在满足要求的�
 </ul>
 
 */
- class Q197 {public static void main(String[] args) {}
+ class Q197 {public static void main(String[] args) {Solution solution=new Solution();}
 class TreeAncestor {
 
     public TreeAncestor(int n, int[] parent) {

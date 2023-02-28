@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q83 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
 
     }

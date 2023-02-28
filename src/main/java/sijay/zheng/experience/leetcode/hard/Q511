@@ -40,8 +40,8 @@ package sijay.zheng.experience.leetcode.hard;
 - `1 <= toys[i][2], r <= 10`
 
 */
- class Q511 {public static void main(String[] args) {}
-class Solution {
+ class Q511 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int circleGame(int[][] toys, int[][] circles, int r) {
 
     }

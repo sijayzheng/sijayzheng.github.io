@@ -50,8 +50,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q357 {public static void main(String[] args) {}
-class Solution {
+ class Q357 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> splitIntoFibonacci(String num) {
 
     }

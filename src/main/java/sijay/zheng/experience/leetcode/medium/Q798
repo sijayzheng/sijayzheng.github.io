@@ -53,8 +53,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q798 {public static void main(String[] args) {}
-class Solution {
+ class Q798 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maximumRemovals(String s, String p, int[] removable) {
 
     }

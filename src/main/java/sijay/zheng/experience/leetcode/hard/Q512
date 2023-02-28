@@ -39,7 +39,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q512 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String gobang(int[][] pieces) {
 
     }

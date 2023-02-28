@@ -37,8 +37,8 @@ result[2] = |5-2| + |5-3| + |5-5| = 3 + 2 + 0 = 5。
 </ul>
 
 */
- class Q717 {public static void main(String[] args) {}
-class Solution {
+ class Q717 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] getSumAbsoluteDifferences(int[] nums) {
 
     }

@@ -80,7 +80,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q324 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String reformatNumber(String number) {
 
     }

@@ -42,7 +42,7 @@ class FizzBuzz {
 <p> </p>
 
 */
- class Q543 {public static void main(String[] args) {}
+ class Q543 {public static void main(String[] args) {Solution solution=new Solution();}
 class FizzBuzz {
     private int n;
 

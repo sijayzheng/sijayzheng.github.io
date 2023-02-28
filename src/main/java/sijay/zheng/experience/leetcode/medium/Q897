@@ -54,7 +54,7 @@ bs.toString(); // 返回 "01010" ，即 bitset 的当前组成情况。
 </ul>
 
 */
- class Q897 {public static void main(String[] args) {}
+ class Q897 {public static void main(String[] args) {Solution solution=new Solution();}
 class Bitset {
 
     public Bitset(int size) {

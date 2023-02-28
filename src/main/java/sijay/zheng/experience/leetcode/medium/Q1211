@@ -57,7 +57,7 @@ magicDictionary.search(&quot;leetcoded&quot;); // 返回 False
 <p><meta charset="UTF-8" />注意：本题与主站 676题相同：<a href="https://leetcode-cn.com/problems/implement-magic-dictionary/">https://leetcode-cn.com/problems/implement-magic-dictionary/</a></p>
 
 */
- class Q1211 {public static void main(String[] args) {}
+ class Q1211 {public static void main(String[] args) {Solution solution=new Solution();}
 class MagicDictionary {
 
     /** Initialize your data structure here. */

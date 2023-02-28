@@ -17,8 +17,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><code>0 &lt;= s 的长度 &lt;= 10000</code></p>
 
 */
- class Q520 {public static void main(String[] args) {}
-class Solution {
+ class Q520 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String replaceSpace(String s) {
 
     }

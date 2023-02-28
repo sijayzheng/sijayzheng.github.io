@@ -35,8 +35,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><b>进阶：</b>你能尽量减少完成的操作次数吗？</p>
 
 */
- class Q57 {public static void main(String[] args) {}
-class Solution {
+ class Q57 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public void moveZeroes(int[] nums) {
 
     }

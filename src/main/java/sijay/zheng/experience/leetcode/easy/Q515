@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q515 {public static void main(String[] args) {}
+ class Q515 {public static void main(String[] args) {Solution solution=new Solution();}
 class CQueue {
 
     public CQueue() {

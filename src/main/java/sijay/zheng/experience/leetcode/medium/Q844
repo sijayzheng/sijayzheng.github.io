@@ -67,8 +67,8 @@ ABBBB<strong><em>B</em></strong>BBAA -&gt; ABBBBBBAA
 </ul>
 
 */
- class Q844 {public static void main(String[] args) {}
-class Solution {
+ class Q844 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean winnerOfGame(String colors) {
 
     }

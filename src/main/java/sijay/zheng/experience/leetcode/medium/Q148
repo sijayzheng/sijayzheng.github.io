@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>你能用 O(n) 时间复杂度和 / 或原地 O(1) 额外空间来实现吗？</p>
 
 */
- class Q148 {public static void main(String[] args) {}
-class Solution {
+ class Q148 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public void wiggleSort(int[] nums) {
 
     }

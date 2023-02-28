@@ -51,7 +51,7 @@ authenticationManager.<code>countUnexpiredTokens</code>(15); // tokenId 为 "bbb
 </ul>
 
 */
- class Q755 {public static void main(String[] args) {}
+ class Q755 {public static void main(String[] args) {Solution solution=new Solution();}
 class AuthenticationManager {
 
     public AuthenticationManager(int timeToLive) {

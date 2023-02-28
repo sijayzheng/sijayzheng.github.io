@@ -51,13 +51,13 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q374 {public static void main(String[] args) {}
+ class Q374 {public static void main(String[] args) {Solution solution=new Solution();}
 /**
 The rand7() API is already defined in the parent class SolBase.
 public int rand7();
 @return a random integer in the range 1 to 7
  */
-class Solution extends SolBase {
+static class Solution extends SolBase {
     public int rand10() {
         
     }

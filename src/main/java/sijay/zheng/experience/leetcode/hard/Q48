@@ -36,7 +36,7 @@ k = <code>3</code>
 
 */
  class Q48 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] maxNumber(int[] nums1, int[] nums2, int k) {
 
     }

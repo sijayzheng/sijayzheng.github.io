@@ -44,8 +44,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q931 {public static void main(String[] args) {}
-class Solution {
+ class Q931 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumLines(int[][] stockPrices) {
 
     }

@@ -63,7 +63,7 @@ value = 7 的物品在 items2 中 weight = 1 ，总重量为 1 。
 
 */
  class Q448 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<List<Integer>> mergeSimilarItems(int[][] items1, int[][] items2) {
 
     }

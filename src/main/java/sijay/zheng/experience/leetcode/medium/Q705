@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q705 {public static void main(String[] args) {}
-class Solution {
+ class Q705 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumDeletions(String s) {
 
     }

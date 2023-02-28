@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ol>
 
 */
- class Q467 {public static void main(String[] args) {}
-class Solution {
+ class Q467 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] numMovesStones(int a, int b, int c) {
 
     }

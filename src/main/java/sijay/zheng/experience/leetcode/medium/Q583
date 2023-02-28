@@ -49,8 +49,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q583 {public static void main(String[] args) {}
-class Solution {
+ class Q583 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxFreq(String s, int maxLetters, int minSize, int maxSize) {
 
     }

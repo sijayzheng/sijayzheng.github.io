@@ -44,8 +44,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q92 {public static void main(String[] args) {}
-class Solution {
+ class Q92 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int findPoisonedDuration(int[] timeSeries, int duration) {
 
     }

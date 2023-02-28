@@ -26,8 +26,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q544 {public static void main(String[] args) {}
-class Solution {
+ class Q544 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String reverseLeftWords(String s, int n) {
 
     }

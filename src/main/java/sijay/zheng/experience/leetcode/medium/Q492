@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q492 {public static void main(String[] args) {}
+ class Q492 {public static void main(String[] args) {Solution solution=new Solution();}
 class H2O {
 
     public H2O() {

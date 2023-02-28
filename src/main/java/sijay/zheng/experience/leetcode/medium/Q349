@@ -52,7 +52,7 @@ circularDeque.getFront();				// 返回 4
 </ul>
 
 */
- class Q349 {public static void main(String[] args) {}
+ class Q349 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCircularDeque {
 
     public MyCircularDeque(int k) {

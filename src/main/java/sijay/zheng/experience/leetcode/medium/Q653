@@ -69,8 +69,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q653 {public static void main(String[] args) {}
-class Solution {
+ class Q653 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] avoidFlood(int[] rains) {
 
     }

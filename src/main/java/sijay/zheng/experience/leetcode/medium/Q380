@@ -43,8 +43,8 @@ solution.flip();  // 返回 [2, 0]，此时返回 [0,0]、[1,0] 和 [2,0] 的概
 </ul>
 
 */
- class Q380 {public static void main(String[] args) {}
-class Solution {
+ class Q380 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
 
     public Solution(int m, int n) {
 

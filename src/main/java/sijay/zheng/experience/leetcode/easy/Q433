@@ -43,8 +43,8 @@ num[2] = '0' 。数字 2 在 num 中出现了 0 次。
 </ul>
 
 */
- class Q433 {public static void main(String[] args) {}
-class Solution {
+ class Q433 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean digitCount(String num) {
 
     }

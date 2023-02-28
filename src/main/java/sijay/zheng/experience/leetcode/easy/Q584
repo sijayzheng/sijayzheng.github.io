@@ -73,7 +73,7 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 160题相同：<a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/">https://leetcode-cn.com/problems/intersection-of-two-linked-lists/</a></p>
 
 */
- class Q584 {public static void main(String[] args) {}
+ class Q584 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -83,7 +83,7 @@ class ListNode {
         next = null;
     }
 }
- class Solution {
+ static class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
     }

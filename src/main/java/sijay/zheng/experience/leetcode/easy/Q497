@@ -23,14 +23,14 @@ package sijay.zheng.experience.leetcode.easy;
 你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？</p>
 
 */
- class Q497 {public static void main(String[] args) {}
+ class Q497 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public boolean isPalindrome(ListNode head) {
 
     }

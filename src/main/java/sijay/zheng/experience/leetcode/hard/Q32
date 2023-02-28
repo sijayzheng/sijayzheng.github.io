@@ -59,8 +59,8 @@ table.dungeon, .dungeon th, .dungeon td {
 	<li>任何房间都可能对骑士的健康点数造成威胁，也可能增加骑士的健康点数，包括骑士进入的左上角房间以及公主被监禁的右下角房间。</li>
 </ul>
 */
- class Q32 {public static void main(String[] args) {}
-class Solution {
+ class Q32 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int calculateMinimumHP(int[][] dungeon) {
 
     }

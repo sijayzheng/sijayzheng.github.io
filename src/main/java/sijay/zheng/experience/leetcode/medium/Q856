@@ -61,7 +61,7 @@ robot.getDir(); // 返回 "West"
 </ul>
 
 */
- class Q856 {public static void main(String[] args) {}
+ class Q856 {public static void main(String[] args) {Solution solution=new Solution();}
 class Robot {
 
     public Robot(int width, int height) {

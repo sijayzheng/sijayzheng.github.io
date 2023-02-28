@@ -61,7 +61,7 @@ myQueue.empty(); // return false
 </ul>
 
 */
- class Q49 {public static void main(String[] args) {}
+ class Q49 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyQueue {
 
     public MyQueue() {

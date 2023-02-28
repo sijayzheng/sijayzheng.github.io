@@ -29,14 +29,14 @@ package sijay.zheng.experience.leetcode.easy;
 <p>如果不得使用临时缓冲区，该怎么解决？</p>
 
 */
- class Q496 {public static void main(String[] args) {}
+ class Q496 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public ListNode removeDuplicateNodes(ListNode head) {
 
     }

@@ -63,7 +63,7 @@ tweetCounts.getTweetCountsPerFrequency("hour", "tweet3", 0, 210);  //返回[4]�
 </ul>
 
 */
- class Q602 {public static void main(String[] args) {}
+ class Q602 {public static void main(String[] args) {Solution solution=new Solution();}
 class TweetCounts {
 
     public TweetCounts() {

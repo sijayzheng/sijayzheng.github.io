@@ -61,8 +61,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q884 {public static void main(String[] args) {}
-class Solution {
+ class Q884 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int numberOfArrays(int[] differences, int lower, int upper) {
 
     }

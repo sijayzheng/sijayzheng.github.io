@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q972 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int maximumRows(int[][] matrix, int numSelect) {
 
     }

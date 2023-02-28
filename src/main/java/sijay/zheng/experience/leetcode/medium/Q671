@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q671 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
 
     }

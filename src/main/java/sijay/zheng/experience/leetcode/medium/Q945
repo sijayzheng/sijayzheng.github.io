@@ -43,7 +43,7 @@ smallestInfiniteSet.popSmallest(); // 返回 5 ，并将其从集合中移除。
 </ul>
 
 */
- class Q945 {public static void main(String[] args) {}
+ class Q945 {public static void main(String[] args) {Solution solution=new Solution();}
 class SmallestInfiniteSet {
 
     public SmallestInfiniteSet() {

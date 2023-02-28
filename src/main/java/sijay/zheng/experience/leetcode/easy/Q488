@@ -68,7 +68,7 @@ nums 只有一个元素，所以我们选中 13 并将其加到串联值上，�
 
 */
  class Q488 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long findTheArrayConcVal(int[] nums) {
 
     }

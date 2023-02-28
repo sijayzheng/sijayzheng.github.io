@@ -54,8 +54,8 @@ Step 1) 2 是偶数，除 2 得到 1
 </ul>
 
 */
- class Q621 {public static void main(String[] args) {}
-class Solution {
+ class Q621 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int numSteps(String s) {
 
     }

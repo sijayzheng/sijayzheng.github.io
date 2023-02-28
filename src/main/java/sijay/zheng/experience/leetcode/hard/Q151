@@ -55,8 +55,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q151 {public static void main(String[] args) {}
-class Solution {
+ class Q151 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minMalwareSpread(int[][] graph, int[] initial) {
 
     }

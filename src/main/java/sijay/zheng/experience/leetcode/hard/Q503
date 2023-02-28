@@ -49,8 +49,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p><meta charset="UTF-8" />注意：本题与主站 329题相同：<a href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/">https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/</a></p>
 
 */
- class Q503 {public static void main(String[] args) {}
-class Solution {
+ class Q503 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int longestIncreasingPath(int[][] matrix) {
 
     }

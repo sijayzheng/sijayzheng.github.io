@@ -19,14 +19,14 @@ package sijay.zheng.experience.leetcode.easy;
 <p> </p>
 
 */
- class Q508 {public static void main(String[] args) {}
+ class Q508 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public void deleteNode(ListNode node) {
         
     }

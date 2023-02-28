@@ -61,8 +61,8 @@ arr 中最大元素为 3 。
 </ul>
 
 */
- class Q773 {public static void main(String[] args) {}
-class Solution {
+ class Q773 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maximumElementAfterDecrementingAndRearranging(int[] arr) {
 
     }

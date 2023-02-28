@@ -22,7 +22,7 @@ operations.divide(5, -2); //返回-2
 </ul>
 
 */
- class Q1099 {public static void main(String[] args) {}
+ class Q1099 {public static void main(String[] args) {Solution solution=new Solution();}
 class Operations {
 
     public Operations() {

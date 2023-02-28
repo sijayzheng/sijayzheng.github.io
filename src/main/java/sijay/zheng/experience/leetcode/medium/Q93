@@ -47,7 +47,7 @@ minStack.getMin();   --&gt; 返回 -2.
 </ul>
 
 */
- class Q93 {public static void main(String[] args) {}
+ class Q93 {public static void main(String[] args) {Solution solution=new Solution();}
 class MinStack {
 
     public MinStack() {

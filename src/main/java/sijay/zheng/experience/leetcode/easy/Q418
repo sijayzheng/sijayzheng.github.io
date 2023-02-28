@@ -45,7 +45,7 @@ nums 可以划分成 (2, 2) ，(3, 3) 和 (2, 2) ，满足所有要求。
 
 */
  class Q418 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean divideArray(int[] nums) {
 
     }

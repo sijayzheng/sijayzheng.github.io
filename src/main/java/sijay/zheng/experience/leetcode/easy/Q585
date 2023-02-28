@@ -48,7 +48,7 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 206题相同：<a href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a></p>
 
 */
- class Q585 {public static void main(String[] args) {}
+ class Q585 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -57,7 +57,7 @@ class ListNode {
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
- class Solution {
+ static class Solution {
     public ListNode reverseList(ListNode head) {
 
     }

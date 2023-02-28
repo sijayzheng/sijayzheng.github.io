@@ -89,7 +89,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q308 {public static void main(String[] args) {}
+ class Q308 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     public int val;
@@ -97,7 +97,7 @@ class Node {
     public Node next;
     public Node child;
 }
- class Solution {
+ static class Solution {
     public Node flatten(Node head) {
         
     }

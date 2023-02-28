@@ -52,7 +52,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q932 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String discountPrices(String sentence, int discount) {
 
     }

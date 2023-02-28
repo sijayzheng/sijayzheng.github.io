@@ -48,7 +48,7 @@ medianFinder.findMedian(); // return 2.0</pre>
 </ul>
 
 */
- class Q43 {public static void main(String[] args) {}
+ class Q43 {public static void main(String[] args) {Solution solution=new Solution();}
 class MedianFinder {
 
     public MedianFinder() {

@@ -44,8 +44,8 @@ package sijay.zheng.experience.leetcode.hard;
 + `1 <= m <= 8`
 + `words[i][j]` 仅为小写字母
 */
- class Q520 {public static void main(String[] args) {}
-class Solution {
+ class Q520 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int Leetcode(String[] words) {
 
     }

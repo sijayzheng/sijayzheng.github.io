@@ -66,8 +66,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>你能使用 <strong>基数排序算法</strong> 解决此问题吗？这种解法的复杂度又是多少？</p>
 
 */
- class Q949 {public static void main(String[] args) {}
-class Solution {
+ class Q949 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] smallestTrimmedNumbers(String[] nums, int[][] queries) {
 
     }

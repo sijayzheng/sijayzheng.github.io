@@ -44,7 +44,7 @@ target = 2 是紧跟着 key 之后出现次数最多的数字，所以我们返�
 
 */
  class Q419 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int mostFrequent(int[] nums, int key) {
 
     }

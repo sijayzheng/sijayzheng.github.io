@@ -47,7 +47,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q955 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int closestMeetingNode(int[] edges, int node1, int node2) {
 
     }

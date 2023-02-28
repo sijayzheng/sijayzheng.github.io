@@ -47,8 +47,8 @@ Bob 可以移除下标 2 的蓝色气球。这将花费 3 秒。
 </ul>
 
 */
- class Q685 {public static void main(String[] args) {}
-class Solution {
+ class Q685 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minCost(String colors, int[] neededTime) {
 
     }

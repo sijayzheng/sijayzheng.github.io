@@ -65,7 +65,7 @@ encrypter.decrypt("eizfeiam"); // return 2.
 </ul>
 
 */
- class Q225 {public static void main(String[] args) {}
+ class Q225 {public static void main(String[] args) {Solution solution=new Solution();}
 class Encrypter {
 
     public Encrypter(char[] keys, String[] values, String[] dictionary) {

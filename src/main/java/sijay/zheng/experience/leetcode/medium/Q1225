@@ -46,7 +46,7 @@ package sijay.zheng.experience.leetcode.medium;
 - `chessboard[i]` 仅包含 `"."、"O"` 和 `"X"`
 */
  class Q1225 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int flipChess(String[] chessboard) {
 
     }

@@ -75,7 +75,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q15 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
 
     }

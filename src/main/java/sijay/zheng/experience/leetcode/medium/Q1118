@@ -28,8 +28,8 @@ wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quo
 <strong>解释:</strong><em>endWord</em> &quot;cog&quot; 不在字典中，所以不存在符合要求的转换序列。</pre>
 
 */
- class Q1118 {public static void main(String[] args) {}
-class Solution {
+ class Q1118 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<String> findLadders(String beginWord, String endWord, List<String> wordList) {
 
     }

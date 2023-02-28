@@ -55,7 +55,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q792 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] assignTasks(int[] servers, int[] tasks) {
 
     }

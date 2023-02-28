@@ -35,8 +35,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>进阶：</strong>你可以不使用循环或者递归，在 <code>O(1)</code> 时间复杂度内解决这个问题吗？</p>
 
 */
- class Q53 {public static void main(String[] args) {}
-class Solution {
+ class Q53 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int addDigits(int num) {
 
     }

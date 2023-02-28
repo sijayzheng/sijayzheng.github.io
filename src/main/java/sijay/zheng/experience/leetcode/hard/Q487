@@ -46,8 +46,8 @@ package sijay.zheng.experience.leetcode.hard;
 - `2 <= jump[i] <= 10^6`
 - `1 <= inc, dec, cost[i] <= 10^6`
 */
- class Q487 {public static void main(String[] args) {}
-class Solution {
+ class Q487 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int busRapidTransit(int target, int inc, int dec, int[] jump, int[] cost) {
 
     }

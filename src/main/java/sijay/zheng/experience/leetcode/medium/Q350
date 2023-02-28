@@ -43,7 +43,7 @@ circularQueue.Rear(); // 返回 4</pre>
 </ul>
 
 */
- class Q350 {public static void main(String[] args) {}
+ class Q350 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCircularQueue {
 
     public MyCircularQueue(int k) {

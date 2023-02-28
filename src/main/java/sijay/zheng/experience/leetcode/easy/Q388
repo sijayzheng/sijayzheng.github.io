@@ -48,7 +48,7 @@ arr 中所有字符串都是独一无二的，所以返回第 1 个字符串 "aa
 
 */
  class Q388 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String kthDistinct(String[] arr, int k) {
 
     }

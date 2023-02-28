@@ -42,7 +42,7 @@ myHashSet.contains(2); // 返回 False ，（已移除）</pre>
 </ul>
 
 */
- class Q151 {public static void main(String[] args) {}
+ class Q151 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyHashSet {
 
     public MyHashSet() {

@@ -53,7 +53,7 @@ numMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和)
 <p><meta charset="UTF-8" />注意：本题与主站 304题相同：<a href="https://leetcode-cn.com/problems/range-sum-query-2d-immutable/">https://leetcode-cn.com/problems/range-sum-query-2d-immutable/</a></p>
 
 */
- class Q1156 {public static void main(String[] args) {}
+ class Q1156 {public static void main(String[] args) {Solution solution=new Solution();}
 class NumMatrix {
 
     public NumMatrix(int[][] matrix) {

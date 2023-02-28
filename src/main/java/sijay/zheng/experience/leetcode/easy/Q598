@@ -35,8 +35,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 1122题相同：<a href="https://leetcode-cn.com/problems/relative-sort-array/">https://leetcode-cn.com/problems/relative-sort-array/</a></p>
 
 */
- class Q598 {public static void main(String[] args) {}
-class Solution {
+ class Q598 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
 
     }

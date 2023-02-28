@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ol>
 
 */
- class Q1080 {public static void main(String[] args) {}
+ class Q1080 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -37,7 +37,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int[] levelOrder(TreeNode root) {
 
     }

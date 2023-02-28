@@ -71,7 +71,7 @@ package sijay.zheng.experience.leetcode.hard;
 - `0 <= index < 2*(m+n)`
 
 */
- class Q490 {public static void main(String[] args) {}
+ class Q490 {public static void main(String[] args) {Solution solution=new Solution();}
 class BlackBox {
 
     public BlackBox(int n, int m) {

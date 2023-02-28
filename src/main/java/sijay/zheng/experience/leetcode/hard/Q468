@@ -28,8 +28,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p>注意：本题与主站 239 题相同：<a href="https://leetcode-cn.com/problems/sliding-window-maximum/">https://leetcode-cn.com/problems/sliding-window-maximum/</a></p>
 
 */
- class Q468 {public static void main(String[] args) {}
-class Solution {
+ class Q468 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
 
     }

@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.medium;
 - `1 <= 节点个数 <= 10^5`
 - `0 <= Node.val <= 1`
 */
- class Q1231 {public static void main(String[] args) {}
+ class Q1231 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -43,7 +43,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int closeLampInTree(TreeNode root) {
 
     }

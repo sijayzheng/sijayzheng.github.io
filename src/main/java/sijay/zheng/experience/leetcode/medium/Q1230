@@ -35,8 +35,8 @@ package sijay.zheng.experience.leetcode.medium;
 - `0 <= path[i][0], path[i][1] <= 1000`
 - `path[i][0]` 与 `path[i][1]` 不相等
 */
- class Q1230 {public static void main(String[] args) {}
-class Solution {
+ class Q1230 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int transportationHub(int[][] path) {
 
     }

@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q922 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long waysToBuyPensPencils(int total, int cost1, int cost2) {
 
     }

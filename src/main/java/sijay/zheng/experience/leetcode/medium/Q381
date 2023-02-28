@@ -54,8 +54,8 @@ solution.pick(); // 返回 [0, 0]</pre>
 </ul>
 
 */
- class Q381 {public static void main(String[] args) {}
-class Solution {
+ class Q381 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
 
     public Solution(int[][] rects) {
 

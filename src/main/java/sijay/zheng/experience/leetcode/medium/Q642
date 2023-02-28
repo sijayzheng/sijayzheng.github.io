@@ -84,7 +84,7 @@ subrectangleQueries.getValue(2, 2); // 返回 20
 </ul>
 
 */
- class Q642 {public static void main(String[] args) {}
+ class Q642 {public static void main(String[] args) {Solution solution=new Solution();}
 class SubrectangleQueries {
 
     public SubrectangleQueries(int[][] rectangle) {

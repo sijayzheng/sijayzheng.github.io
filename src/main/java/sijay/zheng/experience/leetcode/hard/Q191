@@ -44,7 +44,7 @@ majorityChecker.query(2,3,2); // 返回 2
 </ul>
 
 */
- class Q191 {public static void main(String[] args) {}
+ class Q191 {public static void main(String[] args) {Solution solution=new Solution();}
 class MajorityChecker {
 
     public MajorityChecker(int[] arr) {

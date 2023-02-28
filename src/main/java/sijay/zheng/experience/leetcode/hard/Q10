@@ -59,8 +59,8 @@ p = &quot;a*c?b&quot;
 <strong>输出:</strong> false</pre>
 
 */
- class Q10 {public static void main(String[] args) {}
-class Solution {
+ class Q10 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean isMatch(String s, String p) {
 
     }

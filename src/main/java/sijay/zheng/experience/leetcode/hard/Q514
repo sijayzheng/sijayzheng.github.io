@@ -57,8 +57,8 @@ package sijay.zheng.experience.leetcode.hard;
 - `1 <= cost[i] <= 10^9`
 
 */
- class Q514 {public static void main(String[] args) {}
-class Solution {
+ class Q514 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long minimumCost(int[] cost, int[][] roads) {
 
     }

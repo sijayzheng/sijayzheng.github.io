@@ -79,7 +79,7 @@ findElements.find(5); // return True
 </ul>
 
 */
- class Q571 {public static void main(String[] args) {}
+ class Q571 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;

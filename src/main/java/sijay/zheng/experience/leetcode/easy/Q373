@@ -38,8 +38,8 @@ s 可以由 "i"、"love" 和 "leetcode" 相连得到。
 </ul>
 
 */
- class Q373 {public static void main(String[] args) {}
-class Solution {
+ class Q373 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean isPrefixString(String s, String[] words) {
 
     }

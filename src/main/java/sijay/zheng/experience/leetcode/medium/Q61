@@ -38,7 +38,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q61 {public static void main(String[] args) {}
+ class Q61 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -52,7 +52,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public boolean isValidBST(TreeNode root) {
 
     }

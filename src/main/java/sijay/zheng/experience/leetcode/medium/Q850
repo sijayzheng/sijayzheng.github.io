@@ -48,7 +48,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q850 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int maxTwoEvents(int[][] events) {
 
     }

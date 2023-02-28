@@ -42,8 +42,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><meta charset="UTF-8" />注意：本题与主站 318题相同：<a href="https://leetcode-cn.com/problems/maximum-product-of-word-lengths/">https://leetcode-cn.com/problems/maximum-product-of-word-lengths/</a></p>
 
 */
- class Q1146 {public static void main(String[] args) {}
-class Solution {
+ class Q1146 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxProduct(String[] words) {
 
     }

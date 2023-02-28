@@ -58,8 +58,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q386 {public static void main(String[] args) {}
-class Solution {
+ class Q386 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> replaceNonCoprimes(int[] nums) {
 
     }

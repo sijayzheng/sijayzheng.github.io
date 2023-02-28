@@ -49,7 +49,7 @@ solution.pick(); // 返回 4
 
 */
  class Q136 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
 
     public Solution(int n, int[] blacklist) {
 

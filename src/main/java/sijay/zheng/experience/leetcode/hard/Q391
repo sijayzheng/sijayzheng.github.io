@@ -62,7 +62,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q391 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long maximumBeauty(int[] flowers, long newFlowers, int target, int full, int partial) {
 
     }

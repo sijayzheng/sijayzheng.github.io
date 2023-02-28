@@ -51,8 +51,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q547 {public static void main(String[] args) {}
-class Solution {
+ class Q547 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double maxProbability(int n, int[][] edges, double[] succProb, int start, int end) {
 
     }

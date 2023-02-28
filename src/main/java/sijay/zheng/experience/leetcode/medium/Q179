@@ -49,7 +49,7 @@ solution.pick(3); // 随机返回索引 2, 3 或者 4 之一。每个索引的�
 
 */
  class Q179 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
 
     public Solution(int[] nums) {
 

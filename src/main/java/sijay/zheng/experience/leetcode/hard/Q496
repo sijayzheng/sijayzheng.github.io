@@ -50,8 +50,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p><meta charset="UTF-8" />注意：本题与主站 76题相似（本题答案不唯一）：<a href="https://leetcode-cn.com/problems/minimum-window-substring/">https://leetcode-cn.com/problems/minimum-window-substring/</a></p>
 
 */
- class Q496 {public static void main(String[] args) {}
-class Solution {
+ class Q496 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String minWindow(String s, String t) {
 
     }

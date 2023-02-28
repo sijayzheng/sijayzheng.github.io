@@ -22,8 +22,8 @@ package sijay.zheng.experience.leetcode.medium;
 - `3 <= leaves.length <= 10^5`
 - `leaves` 中只包含字符 `'r'` 和字符 `'y'`
 */
- class Q1137 {public static void main(String[] args) {}
-class Solution {
+ class Q1137 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumOperations(String leaves) {
 
     }

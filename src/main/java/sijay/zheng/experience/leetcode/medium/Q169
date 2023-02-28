@@ -41,8 +41,8 @@ solution.shuffle();    // 随机返回数组 [1, 2, 3] 打乱后的结果。例�
 </ul>
 
 */
- class Q169 {public static void main(String[] args) {}
-class Solution {
+ class Q169 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
 
     public Solution(int[] nums) {
 

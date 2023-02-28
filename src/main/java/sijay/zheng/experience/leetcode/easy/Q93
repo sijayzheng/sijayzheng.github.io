@@ -47,8 +47,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>进阶：</strong>你可以设计一个时间复杂度为 <code>O(nums1.length + nums2.length)</code> 的解决方案吗？</p>
 
 */
- class Q93 {public static void main(String[] args) {}
-class Solution {
+ class Q93 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
 
     }

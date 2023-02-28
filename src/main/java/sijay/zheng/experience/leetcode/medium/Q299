@@ -42,7 +42,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q299 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] asteroidCollision(int[] asteroids) {
 
     }

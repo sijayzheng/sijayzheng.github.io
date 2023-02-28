@@ -50,7 +50,7 @@ s 中的单词为 ["What", "is" "the", "solution", "to", "this", "problem"]
 
 */
  class Q348 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String truncateSentence(String s, int k) {
 
     }

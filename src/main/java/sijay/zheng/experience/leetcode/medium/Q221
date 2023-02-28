@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q221 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] nextGreaterElements(int[] nums) {
 
     }

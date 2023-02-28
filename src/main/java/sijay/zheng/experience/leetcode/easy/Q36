@@ -48,8 +48,8 @@ AB -&gt; 28
 </ul>
 
 */
- class Q36 {public static void main(String[] args) {}
-class Solution {
+ class Q36 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int titleToNumber(String columnTitle) {
 
     }

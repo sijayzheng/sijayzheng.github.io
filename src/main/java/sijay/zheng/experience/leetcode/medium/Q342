@@ -38,7 +38,7 @@ linkedList.get(1);            //返回3
 </ul>
 
 */
- class Q342 {public static void main(String[] args) {}
+ class Q342 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyLinkedList {
 
     public MyLinkedList() {

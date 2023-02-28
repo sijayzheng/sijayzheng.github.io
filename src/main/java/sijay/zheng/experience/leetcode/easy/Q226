@@ -42,7 +42,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q226 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int canBeTypedWords(String text, String brokenLetters) {
 
     }

@@ -40,8 +40,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q994 {public static void main(String[] args) {}
-class Solution {
+ class Q994 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long makeIntegerBeautiful(long n, int target) {
 
     }

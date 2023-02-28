@@ -63,7 +63,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q351 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String findReplaceString(String s, int[] indices, String[] sources, String[] targets) {
 
     }

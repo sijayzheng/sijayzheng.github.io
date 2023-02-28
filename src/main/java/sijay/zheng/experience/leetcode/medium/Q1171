@@ -57,7 +57,7 @@ lRUCache.get(4);    // 返回 4
 <p><meta charset="UTF-8" />注意：本题与主站 146题相同：<a href="https://leetcode-cn.com/problems/lru-cache/">https://leetcode-cn.com/problems/lru-cache/</a></p>
 
 */
- class Q1171 {public static void main(String[] args) {}
+ class Q1171 {public static void main(String[] args) {Solution solution=new Solution();}
 class LRUCache {
 
     public LRUCache(int capacity) {

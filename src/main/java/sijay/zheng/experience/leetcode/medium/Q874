@@ -60,8 +60,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>你可以设计一种时间复杂度为 <code>O(n)</code> 的解决方案吗？</p>
 
 */
- class Q874 {public static void main(String[] args) {}
-class Solution {
+ class Q874 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long subArrayRanges(int[] nums) {
 
     }

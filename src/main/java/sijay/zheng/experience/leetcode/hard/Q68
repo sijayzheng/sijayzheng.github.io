@@ -61,7 +61,7 @@ lfu.get(4);      // 返回 4
 </ul>
 
 */
- class Q68 {public static void main(String[] args) {}
+ class Q68 {public static void main(String[] args) {Solution solution=new Solution();}
 class LFUCache {
 
     public LFUCache(int capacity) {

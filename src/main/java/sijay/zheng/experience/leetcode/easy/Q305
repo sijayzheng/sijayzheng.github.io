@@ -40,7 +40,7 @@ parkingSystem.addCar(1); // 返回 false ，因为没有空的大车位，唯一
 </ul>
 
 */
- class Q305 {public static void main(String[] args) {}
+ class Q305 {public static void main(String[] args) {Solution solution=new Solution();}
 class ParkingSystem {
 
     public ParkingSystem(int big, int medium, int small) {

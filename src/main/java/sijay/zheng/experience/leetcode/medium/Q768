@@ -48,8 +48,8 @@ ID=2 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的�
 </ul>
 
 */
- class Q768 {public static void main(String[] args) {}
-class Solution {
+ class Q768 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] findingUsersActiveMinutes(int[][] logs, int k) {
 
     }

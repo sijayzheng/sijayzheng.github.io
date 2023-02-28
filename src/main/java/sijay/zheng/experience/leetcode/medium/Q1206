@@ -43,7 +43,7 @@ MyCalendar.book(20, 30); // returns true ，第三个日程安排可以添加到
 <p><meta charset="UTF-8" />注意：本题与主站 729题相同：<a href="https://leetcode-cn.com/problems/my-calendar-i/">https://leetcode-cn.com/problems/my-calendar-i/</a></p>
 
 */
- class Q1206 {public static void main(String[] args) {}
+ class Q1206 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCalendar {
 
     public MyCalendar() {

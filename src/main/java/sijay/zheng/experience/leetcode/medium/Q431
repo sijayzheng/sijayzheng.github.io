@@ -40,8 +40,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q431 {public static void main(String[] args) {}
-class Solution {
+ class Q431 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> powerfulIntegers(int x, int y, int bound) {
 
     }

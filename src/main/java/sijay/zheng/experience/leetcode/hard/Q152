@@ -50,7 +50,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q152 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] threeEqualParts(int[] arr) {
 
     }

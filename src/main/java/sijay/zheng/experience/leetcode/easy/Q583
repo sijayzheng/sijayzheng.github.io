@@ -40,8 +40,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 680题相同：<a href="https://leetcode-cn.com/problems/valid-palindrome-ii/">https://leetcode-cn.com/problems/valid-palindrome-ii/</a></p>
 
 */
- class Q583 {public static void main(String[] args) {}
-class Solution {
+ class Q583 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean validPalindrome(String s) {
 
     }

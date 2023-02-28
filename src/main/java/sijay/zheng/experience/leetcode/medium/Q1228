@@ -57,7 +57,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int getNumber(TreeNode root, int[][] ops) {
 
     }

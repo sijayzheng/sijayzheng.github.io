@@ -63,7 +63,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q366 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long kMirror(int k, int n) {
 
     }

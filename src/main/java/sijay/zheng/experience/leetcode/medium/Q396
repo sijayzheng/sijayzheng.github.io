@@ -64,7 +64,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q396 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int snakesAndLadders(int[][] board) {
 
     }

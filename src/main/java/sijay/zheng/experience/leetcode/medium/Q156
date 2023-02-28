@@ -46,7 +46,7 @@ twitter.getNewsFeed(1);  // 用户 1 获取推文应当返回一个列表，其�
 </ul>
 
 */
- class Q156 {public static void main(String[] args) {}
+ class Q156 {public static void main(String[] args) {Solution solution=new Solution();}
 class Twitter {
 
     public Twitter() {

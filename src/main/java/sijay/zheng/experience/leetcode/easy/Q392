@@ -54,8 +54,8 @@ i=3: 3 mod 10 = 3 != nums[3].
 </ul>
 
 */
- class Q392 {public static void main(String[] args) {}
-class Solution {
+ class Q392 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int smallestEqual(int[] nums) {
 
     }

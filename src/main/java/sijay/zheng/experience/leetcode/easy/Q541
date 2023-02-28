@@ -66,7 +66,7 @@ class ListNode {
         next = null;
     }
 }
- class Solution {
+ static class Solution {
     ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
     }

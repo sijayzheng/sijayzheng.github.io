@@ -53,7 +53,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p></p>
 
 */
- class Q1076 {public static void main(String[] args) {}
+ class Q1076 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     int val;
@@ -66,7 +66,7 @@ class Node {
         this.random = null;
     }
 }
- class Solution {
+ static class Solution {
     public Node copyRandomList(Node head) {
         
     }

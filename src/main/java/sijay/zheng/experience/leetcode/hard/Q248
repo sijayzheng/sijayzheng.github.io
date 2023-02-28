@@ -68,7 +68,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q248 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String largestNumber(int[] cost, int target) {
 
     }

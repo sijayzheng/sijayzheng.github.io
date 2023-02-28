@@ -51,8 +51,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q476 {public static void main(String[] args) {}
-class Solution {
+ class Q476 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] gardenNoAdj(int n, int[][] paths) {
 
     }

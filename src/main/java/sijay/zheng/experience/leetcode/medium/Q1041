@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ol>
 
 */
- class Q1041 {public static void main(String[] args) {}
-class Solution {
+ class Q1041 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean robot(String command, int[][] obstacles, int x, int y) {
 
     }

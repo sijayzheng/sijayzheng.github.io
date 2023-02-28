@@ -46,7 +46,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q477 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int maxSumAfterPartitioning(int[] arr, int k) {
 
     }

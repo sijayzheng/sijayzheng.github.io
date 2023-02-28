@@ -69,7 +69,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q764 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String evaluate(String s, List<List<String>> knowledge) {
 
     }

@@ -30,8 +30,8 @@ package sijay.zheng.experience.leetcode.hard;
 - `1 <= operate.length <= 1000`
 - `1 <= operate[i] <= 1000`
 */
- class Q519 {public static void main(String[] args) {}
-class Solution {
+ class Q519 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int unSuitability(int[] operate) {
 
     }

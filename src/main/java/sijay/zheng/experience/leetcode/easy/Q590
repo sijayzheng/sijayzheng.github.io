@@ -44,7 +44,7 @@ movingAverage.next(5); // 返回 6.0 = (10 + 3 + 5) / 3
 <p><meta charset="UTF-8" />注意：本题与主站 346题相同：<a href="https://leetcode-cn.com/problems/moving-average-from-data-stream/">https://leetcode-cn.com/problems/moving-average-from-data-stream/</a></p>
 
 */
- class Q590 {public static void main(String[] args) {}
+ class Q590 {public static void main(String[] args) {Solution solution=new Solution();}
 class MovingAverage {
 
     /** Initialize your data structure here. */

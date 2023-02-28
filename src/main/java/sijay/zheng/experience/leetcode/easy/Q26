@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p>你可以优化你的算法到 <code><em>O</em>(<i>rowIndex</i>)</code> 空间复杂度吗？</p>
 
 */
- class Q26 {public static void main(String[] args) {}
-class Solution {
+ class Q26 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> getRow(int rowIndex) {
 
     }

@@ -29,8 +29,8 @@ package sijay.zheng.experience.leetcode.easy;
 - `2 <= questions.length <= 10^5`
 - `1 <= questions[i] <= 1000`
 */
- class Q575 {public static void main(String[] args) {}
-class Solution {
+ class Q575 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int halfQuestions(int[] questions) {
 
     }

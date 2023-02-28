@@ -46,8 +46,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q927 {public static void main(String[] args) {}
-class Solution {
+ class Q927 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maximumWhiteTiles(int[][] tiles, int carpetLen) {
 
     }

@@ -35,8 +35,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q236 {public static void main(String[] args) {}
-class Solution {
+ class Q236 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean uniqueOccurrences(int[] arr) {
 
     }

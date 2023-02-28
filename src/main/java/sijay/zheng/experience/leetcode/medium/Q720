@@ -50,8 +50,8 @@ nums[3] + nums[0] = 3 + 1 = 4.
 </ul>
 
 */
- class Q720 {public static void main(String[] args) {}
-class Solution {
+ class Q720 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minMoves(int[] nums, int limit) {
 
     }

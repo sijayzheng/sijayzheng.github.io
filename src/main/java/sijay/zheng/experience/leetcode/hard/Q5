@@ -56,8 +56,8 @@ s 中没有子串长度为 16 并且等于 words 的任何顺序排列的连接�
 </ul>
 
 */
- class Q5 {public static void main(String[] args) {}
-class Solution {
+ class Q5 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
 
     }

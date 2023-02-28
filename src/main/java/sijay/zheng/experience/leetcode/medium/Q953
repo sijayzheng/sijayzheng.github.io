@@ -49,7 +49,7 @@ nc.find(10); // 数字 10 所在下标为 2 ，3 和 5 。最小下标为 2 ，�
 </ul>
 
 */
- class Q953 {public static void main(String[] args) {}
+ class Q953 {public static void main(String[] args) {Solution solution=new Solution();}
 class NumberContainers {
 
     public NumberContainers() {

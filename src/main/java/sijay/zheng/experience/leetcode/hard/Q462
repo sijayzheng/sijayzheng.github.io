@@ -41,8 +41,8 @@ line2 = {1, 0}, {2, 1}
 </ul>
 
 */
- class Q462 {public static void main(String[] args) {}
-class Solution {
+ class Q462 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double[] intersection(int[] start1, int[] end1, int[] start2, int[] end2) {
 
     }

@@ -48,8 +48,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p>注意：本题与主站 167 题相似（下标起点不同）：<a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/</a></p>
 
 */
- class Q579 {public static void main(String[] args) {}
-class Solution {
+ class Q579 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] twoSum(int[] numbers, int target) {
 
     }

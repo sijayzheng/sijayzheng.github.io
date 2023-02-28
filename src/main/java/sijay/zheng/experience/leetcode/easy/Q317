@@ -55,7 +55,7 @@ os.insert(4, "ddddd"); // 插入 (4, "ddddd")，返回 ["ddddd", "eeeee"]
 </ul>
 
 */
- class Q317 {public static void main(String[] args) {}
+ class Q317 {public static void main(String[] args) {Solution solution=new Solution();}
 class OrderedStream {
 
     public OrderedStream(int n) {

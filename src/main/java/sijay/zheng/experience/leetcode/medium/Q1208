@@ -50,7 +50,7 @@ trie.search(&quot;app&quot;);     // 返回 True
 <p><meta charset="UTF-8" />注意：本题与主站 208 题相同：<a href="https://leetcode-cn.com/problems/implement-trie-prefix-tree/">https://leetcode-cn.com/problems/implement-trie-prefix-tree/</a></p>
 
 */
- class Q1208 {public static void main(String[] args) {}
+ class Q1208 {public static void main(String[] args) {Solution solution=new Solution();}
 class Trie {
 
     /** Initialize your data structure here. */

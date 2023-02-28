@@ -55,7 +55,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q747 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String largestMerge(String word1, String word2) {
 
     }

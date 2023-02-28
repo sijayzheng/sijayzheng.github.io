@@ -41,7 +41,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q154 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] movesToStamp(String stamp, String target) {
 
     }

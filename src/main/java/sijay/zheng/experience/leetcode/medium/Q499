@@ -41,7 +41,7 @@ iterator.hasNext(); // 返回 false
 </ul>
 
 */
- class Q499 {public static void main(String[] args) {}
+ class Q499 {public static void main(String[] args) {Solution solution=new Solution();}
 class CombinationIterator {
 
     public CombinationIterator(String characters, int combinationLength) {

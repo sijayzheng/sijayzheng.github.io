@@ -59,7 +59,7 @@ loc.free(7); // 释放 mID 为 7 的所有内存单元。内存数组保持原�
 </ul>
 
 */
- class Q1012 {public static void main(String[] args) {}
+ class Q1012 {public static void main(String[] args) {Solution solution=new Solution();}
 class Allocator {
 
     public Allocator(int n) {

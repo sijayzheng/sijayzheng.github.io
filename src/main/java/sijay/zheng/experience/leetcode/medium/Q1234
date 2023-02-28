@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.medium;
 - `1 <= cnt <= 10^5`
 */
  class Q1234 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int beautifulBouquet(int[] flowers, int cnt) {
 
     }

@@ -113,8 +113,8 @@ package sijay.zheng.experience.leetcode.medium;
 </div>
 
 */
- class Q348 {public static void main(String[] args) {}
-class Solution {
+ class Q348 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String maskPII(String s) {
 
     }

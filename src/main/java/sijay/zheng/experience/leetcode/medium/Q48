@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>你可以使用搜索剪枝的技术来优化解决方案，使其在 <code>board</code> 更大的情况下可以更快解决问题？</p>
 
 */
- class Q48 {public static void main(String[] args) {}
-class Solution {
+ class Q48 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean exist(char[][] board, String word) {
 
     }

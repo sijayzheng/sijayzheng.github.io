@@ -59,8 +59,8 @@ nums       index     target
 </ul>
 
 */
- class Q269 {public static void main(String[] args) {}
-class Solution {
+ class Q269 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] createTargetArray(int[] nums, int[] index) {
 
     }

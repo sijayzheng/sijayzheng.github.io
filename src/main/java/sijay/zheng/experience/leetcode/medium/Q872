@@ -62,7 +62,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q872 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<String> findAllRecipes(String[] recipes, List<List<String>> ingredients, String[] supplies) {
 
     }

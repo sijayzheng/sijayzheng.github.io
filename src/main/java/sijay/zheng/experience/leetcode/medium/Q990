@@ -48,7 +48,7 @@ nums 中最大值为 5 。无法得到比 5 更小的最大值。
 
 */
  class Q990 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int minimizeArrayValue(int[] nums) {
 
     }

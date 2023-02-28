@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q566 {public static void main(String[] args) {}
-class Solution {
+ class Q566 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int numberOfSubarrays(int[] nums, int k) {
 
     }

@@ -57,7 +57,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q869 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int minimumDeletions(int[] nums) {
 
     }

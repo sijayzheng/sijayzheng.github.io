@@ -26,7 +26,7 @@ package sijay.zheng.experience.leetcode.easy;
 <p>注意：本题与主站 104题相同：<a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/</a></p>
 
 */
- class Q538 {public static void main(String[] args) {}
+ class Q538 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -34,7 +34,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int maxDepth(TreeNode root) {
 
     }

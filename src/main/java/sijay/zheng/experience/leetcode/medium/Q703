@@ -49,8 +49,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q703 {public static void main(String[] args) {}
-class Solution {
+ class Q703 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Boolean> checkArithmeticSubarrays(int[] nums, int[] l, int[] r) {
 
     }

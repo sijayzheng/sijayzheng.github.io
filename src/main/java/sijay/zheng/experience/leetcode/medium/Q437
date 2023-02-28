@@ -50,7 +50,7 @@ timeMap.get("foo", 5);         // 返回 "bar2"
 </ul>
 
 */
- class Q437 {public static void main(String[] args) {}
+ class Q437 {public static void main(String[] args) {Solution solution=new Solution();}
 class TimeMap {
 
     public TimeMap() {

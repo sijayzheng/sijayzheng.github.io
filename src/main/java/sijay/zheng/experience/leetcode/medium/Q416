@@ -52,7 +52,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q416 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int removeStones(int[][] stones) {
 
     }

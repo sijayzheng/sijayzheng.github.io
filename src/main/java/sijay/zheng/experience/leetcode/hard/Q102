@@ -43,7 +43,7 @@ myCalendarThree.book(25, 55); // 返回 3
 </ul>
 
 */
- class Q102 {public static void main(String[] args) {}
+ class Q102 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCalendarThree {
 
     public MyCalendarThree() {

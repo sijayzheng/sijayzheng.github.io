@@ -55,8 +55,8 @@ AB -> 28
 </ul>
 
 */
- class Q34 {public static void main(String[] args) {}
-class Solution {
+ class Q34 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String convertToTitle(int columnNumber) {
 
     }

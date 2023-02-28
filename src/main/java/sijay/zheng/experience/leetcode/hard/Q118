@@ -45,8 +45,8 @@ nums 无论怎么变化总是有 3 分。
 </ul>
 
 */
- class Q118 {public static void main(String[] args) {}
-class Solution {
+ class Q118 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int bestRotation(int[] nums) {
 
     }

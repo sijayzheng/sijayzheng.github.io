@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q614 {public static void main(String[] args) {}
-class Solution {
+ class Q614 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
 
     }

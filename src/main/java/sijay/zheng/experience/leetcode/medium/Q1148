@@ -54,7 +54,7 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 
 */
  class Q1148 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
 
     }

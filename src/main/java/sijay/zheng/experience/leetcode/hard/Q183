@@ -46,8 +46,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q183 {public static void main(String[] args) {}
-class Solution {
+ class Q183 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] smallestSufficientTeam(String[] req_skills, List<List<String>> people) {
 
     }

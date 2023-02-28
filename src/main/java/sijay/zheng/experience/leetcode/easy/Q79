@@ -42,8 +42,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>进阶：</strong>你能设计一个时间复杂度 <code>O(n)</code> 的解决方案吗？</p>
 
 */
- class Q79 {public static void main(String[] args) {}
-class Solution {
+ class Q79 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int thirdMax(int[] nums) {
 
     }

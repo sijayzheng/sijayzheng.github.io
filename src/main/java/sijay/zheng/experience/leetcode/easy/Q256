@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q256 {public static void main(String[] args) {}
-class Solution {
+ class Q256 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maximum69Number (int num) {
 
     }

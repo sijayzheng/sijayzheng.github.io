@@ -63,7 +63,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q781 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int getMinSwaps(String num, int k) {
 
     }

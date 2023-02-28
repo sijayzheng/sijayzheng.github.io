@@ -53,8 +53,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q284 {public static void main(String[] args) {}
-class Solution {
+ class Q284 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int visiblePoints(List<List<Integer>> points, int angle, List<Integer> location) {
 
     }

@@ -30,7 +30,7 @@ wordsFrequency.get(&quot;pen&quot;); //返回1
 </ul>
 
 */
- class Q1064 {public static void main(String[] args) {}
+ class Q1064 {public static void main(String[] args) {Solution solution=new Solution();}
 class WordsFrequency {
 
     public WordsFrequency(String[] book) {

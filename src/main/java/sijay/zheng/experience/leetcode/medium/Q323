@@ -50,8 +50,8 @@ src = 0, dst = 2, k = 0
 </ul>
 
 */
- class Q323 {public static void main(String[] args) {}
-class Solution {
+ class Q323 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
 
     }

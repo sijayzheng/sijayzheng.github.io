@@ -37,8 +37,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p>注意：本题与主站 560题相同：<a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/">https://leetcode-cn.com/problems/subarray-sum-equals-k/</a></p>
 
 */
- class Q1154 {public static void main(String[] args) {}
-class Solution {
+ class Q1154 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int subarraySum(int[] nums, int k) {
 
     }

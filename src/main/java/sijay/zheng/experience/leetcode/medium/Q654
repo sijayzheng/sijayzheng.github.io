@@ -42,8 +42,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q654 {public static void main(String[] args) {}
-class Solution {
+ class Q654 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int rangeSum(int[] nums, int n, int left, int right) {
 
     }

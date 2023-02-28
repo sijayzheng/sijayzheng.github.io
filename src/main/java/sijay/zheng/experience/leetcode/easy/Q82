@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q82 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int arrangeCoins(int n) {
 
     }

@@ -20,8 +20,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q1127 {public static void main(String[] args) {}
-class Solution {
+ class Q1127 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<List<Integer>> pairSums(int[] nums, int target) {
 
     }

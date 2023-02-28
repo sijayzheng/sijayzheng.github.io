@@ -31,8 +31,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q176 {public static void main(String[] args) {}
-class Solution {
+ class Q176 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String longestDupSubstring(String s) {
 
     }

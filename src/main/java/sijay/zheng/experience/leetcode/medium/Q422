@@ -58,7 +58,7 @@ strs 的列已经是按字典序排列了，所以我们不需要删除任何东
 
 */
  class Q422 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int minDeletionSize(String[] strs) {
 
     }

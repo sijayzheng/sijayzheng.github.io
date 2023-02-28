@@ -60,7 +60,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q396 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int maximumScore(int[] scores, int[][] edges) {
 
     }

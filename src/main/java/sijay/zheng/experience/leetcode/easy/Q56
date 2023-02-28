@@ -36,11 +36,11 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q56 {public static void main(String[] args) {}
+ class Q56 {public static void main(String[] args) {Solution solution=new Solution();}
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
-class Solution extends VersionControl {
+static class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         
     }

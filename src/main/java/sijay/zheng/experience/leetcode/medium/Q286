@@ -42,7 +42,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q286 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<String> topKFrequent(String[] words, int k) {
 
     }

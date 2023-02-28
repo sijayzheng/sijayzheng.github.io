@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q307 {public static void main(String[] args) {}
+ class Q307 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     public int val;
@@ -52,7 +52,7 @@ class Node {
         children = _children;
     }
 }
- class Solution {
+ static class Solution {
     public List<List<Integer>> levelOrder(Node root) {
         
     }

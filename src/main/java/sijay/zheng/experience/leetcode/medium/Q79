@@ -90,7 +90,7 @@ class Node {
         neighbors = _neighbors;
     }
 }
- class Solution {
+ static class Solution {
     public Node cloneGraph(Node node) {
         
     }

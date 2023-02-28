@@ -63,8 +63,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><meta charset="UTF-8" />注意：本题与主站 752题相同：<a href="https://leetcode-cn.com/problems/open-the-lock/">https://leetcode-cn.com/problems/open-the-lock/</a></p>
 
 */
- class Q1193 {public static void main(String[] args) {}
-class Solution {
+ class Q1193 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int openLock(String[] deadends, String target) {
 
     }

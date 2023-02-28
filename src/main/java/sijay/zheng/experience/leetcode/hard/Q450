@@ -54,7 +54,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q450 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long maxOutput(int n, int[][] edges, int[] price) {
 
     }

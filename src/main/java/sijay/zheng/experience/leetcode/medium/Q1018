@@ -49,8 +49,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q1018 {public static void main(String[] args) {}
-class Solution {
+ class Q1018 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> topStudents(String[] positive_feedback, String[] negative_feedback, String[] report, int[] student_id, int k) {
 
     }

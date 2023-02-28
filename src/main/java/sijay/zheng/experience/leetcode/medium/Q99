@@ -59,7 +59,7 @@ bSTIterator.hasNext(); // 返回 False
 </ul>
 
 */
- class Q99 {public static void main(String[] args) {}
+ class Q99 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;

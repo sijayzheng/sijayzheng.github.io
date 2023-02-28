@@ -52,7 +52,7 @@ streamChecker.query("l"); // 返回 True ，因为 'kl' 在 words 中
 </ul>
 
 */
- class Q174 {public static void main(String[] args) {}
+ class Q174 {public static void main(String[] args) {Solution solution=new Solution();}
 class StreamChecker {
 
     public StreamChecker(String[] words) {

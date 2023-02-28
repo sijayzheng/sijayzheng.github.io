@@ -34,8 +34,8 @@ nums 最终元素和为 5 + 6 + 1 + 2 + 3 + 4 + 7 + 8 = 36 ，这是所有情况
 </ul>
 
 */
- class Q904 {public static void main(String[] args) {}
-class Solution {
+ class Q904 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long minimalKSum(int[] nums, int k) {
 
     }

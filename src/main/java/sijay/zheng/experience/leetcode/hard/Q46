@@ -35,8 +35,8 @@ coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167</pre>
 </ul>
 
 */
- class Q46 {public static void main(String[] args) {}
-class Solution {
+ class Q46 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxCoins(int[] nums) {
 
     }

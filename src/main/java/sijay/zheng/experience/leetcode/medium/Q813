@@ -61,7 +61,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q813 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int addRungs(int[] rungs, int dist) {
 
     }

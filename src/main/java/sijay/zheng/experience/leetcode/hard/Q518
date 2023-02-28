@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q518 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean composeCube(String[][] shapes) {
 
     }

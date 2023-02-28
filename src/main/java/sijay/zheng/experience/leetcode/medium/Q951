@@ -67,7 +67,7 @@ foodRatings.highestRated("japanese"); // 返回 "ramen"
 </ul>
 
 */
- class Q951 {public static void main(String[] args) {}
+ class Q951 {public static void main(String[] args) {Solution solution=new Solution();}
 class FoodRatings {
 
     public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {

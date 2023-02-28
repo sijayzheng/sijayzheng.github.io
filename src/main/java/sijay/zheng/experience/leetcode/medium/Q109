@@ -44,7 +44,7 @@ trie.search("app");     // 返回 True
 </ul>
 
 */
- class Q109 {public static void main(String[] args) {}
+ class Q109 {public static void main(String[] args) {Solution solution=new Solution();}
 class Trie {
 
     public Trie() {

@@ -50,8 +50,8 @@ Charlie 总共发出了 5 个单词。
 </ul>
 
 */
- class Q934 {public static void main(String[] args) {}
-class Solution {
+ class Q934 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String largestWordCount(String[] messages, String[] senders) {
 
     }

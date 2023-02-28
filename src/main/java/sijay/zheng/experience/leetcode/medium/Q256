@@ -60,7 +60,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode addOneRow(TreeNode root, int val, int depth) {
 
     }

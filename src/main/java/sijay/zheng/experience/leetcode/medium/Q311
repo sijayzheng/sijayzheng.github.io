@@ -97,7 +97,7 @@ topRight 具有不同的值，因此我们将其再分为 4 个子网格，这�
 </ol>
 
 */
- class Q311 {public static void main(String[] args) {}
+ class Q311 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a QuadTree node.
 class Node {
     public boolean val;
@@ -135,7 +135,7 @@ class Node {
         this.bottomRight = bottomRight;
     }
 }
- class Solution {
+ static class Solution {
     public Node construct(int[][] grid) {
         
     }

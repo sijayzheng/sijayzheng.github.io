@@ -45,8 +45,8 @@ puzzles = ["aboveyz","abrodyz","abslute","absoryz","actresz","gaswxyz"]
 </ul>
 
 */
- class Q194 {public static void main(String[] args) {}
-class Solution {
+ class Q194 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
 
     }

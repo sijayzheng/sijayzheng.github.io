@@ -52,8 +52,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><meta charset="UTF-8" />注意：本题与主站 210题相同：<a href="https://leetcode-cn.com/problems/course-schedule-ii/">https://leetcode-cn.com/problems/course-schedule-ii/</a></p>
 
 */
- class Q1198 {public static void main(String[] args) {}
-class Solution {
+ class Q1198 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
 
     }

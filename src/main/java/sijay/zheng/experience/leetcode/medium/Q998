@@ -46,8 +46,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q998 {public static void main(String[] args) {}
-class Solution {
+ class Q998 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long maximumSubarraySum(int[] nums, int k) {
 
     }

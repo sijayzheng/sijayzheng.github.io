@@ -45,7 +45,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q981 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<Integer> goodIndices(int[] nums, int k) {
 
     }

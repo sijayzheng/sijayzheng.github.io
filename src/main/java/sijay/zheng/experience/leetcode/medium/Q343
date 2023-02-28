@@ -43,8 +43,8 @@ words[2] = "bell" ，s 开始于 indices[2] = 5 到下一个 '#' 结束的子字
 </ul>
 
 */
- class Q343 {public static void main(String[] args) {}
-class Solution {
+ class Q343 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumLengthEncoding(String[] words) {
 
     }

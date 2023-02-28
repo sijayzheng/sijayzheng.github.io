@@ -51,7 +51,7 @@ s 变为 "0" + "0" + "0" = "000" ，其长度等于 k ，所以返回 "000" 。
 
 */
  class Q430 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String digitSum(String s, int k) {
 
     }

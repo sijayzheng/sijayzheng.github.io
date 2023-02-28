@@ -29,8 +29,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ol>
 
 */
- class Q559 {public static void main(String[] args) {}
-class Solution {
+ class Q559 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public void hanota(List<Integer> A, List<Integer> B, List<Integer> C) {
 
     }

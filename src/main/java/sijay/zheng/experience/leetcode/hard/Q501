@@ -48,8 +48,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p><meta charset="UTF-8" />注意：本题与主站 127题相同：<a href="https://leetcode-cn.com/problems/word-ladder/">https://leetcode-cn.com/problems/word-ladder/</a></p>
 
 */
- class Q501 {public static void main(String[] args) {}
-class Solution {
+ class Q501 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
 
     }

@@ -56,7 +56,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode pruneTree(TreeNode root) {
 
     }

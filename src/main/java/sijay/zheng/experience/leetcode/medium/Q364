@@ -59,7 +59,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q364 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int carFleet(int target, int[] position, int[] speed) {
 
     }

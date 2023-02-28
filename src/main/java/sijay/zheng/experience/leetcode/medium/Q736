@@ -47,8 +47,8 @@ source 和 target 间的汉明距离是 2 ，二者有 2 处元素不同，在�
 </ul>
 
 */
- class Q736 {public static void main(String[] args) {}
-class Solution {
+ class Q736 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int minimumHammingDistance(int[] source, int[] target, int[][] allowedSwaps) {
 
     }

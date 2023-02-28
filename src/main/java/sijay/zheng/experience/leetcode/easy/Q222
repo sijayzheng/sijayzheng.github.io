@@ -34,8 +34,8 @@ T_4 = 1 + 1 + 2 = 4
 </ul>
 
 */
- class Q222 {public static void main(String[] args) {}
-class Solution {
+ class Q222 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int tribonacci(int n) {
 
     }

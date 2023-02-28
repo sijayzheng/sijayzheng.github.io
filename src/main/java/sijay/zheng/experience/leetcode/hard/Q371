@@ -66,7 +66,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q371 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int kIncreasing(int[] arr, int k) {
 
     }

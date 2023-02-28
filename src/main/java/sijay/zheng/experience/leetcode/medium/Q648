@@ -48,8 +48,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p>你可以设计时间复杂度小于 O(n) 的算法来解决此问题吗？</p>
 
 */
- class Q648 {public static void main(String[] args) {}
-class Solution {
+ class Q648 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int kthFactor(int n, int k) {
 
     }

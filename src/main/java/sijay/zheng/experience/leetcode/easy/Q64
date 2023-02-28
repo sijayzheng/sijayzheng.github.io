@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 */
  class Q64 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public void reverseString(char[] s) {
 
     }

@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q420 {public static void main(String[] args) {}
+ class Q420 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -57,7 +57,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public boolean flipEquiv(TreeNode root1, TreeNode root2) {
 
     }

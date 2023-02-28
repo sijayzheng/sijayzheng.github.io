@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q174 {public static void main(String[] args) {}
+ class Q174 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -43,7 +43,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode increasingBST(TreeNode root) {
 
     }

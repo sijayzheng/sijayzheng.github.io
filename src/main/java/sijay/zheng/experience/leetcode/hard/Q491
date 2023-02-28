@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.hard;
 - `1 <= maze[i].length, maze[i][j].length <= 50`
 - `maze[i][j]` 仅包含 `"."`、`"#"`
 */
- class Q491 {public static void main(String[] args) {}
-class Solution {
+ class Q491 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean escapeMaze(List<List<String>> maze) {
 
     }

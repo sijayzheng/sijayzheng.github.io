@@ -36,8 +36,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q223 {public static void main(String[] args) {}
-class Solution {
+ class Q223 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] decompressRLElist(int[] nums) {
 
     }

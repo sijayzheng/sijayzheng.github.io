@@ -47,7 +47,7 @@ Alice 有两个选择: 擦掉数字 1 或 2。
 
 */
  class Q122 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean xorGame(int[] nums) {
 
     }

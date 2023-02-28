@@ -54,8 +54,8 @@ p = &quot;mis*is*p*.&quot;
 <p>注意：本题与主站 10题相同：<a href="https://leetcode-cn.com/problems/regular-expression-matching/">https://leetcode-cn.com/problems/regular-expression-matching/</a></p>
 
 */
- class Q463 {public static void main(String[] args) {}
-class Solution {
+ class Q463 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean isMatch(String s, String p) {
 
     }

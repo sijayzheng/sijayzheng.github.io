@@ -41,8 +41,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q433 {public static void main(String[] args) {}
-class Solution {
+ class Q433 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[][] kClosest(int[][] points, int k) {
 
     }

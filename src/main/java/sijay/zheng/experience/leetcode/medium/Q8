@@ -70,7 +70,7 @@ M             1000</pre>
 
 */
  class Q8 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String intToRoman(int num) {
 
     }

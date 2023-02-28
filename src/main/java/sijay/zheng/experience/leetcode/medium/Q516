@@ -37,7 +37,7 @@ snapshotArr.get(0,0);  // 获取 snap_id = 0 的快照中 array[0] 的值，返�
 </ul>
 
 */
- class Q516 {public static void main(String[] args) {}
+ class Q516 {public static void main(String[] args) {Solution solution=new Solution();}
 class SnapshotArray {
 
     public SnapshotArray(int length) {

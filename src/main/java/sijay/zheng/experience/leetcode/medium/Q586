@@ -57,8 +57,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q586 {public static void main(String[] args) {}
-class Solution {
+ class Q586 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<List<Integer>> getAncestors(int n, int[][] edges) {
 
     }

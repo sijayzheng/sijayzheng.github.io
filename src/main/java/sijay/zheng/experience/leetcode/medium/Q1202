@@ -66,7 +66,7 @@ bSTIterator.hasNext(); // 返回 False
 <p><meta charset="UTF-8" />注意：本题与主站 173题相同：<a href="https://leetcode-cn.com/problems/binary-search-tree-iterator/">https://leetcode-cn.com/problems/binary-search-tree-iterator/</a></p>
 
 */
- class Q1202 {public static void main(String[] args) {}
+ class Q1202 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;

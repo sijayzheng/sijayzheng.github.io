@@ -38,7 +38,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q145 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public String orderlyQueue(String s, int k) {
 
     }

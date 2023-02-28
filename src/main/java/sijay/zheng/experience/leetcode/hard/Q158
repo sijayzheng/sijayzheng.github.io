@@ -42,8 +42,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ol>
 
 */
- class Q158 {public static void main(String[] args) {}
-class Solution {
+ class Q158 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int tallestBillboard(int[] rods) {
 
     }

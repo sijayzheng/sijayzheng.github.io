@@ -58,8 +58,8 @@ end<sub>1</sub> = 1 == 1 = start<sub>2</sub>
 </ul>
 
 */
- class Q365 {public static void main(String[] args) {}
-class Solution {
+ class Q365 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[][] validArrangement(int[][] pairs) {
 
     }

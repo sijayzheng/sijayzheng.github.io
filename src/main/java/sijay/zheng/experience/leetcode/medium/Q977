@@ -69,7 +69,7 @@ class TreeNode {
         this.right = right;
     }
 }
- class Solution {
+ static class Solution {
     public TreeNode reverseOddLevels(TreeNode root) {
 
     }

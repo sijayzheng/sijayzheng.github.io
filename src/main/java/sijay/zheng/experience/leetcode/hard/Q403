@@ -73,7 +73,7 @@ textEditor.cursorRight(6); // 返回 "practi"
 <p><strong>进阶：</strong>你能设计并实现一个每次调用时间复杂度为 <code>O(k)</code> 的解决方案吗？</p>
 
 */
- class Q403 {public static void main(String[] args) {}
+ class Q403 {public static void main(String[] args) {Solution solution=new Solution();}
 class TextEditor {
 
     public TextEditor() {

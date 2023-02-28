@@ -49,7 +49,7 @@ nums 中的正整数是 [3,1,2] ，负整数是 [-2,-5,-4] 。
 
 */
  class Q893 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] rearrangeArray(int[] nums) {
 
     }

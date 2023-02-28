@@ -82,8 +82,8 @@ a = b + c;
 </ul>
 <span style="display:block"><span style="height:0px"><span style="position:absolute"><span style="top:0px"><span style="left:-9999px"><span style="opacity:0"><span style="overflow:hidden"></span></span></span></span></span></span>​​​​​​</span>
 */
- class Q295 {public static void main(String[] args) {}
-class Solution {
+ class Q295 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<String> removeComments(String[] source) {
 
     }

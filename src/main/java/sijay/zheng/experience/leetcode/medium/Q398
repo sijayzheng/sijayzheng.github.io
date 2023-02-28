@@ -49,7 +49,7 @@ topVotedCandidate.q(8); // 返回 1
 </ul>
 
 */
- class Q398 {public static void main(String[] args) {}
+ class Q398 {public static void main(String[] args) {Solution solution=new Solution();}
 class TopVotedCandidate {
 
     public TopVotedCandidate(int[] persons, int[] times) {

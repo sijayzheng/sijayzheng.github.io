@@ -57,8 +57,8 @@ original 中只有 1 个元素。
 </ul>
 
 */
- class Q382 {public static void main(String[] args) {}
-class Solution {
+ class Q382 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[][] construct2DArray(int[] original, int m, int n) {
 
     }

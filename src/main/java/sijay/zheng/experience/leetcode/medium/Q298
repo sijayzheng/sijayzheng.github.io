@@ -40,7 +40,7 @@ MyCalendar.book(25, 55); // returns true
 </ul>
 
 */
- class Q298 {public static void main(String[] args) {}
+ class Q298 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCalendarTwo {
 
     public MyCalendarTwo() {

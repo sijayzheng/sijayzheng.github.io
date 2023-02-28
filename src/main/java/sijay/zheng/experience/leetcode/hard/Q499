@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.hard;
 <p><meta charset="UTF-8" />注意：本题与主站 84题相同：<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/</a></p>
 
 */
- class Q499 {public static void main(String[] args) {}
-class Solution {
+ class Q499 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int largestRectangleArea(int[] heights) {
 
     }

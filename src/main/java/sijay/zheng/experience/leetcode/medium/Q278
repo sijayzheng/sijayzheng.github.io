@@ -53,7 +53,7 @@ magicDictionary.search("leetcoded"); // 返回 False
 </div>
 
 */
- class Q278 {public static void main(String[] args) {}
+ class Q278 {public static void main(String[] args) {Solution solution=new Solution();}
 class MagicDictionary {
 
     public MagicDictionary() {

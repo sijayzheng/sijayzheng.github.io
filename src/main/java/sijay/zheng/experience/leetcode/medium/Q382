@@ -36,8 +36,8 @@ solution.randPoint ();//返回[0.36572,0.17248]</pre>
 </ul>
 
 */
- class Q382 {public static void main(String[] args) {}
-class Solution {
+ class Q382 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
 
     public Solution(double radius, double x_center, double y_center) {
 

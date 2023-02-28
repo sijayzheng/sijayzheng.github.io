@@ -68,7 +68,7 @@ lockingTree.lock(0, 1);    // 返回 false ，因为节点 0 已经被上锁了�
 </ul>
 
 */
- class Q827 {public static void main(String[] args) {}
+ class Q827 {public static void main(String[] args) {Solution solution=new Solution();}
 class LockingTree {
 
     public LockingTree(int[] parent) {

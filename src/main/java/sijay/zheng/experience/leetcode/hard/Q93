@@ -54,7 +54,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q93 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public boolean judgePoint24(int[] cards) {
 
     }

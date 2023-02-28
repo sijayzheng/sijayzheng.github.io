@@ -47,7 +47,7 @@ package sijay.zheng.experience.leetcode.medium;
 <p></p>
 
 */
- class Q1042 {public static void main(String[] args) {}
+ class Q1042 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for singly-linked list.
 class ListNode {
     int val;
@@ -57,7 +57,7 @@ class ListNode {
         next = null;
     }
 }
- class Solution {
+ static class Solution {
     public ListNode detectCycle(ListNode head) {
         
     }

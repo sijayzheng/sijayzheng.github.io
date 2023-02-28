@@ -51,7 +51,7 @@ class Node {
         right = _right;
     }
 }
- class Solution {
+ static class Solution {
     public Node treeToDoublyList(Node root) {
         
     }

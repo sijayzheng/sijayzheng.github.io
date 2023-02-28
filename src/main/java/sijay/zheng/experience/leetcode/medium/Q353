@@ -46,7 +46,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q353 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public double new21Game(int n, int k, int maxPts) {
 
     }

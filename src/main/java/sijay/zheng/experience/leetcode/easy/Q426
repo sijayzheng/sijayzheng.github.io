@@ -37,8 +37,8 @@ words 中是 s = "abc" 前缀的字符串为：
 </ul>
 
 */
- class Q426 {public static void main(String[] args) {}
-class Solution {
+ class Q426 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int countPrefixes(String[] words, String s) {
 
     }

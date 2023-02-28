@@ -54,7 +54,7 @@ countIntervals.count();    // 返回 8
 </ul>
 
 */
- class Q397 {public static void main(String[] args) {}
+ class Q397 {public static void main(String[] args) {Solution solution=new Solution();}
 class CountIntervals {
 
     public CountIntervals() {

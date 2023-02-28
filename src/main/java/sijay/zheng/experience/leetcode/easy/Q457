@@ -38,8 +38,8 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q457 {public static void main(String[] args) {}
-class Solution {
+ class Q457 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int countDaysTogether(String arriveAlice, String leaveAlice, String arriveBob, String leaveBob) {
 
     }

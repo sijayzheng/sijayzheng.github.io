@@ -38,7 +38,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 */
  class Q54 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public List<List<Integer>> palindromePairs(String[] words) {
 
     }

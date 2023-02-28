@@ -41,8 +41,8 @@ nums2 中的每个整数都在 nums1 中出现，因此，answer[1] = [] 。
 </ul>
 
 */
- class Q245 {public static void main(String[] args) {}
-class Solution {
+ class Q245 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
 
     }

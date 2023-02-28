@@ -52,7 +52,7 @@ output[i] = [a, b, c] (3个整数)
 </ul>
 
 */
- class Q553 {public static void main(String[] args) {}
+ class Q553 {public static void main(String[] args) {Solution solution=new Solution();}
 class DiningPhilosophers {
 
     public DiningPhilosophers() {

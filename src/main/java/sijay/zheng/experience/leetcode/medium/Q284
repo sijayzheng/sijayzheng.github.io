@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q284 {public static void main(String[] args) {}
-class Solution {
+ class Q284 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double knightProbability(int n, int k, int row, int column) {
 
     }

@@ -58,7 +58,7 @@ skiplist.search(1);   // 返回 false，1 已被擦除
 </ul>
 
 */
- class Q206 {public static void main(String[] args) {}
+ class Q206 {public static void main(String[] args) {Solution solution=new Solution();}
 class Skiplist {
 
     public Skiplist() {

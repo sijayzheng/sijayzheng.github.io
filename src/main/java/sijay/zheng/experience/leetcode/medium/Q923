@@ -52,7 +52,7 @@ atm.withdraw(550);        // 返回 [0,1,0,0,1] ，机器会返回 1 张 $50 的
 </ul>
 
 */
- class Q923 {public static void main(String[] args) {}
+ class Q923 {public static void main(String[] args) {Solution solution=new Solution();}
 class ATM {
 
     public ATM() {

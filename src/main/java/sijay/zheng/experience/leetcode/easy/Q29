@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.easy;
 </div>
 
 */
- class Q29 {public static void main(String[] args) {}
-class Solution {
+ class Q29 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int singleNumber(int[] nums) {
 
     }

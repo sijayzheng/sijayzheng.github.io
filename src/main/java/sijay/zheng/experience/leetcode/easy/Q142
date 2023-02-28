@@ -39,7 +39,7 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>进阶：</strong>递归法很简单，你可以使用迭代法完成此题吗?</p>
 
 */
- class Q142 {public static void main(String[] args) {}
+ class Q142 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     public int val;
@@ -56,7 +56,7 @@ class Node {
         children = _children;
     }
 }
- class Solution {
+ static class Solution {
     public List<Integer> preorder(Node root) {
         
     }

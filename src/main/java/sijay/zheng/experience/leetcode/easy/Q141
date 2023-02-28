@@ -37,7 +37,7 @@ package sijay.zheng.experience.leetcode.easy;
 </ul>
 
 */
- class Q141 {public static void main(String[] args) {}
+ class Q141 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a Node.
 class Node {
     public int val;
@@ -54,7 +54,7 @@ class Node {
         children = _children;
     }
 }
- class Solution {
+ static class Solution {
     public int maxDepth(Node root) {
         
     }

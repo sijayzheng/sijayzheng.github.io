@@ -36,8 +36,8 @@ floor(9 / 5) = 1
 </ul>
 
 */
- class Q203 {public static void main(String[] args) {}
-class Solution {
+ class Q203 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int sumOfFlooredPairs(int[] nums) {
 
     }

@@ -52,8 +52,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q592 {public static void main(String[] args) {}
-class Solution {
+ class Q592 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double angleClock(int hour, int minutes) {
 
     }

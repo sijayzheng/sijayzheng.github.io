@@ -58,8 +58,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 35题相同：<a href="https://leetcode-cn.com/problems/search-insert-position/">https://leetcode-cn.com/problems/search-insert-position/</a></p>
 
 */
- class Q595 {public static void main(String[] args) {}
-class Solution {
+ class Q595 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int searchInsert(int[] nums, int target) {
 
     }

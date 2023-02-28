@@ -73,7 +73,7 @@ t.getInheritanceOrder(); // 返回 ["king", "andy", "matthew", "alex", "asha", "
 </ul>
 
 */
- class Q693 {public static void main(String[] args) {}
+ class Q693 {public static void main(String[] args) {Solution solution=new Solution();}
 class ThroneInheritance {
 
     public ThroneInheritance(String kingName) {

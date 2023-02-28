@@ -41,7 +41,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q2 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int lengthOfLongestSubstring(String s) {
 
     }

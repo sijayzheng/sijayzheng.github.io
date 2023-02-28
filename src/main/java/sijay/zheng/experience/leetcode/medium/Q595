@@ -50,8 +50,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q595 {public static void main(String[] args) {}
-class Solution {
+ class Q595 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> filterRestaurants(int[][] restaurants, int veganFriendly, int maxPrice, int maxDistance) {
 
     }

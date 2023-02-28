@@ -28,8 +28,8 @@ package sijay.zheng.experience.leetcode.hard;
 + `-10000 <= lines[1] <= 10000`
 + `与标准答案绝对误差或相对误差在 10^-4 以内的结果都被视为正确结果`
 */
- class Q483 {public static void main(String[] args) {}
-class Solution {
+ class Q483 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double minRecSize(int[][] lines) {
 
     }

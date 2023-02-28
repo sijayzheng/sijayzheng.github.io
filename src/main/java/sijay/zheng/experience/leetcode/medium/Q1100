@@ -28,8 +28,8 @@ death = {1948, 1951, 2000}
 </ul>
 
 */
- class Q1100 {public static void main(String[] args) {}
-class Solution {
+ class Q1100 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxAliveYear(int[] birth, int[] death) {
 
     }

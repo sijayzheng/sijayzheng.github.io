@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.hard;
 </div>
 
 */
- class Q91 {public static void main(String[] args) {}
-class Solution {
+ class Q91 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int findKthNumber(int m, int n, int k) {
 
     }

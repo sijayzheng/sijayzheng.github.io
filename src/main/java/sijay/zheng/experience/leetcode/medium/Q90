@@ -52,8 +52,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>如果字符串在你使用的编程语言中是一种可变数据类型，请尝试使用<code>O(1)</code> 额外空间复杂度的 <strong>原地</strong> 解法。</p>
 
 */
- class Q90 {public static void main(String[] args) {}
-class Solution {
+ class Q90 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public String reverseWords(String s) {
 
     }

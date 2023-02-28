@@ -44,7 +44,7 @@ rangeModule.queryRange(16, 17); 返回 true （尽管执行了删除操作，区
 </ul>
 
 */
- class Q98 {public static void main(String[] args) {}
+ class Q98 {public static void main(String[] args) {Solution solution=new Solution();}
 class RangeModule {
 
     public RangeModule() {

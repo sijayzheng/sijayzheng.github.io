@@ -15,8 +15,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p>如果你已经实现复杂度为 O(<em>n</em>) 的解法，尝试使用更为精妙的分治法求解。</p>
 
 */
- class Q556 {public static void main(String[] args) {}
-class Solution {
+ class Q556 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int maxSubArray(int[] nums) {
 
     }

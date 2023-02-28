@@ -25,8 +25,8 @@ sentence = &quot;jesslookedjustliketimherbrother&quot;
 </ul>
 
 */
- class Q1112 {public static void main(String[] args) {}
-class Solution {
+ class Q1112 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int respace(String[] dictionary, String sentence) {
 
     }

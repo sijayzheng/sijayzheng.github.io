@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q158 {public static void main(String[] args) {}
-class Solution {
+ class Q158 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean canMeasureWater(int jug1Capacity, int jug2Capacity, int targetCapacity) {
 
     }

@@ -43,8 +43,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q688 {public static void main(String[] args) {}
-class Solution {
+ class Q688 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<String> alertNames(String[] keyName, String[] keyTime) {
 
     }

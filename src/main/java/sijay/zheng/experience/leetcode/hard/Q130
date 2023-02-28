@@ -59,14 +59,14 @@ master.guess("abcczz") 返回 4 ，因为 "abcczz" 共有 4 个字母匹配。
 </ul>
 
 */
- class Q130 {public static void main(String[] args) {}
+ class Q130 {public static void main(String[] args) {Solution solution=new Solution();}
 /**
 // This is the Master's API interface.
 // You should not implement it, or speculate about its implementation
 interface Master {
     public int guess(String word) {}
 }
- class Solution {
+ static class Solution {
     public void findSecretWord(String[] words, Master master) {
         
     }

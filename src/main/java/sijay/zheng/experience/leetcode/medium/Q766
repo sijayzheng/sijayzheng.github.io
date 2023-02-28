@@ -43,8 +43,8 @@ queries[0] 是绿色的圆，queries[1] 是红色的圆，queries[2] 是蓝色�
 </ul>
 
 */
- class Q766 {public static void main(String[] args) {}
-class Solution {
+ class Q766 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int[] countPoints(int[][] points, int[][] queries) {
 
     }

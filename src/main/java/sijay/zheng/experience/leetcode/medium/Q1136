@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.medium;
 + `1 <= 结点数量 <= 10000`
     
 */
- class Q1136 {public static void main(String[] args) {}
+ class Q1136 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -37,7 +37,7 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
- class Solution {
+ static class Solution {
     public int maxValue(TreeNode root, int k) {
 
     }

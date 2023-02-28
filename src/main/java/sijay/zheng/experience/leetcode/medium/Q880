@@ -70,7 +70,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q880 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] executeInstructions(int n, int[] startPos, String s) {
 
     }

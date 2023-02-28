@@ -34,7 +34,7 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q200 {public static void main(String[] args) {}
+ class Q200 {public static void main(String[] args) {Solution solution=new Solution();}
 //Definition for a binary tree node.
 class TreeNode {
     int val;

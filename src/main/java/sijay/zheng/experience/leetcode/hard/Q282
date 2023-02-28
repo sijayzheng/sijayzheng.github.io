@@ -50,7 +50,7 @@ fancy.getIndex(2); // 返回 20
 </ul>
 
 */
- class Q282 {public static void main(String[] args) {}
+ class Q282 {public static void main(String[] args) {Solution solution=new Solution();}
 class Fancy {
 
     public Fancy() {

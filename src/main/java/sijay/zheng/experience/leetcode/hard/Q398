@@ -42,8 +42,8 @@ s 中没有字母出现超过 1 次，所以 s 中每个子字符串的波动值
 </ul>
 
 */
- class Q398 {public static void main(String[] args) {}
-class Solution {
+ class Q398 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int largestVariance(String s) {
 
     }

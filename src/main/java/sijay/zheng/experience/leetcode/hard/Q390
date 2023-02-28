@@ -49,8 +49,8 @@ s<sub>9</sub> == "azbazbzaz" ，最长公共前缀为 "azbazbzaz" ，得分为 9
 </ul>
 
 */
- class Q390 {public static void main(String[] args) {}
-class Solution {
+ class Q390 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long sumScores(String s) {
 
     }

@@ -45,8 +45,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><meta charset="UTF-8" />注意：本题与主站 953题相同：<a href="https://leetcode-cn.com/problems/verifying-an-alien-dictionary/">https://leetcode-cn.com/problems/verifying-an-alien-dictionary/</a></p>
 
 */
- class Q588 {public static void main(String[] args) {}
-class Solution {
+ class Q588 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public boolean isAlienSorted(String[] words, String order) {
 
     }

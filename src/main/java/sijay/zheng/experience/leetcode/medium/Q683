@@ -50,7 +50,7 @@ requests[1] -&gt; nums[0] + nums[1] = 3 + 5  = 8
 
 */
  class Q683 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int maxSumRangeQuery(int[] nums, int[][] requests) {
 
     }

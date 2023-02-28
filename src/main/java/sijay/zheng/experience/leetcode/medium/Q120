@@ -38,8 +38,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>进阶：</strong>尝试设计时间复杂度为 O(n)、空间复杂度为 O(1)的算法解决此问题。</p>
 
 */
- class Q120 {public static void main(String[] args) {}
-class Solution {
+ class Q120 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<Integer> majorityElement(int[] nums) {
 
     }

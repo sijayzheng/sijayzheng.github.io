@@ -41,7 +41,7 @@ myCalendar.book(20, 30); // return True ，这个日程安排可以添加到日�
 </ul>
 
 */
- class Q297 {public static void main(String[] args) {}
+ class Q297 {public static void main(String[] args) {Solution solution=new Solution();}
 class MyCalendar {
 
     public MyCalendar() {

@@ -44,7 +44,7 @@ num1 和 num2 的二进制表示分别是 0001 和 1100 。
 
 */
  class Q983 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int minimizeXor(int num1, int num2) {
 
     }

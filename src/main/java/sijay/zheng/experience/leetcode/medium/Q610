@@ -51,8 +51,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q610 {public static void main(String[] args) {}
-class Solution {
+ class Q610 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int getKth(int lo, int hi, int k) {
 
     }

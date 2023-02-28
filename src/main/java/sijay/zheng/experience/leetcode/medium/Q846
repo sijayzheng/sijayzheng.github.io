@@ -57,7 +57,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q846 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public int[] missingRolls(int[] rolls, int mean, int n) {
 
     }

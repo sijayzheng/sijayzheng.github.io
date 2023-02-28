@@ -53,8 +53,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q389 {public static void main(String[] args) {}
-class Solution {
+ class Q389 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long minimumWeight(int n, int[][] edges, int src1, int src2, int dest) {
 
     }

@@ -38,8 +38,8 @@ package sijay.zheng.experience.leetcode.hard;
 </ul>
 
 */
- class Q385 {public static void main(String[] args) {}
-class Solution {
+ class Q385 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public long countPairs(int[] nums, int k) {
 
     }

@@ -64,8 +64,8 @@ package sijay.zheng.experience.leetcode.easy;
 <p><strong>注意：</strong>本题与主站 724 题相同：<a href="https://leetcode-cn.com/problems/find-pivot-index/" target="_blank">https://leetcode-cn.com/problems/find-pivot-index/</a></p>
 
 */
- class Q375 {public static void main(String[] args) {}
-class Solution {
+ class Q375 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int findMiddleIndex(int[] nums) {
 
     }

@@ -27,8 +27,8 @@ package sijay.zheng.experience.leetcode.medium;
 <p><code>1 &lt;= n &lt;= 11</code></p>
 
 */
- class Q1094 {public static void main(String[] args) {}
-class Solution {
+ class Q1094 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public double[] dicesProbability(int n) {
 
     }

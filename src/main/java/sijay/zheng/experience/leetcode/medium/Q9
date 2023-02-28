@@ -50,8 +50,8 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 </ul>
 
 */
- class Q9 {public static void main(String[] args) {}
-class Solution {
+ class Q9 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
 
     }

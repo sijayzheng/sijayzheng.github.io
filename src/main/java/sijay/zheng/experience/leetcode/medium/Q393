@@ -49,7 +49,7 @@ stockSpanner.next(85);  // 返回 6
 </ul>
 
 */
- class Q393 {public static void main(String[] args) {}
+ class Q393 {public static void main(String[] args) {Solution solution=new Solution();}
 class StockSpanner {
 
     public StockSpanner() {

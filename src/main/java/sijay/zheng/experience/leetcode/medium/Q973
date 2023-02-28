@@ -61,7 +61,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 */
  class Q973 {public static void main(String[] args) {}
-class Solution {
+static class Solution {
     public long taskSchedulerII(int[] tasks, int space) {
 
     }

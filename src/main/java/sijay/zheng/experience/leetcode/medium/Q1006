@@ -47,8 +47,8 @@ package sijay.zheng.experience.leetcode.medium;
 </ul>
 
 */
- class Q1006 {public static void main(String[] args) {}
-class Solution {
+ class Q1006 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
     public int appendCharacters(String s, String t) {
 
     }
