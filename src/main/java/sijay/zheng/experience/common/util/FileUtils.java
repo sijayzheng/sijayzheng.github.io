@@ -1,11 +1,13 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.annotation.*;
+import sijay.zheng.experience.common.annotation.LogDog;
 
 import java.io.*;
-import java.nio.channels.*;
-import java.text.*;
-import java.time.*;
+import java.nio.channels.FileChannel;
+import java.text.DecimalFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.*;
 
 /**
@@ -656,11 +658,11 @@ public class FileUtils {
 
     public static List<File> listFile(File file) {
         List<File> files = new ArrayList<>();
-        for (File listFile : file.listFiles()) {
-            if (listFile.isDirectory()) {
-                listFile(listFile);
-            } else {
+        for (File listFile : Objects.requireNonNull(file.listFiles())) {
+            if (listFile.isFile()) {
                 files.add(listFile);
+            } else {
+                files.addAll(listFile(listFile));
             }
         }
         return files;
