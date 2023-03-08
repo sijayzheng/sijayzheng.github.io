@@ -90,4 +90,6 @@
     - [Autocomplete](doc/Autocomplete.md)
     - [FullCalendar](doc/FullCalendar.md)
     - [jTopo](doc/jTopo.md)
-- **[杂记](doc/emmm.md)**
+- **杂记**
+    - [杂记](doc/emmm.md)
+    - [激活码](doc/jihuoma.md)
