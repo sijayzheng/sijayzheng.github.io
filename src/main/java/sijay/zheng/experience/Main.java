@@ -1,4 +1,4 @@
-package sijay.zheng.experience.leetcode;
+package sijay.zheng.experience;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,18 +25,6 @@ public class Main {
             }
         }
         return result;
-    }
-
-    public static ListNode deleteDuplicates(ListNode head) {
-        ListNode currNode = head;
-        while (currNode != null && currNode.next != null) {
-            if (currNode.val == currNode.next.val) {
-                currNode.next = currNode.next.next;
-            } else {
-                currNode = currNode.next;
-            }
-        }
-        return head;
     }
 */
 

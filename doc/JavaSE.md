@@ -1,12 +1,13 @@
 ## 概述
 
 **jdk 和 jre**
-![image-20220309230401673](../img/image-20220309230401673.png)
+![jdk-jre](../img/image-20220309230401673.png)
 JDK：Java Development Kit 的简称，java 开发工具包，提供了 java 的开发环境和运行环境。
 
 JRE：Java Runtime Environment 的简称，java 运行环境，为 java 的运行提供了所需环境。
 
-JDK 包含了 JRE，同时还包含了编译 java 源码的编译器 javac，还包含了很多 java 程序调试和分析的工具。简单来说：如果你需要运行 java 程序，只需安装 JRE 就可以了，如果你需要编写 java 程序，需要安装 JDK。
+JDK 包含了 JRE，同时还包含了编译 java 源码的编译器 javac，还包含了很多 java 程序调试和分析的工具。简单来说：如果你需要运行
+java 程序，只需安装 JRE 就可以了，如果你需要编写 java 程序，需要安装 JDK。
 
 ### Java 跨平台的原理
 
@@ -22,9 +23,9 @@ JDK 包含了 JRE，同时还包含了编译 java 源码的编译器 javac，还
 
 ```java
 public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
 }
 ```
 
@@ -37,32 +38,34 @@ public class HelloWorld {
 - `java [-options] class [args…]`：执行类
 - `java [-options] -jar jarfile [args…]`：执行 jar 文件
 - 常见 options
-  - `java -version`
-  - `java -classpath <目录> com.demo.hello.HelloWorld`：运行指定目录下的字节码文件
-  - `java -cp .;myClass.jar com.demo.hello.HelloWorld`：指定各个 JAR 文件具体的存放路径（用 ; 分隔）
-  - `java -D<名称>=<值> com.demo.hello.HelloWorld`： 设置系统属性（Java system property）
+    - `java -version`
+    - `java -classpath <目录> com.demo.hello.HelloWorld`：运行指定目录下的字节码文件
+    - `java -cp .;myClass.jar com.demo.hello.HelloWorld`：指定各个 JAR 文件具体的存放路径（用 ; 分隔）
+    - `java -D<名称>=<值> com.demo.hello.HelloWorld`： 设置系统属性（Java system property）
 
 ### Java 基本语法
 
 - Java 语言严格区分大小写
-- 一个 Java 源文件（ .java ）里可以定义多个 Java 类，但其中最多**只能有一个**类被定义成 public 类；若源文件中包含 public 类定义，则该源文件的文件名必须与该 public 类的类名相同
-- 一个源文件中包含 N 个 Java 类时，成功编译后会生成 N 份字节码文件（ .class），即每个类都会生成一份单独的 class 文件，且字节码文件名和其对应的类名相同
+- 一个 Java 源文件（ .java ）里可以定义多个 Java 类，但其中最多**只能有一个**类被定义成 public 类；若源文件中包含 public
+  类定义，则该源文件的文件名必须与该 public 类的类名相同
+- 一个源文件中包含 N 个 Java 类时，成功编译后会生成 N 份字节码文件（ .class），即每个类都会生成一份单独的 class
+  文件，且字节码文件名和其对应的类名相同
 - 若一个类必须运行，则必须拥有 main 方法，因为 main 方法是程序的入口
 
 ## 数据类型
 
 ### 基本数据类型
 
-| 类型    | 占位（byte） | 数据范围                                                         |
-| ------- | ------------ | ---------------------------------------------------------------- |
-| byte    | 1            | [-128, 127]                                                      |
-| short   | 2            | [-32768,32767]                                                   |
-| int     | 4            | [-2^31, 2^31-1]                                                  |
-| long    | 8            | [-2^63, 2^63-1]                                                  |
-| float   | 4            | [2<sup>-149</sup>,(2-2<sup>-23</sup>)&middot;2<sup>127</sup>]    |
-| double  | 8            | [2<sup>-1074</sup>.,(2-2<sup>-52</sup>)&middot;2<sup>1023</sup>] |
-| char    | 2            | [\u0000,\uFFFF]                                                  |
-| boolean | 1            | true,false                                                       |
+| 类型      | 占位（byte） | 数据范围                                                             |
+|---------|----------|------------------------------------------------------------------|
+| byte    | 1        | [-128, 127]                                                      |
+| short   | 2        | [-32768,32767]                                                   |
+| int     | 4        | [-2^31, 2^31-1]                                                  |
+| long    | 8        | [-2^63, 2^63-1]                                                  |
+| float   | 4        | [2<sup>-149</sup>,(2-2<sup>-23</sup>)&middot;2<sup>127</sup>]    |
+| double  | 8        | [2<sup>-1074</sup>.,(2-2<sup>-52</sup>)&middot;2<sup>1023</sup>] |
+| char    | 2        | [\u0000,\uFFFF]                                                  |
+| boolean | 1        | true,false                                                       |
 
 #### boolean 类型
 
@@ -81,7 +84,13 @@ public class HelloWorld {
 - float, double
 
 ```java
-double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; // float 类型常量需在浮点数后添加 f 或 F 后缀float  pi = 3.14; // 错误: 不兼容的类型: 从 double 转换到 float 可能会有损失3.14 == 3.14F; // false3.14 == 3.14D; // truefloat a = 1.0f - 0.9f;float b = 0.9f - 0.8f;a == b; // false
+double pi=3.14;  // 浮点数常量默认是 double 类型
+        float pi=3.14F; // float 类型常量需在浮点数后添加 f 或 F 后缀
+        float pi=3.14; // 错误: 不兼容的类型: 从 double 转换到 float 可能会有损失3.14 == 3.14F; 
+        false3.14==3.14D; // true
+        float a=1.0f-0.9f;
+        float b=0.9f-0.8f;
+        a==b; // false
 ```
 
 - 注意：浮点数采用“尾数+阶码”的编码方式，所以 float, double 都**不能表示精确的浮点数**，需用 BigDecimal 类型
@@ -89,13 +98,15 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 #### 字符类型
 
 - char 16 位 Unicode 字符集，编码方式为 UTF-16BE
-- UTF-16 使用 2 或者 4 字节表示一个字符，在 65536 以内的占两个字节，而基本上所有汉字的 Unicode 编码[在 19968 到 40869 之间](http://www.chi2ko.com/tool/CJK.htm)，所以一个 char 类型可以存储一个汉字
+- UTF-16 使用 2 或者 4 字节表示一个字符，在 65536 以内的占两个字节，而基本上所有汉字的 Unicode
+  编码[在 19968 到 40869 之间](http://www.chi2ko.com/tool/CJK.htm)，所以一个 char 类型可以存储一个汉字
 - 使用`''`括起来的单个字符
 
 ### 最常用的引用类型 String
 
 - 字符串常量使用`""`引起来的，连接字符串使用 “`+`” 符号
-- 字符串拼接：字符串可以和**任何基本类型的值或 Java 对象**进行连接运算，结果都是**字符串类型**（基本类型的值将自动类型转换为字符串类型，系统自动调用 Java 对象 toString() 方法）
+- 字符串拼接：字符串可以和**任何基本类型的值或 Java 对象**进行连接运算，结果都是**字符串类型**（基本类型的值将自动类型转换为字符串类型，系统自动调用
+  Java 对象 toString() 方法）
 
 ### 基本类型的类型转换
 
@@ -105,7 +116,8 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 
 #### 自动类型转换 / 隐式类型转换
 
-- 如果直接将一个**较小的整数常量**（在 byte 或 short 类型的表数范围内）赋给一个 byte 或 short 变量，系统会自动把这个整型常量当成 byte 或 short 类型来处理
+- 如果直接将一个**较小的整数常量**（在 byte 或 short 类型的表数范围内）赋给一个 byte 或 short 变量，系统会自动把这个整型常量当成
+  byte 或 short 类型来处理
 
 #### 强制类型转换
 
@@ -123,13 +135,15 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 #### 加号 +
 
 - 加号在操作数值、 字符 、字符串时，其结果是不同的
-  - 当两个**字符**相加得到的是 **ASCII 码表值**
-  - 作为**字符串连接运算符**
+    - 当两个**字符**相加得到的是 **ASCII 码表值**
+    - 作为**字符串连接运算符**
 
 #### 除号 /
 
-- 如果除法运算符的两个操作数都是整数类型，则计算结果也是**整数**（截断小数部分取整），此时除数不能是 0，否则将引发**除以零异常** ArithmeticException: / by zero
-- 如果除法运算符的两个操作数有 1 个是浮点数，或者 2 个都是浮点数，则计算结果也是浮点数，此时允许除数是 0，或者 0.0，得到结果是正无穷大或负无穷大
+- 如果除法运算符的两个操作数都是整数类型，则计算结果也是**整数**（截断小数部分取整），此时除数不能是 0，否则将引发**除以零异常
+  ** ArithmeticException: / by zero
+- 如果除法运算符的两个操作数有 1 个是浮点数，或者 2 个都是浮点数，则计算结果也是浮点数，此时允许除数是 0，或者
+  0.0，得到结果是正无穷大或负无穷大
 
 #### 取模（求余数）%
 
@@ -138,7 +152,7 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 - 如果求余运算的两个操作数都是整数类型，则求余运算的第二个运算数不能是 0，否则将引发**除以零异常**
 
 ```java
-'A' + 'B'  // 131"A" + "B"  // AB10 / 3  // 3System.out.println(10 / 0) // ArithmeticException: / by zeroSystem.out.println(10.0 / 0) // 输出正无穷大：Infinity System.out.println(-10.0 / 0) // 输出负无穷大：-Infinity System.out.println(0 / 0.0) // 输出非数(Not a Number)：NaN/*注意：无穷大和 NaN 都属于 double 浮点类型但是所有正无穷大数值都是相等的，所有负无穷大数值也是相等的NaN 不与任何数值相等，也不等于自己*/
+'A'+'B'  // 131"A" + "B"  // AB10 / 3  // 3System.out.println(10 / 0) // ArithmeticException: / by zeroSystem.out.println(10.0 / 0) // 输出正无穷大：Infinity System.out.println(-10.0 / 0) // 输出负无穷大：-Infinity System.out.println(0 / 0.0) // 输出非数(Not a Number)：NaN/*注意：无穷大和 NaN 都属于 double 浮点类型但是所有正无穷大数值都是相等的，所有负无穷大数值也是相等的NaN 不与任何数值相等，也不等于自己*/
 ```
 
 #### 自增 ++ 自减 —
@@ -156,8 +170,8 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 - 比较运算符的结果是 boolean 类型
 - == != < > <= >= instanceof
 - 使用 == 判断两个两个变量是否相等
-  - 基本类型变量：只要两个变量的**值相等**（ 不一定要求数据类型严格相同），就返回 true
-  - 引用类型变量：只有两个变量**指向同一个对象**时，返回 true（不可用于比较类型上没有**继承关系**的两个对象，否则编译报错）
+    - 基本类型变量：只要两个变量的**值相等**（ 不一定要求数据类型严格相同），就返回 true
+    - 引用类型变量：只有两个变量**指向同一个对象**时，返回 true（不可用于比较类型上没有**继承关系**的两个对象，否则编译报错）
 
 ### 三元运算符 / 三目运算符
 
@@ -171,7 +185,7 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 - | ：或，**都为 false**，结果才为 false，只要有一个是 true，结果就是 true
 - || ：短路或，如果左边的操作数是 true，结果一定为 true，且不再计算右边的操作数
 - ^ ：异或，判断两个操作数是否**不同**，不同则为 true，相同则为 false
-- ! ：取反，!true 结果是 false，!fasle 结果是 true
+- ! ：取反，!true 结果是 false，!false 结果是 true
 
 ### 位运算符
 
@@ -188,24 +202,24 @@ double pi = 3.14;  // 浮点数常量默认是 double 类型float  pi = 3.14F; /
 ```java
 // 左移 n 位相当于乘以 2 的 n 次方
 // 右移 n 位相当于除以 2 的 n 次方
-4 >> 1; // 效率高的除以 2，等价于 4 / 2
-1 << 10; // 等于 2 的 10 次方
+4>>1; // 效率高的除以 2，等价于 4 / 2
+        1<<10; // 等于 2 的 10 次方
 // 交换两个变量的值
-int a = 10;
-int b = 12;
+        int a=10;
+        int b=12;
 // 第一种方法，使用临时变量
-int temp = a;
-a = b;
-b = temp;
+        int temp=a;
+        a=b;
+        b=temp;
 // 第二种方法// 把 a、b 看做数轴上的点，围绕两点间的距离来进行计算（可能会越界）
-a = b - a;
-b = b - a;
-a = b + a;
+        a=b-a;
+        b=b-a;
+        a=b+a;
 // 第三种方法
 // 任意一个数与任意一个给定的值连续异或两次，值不变
-a = a ^ b;
-b = a ^ b;
-a = a ^ b;
+        a=a^b;
+        b=a^b;
+        a=a^b;
 ```
 
 ## 表达式
@@ -263,15 +277,15 @@ a = a ^ b;
 
 ### 方法
 
-| 方法                         | 说明                       |
-| ---------------------------- | -------------------------- |
-| setPriority(int newPriority) | 更改线程优先级             |
-| join()                       | 等待当前线程终止           |
-| interrupt()                  | 中断线程（不建议）         |
+| 方法                           | 说明             |
+|------------------------------|----------------|
+| setPriority(int newPriority) | 更改线程优先级        |
+| join()                       | 等待当前线程终止       |
+| interrupt()                  | 中断线程（不建议）      |
 | isAlive()                    | 测试线程是否处于活动状态   |
-| Thread.sleep(long millis)    | 线程休眠 millis 毫秒       |
-| Thread.yield()               | 暂停当前线程并执行其他线程 |
-| setDeamon(bool on)           | 设置为守护线程             |
+| Thread.sleep(long millis)    | 线程休眠 millis 毫秒 |
+| Thread.yield()               | 暂停当前线程并执行其他线程  |
+| setDeamon(bool on)           | 设置为守护线程        |
 
 ### 停止线程
 
@@ -345,23 +359,23 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 - 每次只能有一个线程对 Lock 加锁，开始访问共享资源前应先获得 Lock 对象
 - ReentrantLock（可重入锁）实现了 Lock，与 synchronized 有相同语义
 
-| synchronized     | Lock                   |
-| ---------------- | ---------------------- |
-| 隐式锁           | 显式锁                 |
-| 出作用域自动释放 | 手动开启关闭           |
-| 用于代码块和方法 | 只能用于代码块         |
+| synchronized | Lock          |
+|--------------|---------------|
+| 隐式锁          | 显式锁           |
+| 出作用域自动释放     | 手动开启关闭        |
+| 用于代码块和方法     | 只能用于代码块       |
 | 性能一般         | JVM 花费时间少，性能好 |
-|                  | 扩展性好               |
+|              | 扩展性好          |
 
 使用顺序：Lock>同步代码块>同步方法
 
 ### 线程通信
 
-| 方法               | 作用                                                   |
-| ------------------ | ------------------------------------------------------ |
-| wait()             | 线程一直等待，直到其他线程通知                         |
-| wait(long timeout) | 等待指定的毫秒数                                       |
-| notify()           | 唤醒一个处于等待状态的线程                             |
+| 方法                 | 作用                             |
+|--------------------|--------------------------------|
+| wait()             | 线程一直等待，直到其他线程通知                |
+| wait(long timeout) | 等待指定的毫秒数                       |
+| notify()           | 唤醒一个处于等待状态的线程                  |
 | notifyAll()        | 唤醒一个对象上所有调用 wait 的线程，优先级高的优先调度 |
 
 生产者消费者问题：
@@ -375,15 +389,15 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 - 降低资源消耗
 - 便于线程管理
 
-  - corePoolSize 核心池大小
-  - maximumPoolSize 最大线程数
-  - keepAliveTime 线程没任务最多保留多长时间
+    - corePoolSize 核心池大小
+    - maximumPoolSize 最大线程数
+    - keepAliveTime 线程没任务最多保留多长时间
 
 - ExecutorService 线程池接口
 
-  - void execute(Runnable command);无返回的执行
-  - Future<?> submit(Runnable task);有返回的执行
-  - void shutdown();关闭线程池
+    - void execute(Runnable command);无返回的执行
+    - Future<?> submit(Runnable task);有返回的执行
+    - void shutdown();关闭线程池
 
 - Executors
   用于创建不同类型的线程池
@@ -508,8 +522,8 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 - setAccessible 作用是开关安全访问检查
 - 参数值为 true 时关闭安全访问检查，即允许访问私有成员
 
-  - 提高反射效率
-  - 使私有成员可以访问
+    - 提高反射效率
+    - 使私有成员可以访问
 
 - 参数值为 false 则开启安全访问检查，即不允许访问私有成员
 
@@ -533,17 +547,17 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 
 #### 常用方法
 
-| 方法名                                   | 说明                                                              |
-| ---------------------------------------- | ----------------------------------------------------------------- |
-| Class forName(String name)               | 返回指定类名 name 的 Class 对象                                   |
-| Object newInstance()                     | 调用缺省构造函数，返回 Class 对象的一个实例                       |
+| 方法名                                      | 说明                                      |
+|------------------------------------------|-----------------------------------------|
+| Class forName(String name)               | 返回指定类名 name 的 Class 对象                  |
+| Object newInstance()                     | 调用缺省构造函数，返回 Class 对象的一个实例               |
 | String getName()                         | 返回此 Class 对象所表示的实体（类，接口，数组类 或 void）的名称。 |
-| Class getSuperClass()                    | 返回当前 Class 对象的父类的 Class 对象                            |
-| Class[] getinterfaces()                  | 获取当前 Class 对象的接口                                         |
-| ClassLoader getClassLoader()             | 返回该类的类加载器                                                |
-| Constructor[] getConstructors            | 返回一个包含某些 Constructor 对象的数组                           |
-| Method getMothed(String name,Class... T) | 返回一个 Method 对象，此对象的形参类型为 paramType                |
-| Field[] getDeclaredFields()              | 返回 Field 对象的一个数组                                         |
+| Class getSuperClass()                    | 返回当前 Class 对象的父类的 Class 对象              |
+| Class[] getInterfaces()                  | 获取当前 Class 对象的接口                        |
+| ClassLoader getClassLoader()             | 返回该类的类加载器                               |
+| Constructor[] getConstructors            | 返回一个包含某些 Constructor 对象的数组              |
+| Method getMethod(String name,Class... T) | 返回一个 Method 对象，此对象的形参类型为 paramType      |
+| Field[] getDeclaredFields()              | 返回 Field 对象的一个数组                        |
 
 #### 可包含 Class 的对象
 
@@ -567,23 +581,24 @@ String.format() 格式化字符串,String.format("%s-%s","str1","str2");
 
 StringBuffer.reverse()或StringBuilder.reverse() 反转字符串
 
-String str="i"与 String str=new String("i")内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到常量池中；而 String str=new String("i") 则会被分到堆内存中。
-
-
-
+String str="i"与 String str=new String("i")内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到常量池中；而
+String str=new String("i") 则会被分到堆内存中。
 
 #### String、StringBuffer、StringBuilder
 
-String 和 StringBuffer、StringBuilder 的区别在于 String 声明的是不可变的对象，每次操作都会生成新的 String 对象，然后将指针指向新的 String 对象，而 StringBuffer、StringBuilder 可以在原有对象的基础上进行操作，所以在经常改变字符串内容的情况下最好不要使用 String。StringBuffer 和 StringBuilder 最大的区别在于，StringBuffer 是线程安全的，而 StringBuilder 是非线程安全的，但 StringBuilder 的性能却高于 StringBuffer，所以在单线程环境下推荐使用 StringBuilder，多线程环境下推荐使用 StringBuffer。
+String 和 StringBuffer、StringBuilder 的区别在于 String 声明的是不可变的对象，每次操作都会生成新的 String 对象，然后将指针指向新的
+String 对象，而 StringBuffer、StringBuilder 可以在原有对象的基础上进行操作，所以在经常改变字符串内容的情况下最好不要使用
+String。StringBuffer 和 StringBuilder 最大的区别在于，StringBuffer 是线程安全的，而 StringBuilder 是非线程安全的，但
+StringBuilder 的性能却高于 StringBuffer，所以在单线程环境下推荐使用 StringBuilder，多线程环境下推荐使用 StringBuffer。
 
 ### Map
 
-|               | 有序 | 顺序         | null 值            |
-| ------------- | ---- | ------------ | ------------------ |
-| HashMap       | 无   |              | 允许               |
-| LinkedHashMap | 有序 | 放入顺序     | 允许               |
-| TreeMap       | 有序 | key 值排序   | 不允许 key 为 null |
-| HashTable     | 有序 | 放入顺序倒序 | 不允许             |
+|               | 有序  | 顺序      | null 值         |
+|---------------|-----|---------|----------------|
+| HashMap       | 无   |         | 允许             |
+| LinkedHashMap | 有序  | 放入顺序    | 允许             |
+| TreeMap       | 有序  | key 值排序 | 不允许 key 为 null |
+| HashTable     | 有序  | 放入顺序倒序  | 不允许            |
 
 ### List
 
@@ -591,14 +606,14 @@ String 和 StringBuffer、StringBuilder 的区别在于 String 声明的是不�
 
 ```java
 list1.removeAll(list2);
-list1.addAll(list2);
+        list1.addAll(list2);
 ```
 
 - 排序
 
 ```java
 Comparator.comparingInt(Integer::intValue).reversed() ``// 倒序
-Comparator.comparingInt(Integer::intValue) ``// 正序
+        Comparator.comparingInt(Integer::intValue) ``// 正序
 ```
 
 ### Math
@@ -609,10 +624,10 @@ Comparator.comparingInt(Integer::intValue) ``// 正序
 
 - 只包含一个抽象方法的接口
 
-## Lamda
+## Lambda
 
 - 避免匿名内部类
-- 函数式接口才能转为 lamda 表达式
+- 函数式接口才能转为 lambda 表达式
 - 使代码简洁
 
 ### 格式
@@ -649,11 +664,11 @@ Comparator.comparingInt(Integer::intValue) ``// 正序
 - 加载：将 class 文件加载到内存并将静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的 Class 对象
 - 连接：将 Java 类的二进制代码合并到 JVM 的运行状态之中
 
-  - 验证：确保加载的类信息符号 JVM 规范，没有安全方面的问题
-  - 准备：正式类变量（static）在方法区中分配内存并设置默认初始值
-  - 解析：常量池中的符号（常量名）引用替换为直接（地址）引用
+    - 验证：确保加载的类信息符号 JVM 规范，没有安全方面的问题
+    - 准备：正式类变量（static）在方法区中分配内存并设置默认初始值
+    - 解析：常量池中的符号（常量名）引用替换为直接（地址）引用
 
 - 初始化：
-  - 执行类构造器<clinit>()方法。该方法由编译期自动收集类中所有的变量赋值动作和静态代码块中的语句合并产生
-  - 初始化一个类时，如果父类还没初始化，则触发父类初始化
-  - 虚拟机保证类的<clinit>()方法在多线程中正确的加锁及同步
+    - 执行类构造器<clinit>()方法。该方法由编译期自动收集类中所有的变量赋值动作和静态代码块中的语句合并产生
+    - 初始化一个类时，如果父类还没初始化，则触发父类初始化
+    - 虚拟机保证类的<clinit>()方法在多线程中正确的加锁及同步
