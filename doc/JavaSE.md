@@ -1,7 +1,7 @@
 ## 概述
 
 **jdk 和 jre**
-![jdk-jre](../img/image-20220309230401673.png)
+![jdk-jre](img/jdk.png)
 JDK：Java Development Kit 的简称，java 开发工具包，提供了 java 的开发环境和运行环境。
 
 JRE：Java Runtime Environment 的简称，java 运行环境，为 java 的运行提供了所需环境。
@@ -110,7 +110,7 @@ double pi=3.14;  // 浮点数常量默认是 double 类型
 
 ### 基本类型的类型转换
 
-![基本数据类型转换](../img/429a2325cb8bb3734c12565d403649b3.png)
+![基本数据类型转换](img/datatypeconvert.png)
 
 - boolean 不属于数值类型，不参与转换
 
@@ -244,7 +244,7 @@ double pi=3.14;  // 浮点数常量默认是 double 类型
 
 ### 线程状态
 
-![image-20220310164853390](../img/image-20220310164853390.png)
+![image-20220310164853390](img/thread.png)
 
 ### 实现方法
 

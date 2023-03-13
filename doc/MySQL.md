@@ -67,7 +67,7 @@ flush privileges;
 ### max_connections
 
 |                      |                     |
-| -------------------- | ------------------- |
+|----------------------|---------------------|
 | Command-Line Format  | --max-connections=# |
 | System Variable      | max_connections     |
 | Scope                | Global              |
@@ -116,7 +116,10 @@ flush privileges
 
 ## MySQL Explain 详解
 
-在日常工作中，我们会有时会开慢查询去记录一些执行时间比较久的 SQL 语句，找出这些 SQL 语句并不意味着完事了，些时我们常常用到 explain 这个命令来查看一个这些 SQL 语句的执行计划，查看该 SQL 语句有没有使用上了索引，有没有做全表扫描，这都可以通过 explain 命令来查看。所以我们深入了解 MySQL 的基于开销的优化器，还可以获得很多可能被优化器考虑到的访问策略的细节，以及当运行 SQL 语句时哪种策略预计会被优化器采用。
+在日常工作中，我们会有时会开慢查询去记录一些执行时间比较久的 SQL 语句，找出这些 SQL 语句并不意味着完事了，些时我们常常用到
+explain 这个命令来查看一个这些 SQL 语句的执行计划，查看该 SQL 语句有没有使用上了索引，有没有做全表扫描，这都可以通过
+explain 命令来查看。所以我们深入了解 MySQL 的基于开销的优化器，还可以获得很多可能被优化器考虑到的访问策略的细节，以及当运行
+SQL 语句时哪种策略预计会被优化器采用。
 
 -- 实际 SQL，查找用户名为 Jefabc 的员工
 
@@ -126,7 +129,7 @@ select \* from emp where name = 'Jefabc';
 
 explain select \* from emp where name = 'Jefabc';
 
-![image](../img/pic11.png)
+![image](img/pic11.png)
 
 expain 出来的信息有 10 列，分别是 id、select_type、table、type、possible_keys、key、key_len、ref、rows、Extra
 
@@ -174,7 +177,7 @@ SELECT 识别符。这是 SELECT 的查询序列号
 
 explain select e.no, e.name from emp e left join dept d on e.dept_no = d.no where e.name like 'Jef%' and d.name = '研发部';
 
-![image](../img/pic10.png)
+![image](img/pic10.png)
 
 **二、select_type**
 
@@ -200,7 +203,8 @@ explain select e.no, e.name from emp e left join dept d on e.dept_no = d.no wher
 
 **三、table**
 
-显示这一步所访问数据库中表名称（显示这一行的数据是关于哪张表的），有时不是真实的表名字，可能是简称，例如上面的 e，d，也可能是第几步执行的结果的简称
+显示这一步所访问数据库中表名称（显示这一行的数据是关于哪张表的），有时不是真实的表名字，可能是简称，例如上面的
+e，d，也可能是第几步执行的结果的简称
 
 **四、type**
 
@@ -216,29 +220,35 @@ range:只检索给定范围的行，使用一个索引来选择行
 
 ref: 表示上述表的连接匹配条件，即哪些列或常量被用于查找索引列上的值
 
-eq_ref: 类似 ref，区别就在使用的索引是唯一索引，对于每个索引键值，表中只有一条记录匹配，简单来说，就是多表连接中使用 primary key 或者 unique key 作为关联条件
+eq_ref: 类似 ref，区别就在使用的索引是唯一索引，对于每个索引键值，表中只有一条记录匹配，简单来说，就是多表连接中使用 primary
+key 或者 unique key 作为关联条件
 
-const、system: 当 MySQL 对查询某部分进行优化，并转换为一个常量时，使用这些类型访问。如将主键置于 where 列表中，MySQL 就能将该查询转换为一个常量，system 是 const 类型的特例，当查询的表只有一行的情况下，使用 system
+const、system: 当 MySQL 对查询某部分进行优化，并转换为一个常量时，使用这些类型访问。如将主键置于 where 列表中，MySQL
+就能将该查询转换为一个常量，system 是 const 类型的特例，当查询的表只有一行的情况下，使用 system
 
 NULL: MySQL 在优化过程中分解语句，执行时甚至不用访问表或索引，例如从一个索引列里选取最小值可以通过单独索引查找完成。
 
 **五、possible_keys**
 
-**指出 MySQL 能使用哪个索引在表中找到记录，查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询使用（该查询可以利用的索引，如果没有任何索引显示 null）**
+**指出 MySQL 能使用哪个索引在表中找到记录，查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询使用（该查询可以利用的索引，如果没有任何索引显示
+null）**
 
 该列完全独立于 EXPLAIN 输出所示的表的次序。这意味着在 possible_keys 中的某些键实际上不能按生成的表次序使用。
 
-如果该列是 NULL，则没有相关的索引。在这种情况下，可以通过检查 WHERE 子句看是否它引用某些列或适合索引的列来提高你的查询性能。如果是这样，创造一个适当的索引并且再次用 EXPLAIN 检查查询
+如果该列是 NULL，则没有相关的索引。在这种情况下，可以通过检查 WHERE 子句看是否它引用某些列或适合索引的列来提高你的查询性能。如果是这样，创造一个适当的索引并且再次用
+EXPLAIN 检查查询
 
 **六、Key**
 
 **key 列显示 MySQL 实际决定使用的键（索引），必然包含在 possible_keys 中**
 
-如果没有选择索引，键是 NULL。要想强制 MySQL 使用或忽视 possible_keys 列中的索引，在查询中使用 FORCE INDEX、USE INDEX 或者 IGNORE INDEX。
+如果没有选择索引，键是 NULL。要想强制 MySQL 使用或忽视 possible_keys 列中的索引，在查询中使用 FORCE INDEX、USE INDEX 或者
+IGNORE INDEX。
 
 **七、key_len**
 
-**表示索引中使用的字节数，可通过该列计算查询中使用的索引的长度（key_len 显示的值为索引字段的最大可能长度，并非实际使用长度，即 key_len 是根据表定义计算而得，不是通过表内检索出的）**
+**表示索引中使用的字节数，可通过该列计算查询中使用的索引的长度（key_len 显示的值为索引字段的最大可能长度，并非实际使用长度，即
+key_len 是根据表定义计算而得，不是通过表内检索出的）**
 
 不损失精确性的情况下，长度越短越好
 
@@ -254,7 +264,8 @@ NULL: MySQL 在优化过程中分解语句，执行时甚至不用访问表或�
 
 **该列包含 MySQL 解决查询的详细信息,有以下几种情况：**
 
-Using where:不用读取表中所有信息，仅通过索引就可以获取所需数据，这发生在对表的全部的请求列都是同一个索引的部分的时候，表示 mysql 服务器将在存储引擎检索行后再进行过滤
+Using where:不用读取表中所有信息，仅通过索引就可以获取所需数据，这发生在对表的全部的请求列都是同一个索引的部分的时候，表示
+mysql 服务器将在存储引擎检索行后再进行过滤
 
 Using temporary：表示 MySQL 需要使用临时表来存储结果集，常见于排序和分组查询，常见 group by ; order by
 

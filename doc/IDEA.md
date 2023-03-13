@@ -4,7 +4,7 @@
 
 在设置中勾选自动构建项目
 
-![image-20211229092209203](../img/image-20211229092209203.png)
+![image-20211229092209203](img/autobuildconf.png)
 
 打开注册表(registry)
 

@@ -6,7 +6,7 @@ netsh winsock reset 将 winsock 目录重置为默认设置或清除状态，重
 
 ## 远程桌面出错
 
-![img](../img/pic35.png)
+![img](img/pic35.png)
 
 - 运行 gpedit.msc
 
@@ -22,11 +22,12 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameter
 
 AllowEncryptionOracle 32 位、DWORD 值 2
 
-![img](../img/pic38.jpg)
+![img](img/pic38.jpg)
 
 ## 删除 3D Object 等文件夹
 
-在注册表编辑器中转到以下路径`算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`，删除以下相应的数据
+在注册表编辑器中转到以下路径`算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`
+，删除以下相应的数据
 
 [下载] 088e3905-0323-4b02-9826-5d99428e115f}
 

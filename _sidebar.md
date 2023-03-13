@@ -59,6 +59,8 @@
     - [Kubernetes](doc/k8s.md)
 - **Linux**
     - [Linux](doc/Linux.md)
+    - [Ubuntu](doc/Ubuntu.md)
+    - [CentOS](doc/CentOS.md)
     - [bash](doc/bash.md)
     - [WSL](doc/WSL.md)
     - [Vim](doc/Vim.md)
