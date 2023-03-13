@@ -12,7 +12,7 @@
 
 `cd /etc/netplan`
 
-![](img/b7319eea.png)
+![b7319eea](img/b7319eea.png)
 
 
 
