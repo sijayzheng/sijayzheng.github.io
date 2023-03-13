@@ -8,3 +8,12 @@
 
 ![img.png](img/img.png)
 
+### 设置DNS NameServer
+
+`cd /etc/netplan`
+
+![](img/b7319eea.png)
+
+
+
+
