@@ -9,7 +9,7 @@
         - [JavaSE](doc/JavaSE.md)
         - [Java](doc/Java.md)
         - [Java 源码](doc/Java源码.md)
-        - [annotion](doc/annotion.md)
+        - [annotation](doc/annotation.md)
         - [JVM](doc/JVM.md)
         - [GC 算法和垃圾回收器](doc/GC.md)
         - [网络编程](doc/net.md)
