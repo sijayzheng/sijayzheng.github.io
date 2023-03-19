@@ -14,6 +14,7 @@
         - [GC 算法和垃圾回收器](doc/GC.md)
         - [网络编程](doc/net.md)
         - [IO](doc/IO.md)
+        - [多线程](doc/Thread.md)
         - [Java 面试](doc/Java面试.md)
         - [服务](doc/service.md)
 - **数据结构**

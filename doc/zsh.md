@@ -1,4 +1,9 @@
-.zshrc 文件
+## 安装zsh
+
+- `sudo apt install zsh -y`
+- `chsh -s /bin/zsh`
+
+## .zshrc 文件
 
 ```config
 #export ZSH="$HOME/.oh-my-zsh"
