@@ -42,6 +42,7 @@
     - _关系型数据库_
         - [DB2](doc/DB2.md)
         - [MySQL](doc/MySQL.md)
+        - [Oracle](doc/Oracle.md)
     - _非关系型数据库_
         - [Redis](doc/Redis.md)
         - [MongoDB](doc/MongoDB.md)
@@ -67,7 +68,7 @@
     - [Vim](doc/Vim.md)
     - [zsh](doc/zsh.md)
 - **[Windows](doc/Windows.md)**
-- **工具**
+- **[工具](doc/tools.md)**
     - [Git](doc/Git.md)
     - [Github](doc/Github.md)
     - [GitLab](doc/GitLab.md)
@@ -83,6 +84,7 @@
     - [Jekyll](doc/Jekyll.md)
     - [docsify](doc/docsify.md)
     - [AxurePR](doc/AxurePR.md)
+    - [DBeaver](doc/DBeaver.md)
 - **前端框架、库**
     - [jQuery](doc/jQuery.md)
     - [EasyUI](doc/EasyUI.md)
