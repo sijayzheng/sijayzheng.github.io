@@ -1,17 +1,22 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.annotation.*;
+import sijay.zheng.experience.common.annotation.LogDog;
 
-import javax.crypto.*;
-import javax.crypto.spec.*;
-import java.nio.charset.*;
-import java.security.*;
-import java.util.*;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.DESKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+import java.util.Base64;
 
 /**
  * @author sijay
  */
-public class EncryptUtils {
+public class EncryptUtil {
 
     //算法
     private static final String ALGORITHMSTR = "AES/ECB/PKCS5Padding";

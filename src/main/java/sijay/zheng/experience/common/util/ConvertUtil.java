@@ -1,16 +1,18 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.constant.*;
-import sijay.zheng.experience.common.enums.*;
+import sijay.zheng.experience.common.constant.CommConstant;
+import sijay.zheng.experience.common.enums.CaseEnum;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 /**
  * @author sijay
  * @date 2022/4/26 21:25
  */
-public class ConvertUtils {
+public class ConvertUtil {
     public static final List<Character> A_Z = List.of('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 
     public static String caseConvert(String name) {

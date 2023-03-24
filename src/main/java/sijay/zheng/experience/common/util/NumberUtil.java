@@ -1,13 +1,18 @@
 package sijay.zheng.experience.common.util;
 
-import org.springframework.stereotype.*;
-import sijay.zheng.experience.common.annotation.*;
-import sijay.zheng.experience.common.enums.*;
+import org.springframework.stereotype.Component;
+import sijay.zheng.experience.common.annotation.LogDog;
+import sijay.zheng.experience.common.enums.NumberBaseEnum;
+import sijay.zheng.experience.common.enums.NumberEnum;
 
-import javax.annotation.*;
-import java.math.*;
-import java.util.*;
-import java.util.stream.*;
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author sijay
@@ -15,7 +20,7 @@ import java.util.stream.*;
  */
 @Component
 @Resource
-public class NumberUtils {
+public class NumberUtil {
     private static final List<String> NUMBER = List.of("零", "一", "二", "三", "四", "五", "六", "七", "八", "九");
     private static final List<String> UNIT_LOW = List.of("", "十", "百", "千");
     private static final List<String> UNIT_HIGH = List.of("", "万", "亿", "兆", "京");
@@ -98,4 +103,60 @@ public class NumberUtils {
         return numberToChinese(number.toString());
     }
 
+    @LogDog
+    public static String numToHex(Integer num) {
+        if (num == 0) {
+            return "0";
+        }
+        LinkedList<Character> list = new LinkedList<>();
+        while (num > 1) {
+            list.add(NumberBaseEnum.getBase(num % 16));
+            num = num / 16;
+        }
+        if (num > 0) {
+            list.add(NumberBaseEnum.getBase(num));
+        }
+        Collections.reverse(list);
+        return list.stream().map(String::valueOf).collect(Collectors.joining());
+    }
+
+    @LogDog
+    public static double hexToNum(String hex) {
+        return toNum(hex, 16);
+    }
+
+    @LogDog
+    public static String numToBin(Integer num) {
+        if (num == 0) {
+            return "0";
+        }
+        LinkedList<Integer> list = new LinkedList<>();
+        while (num > 1) {
+            list.add(num % 2);
+            num = num / 2;
+        }
+        if (num > 0) {
+            list.add(num);
+        }
+        Collections.reverse(list);
+        return list.stream().map(String::valueOf).collect(Collectors.joining());
+    }
+
+    @LogDog
+    public static double binToNum(String bin) {
+        return toNum(bin, 2);
+    }
+
+    @LogDog
+    public static double toNum(String val, int base) {
+        assert base > 0 && base <= 16;
+        int j = 0;
+        double n = 0D;
+        for (int i = val.length() - 1; i >= 0; i--) {
+            double pow = Math.pow(base, j);
+            n += NumberBaseEnum.getVal(val.charAt(i)) * pow;
+            j++;
+        }
+        return n;
+    }
 }

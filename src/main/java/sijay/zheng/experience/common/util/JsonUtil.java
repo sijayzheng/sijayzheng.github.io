@@ -1,13 +1,13 @@
 package sijay.zheng.experience.common.util;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.json.*;
-import sijay.zheng.experience.common.annotation.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+import sijay.zheng.experience.common.annotation.LogDog;
 
 /**
  * @author sijay
  */
-public class JsonUtils {
+public class JsonUtil {
     static final JsonMapper MAPPER = new JsonMapper();
 
     /**

@@ -1,11 +1,14 @@
 package sijay.zheng.experience.common.util;
 
-import java.net.*;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 /**
  * @author SijayZheng
  */
-public class IpUtils {
+public class IpUtil {
     public static String getMacAddress() throws SocketException, UnknownHostException {
         byte[] hardwareAddress = NetworkInterface.getByInetAddress(InetAddress.getLocalHost()).getHardwareAddress();
         StringBuilder sb = new StringBuilder();

@@ -1,18 +1,20 @@
 package sijay.zheng.experience.common.util;
 
-import java.sql.*;
-import java.text.*;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.*;
+import java.util.GregorianCalendar;
 
-public class DateUtils {
+public class DateUtil {
 
     private static final int[] dayArray = {
             31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
             30, 31
     };
 
-    public DateUtils() {
+    public DateUtil() {
     }
 
     public static void main(String[] args) {

@@ -1,13 +1,17 @@
 package sijay.zheng.experience.common.util;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author sijay
  * @date 2022/11/24 17:12
  */
-public class CmdUtils {
+public class CmdUtil {
 
     /**
      * 该方法封装了执行cmd的方法

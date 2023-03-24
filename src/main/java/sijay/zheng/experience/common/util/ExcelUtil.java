@@ -3,7 +3,7 @@ package sijay.zheng.experience.common.util;
 /**
  * @author sijay
  */
-public class ExcelUtils {
+public class ExcelUtil {
 //
 //	public static void main(String[] args) {
 //		String path = "D:\\home\\sijay\\Downloads\\devicemodel_bangong (1).xls";

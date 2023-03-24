@@ -1,10 +1,13 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.entity.*;
+import sijay.zheng.experience.common.entity.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
-public class TreeUtils {
+public class TreeUtil {
     /**
      * 生成树形结构
      */

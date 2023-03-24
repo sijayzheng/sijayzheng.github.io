@@ -1,18 +1,21 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.annotation.*;
-import sijay.zheng.experience.common.constant.*;
+import sijay.zheng.experience.common.annotation.LogDog;
+import sijay.zheng.experience.common.constant.CommConstant;
 
-import java.io.*;
-import java.net.*;
-import java.net.http.*;
-import java.util.*;
-import java.util.concurrent.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @author sijay
  */
-public class HttpClientUtils {
+public class HttpClientUtil {
 
     /**
      * 同步GET方法

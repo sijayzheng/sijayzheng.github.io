@@ -1,19 +1,22 @@
 package sijay.zheng.experience.common.aspect;
 
-import org.aspectj.lang.*;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.slf4j.*;
-import org.springframework.core.io.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.context.request.*;
-import org.springframework.web.servlet.function.*;
-import sijay.zheng.experience.common.annotation.*;
-import sijay.zheng.experience.common.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.function.ServerResponse;
+import sijay.zheng.experience.common.annotation.LogDog;
+import sijay.zheng.experience.common.util.JsonUtil;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.util.*;
-import java.util.stream.*;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author sijay
@@ -46,9 +49,9 @@ public class LogDogAspect {
         stringBuilder.append(commHead).append("入参：【");
         Map<String, String[]> parameterMap = request.getParameterMap();
         if (parameterMap != null && parameterMap.size() > 0) {
-            stringBuilder.append(JsonUtils.toJsonString(parameterMap));
+            stringBuilder.append(JsonUtil.toJsonString(parameterMap));
         } else {
-            stringBuilder.append(Stream.of(point.getArgs()).filter(e -> !(e instanceof ServletRequest || e instanceof ServerResponse || e instanceof InputStreamResource)).map(JsonUtils::toJsonString).collect(Collectors.joining(";;")));
+            stringBuilder.append(Stream.of(point.getArgs()).filter(e -> !(e instanceof ServletRequest || e instanceof ServerResponse || e instanceof InputStreamResource)).map(JsonUtil::toJsonString).collect(Collectors.joining(";;")));
         }
         stringBuilder.append("】");
         logger.info(stringBuilder.toString());
@@ -60,7 +63,7 @@ public class LogDogAspect {
     @AfterReturning(value = "pointCut(LogDog)", returning = "result", argNames = "LogDog,result")
     public void doLog(LogDog LogDog, Object result) {
         String commHead = getCommHead((ServletRequestAttributes) RequestContextHolder.getRequestAttributes(), LogDog.value());
-        logger.info(commHead + "出参：【" + JsonUtils.toJsonString(result) + "】");
+        logger.info(commHead + "出参：【" + JsonUtil.toJsonString(result) + "】");
 
     }
 

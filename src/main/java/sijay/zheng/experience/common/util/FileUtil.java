@@ -13,7 +13,7 @@ import java.util.*;
 /**
  * @author sijay
  */
-public class FileUtils {
+public class FileUtil {
 
     public static final int BUFSIZE = 1024 * 8;
     public static final String CODE_UTF8 = "UTF-8";

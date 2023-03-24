@@ -1,22 +1,24 @@
 package sijay.zheng.experience.common.util;
 
-import sijay.zheng.experience.common.record.*;
+import sijay.zheng.experience.common.record.KVElement;
 
-import java.security.*;
-import java.util.*;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * @author sijay
  * @date 2022/11/24 17:34
  */
-public class PasswordUtils {
-
-    private PasswordUtils() {
-    }
+public class PasswordUtil {
 
     private static final String LOW = "abcdefghijklmnopqrstuvwxyz";
     private static final String SPECIAL = "~!@#$%^&*()_+/-=[]{};:'<>?.";
     private static final String NUM = "0123456789";
+    private PasswordUtil() {
+    }
 
     // 随机获取字符串字符
     private static char getRandomChar(String str) {
@@ -91,7 +93,7 @@ public class PasswordUtils {
 
     public static KVElement encryptPassword(String password) {
         String salt = getPasswordSalt();
-        password = EncryptUtils.aesEncrypt(password, salt);
+        password = EncryptUtil.aesEncrypt(password, salt);
         return new KVElement(password, salt);
     }
 

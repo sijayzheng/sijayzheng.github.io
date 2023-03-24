@@ -1,18 +1,21 @@
 package sijay.zheng.experience.common.util;
 
-import lombok.extern.slf4j.*;
-import sijay.zheng.experience.common.annotation.*;
-import sijay.zheng.experience.common.enums.*;
+import lombok.extern.slf4j.Slf4j;
+import sijay.zheng.experience.common.annotation.LogDog;
+import sijay.zheng.experience.common.enums.NumberEnum;
 
-import java.util.*;
-import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Pattern;
 
 /**
  * @author sijay
  * @date 2022/6/18 0:30
  */
 @Slf4j
-public class GenerateUtils {
+public class GenerateUtil {
 
     private static final Pattern PHONE_NO_PATTERN = Pattern.compile("^1[34578]\\d{9}$");
     private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d{16,19}$");
@@ -71,23 +74,23 @@ public class GenerateUtils {
         boolean flag = true;
         if (StringUtil.isEmpty(province)) {
             log.error("请选择省份!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
         if (StringUtil.isEmpty(city)) {
             log.error("请选择城市!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
         if (StringUtil.isEmpty(county)) {
             log.error("请选择区县!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
         if (StringUtil.isEmpty(birthday)) {
             log.error("请选择时间!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
         if (StringUtil.isEmpty(sex)) {
             log.error("请选择性别!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
 
         var rand = Math.floor(100 + Math.random() * (999 - 100));
@@ -128,7 +131,7 @@ public class GenerateUtils {
     public static boolean checkCard(String idNo) {
         if (StringUtil.isEmpty(idNo)) {
             log.error("请生成身份证号码!");
-            ExceptionUtils.throwException("");
+            ExceptionUtil.throwException("");
         }
         boolean res = ID_NO_PATTERN.matcher(idNo).matches() || ID_NO_SHOT_PATTERN.matcher(idNo).matches();
         if (res) {
