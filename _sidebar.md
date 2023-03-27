@@ -17,14 +17,14 @@
     - [markdown](doc/markdown.md)
     - SQL
 - **[数据结构](doc/dataStructure.md)**
-    - 数组（Array）
-    - 队列（Queue）
-    - 链表（Linked List）
-    - 栈（Stack）
-    - 树（Tree）
-    - 散列表（Hash）
-    - 堆（Heap）
-    - 图（Graph）
+    - [数组](Array.md)
+    - [队列](Queue.md)
+    - [链表](LinkedList.md)
+    - [栈](Stack.md)
+    - [树](Tree.md)
+    - [散列表](Hash.md)
+    - [堆](Heap.md)
+    - [图](Graph.md)
 - **算法**
 - **Java框架、库**
     - [Hibernate](doc/Hibernate.md)
