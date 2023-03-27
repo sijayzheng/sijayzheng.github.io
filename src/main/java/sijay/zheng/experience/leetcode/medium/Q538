@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目538：丑数 III
-<p>给你四个整数：<code>n</code> 、<code>a</code> 、<code>b</code> 、<code>c</code> ，请你设计一个算法来找出第 <code>n</code> 个丑数。</p>
+<p>给你四个整数：<code>n</code> 、<code>a</code> 、<code>b</code> 、<code>c</code> ，请你设计一个算法来找出第 <code>n</code> 个丑数。</p>
 
-<p>丑数是可以被 <code>a</code> <strong>或</strong> <code>b</code> <strong>或</strong> <code>c</code> 整除的 <strong>正整数</strong> 。</p>
+<p>丑数是可以被 <code>a</code> <strong>或</strong> <code>b</code> <strong>或</strong> <code>c</code> 整除的 <strong>正整数</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -37,14 +37,14 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>1999999984
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
 	<li><code>1 <= n, a, b, c <= 10^9</code></li>
 	<li><code>1 <= a * b * c <= 10^18</code></li>
-	<li>本题结果在 <code>[1, 2 * 10^9]</code> 的范围内</li>
+	<li>本题结果在 <code>[1, 2 * 10^9]</code> 的范围内</li>
 </ul>
 
 */

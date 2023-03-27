@@ -15,11 +15,11 @@ package sijay.zheng.experience.leetcode.hard;
 <ul>
 </ul>
 
-<p>然而，Bob 很挑剔。因为他的幸运数字是 <code>k</code>，他想要遵循 <strong>按字典序排列后的第 <code>k</code> 条最小指令 </strong>的导航前往目的地 <code>destination</code> 。<code>k</code>  的编号 <strong>从 1 开始</strong> 。</p>
+<p>然而，Bob 很挑剔。因为他的幸运数字是 <code>k</code>，他想要遵循 <strong>按字典序排列后的第 <code>k</code> 条最小指令 </strong>的导航前往目的地 <code>destination</code> 。<code>k</code>  的编号 <strong>从 1 开始</strong> 。</p>
 
-<p>给你一个整数数组 <code>destination</code> 和一个整数 <code>k</code> ，请你返回可以为<em> </em>Bob<em> </em>提供前往目的地 <code>destination</code> 导航的<strong> 按字典序排列后的第 <code>k</code> 条最小指令 </strong>。</p>
+<p>给你一个整数数组 <code>destination</code> 和一个整数 <code>k</code> ，请你返回可以为<em> </em>Bob<em> </em>提供前往目的地 <code>destination</code> 导航的<strong> 按字典序排列后的第 <code>k</code> 条最小指令 </strong>。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -50,7 +50,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>"HHVVH"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

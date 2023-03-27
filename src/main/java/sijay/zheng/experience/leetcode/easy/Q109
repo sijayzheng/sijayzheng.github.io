@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>二叉树 <code>tree</code> 的一棵子树包括 <code>tree</code> 的某个节点和这个节点的所有后代节点。<code>tree</code> 也可以看做它自身的一棵子树。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/04/28/subtree1-tree.jpg" style="width: 532px; height: 400px;" />
@@ -23,7 +23,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>false
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

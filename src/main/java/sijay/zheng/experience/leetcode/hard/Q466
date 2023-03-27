@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 <p>例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -20,12 +20,12 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输入：</strong>n = 13
 <strong>输出：</strong>6</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>限制：</strong></p>
 
 <ul>
-	<li><code>1 <= n < 2^31</code></li>
+	<li><code>1 <= n < 2^31</code></li>
 </ul>
 
 <p>注意：本题与主站 233 题相同：<a href="https://leetcode-cn.com/problems/number-of-digit-one/">https://leetcode-cn.com/problems/number-of-digit-one/</a></p>

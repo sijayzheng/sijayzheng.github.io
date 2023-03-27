@@ -7,8 +7,8 @@ package sijay.zheng.experience.leetcode.medium;
 
 <ol>
 	<li>若干空格</li>
-	<li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li>
-	<li>（可选）一个 <code>'e'</code> 或 <code>'E'</code> ，后面跟着一个 <strong>整数</strong></li>
+	<li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li>
+	<li>（可选）一个 <code>'e'</code> 或 <code>'E'</code> ，后面跟着一个 <strong>整数</strong></li>
 	<li>若干空格</li>
 </ol>
 
@@ -44,7 +44,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li><code>["12e", "1a3.14", "1.2.3", "+-5", "12e+5.4"]</code></li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -69,11 +69,11 @@ package sijay.zheng.experience.leetcode.medium;
 <p><strong>示例 4：</strong></p>
 
 <pre>
-<strong>输入：</strong>s = "    .1  "
+<strong>输入：</strong>s = "    .1  "
 <strong>输出：</strong>true
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

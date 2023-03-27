@@ -7,12 +7,12 @@ package sijay.zheng.experience.leetcode.hard;
 
 <ul>
 	<li>同一小组的项目，排序后在列表中彼此相邻。</li>
-	<li>项目之间存在一定的依赖关系，我们用一个列表 <code>beforeItems</code> 来表示，其中 <code>beforeItems[i]</code> 表示在进行第 <code>i</code> 个项目前（位于第 <code>i</code> 个项目左侧）应该完成的所有项目。</li>
+	<li>项目之间存在一定的依赖关系，我们用一个列表 <code>beforeItems</code> 来表示，其中 <code>beforeItems[i]</code> 表示在进行第 <code>i</code> 个项目前（位于第 <code>i</code> 个项目左侧）应该完成的所有项目。</li>
 </ul>
 
 <p>如果存在多个解决方案，只需要返回其中任意一个即可。如果没有合适的解决方案，就请返回一个 <strong>空列表 </strong>。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -23,7 +23,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>[6,3,4,1,5,2,0,7]
 </pre>
 
-<p><strong>示例 2：</strong></p>
+<p><strong>示例 2：</strong></p>
 
 <pre>
 <strong>输入：</strong>n = 8, m = 2, group = [-1,-1,1,0,0,1,0,-1], beforeItems = [[],[6],[5],[6],[3],[],[4],[]]
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>解释：</strong>与示例 1 大致相同，但是在排序后的列表中，4 必须放在 6 的前面。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

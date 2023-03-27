@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>给你两个列表 <code>scores</code> 和 <code>ages</code>，其中每组 <code>scores[i]</code> 和 <code>ages[i]</code> 表示第 <code>i</code> 名球员的分数和年龄。请你返回 <strong>所有可能的无矛盾球队中得分最高那支的分数</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>解释：</strong>最佳的选择是前 3 名球员。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -21,7 +21,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>给你两个字符串，<code>word1</code> 和 <code>word2</code> 。如果<em> </em><code>word1</code><em> </em>和<em> </em><code>word2</code><em> </em><strong>接近 </strong>，就返回 <code>true</code> ；否则，返回<em> </em><code>false</code><em> </em>。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -58,7 +58,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>false
 <strong>解释：</strong>不管执行多少次操作，都无法从 word1 得到 word2 ，反之亦然。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

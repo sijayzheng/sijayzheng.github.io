@@ -3,7 +3,7 @@ package sijay.zheng.experience.leetcode.easy;
  题目549：平衡二叉树
 <p>输入一棵二叉树的根节点，判断该树是不是平衡二叉树。如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1:</strong></p>
 
@@ -32,9 +32,9 @@ package sijay.zheng.experience.leetcode.easy;
  4   4
 </pre>
 
-<p>返回 <code>false</code> 。</p>
+<p>返回 <code>false</code> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>限制：</strong></p>
 
@@ -42,9 +42,9 @@ package sijay.zheng.experience.leetcode.easy;
 	<li><code>0 <= 树的结点个数 <= 10000</code></li>
 </ul>
 
-<p>注意：本题与主站 110 题相同：<a href="https://leetcode-cn.com/problems/balanced-binary-tree/">https://leetcode-cn.com/problems/balanced-binary-tree/</a></p>
+<p>注意：本题与主站 110 题相同：<a href="https://leetcode-cn.com/problems/balanced-binary-tree/">https://leetcode-cn.com/problems/balanced-binary-tree/</a></p>
 
-<p> </p>
+<p> </p>
 
 */
  class Q549 {public static void main(String[] args) {Solution solution=new Solution();}

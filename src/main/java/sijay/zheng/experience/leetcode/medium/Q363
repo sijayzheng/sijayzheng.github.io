@@ -4,7 +4,7 @@ package sijay.zheng.experience.leetcode.medium;
 符合下列属性的数组 <code>arr</code> 称为 <strong>山脉数组</strong> ：
 <ul>
 	<li><code>arr.length >= 3</code></li>
-	<li>存在 <code>i</code>（<code>0 < i < arr.length - 1</code>）使得：
+	<li>存在 <code>i</code>（<code>0 < i < arr.length - 1</code>）使得：
 	<ul>
 		<li><code>arr[0] < arr[1] < ... arr[i-1] < arr[i] </code></li>
 		<li><code>arr[i] > arr[i+1] > ... > arr[arr.length - 1]</code></li>
@@ -14,7 +14,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>给你由整数组成的山脉数组 <code>arr</code> ，返回任何满足 <code>arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]</code> 的下标 <code>i</code> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>2
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -61,7 +61,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li>题目数据保证 <code>arr</code> 是一个山脉数组</li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>进阶：</strong>很容易想到时间复杂度 <code>O(n)</code> 的解决方案，你可以设计一个 <code>O(log(n))</code> 的解决方案吗？</p>
 

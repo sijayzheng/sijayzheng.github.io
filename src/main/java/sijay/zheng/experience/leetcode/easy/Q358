@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>注意，如果字符串中不存在 <code>0</code> ，此时认为由 <code>0</code> 组成的最长连续子字符串的长度是 <code>0</code> 。字符串中不存在 <code>1</code> 的情况也适用此规则。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -44,7 +44,7 @@ package sijay.zheng.experience.leetcode.easy;
 由 1 组成的子字符串不比由 0 组成的子字符串长，故返回 false 。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

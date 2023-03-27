@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>返回<strong> 确切 </strong>满足购物清单所需花费的最低价格，你可以充分利用大礼包的优惠活动。你不能购买超出购物清单指定数量的物品，即使那样会降低整体价格。任意大礼包可无限次购买。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.medium;
 需要买 1A ，2B 和 1C ，所以付 ¥4 买 1A 和 1B（大礼包 1），以及 ¥3 购买 1B ， ¥4 购买 1C 。 
 不可以购买超出待购清单的物品，尽管购买大礼包 2 更加便宜。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -1,13 +1,13 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目39：不同路径
-<p>一个机器人位于一个 <code>m x n</code><em> </em>网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
+<p>一个机器人位于一个 <code>m x n</code><em> </em>网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
 
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。</p>
 
 <p>问总共有多少条不同的路径？</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" />
@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输入：</strong>m = 3, n = 3
 <strong>输出：</strong>6</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>输入的<code>guess</code>数组为 小A 每次的猜测，<code>answer</code>数组为 小B 每次的选择。<code>guess</code>和<code>answer</code>的长度都等于3。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -21,7 +21,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>1
 <strong>解释：</strong>小A 只猜对了第二次。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>限制：</strong></p>
 

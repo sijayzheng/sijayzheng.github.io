@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p><strong>注意：</strong>输入总是有效的。你可以假设除法运算中不会出现除数为 0 的情况，且不存在任何矛盾的结果。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -36,7 +36,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>[0.50000,2.00000,-1.00000,-1.00000]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

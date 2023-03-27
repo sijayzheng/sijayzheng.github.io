@@ -1,7 +1,7 @@
 package sijay.zheng.experience.leetcode.easy;
 /**
  题目366：两个数对之间的最大乘积差
-<p>两个数对 <code>(a, b)</code> 和 <code>(c, d)</code> 之间的 <strong>乘积差</strong> 定义为 <code>(a * b) - (c * d)</code> 。</p>
+<p>两个数对 <code>(a, b)</code> 和 <code>(c, d)</code> 之间的 <strong>乘积差</strong> 定义为 <code>(a * b) - (c * d)</code> 。</p>
 
 <ul>
 	<li>例如，<code>(5, 6)</code> 和 <code>(2, 7)</code> 之间的乘积差是 <code>(5 * 6) - (2 * 7) = 16</code> 。</li>
@@ -11,7 +11,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>返回以这种方式取得的乘积差中的 <strong>最大值</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.easy;
 乘积差是 (9 * 8) - (2 * 4) = 64
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

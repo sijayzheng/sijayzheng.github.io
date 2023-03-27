@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p><strong>说明：</strong>叶子节点是指没有子节点的节点。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/10/12/ex_depth.jpg" style="width: 432px; height: 302px;" />
@@ -23,7 +23,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>5
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

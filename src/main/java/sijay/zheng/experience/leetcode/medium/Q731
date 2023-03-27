@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>给你两个长度为 <code>n</code> 的整数数组 <code>days</code> 和 <code>apples</code> ，返回你可以吃掉的苹果的最大数目<em>。</em></p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -30,7 +30,7 @@ package sijay.zheng.experience.leetcode.medium;
 - 第六天和第七天，你吃的都是第六天长出来的苹果。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

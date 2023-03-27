@@ -6,7 +6,7 @@ package sijay.zheng.experience.leetcode.easy;
  *
  * <p>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p>
  *
- * <p> </p>
+ * <p> </p>
  *
  * <p><strong>示例 1：</strong></p>
  * <img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg" style="width: 622px; height: 182px;" />
@@ -29,7 +29,7 @@ package sijay.zheng.experience.leetcode.easy;
  * <strong>输出：</strong>false
  * </pre>
  *
- * <p> </p>
+ * <p> </p>
  *
  * <p><strong>提示：</strong></p>
  *
@@ -41,6 +41,16 @@ package sijay.zheng.experience.leetcode.easy;
 class Q18 {
     public static void main(String[] args) {
         Solution solution = new Solution();
+    }
+
+    static class Solution {
+        public boolean isSameTree(TreeNode p, TreeNode q) {
+            if (p != null && q != null) {
+                return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            } else {
+                return p == null && q == null;
+            }
+        }
     }
 
     //Definition for a binary tree node.
@@ -60,16 +70,6 @@ class Q18 {
             this.val = val;
             this.left = left;
             this.right = right;
-        }
-    }
-
-    static class Solution {
-        public boolean isSameTree(TreeNode p, TreeNode q) {
-            if (p != null && q != null) {
-                return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-            } else {
-                return p == null && q == null;
-            }
         }
     }
 }

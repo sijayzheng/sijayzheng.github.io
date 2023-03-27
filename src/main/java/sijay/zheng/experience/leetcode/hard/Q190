@@ -1,25 +1,25 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目190：矩阵转换后的秩
-<p>给你一个 <code>m x n</code> 的矩阵 <code>matrix</code> ，请你返回一个新的矩阵<em> </em><code>answer</code> ，其中<em> </em><code>answer[row][col]</code> 是 <code>matrix[row][col]</code> 的秩。</p>
+<p>给你一个 <code>m x n</code> 的矩阵 <code>matrix</code> ，请你返回一个新的矩阵<em> </em><code>answer</code> ，其中<em> </em><code>answer[row][col]</code> 是 <code>matrix[row][col]</code> 的秩。</p>
 
-<p>每个元素的 <b>秩</b> 是一个整数，表示这个元素相对于其他元素的大小关系，它按照如下规则计算：</p>
+<p>每个元素的 <b>秩</b> 是一个整数，表示这个元素相对于其他元素的大小关系，它按照如下规则计算：</p>
 
 <ul>
 	<li>秩是从 1 开始的一个整数。</li>
-	<li>如果两个元素 <code>p</code> 和 <code>q</code> 在 <strong>同一行</strong> 或者 <strong>同一列</strong> ，那么：
+	<li>如果两个元素 <code>p</code> 和 <code>q</code> 在 <strong>同一行</strong> 或者 <strong>同一列</strong> ，那么：
 	<ul>
-		<li>如果 <code>p < q</code> ，那么 <code>rank(p) < rank(q)</code></li>
-		<li>如果 <code>p == q</code> ，那么 <code>rank(p) == rank(q)</code></li>
-		<li>如果 <code>p > q</code> ，那么 <code>rank(p) > rank(q)</code></li>
+		<li>如果 <code>p < q</code> ，那么 <code>rank(p) < rank(q)</code></li>
+		<li>如果 <code>p == q</code> ，那么 <code>rank(p) == rank(q)</code></li>
+		<li>如果 <code>p > q</code> ，那么 <code>rank(p) > rank(q)</code></li>
 	</ul>
 	</li>
-	<li><b>秩</b> 需要越 <strong>小</strong> 越好。</li>
+	<li><b>秩</b> 需要越 <strong>小</strong> 越好。</li>
 </ul>
 
-<p>题目保证按照上面规则 <code>answer</code> 数组是唯一的。</p>
+<p>题目保证按照上面规则 <code>answer</code> 数组是唯一的。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/10/25/rank1.jpg" style="width: 442px; height: 162px;" />
@@ -54,7 +54,7 @@ matrix[1][1] 的秩为 3 ，因为 matrix[1][1] > matrix[0][1]， matrix[1][1] >
 <b>输出：</b>[[5,1,4],[1,2,3],[6,3,1]]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

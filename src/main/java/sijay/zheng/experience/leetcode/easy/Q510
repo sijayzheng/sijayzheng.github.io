@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>请用新颜色填充初始坐标点的周围区域，并返回填充后的图像。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例：</strong></p>
 
@@ -24,14 +24,14 @@ sr = 1, sc = 1, newColor = 2
 注意，右下角的像素没有更改为 2 ，因为它不属于初始坐标点的周围区域。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li><code>image</code> 和 <code>image[0]</code> 的长度均在范围 [1, 50] 内。</li>
-	<li>初始坐标点 <code>(sr,sc)</code> 满足 <code>0 <= sr < image.length</code> 和 <code>0 <= sc < image[0].length</code> 。</li>
-	<li><code>image[i][j]</code> 和 <code>newColor</code> 表示的颜色值在范围 <code>[0, 65535]</code> 内。</li>
+	<li><code>image</code> 和 <code>image[0]</code> 的长度均在范围 [1, 50] 内。</li>
+	<li>初始坐标点 <code>(sr,sc)</code> 满足 <code>0 <= sr < image.length</code> 和 <code>0 <= sc < image[0].length</code> 。</li>
+	<li><code>image[i][j]</code> 和 <code>newColor</code> 表示的颜色值在范围 <code>[0, 65535]</code> 内。</li>
 </ul>
 
 */

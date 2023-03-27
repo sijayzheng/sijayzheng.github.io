@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>如果执行任意步操作可以使 <code>words</code> 中的每个字符串都相等，返回 <code>true</code><em> </em>；否则，返回<em> </em><code>false</code> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -25,7 +25,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>解释：</strong>执行操作无法使所有字符串都相等。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

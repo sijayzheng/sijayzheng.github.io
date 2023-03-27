@@ -16,7 +16,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p><strong>注意：</strong>空字符串也属于整理好的字符串，尽管其中没有任何字符。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>"s"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

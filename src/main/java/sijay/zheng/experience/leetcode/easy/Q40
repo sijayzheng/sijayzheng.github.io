@@ -2,7 +2,7 @@ package sijay.zheng.experience.leetcode.easy;
 /**
  题目40：移除链表元素
 给你一个链表的头节点 <code>head</code> 和一个整数 <code>val</code> ，请你删除链表中所有满足 <code>Node.val == val</code> 的节点，并返回 <strong>新的头节点</strong> 。
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg" style="width: 500px; height: 142px;" />
@@ -25,7 +25,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>[]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

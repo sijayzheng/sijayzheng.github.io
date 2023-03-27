@@ -10,9 +10,9 @@ import com.alibaba.fastjson2.JSON;
  *
  * <p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
  *
- * <p> </p>
+ * <p> </p>
  *
- * <p><strong>示例 1：</strong></p>
+ * <p><strong>示例 1：</strong></p>
  *
  * <pre>
  * <strong>输入：</strong>digits = [1,2,3]
@@ -20,7 +20,7 @@ import com.alibaba.fastjson2.JSON;
  * <strong>解释：</strong>输入数组表示数字 123。
  * </pre>
  *
- * <p><strong>示例 2：</strong></p>
+ * <p><strong>示例 2：</strong></p>
  *
  * <pre>
  * <strong>输入：</strong>digits = [4,3,2,1]
@@ -35,7 +35,7 @@ import com.alibaba.fastjson2.JSON;
  * <strong>输出：</strong>[1]
  * </pre>
  *
- * <p> </p>
+ * <p> </p>
  *
  * <p><strong>提示：</strong></p>
  *

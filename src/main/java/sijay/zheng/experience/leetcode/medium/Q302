@@ -1,13 +1,13 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目302：删除并获得点数
-<p>给你一个整数数组 <code>nums</code> ，你可以对它进行一些操作。</p>
+<p>给你一个整数数组 <code>nums</code> ，你可以对它进行一些操作。</p>
 
-<p>每次操作中，选择任意一个 <code>nums[i]</code> ，删除它并获得 <code>nums[i]</code> 的点数。之后，你必须删除 <strong>所有 </strong>等于 <code>nums[i] - 1</code> 和 <code>nums[i] + 1</code> 的元素。</p>
+<p>每次操作中，选择任意一个 <code>nums[i]</code> ，删除它并获得 <code>nums[i]</code> 的点数。之后，你必须删除 <strong>所有 </strong>等于 <code>nums[i] - 1</code> 和 <code>nums[i] + 1</code> 的元素。</p>
 
 <p>开始你拥有 <code>0</code> 个点数。返回你能通过这些操作获得的最大点数。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -19,7 +19,7 @@ package sijay.zheng.experience.leetcode.medium;
 之后，删除 2 获得 2 个点数。总共获得 6 个点数。
 </pre>
 
-<p><strong>示例 2：</strong></p>
+<p><strong>示例 2：</strong></p>
 
 <pre>
 <strong>输入：</strong>nums = [2,2,3,3,3,4]
@@ -30,7 +30,7 @@ package sijay.zheng.experience.leetcode.medium;
 总共获得 9 个点数。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

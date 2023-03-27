@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>给你一个由若干单词组成的字符串 <code>text</code> ，单词间由单个空格组成（不含前导和尾随空格）；另有一个字符串 <code>brokenLetters</code> ，由所有已损坏的不同字母键组成，返回你可以使用此键盘完全输入的 <code>text</code> 中单词的数目。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -28,7 +28,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>解释：</strong>无法输入任何单词，因为字母键 'e' 已损坏。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

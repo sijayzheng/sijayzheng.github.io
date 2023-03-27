@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -23,7 +23,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>解释：</strong>一个可能的最长回文子序列为 "bb" 。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

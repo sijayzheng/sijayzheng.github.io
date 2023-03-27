@@ -1,12 +1,12 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目92：为高尔夫比赛砍树
-<p>你被请来给一个要举办高尔夫比赛的树林砍树。树林由一个 <code>m x n</code> 的矩阵表示， 在这个矩阵中：</p>
+<p>你被请来给一个要举办高尔夫比赛的树林砍树。树林由一个 <code>m x n</code> 的矩阵表示， 在这个矩阵中：</p>
 
 <ul>
 	<li><code>0</code> 表示障碍，无法触碰</li>
-	<li><code>1</code> 表示地面，可以行走</li>
-	<li><code>比 1 大的数</code> 表示有树的单元格，可以行走，数值表示树的高度</li>
+	<li><code>1</code> 表示地面，可以行走</li>
+	<li><code>比 1 大的数</code> 表示有树的单元格，可以行走，数值表示树的高度</li>
 </ul>
 
 <p>每一步，你都可以向上、下、左、右四个方向之一移动一个单位，如果你站的地方有一棵树，那么你可以决定是否要砍倒它。</p>
@@ -17,7 +17,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 <p>可以保证的是，没有两棵树的高度是相同的，并且你至少需要砍倒一棵树。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/trees1.jpg" style="width: 242px; height: 242px;" />
@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.hard;
 (0,0) 位置的树，可以直接砍去，不用算步数。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -3,7 +3,7 @@ package sijay.zheng.experience.leetcode.medium;
  题目155：前 K 个高频元素
 <p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回其中出现频率前 <code>k</code> 高的元素。你可以按 <strong>任意顺序</strong> 返回答案。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1:</strong></p>
 
@@ -18,7 +18,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输入: </strong>nums = [1], k = 1
 <strong>输出: </strong>[1]</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -28,9 +28,9 @@ package sijay.zheng.experience.leetcode.medium;
 	<li>题目数据保证答案唯一，换句话说，数组中前 <code>k</code> 个高频元素的集合是唯一的</li>
 </ul>
 
-<p> </p>
+<p> </p>
 
-<p><strong>进阶：</strong>你所设计算法的时间复杂度 <strong>必须</strong> 优于 <code>O(n log n)</code> ，其中 <code>n</code><em> </em>是数组大小。</p>
+<p><strong>进阶：</strong>你所设计算法的时间复杂度 <strong>必须</strong> 优于 <code>O(n log n)</code> ，其中 <code>n</code><em> </em>是数组大小。</p>
 
 */
  class Q155 {public static void main(String[] args) {Solution solution=new Solution();}

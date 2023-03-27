@@ -13,7 +13,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 <p>返回切棍子的 <strong>最小总成本</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>22
 <strong>解释：</strong>如果按给定的顺序切割，则总成本为 25 。总成本 <= 25 的切割顺序很多，例如，[4, 6, 5, 2, 1] 的总成本 = 22，是所有可能方案中成本最小的。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

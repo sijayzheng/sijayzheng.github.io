@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>返回使 <code>s</code> 变成 <strong>交替字符串</strong> 所需的 <strong>最少</strong> 操作数。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -30,7 +30,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>解释：</strong>需要 2 步操作得到 "0101" 或 "1010" 。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

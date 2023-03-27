@@ -5,9 +5,9 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>有效的时间为 <code>00:00</code> 到 <code>23:59</code> 之间的所有时间，包括 <code>00:00</code> 和 <code>23:59</code> 。</p>
 
-<p>替换 <code>time</code> 中隐藏的数字，返回你可以得到的最晚有效时间。</p>
+<p>替换 <code>time</code> 中隐藏的数字，返回你可以得到的最晚有效时间。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>"19:22"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

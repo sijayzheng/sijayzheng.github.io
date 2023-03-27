@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目464：节点与其祖先之间的最大差值
-<p>给定二叉树的根节点 <code>root</code>，找出存在于 <strong>不同</strong> 节点 <code>A</code> 和 <code>B</code> 之间的最大值 <code>V</code>，其中 <code>V = |A.val - B.val|</code>，且 <code>A</code> 是 <code>B</code> 的祖先。</p>
+<p>给定二叉树的根节点 <code>root</code>，找出存在于 <strong>不同</strong> 节点 <code>A</code> 和 <code>B</code> 之间的最大值 <code>V</code>，其中 <code>V = |A.val - B.val|</code>，且 <code>A</code> 是 <code>B</code> 的祖先。</p>
 
 <p>（如果 A 的任何子节点之一为 B，或者 A 的任何子节点是 B 的祖先，那么我们认为 A 是 B 的祖先）</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -30,12 +30,12 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>3
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li>树中的节点数在 <code>2</code> 到 <code>5000</code> 之间。</li>
+	<li>树中的节点数在 <code>2</code> 到 <code>5000</code> 之间。</li>
 	<li><code>0 <= Node.val <= 10<sup>5</sup></code></li>
 </ul>
 

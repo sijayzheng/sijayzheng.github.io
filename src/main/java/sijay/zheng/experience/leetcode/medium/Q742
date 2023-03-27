@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>返回 <strong>原始数组</strong><em> </em><code>nums</code><em> </em>。如果存在多种解答，返回 <strong>其中任意一个</strong> 即可。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -36,7 +36,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>[100000,-100000]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -46,7 +46,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li><code>adjacentPairs[i].length == 2</code></li>
 	<li><code>2 <= n <= 10<sup>5</sup></code></li>
 	<li><code>-10<sup>5</sup> <= nums[i], u<sub>i</sub>, v<sub>i</sub> <= 10<sup>5</sup></code></li>
-	<li>题目数据保证存在一些以 <code>adjacentPairs</code> 作为元素对的数组 <code>nums</code></li>
+	<li>题目数据保证存在一些以 <code>adjacentPairs</code> 作为元素对的数组 <code>nums</code></li>
 </ul>
 
 */

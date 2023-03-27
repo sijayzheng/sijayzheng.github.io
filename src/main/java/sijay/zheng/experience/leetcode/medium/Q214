@@ -1,15 +1,15 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目214：供暖器
-<p>冬季已经来临。 你的任务是设计一个有固定加热半径的供暖器向所有房屋供暖。</p>
+<p>冬季已经来临。 你的任务是设计一个有固定加热半径的供暖器向所有房屋供暖。</p>
 
 <p>在加热器的加热半径范围内的每个房屋都可以获得供暖。</p>
 
-<p>现在，给出位于一条水平线上的房屋 <code>houses</code> 和供暖器 <code>heaters</code> 的位置，请你找出并返回可以覆盖所有房屋的最小加热半径。</p>
+<p>现在，给出位于一条水平线上的房屋 <code>houses</code> 和供暖器 <code>heaters</code> 的位置，请你找出并返回可以覆盖所有房屋的最小加热半径。</p>
 
 <p><strong>说明</strong>：所有供暖器都遵循你的半径标准，加热的半径也一样。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1:</strong></p>
 
@@ -34,7 +34,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>3
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

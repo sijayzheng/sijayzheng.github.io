@@ -5,11 +5,11 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>返回将数组分隔变换后能够得到的元素最大和。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>注意，</strong>原数组和分隔后的数组对应顺序应当一致，也就是说，你只能选择分隔数组的位置而不能调整数组中的顺序。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -34,7 +34,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>1
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -20,7 +20,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>返回格式化后的电话号码。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -68,7 +68,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>"175-229-353-94-75"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

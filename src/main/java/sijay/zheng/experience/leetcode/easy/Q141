@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p class="MachineTrans-lang-zh-CN">N 叉树输入按层序遍历序列化表示，每组子节点由空值分隔（请参见示例）。</p>
 
-<p class="MachineTrans-lang-zh-CN"> </p>
+<p class="MachineTrans-lang-zh-CN"> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -27,13 +27,13 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>5
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li>树的深度不会超过 <code>1000</code> 。</li>
-	<li>树的节点数目位于 <code>[0, 10<sup>4</sup>]</code> 之间。</li>
+	<li>树的深度不会超过 <code>1000</code> 。</li>
+	<li>树的节点数目位于 <code>[0, 10<sup>4</sup>]</code> 之间。</li>
 </ul>
 
 */

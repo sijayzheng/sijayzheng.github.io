@@ -1,21 +1,21 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目312：N 次操作后的最大分数和
-<p>给你 <code>nums</code> ，它是一个大小为 <code>2 * n</code> 的正整数数组。你必须对这个数组执行 <code>n</code> 次操作。</p>
+<p>给你 <code>nums</code> ，它是一个大小为 <code>2 * n</code> 的正整数数组。你必须对这个数组执行 <code>n</code> 次操作。</p>
 
-<p>在第 <code>i</code> 次操作时（操作编号从 <strong>1</strong> 开始），你需要：</p>
+<p>在第 <code>i</code> 次操作时（操作编号从 <strong>1</strong> 开始），你需要：</p>
 
 <ul>
-	<li>选择两个元素 <code>x</code> 和 <code>y</code> 。</li>
-	<li>获得分数 <code>i * gcd(x, y)</code> 。</li>
-	<li>将 <code>x</code> 和 <code>y</code> 从 <code>nums</code> 中删除。</li>
+	<li>选择两个元素 <code>x</code> 和 <code>y</code> 。</li>
+	<li>获得分数 <code>i * gcd(x, y)</code> 。</li>
+	<li>将 <code>x</code> 和 <code>y</code> 从 <code>nums</code> 中删除。</li>
 </ul>
 
-<p>请你返回 <code>n</code> 次操作后你能获得的分数和最大为多少。</p>
+<p>请你返回 <code>n</code> 次操作后你能获得的分数和最大为多少。</p>
 
-<p>函数 <code>gcd(x, y)</code> 是 <code>x</code> 和 <code>y</code> 的最大公约数。</p>
+<p>函数 <code>gcd(x, y)</code> 是 <code>x</code> 和 <code>y</code> 的最大公约数。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -41,7 +41,7 @@ package sijay.zheng.experience.leetcode.hard;
 (1 * gcd(1, 5)) + (2 * gcd(2, 4)) + (3 * gcd(3, 6)) = 1 + 4 + 9 = 14
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

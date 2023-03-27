@@ -3,7 +3,7 @@ package sijay.zheng.experience.leetcode.medium;
  题目230：连续数组
 <p>给定一个二进制数组 <code>nums</code> , 找到含有相同数量的 <code>0</code> 和 <code>1</code> 的最长连续子数组，并返回该子数组的长度。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1:</strong></p>
 
@@ -19,7 +19,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出:</strong> 2
 <strong>说明:</strong> [0, 1] (或 [1, 0]) 是具有相同数量0和1的最长连续子数组。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

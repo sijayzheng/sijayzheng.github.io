@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>给你整数 <code>n</code> 和数组 <code>roads</code>，返回整个基础设施网络的 <strong>最大网络秩</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -39,7 +39,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>解释：</strong>2 和 5 的网络秩为 5，注意并非所有的城市都需要连接起来。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -47,9 +47,9 @@ package sijay.zheng.experience.leetcode.medium;
 	<li><code>2 <= n <= 100</code></li>
 	<li><code>0 <= roads.length <= n * (n - 1) / 2</code></li>
 	<li><code>roads[i].length == 2</code></li>
-	<li><code>0 <= a<sub>i</sub>, b<sub>i</sub> <= n-1</code></li>
-	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
-	<li>每对城市之间 <strong>最多只有一条</strong> 道路相连</li>
+	<li><code>0 <= a<sub>i</sub>, b<sub>i</sub> <= n-1</code></li>
+	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+	<li>每对城市之间 <strong>最多只有一条</strong> 道路相连</li>
 </ul>
 
 */

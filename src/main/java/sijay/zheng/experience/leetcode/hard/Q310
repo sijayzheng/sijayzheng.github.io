@@ -15,7 +15,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 <p><strong>回文串</strong> 是正着读和反着读结果一致的字符串。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>0
 <strong>解释：</strong>无法按题面所述方法构造回文串，所以返回 0 。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

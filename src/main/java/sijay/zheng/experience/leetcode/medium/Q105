@@ -1,13 +1,13 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目105：岛屿数量
-<p>给你一个由 <code>'1'</code>（陆地）和 <code>'0'</code>（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
+<p>给你一个由 <code>'1'</code>（陆地）和 <code>'0'</code>（水）组成的的二维网格，请你计算网格中岛屿的数量。</p>
 
 <p>岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。</p>
 
 <p>此外，你可以假设该网格的四条边均被水包围。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>3
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

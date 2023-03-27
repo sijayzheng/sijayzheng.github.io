@@ -1,7 +1,7 @@
 package sijay.zheng.experience.leetcode.easy;
 /**
  题目369：数组串联
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>nums</code> 。请你构建一个长度为 <code>2n</code> 的答案数组 <code>ans</code> ，数组下标<strong> 从 0 开始计数 </strong>，对于所有 <code>0 <= i < n</code> 的 <code>i</code> ，满足下述所有要求：</p>
+<p>给你一个长度为 <code>n</code> 的整数数组 <code>nums</code> 。请你构建一个长度为 <code>2n</code> 的答案数组 <code>ans</code> ，数组下标<strong> 从 0 开始计数 </strong>，对于所有 <code>0 <= i < n</code> 的 <code>i</code> ，满足下述所有要求：</p>
 
 <ul>
 	<li><code>ans[i] == nums[i]</code></li>
@@ -12,7 +12,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>返回数组<em> </em><code>ans</code> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.easy;
 - ans = [1,3,2,1,1,3,2,1]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

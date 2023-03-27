@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>岛屿中没有“湖”（“湖” 指水域在岛屿内部且不和岛屿周围的水相连）。格子是边长为 1 的正方形。网格为长方形，且宽度和高度均不超过 100 。计算这个岛屿的周长。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -32,7 +32,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>4
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>返回你可以对数组执行的最大操作数。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -28,7 +28,7 @@ package sijay.zheng.experience.leetcode.medium;
 - 移出前两个 3 ，之后nums = [1,4,3]
 不再有和为 6 的数对，因此最多执行 1 次操作。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -7,11 +7,11 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>怪物从 <strong>第 0 分钟</strong> 时开始移动。你有一把武器，并可以 <strong>选择</strong> 在每一分钟的开始时使用，包括第 0 分钟。但是你无法在一分钟的中间使用武器。这种武器威力惊人，一次可以消灭任一还活着的怪物。</p>
 
-<p>一旦任一怪物到达城市，你就输掉了这场游戏。如果某个怪物 <strong>恰</strong> 在某一分钟开始时到达城市，这会被视为<strong> 输掉</strong> 游戏，在你可以使用武器之前，游戏就会结束。</p>
+<p>一旦任一怪物到达城市，你就输掉了这场游戏。如果某个怪物 <strong>恰</strong> 在某一分钟开始时到达城市，这会被视为<strong> 输掉</strong> 游戏，在你可以使用武器之前，游戏就会结束。</p>
 
-<p>返回在你输掉游戏前可以消灭的怪物的 <strong>最大</strong> 数量。如果你可以在所有怪物到达城市前将它们全部消灭，返回  <code>n</code> 。</p>
+<p>返回在你输掉游戏前可以消灭的怪物的 <strong>最大</strong> 数量。如果你可以在所有怪物到达城市前将它们全部消灭，返回  <code>n</code> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -47,7 +47,7 @@ package sijay.zheng.experience.leetcode.medium;
 你只能消灭 1 个怪物。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

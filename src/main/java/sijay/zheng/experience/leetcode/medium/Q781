@@ -21,7 +21,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>测试用例是按存在第 <code>k</code> 个最小妙数而生成的。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -51,7 +51,7 @@ package sijay.zheng.experience.leetcode.medium;
 - 交换下标 3 和下标 4 对应的位："001<strong>23</strong>" -&gt; "001<strong>32</strong>"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

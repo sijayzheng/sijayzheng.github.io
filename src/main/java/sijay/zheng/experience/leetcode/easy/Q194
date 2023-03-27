@@ -9,7 +9,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>只有与值 <code>x</code> 和 <code>y</code> 对应的节点是堂兄弟节点时，才返回 <code>true</code> 。否则，返回 <code>false</code>。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：<br />
 <img alt="" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/02/16/q1248-01.png" style="height: 160px; width: 180px;" /></strong></p>
@@ -35,16 +35,16 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输入：</strong>root = [1,2,3,null,4], x = 2, y = 3
 <strong>输出：</strong>false</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li>二叉树的节点数介于 <code>2</code> 到 <code>100</code> 之间。</li>
-	<li>每个节点的值都是唯一的、范围为 <code>1</code> 到 <code>100</code> 的整数。</li>
+	<li>二叉树的节点数介于 <code>2</code> 到 <code>100</code> 之间。</li>
+	<li>每个节点的值都是唯一的、范围为 <code>1</code> 到 <code>100</code> 的整数。</li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 */
  class Q194 {public static void main(String[] args) {Solution solution=new Solution();}

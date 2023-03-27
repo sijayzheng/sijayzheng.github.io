@@ -1,9 +1,9 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目13：排列序列
-<p>给出集合 <code>[1,2,3,...,n]</code>，其所有元素共有 <code>n!</code> 种排列。</p>
+<p>给出集合 <code>[1,2,3,...,n]</code>，其所有元素共有 <code>n!</code> 种排列。</p>
 
-<p>按大小顺序列出所有排列情况，并一一标记，当 <code>n = 3</code> 时, 所有排列如下：</p>
+<p>按大小顺序列出所有排列情况，并一一标记，当 <code>n = 3</code> 时, 所有排列如下：</p>
 
 <ol>
 	<li><code>"123"</code></li>
@@ -14,9 +14,9 @@ package sijay.zheng.experience.leetcode.hard;
 	<li><code>"321"</code></li>
 </ol>
 
-<p>给定 <code>n</code> 和 <code>k</code>，返回第 <code>k</code> 个排列。</p>
+<p>给定 <code>n</code> 和 <code>k</code>，返回第 <code>k</code> 个排列。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -39,7 +39,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>"123"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

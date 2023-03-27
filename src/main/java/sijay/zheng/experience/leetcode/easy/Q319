@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.easy;
 /**
  题目319：统计一致字符串的数目
-<p>给你一个由不同字符组成的字符串 <code>allowed</code> 和一个字符串数组 <code>words</code> 。如果一个字符串的每一个字符都在 <code>allowed</code> 中，就称这个字符串是 <strong>一致字符串 </strong>。</p>
+<p>给你一个由不同字符组成的字符串 <code>allowed</code> 和一个字符串数组 <code>words</code> 。如果一个字符串的每一个字符都在 <code>allowed</code> 中，就称这个字符串是 <strong>一致字符串 </strong>。</p>
 
-<p>请你返回 <code>words</code> 数组中 <strong>一致字符串</strong> 的数目。</p>
+<p>请你返回 <code>words</code> 数组中 <strong>一致字符串</strong> 的数目。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.easy;
 <b>解释：</b>字符串 "cc"，"acd"，"ac" 和 "d" 是一致字符串。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -39,8 +39,8 @@ package sijay.zheng.experience.leetcode.easy;
 	<li><code>1 <= words.length <= 10<sup>4</sup></code></li>
 	<li><code>1 <= allowed.length <=<sup> </sup>26</code></li>
 	<li><code>1 <= words[i].length <= 10</code></li>
-	<li><code>allowed</code> 中的字符 <strong>互不相同</strong> 。</li>
-	<li><code>words[i]</code> 和 <code>allowed</code> 只包含小写英文字母。</li>
+	<li><code>allowed</code> 中的字符 <strong>互不相同</strong> 。</li>
+	<li><code>words[i]</code> 和 <code>allowed</code> 只包含小写英文字母。</li>
 </ul>
 
 */

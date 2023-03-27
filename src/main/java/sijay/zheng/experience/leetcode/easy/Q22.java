@@ -7,10 +7,10 @@ package sijay.zheng.experience.leetcode.easy;
  * <p>本题中，一棵高度平衡二叉树定义为：</p>
  *
  * <blockquote>
- * <p>一个二叉树<em>每个节点 </em>的左右两个子树的高度差的绝对值不超过 1 。</p>
+ * <p>一个二叉树<em>每个节点 </em>的左右两个子树的高度差的绝对值不超过 1 。</p>
  * </blockquote>
  *
- * <p> </p>
+ * <p> </p>
  *
  * <p><strong>示例 1：</strong></p>
  * <img alt="" src="https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg" style="width: 342px; height: 221px;" />
@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.easy;
  * <strong>输出：</strong>true
  * </pre>
  *
- * <p> </p>
+ * <p> </p>
  *
  * <p><strong>提示：</strong></p>
  *
@@ -45,6 +45,12 @@ package sijay.zheng.experience.leetcode.easy;
 class Q22 {
     public static void main(String[] args) {
         Solution solution = new Solution();
+    }
+
+    static class Solution {
+        public boolean isBalanced(TreeNode root) {
+            return false;
+        }
     }
 
     //Definition for a binary tree node.
@@ -64,12 +70,6 @@ class Q22 {
             this.val = val;
             this.left = left;
             this.right = right;
-        }
-    }
-
-    static class Solution {
-        public boolean isBalanced(TreeNode root) {
-            return false;
         }
     }
 }

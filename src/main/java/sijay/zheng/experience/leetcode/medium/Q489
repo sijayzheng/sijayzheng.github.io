@@ -12,7 +12,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p><strong>畅通路径的长度</strong> 是该路径途经的单元格总数。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/example1_1.png" style="width: 500px; height: 234px;" />
@@ -35,7 +35,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>-1
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

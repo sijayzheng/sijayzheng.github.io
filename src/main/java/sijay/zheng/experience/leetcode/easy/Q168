@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.easy;
 /**
  题目168：链表的中间结点
-<p>给定一个头结点为 <code>head</code> 的非空单链表，返回链表的中间结点。</p>
+<p>给定一个头结点为 <code>head</code> 的非空单链表，返回链表的中间结点。</p>
 
 <p>如果有两个中间结点，则返回第二个中间结点。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -17,7 +17,7 @@ package sijay.zheng.experience.leetcode.easy;
 ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.
 </pre>
 
-<p><strong>示例 2：</strong></p>
+<p><strong>示例 2：</strong></p>
 
 <pre>
 <strong>输入：</strong>[1,2,3,4,5,6]
@@ -25,12 +25,12 @@ ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next 
 由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li>给定链表的结点数介于 <code>1</code> 和 <code>100</code> 之间。</li>
+	<li>给定链表的结点数介于 <code>1</code> 和 <code>100</code> 之间。</li>
 </ul>
 
 */

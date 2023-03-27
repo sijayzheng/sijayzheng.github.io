@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.easy;
 
 <p>数组的子序列是一个由数组派生出来的序列，它可以通过删除一些元素或不删除元素、且不改变其余元素的顺序而得到。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>0
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

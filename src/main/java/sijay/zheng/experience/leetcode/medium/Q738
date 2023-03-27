@@ -1,18 +1,18 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目738：任意子数组和的绝对值的最大值
-<p>给你一个整数数组 <code>nums</code> 。一个子数组 <code>[nums<sub>l</sub>, nums<sub>l+1</sub>, ..., nums<sub>r-1</sub>, nums<sub>r</sub>]</code> 的 <strong>和的绝对值</strong> 为 <code>abs(nums<sub>l</sub> + nums<sub>l+1</sub> + ... + nums<sub>r-1</sub> + nums<sub>r</sub>)</code> 。</p>
+<p>给你一个整数数组 <code>nums</code> 。一个子数组 <code>[nums<sub>l</sub>, nums<sub>l+1</sub>, ..., nums<sub>r-1</sub>, nums<sub>r</sub>]</code> 的 <strong>和的绝对值</strong> 为 <code>abs(nums<sub>l</sub> + nums<sub>l+1</sub> + ... + nums<sub>r-1</sub> + nums<sub>r</sub>)</code> 。</p>
 
-<p>请你找出 <code>nums</code> 中 <strong>和的绝对值</strong> 最大的任意子数组（<b>可能为空</b>），并返回该 <strong>最大值</strong> 。</p>
+<p>请你找出 <code>nums</code> 中 <strong>和的绝对值</strong> 最大的任意子数组（<b>可能为空</b>），并返回该 <strong>最大值</strong> 。</p>
 
-<p><code>abs(x)</code> 定义如下：</p>
+<p><code>abs(x)</code> 定义如下：</p>
 
 <ul>
-	<li>如果 <code>x</code> 是负整数，那么 <code>abs(x) = -x</code> 。</li>
-	<li>如果 <code>x</code> 是非负整数，那么 <code>abs(x) = x</code> 。</li>
+	<li>如果 <code>x</code> 是负整数，那么 <code>abs(x) = -x</code> 。</li>
+	<li>如果 <code>x</code> 是非负整数，那么 <code>abs(x) = x</code> 。</li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -30,7 +30,7 @@ package sijay.zheng.experience.leetcode.medium;
 <b>解释：</b>子数组 [-5,1,-4] 和的绝对值最大，为 abs(-5+1-4) = abs(-8) = 8 。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

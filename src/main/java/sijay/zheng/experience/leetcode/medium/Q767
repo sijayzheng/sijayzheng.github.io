@@ -1,16 +1,16 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目767：每个查询的最大异或值
-<p>给你一个 <strong>有序</strong> 数组 <code>nums</code> ，它由 <code>n</code> 个非负整数组成，同时给你一个整数 <code>maximumBit</code> 。你需要执行以下查询 <code>n</code> 次：</p>
+<p>给你一个 <strong>有序</strong> 数组 <code>nums</code> ，它由 <code>n</code> 个非负整数组成，同时给你一个整数 <code>maximumBit</code> 。你需要执行以下查询 <code>n</code> 次：</p>
 
 <ol>
-	<li>找到一个非负整数 <code>k < 2<sup>maximumBit</sup></code> ，使得 <code>nums[0] XOR nums[1] XOR ... XOR nums[nums.length-1] XOR k</code> 的结果 <strong>最大化</strong> 。<code>k</code> 是第 <code>i</code> 个查询的答案。</li>
-	<li>从当前数组 <code>nums</code> 删除 <strong>最后</strong> 一个元素。</li>
+	<li>找到一个非负整数 <code>k < 2<sup>maximumBit</sup></code> ，使得 <code>nums[0] XOR nums[1] XOR ... XOR nums[nums.length-1] XOR k</code> 的结果 <strong>最大化</strong> 。<code>k</code> 是第 <code>i</code> 个查询的答案。</li>
+	<li>从当前数组 <code>nums</code> 删除 <strong>最后</strong> 一个元素。</li>
 </ol>
 
-<p>请你返回一个数组 <code>answer</code> ，其中<em> </em><code>answer[i]</code>是第 <code>i</code> 个查询的结果。</p>
+<p>请你返回一个数组 <code>answer</code> ，其中<em> </em><code>answer[i]</code>是第 <code>i</code> 个查询的结果。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -43,7 +43,7 @@ package sijay.zheng.experience.leetcode.medium;
 <b>输出：</b>[4,3,6,4,6,7]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -52,7 +52,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li><code>1 <= n <= 10<sup>5</sup></code></li>
 	<li><code>1 <= maximumBit <= 20</code></li>
 	<li><code>0 <= nums[i] < 2<sup>maximumBit</sup></code></li>
-	<li><code>nums</code>​​​ 中的数字已经按 <strong>升序</strong> 排好序。</li>
+	<li><code>nums</code>​​​ 中的数字已经按 <strong>升序</strong> 排好序。</li>
 </ul>
 
 */

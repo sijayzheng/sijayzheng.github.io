@@ -14,7 +14,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p><strong>叶节点</strong> 是指没有子节点的节点。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/num1tree.jpg" style="width: 212px; height: 182px;" />
@@ -38,7 +38,7 @@ package sijay.zheng.experience.leetcode.medium;
 因此，数字总和 = 495 + 491 + 40 = <code>1026</code>
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目248：数位成本和为目标值的最大数字
-<p>给你一个整数数组 <code>cost</code> 和一个整数 <code>target</code> 。请你返回满足如下规则可以得到的 <strong>最大</strong> 整数：</p>
+<p>给你一个整数数组 <code>cost</code> 和一个整数 <code>target</code> 。请你返回满足如下规则可以得到的 <strong>最大</strong> 整数：</p>
 
 <ul>
-	<li>给当前结果添加一个数位（<code>i + 1</code>）的成本为 <code>cost[i]</code> （<code>cost</code> 数组下标从 0 开始）。</li>
-	<li>总成本必须恰好等于 <code>target</code> 。</li>
+	<li>给当前结果添加一个数位（<code>i + 1</code>）的成本为 <code>cost[i]</code> （<code>cost</code> 数组下标从 0 开始）。</li>
+	<li>总成本必须恰好等于 <code>target</code> 。</li>
 	<li>添加的数位中没有数字 0 。</li>
 </ul>
 
@@ -13,7 +13,7 @@ package sijay.zheng.experience.leetcode.hard;
 
 <p>如果按照上述要求无法得到任何整数，请你返回 "0" 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -56,7 +56,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>"32211"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

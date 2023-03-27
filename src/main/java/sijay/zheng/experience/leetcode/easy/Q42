@@ -4,7 +4,7 @@ package sijay.zheng.experience.leetcode.easy;
 给你单链表的头节点 <code>head</code> ，请你反转链表，并返回反转后的链表。
 <div class="original__bRMd">
 <div>
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" style="width: 542px; height: 222px;" />
@@ -27,7 +27,7 @@ package sijay.zheng.experience.leetcode.easy;
 <strong>输出：</strong>[]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -36,7 +36,7 @@ package sijay.zheng.experience.leetcode.easy;
 	<li><code>-5000 <= Node.val <= 5000</code></li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>进阶：</strong>链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？</p>
 </div>

@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.medium;
 /**
  题目674：找出第 N 个二进制字符串中的第 K 位
-<p>给你两个正整数 <code>n</code> 和 <code>k</code>，二进制字符串  <code>S<sub>n</sub></code> 的形成规则如下：</p>
+<p>给你两个正整数 <code>n</code> 和 <code>k</code>，二进制字符串  <code>S<sub>n</sub></code> 的形成规则如下：</p>
 
 <ul>
-	<li><code>S<sub>1</sub> = "0"</code></li>
-	<li>当 <code>i > 1</code> 时，<code>S<sub>i</sub> = S<sub>i-1</sub> + "1" + reverse(invert(S<sub>i-1</sub>))</code></li>
+	<li><code>S<sub>1</sub> = "0"</code></li>
+	<li>当 <code>i > 1</code> 时，<code>S<sub>i</sub> = S<sub>i-1</sub> + "1" + reverse(invert(S<sub>i-1</sub>))</code></li>
 </ul>
 
 <p>其中 <code>+</code> 表示串联操作，<code>reverse(x)</code> 返回反转 <code>x</code> 后得到的字符串，而 <code>invert(x)</code> 则会翻转 x 中的每一位（0 变为 1，而 1 变为 0）。</p>
@@ -13,15 +13,15 @@ package sijay.zheng.experience.leetcode.medium;
 <p>例如，符合上述描述的序列的前 4 个字符串依次是：</p>
 
 <ul>
-	<li><code>S<sub>1 </sub>= "0"</code></li>
-	<li><code>S<sub>2 </sub>= "0<strong>1</strong>1"</code></li>
-	<li><code>S<sub>3 </sub>= "011<strong>1</strong>001"</code></li>
+	<li><code>S<sub>1 </sub>= "0"</code></li>
+	<li><code>S<sub>2 </sub>= "0<strong>1</strong>1"</code></li>
+	<li><code>S<sub>3 </sub>= "011<strong>1</strong>001"</code></li>
 	<li><code>S<sub>4</sub> = "0111001<strong>1</strong>0110001"</code></li>
 </ul>
 
-<p>请你返回  <code>S<sub>n</sub></code> 的 <strong>第 <code>k</code> 位字符</strong> ，题目数据保证 <code>k</code> 一定在 <code>S<sub>n</sub></code> 长度范围以内。</p>
+<p>请你返回  <code>S<sub>n</sub></code> 的 <strong>第 <code>k</code> 位字符</strong> ，题目数据保证 <code>k</code> 一定在 <code>S<sub>n</sub></code> 长度范围以内。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -53,7 +53,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>"1"
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

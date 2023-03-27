@@ -1,11 +1,11 @@
 package sijay.zheng.experience.leetcode.easy;
 /**
  题目332：唯一元素的和
-<p>给你一个整数数组 <code>nums</code> 。数组中唯一元素是那些只出现 <strong>恰好一次</strong> 的元素。</p>
+<p>给你一个整数数组 <code>nums</code> 。数组中唯一元素是那些只出现 <strong>恰好一次</strong> 的元素。</p>
 
-<p>请你返回 <code>nums</code> 中唯一元素的 <strong>和</strong> 。</p>
+<p>请你返回 <code>nums</code> 中唯一元素的 <strong>和</strong> 。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -28,7 +28,7 @@ package sijay.zheng.experience.leetcode.easy;
 <b>解释：</b>唯一元素为 [1,2,3,4,5] ，和为 15 。
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

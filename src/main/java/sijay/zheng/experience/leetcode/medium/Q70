@@ -8,7 +8,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li>展开后的单链表应该与二叉树 <a href="https://baike.baidu.com/item/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86/6442839?fr=aladdin" target="_blank"><strong>先序遍历</strong></a> 顺序相同。</li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/01/14/flaten.jpg" style="width: 500px; height: 226px;" />
@@ -31,7 +31,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>[0]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
@@ -40,7 +40,7 @@ package sijay.zheng.experience.leetcode.medium;
 	<li><code>-100 <= Node.val <= 100</code></li>
 </ul>
 
-<p> </p>
+<p> </p>
 
 <p><strong>进阶：</strong>你可以使用原地算法（<code>O(1)</code> 额外空间）展开这棵树吗？</p>
 

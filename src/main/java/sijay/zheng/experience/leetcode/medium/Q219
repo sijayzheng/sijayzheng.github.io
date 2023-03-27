@@ -3,7 +3,7 @@ package sijay.zheng.experience.leetcode.medium;
  题目219：目标和
 <p>给你一个整数数组 <code>nums</code> 和一个整数 <code>target</code> 。</p>
 
-<p>向数组中的每个整数前添加 <code>'+'</code> 或 <code>'-'</code> ，然后串联起所有整数，可以构造一个 <strong>表达式</strong> ：</p>
+<p>向数组中的每个整数前添加 <code>'+'</code> 或 <code>'-'</code> ，然后串联起所有整数，可以构造一个 <strong>表达式</strong> ：</p>
 
 <ul>
 	<li>例如，<code>nums = [2, 1]</code> ，可以在 <code>2</code> 之前添加 <code>'+'</code> ，在 <code>1</code> 之前添加 <code>'-'</code> ，然后串联起来得到表达式 <code>"+2-1"</code> 。</li>
@@ -11,7 +11,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>返回可以通过上述方法构造的、运算结果等于 <code>target</code> 的不同 <strong>表达式</strong> 的数目。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -33,7 +33,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>1
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

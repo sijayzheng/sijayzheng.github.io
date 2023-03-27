@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" />
@@ -21,13 +21,13 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>Output:</strong> [-1]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>限制：</strong></p>
 
 <p><code>0 <= 节点个数 <= 5000</code></p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>注意</strong>：本题与主站 105 题重复：<a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a></p>
 

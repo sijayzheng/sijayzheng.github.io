@@ -7,7 +7,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>如果有多个年份生存人数相同且均为最大值，输出其中最小的年份。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例：</strong></p>
 
@@ -18,7 +18,7 @@ death = {1948, 1951, 2000}
 <strong>输出：</strong> 1901
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

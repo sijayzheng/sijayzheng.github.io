@@ -28,7 +28,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输入:</strong> 1234567891
 <strong>输出:</strong> "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"</pre>
 
-<p>注意：本题与 273 题相同：<a href="https://leetcode-cn.com/problems/integer-to-english-words/">https://leetcode-cn.com/problems/integer-to-english-words/</a></p>
+<p>注意：本题与 273 题相同：<a href="https://leetcode-cn.com/problems/integer-to-english-words/">https://leetcode-cn.com/problems/integer-to-english-words/</a></p>
 
 */
  class Q470 {public static void main(String[] args) {Solution solution=new Solution();}

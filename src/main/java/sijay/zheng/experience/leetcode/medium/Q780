@@ -14,7 +14,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p><strong>子字符串</strong> 是字符串中的一个连续字符序列。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -49,7 +49,7 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>解释：</strong>s 可以拆分为 ["100", "099", "98"] ，对应数值为 [100,99,98] 。
 满足按降序排列，且相邻值相差 <code>1</code> 。</pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 

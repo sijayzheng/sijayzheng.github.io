@@ -5,7 +5,7 @@ package sijay.zheng.experience.leetcode.medium;
 
 <p>树的序列化输入是用层序遍历，每组子节点都由 null 值分隔（参见示例）。</p>
 
-<p> </p>
+<p> </p>
 
 <p><strong>示例 1：</strong></p>
 
@@ -25,13 +25,13 @@ package sijay.zheng.experience.leetcode.medium;
 <strong>输出：</strong>[[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]]
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
 <ul>
-	<li>树的高度不会超过 <code>1000</code></li>
-	<li>树的节点总数在 <code>[0, 10^4]</code> 之间</li>
+	<li>树的高度不会超过 <code>1000</code></li>
+	<li>树的节点总数在 <code>[0, 10^4]</code> 之间</li>
 </ul>
 
 */

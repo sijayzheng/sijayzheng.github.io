@@ -1,9 +1,9 @@
 package sijay.zheng.experience.leetcode.hard;
 /**
  题目6：最长有效括号
-<p>给你一个只包含 <code>'('</code> 和 <code>')'</code> 的字符串，找出最长有效（格式正确且连续）括号子串的长度。</p>
+<p>给你一个只包含 <code>'('</code> 和 <code>')'</code> 的字符串，找出最长有效（格式正确且连续）括号子串的长度。</p>
 
-<p> </p>
+<p> </p>
 
 <div class="original__bRMd">
 <div>
@@ -30,7 +30,7 @@ package sijay.zheng.experience.leetcode.hard;
 <strong>输出：</strong>0
 </pre>
 
-<p> </p>
+<p> </p>
 
 <p><strong>提示：</strong></p>
 
