@@ -14,10 +14,13 @@ java 程序，只需安装 JRE 就可以了，如果你需要编写 java 程序�
 - 编译之后会生成与平台无关的字节码文件
 - 依赖不同平台的虚拟机（JVM）
 
-### 配置环境
+### 安装JDK
 
-- JAVA_HOME = D:\Java\jdk19
-- PATH = %JAVA_HOME%\bin
+- 下载jdk并安装
+- 新建系统变量,点击新建，变量名为`JAVA_HOME`，变量值为Java的安装路径。
+- 编辑环境变量Path,删除变量`C:\Program Files (x86)\Common Files\Oracle\Java\javapath`
+  新增`%JAVA_HOME%\bin`和`%JAVA_HOME%\jre\bin`
+- 新建环境变量CLASSPATH，变量值为`.;%JAVA_HOME%\bin;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
 
 ### Hello World
 
