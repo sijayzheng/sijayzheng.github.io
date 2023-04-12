@@ -1,13 +1,34 @@
 package sijay.zheng.experience;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
+
+    public static final Logger GLOBAL = Logger.getGlobal();
+
     public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i + "---" + (i / 3) + "__" + (i % 3));
-        }
+        GLOBAL.setLevel(Level.ALL);
+        GLOBAL.info("helllo");
+
+        System.out.println(test());
     }
+
+    static String test() {
+        String a = null;
+        try {
+            System.out.println(111);
+            a.split(",");
+            a = "hhhh";
+        } catch (Exception e) {
+            System.out.println(2222);
+        } finally {
+            a = "666";
+        }
+        return a;
+    }
+
 
     /**
      * 密码要求:
@@ -55,6 +76,7 @@ public class Main {
             }
         }
     }
+
 
 /*
 

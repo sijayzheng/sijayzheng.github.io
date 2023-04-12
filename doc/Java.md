@@ -12,9 +12,7 @@ _以Java8为例_
 - Linux
     - `sudo apt install openjdk-8-jdk`
 
-## Java基础
-
-### 命名
+## 命名
 
 - 名字必须以字母开头，后面可以跟字母和数字的任意组合。长度基本上没有限制。
 - 不能使用 Java 保留字作为类名
@@ -78,19 +76,19 @@ _以Java8为例_
 
 > 标准的命名规范为：类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写。
 
-### 注释
+## 注释
 
-#### 行注释
+### 行注释
 
 从`//`开始到本行结束
 
-#### 块注释
+### 块注释
 
 `/*`到`*/`之间的内容都会被注释掉
 
 `/*` `*/`不能嵌套使用
 
-#### 文档注释
+### 文档注释
 
 注释应该放置在所描述特性的前面。 注释以 `/**` 开始， 并以 `*/` 结束。
 
@@ -186,7 +184,7 @@ _以Java8为例_
      如果使用`-linksource` 选项， 则每个源文件被转换为 HTML (不对代码着色，但包含行编号) 并且每个类和方法名将转变为指向源代码的超链接。
      有关其他的选项，参考[javadoc](http://docs.orade.eom/javase/8/docs/guides/javadoc)
 
-### 数据类型
+## 数据类型
 
 8种基本数据类型：
 
@@ -248,7 +246,7 @@ _以Java8为例_
 | char    | 2           | [\u0000,\uFFFF]                                                  |
 | boolean | 1           | true,false                                                       |
 
-### 变量
+## 变量
 
 - 声明
 
@@ -272,7 +270,7 @@ _以Java8为例_
 
 常量通常使用大写加下划线命名
 
-### 运算符
+## 运算符
 
 - 算术运算符
 
@@ -346,10 +344,10 @@ public class Main {
 | `>>`     | 右移          |
 | `>>>`    | 右移，并使用0填充高位 |
 
-### 字符串
+## 字符串
 
 - String
-  详见[java.lang.String](javaLib.md#string)
+  详见[java.lang.String](/doc/javaLib.md#string)
 - 字符串构建器
     - StringBuilder
     - StringBuffer
@@ -373,7 +371,32 @@ public class Main {
 
 StringBuilder与StringBuffer的方法基本相同
 
-### 输入输出
+## 大数值
+
+在有精度要求时可用java.math下的BigInteger和BigDecimal进行数值计算
+
+通过valueOf方法将普通数值转为大数值
+
+常用方法：
+
+- [BigInteger](/doc/javaLib.md#BigInteger)
+    - BigInteger add( BigInteger other) 加
+    - BigInteger subtract(BigInteger other ) 减
+    - BigInteger multiply(BigInteger other) 乘
+    - BigInteger divide(BigInteger other) 除
+    - BigInteger mod(BigInteger other) 取余
+    - int compareTo(BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
+    - static BigInteger valueOf(long x ) 返回值等于 x 的大整数。
+- [BigDecimal](/doc/javaLib.md#bigdecimal)
+    - BigDecimal add(BigDecimal other)加
+    - BigDecimal subtract(BigDecimal other )减
+    - BigDecimal multiply(BigDecimal other )乘
+    - BigDecimal divide(BigDecimal other) 除
+    - BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) 除并指定舍入方式
+    - int compareTo(BigDecimal other ) 与other相等，返回0；小于other，返回负数；否则，返回正数。
+    - static BigDecimal valueOf( long x )
+
+## 输入输出
 
 - 输出
 
@@ -422,9 +445,316 @@ StringBuilder与StringBuffer的方法基本相同
       >
       > `readLine()` 读取用户输入内容
 
-### 控制流程
+## 控制流程
+
+### 块
+
+在`{}`之间的内容为一个代码块，块可以嵌套，内层变量不能同外层变量相同
+
+### 条件
+
+格式：`if(condition) statement`
+
+`else`与最近一个`if`构成一组
+
+### 循环
+
+- while
+
+格式：`while(condition) statement`
+
+先判断condition，当其为true时执行循环体，直到为false
+
+- do ... while
+
+格式：`do statement while(condition);`
+
+先执行statement，然后判断condition，当其为true时继续执行，否则跳出循环
+
+- for
+
+格式：`for(定义变量;终止条件;每次循环操作) statement`
+
+- 增强for
+
+格式：`for(类型 变量 : 变量集合) statement`
+
+- switch
+
+格式：
+
+```
+switch(choice){
+case 1: statement; break;
+case 2: statement; break;
+case 3: statement; break;
+default: statement; break;
+}
+```
+
+从与choice匹配的case中开始执行直到`break`或`return`，如果没有匹配的就执行default
 
 
 
+> **break和continue**
+>
+> 都是中断循环，continue是终值当前循环进行下次循环，break是终止循环并跳出
+>
+> 都支持标签
 
+## 数组
 
+用以存储同一类型的数据的集合，可通过下标进行访问，下标超出数据长度时会出现`ArrayIndexOutOfBoundsException(数组越界)`的错误
+
+声明方式：
+
+- 类型[] 变量名 = new 类型[长度];
+- 类型[] 变量名 = {元素};
+
+获取数组内元素个数使用`.length()`方法
+
+#### 数组拷贝
+
+将一个数组直接赋值给另一个数组，实际上是两个数组都指向内存中同一个数组
+
+可以通过`Arrays.copyOf()`方法进行数组的拷贝
+
+#### 命令行参数
+
+在通过命令行执行Java方法时，main方法接受一个字符串数组的命令行参数，参数以空白字符分割
+
+#### 排序
+
+使用`Arrays.sort()`方法进行排序，该方法使用了优化的快速排序算法
+
+## 对象和类
+
+类是构造对象的模板
+
+**封装**：将数据和行为组合到一起，并隐藏数据的实现方式。
+实现封装的关键是不直接访问类的属性，而是通过对象的方法进行访问操作，以提高重用性和可靠性
+
+类之间的关系：
+
+- 依赖
+- 聚合
+- 继承
+
+对象变量仅仅是对对象的引用
+
+对象都是在堆中构造的
+
+可变对象的引用需要先克隆再返回
+
+对象的重载：类中多个方法的名字相同，参数不同。一个方法的方法签名由方法名和参数类型组成
+
+对象属性的初始化：未显式赋值时，对象会默认为null，布尔型默认为false，数值默认为0
+
+初始化块：在调用构造器时会先执行初始化块
+
+**类路径**：
+
+使用`-classpath`指定类路径
+
+包含基目录，当前目录，jar文件
+当前目录用`.`表示
+
+Windows下以分号分隔
+
+Linux下以冒号分隔
+
+**类的设计技巧**
+
+1. 保证数据私有
+2. 对数据初始化
+3. 减少基本类型的使用
+4. 不是所有的域都需要独立的域访问器和域更改器
+5. 分解职责过多的类
+6. 类和方法命名需要见名知意
+7. 优先使用不可变类
+
+## 继承
+
+已存在的类为 超类、基类、父类，新类为子类、派生类、或孩子类
+
+覆盖（override）方法：和父类方法定义相同，内部方法体不同，调用父类方法通过`super.`
+
+通过final来标识类阻止继承，标识方法来阻止覆盖
+
+强制类型转换：
+
+- 只能在继承层次内进行类型转换
+- 在强转前，应使用instanceof进行检查
+
+**访问修饰符**
+
+- `private`：仅本类
+- `public`：所有类
+- `protected`：本包和所有子类
+- 无：本包
+
+`...`表示可变个数参数，该参数需要放在最后
+
+### Object
+
+Object是所有类的始祖，在未明确指出父类时，可认为父类为Object
+
+Java中出基本类型外都是对象
+
+**equals方法：**
+通过判断冷柜对象是否有相同的引用来检测两个对象是否相等
+特点：
+
+1. 自反性，x非null时，`x.equals(x)`总为true
+2. 对称性，只有`x.equals(y)`为true时`y.equals(x)`才为true
+3. 传递性，`x.equals(y)`、`y.equals(z)`均为true，则`x.equals(z)`为true
+4. 一致性，反复调用equals应返回同样的结果
+5. 对于任意非null对象x，`x.equals(null)`都应该为false
+
+**覆写equals方法必须覆写hashCode方法**
+
+toString()方法，默认是完整类名+@+hashCode的十六进制表示
+
+### 枚举
+
+枚举也是一个类
+
+枚举比较使用`==`即可
+
+### 反射
+
+以便动态操纵代码
+
+在java.lang.reflect包中有三个类Field、Method和Constructor分别用于描述类的域、方法和构造器
+
+#### Class类
+
+保存运行时的类型标志
+
+通过newInstance()方法调用无参构造器来实例化类
+
+Class类中的getFields、getMethods和getConstructors方法将分别返回类提供的public域、方法和构造器数组，其中包括超类的公有成员。Class类的getDeclareFields、getDeclareMethods和getDeclaredConstructors方法将分别返回类中声明的全部域、方法和构造器，其中包括私有和受保护成员，但不包括超类的成员。
+
+通过invoke调用任意方法
+
+**继承的设计技巧**
+
+1. 将公共操作和域放在父类
+2. 不使用protected
+3. 使用继承实现"is-a"关系
+4. 除非继承的所有方法都有意义，否则不要使用继承
+5. 在覆写方法时，不改变预期行为
+6. 使用多态而非类型信息
+7. 减少反射的使用
+
+## 接口
+
+单继承，多实现
+
+方法默认public，域默认public static final
+
+接口可以声明变量，但不能被new实例化
+
+默认方法冲突：超类优先，接口冲突必须覆写
+
+## lambda
+
+形式：`(入参)->{代码块;返回语句;}`
+
+- 入参只有一个时可省略`()`
+- 代码只有一句时可省略返回语句及`{}`
+
+lambda中使用的外部变量需要为初始化后不再改变的变量
+
+函数式接口：只有一个抽象方法的接口
+
+**常用函数式接口：**
+
+| 函数式接口               | 参数类型 | 返回类型    | 抽象方法名  | 描述               | 其他方法                       |
+|---------------------|------|---------|--------|------------------|----------------------------|
+| Runnable            | 无    | void    | run    | 作为无参数或返回值的动作运行   |
+| Supplier<T>         | 无    | T       | get    | 提供一个 T 类型的值      |
+| Consumer<T>         | T    | void    | accept | 处理一个 T 类型的值      | andThen                    |
+| BiConsumer<T, U>    | T,U  | void    | accept | 处理 T 和 U 类型的值    | andThen                    |
+| Function<T, R>      | T    | R       | apply  | 有一个 T 类型参数的函数    | compose, andThen, identity |
+| BiFunction<T, U, R> | T,U  | R       | apply  | 有 T 和 U 类型 参数的函数 | andThen                    |
+| UnaryOperator<T>    | T    | T       | apply  | 类型 T 上的一元操作符     | compose, andThen, identity |
+| BinaryOperator<T>   | T,T  | T       | apply  | 类型 T 上的二元操作符     | andThen, maxBy, minBy      |
+| Predicate<T>        | T    | boolean | test   | 布尔值函数            | and, or, negate, isEqual   |
+| BiPredicate<T, U>   | T,U  | boolean | test   | 有两个参数的布尔值函数      | and, or, negate            |
+
+**基本类型的函数式接口**
+注： _p_, _q_ 为 int, long, double; _P_, _Q_ 为 Integer, Long, Double
+
+| 函数式接口                 | 参数类型    | 返回类型    | 抽象方法名        |
+|-----------------------|---------|---------|--------------|
+| BooleanSupplier       | none    | boolean | getAsBoolean |
+| *P*Supplier           | none    | _P_     | getAs*P*     |
+| *P*Consumer           | _p_     | void    | accept       |
+| Obj*P*Consumer<T>     | T,_p_   | void    | accept       |
+| *P*Function<T>        | _p_     | T       | apply        |
+| *P*To*Q*Function      | _p_     | _q_     | applyAs*Q*   |
+| To*P*Function<T>      | T       | _p_     | applyAs*P*   |
+| To*P*BiFunction<T, U> | T, U    | _p_     | applyAs*P*   |
+| *P*UnaryOperator      | _p_     | _p_     | applyAs*P*   |
+| *P*BinaryOperator     | _p_,_p_ | _p_     | applyAs*P*   |
+| *P*Predicate          | _p_     | boolean | test         |
+
+## 异常
+
+异常对象都是由`Throwable`派生出来，两个子类为`Error`和`Exception`
+
+`Error`类层次结构描述了Java运行时系统的内部错误和资源耗尽错误
+
+`Exception`层次结构分为两个分支：一个分支派生于`RuntimeException`；另一个分支包含其他异常。划分两个分支的规则是：由
+程序错误导致的异常属于`RuntimeException`；而程序本身没有问题，但由于像I/O错误这类
+问题导致的异常属于其他异常
+
+派生于`Error`类或`RuntimeException`类的所有异常称为非受查（unchecked）异常，所有其他的异常称为受查（checked）异常
+
+应该抛出异常的情况：
+
+1. 调用一个抛出受查异常的方法，例如，FileInputStream构造器
+2. 程序运行过程中发现错误，并且利用throw语句抛出一个受查异常
+3. 程序出现错误.例如，a[-1]=0会抛出一个ArraylndexOutOfBoundsException这样的非受查异常
+4. Java 虚拟机和运行时库出现的内部错误
+
+在 try 语句块中的任何代码抛出了一个在 catch 子句中说明的异常类， 那么
+
+1. 程序将跳过 try 语句块的其余代码
+2. 程序将执行 catch 子句中的处理器代码
+3. 如果有finally且没有return，则最后会执行finally
+
+使用异常机制的几个技巧：
+
+1. 异常处理不能代替简单的测试
+2. 不过分地细化异常
+3. 利用异常层次结构
+4. 不压制异常
+5. 及早抛出异常
+6. 传递异常
+
+## 断言
+
+断言的格式
+
+- assert 条件;
+- assert 条件 : 表达式;
+
+断言由类加载器来启用或禁用，而不用重新编译
+
+## 日志
+
+Java自带的日志记录器java.util.logging.Logger
+
+通过 -Djava.util.logging.config.file=configFile配置日志参数文件
+
+Java提供的日志处理器FileHandler和SocketHandler
+
+## 泛型
+
+## 集合
+
+## 并发
+
+## 部署

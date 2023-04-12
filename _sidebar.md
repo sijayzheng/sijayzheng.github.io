@@ -1,7 +1,8 @@
-- **[语言](doc/language.md)**
-    - [Java](doc/Java.md)
-        - [Java库](doc/javaLib.md)
-        - [Java源码](doc/javaSourceCode.md)
+- **Java**
+    - [Java基础](doc/Java.md)
+    - [Java库](doc/javaLib.md)
+    - [Java源码](doc/javaSourceCode.md)
 - **杂记**
+    - [编程语言](doc/language.md)
     - [杂记](doc/emmm.md)
     - [激活码](doc/jihuoma.md)
