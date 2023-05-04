@@ -9,8 +9,31 @@ import java.util.logging.Logger;
 public class Main {
 
     public static final Logger GLOBAL = Logger.getGlobal();
+    public static final int NACCOUNTS = 100;
+    public static final double INITIALBALANCE = 100;
+    public static final double MAX_AMOUNT = 1000;
+    public static final int DELAY = 10;
 
     public static void main(String[] args) {
+        Bank bank = new Bank(NACCOUNTS, INITIALBALANCE);
+        for (int i = 0; i < NACCOUNTS; i++) {
+            int fromAccount = i;
+            Runnable runnable = () -> {
+                try {
+                    while (true) {
+                        int toAccount = (int) (bank.size() * Math.random());
+                        bank.transfer(fromAccount, toAccount, 200);
+                        Thread.sleep((long) (DELAY * Math.random()));
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            };
+            new Thread(runnable).start();
+        }
+    }
+
+    static String test() {
         GLOBAL.setLevel(Level.ALL);
         GLOBAL.info("helllo");
 
@@ -29,10 +52,6 @@ public class Main {
         iterator.next();
         iterator.remove();
         System.out.println(JSON.toJSONString(strings));
-
-    }
-
-    static String test() {
         String a = null;
         try {
             System.out.println(111);
@@ -45,7 +64,6 @@ public class Main {
         }
         return a;
     }
-
 
     /**
      * 密码要求:
@@ -93,8 +111,6 @@ public class Main {
             }
         }
     }
-
-
 /*
 
     public static List<List<Integer>> generate(int numRows) {
@@ -119,4 +135,37 @@ public class Main {
     }
 */
 
+}
+
+class Bank {
+    private final double[] accounts;
+
+    public Bank(int n, double initialBalance) {
+        accounts = new double[n];
+        Arrays.fill(accounts, initialBalance);
+    }
+
+    public void transfer(int from, int to, double amount) {
+        if (accounts[from] < amount) {
+            return;
+        }
+        System.out.println(Thread.currentThread());
+        accounts[from] -= amount;
+        System.out.printf("%10.2f from %d to %d\n", amount, from, to);
+        accounts[to] += amount;
+        System.out.printf("Total Balance: %10.2f\n", getTotalBalance());
+
+    }
+
+    public double getTotalBalance() {
+        double sum = 0;
+        for (double account : accounts) {
+            sum += account;
+        }
+        return sum;
+    }
+
+    public int size() {
+        return accounts.length;
+    }
 }

@@ -753,8 +753,166 @@ Java提供的日志处理器FileHandler和SocketHandler
 
 ## 泛型
 
+E表示集合的元素类型，
+K和V分别表示表的关键字与值的类型，
+T(或者U和S)表示任意类型
+
+变量类型使用`< >`括起来放在类名后，多个用逗号隔开
+
+变量类型的限定：如`public static <T extends Comparable> T min(T[] a) {}`，
+将变量extends一个类，当有多个限定时用`&`隔开，如`T extends Comparable&Serializable`，且标签接口（没有方法的接口）在最后，以便提高效率
+
+局限性：
+
+1. 变量类型不能使用基本类型
+2. 类型检查只适用于原始类型
+3. 不能创建参数化类型数组
+4. 可变参数警告，可以使用@SafeVarargs注解消除
+5. 不能实例化类型变量，如new T()，T.class都是非法的
+6. 不能构造泛型数组
+7. 不能再静态域或方法中引用类型变量
+8. 不能抛出或补货泛型类的实例
+9. 可以消除对受查异常的检查
+10. 类型擦除后的冲突
+
+类型变量无论存在什么关系，当作为泛型时都没有关系
+
+通配符：类型参数可用`?`作为通配符，如`PO<? extends PO1>`作为子类，`PO<? super PO1>`中作为父类
+
 ## 集合
+
+**集合框架中的接口**
+![集合框架中的接口](img/20230413174430.png)
+
+集合类的基本接口为`Collection`，基本方法如下
+
+```java
+//集合的基本接口
+public interface Collection<E> {
+    boolean add(E element);//用于添加元素，并返回是否添加成功
+
+    Iterator<E> iterator();//返回一个可以依次访问集合中元素的迭代器
+    //···
+}
+```
+
+```java
+//迭代器
+public interface Iterator<E> {
+    E next();//获取下一个元素，如果没有下一个 元素会抛出NoSuchElementException
+
+    boolean hasNext();//判断是否有下一个元素
+
+    void remove();//移除当前元素
+
+    default void forEachRemaining(Consumer<? super E> action);//接受一个lambda表达式，并依次处理集合中的元素，元素顺序取决于集合类型
+    //···
+}
+```
+
+**集合类**
+
+| 集合类型            | 描述                        |
+|-----------------|---------------------------|
+| ArrayList       | 可以动态增长和缩减的索引序列            |
+| LinkedList      | 可以在任何位置进行高效地插入和删除操作的有序序列  |
+| ArrayDeque      | 用循环数组实现的双端队列              |
+| HashSet         | 没有重复元素的无序集合               |
+| TreeSet         | 有序集                       |
+| EnumSet         | 包含枚举类型值的集                 |
+| LinkedHashSet   | 可以记住元素插入次序的集              |
+| PriorityQueue   | 允许高效删除最小元素的集合             |
+| HashMap         | 存储键 / 值关联的数据结构            |
+| TreeMap         | 键值有序排列的映射表                |
+| EnumMap         | 键值属于枚举类型的映射表              |
+| LinkedHashMap   | 可以记住键 / 值项添加次序的映射表        |
+| WeakHashMap     | 其值无用武之地后可以被垃圾回收器回收的映射表    |
+| IdentityHashMap | 用`==`而不是用`equals`比较键值的映射表 |
+
+**ArrayList和LinkedList**
+
+| ArrayList           | LinkedList           |
+|---------------------|----------------------|
+| 在中间插入删除元素需要移动后面所有元素 | 中间插入删除元素只需要改变前后节点的引用 |
+| 随机读取性能好             | 随机读取性能差              |
+
+散列表：使用链表数组组成，每个列表被称为桶，桶满时会由链表变为平衡二叉树
+
+映射：接口为Map，通用实现为HashMap和TreeMap
+
+HashMap只对键进行散列，TreeMap使用键的整体顺序进行排序
 
 ## 并发
 
-## 部署
+线程状态：
+
+- New（新创建）
+- Runnable（可运行）
+- Blocked（被阻塞）
+- Waiting（等待）
+- Timed waiting（计时等待）
+- Terminated（被终止）
+
+![20230418143202.png](img/20230418143202.png)
+
+如果向一个变量写入值，而这个变量接下来可能会被另一个线程读取，或者，从一个变量读值，而这个变量可能是之前被另一个线程写入的，此时必须使用同步
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
