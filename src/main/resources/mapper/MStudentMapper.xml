@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定相应的Mapper接口-->
+<mapper namespace="sijay.zheng.experience.mybatis.mapper.SelectMapper">
+    <!--查询所有学生信息-->
+    <select id="listStudent" resultMap="students">
+        select s.id sid, s.name sname, t.name tname
+        from m_student s,
+             m_teacher t
+        where s.tid = t.id
+    </select>
+    <resultMap id="students" type="mStudent">
+        <id property="id" column="sid"/>
+        <result property="name" column="sname"/>
+        <association property="mTeacher" javaType="mTeacher">
+            <result property="name" column="tname"/>
+        </association>
+    </resultMap>
+</mapper>
