@@ -1,22 +1,23 @@
 ## Vue 生命周期
 
-<img src="/doc/img/lifecycle.png" alt="Vue 实例生命周期" style="zoom: 50%;" />
+<img src="img/lifecycle.png" alt="Vue 实例生命周期" style="zoom: 50%;" />
 
-<img src="/doc/img/vuelife.png" alt="Vue 实例生命周期" style="zoom:50%;" />
+<img src="img/vuelife.png" alt="Vue 实例生命周期" style="zoom:50%;" />
 
 ## Vue data 声明方式
 
 ```js
 //方式一
 let vue1 = new Vue({
-  id: '#app',
-  data: {},
+    id: '#app',
+    data: {},
 })
 
 //方式二
 let vue2 = new Vue({
-  id: '#app',
-  data() {},
+    id: '#app',
+    data() {
+    },
 })
 ```
 
@@ -2824,45 +2825,46 @@ provide/inject，以通俗易懂的实例讲述这其中的差别及使用场景
 ```html
 //App.vue父组件
 <template>
-  <div id="app">
-    <users v-bind:users="users"></users>
-    //前者自定义名称便于子组件调用，后者要传递数据名
-  </div>
+    <div id="app">
+        <users v-bind:users="users"></users>
+        //前者自定义名称便于子组件调用，后者要传递数据名
+    </div>
 </template>
 <script>
-  import Users from './components/Users'
-  export default {
-    name: 'App',
-    data() {
-      return {
-        users: ['Henry', 'Bucky', 'Emily'],
-      }
-    },
-    components: {
-      users: Users,
-    },
-  }
+    import Users from './components/Users'
+
+    export default {
+        name: 'App',
+        data() {
+            return {
+                users: ['Henry', 'Bucky', 'Emily'],
+            }
+        },
+        components: {
+            users: Users,
+        },
+    }
 </script>
 //users子组件
 <template>
-  <div class="hello">
-    <ul>
-      <li v-for="user in users">{{user}}</li>
-      //遍历传递过来的值，然后呈现到页面
-    </ul>
-  </div>
+    <div class="hello">
+        <ul>
+            <li v-for="user in users">{{user}}</li>
+            //遍历传递过来的值，然后呈现到页面
+        </ul>
+    </div>
 </template>
 <script>
-  export default {
-    name: 'HelloWorld',
-    props: {
-      users: {
-        //这个就是父组件中子标签自定义名字
-        type: Array,
-        required: true,
-      },
-    },
-  }
+    export default {
+        name: 'HelloWorld',
+        props: {
+            users: {
+                //这个就是父组件中子标签自定义名字
+                type: Array,
+                required: true,
+            },
+        },
+    }
 </script>
 ```
 
@@ -2878,53 +2880,54 @@ Demo”后，子组件向父组件传递值，文字由原来的“传递的是�
 ```html
 // 子组件
 <template>
-  <header>
-    <h1 @click="changeTitle">{{title}}</h1>
-    //绑定一个点击事件
-  </header>
+    <header>
+        <h1 @click="changeTitle">{{title}}</h1>
+        //绑定一个点击事件
+    </header>
 </template>
 <script>
-  export default {
-    name: 'app-header',
-    data() {
-      return {
-        title: 'Vue.js Demo',
-      }
-    },
-    methods: {
-      changeTitle() {
-        this.$emit('titleChanged', '子向父组件传值') //自定义事件  传递值“子向父组件传值”
-      },
-    },
-  }
+    export default {
+        name: 'app-header',
+        data() {
+            return {
+                title: 'Vue.js Demo',
+            }
+        },
+        methods: {
+            changeTitle() {
+                this.$emit('titleChanged', '子向父组件传值') //自定义事件  传递值“子向父组件传值”
+            },
+        },
+    }
 </script>
 // 父组件
 <template>
-  <div id="app">
-    <app-header @titleChanged="updateTitle"></app-header>
-    //与子组件titleChanged自定义事件保持一致 // updateTitle($event)接受传递过来的文字
-    <h2>{{title}}</h2>
-  </div>
+    <div id="app">
+        <app-header @titleChanged="updateTitle"></app-header>
+        //与子组件titleChanged自定义事件保持一致 // updateTitle($event)接受传递过来的文字
+        <h2>{{title}}</h2>
+    </div>
 </template>
 <script>
-  import Header from './components/Header'
-  export default {
-    name: 'App',
-    data() {
-      return {
-        title: '传递的是一个值',
-      }
-    },
-    methods: {
-      updateTitle(e) {
-        //声明这个函数
-        this.title = e
-      },
-    },
-    components: {
-      'app-header': Header,
-    },
-  }
+    import Header from './components/Header'
+
+    export default {
+        name: 'App',
+        data() {
+            return {
+                title: '传递的是一个值',
+            }
+        },
+        methods: {
+            updateTitle(e) {
+                //声明这个函数
+                this.title = e
+            },
+        },
+        components: {
+            'app-header': Header,
+        },
+    }
 </script>
 ```
 
@@ -2938,9 +2941,10 @@ Demo”后，子组件向父组件传递值，文字由原来的“传递的是�
 ##### 1.具体实现方式：
 
 ```javaScript
-    var Event=new Vue();
-    Event.$emit(事件名,数据);
-    Event.$on(事件名,data => {});
+    var Event = new Vue();
+Event.$emit(事件名, 数据);
+Event.$on(事件名, data => {
+});
 ```
 
 ##### 2.举个例子
@@ -2948,82 +2952,83 @@ Demo”后，子组件向父组件传递值，文字由原来的“传递的是�
 假设兄弟组件有三个，分别是 A、B、C 组件，C 组件如何获取 A 或者 B 组件的数据
 
 ```html
+
 <div id="itany">
-  <my-a></my-a>
-  <my-b></my-b>
-  <my-c></my-c>
+    <my-a></my-a>
+    <my-b></my-b>
+    <my-c></my-c>
 </div>
 <template id="a">
-  <div>
-    <h3>A组件：{{name}}</h3>
-    <button @click="send">将数据发送给C组件</button>
-  </div>
+    <div>
+        <h3>A组件：{{name}}</h3>
+        <button @click="send">将数据发送给C组件</button>
+    </div>
 </template>
 <template id="b">
-  <div>
-    <h3>B组件：{{age}}</h3>
-    <button @click="send">将数组发送给C组件</button>
-  </div>
+    <div>
+        <h3>B组件：{{age}}</h3>
+        <button @click="send">将数组发送给C组件</button>
+    </div>
 </template>
 <template id="c">
-  <div>
-    <h3>C组件：{{name}}，{{age}}</h3>
-  </div>
+    <div>
+        <h3>C组件：{{name}}，{{age}}</h3>
+    </div>
 </template>
 <script>
-  var Event = new Vue() //定义一个空的Vue实例
-  var A = {
-    template: '#a',
-    data() {
-      return {
-        name: 'tom',
-      }
-    },
-    methods: {
-      send() {
-        Event.$emit('data-a', this.name)
-      },
-    },
-  }
-  var B = {
-    template: '#b',
-    data() {
-      return {
-        age: 20,
-      }
-    },
-    methods: {
-      send() {
-        Event.$emit('data-b', this.age)
-      },
-    },
-  }
-  var C = {
-    template: '#c',
-    data() {
-      return {
-        name: '',
-        age: '',
-      }
-    },
-    mounted() {
-      //在模板编译完成后执行
-      Event.$on('data-a', name => {
-        this.name = name //箭头函数内部不会产生新的this，这边如果不用=>,this指代Event
-      })
-      Event.$on('data-b', age => {
-        this.age = age
-      })
-    },
-  }
-  var vm = new Vue({
-    el: '#itany',
-    components: {
-      'my-a': A,
-      'my-b': B,
-      'my-c': C,
-    },
-  })
+    var Event = new Vue() //定义一个空的Vue实例
+    var A = {
+        template: '#a',
+        data() {
+            return {
+                name: 'tom',
+            }
+        },
+        methods: {
+            send() {
+                Event.$emit('data-a', this.name)
+            },
+        },
+    }
+    var B = {
+        template: '#b',
+        data() {
+            return {
+                age: 20,
+            }
+        },
+        methods: {
+            send() {
+                Event.$emit('data-b', this.age)
+            },
+        },
+    }
+    var C = {
+        template: '#c',
+        data() {
+            return {
+                name: '',
+                age: '',
+            }
+        },
+        mounted() {
+            //在模板编译完成后执行
+            Event.$on('data-a', name => {
+                this.name = name //箭头函数内部不会产生新的this，这边如果不用=>,this指代Event
+            })
+            Event.$on('data-b', age => {
+                this.age = age
+            })
+        },
+    }
+    var vm = new Vue({
+        el: '#itany',
+        components: {
+            'my-a': A,
+            'my-b': B,
+            'my-c': C,
+        },
+    })
 </script>
 ```
 
@@ -3064,23 +3069,25 @@ state。**
 ```javaScript
 let defaultCity = "上海"
 try {   // 用户关闭了本地存储功能，此时在外层加个try...catch
-  if (!defaultCity){
-    defaultCity = JSON.parse(window.localStorage.getItem('defaultCity'))
-  }
-}catch(e){}
-export default new Vuex.Store({
-  state: {
-    city: defaultCity
-  },
-  mutations: {
-    changeCity(state, city) {
-      state.city = city
-      try {
-      window.localStorage.setItem('defaultCity', JSON.stringify(state.city));
-      // 数据改变的时候把数据拷贝一份保存到localStorage里面
-      } catch (e) {}
+    if (!defaultCity) {
+        defaultCity = JSON.parse(window.localStorage.getItem('defaultCity'))
     }
-  }
+} catch (e) {
+}
+export default new Vuex.Store({
+    state: {
+        city: defaultCity
+    },
+    mutations: {
+        changeCity(state, city) {
+            state.city = city
+            try {
+                window.localStorage.setItem('defaultCity', JSON.stringify(state.city));
+                // 数据改变的时候把数据拷贝一份保存到localStorage里面
+            } catch (e) {
+            }
+        }
+    }
 })
 ```
 
@@ -3108,84 +3115,84 @@ Vue2.4 版本提供了另一种方法----`$attrs`/`$listeners`
 ```html
 // index.vue
 <template>
-  <div>
-    <h2>浪里行舟</h2>
-    <child-com1 :foo="foo" :boo="boo" :coo="coo" :doo="doo" title="前端工匠"></child-com1>
-  </div>
+    <div>
+        <h2>浪里行舟</h2>
+        <child-com1 :foo="foo" :boo="boo" :coo="coo" :doo="doo" title="前端工匠"></child-com1>
+    </div>
 </template>
 <script>
-  const childCom1 = () => import('./childCom1.vue')
-  export default {
-    components: { childCom1 },
-    data() {
-      return {
-        foo: 'Javascript',
-        boo: 'Html',
-        coo: 'CSS',
-        doo: 'Vue',
-      }
-    },
-  }
+    const childCom1 = () => import('./childCom1.vue')
+    export default {
+        components: {childCom1},
+        data() {
+            return {
+                foo: 'Javascript',
+                boo: 'Html',
+                coo: 'CSS',
+                doo: 'Vue',
+            }
+        },
+    }
 </script>
 // childCom1.vue
 <template class="border">
-  <div>
-    <p>foo: {{ foo }}</p>
-    <p>childCom1的$attrs: {{ $attrs }}</p>
-    <child-com2 v-bind="$attrs"></child-com2>
-  </div>
+    <div>
+        <p>foo: {{ foo }}</p>
+        <p>childCom1的$attrs: {{ $attrs }}</p>
+        <child-com2 v-bind="$attrs"></child-com2>
+    </div>
 </template>
 <script>
-  const childCom2 = () => import('./childCom2.vue')
-  export default {
-    components: {
-      childCom2,
-    },
-    inheritAttrs: false, // 可以关闭自动挂载到组件根元素上的没有在props声明的属性
-    props: {
-      foo: String, // foo作为props属性绑定
-    },
-    created() {
-      console.log(this.$attrs) // { "boo": "Html", "coo": "CSS", "doo": "Vue", "title": "前端工匠" }
-    },
-  }
+    const childCom2 = () => import('./childCom2.vue')
+    export default {
+        components: {
+            childCom2,
+        },
+        inheritAttrs: false, // 可以关闭自动挂载到组件根元素上的没有在props声明的属性
+        props: {
+            foo: String, // foo作为props属性绑定
+        },
+        created() {
+            console.log(this.$attrs) // { "boo": "Html", "coo": "CSS", "doo": "Vue", "title": "前端工匠" }
+        },
+    }
 </script>
 // childCom2.vue
 <template>
-  <div class="border">
-    <p>boo: {{ boo }}</p>
-    <p>childCom2: {{ $attrs }}</p>
-    <child-com3 v-bind="$attrs"></child-com3>
-  </div>
+    <div class="border">
+        <p>boo: {{ boo }}</p>
+        <p>childCom2: {{ $attrs }}</p>
+        <child-com3 v-bind="$attrs"></child-com3>
+    </div>
 </template>
 <script>
-  const childCom3 = () => import('./childCom3.vue')
-  export default {
-    components: {
-      childCom3,
-    },
-    inheritAttrs: false,
-    props: {
-      boo: String,
-    },
-    created() {
-      console.log(this.$attrs) // {"coo": "CSS", "doo": "Vue", "title": "前端工匠" }
-    },
-  }
+    const childCom3 = () => import('./childCom3.vue')
+    export default {
+        components: {
+            childCom3,
+        },
+        inheritAttrs: false,
+        props: {
+            boo: String,
+        },
+        created() {
+            console.log(this.$attrs) // {"coo": "CSS", "doo": "Vue", "title": "前端工匠" }
+        },
+    }
 </script>
 // childCom3.vue
 <template>
-  <div class="border">
-    <p>childCom3: {{ $attrs }}</p>
-  </div>
+    <div class="border">
+        <p>childCom3: {{ $attrs }}</p>
+    </div>
 </template>
 <script>
-  export default {
-    props: {
-      coo: String,
-      title: String,
-    },
-  }
+    export default {
+        props: {
+            coo: String,
+            title: String,
+        },
+    }
 </script>
 ```
 
@@ -3211,16 +3218,16 @@ Vue2.2.0 新增 API,这对选项需要一起使用，**以允许一个祖先组�
 ```javaScript
 // A.vue
 export default {
-  provide: {
-    name: '浪里行舟'
-  }
+    provide: {
+        name: '浪里行舟'
+    }
 }
 // B.vue
 export default {
-  inject: ['name'],
-  mounted () {
-    console.log(this.name);  // 浪里行舟
-  }
+    inject: ['name'],
+    mounted() {
+        console.log(this.name);  // 浪里行舟
+    }
 }
 ```
 
@@ -3248,10 +3255,10 @@ B.vue 中，通过 `inject` 注入了从 A 组件中提供的 **name** 变量，
 ```html
 // A 组件
 <div>
-  <h1>A 组件</h1>
-  <button @click="() => changeColor()">改变color</button>
-  <ChildrenB />
-  <ChildrenC />
+    <h1>A 组件</h1>
+    <button @click="() => changeColor()">改变color</button>
+    <ChildrenB/>
+    <ChildrenC/>
 </div>
 ...... data() { return { color: "blue" }; }, // provide() { // return { // theme: { // color: this.color
 //这种方式绑定的数据并不是可响应的 // } // 即A组件的color变化后，组件D、E、F不会跟着变 // }; // }, provide() { return {
@@ -3261,19 +3268,19 @@ provide() { // this.theme = Vue.observable({ // color: "blue" // }); // return {
 methods: { // changeColor(color) { // if (color) { // this.theme.color = color; // } else { // this.theme.color =
 this.theme.color === "blue" ? "red" : "blue"; // } // } // } // F 组件
 <template functional>
-  <div class="border2">
-    <h3 :style="{ color: injections.theme.color }">F 组件</h3>
-  </div>
+    <div class="border2">
+        <h3 :style="{ color: injections.theme.color }">F 组件</h3>
+    </div>
 </template>
 <script>
-  export default {
-    inject: {
-      theme: {
-        //函数式组件取值不一样
-        default: () => ({}),
-      },
-    },
-  }
+    export default {
+        inject: {
+            theme: {
+                //函数式组件取值不一样
+                default: () => ({}),
+            },
+        },
+    }
 </script>
 ```
 
@@ -3289,29 +3296,29 @@ this.theme.color === "blue" ? "red" : "blue"; // } // } // } // F 组件
 ```javaScript
 // component-a 子组件
 export default {
-  data () {
-    return {
-      title: 'Vue.js'
+    data() {
+        return {
+            title: 'Vue.js'
+        }
+    },
+    methods: {
+        sayHello() {
+            window.alert('Hello');
+        }
     }
-  },
-  methods: {
-    sayHello () {
-      window.alert('Hello');
-    }
-  }
 }
 // 父组件
 <template>
-  <component-a ref="comA"></component-a>
+    <component-a ref="comA"></component-a>
 </template>
 <script>
-  export default {
-    mounted () {
-      const comA = this.$refs.comA;
-      console.log(comA.title);  // Vue.js
-      comA.sayHello();  // 弹窗
-    }
-  }
+    export default {
+    mounted() {
+    const comA = this.$refs.comA;
+    console.log(comA.title);  // Vue.js
+    comA.sayHello();  // 弹窗
+}
+}
 </script>
 ```
 
