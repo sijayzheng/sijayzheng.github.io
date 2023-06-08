@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定相应的Mapper接口-->
+<mapper namespace="sijay.zheng.experience.mybatis.mapper.SelectMapper">
+    <!--查询所有-->
+    <select id="listAll" resultType="java.util.LinkedHashMap">
+        select *
+        from ${tableName}
+
+    </select>
+
+</mapper>

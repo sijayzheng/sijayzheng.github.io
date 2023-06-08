@@ -1,11 +1,11 @@
 - **Java**
-    - [Java基础](doc/Java.md)
-    - [Java库](doc/javaLib.md)
-    - [Java源码](doc/javaSourceCode.md)
+  - [Java 基础](doc/Java.md)
+  - [Java 库](doc/javaLib.md)
+  - [Java 源码](doc/javaSourceCode.md)
 - **算法**
-    - 排序与混排
-    - 二分查找
+  - 排序与混排
+  - 二分查找
 - **杂记**
-    - [编程语言](doc/language.md)
-    - [杂记](doc/emmm.md)
-    - [激活码](doc/jihuoma.md)
+  - [编程语言](doc/language.md)
+  - [杂记](doc/emmm.md)
+  - [激活码](doc/jihuoma.md)
