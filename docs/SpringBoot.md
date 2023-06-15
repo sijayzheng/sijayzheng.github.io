@@ -614,3 +614,5 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 @EnableCircuitBreaker
 
 分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication 这一注解集合
+
+## other

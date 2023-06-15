@@ -274,12 +274,12 @@ _以Java8为例_
 
 - 算术运算符
 
-| 运算符 | 含义  |
-|-----|-----|
-| +   | 加   |
-| -   | 减   | 
-| *   | 乘   |
-| /   | 除   | 
+| 运算符 | 含义 |
+|-----|----|
+| +   | 加  |
+| -   | 减  | 
+| *   | 乘  |
+| /   | 除  | 
 
 > 数值在进行算数运算时会发生数据类型转换
 >
@@ -857,32 +857,189 @@ HashMap只对键进行散列，TreeMap使用键的整体顺序进行排序
 
 如果向一个变量写入值，而这个变量接下来可能会被另一个线程读取，或者，从一个变量读值，而这个变量可能是之前被另一个线程写入的，此时必须使用同步
 
+```java
+public class Main {
+    public static final Logger GLOBAL = Logger.getGlobal();
+    public static final int NACCOUNTS = 100;
+    public static final double INITIALBALANCE = 100;
+    public static final double MAX_AMOUNT = 1000;
+    public static final int DELAY = 10;
 
+    public static void main(String[] args) {
+        Bank bank = new Bank(NACCOUNTS, INITIALBALANCE);
+        for (int i = 0; i < NACCOUNTS; i++) {
+            int fromAccount = i;
+            Runnable runnable = () -> {
+                try {
+                    while (true) {
+                        int toAccount = (int) (bank.size() * Math.random());
+                        bank.transfer(fromAccount, toAccount, 200);
+                        Thread.sleep((long) (DELAY * Math.random()));
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            };
+            new Thread(runnable).start();
+        }
+    }
+}
 
+class Bank {
+    private final double[] accounts;
 
+    public Bank(int n, double initialBalance) {
+        accounts = new double[n];
+        Arrays.fill(accounts, initialBalance);
+    }
 
+    public void transfer(int from, int to, double amount) {
+        if (accounts[from] < amount) {
+            return;
+        }
+        System.out.println(Thread.currentThread());
+        accounts[from] -= amount;
+        System.out.printf("%10.2f from %d to %d\n", amount, from, to);
+        accounts[to] += amount;
+        System.out.printf("Total Balance: %10.2f\n", getTotalBalance());
 
+    }
 
+    public double getTotalBalance() {
+        double sum = 0;
+        for (double account : accounts) {
+            sum += account;
+        }
+        return sum;
+    }
 
+    public int size() {
+        return accounts.length;
+    }
+}
+```
 
+## Stream
 
+stream 顺序流
+parallelStream 并行流
 
+### 创建
 
+- 通过Collection的stream方法
+- 通过Stream.of方法
+- 通过Array.stream(array,from,to)将数组中[from,to)的元素创建为流
+- 通过Stream.empty创建空流
+- 无限流
+    - Stream.generate 通过指定函数生成数据
+    - Stream.iterate 通过种子+函数生成
 
+### 中间操作
 
+- `filter` 过滤掉不符合规则的元素并返回流
+- `map` 将元素按规则进行转换，参数为函数，该函数的返回值类型为流的泛型
+- `flatMap` 参数为返回类型为流的函数，该返回类型的泛型为流的泛型
+- `limit(n)` 抽取子流，返回n个元素的流
+- `skip(n)` 丢弃前n个元素并返回流
+- `concat(a,b)` 将两个流a和b连接起来，a不应该为无限流
+- `distinct` 去重，不改变顺序
+- `sorted` 排序，参数可接受排序函数
+- `peek` 查看流中的元素，不改元素，没有终止操作时无作用
 
+```java
+class Test {
+    public static void main(String[] args) {
+        Stream<String> stream = Arrays.stream("hello world".split(" "));
+        Stream<String[]> stream1 = stream.map(e -> e.split(""));//[["h","e","l","l","o"],["w","o","r","l","d"]]
+        Stream<String> stream2 = stream1.flatMap(e -> Arrays.stream(e));//["h","e","l","l","o","w","o","r","l","d"]
+    }
+}
+```
 
+### 终结操作
 
+- 约简操作
+    - `count` 计算流中元素数量
+    - `max` 返回最大值
+    - `min` 返回最小值
+    - `findFirst` 返回第一个元素
+    - `findAny` 返回任一元素
+    - `anyMatch` 存在任一元素匹配
+    - `allMatch` 所有元素匹配
+    - `noneMatch` 全不匹配
+- 收集操作
+    - `iterator` 返回一个流中元素的迭代器
+    - `forEach` 遍历流中的元素
+    - `toArray` 将流转为数组
+    - `collect` 收集流中的元素
 
+**收集器collector**
 
+- `toList` 转为列表
+- `toSet` 转为集
+- `toCollection` 转为任意的集合
+- `joining` 转为字符串，可指定分隔符、前后缀
+- `summarizing[Int|Long|Double]` 返回[Int|Long|Double]SummaryStatistics对象，包括所有结果的个数、总和、均值、最大值、最小值
+  > **[Int|Long|Double]SummaryStatistics**
+  > - `getAverage` 返回均值
+  > - `getCount` 返回数量
+  > - `getMax` 返回最大值
+  > - `getMin` 返回最小值
+  > - `getSum` 返回和
+- `toMap` 转为映射
+- `toConcurrentMap` 转为并发映射
+- `groupingBy` 按指定属性分组并转为映射
+- `groupingByConcurrent` 按指定属性分组并转为并发映射
+  > **下游收集器**
+  > - `toSet` 转为集
+  > - `counting` 计算元素个数
+  > - `summing[Int|Long|Double]` 计算总和
+  > - `maxBy和minBy`返回最大值和最小值
+  > - `mapping` 将结果进行重新收集
+- `partitioningBy` 按指定属性进行判断转为满足/不满足条件的映射
+- `reduce` 返回经过操作后的最终结果
 
+**IntStream、LongStream**
 
+- `range(a,b)` 产生[a,b)之间元素的流
+- `rangeClosed(a,b)` 产生[a,b]之间元素的流
 
+**其他返回流的方法**
 
+- `CharSequence.codePoints` 返回字符串所有Unicode码点的流
+- `Random.ints 、 Random.longs 、 Random.doubles` 返回随机数流，可指定数量和边界（[a,b)）
 
+**并行流**
 
+- `parallel` 将流转为并行流
+- `unordered` 将流转为无序流
+- `parallelStream` 生成一个并行流
 
+## Optional
 
+包装器对象，包装了T对象或null
+
+- `orElse(other)` 获取对象的值，null时获取other
+- `orElseGet(other)` 获取对象的值，null时获取other的返回值
+- `orElseThrow(exp)` 获取对象的值，null时抛出异常exp
+- `ifPresent` 当对象不为null时，操作该值，无返回
+- `map` 返回操作后的Optional结果，当对象为null时，返回一个空Optional
+- `get` 返回对象的值，null时抛出异常NoSuchElementException
+- `isPresent` 非null时返回true
+- `empty` 返回一个空的Optional
+- `of` 在对象不为null时，返回一个Optional对象，否则抛出NullPointerException
+- `ofNullable` 在对象不为null时，返回一个Optional对象，否则返回Optional.empty
+- `flatMap(mapper)` 在对象不为null时返回经mapper处理过的值，否则返回一个空的Optional
+
+## 输入输出
+
+InputStream和OutputStream基于byte值，按字节读写
+
+Reader和Writer基于char值
+
+DataInputStream和DataOutputStream按二进制格式读写
+
+ZipInputStream和ZipOutputStream读写ZIP文件
 
 
 

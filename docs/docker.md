@@ -522,3 +522,51 @@ docker version [OPTIONS]
 - nginx
 - mongo
 - postgres
+
+## 容器创建
+
+```bash
+mkdir -p ~/gitlab/config
+mkdir -p ~/gitlab/logs
+mkdir -p ~/gitlab/data
+
+sudo docker run --detach \
+  -p 81:81 \
+  --name gitlab \
+  --volume ~/gitlab/config:/etc/gitlab \
+  --volume ~/gitlab/logs:/var/log/gitlab \
+  --volume ~/gitlab/data:/var/opt/gitlab \
+  --shm-size 8g \
+  gitlab/gitlab-ee:latest
+
+mkdir -p ~/redis/data
+
+sudo docker run --detach \
+  -p 6379:6379 \
+  --name redis \
+  --volume ~/redis/data:/data \
+  redis:latest
+
+mkdir -p ~/mysql/data
+
+sudo docker run --detach \
+  -p 3306:3306 \
+  -p 33060:33060 \
+  --name mysql \
+  --volume ~/mysql/data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=root \
+  mysql:latest
+
+mkdir -p ~/minio/data
+
+docker run \
+   -p 9000:9000 \
+   -p 9090:9090 \
+   --name minio \
+   -v ~/minio/data:/data \
+   -e "MINIO_ROOT_USER=root" \
+   -e "MINIO_ROOT_PASSWORD=root@123" \
+   quay.io/minio/minio server /data --console-address ":9090"
+```
+## 修改容器端口
+
