@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import sijay.zheng.z.app.auth.dto.LoginReqDTO;
-import sijay.zheng.z.app.common.BaseController;
-import sijay.zheng.z.app.common.Returns;
+import sijay.zheng.z.app.common.core.BaseController;
+import sijay.zheng.z.app.common.core.Returns;
 
 /**
  * TODO
