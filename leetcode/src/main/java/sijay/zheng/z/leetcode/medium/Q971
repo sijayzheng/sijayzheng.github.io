@@ -1,0 +1,45 @@
+package sijay.zheng.z.leetcode.medium;
+/**
+ 题目971：严格回文的数字
+<p>如果一个整数 <code>n</code>在 <code>b</code>进制下（<code>b</code>为 <code>2</code>到 <code>n - 2</code>之间的所有整数）对应的字符串<strong>全部</strong>都是 <strong>回文的</strong>，那么我们称这个数<code>n</code>是 <strong>严格回文</strong>的。</p>
+
+<p>给你一个整数<code>n</code>，如果 <code>n</code>是 <strong>严格回文</strong>的，请返回<code>true</code> ，否则返回<em></em><code>false</code>。</p>
+
+<p>如果一个字符串从前往后读和从后往前读完全相同，那么这个字符串是 <strong>回文的</strong>。</p>
+
+<p></p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre><b>输入：</b>n = 9
+<b>输出：</b>false
+<b>解释：</b>在 2 进制下：9 = 1001 ，是回文的。
+在 3 进制下：9 = 100 ，不是回文的。
+所以，9 不是严格回文数字，我们返回 false 。
+注意在 4, 5, 6 和 7 进制下，n = 9 都不是回文的。
+</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre><b>输入：</b>n = 4
+<b>输出：</b>false
+<b>解释：</b>我们只考虑 2 进制：4 = 100 ，不是回文的。
+所以我们返回 false 。
+</pre>
+
+<p></p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>4 &lt;= n &lt;= 10<sup>5</sup></code></li>
+</ul>
+
+*/
+ class Q971 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
+    public boolean isStrictlyPalindromic(int n) {
+
+    }
+}
+}

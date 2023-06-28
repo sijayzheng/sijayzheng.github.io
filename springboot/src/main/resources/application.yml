@@ -1,0 +1,100 @@
+server:
+  # 端口
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # 连接数满后的排队数，默认为100
+    accept-count: 1000
+    threads:
+      # tomcat最大线程数，默认为200
+      max: 800
+      # Tomcat启动初始化的线程数，默认值10
+      min-spare: 100
+
+# Spring配置
+spring:
+  profiles:
+    active: ext
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 10MB
+      # 设置总上传的文件大小
+      max-request-size: 20MB
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+  # redis配置
+  data:
+    redis:
+      # Redis服务器地址
+      host: 127.0.0.1
+      # Redis服务器连接端口
+      port: 6379
+      # Redis数据库索引（默认为0）
+      database: 1
+      # Redis服务器连接密码（默认为空）
+      # password:
+      # 连接超时时间
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 10
+          # 连接池中的最小空闲连接
+          min-idle: 0
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/sijay
+    username: root
+    password: root
+  main:
+    banner-mode: off
+
+# Sa-Token 配置 (文档: https://sa-token.cc)
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+
+
+
+# MyBatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  type-aliases-package: com.glorycop.**.entity
+  configuration:
+    # 使全局的映射器启用或禁用缓存
+    cache-enabled: true
+    # 允许JDBC 支持自动生成主键
+    use-generated-keys: true
+    # 配置默认的执行器.SIMPLE就是普通执行器;REUSE执行器会重用预处理语句(prepared statements);BATCH执行器将重用语句并执行批量更新
+    default-executor-type: simple
+    # 指定 MyBatis 所用日志的具体实现
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    # 使用驼峰命名法转换字段
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: off

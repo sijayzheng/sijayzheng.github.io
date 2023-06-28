@@ -1,0 +1,41 @@
+package sijay.zheng.z.leetcode.medium;
+/**
+ 题目1147：生成匹配的括号
+<p>正整数<code>n</code>代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 <strong>有效的 </strong>括号组合。</p>
+
+<p></p>
+
+<p><strong>示例 1：</strong></p>
+
+<pre>
+<strong>输入：</strong>n = 3
+<strong>输出：</strong>[&quot;((()))&quot;,&quot;(()())&quot;,&quot;(())()&quot;,&quot;()(())&quot;,&quot;()()()&quot;]
+</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>n = 1
+<strong>输出：</strong>[&quot;()&quot;]
+</pre>
+
+<p></p>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+	<li><code>1 &lt;= n &lt;= 8</code></li>
+</ul>
+
+<p></p>
+
+<p><meta charset="UTF-8" />注意：本题与主站 22题相同：<a href="https://leetcode-cn.com/problems/generate-parentheses/">https://leetcode-cn.com/problems/generate-parentheses/</a></p>
+
+*/
+ class Q1147 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
+    public List<String> generateParenthesis(int n) {
+
+    }
+}
+}

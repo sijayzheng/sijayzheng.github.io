@@ -1,0 +1,44 @@
+package sijay.zheng.z.leetcode.medium;
+/**
+ 题目277：最长递增子序列的个数
+<p>给定一个未排序的整数数组<meta charset="UTF-8" /><code>nums</code>，<em>返回最长递增子序列的个数</em>。</p>
+
+<p><strong>注意</strong>这个数列必须是 <strong>严格</strong> 递增的。</p>
+
+<p></p>
+
+<p><strong>示例 1:</strong></p>
+
+<pre>
+<strong>输入:</strong> [1,3,5,4,7]
+<strong>输出:</strong> 2
+<strong>解释:</strong> 有两个最长递增子序列，分别是 [1, 3, 4, 7] 和[1, 3, 5, 7]。
+</pre>
+
+<p><strong>示例 2:</strong></p>
+
+<pre>
+<strong>输入:</strong> [2,2,2,2,2]
+<strong>输出:</strong> 5
+<strong>解释:</strong> 最长递增子序列的长度是1，并且存在5个子序列的长度为1，因此输出5。
+</pre>
+
+<p></p>
+
+<p><strong>提示:</strong></p>
+
+<p><meta charset="UTF-8" /></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 2000</code></li>
+	<li><code>-10<sup>6</sup>&lt;= nums[i] &lt;= 10<sup>6</sup></code></li>
+</ul>
+
+*/
+ class Q277 {public static void main(String[] args) {Solution solution=new Solution();}
+static class Solution {
+    public int findNumberOfLIS(int[] nums) {
+
+    }
+}
+}
