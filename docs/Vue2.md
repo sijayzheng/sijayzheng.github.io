@@ -405,7 +405,7 @@ let vue2 = new Vue({
 
 - **参考**：全局混入
 
-### Vue.compile( template )
+### Vue.implementation( template )
 
 - **参数**：
 
@@ -416,7 +416,7 @@ let vue2 = new Vue({
   将一个模板字符串编译成 render 函数。**只在完整版时可用**。
 
   ```
-  var res = Vue.compile('<div><span>{{ msg }}</span></div>')
+  var res = Vue.implementation('<div><span>{{ msg }}</span></div>')
 
   new Vue({
     data: {
