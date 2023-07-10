@@ -4,10 +4,10 @@
 
 package sijay.zheng.z.app.h2;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import sijay.zheng.z.app.common.enums.GenderEnum;
 
-import java.beans.Transient;
 import java.time.LocalDate;
 
 /**
@@ -28,8 +28,7 @@ public class Demo {
     @Column(name = "STUDENT_NAME", length = 50, nullable = false)
     private String name;
     //非持久化字段
-    @Transient
-    private Integer age;
+    private transient Integer age;
     //时间类型数据
     @Temporal(TemporalType.DATE)
     private LocalDate birthDate;

@@ -27,7 +27,7 @@ public class FileUtil {
     private static final int BYTE_SIZE = 8;
 
     @LogDog
-    public static void replaceTxtByStr(String filePath, String oldStr, String replaceStr) {
+    public static void replaceString(String filePath, String oldStr, String replaceStr) {
         try {
             File file = new File(filePath);
             FileInputStream fis = new FileInputStream(file);
@@ -660,6 +660,18 @@ public class FileUtil {
         }
     }
 
+    public static List<File> listFile(String path) {
+        List<File> files = new ArrayList<>();
+        for (File listFile : Objects.requireNonNull(new File(path).listFiles())) {
+            if (listFile.isFile()) {
+                files.add(listFile);
+            } else {
+                files.addAll(listFile(listFile));
+            }
+        }
+        return files;
+    }
+
     public static List<File> listFile(File file) {
         List<File> files = new ArrayList<>();
         for (File listFile : Objects.requireNonNull(file.listFiles())) {
@@ -775,7 +787,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
-    public String getFileSuffix(String path) {
+    public static String getFileSuffix(String path) {
         return path.substring(path.lastIndexOf(".") + 1);
     }
 
@@ -797,4 +809,5 @@ public class FileUtil {
         deleteFile(oldPath);
         System.out.println("�ļ��ƶ��ɹ�");
     }
+
 }
