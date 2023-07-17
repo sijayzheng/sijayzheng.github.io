@@ -13,7 +13,6 @@ import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
-import sijay.zheng.z.generator.BaseController;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -58,7 +57,6 @@ public class GenTest {
                         .addTablePrefix(moduleName)
 
                         .controllerBuilder()
-                        .superClass(BaseController.class)
                         .enableRestStyle() // 开启驼峰转连字符
                         .enableHyphenStyle() // 开启生成@RestController 控制器
                         .enableFileOverride()

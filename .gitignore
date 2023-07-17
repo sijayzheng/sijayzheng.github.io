@@ -3,4 +3,3 @@
 **/**/*.log
 /.vscode
 /db
-/**/node_modules/

@@ -20,6 +20,7 @@ import sijay.zheng.z.app.common.core.Returns;
 @RestController
 public class AuthController extends BaseController {
 
+
     /**
      * 登录方法
      *
@@ -28,7 +29,6 @@ public class AuthController extends BaseController {
      */
     @PostMapping("/login")
     public Returns login(@RequestBody LoginReqDTO loginReqDTO) {
-
         return success();
     }
 

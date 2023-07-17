@@ -8,10 +8,11 @@
 
 package sijay.zheng.z.app.common.core;
 
+import lombok.Data;
 import sijay.zheng.z.app.common.enums.ErrorCodeEnum;
 
+import java.io.Serial;
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -20,20 +21,22 @@ import java.util.Objects;
  * @author zhengshijie
  * @date 2023/6/15 11:14
  */
-public class Returns extends HashMap<String, Object> implements Serializable {
+@Data
+public class Returns<T> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     /**
      * 状态码
      */
-    public static final String CODE = "code";
+    private String code;
     /**
      * 返回内容
      */
-    public static final String MSG = "msg";
+    private String msg;
     /**
      * 数据对象
      */
-    public static final String DATA = "data";
-    private static final long serialVersionUID = 1L;
+    private T data;
 
     /**
      * 初始化一个新创建的 ReturnResult 对象，使其表示一个空消息。
@@ -48,8 +51,8 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param msg  返回内容
      */
     public Returns(String code, String msg) {
-        super.put(CODE, code);
-        super.put(MSG, msg);
+        this.code = code;
+        this.msg = msg;
     }
 
     /**
@@ -59,11 +62,11 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param msg  返回内容
      * @param data 数据对象
      */
-    public Returns(String code, String msg, Object data) {
-        super.put(CODE, code);
-        super.put(MSG, msg);
+    public Returns(String code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
         if (!Objects.isNull(data)) {
-            super.put(DATA, data);
+            this.data = data;
         }
     }
 
@@ -73,14 +76,14 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns of(String code, String msg, Object data) {
-        return new Returns(code, msg, data);
+    public static <T> Returns<T> of(String code, String msg, T data) {
+        return new Returns<>(code, msg, data);
     }
 
     /**
      * @return 通用返回结果
      */
-    public static Returns success() {
+    public static <T> Returns<T> success() {
         return successMsg(ErrorCodeEnum.SUCCESS.getMsg());
     }
 
@@ -88,7 +91,7 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns successMsg(String msg) {
+    public static <T> Returns<T> successMsg(String msg) {
         return success(msg, null);
     }
 
@@ -96,7 +99,7 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns success(Object data) {
+    public static <T> Returns<T> success(T data) {
         return success(ErrorCodeEnum.SUCCESS.getMsg(), data);
     }
 
@@ -105,14 +108,14 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns success(String msg, Object data) {
+    public static <T> Returns<T> success(String msg, T data) {
         return of(ErrorCodeEnum.SUCCESS.getCode(), msg, data);
     }
 
     /**
      * @return 通用返回结果
      */
-    public static Returns error() {
+    public static <T> Returns<T> error() {
         return errorMsg(ErrorCodeEnum.ERROR.getMsg());
     }
 
@@ -120,7 +123,7 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns errorMsg(String msg) {
+    public static <T> Returns<T> errorMsg(String msg) {
         return error(msg, null);
     }
 
@@ -128,7 +131,7 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns error(Object data) {
+    public static <T> Returns<T> error(T data) {
         return error(ErrorCodeEnum.ERROR.getMsg(), data);
     }
 
@@ -137,23 +140,9 @@ public class Returns extends HashMap<String, Object> implements Serializable {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns error(String msg, Object data) {
+    public static <T> Returns<T> error(String msg, T data) {
         return of(ErrorCodeEnum.ERROR.getCode(), msg, data);
     }
-
-    /**
-     * 链式调用
-     *
-     * @param key   键
-     * @param value 值
-     * @return 数据对象
-     */
-    @Override
-    public Returns put(String key, Object value) {
-        super.put(key, value);
-        return this;
-    }
-
 }
 
 

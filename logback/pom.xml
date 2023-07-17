@@ -8,11 +8,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>sijay.zheng.z</groupId>
+        <groupId>sijay.zheng</groupId>
         <artifactId>z</artifactId>
         <version>${revision}</version>
     </parent>
 
+    <groupId>sijay.zheng.z</groupId>
     <artifactId>logback</artifactId>
 
     <dependencies>
@@ -20,12 +21,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-
+            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-
+            <version>${logback.version}</version>
         </dependency>
     </dependencies>
 </project>

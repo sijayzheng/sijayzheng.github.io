@@ -21,7 +21,7 @@ public class BaseController {
     /**
      * @return 通用返回结果
      */
-    public static Returns success() {
+    public static Returns<Void> success() {
         return Returns.success();
     }
 
@@ -29,7 +29,7 @@ public class BaseController {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns successMsg(String msg) {
+    public static Returns<Void> successMsg(String msg) {
         return Returns.successMsg(msg);
     }
 
@@ -37,7 +37,7 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns success(Object data) {
+    public static <T> Returns<T> success(T data) {
         return Returns.success(data);
     }
 
@@ -46,14 +46,14 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns success(String msg, Object data) {
+    public static <T> Returns<T> success(String msg, T data) {
         return Returns.success(msg, data);
     }
 
     /**
      * @return 通用返回结果
      */
-    public static Returns error() {
+    public static Returns<Void> error() {
         return Returns.error();
     }
 
@@ -61,7 +61,7 @@ public class BaseController {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns errorMsg(String msg) {
+    public static Returns<Void> errorMsg(String msg) {
         return Returns.errorMsg(msg);
     }
 
@@ -69,7 +69,7 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns error(Object data) {
+    public static <T> Returns<T> error(T data) {
         return Returns.error(data);
     }
 
@@ -78,16 +78,9 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static Returns error(String msg, Object data) {
+    public static <T> Returns<T> error(String msg, T data) {
         return Returns.error(msg, data);
     }
-
-//    /**
-//     * 获取用户缓存信息
-//     */
-//    public LoginUser getLoginUser() {
-//        return SecurityUtils.getLoginUser();
-//    }
 
     /**
      * 获取登录用户id
