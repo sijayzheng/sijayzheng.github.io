@@ -156,7 +156,7 @@
 | artifactId   | 这是工程的标识。它通常是工程的名称。                         |
 | version      | 这是工程的版本号。在 artifact 的仓库中，它用来区分不同的版本 |
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0http://maven.apache.org/maven-v4_0_0.xsd">
     <!--父项目的坐标。如果项目中没有规定某个元素的值，那么父项目中的对应值即为项目的默认值。 坐标包括group ID，artifact ID和
@@ -845,9 +845,9 @@ maven 引用本地 jar 包
 
 ## 1. new Maven project
 
-勾选Create a simple project，next
+勾选 Create a simple project，next
 
-填写Group Id和Artifact Id，其它默认即可，finish
+填写 Group Id 和 Artifact Id，其它默认即可，finish
 
 - Group ld:组织名
 - Artifact ld:项目标识符
@@ -857,11 +857,11 @@ maven 引用本地 jar 包
 - Name:项目名（一般为项目标识符）
 - Description:描述
 
-## 2. 修改pom.xml
+## 2. 修改 pom.xml
 
 修改为如下内容
 
-注意groupid、artifactid、name修改为自己的
+注意 groupid、artifactid、name 修改为自己的
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -914,7 +914,7 @@ maven 引用本地 jar 包
 
 ### 解决方案：
 
-先看一下pom中是否存在`<packaging>pom</packaging>`，如果存在则删除即可，如果不存在添加以下内容
+先看一下 pom 中是否存在`<packaging>pom</packaging>`，如果存在则删除即可，如果不存在添加以下内容
 
 ```xml
 <build>
@@ -940,4 +940,3 @@ maven 引用本地 jar 包
     </resources>
 </build>
 ```
-
