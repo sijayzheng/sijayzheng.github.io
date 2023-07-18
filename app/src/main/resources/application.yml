@@ -24,10 +24,24 @@ spring:
       data-locations: classpath:data/data.sql
       schema-locations: classpath:data/schema.sql
       encoding: utf-8
-      # 非嵌入式数据库第二次运行时注释掉
       #      mode: always
       username: root
       password: root
   devtools:
     livereload:
-      enabled: on
+      enabled: true
+    restart:
+      enabled: true
+
+
+# Sa-Token配置
+sa-token:
+  token-name: Authorization
+  timeout: 604800
+  is-concurrent: true
+  is-share: false
+  jwt-secret-key: thisisajwtsecretprivatekey
+  is-read-body: true
+  is-read-header: true
+  is-read-cookie: false
+  token-prefix: "Bearer"

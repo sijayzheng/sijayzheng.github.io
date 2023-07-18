@@ -8,11 +8,14 @@
 
 package sijay.zheng.z.app.entity.sys;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 /**
  * @author sijay
@@ -31,5 +34,31 @@ public class SysUser {
     private String userName;
     // 密码
     @Column(name = "password", nullable = false, length = 100)
+    @JsonIgnore
     private String password;
+    /**
+     * 用户唯一标识
+     */
+    private transient String token;
+
+    /**
+     * 登录时间
+     */
+    private transient LocalDateTime loginTime;
+
+    /**
+     * 过期时间
+     */
+    private transient Long expireTime;
+
+
+    /**
+     * 获取登录id
+     */
+    public Long getLoginId() {
+        if (userId == null) {
+            throw new IllegalArgumentException("用户ID不能为空");
+        }
+        return userId;
+    }
 }

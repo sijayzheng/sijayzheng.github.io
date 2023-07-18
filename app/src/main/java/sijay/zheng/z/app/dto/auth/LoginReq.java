@@ -6,13 +6,13 @@
  * Ownership belongs to Sijay Zheng
  */
 
-package sijay.zheng.z.app.service;
+package sijay.zheng.z.app.dto.auth;
 
 /**
  * TODO
  *
  * @author zhengshijie
- * @date 2023/6/15 14:10
+ * @date 2023/6/15 14:12
  */
-public interface IAuthService {
+public record LoginReq(String username, String password) {
 }
