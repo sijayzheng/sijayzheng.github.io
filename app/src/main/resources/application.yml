@@ -18,7 +18,16 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
+  sql:
+    init:
+      data-locations: classpath:data/data.sql
+      schema-locations: classpath:data/schema.sql
+      encoding: utf-8
+      # 非嵌入式数据库第二次运行时注释掉
+      #      mode: always
+      username: root
+      password: root
   devtools:
     livereload:
       enabled: on

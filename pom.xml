@@ -22,6 +22,7 @@
         <module>springcloud</module>
         <module>app</module>
         <module>h2db</module>
+        <module>common</module>
     </modules>
 
     <properties>
@@ -45,6 +46,8 @@
         <velocity.version>2.3</velocity.version>
         <sqlite.version>3.42.0.0</sqlite.version>
         <h2.version>2.1.214</h2.version>
+        <jackson.version>2.15.2</jackson.version>
+        <spring-web.version>6.0.10</spring-web.version>
     </properties>
 
     <dependencyManagement>
