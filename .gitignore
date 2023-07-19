@@ -2,5 +2,5 @@
 **/**/target
 **/**/*.log
 /.vscode
-/db
 /**/node_modules
+/**/pnpm-lock.yaml
