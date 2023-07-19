@@ -640,6 +640,7 @@ public class FileUtil {
         }
     }
 
+    @LogDog
     public static void collectByModifDate(String path) {
         for (File file : listFile(new File(path))) {
             LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(file.lastModified()), ZoneOffset.of("+8"));
@@ -660,6 +661,7 @@ public class FileUtil {
         }
     }
 
+    @LogDog
     public static List<File> listFile(File file) {
         List<File> files = new ArrayList<>();
         for (File listFile : Objects.requireNonNull(file.listFiles())) {
@@ -672,12 +674,18 @@ public class FileUtil {
         return files;
     }
 
+    @LogDog
+    public static List<File> listFile(String path) {
+        return listFile(new File(path));
+    }
+
     /**
      * 创建文件夹
      *
      * @param path path
      * @return **
      */
+    @LogDog
     public boolean createFolder(String path) {
         File myFolderPath = new File(path);
         try {
@@ -698,6 +706,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
+    @LogDog
     public boolean emptyFiles(String path) {
         File delfile = new File(path);
         File[] files = delfile.listFiles();
@@ -716,6 +725,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
+    @LogDog
     public boolean emptyFolder(String path) {
         File delfilefolder = new File(path);
         try {
@@ -737,6 +747,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
+    @LogDog
     public HashMap<String, String> fileAttribute(String path) {
         HashMap<String, String> map = new HashMap<>();
         File f = new File(path);
@@ -758,6 +769,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
+    @LogDog
     public boolean setFileReadOnly(String path) {
         File filereadonly = new File(path);
         try {
@@ -775,6 +787,7 @@ public class FileUtil {
      * @param path path
      * @return **
      */
+    @LogDog
     public String getFileSuffix(String path) {
         return path.substring(path.lastIndexOf(".") + 1);
     }
@@ -783,6 +796,7 @@ public class FileUtil {
      * @param oldPath oldPath
      * @param newPath newPath
      */
+    @LogDog
     public void moveFile(String oldPath, String newPath) throws Exception {
         FileInputStream in = new FileInputStream(oldPath);
         FileOutputStream out = new FileOutputStream(newPath);
