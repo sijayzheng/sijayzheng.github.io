@@ -1,3 +1,6 @@
+server:
+  port: 9990
+
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -15,24 +18,31 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
+  data:
+    redis:
+      database: 2
+      host: 127.0.0.1
+      port: 6379
+      # password:
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
   jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-  sql:
-    init:
-      data-locations: classpath:data/data.sql
-      schema-locations: classpath:data/schema.sql
-      encoding: utf-8
-      #      mode: always
-      username: root
-      password: root
+    open-in-view: false
   devtools:
     livereload:
       enabled: true
     restart:
       enabled: true
-
+    add-properties: false
+  main:
+    banner-mode: off
+  profiles:
+    active: default
 
 # Sa-Token配置
 sa-token:
@@ -44,4 +54,7 @@ sa-token:
   is-read-body: true
   is-read-header: true
   is-read-cookie: false
-  token-prefix: "Bearer"
+logging:
+  level:
+    web: info
+

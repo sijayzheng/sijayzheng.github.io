@@ -12,8 +12,6 @@
 
 package sijay.zheng.z.app.core;
 
-import cn.dev33.satoken.stp.StpUtil;
-
 /**
  * TODO
  *
@@ -25,7 +23,7 @@ public class BaseController {
     /**
      * @return 通用返回结果
      */
-    public static Returns<Void> success() {
+    protected Returns<Void> success() {
         return Returns.success();
     }
 
@@ -33,15 +31,15 @@ public class BaseController {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns<Void> successMsg(String msg) {
-        return Returns.successMsg(msg);
+    protected Returns<Void> success(String msg) {
+        return Returns.success(msg);
     }
 
     /**
      * @param data 数据
      * @return 通用返回结果
      */
-    public static <T> Returns<T> success(T data) {
+    protected <T> Returns<T> success(T data) {
         return Returns.success(data);
     }
 
@@ -50,14 +48,14 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static <T> Returns<T> success(String msg, T data) {
+    protected <T> Returns<T> success(String msg, T data) {
         return Returns.success(msg, data);
     }
 
     /**
      * @return 通用返回结果
      */
-    public static Returns<Void> error() {
+    protected Returns<Void> error() {
         return Returns.error();
     }
 
@@ -65,15 +63,15 @@ public class BaseController {
      * @param msg 信息
      * @return 通用返回结果
      */
-    public static Returns<Void> errorMsg(String msg) {
-        return Returns.errorMsg(msg);
+    protected Returns<Void> error(String msg) {
+        return Returns.error(msg);
     }
 
     /**
      * @param data 数据
      * @return 通用返回结果
      */
-    public static <T> Returns<T> error(T data) {
+    protected <T> Returns<T> error(T data) {
         return Returns.error(data);
     }
 
@@ -82,16 +80,8 @@ public class BaseController {
      * @param data 数据
      * @return 通用返回结果
      */
-    public static <T> Returns<T> error(String msg, T data) {
+    protected <T> Returns<T> error(String msg, T data) {
         return Returns.error(msg, data);
-    }
-
-    /**
-     * 获取登录用户id
-     */
-    public Long getUserId() {
-        // 获取当前会话账号id, 如果未登录，则抛出异常：`NotLoginException`
-        return StpUtil.getLoginIdAsLong();      // 获取当前会话账号id, 并转化为`long`类型
     }
 
 }

@@ -32,7 +32,7 @@ public class AuthController extends BaseController {
     private final AuthService authService;
 
     @RequestMapping("/")
-    public Returns<String> index() {
+    public Returns<Void> index() {
         return success("It works!");
     }
 
@@ -53,10 +53,9 @@ public class AuthController extends BaseController {
      * @return 结果
      */
     @PostMapping("/logout")
-    public Returns<String> logout() {
+    public Returns<Void> logout() {
         authService.logout();
         return success("退出登录成功");
     }
-
 
 }

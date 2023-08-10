@@ -51,14 +51,4 @@ public class SysUser {
      */
     private transient Long expireTime;
 
-
-    /**
-     * 获取登录id
-     */
-    public Long getLoginId() {
-        if (userId == null) {
-            throw new IllegalArgumentException("用户ID不能为空");
-        }
-        return userId;
-    }
 }

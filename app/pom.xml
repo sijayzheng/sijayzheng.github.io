@@ -17,9 +17,11 @@
     <artifactId>app</artifactId>
 
     <properties>
+        <oshi.version>6.4.4</oshi.version>
     </properties>
     <dependencies>
         <!-- SpringBoot Web容器 -->
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -47,7 +49,12 @@
             <artifactId>sa-token-jwt</artifactId>
             <version>${sa-token.version}</version>
         </dependency>
-
+        <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-redis-jackson</artifactId>
+            <version>${sa-token.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -69,7 +76,11 @@
             <version>${revision}</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core-java11</artifactId>
+            <version>${oshi.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
