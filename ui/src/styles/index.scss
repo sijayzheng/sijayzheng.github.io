@@ -1,0 +1,143 @@
+@import 'animate.css';
+@import 'element-plus/dist/index.css';
+
+html {
+  font-size: 8px;
+}
+
+body {
+  font-size: 1.75rem;
+}
+
+// 全局SCSS变量
+:root {
+  --el-color-primary: #ff7500 !important;
+  --el-color-primary-light-3: #ff8936 !important;
+  --el-color-primary-light-5: #ffa400 !important;
+  --el-color-primary-light-7: #ffc64b !important;
+  --el-color-primary-light-8: #f2be45 !important;
+  --el-color-primary-light-9: #fff2df !important;
+  --el-color-primary-dark-2: #d3b17d !important;
+}
+
+$blue: #0061a6;
+$light-blue: #0096ff;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #30b08f;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+
+
+@mixin colorBtn($color) {
+  background: $color;
+
+  &:hover {
+    color: $color;
+
+    &:before,
+    &:after {
+      background: $color;
+    }
+  }
+}
+
+.blue-btn {
+  @include colorBtn($blue);
+}
+
+.light-blue-btn {
+  @include colorBtn($light-blue);
+}
+
+.red-btn {
+  @include colorBtn($red);
+}
+
+.pink-btn {
+  @include colorBtn($pink);
+}
+
+.green-btn {
+  @include colorBtn($green);
+}
+
+.tiffany-btn {
+  @include colorBtn($tiffany);
+}
+
+.yellow-btn {
+  @include colorBtn($yellow);
+}
+
+.pan-btn {
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: 600ms ease all;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    background: #fff;
+
+    &:before,
+    &:after {
+      width: 100%;
+      transition: 600ms ease all;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    transition: 400ms ease all;
+  }
+
+  &::after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}

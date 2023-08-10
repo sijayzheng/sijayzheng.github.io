@@ -1,6 +1,10 @@
-/.idea
-**/**/target
-**/**/*.log
-/.vscode
-/**/node_modules
+/.idea/
+/**/target/
+/**/*.log
+/**/.vscode/
+/**/node_modules/
 /**/pnpm-lock.yaml
+/**/package-lock.json
+/ui/dist/
+/ui/dts
+/**/*.iml

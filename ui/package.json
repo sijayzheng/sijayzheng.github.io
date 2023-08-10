@@ -1,0 +1,35 @@
+{
+  "name": "z",
+  "version": "1.0.0",
+  "description": "z",
+  "author": "sijay",
+  "scripts": {
+    "dev": "vite serve",
+    "build:prod": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.1.0",
+    "@vueuse/core": "10.3.0",
+    "animate.css": "4.1.1",
+    "axios": "^1.4.0",
+    "echarts": "5.4.3",
+    "element-plus": "2.3.8",
+    "js-cookie": "3.0.5",
+    "nprogress": "0.2.0",
+    "pinia": "2.1.6",
+    "vue": "3.3.4",
+    "vue-router": "4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.6",
+    "@vitejs/plugin-vue": "4.2.3",
+    "@vue/compiler-sfc": "3.3.4",
+    "sass": "1.64.2",
+    "unplugin-auto-import": "0.16.6",
+    "unplugin-icons": "0.16.5",
+    "unplugin-vue-components": "0.25.1",
+    "vite": "4.4.8",
+    "vite-plugin-vue-setup-extend": "^0.4.0"
+  }
+}
