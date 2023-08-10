@@ -4,9 +4,12 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ExcelUtil {
 //
 //	public static void main(String[] args) {

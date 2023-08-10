@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.entity.TreeNode;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class TreeUtil {
     /**
      * 生成树形结构

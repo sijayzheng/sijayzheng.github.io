@@ -4,6 +4,8 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,15 +14,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class DateUtil {
 
     private static final int[] dayArray = {
             31, 28, 31, 30, 31, 30, 31, 31, 30, 31,
             30, 31
     };
-
-    public DateUtil() {
-    }
 
     public static void main(String[] args) {
         System.out.println(getFullFormatedDateString(System.currentTimeMillis()));

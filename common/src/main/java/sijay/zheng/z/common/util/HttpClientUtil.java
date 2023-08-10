@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.annotation.LogDog;
 import sijay.zheng.z.common.constant.CommConstant;
 
@@ -19,6 +20,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class HttpClientUtil {
 
     /**

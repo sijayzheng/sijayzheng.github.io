@@ -4,6 +4,8 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -12,6 +14,7 @@ import java.net.UnknownHostException;
 /**
  * @author SijayZheng
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class IpUtil {
     public static String getMacAddress() throws SocketException, UnknownHostException {
         byte[] hardwareAddress = NetworkInterface.getByInetAddress(InetAddress.getLocalHost()).getHardwareAddress();

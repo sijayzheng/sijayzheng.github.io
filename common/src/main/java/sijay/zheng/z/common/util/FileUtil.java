@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.annotation.LogDog;
 
 import java.io.*;
@@ -17,6 +18,7 @@ import java.util.*;
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class FileUtil {
 
     public static final int BUFSIZE = 1024 * 8;

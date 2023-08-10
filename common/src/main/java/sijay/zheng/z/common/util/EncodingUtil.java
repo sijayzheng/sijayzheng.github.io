@@ -4,6 +4,8 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.nio.charset.Charset;
 import java.util.SortedMap;
 
@@ -13,7 +15,13 @@ import java.util.SortedMap;
  * @author zhengshijie
  * @date 2023/7/10 9:48
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class EncodingUtil {
+    public static void main(String[] args) {
+        String s = "锘挎槬鐪犱笉瑙夋檽锛屽\uE629澶勯椈鍟奸笩";
+        new EncodingUtil().GarbledRecovery(s);
+    }
+
     public void GarbledRecovery(String garbled) {
         System.out.printf("%18s|%18s|%s %n", "现编码", "原编码", "解码后字符串");
         final SortedMap<String, Charset> charsetMap = Charset.availableCharsets();
@@ -25,10 +33,5 @@ public class EncodingUtil {
                 }
             });
         });
-    }
-
-    public static void main(String[] args) {
-        String s = "锘挎槬鐪犱笉瑙夋檽锛屽\uE629澶勯椈鍟奸笩";
-        new EncodingUtil().GarbledRecovery(s);
     }
 }

@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.annotation.LogDog;
 
 import javax.crypto.Cipher;
@@ -20,6 +21,7 @@ import java.util.Base64;
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class EncryptUtil {
 
     //算法

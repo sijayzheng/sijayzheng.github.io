@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -11,6 +12,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class StringUtil extends StringUtils {
     private static final String[] CHARSET_ARR = {"UTF-8", "GB2312", "GBK", "Windows-1252", "ISO8859-1"};
 

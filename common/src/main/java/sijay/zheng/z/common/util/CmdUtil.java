@@ -4,6 +4,8 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +17,7 @@ import java.util.List;
  * @author sijay
  * @date 2022/11/24 17:12
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class CmdUtil {
 
     /**

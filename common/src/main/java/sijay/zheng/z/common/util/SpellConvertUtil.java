@@ -4,12 +4,15 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Properties;
 
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class SpellConvertUtil {
 
     public static String convertCNToSpell(String cnStr) {

@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.record.Kv;
 
 import java.security.SecureRandom;
@@ -16,14 +17,12 @@ import java.util.UUID;
  * @author sijay
  * @date 2022/11/24 17:34
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class PasswordUtil {
 
     private static final String LOW = "abcdefghijklmnopqrstuvwxyz";
     private static final String SPECIAL = "~!@#$%^&*()_+/-=[]{};:'<>?.";
     private static final String NUM = "0123456789";
-
-    private PasswordUtil() {
-    }
 
     // 随机获取字符串字符
     private static char getRandomChar(String str) {

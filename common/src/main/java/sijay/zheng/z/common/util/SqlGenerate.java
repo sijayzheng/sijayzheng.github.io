@@ -4,6 +4,8 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -13,6 +15,7 @@ import java.util.regex.Pattern;
 /**
  * @author sijay
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class SqlGenerate {
     public static final String[] COUNTY = {"110101", "110102", "110105", "110106", "110107", "110108", "110109", "110111", "110112",
             "110113", "110114", "110115", "110116", "110117", "110118", "110119", "120101", "120102", "120103", "120104", "120105",

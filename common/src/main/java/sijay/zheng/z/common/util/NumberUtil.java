@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 import sijay.zheng.z.common.annotation.LogDog;
 import sijay.zheng.z.common.enums.NumberBaseEnum;
@@ -22,6 +23,7 @@ import java.util.stream.Stream;
  * @date 2022/4/26 21:25
  */
 @Component
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class NumberUtil {
     private static final List<String> NUMBER = List.of("零", "一", "二", "三", "四", "五", "六", "七", "八", "九");
     private static final List<String> UNIT_LOW = List.of("", "十", "百", "千");

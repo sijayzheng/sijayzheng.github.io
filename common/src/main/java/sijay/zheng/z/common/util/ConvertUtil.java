@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import sijay.zheng.z.common.constant.CommConstant;
 import sijay.zheng.z.common.enums.CaseEnum;
 
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
  * @author sijay
  * @date 2022/4/26 21:25
  */
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ConvertUtil {
     public static final List<Character> A_Z = List.of('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 

@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
-  ~ Ownership belongs to Sijay Zheng
-  -->
-
-<!--
 scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
 scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
 debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
 -->
 <configuration scan="true">
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <property name="logPath" value="logs"/>
     <property name="logPattern" value="%5p[%d{HH:mm:ss.SSS}] %.30logger{10} %msg%n"/>
     <!--    日志记录-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%clr(%5p)→%clr([%d{HH:mm:ss.SSS}] %.30logger{30}:){cyan}%m%n%wEx</pattern>
+            <pattern>%5p[%d{HH:mm:ss.SSS}]→%.50logger{50}:%n - %m%n</pattern>
         </encoder>
     </appender>
 

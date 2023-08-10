@@ -4,6 +4,7 @@
 
 package sijay.zheng.z.common.util;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sijay.zheng.z.common.annotation.LogDog;
 import sijay.zheng.z.common.enums.NumberEnum;
@@ -19,6 +20,7 @@ import java.util.regex.Pattern;
  * @date 2022/6/18 0:30
  */
 @Slf4j
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class GenerateUtil {
 
     private static final Pattern PHONE_NO_PATTERN = Pattern.compile("^1[34578]\\d{9}$");
@@ -74,29 +76,7 @@ public class GenerateUtil {
      * 生成身份证号
      **/
     @LogDog
-    public static String generateId(String province, String city, String county, String birthday, String sex) {
-        boolean flag = true;
-        if (StringUtil.isEmpty(province)) {
-            log.error("请选择省份!");
-            ExceptionUtil.throwException("");
-        }
-        if (StringUtil.isEmpty(city)) {
-            log.error("请选择城市!");
-            ExceptionUtil.throwException("");
-        }
-        if (StringUtil.isEmpty(county)) {
-            log.error("请选择区县!");
-            ExceptionUtil.throwException("");
-        }
-        if (StringUtil.isEmpty(birthday)) {
-            log.error("请选择时间!");
-            ExceptionUtil.throwException("");
-        }
-        if (StringUtil.isEmpty(sex)) {
-            log.error("请选择性别!");
-            ExceptionUtil.throwException("");
-        }
-
+    public static String generateId(String county, String birthday, String sex) {
         var rand = Math.floor(100 + Math.random() * (999 - 100));
         if (NumberEnum.ONE.getStringValue().equals(sex)) {
             if (0 == rand % NumberEnum.TWO.getIntValue()) {
@@ -133,10 +113,6 @@ public class GenerateUtil {
      */
     @LogDog
     public static boolean checkCard(String idNo) {
-        if (StringUtil.isEmpty(idNo)) {
-            log.error("请生成身份证号码!");
-            ExceptionUtil.throwException("");
-        }
         boolean res = ID_NO_PATTERN.matcher(idNo).matches() || ID_NO_SHOT_PATTERN.matcher(idNo).matches();
         if (res) {
             log.error("证件号码格式错误!");
@@ -363,7 +339,6 @@ public class GenerateUtil {
      */
     public static String generatorBankAccount() {
         //开头6位
-
         String[] strBin = {"10", "18", "30", "35", "37", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "58", "60", "62", "65", "68", "69", "84", "87", "88", "94", "95", "98", "99"};
         var num = Math.toIntExact(Math.round(Math.random() * 34));
         var start = strBin[num];
