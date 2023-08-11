@@ -1,15 +1,12 @@
-- [question](doc/question.md)
+- [**question**](doc/question.md)
 - **Java**
   - 基础
     - [Java](doc/Java.md)
     - [JavaSE](doc/JavaSE.md)
-    - [IO](doc/IO.md)
     - [Thread](doc/Thread.md)
     - [Java 库](doc/javaLib.md)
     - [注解](doc/annotation.md)
     - [JVM](doc/JVM.md)
-    - [GC](doc/GC.md)
-    - [Java面试](doc/Java面试.md)
   - 类库
     - [Lombok](doc/Lombok.md)
     - [Swagger](doc/Swagger.md)

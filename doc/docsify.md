@@ -3,19 +3,19 @@
 安装工具
 
 ```bash
-npm i docsify-cli -g
+npm i -g docsify-cli
 ```
 
 初始化项目
 
 ```bash
-docsify init ./docs
+docsify init
 ```
 
 启动预览服务器(默认访问地址 http://localhost:3000)
 
 ```bash
-docsify serve docs
+docsify serve
 ```
 
 ## 目录结构
