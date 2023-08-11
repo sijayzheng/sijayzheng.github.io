@@ -14,8 +14,10 @@
 }
 
 Node.js v18.16.0
- ELIFECYCLE  Command failed with exit code 1.
+ELIFECYCLE Command failed with exit code 1.
 ```
+
+原因是nodejs版本过高
 
 ### 解决方案
 
@@ -24,3 +26,17 @@ Node.js v18.16.0
 ```
 "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
 ```
+
+## org.apache.catalina.session.StandardManager doLoad
+
+tomcat 的 work 目录下面的东西删一遍。
+
+## org.hibernate.MappingException
+
+hibernate 映射文件错误
+
+## java.lang.IllegalArgumentException:
+
+`Can not find a java.io.InputStream with the name [downloadFile] in the invocation stack. Check the <param name="inputName"> tag specified for this action.`
+
+action 中缺少相应的方法

@@ -1,1 +1,127 @@
 # ReadeMe
+
+## 收藏的网站
+
+- [阿B](http://www.bilibili.com/)
+- [开发速查](https://devhints.io/)
+- [Maven](https://central.sonatype.com/)
+- [GayHub](https://github.com/)
+- [码云](https://gitee.com/)
+- [工具](http://tool.lu/)
+- [工具箱](https://tool.lanrentuku.com/)
+- [MD5 解密](https://www.somd5.com/)
+- [Tool](https://www.toolfk.com/)
+- [码工具](http://www.matools.com/)
+- [在线工具](http://tool.oschina.net/)
+- [站长工具](http://tool.chinaz.com/)
+- [临时邮箱](http://24mail.chacuo.net/)
+- [慢慢买](http://www.manmanbuy.com/)
+- [墨刀](https://modao.cc/)
+- [吾道幻灯片](https://www.woodo.cn/)
+- [在线图片颜色取色器 -极念网](http://www.jiniannet.com/Page/AllColor)
+- [Spring Initializr](https://start.spring.io/)
+- [在线 PS](https://www.uupoop.com/)
+- [AnywhereAnything](http://lackar.com/aa/)
+- [Caniuse](https://caniuse.com/)
+- [Coolors](https://coolors.co/)
+- [图像文件在线编辑工具](https://www.iloveimg.com/zh-cn)
+- [JSON 在线](https://www.sojson.com/)
+- [MSDN](http://msdn.itellyou.cn/)
+- [NowAPI](https://www.nowapi.com/)
+- [开放地理空间实验室](https://www.osgeo.cn/list/ghealth/5?tag=)
+- [正版中国](https://getitfree.cn/)
+- [唧唧](http://www.jijidown.com/)
+- [SQL 测试数据生成](http://datamaker.online/)
+- [稿定设计 PS](https://ps.gaoding.com/#/)
+- [工具猫](https://www.toolscat.com/)
+- [CSSGrid](https://layoutit.com/)
+- [在线工具 ](https://tool.oschina.net/)
+- [OSGeo 中国中心](https://www.osgeo.cn/)
+- [微信小程序](https://mp.weixin.qq.com/cgi-bin/wx?token=&lang=zh_CN)
+- [API 中文](https://www.matools.com/api)
+- [JAVAschool](http://www.51gjie.com/)
+- [jQueryAPI](https://www.jquery123.com/)
+- [MDN](https://developer.mozilla.org/zh-CN/)
+- [Sa-Token](https://sa-token.cc/)
+- [W3C](http://www.w3school.com.cn/)
+- [ElementPlus](https://element-plus.org/)
+- [Element - 网站快速成型工具](https://element.eleme.cn/#/zh-CN)
+- [Vue3](https://cn.vuejs.org/)
+- [Vue2](https://v2.cn.vuejs.org/)
+- [Apache ECharts](https://echarts.apache.org/zh/index.html)
+- [DataV](http://datav.jiaminghi.com/)
+- [Photoshop 用户指南](https://helpx.adobe.com/cn/photoshop/user-guide.html)
+- [npm](https://www.npmjs.com/)
+- [MyBatis-Plus](https://baomidou.com/)
+- [Vite](https://cn.vitejs.dev/)
+- [Spring | Home](https://spring.io/)
+- [Ant Design of Vue - Ant Design Vue](https://www.antdv.com/docs/vue/introduce-cn/)
+- [Axios](https://www.axios-http.cn/)
+- [编程导航](https://www.code-nav.cn/)
+- [菜鸟](http://www.runoob.com/)
+- [LeetCode](https://leetcode-cn.com/)
+- [码农教程](http://www.manongjc.com/)
+- [Best Online Training &amp; Video Courses | eduCBA](https://www.educba.com/)
+- [How2J](http://how2j.cn/)
+- [Learn to Code with Interactive Tutorials](https://scrimba.com/)
+- [Online Tutorials Library](https://www.tutorialspoint.com/index.htm)
+- [Tutorials List - Javatpoint](https://www.javatpoint.com/)
+- [免费图片](https://www.stockio.com/)
+- [Awesome](https://alpha.wallhaven.cc/)
+- [BeautifulImages](https://unsplash.com/)
+- [Wallpaper](https://wall.alphacoders.com/)
+- [WallpapersWide](http://wallpaperswide.com/)
+- [思否](https://segmentfault.com/)
+- [StackOverflow](https://stackoverflow.com/)
+- [wikiHow](https://zh.wikihow.com/%E9%A6%96%E9%A1%B5)
+- [爱给网](http://www.aigei.com/)
+- [花瓣网](https://huaban.com/)
+- [鸠摩书](https://www.jiumodiary.com/)
+- [觅元素](http://www.51yuansu.com/)
+- [偶书](https://obook.cc/)
+- [求字体](http://www.qiuziti.com/)
+- [MYFREEMP3](http://tool.liumingye.cn/music/?page=homePage)
+- [优品 PPT](http://www.ypppt.com/)
+- [flysheep 资源避难所](http://flysheep.ys168.com/)
+- [全国图书馆参考咨询联盟](http://www.ucdrs.superlib.net/)
+- [iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
+- [西瓜视频](https://www.ixigua.com/)
+- [小霸王](https://www.yikm.net/)
+- [IO 游戏](https://poki.cn/io)
+- [Gitblit](http://www.gitblit.com/)
+- [SourceForge](https://sourceforge.net/)
+- [OSCN](https://www.oschina.net/)
+- [中国数字科技馆](https://www.cdstm.cn/)
+- [博客园](http://www.cnblogs.com/)
+- [廖雪峰](https://www.liaoxuefeng.com/)
+- [阮一峰](http://www.ruanyifeng.com/home.html)
+- [知乎](https://www.zhihu.com/)
+- [安装并设置 kubectl - Kubernetes](https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/)
+- [异常汇总](http://www.cnblogs.com/dunitian/p/4599258.html)
+- [Web 前端作品 demo](https://xifengxx.github.io/web-demo/)
+- [Oh, shit, git!](http://ohshitgit.com/)
+- [Jersey 2 hello world example - Jersey 2 tutorial - 入门小站-rumenz.com](https://rumenz.com/java-topic/jersey/jersey2-hello-world-example/index.html)
+
+## 常用的工具
+
+| 名称                                          | 用途                                |
+|---------------------------------------------|-----------------------------------|
+| [AxurePR](./doc/AxurePR.md)                 | 原型工具                              |
+| [DBeaver](./doc/DBeaver.md)                 | 多平台数据库工具                          |
+| [docsify](./doc/docsify.md)                 | 文档即时构建生成                          |
+| [EsLint](./doc/EsLint.md)                   | 对于ES的静态代码分析工具                     |
+| [Git](./doc/Git.md)                         | 开源的分布式版本控制系统                      |
+| [Github](./doc/Github.md)                   | 面向开源及私有软件项目的托管平台                  |
+| [GitLab](./doc/GitLab.md)                   | 用于仓库管理系统的开源项目                     |
+| [GitLabRunner](./doc/GitLabRunner.md)       | 与 GitLab CI/CD 配合使用以在管道中运行作业的应用程序 |
+| [IDEA](./doc/IDEA.md)                       | Java和Kotlin IDE                   |
+| [Jekyll](./doc/Jekyll.md)                   | 博客形态的静态站点生产机器                     |
+| [Maven](./doc/Maven.md)                     | 开源项目管理工具                          |
+| [MyEclipse](./doc/MyEclipse.md)             | 企业级Java IDE                       |
+| [Nodejs](./doc/Nodejs.md)                   | 基于Chrome V8引擎的JavaScript运行时       |
+| [SpringToolSuite](./doc/SpringToolSuite.md) | 开源Spring开发工具                      |
+| [Vite](./doc/vite.md)                       | 前端工具链                             |
+| [VSCode](./doc/VSCode.md)                   | 开源代码编辑器                           |
+| [webpack](./doc/webpack.md)                 | 模块打包器                             |
+
+

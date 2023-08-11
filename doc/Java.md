@@ -347,7 +347,7 @@ public class Main {
 ## 字符串
 
 - String
-  详见[java.lang.String](/doc/javaLib.md#string)
+  详见[java.lang.String](/doc/javaLib.md#String)
 - 字符串构建器
     - StringBuilder
     - StringBuffer

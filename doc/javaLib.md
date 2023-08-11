@@ -1,12 +1,10 @@
-## 字符串 String
+## String
 
 ### 位置：
 
 `java.lang.String`
 
 ### 底层实现：
-
-[String源码](javaSourceCode.md#string)
 
 ### 创建方式：
 
@@ -45,8 +43,8 @@
 
 #### 静态方法
 
-| 方法                                                                         | 用途  |
-|----------------------------------------------------------------------------|-----|
+| 方法                                                                         | 用途 |
+|----------------------------------------------------------------------------|----|
 | `join(CharSequence delimiter, CharSequence... elements)`                   |
 | `join(CharSequence delimiter, Iterable<? extends CharSequence> elements) ` |
 | `format(String format, Object... args)`                                    |
@@ -116,7 +114,7 @@
 | `formatted(Object... args)`                              | String       | 模板替换                        |
 | `repeat(int count)`                                      | String       | 将字符串重复count次                |
 
-## 集合 Collection
+## Collection
 
 ```java
 public interface Collection<E> extends Iterable<E> {
@@ -144,7 +142,6 @@ public interface Collection<E> extends Iterable<E> {
 
     boolean remove(Object o);
 
-
     // Bulk Operations
 
     boolean containsAll(Collection<?> c);
@@ -169,7 +166,6 @@ public interface Collection<E> extends Iterable<E> {
     boolean retainAll(Collection<?> c);
 
     void clear();
-
 
     // Comparison and hashing
 
