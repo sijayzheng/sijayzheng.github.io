@@ -42,21 +42,6 @@
 - **算法**
   - 排序与混排
   - 二分查找
-- **服务器**
-  - [Apache](doc/Apache.md)
-  - [Nginx](doc/Nginx.md)
-  - [Tomcat](doc/Tomcat.md)
-- **操作系统**
-  - Linux
-    - [Linux](doc/Linux.md)
-    - [CentOS](doc/CentOS.md)
-    - [WSL](doc/WSL.md)
-    - [Ubuntu](doc/Ubuntu.md)
-  - Linux命令/shell
-    - [bash](doc/bash.md)
-    - [Vim](doc/Vim.md)
-    - [zsh](doc/zsh.md)
-  - [Windows](doc/Windows.md)
 - **前端**
   - 基础
     - [HTML](doc/HTML.md)
@@ -91,16 +76,31 @@
     - [Redis](doc/Redis.md)
   - 连接工具
     - [DBeaver](doc/DBeaver.md)
-- **VCS&CI/CD**
-  - [Git](doc/Git.md)
-  - [Github](doc/Github.md)
-  - [GitLab](doc/GitLab.md)
-  - [GitLabRunner](doc/GitLabRunner.md)
+- **操作系统**
+  - Linux
+    - [Linux](doc/Linux.md)
+    - [CentOS](doc/CentOS.md)
+    - [WSL](doc/WSL.md)
+    - [Ubuntu](doc/Ubuntu.md)
+  - Linux命令/shell
+    - [bash](doc/bash.md)
+    - [Vim](doc/Vim.md)
+    - [zsh](doc/zsh.md)
+  - [Windows](doc/Windows.md)
+- **服务器**
+  - [Apache](doc/Apache.md)
+  - [Nginx](doc/Nginx.md)
+  - [Tomcat](doc/Tomcat.md)
 - **IDE**
   - [IDEA](doc/IDEA.md)
   - [VSCode](doc/VSCode.md)
   - [MyEclipse](doc/MyEclipse.md)
   - [SpringToolSuite](doc/SpringToolSuite.md)
+- **VCS&CI/CD**
+  - [Git](doc/Git.md)
+  - [Github](doc/Github.md)
+  - [GitLab](doc/GitLab.md)
+  - [GitLabRunner](doc/GitLabRunner.md)
 - **构建工具**
   - [Maven](doc/Maven.md)
 - **容器**
@@ -112,10 +112,9 @@
   - [markdown](doc/markdown.md)
 - **网络**
   - [net](doc/net.md)
-- [PHP](doc/PHP.md)
-- [正则表达式](doc/regex.md)
-- [设计模式](doc/designPattern.md)
-- [ElasticSearch](doc/ElasticSearch.md)
-- **杂记**
-  - [杂记](doc/emmm.md)
-  - [激活码](doc/jihuoma.md)
+- [**正则表达式**](doc/regex.md)
+- [**设计模式**](doc/designPattern.md)
+- [**ElasticSearch**](doc/ElasticSearch.md)
+- [**PHP**](doc/PHP.md)
+- [SSL证书](doc/sslCert.md)
+- [**激活码**](doc/jihuoma.md)

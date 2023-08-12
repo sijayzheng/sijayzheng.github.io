@@ -1,5 +1,3 @@
-# ReadeMe
-
 ## 收藏的网站
 
 - [阿B](http://www.bilibili.com/)
@@ -7,12 +5,12 @@
 - [Maven](https://central.sonatype.com/)
 - [GayHub](https://github.com/)
 - [码云](https://gitee.com/)
-- [工具](http://tool.lu/)
-- [工具箱](https://tool.lanrentuku.com/)
+- [tool.lu工具](http://tool.lu/)
+- [懒人工具箱](https://tool.lanrentuku.com/)
 - [MD5 解密](https://www.somd5.com/)
-- [Tool](https://www.toolfk.com/)
+- [toolfk](https://www.toolfk.com/)
 - [码工具](http://www.matools.com/)
-- [在线工具](http://tool.oschina.net/)
+- [oschina在线工具](http://tool.oschina.net/)
 - [站长工具](http://tool.chinaz.com/)
 - [临时邮箱](http://24mail.chacuo.net/)
 - [慢慢买](http://www.manmanbuy.com/)
@@ -101,6 +99,23 @@
 - [Web 前端作品 demo](https://xifengxx.github.io/web-demo/)
 - [Oh, shit, git!](http://ohshitgit.com/)
 - [Jersey 2 hello world example - Jersey 2 tutorial - 入门小站-rumenz.com](https://rumenz.com/java-topic/jersey/jersey2-hello-world-example/index.html)
+- [智奇搜书](https://www.zqbook.top/)
+- [ePUBw](https://epubw.com/)
+- [周读](http://www.ireadweek.com/)
+- [PDF 之家](https://www.pdfzj.com/)
+- [ePUBee 电子书库](http://cn.epubee.com/books/)
+- [好读](http://haodoo.net/)
+- [子午书简](https://5kindle.com/)
+- [E 书联盟](http://www.book118.com/)
+- [云海电子图书馆](http://www.pdfbook.cn/)
+- [书语者](https://book.shuyuzhe.com/)
+- [科塔学术](https://site.sciping.com/)
+- [西林街](https://xilinjie.cc/)
+- [万千合集站](http://www.hejizhan.com/bbs/)
+- [搬书匠](http://www.banshujiang.cn/)
+- [全国电视直播](http://bddn.cn/zb.htm)
+- [拷贝兔](https://cp.ifval.com/)
+- [疯狂影视搜索](http://ifkdy.com)
 
 ## 常用的工具
 
