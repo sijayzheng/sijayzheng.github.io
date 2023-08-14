@@ -30,89 +30,176 @@ internet 上请求连接的客户端，此时代理服务器对外就表现为�
 
 ## 配置
 
+```ini
+#运行用户
+user root;
+#worker进程数量,通常设置成和cpu的数量相等
+worker_processes  1;
+#全局错误日志
+#工作模式及连接数上限
+events {
+  #单个后台worker process进程的最大并发链接数
+  worker_connections 1024;
+  #一次接受所有新连接
+  multi_accept on;
+  #工作进程将依次接受新连接
+  accept_mutex on;
+  accept_mutex_delay 500ms;
+  worker_aio_requests 32;
+}
+
+#http服务器，做反向代理、负载均衡
+http {
+  #设定mime类型(邮件支持类型),类型由mime.types文件定义
+  include mime.types;
+  default_type  application/octet-stream;
+
+  #设定日志
+  log_format main '$remote_addr - $remote_user [$time_local]  $status '
+  '"$request" $body_bytes_sent "$http_referer" '
+  '"$http_user_agent" "$http_x_forwarded_for"';
+
+
+  sendfile        on;
+  tcp_nopush  on;
+  keepalive_timeout  120;
+  tcp_nodelay     on;
+  types_hash_max_size 2048;
+  server_name_in_redirect off;
+  server_names_hash_bucket_size 128;
+
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  ssl_ciphers HIGH:!aNULL:!MD5;
+  ssl_prefer_server_ciphers on;
+
+  #gzip压缩开关
+  gzip on;
+  gzip_vary on;
+  gzip_proxied any;
+  gzip_min_length 4k;
+  gzip_comp_level 6;
+  gzip_buffers 16 8k;
+  gzip_http_version 1.1;
+  gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+
+  client_body_buffer_size 8m;
+  client_header_buffer_size 32k;
+  client_max_body_size 1024m;
+
+  proxy_headers_hash_max_size 51200;
+  proxy_headers_hash_bucket_size 6400;
+
+  map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+  }
+
+
+  #HTTP服务器
+  server {
+    #监听端口
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    #定义使用www.xx.com访问
+    server_name  _;
+    #首页
+    index index.html
+    #指向webapp的目录
+    root /var/www/html;
+    #编码格式
+    charset utf-8;
+
+    ssl_certificate cert/localhost.crt;
+    ssl_certificate_key cert/localhost.key;
+
+    #代理配置参数
+    proxy_connect_timeout 180;
+    proxy_send_timeout 180;
+    proxy_read_timeout 180;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarder-For $remote_addr;
+    #反向代理的路径（和upstream绑定），location 后面设置映射的路径
+    location / {
+      root /var/www/html;
+      index index index.html;
+      try_files $uri $uri/ =404;
+    }
+
+    location /docs {
+      alias /mnt/c/users/sijay/code/z/;
+      index index index.html;
+    }
+
+    location /sijay {
+      proxy_pass      http://sijayzheng.github.io;
+    }
+
+    #错误处理页面（可选择性配置）
+    error_page   404             /404.html;
+    error_page   500 502 503 504  /50x.html;
+
+    #静态文件，nginx自己处理
+    #location ~ ^/(images|javascript|js|css|flash|media|static)/ {
+    #    root /var/www/html/static;
+    #    #过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。
+    #    expires 30d;
+    #}
+    #设定查看Nginx状态的地址
+    location /NginxStatus {
+        stub_status         on;
+    }
+    #禁止访问 .htxxx 文件
+    # location ~ /\.ht {
+    #     deny all;
+    # }
+  }
+}
+```
+
 ## 负载均衡配置
 
-上一个例子中，代理仅仅指向一个服务器。
-但是，网站在实际运营过程中，多半都是有多台服务器运行着同样的 app，这时需要使用负载均衡来分流。
-nginx 也可以实现简单的负载均衡功能。
-假设这样一个应用场景：将应用部署在 192.168.1.11:80、192.168.1.12:80、192.168.1.13:80 三台 linux
-环境的服务器上。网站域名叫 www.helloworld.com，公网 IP 为 192.168.1.11。在公网 IP 所在的服务器上部署 nginx，对所有请求做负载均衡处理。
-nginx.conf 配置如下：
+假设应用部署在 192.168.1.11:80、192.168.1.12:80、192.168.1.13:80 三台服务器上。 网站域名为 www.helloworld.com。在公网可访问的服务器上部署nginx，对所有请求做负载均衡处理。nginx.conf
+配置如下：
 
-```
+```ini
 http {
-    #设定mime类型,类型由mime.type文件定义
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
-    #设定日志格式
-    access_log    /var/log/nginx/access.log;
-        #设定负载均衡的服务器列表
-    upstream load_balance_server {
+  ...
+  #设定负载均衡的服务器列表
+  upstream load_balance_server {
     #weigth参数表示权值，权值越高被分配到的几率越大
     server 192.168.1.11:80   weight=5;
     server 192.168.1.12:80   weight=1;
     server 192.168.1.13:80   weight=6;
+  }
+  #HTTP服务器
+  server {
+    #侦听80端口
+    listen       80;
+    #定义使用www.xx.com访问
+    server_name  www.helloworld.com;
+    #对所有请求进行负载均衡请求
+    location / {
+      root        /root;
+      #定义服务器的默认网站根目录位置
+      index       index.html index.htm;
+      #定义首页索引文件的名称
+      proxy_pass  http://load_balance_server ;
+      ...
     }
-    #HTTP服务器
-    server {
-        #侦听80端口
-        listen       80;
-                #定义使用www.xx.com访问
-        server_name  www.helloworld.com;
-                #对所有请求进行负载均衡请求
-        location / {
-            root        /root;
-            #定义服务器的默认网站根目录位置
-            index       index.html index.htm;
-            #定义首页索引文件的名称
-            proxy_pass  http://load_balance_server ;
-            #请求转向load_balance_server 定义的服务器列表
-            #以下是一些反向代理的配置(可选择性配置)
-            #proxy_redirect off;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
-            proxy_set_header X-Forwarded-For $remote_addr;
-            proxy_connect_timeout 90;
-            #nginx跟后端服务器连接超时时间(代理连接超时)
-            proxy_send_timeout 90;
-            #后端服务器数据回传时间(代理发送超时)
-            proxy_read_timeout 90;
-            #连接成功后，后端服务器响应时间(代理接收超时)
-            proxy_buffer_size 4k;
-            #设置代理服务器（nginx）保存用户头信息的缓冲区大小
-            proxy_buffers 4 32k;
-            #proxy_buffers缓冲区，网页平均在32k以下的话，这样设置
-            proxy_busy_buffers_size 64k;
-            #高负荷下缓冲大小（proxy_buffers*2）
-            proxy_temp_file_write_size 64k;
-            #设定缓存文件夹大小，大于这个值，将从upstream服务器传
-            client_max_body_size 10m;
-            #允许客户端请求的最大单文件字节数
-            client_body_buffer_size 128k;
-            #缓冲区代理缓冲用户端请求的最大字节数
-        }
-    }
+  }
 }
 ```
 
-## 网站有多个 webapp 的配置
+## 反向代理配置
 
-当一个网站功能越来越丰富时，往往需要将一些功能相对独立的模块剥离出来，独立维护。这样的话，通常，会有多个 webapp。
-举个例子：假如 www.helloworld.com 站点有好几个
-webapp，finance（金融）、product（产品）、admin（用户中心）。访问这些应用的方式通过上下文(context)来进行区分:
-
-- www.helloworld.com/finance/
-- www.helloworld.com/product/
-- www.helloworld.com/admin/
-
-我们知道，http 的默认端口号是 80，如果在一台服务器上同时启动这 3 个 webapp 应用，都用 80 端口，肯定是不成的。所以，这三个应用需要分别绑定不同的端口号。
-那么，问题来了，用户在实际访问 www.helloworld.com 站点时，访问不同 webapp，总不会还带着对应的端口号去访问吧。所以，你再次需要用到反向代理来做处理。
-配置也不难，来看看怎么做吧：
+假如 www.helloworld.com 站点有 finance（金融）、product（产品）、admin（用户中心）。
 
 ```
 http {
-  #此处省略一些基本配置
+  ...
   upstream product_server{
     server www.helloworld.com:8081;
   }
@@ -123,7 +210,7 @@ http {
     server www.helloworld.com:8083;
   }
   server {
-    #此处省略一些基本配置
+    ...
     #默认指向product的server
     location / {
       proxy_pass http://product_server;
@@ -141,163 +228,126 @@ http {
 }
 ```
 
-```
-## https 反向代理配置
-一些对安全性要求比较高的站点，可能会使用 HTTPS（一种使用 ssl 通信标准的安全 HTTP 协议）。
-这里不科普 HTTP 协议和 SSL 标准。但是，使用 nginx 配置 https 需要知道几点：
+## nginx 配置 https ：
+
 - HTTPS 的固定端口号是 443，不同于 HTTP 的 80 端口
 - SSL 标准需要引入安全证书，所以在 nginx.conf 中你需要指定证书和它对应的 key
-  其他和 http 反向代理基本一样，只是在 Server 部分配置有些不同。
+
+```ini
+server { 
+  #监听 443 端口。443 为知名端口号，主要用于 HTTPS 协议
+  listen 443 ssl; #定义使用www.xx.com访问
+  server_name www.helloworld.com;
+  #ssl 证书文件位置(常见证书文件格式为：crt/pem)
+  ssl_certificate cert.pem;
+  #ssl 证书 key 位置
+  ssl_certificate_key cert.key;
+  #ssl 配置参数（选择性配置）
+  ssl_session_cache shared:SSL:1m;
+  ssl_session_timeout 5m; 
+  #数字签名，此处使用 MD5
+  ssl_ciphers HIGH:!aNULL:!MD5;
+  ssl_prefer_server_ciphers on;
+  location / {
+    root /root;
+    index index.html index.htm;
+  } 
+}
 ```
 
-#HTTP 服务器 server { #监听 443 端口。443 为知名端口号，主要用于 HTTPS 协议
-listen
-443 ssl; #定义使用www.xx.com访问
-server_name www.helloworld.com;
-#ssl 证书文件位置(常见证书文件格式为：crt/pem)
-ssl_certificate
-cert.pem;
-#ssl 证书 key 位置
-ssl_certificate_key cert.key;
-#ssl 配置参数（选择性配置）
-ssl_session_cache
-shared:SSL:1m;
-ssl_session_timeout 5m; #数字签名，此处使用 MD5
-ssl_ciphers HIGH:!aNULL:!MD5;
-ssl_prefer_server_ciphers on;
-location / {
-root /root;
-index index.html index.htm;
-} }
-
-```
 ## 静态站点配置
-有时候，我们需要配置静态站点(即 html 文件和一堆静态资源)。
-举例来说：如果所有的静态资源都放在了 /app/dist 目录下，我们只需要在 nginx.conf 中指定首页以及这个站点的 host 即可。
-配置如下：
-```
 
-worker_processes 1;
-events {
-worker_connections 1024;
-}
+```ini
+...
 http {
-include mime.types;
-default_type application/octet-stream;
-sendfile on;
-keepalive_timeout 65;
-gzip on;
-gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/javascript
-image/jpeg image/gif image/png;
-gzip_vary on;
-server {
-listen 80;
-server_name static.zp.cn;
-location / {
-root /app/dist;
-index index.html;
-}
-}
+  ...
+  server {
+    listen 80;
+    server_name hello.world;
+    location / {
+      root /app/dist;
+      index index.html;
+    }
+  }
 }
 
 ```
-然后，添加 HOST：
-127.0.0.1 static.zp.cn
-此时，在本地浏览器访问 static.zp.cn ，就可以访问静态站点了。
+
+添加 HOST：`127.0.0.1 hello.world`后,在本地浏览器访问 hello.world ，就可以访问静态站点了。
+
 ## 搭建文件服务器
-有时候，团队需要归档一些数据或资料，那么文件服务器必不可少。使用 Nginx 可以非常快速便捷的搭建一个简易的文件服务。
-Nginx 中的配置要点：
+
 - 将 autoindex 开启可以显示目录，默认不开启。
 - 将 autoindex_exact_size 开启可以显示文件的大小。
 - 将 autoindex_localtime 开启可以显示文件的修改时间。
 - root 用来设置开放为文件服务的根路径。
-- charset 设置为 charset utf-8,gbk;，可以避免中文乱码问题（windows
-  服务器下设置后，依然乱码，本人暂时没有找到解决方法）。
-  一个最简化的配置如下：
+- charset 设置为 charset utf-8,gbk;，可以避免中文乱码问题
+
+```ini
+...
+  autoindex on;
+  # 显示目录
+  autoindex*exact_size on;
+  # 显示文件大小
+  autoindex_localtime on;
+  # 显示文件时间
+  server { 
+    charset utf-8,gbk; 
+    listen 80;
+    listen [::]:80;
+    server_name _;
+    root /share/fs;
+  }
+...
 ```
 
-autoindex on;# 显示目录 autoindex*exact_size on;# 显示文件大小 autoindex_localtime on;# 显示文件时间
-server { charset utf-8,gbk; # windows 服务器下设置后，依然乱码，暂时无解 listen 9050 default_server; listen [::]:9050
-default_server; server_name *; root /share/fs;}
-
-```
 ## 跨域解决方案
-web 领域开发中，经常采用前后端分离模式。这种模式下，前端和后端分别是独立的 web 应用程序，例如：后端是 Java 程序，前端是 React 或 Vue 应用。
-各自独立的 web app 在互相访问时，势必存在跨域问题。解决跨域问题一般有两种思路：
+
 ### CORS
+
 在后端服务器设置 HTTP 响应头，把你需要运行访问的域名加入加入 Access-Control-Allow-Origin 中。
+
 ### jsonp
-把后端根据请求，构造 json 数据，并返回，前端用 jsonp 跨域。
-这两种思路，本文不展开讨论。
-需要说明的是，nginx 根据第一种思路，也提供了一种解决跨域的解决方案。
-举例：www.helloworld.com 网站是由一个前端 app ，一个后端 app 组成的。前端端口号为 9000， 后端端口号为 8080。
-前端和后端如果使用 http 进行交互时，请求会被拒绝，因为存在跨域问题。来看看，nginx 是怎么解决的吧：
+
 首先，在 enable-cors.conf 文件中设置 cors ：
+
 ```
-
 # allow origin listset $ACAO '\*';
-
 # set single origin
-
 if ($http_origin ~* (www.helloworld.com)$) {
-set $ACAO $http_origin;
+  set $ACAO $http_origin;
 }
 if ($cors = "trueget") {
-add_header 'Access-Control-Allow-Origin' "$http_origin";
-add_header 'Access-Control-Allow-Credentials' 'true';
-add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-add_header 'Access-Control-Allow-Headers' '
-DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+  add_header 'Access-Control-Allow-Origin' "$http_origin";
+  add_header 'Access-Control-Allow-Credentials' 'true';
+  add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+  add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
 }
 if ($request_method = 'OPTIONS') {
-set $cors "${cors}options";
+  set $cors "${cors}options";
 }
 if ($request_method = 'GET') {
-set $cors "${cors}get";
+  set $cors "${cors}get";
 }
 if ($request_method = 'POST') {
-set $cors "${cors}post";
+  set $cors "${cors}post";
 }
-
-```
-接下来，在你的服务器中 include enable-cors.conf 来引入跨域配置：
-```
-
-# ----------------------------------------------------
 
 # 此文件为项目 nginx 配置片段
-
 # 可以直接在 nginx config 中 include（推荐）
-
 # 或者 copy 到现有 nginx 中，自行配置
-
 # www.helloworld.com 域名需配合 dns hosts 进行配置
-
 # 其中，api 开启了 cors，需配合本目录下另一份配置文件
 
-# ----------------------------------------------------
-
-upstream front_server{
-server www.helloworld.com:9000;
-}
-upstream api_server{
-server www.helloworld.com:8080;
-}
 server {
-listen 80;
-server_name www.helloworld.com;
-location ~ ^/api/ {
-include enable-cors.conf;
-proxy_pass http://api_server;
-rewrite "^/api/(.\*)$" /$1 break;
+  listen 80;
+  server_name www.helloworld.com;
+  location ~ ^/api/ {
+    include enable-cors.conf;
+    proxy_pass http://www.helloworld.com:8080;
+    rewrite "^/api/(.\*)$" /$1 break;
+  }
 }
-location ~ ^/ {}
-proxy_pass http://front_server;
-}
-}
-
-```
-到此，就完成了。
 ```
 
 ## Lvs

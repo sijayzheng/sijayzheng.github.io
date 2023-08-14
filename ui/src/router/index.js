@@ -145,7 +145,6 @@ export const externalLinks = Object.keys(external).map(key => {
     }
 })
 
-
 const router = createRouter({
     history: createWebHistory(),
     routes: routes, // 刷新时，滚动条位置还原
@@ -159,9 +158,8 @@ const router = createRouter({
 })
 export default router
 
-
 NProgress.configure({showSpinner: false})
-const whiteList = ['/login', '/icons']
+const whiteList = ['/login', '/icons', '/404']
 
 router.beforeEach(async (to, from, next) => {
     NProgress.start()
