@@ -1,6 +1,7 @@
 ## SpringBoot 启动顺序
 
-配置属性、获取监听器，发布应用开始启动事件、初始化输入参数、配置环境，输出 banner、创建上下文、预处理上下文、刷新上下文(加载 tomcat 容器)、再刷新上下文、发布应用已经启动事件、发布应用启动完成事件
+配置属性、获取监听器，发布应用开始启动事件、初始化输入参数、配置环境，输出 banner、创建上下文、预处理上下文、刷新上下文(加载 tomcat 容器)
+、再刷新上下文、发布应用已经启动事件、发布应用启动完成事件
 
 SpringBoot
 
@@ -491,7 +492,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是在过去
 
-### @Size(min=0,max=10)
+###  
 
 检查该字段的 size 是否在 min 和 max 之间,可以是字符串、数组、集合、Map 等
 
@@ -613,6 +614,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 @EnableCircuitBreaker
 
-分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication 这一注解集合
+分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication
+这一注解集合
 
 ## other

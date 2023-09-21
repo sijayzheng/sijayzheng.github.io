@@ -287,7 +287,7 @@ http {
 ...
   autoindex on;
   # 显示目录
-  autoindex*exact_size on;
+  autoindex_exact_size on;
   # 显示文件大小
   autoindex_localtime on;
   # 显示文件时间

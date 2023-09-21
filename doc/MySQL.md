@@ -62,12 +62,22 @@ flush privileges;
 4. 如果 mysql 没有启动，通过`sudo service mysql start`启动 mysql
 5. mysql8 默认没有密码可以直接从终端登录
 
+## 备份恢复
+
+```bash
+# 备份
+mysqldump -uroot -proot db_name>db_name.sql
+# 恢复
+mysqladmin -uroot -proot create db_name 
+mysql -uroot -proot  db_name < db_name.sql
+```
+
 ## 参数
 
 ### max_connections
 
 |                      |                     |
-|----------------------|---------------------|
+| -------------------- | ------------------- |
 | Command-Line Format  | --max-connections=# |
 | System Variable      | max_connections     |
 | Scope                | Global              |

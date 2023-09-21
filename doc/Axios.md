@@ -21,8 +21,9 @@ $ npm install axios
 
 使用 cdn:
 
-```javascript
-<script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+```html
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
 ## Example
@@ -132,9 +133,7 @@ axios('/user/12345')
 >
 > `axios.patch(url[, data[, config]])`
 
-###### NOTE
-
-在使用别名方法时， `url`、`method`、`data` 这些属性都不必在配置中指定。
+_**NOTE:**_ 在使用别名方法时， `url`、`method`、`data` 这些属性都不必在配置中指定。
 
 ### 并发
 
@@ -515,4 +514,4 @@ axios.get('/user/12345', {
 cancel()
 ```
 
-Note : 可以使用同一个 cancel token 取消多个请求
+**_Note_** : 可以使用同一个 cancel token 取消多个请求

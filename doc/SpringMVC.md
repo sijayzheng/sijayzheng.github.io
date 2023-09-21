@@ -1,6 +1,7 @@
 ## @Controller
 
-**控制器 Controller 负责处理由 DispatcherServlet 分发的请求，它把用户请求的数据经过业务处理层处理之后封装成一个 Model，然后再把该 Model 返回给对应的 View 进行展示。**
+**控制器 Controller 负责处理由 DispatcherServlet 分发的请求，它把用户请求的数据经过业务处理层处理之后封装成一个 Model，然后再把该 Model 返回给对应的
+View 进行展示。**
 
 \*\*
 \*\*
@@ -167,10 +168,11 @@ public String Register(User user,Model model) {
 - HttpEntity or ResponseEntity
 - HttpHeaders
 - Callable<?>
-- DeferredResult<?>
+- DeferredReturns<?>
 - ListenableFuture<?>
 - ResponseBodyEmitter、SseEmitter、StreamingResponseBody
-- 除以上几种情况之外的其他任何返回类型都会被当做模型中的一个属性来处理，而返回的视图还是由 RequestToViewNameTranslator 来决定，添加到模型中的属性名称可以在该方法上用 `@ModelAttribute("attributeName")` 来定义，否则将使用返回类型的类名称的首字母小写形式来表示。
+- 除以上几种情况之外的其他任何返回类型都会被当做模型中的一个属性来处理，而返回的视图还是由 RequestToViewNameTranslator
+  来决定，添加到模型中的属性名称可以在该方法上用 `@ModelAttribute("attributeName")` 来定义，否则将使用返回类型的类名称的首字母小写形式来表示。
 
 ### Model
 
@@ -190,7 +192,8 @@ public String Register(User user,Model model) {
 
 ### ModelAndView
 
-**ModelAndView 既包含模型数据信息又包含视图信息**，它可用作 Controller 处理方法的返回值。Spring MVC 将包含的视图对模型数据进行渲染，模型数据可以看做 Java 中的 Map。
+**ModelAndView 既包含模型数据信息又包含视图信息**，它可用作 Controller 处理方法的返回值。Spring MVC 将包含的视图对模型数据进行渲染，模型数据可以看做 Java
+中的 Map。
 
 ModelAndView 的用法示例：
 
