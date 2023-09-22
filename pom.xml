@@ -8,19 +8,7 @@
     <artifactId>z</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <modules>
-        <module>leetcode</module>
-        <module>algorithm</module>
-        <module>datastructure</module>
-        <module>javase</module>
-        <module>generator</module>
-        <module>log4j</module>
-        <module>logback</module>
 
-        <module>app</module>
-        <module>h2db</module>
-        <module>common</module>
-    </modules>
 
     <properties>
         <revision>1.0-SNAPSHOT</revision>
