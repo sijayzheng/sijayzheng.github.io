@@ -9,7 +9,7 @@ cd nacos/
 mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
 ls -al distribution/target/
 
-// change the $version to your actual path
+// 将$version改为你编译的版本
 cd distribution/target/nacos-server-$version/nacos/bin
 ```
 

@@ -24,7 +24,8 @@
 
 4. 页面加载
 
-当页面中嵌套了 iframe 时，在开始时对 iframe 进行隐藏，当点击时 iframe 展示，此时若时在一开始就让 iframe 随父页面一起加载，就会导致 iframe 获取到的页面的款高度都为 0，由此会导致 iframe 中的内容无法显示。
+当页面中嵌套了 iframe 时，在开始时对 iframe 进行隐藏，当点击时 iframe 展示，此时若时在一开始就让 iframe 随父页面一起加载，就会导致 iframe 获取到的页面的款高度都为
+0，由此会导致 iframe 中的内容无法显示。
 
 div 隐藏后显示的问题同理。所以，一个页面的展示不仅仅是代码对不对，还有方法的调用时间问题。
 
@@ -155,7 +156,8 @@ console.log(arr);
 
 语音合成有关问题：
 
-speechSynthesis.speak() without user activation is no longer allowed since M71, around December 2018. See https://www.chromestatus.com/feature/5687444770914304 for more details
+speechSynthesis.speak() without user activation is no longer allowed since M71, around December 2018.
+See https://www.chromestatus.com/feature/5687444770914304 for more details
 
 语音合成在线演示网址：
 
@@ -201,5 +203,5 @@ https://codepen.io/SteveJRobertson/pen/emGWaR
 
 ### Uncaught SyntaxError: Unexpected token o
 
-    JSON.parse(s)中的 s 不是字符串
+JSON.parse(s)中的 s 不是字符串
 

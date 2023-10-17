@@ -34,47 +34,7 @@
 - Test 模块：Spring 支持 Junit 和 TestNG 测试框架，而且还额外提供了一些基于 Spring 的测试功能，比如在测试 Web 框架时，模拟
   Http 请求的功能。
 
-## @Component
-
-被此注解标注的类将被 Spring 容器自动识别，自动生成 Bean 定义
-
-## @Controller
-
-对应表现层的 Bean，也就是 Action。
-
-## @Service
-
-对应的是业务层 Bean。
-
-## @Repository
-
-对应数据访问层 Bean。
-
-## @Autowired
-
-@Autowired 可以用来装配 bean，都可以写在字段上，或者方法上。使用 @Autowired，首先要在在 applicationContext.xml
-中加入 `<bean class = "org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>`。@Autowired
-默认按类型装配，默认情况下要求依赖对象必须存在，如果要允许 null 值，可以设置它的 required 属性为 false。
-
-## @Configuration
-
-通过使用注释 @Configuration 告诉 Spring，这个 Class 是 Spring 的核心配置文件，并且通过使用注解 @Bean 定义 bean
-
-## @Component
-
-表示一个自动扫描 component。
-
-## @Repository
-
-表示持久化层的 DAO component。
-
-## @Service
-
-表示业务逻辑层的 Service component。
-
-## @Controller
-
-表示表示层的 Controller component。
+## Bean的作用域
 
 Bean 的作用域决定了从 Spring 容器中返回的 Bean 实例的类型。在 Spring 中，支持以下 5 种类型的作用域：
 

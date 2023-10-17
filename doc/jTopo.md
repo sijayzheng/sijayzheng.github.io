@@ -8,7 +8,8 @@
 - canvas canvas 对象的属性列表
 - width 舞台宽度
 - height 舞台高度
-- mode 舞台模式，默认为 normal，【normal：可以点击选中单个节点（按住 Ctrl 可以选中多个），点中空白处可以拖拽整个画面；drag: 该模式下不可以选择节点，只能拖拽整个画面；select: 可以框选多个节点、可以点击单个节点；edit: 在默认基础上增加了：选中节点时可以通过 6 个控制点来调整节点的宽、高】
+- mode 舞台模式，默认为 normal，【normal：可以点击选中单个节点（按住 Ctrl 可以选中多个），点中空白处可以拖拽整个画面；drag:
+  该模式下不可以选择节点，只能拖拽整个画面；select: 可以框选多个节点、可以点击单个节点；edit: 在默认基础上增加了：选中节点时可以通过 6 个控制点来调整节点的宽、高】
 - childs 场景对象列表
 - eagleEye 缩略图，eagleEye.vasible 是否打开缩略图，默认为 false
 - wheelZoom 鼠标滚轮缩放操作比例，当为 null 时不进行缩放，当为负值时在缩放同时会进行位置的变换并旋转 180 度，数值大于 1 和小于 1 时缩放方向相反
@@ -57,7 +58,8 @@
 - backgroundColor 背景颜色
 - background 背景图片，设置后覆盖背景颜色设置
 - visible 场景是否可见，默认为 true
-- mode 默认为 normal，【normal：可以点击选中单个节点（按住 Ctrl 可以选中多个），点中空白处可以拖拽整个画面；drag: 该模式下不可以选择节点，只能拖拽整个画面；select: 可以框选多个节点、可以点击单个节点；edit: 在默认基础上增加了：选中节点时可以通过 6 个控制点来调整节点的宽、高】
+- mode 默认为 normal，【normal：可以点击选中单个节点（按住 Ctrl 可以选中多个），点中空白处可以拖拽整个画面；drag:
+  该模式下不可以选择节点，只能拖拽整个画面；select: 可以框选多个节点、可以点击单个节点；edit: 在默认基础上增加了：选中节点时可以通过 6 个控制点来调整节点的宽、高】
 - scaleX x 轴方向缩放比例，默认为 1
 - scaleY y 轴方向缩放比例，默认为 1
 - selectedElements 当前场景中被选中的元素对象
@@ -305,19 +307,19 @@
 
 - Stage
 
-- - 用法:new JTopo.Stage(a)创建舞台
+  - 用法:new JTopo.Stage(a)创建舞台
   - 参数:canvasDOM 对象
   - 结果:Stage 舞台对象
 
 - Scene
 
-- - 用法:new JTopo.Scene(a)创建场景
+  - 用法:new JTopo.Scene(a)创建场景
   - 参数:Stage 舞台对象
   - 结果:Scene 场景对象
 
 - Container
 
-- - 用法:new JTopo.Container(a)创建容器
+  - 用法:new JTopo.Container(a)创建容器
   - 参数:[节点文本]
   - 结果:Container 容器对象
 
@@ -325,43 +327,43 @@
 
 - AnimateNode//动画节点
 
-- - 用法:new JTopo.AnimateNode()
+  - 用法:new JTopo.AnimateNode()
   - 参数:无
   - 结果:
 
 - CircleNode//圆形节点
 
-- - 用法:new JTopo.CircleNode(a)
+  - 用法:new JTopo.CircleNode(a)
   - 参数:[节点文本]
   - 结果:
 
 - LinkNode//超链接节点
 
-- - 用法:new JTopo.LinkNode(a,b,c)
+  - 用法:new JTopo.LinkNode(a,b,c)
   - 参数:节点文本，URL，[页面打开位置]
   - 结果:
 
 - Node//普通节点
 
-- - 用法:new JTopo.Node(a)
+  - 用法:new JTopo.Node(a)
   - 参数:[节点文本]
   - 结果:
 
 - TextNode//文本节点
 
-- - 用法:new JTopo.TextNode(a)
+  - 用法:new JTopo.TextNode(a)
   - 参数:节点文本
   - 结果:
 
 - BarChartNode//柱状图
 
-- - 用法:new JTopo.BarChartNode()
+  - 用法:new JTopo.BarChartNode()
   - 参数:无
   - 结果:
 
 - PieChartNode//饼图
 
-- - 用法:new JTopo.PieChartNode()
+  - 用法:new JTopo.PieChartNode()
   - 参数:无
   - 结果:
 
@@ -369,25 +371,25 @@
 
 - CurveLink//曲线
 
-- - 用法:new JTopo.CurveLink(a,b,c)
+  - 用法:new JTopo.CurveLink(a,b,c)
   - 参数:起始节点，终止节点，[连线文本]
   - 结果:
 
 - FlexionalLink//二次折线
 
-- - 用法:new JTopo.FlexionalLink(a,b,c)
+  - 用法:new JTopo.FlexionalLink(a,b,c)
   - 参数:起始节点，终止节点，[连线文本]
   - 结果:
 
 - FoldLink//折线
 
-- - 用法:new JTopo.FoldLink(a,b,c)
+  - 用法:new JTopo.FoldLink(a,b,c)
   - 参数:起始节点，终止节点，[连线文本]
   - 结果:
 
 - Link//直线
 
-- - 用法:new JTopo.Link(a,b,c)
+  - 用法:new JTopo.Link(a,b,c)
   - 参数:起始节点，终止节点，[连线文本]
   - 结果:
 
@@ -395,7 +397,7 @@
 
 - createStageFromJson
 
-- - 用法:JTopo.createStageFromJson(jsonStr, canvas)
+  - 用法:JTopo.createStageFromJson(jsonStr, canvas)
   - 参数:JSON 字符串，canvasDOM 对象
   - 结果:
 
@@ -403,13 +405,13 @@
 
 - rotate//自旋
 
-- - 用法:JTopo.Animate.rotate(a,b).run()
+  - 用法:JTopo.Animate.rotate(a,b).run()
   - 参数:需要自旋的节点，canvasDOM 对象/Stage 舞台对象/Scene 场景对+ 象/Container 容器对象
     结果:
 
 - stepByStep
 
-- - 用法:JTopo.Animate.rotate(a,b,c,d,e).start()
+  - 用法:JTopo.Animate.rotate(a,b,c,d,e).start()
   - 参数:节点，动作方式，动作间隔，是否循环，[是否往复(默认 false)]
   - 结果:
 
@@ -417,79 +419,79 @@
 
 - AutoBoundLayout
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:布局方式
 
 - CircleLayout
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:布局方式
 
 - FlowLayout
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:布局方式
 
 - GridLayout
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:布局方式
 
 - TreeLayout
 
-- - 用法:JTopo.layout.TreeLayout(a,b,c)
+  - 用法:JTopo.layout.TreeLayout(a,b,c)
   - 参数:布局方向(down,up,right,left)，叶子节点间距，父子节点间距
   - 结果:布局方式
 
 - springLayout
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:布局方式
 
 - layoutNode
 
-- - 用法:JTopo.layout.layoutNode(scene, rootNode, true)
+  - 用法:JTopo.layout.layoutNode(scene, rootNode, true)
   - 参数:场景，根节点，是否多层
   - 结果:
 
 - adjustPosition
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
 - circleLayoutNodes
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
 - getNodeChilds
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
 - getNodesCenter
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
 - getRootNodes
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
 - getTreeDeep
 
-- - 用法:
+  - 用法:
   - 参数:
   - 结果:
 
@@ -497,7 +499,7 @@
 
 - loadStageFromJson
 
-- - 用法:JTopo.util.loadStageFromJson(jsonStr,canvas)
+  - 用法:JTopo.util.loadStageFromJson(jsonStr,canvas)
   - 参数:JSON 字符串，canvasDOM 对象
   - 结果:
 
@@ -505,45 +507,45 @@
 
 - randomColor//获得随机颜色
 
-- - 用法:JTopo.util.randomColor()
+  - 用法:JTopo.util.randomColor()
   - 参数:
   - 结果:
 
 - removeFromArray//从数组 a 中移除 b
 
-- - 用法:JTopo.util.removeFromArray(a,b)
+  - 用法:JTopo.util.removeFromArray(a,b)
   - 参数:数组 a，元素 b
   - 结果:
 
 - toJson//把舞台中所有对象输出为字符串
 
-- - 用法:JTopo.util.toJson(stage)
+  - 用法:JTopo.util.toJson(stage)
   - 参数:Stage 舞台对象
   - 结果:
 
 - isChrome//判断浏览器类型
 
-- - 用法:JTopo.util.isChrome
+  - 用法:JTopo.util.isChrome
   - 结果:true/false
 
 - isF+ irefox//判断浏览器类型
 
-- - 用法:JTopo.util.isFirefox
+  - 用法:JTopo.util.isFirefox
   - 结果:true/false
 
 - isI+ E//判断浏览器类型
 
-- - 用法:JTopo.util.isIE
+  - 用法:JTopo.util.isIE
   - 结果:true/false
 
 - isP+ ointInLine//鼠标是否指向连线
 
-- - 用法:JTopo.util.isPointInLine
+  - 用法:JTopo.util.isPointInLine
   - 参数:a, b, c
   - 结果:
 
 - isPointInRect//鼠标是否指向矩形（？？节点）
 
-- - 用法:JTopo.util.isPointInRect
+  - 用法:JTopo.util.isPointInRect
   - 参数:a, b
   - 结果:

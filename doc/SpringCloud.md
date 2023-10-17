@@ -1,14 +1,9 @@
-
 Spring Cloud Alibaba是Spring Cloud标准的一种实现
-
-## Spring Cloud Alibaba
-
-
-
 
 ## 搭建SpringGateway模块
 
 添加依赖
+
 ```xml
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
@@ -36,7 +31,9 @@ Spring Cloud Alibaba是Spring Cloud标准的一种实现
 	<version>3.1.5</version>
 </dependency>
 ```
+
 添加配置
+
 ```yml
 spring:
   application:
@@ -54,5 +51,6 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 ```
+
 为gateway的启动类添加`@EnableDiscoveryClient`注解
 

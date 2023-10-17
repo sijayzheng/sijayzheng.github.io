@@ -351,7 +351,6 @@ public class Main {
 ## 字符串
 
 - String
-  详见[java.lang.String](/doc/javaLib.md#String)
 - 字符串构建器
   - StringBuilder
   - StringBuffer
@@ -383,7 +382,7 @@ StringBuilder与StringBuffer的方法基本相同
 
 常用方法：
 
-- [BigInteger](/doc/javaLib.md#BigInteger)
+- [BigInteger]大整数
   - BigInteger add( BigInteger other) 加
   - BigInteger subtract(BigInteger other ) 减
   - BigInteger multiply(BigInteger other) 乘
@@ -391,7 +390,7 @@ StringBuilder与StringBuffer的方法基本相同
   - BigInteger mod(BigInteger other) 取余
   - int compareTo(BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
   - static BigInteger valueOf(long x ) 返回值等于 x 的大整数。
-- [BigDecimal](/doc/javaLib.md#bigdecimal)
+- [BigDecimal]大浮点数
   - BigDecimal add(BigDecimal other)加
   - BigDecimal subtract(BigDecimal other )减
   - BigDecimal multiply(BigDecimal other )乘

@@ -15,33 +15,16 @@
 
 ## 注解
 
-- @Getter
-  作用域：类 字段
-  作用：生成 getter 方法
-- @Setter
-  作用域：类 字段
-  作用：生成 setter 方法
-- @NonNull
-  作用域：字段
-  作用：将标注这个字段不应为 null，初始化的时候会检查是否为空，否则抛出 NullPointException
-- @ToString
-  作用域：类
-  作用：生成 toString 方法
-- @EqualsAndHashCode
-  作用域：类
-  作用：生成 equals 和 hashCode 方法
-- @NoArgsConstructor
-  作用域：类
-  作用：无参构造函数
-- @RequiredArgsConstructor
-  作用域：类
-  作用：必填字段的构造函数
-- @AllArgsConstructor
-  作用域：类
-  作用：全部字段的构造函数
-- @Data
-  作用域：类
-  作用：包括 @Getter，@Setter，@RequiredArgsConstructor，@ToString，@EqualsAndHashCode
-- @Build
-  作用域：类
-  作用：类似于@Data，并提供 build 方法
+| 注解                       | 作用域  | 作用                                                                       |
+|--------------------------|------|--------------------------------------------------------------------------|
+| @Getter                  | 类、字段 | 生成 getter 方法                                                             |
+| @Setter                  | 类、字段 | 生成 setter 方法                                                             |
+| @NonNull                 | 字段   | 将标注这个字段不应为 null，初始化的时候会检查是否为空，否则抛出 NPE                                   |
+| @ToString                | 类    | 生成 toString 方法                                                           |
+| @EqualsAndHashCode       | 类    | 生成 equals 和 hashCode 方法                                                  |
+| @NoArgsConstructor       | 类    | 无参构造函数                                                                   |
+| @RequiredArgsConstructor | 类    | 必填字段的构造函数                                                                |
+| @AllArgsConstructor      | 类    | 全部字段的构造函数                                                                |
+| @Data                    | 类    | 包括 @Getter，@Setter，@RequiredArgsConstructor，@ToString，@EqualsAndHashCode |
+| @Build                   | 类    | 类似于@Data，并提供 build 方法                                                    |
+
