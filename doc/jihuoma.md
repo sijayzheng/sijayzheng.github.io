@@ -6,6 +6,10 @@
 
 `ZF71R-DMX85-08DQY-8YMNC-PPHV8`
 
+## VMware Workstation Pro 17
+
+`MC60H-DWHD5-H80U9-6V85M-8280D`
+
 ## HitFilm Express
 
 `GAQ9W-AJQKC-APJPN-D9DNW-DKQQF`
@@ -18,31 +22,31 @@
 
 ### Server2008
 
-+ **Web**
+- **Web**
 
 `KBV3Q-DJ8W7-VPB64-V88KG-82C49`
 
-+ **Standard**
+- **Standard**
 
 `4GGC4-9947F-FWFP3-78P6F-J9HDR`
 
-+ **Enterprise**
+- **Enterprise**
 
 `7PJBC-63K3J-62TTK-XF46D-W3WMD`
 
-+ **Datacenter**
+- **Datacenter**
 
 `QX7TD-2CMJR-D7WWY-KVCYC-6D2YT`
 
 ### win2012r2
 
-+ **Datacenter**
+- **Datacenter**
 
 `TVNTG-VFJQ3-FQXFP-DVCP6-D3VJ8`
 
 `W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9`
 
-+ **Standard**
+- **Standard**
 
 `78NJB-CB3WX-GWPCM-VMKG7-94QWW`
 
@@ -52,13 +56,13 @@
 
 `D2N9P-3P6X9-2R39C-7RTCD-MDVJX`
 
-+ **Essentials**
+- **Essentials**
 
 `KNC87-3J2TX-XB4WP-VCPJV-M4FWM`
 
 ### windows2012
 
-+ **Standard**
+- **Standard**
 
 `J7TJK-NQPGQ-Q7VRH-G3B93-2WCQD`
 
@@ -66,21 +70,21 @@
 
 `XC9B7-NBPP2-83J2H-RHMBY-92BT4`
 
-+ **Datacenter**
+- **Datacenter**
 
 `48HP8-DN98B-MYWDG-T2DCC-8W83P`
 
 ### Server2016
 
-+ **Datacenter**
+- **Datacenter**
 
 `CB7KF-BWN84-R7R2Y-793K2-8XDDG`
 
-+ **Standard**
+- **Standard**
 
 `WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY`
 
-+ **Essentials**
+- **Essentials**
 
 `JCKRF-N37P4-C2D82-9YXRT-4M63B`
 

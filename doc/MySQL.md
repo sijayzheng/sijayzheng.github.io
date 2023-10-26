@@ -52,7 +52,8 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 flush privileges;
 ```
 
-- 设置任意主机都可连接`update user set host='%' where user='root';`
+- 设置任意主机都可连接 `update user set host='%' where user='root';`
+- 设置指定网段可是连接 `GRANT ALL PRIVILEGES ON *.* TO root@'192.168.192.%' IDENTIFIED BY 'root' WITH GRANT OPTION;`
 
 ### Linux
 
@@ -68,7 +69,7 @@ flush privileges;
 # 备份
 mysqldump -uroot -proot db_name>db_name.sql
 # 恢复
-mysqladmin -uroot -proot create db_name 
+mysqladmin -uroot -proot create db_name
 mysql -uroot -proot  db_name < db_name.sql
 ```
 
