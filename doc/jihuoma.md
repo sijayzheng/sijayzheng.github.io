@@ -100,6 +100,10 @@
 
 `3NF6Y-C39GD-2RXDV-4K2YB-X4R9G`
 
+### win11 升专业版
+
+`WMN7B-Y7TKF-Y49QB-TMQ8T-GMT6T`
+
 ## Axure PR 9
 
 - license：`yygg329405`

@@ -88,12 +88,12 @@ public class HttpClientUtil {
     }
 
     public static HttpResponse<String> syncJsonPost(String url, Map<String, String> headers, String body) throws IOException, InterruptedException {
-        headers.put("Content-Type", CommConstant.APPLICATION_JSON);
+        headers.put(CommConstant.CONTENT_TYPE, CommConstant.APPLICATION_JSON);
         return syncPost(url, headers, body);
     }
 
     public static CompletableFuture<HttpResponse<String>> asyncJsonPost(String url, Map<String, String> headers, String body) throws IOException, InterruptedException {
-        headers.put("Content-Type", CommConstant.APPLICATION_JSON);
+        headers.put(CommConstant.CONTENT_TYPE, CommConstant.APPLICATION_JSON);
         return asyncPost(url, headers, body);
     }
 
