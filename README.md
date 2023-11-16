@@ -1,16 +1,140 @@
+## 未完在续。。。。。。
+
+## 目录
+
+- [**question**](doc/question.md)
+- **Java**
+  - 基础
+    - [Java](doc/Java.md)
+    - [JavaSE](doc/JavaSE.md)
+    - [Thread](doc/Thread.md)
+    - [注解](doc/annotation.md)
+    - [JVM](doc/JVM.md)
+  - 类库
+    - [Lombok](doc/Lombok.md)
+  - 框架
+    - [Dubbo](doc/Dubbo.md)
+    - [struts2](doc/struts2.md)
+    - [Hibernate](doc/Hibernate.md)
+    - [Log4j](doc/Log4j.md)
+    - [Logback](doc/Logback.md)
+    - [MyBatis](doc/MyBatis.md)
+    - [MyBatisPlus](doc/MyBatisPlus.md)
+    - [Spring](doc/Spring.md)
+    - [SpringBoot](doc/SpringBoot.md)
+    - [SpringCloud](doc/SpringCloud.md)
+    - [SpringMVC](doc/SpringMVC.md)
+  - 组件
+    - [NACOS](doc/nacos.md)
+    - [Sentinel](doc/Sentinel.md)
+    - [zookeeper](doc/zookeeper.md)
+  - 中间件
+    - [Kafka](doc/Kafka.md)
+    - [RabbitMQ](doc/RabbitMQ.md)
+    - [RocketMQ](doc/RocketMQ.md)
+- **数据结构**
+  - [数据结构](doc/dataStructure.md)
+  - [Array](doc/Array.md)
+  - [Graph](doc/Graph.md)
+  - [Hash](doc/Hash.md)
+  - [Heap](doc/Heap.md)
+  - [LinkedList](doc/LinkedList.md)
+  - [Queue](doc/Queue.md)
+  - [Stack](doc/Stack.md)
+  - [Tree](doc/Tree.md)
+- **算法**
+  - 排序与混排
+  - 二分查找
+- **前端**
+  - 基础
+    - [HTML](doc/HTML.md)
+    - [CSS](doc/CSS.md)
+    - [JavaScript](doc/JavaScript.md)
+  - 库
+    - [Autocomplete](doc/Autocomplete.md)
+    - [Axios](doc/Axios.md)
+    - [EasyUI](doc/EasyUI.md)
+    - [eCharts](doc/eCharts.md)
+    - [FullCalendar](doc/FullCalendar.md)
+    - [jQuery](doc/jQuery.md)
+    - [jTopo](doc/jTopo.md)
+  - 框架
+    - [Vue](doc/Vue.md)
+    - [Vue2](doc/Vue2.md)
+  - 组件库
+    - [ElementUI](doc/ElementUI.md)
+  - 运行时
+    - [Nodejs](doc/Nodejs.md)
+  - 工具
+    - [EsLint](doc/EsLint.md)
+    - [Vite](doc/vite.md)
+    - [webpack](doc/webpack.md)
+- **数据库**
+  - 关系型
+    - [DB2](doc/DB2.md)
+    - [MySQL](doc/MySQL.md)
+    - [Oracle](doc/Oracle.md)
+  - 非关系型
+    - [MongoDB](doc/MongoDB.md)
+    - [Redis](doc/Redis.md)
+  - 连接工具
+    - [DBeaver](doc/DBeaver.md)
+- **操作系统**
+  - Linux
+    - [Linux](doc/Linux.md)
+    - [CentOS](doc/CentOS.md)
+    - [WSL](doc/WSL.md)
+    - [Ubuntu](doc/Ubuntu.md)
+  - Linux 命令/shell
+    - [bash](doc/bash.md)
+    - [Vim](doc/Vim.md)
+    - [zsh](doc/zsh.md)
+  - [Windows](doc/Windows.md)
+- **服务器**
+  - [Apache](doc/Apache.md)
+  - [Nginx](doc/Nginx.md)
+  - [Tomcat](doc/Tomcat.md)
+- **IDE**
+  - [IDEA](doc/IDEA.md)
+  - [VSCode](doc/VSCode.md)
+  - [MyEclipse](doc/MyEclipse.md)
+  - [SpringToolSuite](doc/SpringToolSuite.md)
+- **VCS&CI/CD**
+  - [Git](doc/Git.md)
+  - [Github](doc/Github.md)
+  - [GitLab](doc/GitLab.md)
+  - [GitLabRunner](doc/GitLabRunner.md)
+- **构建工具**
+  - [Maven](doc/Maven.md)
+- **容器**
+  - [docker](doc/docker.md)
+  - [k8s](doc/k8s.md)
+- **文档**
+  - [docsify](doc/docsify.md)
+  - [Jekyll](doc/Jekyll.md)
+  - [markdown](doc/markdown.md)
+- **网络**
+  - [net](doc/net.md)
+- [**正则表达式**](doc/regex.md)
+- [**设计模式**](doc/designPattern.md)
+- [**ElasticSearch**](doc/ElasticSearch.md)
+- [**PHP**](doc/PHP.md)
+- [**SSL 证书**](doc/sslCert.md)
+- [**激活码**](doc/jihuoma.md)
+
 ## 收藏的网站
 
-- [阿B](http://www.bilibili.com/)
+- [阿 B](http://www.bilibili.com/)
 - [开发速查](https://devhints.io/)
 - [Maven](https://central.sonatype.com/)
 - [GayHub](https://github.com/)
 - [码云](https://gitee.com/)
-- [tool.lu工具](http://tool.lu/)
+- [tool.lu 工具](http://tool.lu/)
 - [懒人工具箱](https://tool.lanrentuku.com/)
 - [MD5 解密](https://www.somd5.com/)
 - [toolfk](https://www.toolfk.com/)
 - [码工具](http://www.matools.com/)
-- [oschina在线工具](http://tool.oschina.net/)
+- [oschina 在线工具](http://tool.oschina.net/)
 - [站长工具](http://tool.chinaz.com/)
 - [临时邮箱](http://24mail.chacuo.net/)
 - [慢慢买](http://www.manmanbuy.com/)
@@ -119,24 +243,22 @@
 
 ## 常用的工具
 
-| 名称                                          | 用途                                |
-|---------------------------------------------|-----------------------------------|
-| [AxurePR](./doc/AxurePR.md)                 | 原型工具                              |
-| [DBeaver](./doc/DBeaver.md)                 | 多平台数据库工具                          |
-| [docsify](./doc/docsify.md)                 | 文档即时构建生成                          |
-| [EsLint](./doc/EsLint.md)                   | 对于ES的静态代码分析工具                     |
-| [Git](./doc/Git.md)                         | 开源的分布式版本控制系统                      |
-| [Github](./doc/Github.md)                   | 面向开源及私有软件项目的托管平台                  |
-| [GitLab](./doc/GitLab.md)                   | 用于仓库管理系统的开源项目                     |
+| 名称                                        | 用途                                                 |
+| ------------------------------------------- | ---------------------------------------------------- |
+| [AxurePR](./doc/AxurePR.md)                 | 原型工具                                             |
+| [DBeaver](./doc/DBeaver.md)                 | 多平台数据库工具                                     |
+| [docsify](./doc/docsify.md)                 | 文档即时构建生成                                     |
+| [EsLint](./doc/EsLint.md)                   | 对于 ES 的静态代码分析工具                           |
+| [Git](./doc/Git.md)                         | 开源的分布式版本控制系统                             |
+| [Github](./doc/Github.md)                   | 面向开源及私有软件项目的托管平台                     |
+| [GitLab](./doc/GitLab.md)                   | 用于仓库管理系统的开源项目                           |
 | [GitLabRunner](./doc/GitLabRunner.md)       | 与 GitLab CI/CD 配合使用以在管道中运行作业的应用程序 |
-| [IDEA](./doc/IDEA.md)                       | Java和Kotlin IDE                   |
-| [Jekyll](./doc/Jekyll.md)                   | 博客形态的静态站点生产机器                     |
-| [Maven](./doc/Maven.md)                     | 开源项目管理工具                          |
-| [MyEclipse](./doc/MyEclipse.md)             | 企业级Java IDE                       |
-| [Nodejs](./doc/Nodejs.md)                   | 基于Chrome V8引擎的JavaScript运行时       |
-| [SpringToolSuite](./doc/SpringToolSuite.md) | 开源Spring开发工具                      |
-| [Vite](./doc/vite.md)                       | 前端工具链                             |
-| [VSCode](./doc/VSCode.md)                   | 开源代码编辑器                           |
-| [webpack](./doc/webpack.md)                 | 模块打包器                             |
-
-
+| [IDEA](./doc/IDEA.md)                       | Java 和 Kotlin IDE                                   |
+| [Jekyll](./doc/Jekyll.md)                   | 博客形态的静态站点生产机器                           |
+| [Maven](./doc/Maven.md)                     | 开源项目管理工具                                     |
+| [MyEclipse](./doc/MyEclipse.md)             | 企业级 Java IDE                                      |
+| [Nodejs](./doc/Nodejs.md)                   | 基于 Chrome V8 引擎的 JavaScript 运行时              |
+| [SpringToolSuite](./doc/SpringToolSuite.md) | 开源 Spring 开发工具                                 |
+| [Vite](./doc/vite.md)                       | 前端工具链                                           |
+| [VSCode](./doc/VSCode.md)                   | 开源代码编辑器                                       |
+| [webpack](./doc/webpack.md)                 | 模块打包器                                           |
