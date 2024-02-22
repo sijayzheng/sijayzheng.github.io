@@ -1,0 +1,22 @@
+target/
+temp/
+code/
+file/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+#ui
+ui/logs
+ui/*.log
+ui/*.log*
+ui/node_modules/
+ui/dist/
+ui/pnpm-lock.yaml
+ui/src/dts/

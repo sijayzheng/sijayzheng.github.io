@@ -40,4 +40,8 @@
 例子：`a=$(echo “hello world”)`
 将命令 `echo "hello world"`的输出赋给变量 `a`
 
+### 常用shell
+
+- for line in `ls`;echo $line
+
 ## VIM 的使用
