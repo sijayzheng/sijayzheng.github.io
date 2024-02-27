@@ -1,0 +1,63 @@
+package cn.sijay.suap.core.enums;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * <p>
+ * <em>ResultCodeEnum</em>
+ * </p>
+ *
+ * @author Sijay
+ * @since 2024/1/8 17:02
+ */
+@AllArgsConstructor
+@Getter
+public enum ResultCodeEnum {
+    /**
+     * 成功
+     */
+    SUCCESS("0000", 200, "成功"),
+    /**
+     * 错误
+     */
+    FAILURE("9999", 500, "失败"),
+    WARNING("777", 500, "系统警告消息"),
+    /**
+     * HTTP错误
+     */
+    HTTP301("HTTP301", 301, "资源已被移除"),
+    HTTP303("HTTP303", 303, "重定向"),
+    HTTP304("HTTP304", 304, "资源没有被修改"),
+    HTTP400("HTTP400", 400, "参数列表错误（缺少，格式不匹配）"),
+    HTTP401("HTTP401", 401, "认证失败，无法访问系统资源"),
+    HTTP403("HTTP403", 403, "访问受限，没有访问权限"),
+    HTTP404("HTTP404", 404, "资源，服务未找到"),
+    HTTP405("HTTP405", 405, "不允许的http方法"),
+    HTTP409("HTTP409", 409, "资源冲突，或者资源被锁"),
+    HTTP415("HTTP415", 415, "不支持的数据，媒体类型"),
+    HTTP500("HTTP500", 500, "系统内部错误"),
+    HTTP501("HTTP501", 501, "接口未实现"),
+    /**
+     * 其他错误码
+     */
+    ER001("ER001", 500, "用户名或密码错误"),
+    ER002("ER002", 500, "用户输入密码错误次数超限"),
+    ER003("ER003", 500, "用户账户不存在"),
+    ER004("ER004", 500, "用户账户被冻结"),
+    ER005("ER005", 500, "用户账户已作废"),
+    ER006("ER006", 500, "该用户名已注册"),
+    ER007("ER007", 500, "该手机号已注册"),
+    ER008("ER008", 500, "请求必填参数为空"),
+    ER009("ER009", 500, "用户输入内容非法"),
+    ER010("ER010", 500, "用户上传文件类型不匹配"),
+    ER011("ER011", 500, "用户上传文件太大"),
+
+    ;
+
+    //代码
+    private final String code;
+    private final int httpCode;
+    //信息
+    private final String msg;
+}
