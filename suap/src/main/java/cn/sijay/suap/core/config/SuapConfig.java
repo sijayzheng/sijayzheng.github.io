@@ -2,8 +2,6 @@ package cn.sijay.suap.core.config;
 
 import cn.sijay.suap.core.properties.ConfigProperties;
 import cn.sijay.suap.core.properties.GenProperties;
-import cn.sijay.suap.core.util.FileUtil;
-import cn.sijay.suap.core.util.LogUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -28,10 +26,10 @@ public class SuapConfig {
     //初始化变量
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        LogUtil.info("系统初始化");
-        LogUtil.info("创建必要文件夹");
-        FileUtil.mkDirOrTouch(configProperties.getTempFolder());
-        FileUtil.mkDirOrTouch(configProperties.getFileStorage());
-        FileUtil.mkDirOrTouch(genProperties.getPath());
+//        LogUtil.info("系统初始化");
+//        LogUtil.info("创建必要文件夹");
+//        FileUtil.mkDirOrTouch(configProperties.getTempFolder());
+//        FileUtil.mkDirOrTouch(configProperties.getFileStorage());
+//        FileUtil.mkDirOrTouch(genProperties.getPath());
     }
 }
