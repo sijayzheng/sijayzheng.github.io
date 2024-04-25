@@ -90,6 +90,14 @@ mysql -uroot -proot  db_name < db_name.sql
 | Maximum Value        | 100000              |
 
 默认值 151，包括 1 个供具有 coonection_admin 权限的管理员使用、150 个供所有有访问权限的客户端使用
+## SQL命令
+
+### 建表
+```sql
+create database [if not exists] database_name
+  [character set charset_name]
+  [collate collation_name];
+```
 
 ## 事务
 
