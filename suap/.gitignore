@@ -20,3 +20,4 @@ ui/node_modules/
 ui/dist/
 ui/pnpm-lock.yaml
 ui/src/dts/
+ui/types/

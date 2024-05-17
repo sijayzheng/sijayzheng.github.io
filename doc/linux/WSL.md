@@ -10,3 +10,11 @@
    ![20231116144516.png](img/20231116144516.png)
 
 之后wsl2会一直保持后台运行
+
+## 修改wsl默认登录用户
+
+_以Ubuntu为例_
+
+```bash
+ubuntu config --default-user root
+```

@@ -36,7 +36,7 @@ export default defineConfig(({mode}) => {
                 dirs: ['src/store/**', 'src/router/**', 'src/api/**', 'src/utils/**'],
                 vueTemplate: true,
                 resolvers: [ElementPlusResolver()],
-                dts: 'dts/auto-imports.d.ts',
+                dts: 'types/auto-imports.d.ts',
             }),
             Components({
                 resolvers: [ElementPlusResolver()],
@@ -49,7 +49,7 @@ export default defineConfig(({mode}) => {
                 dirs: ['src/components/**', 'src/layout/**', 'src/views/**'],
                 extensions: ['vue', 'md'], // allow auto import and register components used in markdown
                 include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-                dts: 'dts/components.d.ts',
+                dts: 'types/components.d.ts',
             }),
             createSvgIconsPlugin({
                 // 指定需要缓存的图标文件夹

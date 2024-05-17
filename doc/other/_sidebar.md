@@ -1,0 +1,6 @@
+- [Q&A](doc/other/question.md)
+- [正则表达式](doc/other/regex.md)
+- [PHP](doc/other/PHP.md)
+- [SSL 证书](doc/other/sslCert.md)
+- [激活码](doc/other/jihuoma.md)
+- [设计模式](doc/other/designPattern.md)
