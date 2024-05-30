@@ -1,7 +1,7 @@
 - 关系型
-  - [DB2](doc/DB2.md)
-  - [MySQL](doc/MySQL.md)
-  - [Oracle](doc/Oracle.md)
+  - [DB2](doc/db/DB2.md)
+  - [MySQL](doc/db/MySQL.md)
+  - [Oracle](doc/db/Oracle.md)
 - 非关系型
-  - [MongoDB](doc/MongoDB.md)
-  - [Redis](doc/Redis.md)
+  - [MongoDB](doc/db/MongoDB.md)
+  - [Redis](doc/db/Redis.md)

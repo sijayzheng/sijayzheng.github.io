@@ -52,6 +52,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 flush privileges;
 ```
 
+- 新建用户 `create user 'user01' @'localhost' identified by 'user01';`
 - 设置任意主机都可连接 `update user set host='%' where user='root';`
 - 设置指定网段可是连接 `GRANT ALL PRIVILEGES ON *.* TO root@'192.168.192.%' IDENTIFIED BY 'root' WITH GRANT OPTION;`
 
@@ -67,11 +68,18 @@ flush privileges;
 
 ```bash
 # 备份
-mysqldump -uroot -proot db_name>db_name.sql
+mysqldump -uroot -proot [options] db_name [tablems...] > db_name.sql
+#使用powershell时
+mysqldump -uroot -proot [options] db_name [tablems...] --result-file=D:\db_name.sql
+
 # 恢复
 mysqladmin -uroot -proot create db_name
 mysql -uroot -proot  db_name < db_name.sql
 ```
+
+**options**
+
+- --default-character-set=utf8
 
 ## 参数
 
@@ -90,9 +98,11 @@ mysql -uroot -proot  db_name < db_name.sql
 | Maximum Value        | 100000              |
 
 默认值 151，包括 1 个供具有 coonection_admin 权限的管理员使用、150 个供所有有访问权限的客户端使用
-## SQL命令
+
+## SQL 命令
 
 ### 建表
+
 ```sql
 create database [if not exists] database_name
   [character set charset_name]
