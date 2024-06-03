@@ -8,12 +8,13 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 /**
+ * <strong>SelectOption</strong>
  * <p>
- * <em>Option</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/25 14:35
+ * @since 2024-06-01
  */
 @Data
 @Accessors(chain = true)
@@ -27,5 +28,10 @@ public class Option<T> {
     public Option(String label, T value) {
         this.label = label;
         this.value = value;
+    }
+
+    public Option append(Option<T> option) {
+        this.children.add(option);
+        return this;
     }
 }

@@ -1,48 +1,32 @@
 package cn.sijay.suap.core.enums;
 
-import cn.sijay.suap.core.base.BaseDataEnum;
-import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
+ * <strong>QueryType</strong>
  * <p>
- * <em>QueryType</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/9 15:46
+ * @since 2024-06-01
  */
 @Getter
 @AllArgsConstructor
-public enum QueryType implements BaseDataEnum {
-    LIKE("LK", "包含", "like"),
-    EQUAL("EQ", "等于", "eq"),
-    GREATER_THAN("GT", "大于", "gt"),
-    GREATER_OR_EQUAL("GE", "大于等于", "ge"),
-    LESS_THAN("LT", "小于", "lt"),
-    LESS_OR_EQUAL("LE", "小于等于", "le"),
-    BETWEEN("BT", "在范围内", "between"),
-    IN("IN", "在列表内", "in"),
+public enum QueryType {
+    LIKE("包含"),
+    EQUAL("等于"),
+    GREATER_THAN("大于"),
+    GREATER_OR_EQUAL("大于等于"),
+    LESS_THAN("小于"),
+    LESS_OR_EQUAL("小于等于"),
+    BETWEEN("在范围内"),
+    IN("在列表内"),
     ;
 
-    @EnumValue
-    private final String code;
     @JsonValue
     private final String desc;
-    private final String mp;
-
-    public static QueryType getByCode(String code) {
-        if (code == null) {
-            return QueryType.EQUAL;
-        }
-        for (QueryType queryType : QueryType.values()) {
-            if (queryType.getCode().equals(code)) {
-                return queryType;
-            }
-        }
-        return QueryType.EQUAL;
-    }
 
 }
