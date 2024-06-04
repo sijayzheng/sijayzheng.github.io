@@ -1,5 +1,6 @@
 package cn.sijay.suap;
 
+import cn.sijay.suap.core.utils.LogUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -20,7 +21,7 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-//        LogUtil.success("启动成功");
+        LogUtil.success("启动成功");
     }
 
 }

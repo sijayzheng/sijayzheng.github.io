@@ -15,7 +15,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum DataSource  {
+public enum DataSource {
     DICT("D", "字典"),
     ENUM("E", "枚举"),
     SELF("S", "自身"),

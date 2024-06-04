@@ -64,7 +64,7 @@ public class TreeUtil {
      * @author Sijay
      * @since 2024-06-01
      */
-    public static interface TreeNodeConvert<T, K> {
+    public interface TreeNodeConvert<T, K> {
         /**
          * @param entity   实体类
          * @param treeNode 树节点

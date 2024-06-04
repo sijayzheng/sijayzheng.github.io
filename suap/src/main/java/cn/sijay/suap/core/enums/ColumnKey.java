@@ -14,5 +14,4 @@ public enum ColumnKey {
     UNI,
     MUL,
 
-    ;
 }

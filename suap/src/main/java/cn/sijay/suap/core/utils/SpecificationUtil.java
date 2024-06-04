@@ -2,6 +2,7 @@ package cn.sijay.suap.core.utils;
 
 import cn.sijay.suap.core.annotation.QueryColumn;
 import cn.sijay.suap.core.enums.QueryType;
+import jakarta.persistence.criteria.Predicate;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**

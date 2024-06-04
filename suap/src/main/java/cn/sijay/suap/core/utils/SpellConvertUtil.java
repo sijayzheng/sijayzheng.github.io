@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.Properties;
 
 /**
  * <strong>SpellConvertUtil</strong>
@@ -114,8 +115,8 @@ public class SpellConvertUtil {
         }
     }
 
-    private static HashMap secondLevelCN() {
-        HashMap hm = new HashMap();
+    private static HashMap<String, String> secondLevelCN() {
+        HashMap<String, String> hm = new HashMap<>();
         hm.put("7574", "zong");
         hm.put("5819", "lei");
         hm.put("8537", "zhi");

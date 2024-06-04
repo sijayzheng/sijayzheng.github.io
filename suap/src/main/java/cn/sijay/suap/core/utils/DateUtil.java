@@ -34,7 +34,8 @@ public class DateUtil {
      * yyyy-MM-dd HH:mm:ss
      */
     public static String getFullFormatedDateString(long time) {
-        LocalDateTime localDateTime = LocalDateTime.ofEpochSecond(System.currentTimeMillis() / 1000, Math.toIntExact(System.currentTimeMillis() % 1000), OffsetDateTime.now().getOffset());
+        LocalDateTime localDateTime = LocalDateTime.ofEpochSecond(System.currentTimeMillis() / 1000, Math.toIntExact(System.currentTimeMillis() % 1000), OffsetDateTime.now()
+                                                                                                                                                                       .getOffset());
         return localDateTime.format(DateTimeFormatter.ofPattern(FULL));
     }
 

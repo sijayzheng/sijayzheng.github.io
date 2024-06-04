@@ -1,6 +1,6 @@
 package cn.sijay.suap.core.utils;
 
-import cn.sijay.suap.core.constant.CommConstant;
+import cn.sijay.suap.core.constant.Constants;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +57,7 @@ public class HttpClientUtil {
     private static HttpRequest.Builder getBuilder(String url, Map<String, String> headers) throws URISyntaxException {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                                                  .GET()
-                                                 .header(CommConstant.CONTENT_TYPE, CommConstant.APPLICATION_JSON)
+                                                 .header(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON)
                                                  .version(HttpClient.Version.HTTP_2)
                                                  .timeout(Duration.ofMillis(60000))
                                                  .uri(new URI(url));
@@ -90,12 +90,12 @@ public class HttpClientUtil {
     }
 
     public static HttpResponse<String> syncJsonPost(String url, Map<String, String> headers, String body) throws IOException, InterruptedException {
-        headers.put(CommConstant.CONTENT_TYPE, CommConstant.APPLICATION_JSON);
+        headers.put(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON);
         return syncPost(url, headers, body);
     }
 
     public static CompletableFuture<HttpResponse<String>> asyncJsonPost(String url, Map<String, String> headers, String body) throws IOException, InterruptedException {
-        headers.put(CommConstant.CONTENT_TYPE, CommConstant.APPLICATION_JSON);
+        headers.put(Constants.CONTENT_TYPE, Constants.APPLICATION_JSON);
         return asyncPost(url, headers, body);
     }
 

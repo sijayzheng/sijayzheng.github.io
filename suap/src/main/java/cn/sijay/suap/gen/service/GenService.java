@@ -120,7 +120,7 @@
 //        genToDir(genTable);
 //        File file = FileUtil.zipFolder(genProperties.getPath(), configProperties.getTempFolder(), genTable.getComment());
 //        try (FileInputStream fileInputStream = new FileInputStream(file)) {
-//            ResponseUtil.setDownloadFileName(response, genTable.getComment() + FileUtil.getFileSuffix() + ".zip");
+//            ResponseUtil.setDownloadFileName(response, genTable.getComment() + ".zip");
 //            response.getOutputStream().write(fileInputStream.readAllBytes());
 //        } catch (FileNotFoundException e) {
 //            throw new BaseException(ExceptionEnum.FILE_NOT_FOUND, file.getName());
@@ -254,7 +254,7 @@
 //        map.put("controller.java.vm", GenFileType.JAVA);
 //        map.put("service.java.vm", GenFileType.JAVA);
 //        map.put("service_impl.java.vm", GenFileType.JAVA);
-//        map.put("mapper.java.vm", GenFileType.JAVA);
+//        map.put("repository.java.vm", GenFileType.JAVA);
 //        map.put("mapper.xml.vm", GenFileType.XML);
 //        map.put("vue.vm", GenFileType.VUE);
 //        map.put("js.vm", GenFileType.JS);
