@@ -1,11 +1,16 @@
-package cn.sijay.suap;
+package cn.sijay.suap.schema.info.entity;
 
+import cn.sijay.suap.core.enums.ColumnKey;
+import cn.sijay.suap.gen.entity.GenTableColumn;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.Immutable;
+
+import java.util.Objects;
 
 /**
  * Mapping for DB view
@@ -13,6 +18,7 @@ import org.hibernate.annotations.Immutable;
 @Getter
 @Setter
 @Entity
+@ToString
 @Immutable
 @Table(name = "COLUMNS", schema = "information_schema")
 public class SchemaColumn {
@@ -20,7 +26,7 @@ public class SchemaColumn {
     private ColumnId id;
 
     @Column(name = "ORDINAL_POSITION", columnDefinition = "int UNSIGNED not null")
-    private Long ordinalPosition;
+    private Integer ordinalPosition;
 
     @Size(max = 3)
     @NotNull
@@ -32,7 +38,7 @@ public class SchemaColumn {
     private String dataType;
 
     @Column(name = "CHARACTER_MAXIMUM_LENGTH")
-    private Long characterMaximumLength;
+    private Integer characterMaximumLength;
 
     @NotNull
     @Lob
@@ -42,11 +48,22 @@ public class SchemaColumn {
     @NotNull
     @Lob
     @Column(name = "COLUMN_KEY", nullable = false)
-    private String columnKey;
+    private ColumnKey columnKey;
 
     @NotNull
     @Lob
     @Column(name = "COLUMN_COMMENT", nullable = false)
     private String columnComment;
 
+    public GenTableColumn toGenTableColumn() {
+        GenTableColumn genTableColumn = new GenTableColumn();
+        genTableColumn.setColumnName(id.getColumnName());
+        genTableColumn.setColumnComment(columnComment);
+        genTableColumn.setDataType(Objects.equals("tinyint(1)", columnType) ? "boolean" : dataType);
+        genTableColumn.setLength(characterMaximumLength);
+        genTableColumn.setColumnKey(columnKey);
+        genTableColumn.setNullable(Objects.equals("YES", isNullable));
+        genTableColumn.setSort(ordinalPosition);
+        return genTableColumn;
+    }
 }

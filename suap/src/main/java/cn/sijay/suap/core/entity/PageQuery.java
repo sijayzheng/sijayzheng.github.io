@@ -1,11 +1,11 @@
 package cn.sijay.suap.core.entity;
 
-import cn.sijay.suap.core.util.NumberUtil;
-import cn.sijay.suap.core.util.StringUtil;
-import com.baomidou.mybatisplus.core.metadata.OrderItem;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import cn.sijay.suap.core.utils.NumberUtil;
+import cn.sijay.suap.core.utils.StringUtil;
 import lombok.Data;
 import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -13,12 +13,13 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ * <strong>PageQuery</strong>
  * <p>
- * <em>PageQuery</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/9 15:13
+ * @since 2024-06-01
  */
 @Data
 public class PageQuery implements Serializable {
@@ -47,23 +48,15 @@ public class PageQuery implements Serializable {
     private List<String> asc;
     private List<String> desc;
 
-    public <T> Page<T> build() {
+    public PageRequest build() {
         int pageNum = NumberUtil.firstGreatThanZero(Optional.ofNullable(current).orElse(DEFAULT_PAGE_NUM), DEFAULT_PAGE_NUM);
         int pageSize = NumberUtil.firstGreatThanZero(Optional.ofNullable(size).orElse(DEFAULT_PAGE_SIZE), DEFAULT_PAGE_SIZE);
-        Page<T> page = new Page<>(pageNum, pageSize);
-        System.out.println("-----" + asc + "---" + desc);
+        Sort sort = Sort.unsorted();
         if (CollectionUtils.isNotEmpty(asc)) {
-            List<OrderItem> orderItems = asc.stream().map(StringUtil::toUnderlineCase).map(OrderItem::asc).toList();
-            if (CollectionUtils.isNotEmpty(orderItems)) {
-                page.addOrder(orderItems);
-            }
+            sort = Sort.by(asc.stream().map(StringUtil::toLowerSnakeCase).map(Sort.Order::asc).toList());
+        } else if (CollectionUtils.isNotEmpty(desc)) {
+            sort = Sort.by(asc.stream().map(StringUtil::toLowerSnakeCase).map(Sort.Order::desc).toList());
         }
-        if (CollectionUtils.isNotEmpty(desc)) {
-            List<OrderItem> orderItems = desc.stream().map(StringUtil::toUnderlineCase).map(OrderItem::desc).toList();
-            if (CollectionUtils.isNotEmpty(orderItems)) {
-                page.addOrder(orderItems);
-            }
-        }
-        return page;
+        return PageRequest.of(pageNum, pageSize, sort);
     }
 }

@@ -1,4 +1,4 @@
-package cn.sijay.suap.core.util;
+package cn.sijay.suap.core.utils;
 
 import lombok.extern.slf4j.Slf4j;
 

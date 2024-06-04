@@ -1,14 +1,19 @@
 package cn.sijay.suap.core.convert;
 
+import cn.hutool.core.annotation.AnnotationUtil;
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.util.ObjectUtil;
 import cn.sijay.suap.core.annotation.ExcelDictFormat;
-import cn.sijay.suap.core.utils.BaseExcelUtil;
+import cn.sijay.suap.core.utils.ExcelUtil;
 import com.alibaba.excel.converters.Converter;
 import com.alibaba.excel.enums.CellDataTypeEnum;
+import com.alibaba.excel.metadata.GlobalConfiguration;
 import com.alibaba.excel.metadata.data.ReadCellData;
 import com.alibaba.excel.metadata.data.WriteCellData;
 import com.alibaba.excel.metadata.property.ExcelContentProperty;
 import lombok.extern.slf4j.Slf4j;
-import org.mockito.internal.configuration.GlobalConfiguration;
+
+import java.lang.reflect.Field;
 
 /**
  * <strong>ExcelDictConvert</strong>
@@ -39,7 +44,7 @@ public class ExcelDictConvert implements Converter<Object> {
         String label = cellData.getStringValue();
         String value;
 //        if (StringUtil.isBlank(type)) {
-        value = BaseExcelUtil.reverseByExp(label, anno.readConverterExp(), anno.separator());
+        value = ExcelUtil.reverseByExp(label, anno.readConverterExp(), anno.separator());
 //        } else {
 //            value = SpringUtil.getBean(DictService.class).getDictValue(type, label, anno.separator());
 //        }
@@ -56,7 +61,7 @@ public class ExcelDictConvert implements Converter<Object> {
         String value = Convert.toStr(object);
         String label;
 //        if (StringUtil.isBlank(type)) {
-        label = BaseExcelUtil.convertByExp(value, anno.readConverterExp(), anno.separator());
+        label = ExcelUtil.convertByExp(value, anno.readConverterExp(), anno.separator());
 //        } else {
 //            label = SpringUtil.getBean(DictService.class).getDictLabel(type, value, anno.separator());
 //        }

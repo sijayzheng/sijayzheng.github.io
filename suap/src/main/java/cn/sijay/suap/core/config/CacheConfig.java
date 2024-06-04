@@ -5,12 +5,13 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
+ * <strong>CacheConfig</strong>
  * <p>
- * <em>CacheConfig</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/2/6 14:19
+ * @since 2024-06-01
  */
 @Slf4j
 @AutoConfiguration

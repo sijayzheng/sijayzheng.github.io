@@ -1,119 +1,100 @@
 package cn.sijay.suap.core.base;
 
 import cn.sijay.suap.core.entity.PageResult;
-import cn.sijay.suap.core.entity.Result;
+import cn.sijay.suap.core.entity.Res;
 import cn.sijay.suap.core.enums.OperateType;
 import cn.sijay.suap.core.enums.ResultCodeEnum;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 /**
+ * <strong>BaseController</strong>
  * <p>
- * <em>BaseController</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/8 16:36
+ * @since 2024-06-01
  */
 public class BaseController {
 
     /**
-     * @param msg  信息
-     * @param data 数据
      * @return 通用返回结果
      */
-    protected <T> Result<T> error(String msg, T data) {
-        return Result.error(msg, data);
-    }
-
-    /**
-     * @return 通用返回结果
-     */
-    protected Result<Boolean> toBoolean(boolean flag) {
-        return success(flag ? ResultCodeEnum.SUCCESS.getMsg() : ResultCodeEnum.FAILURE.getMsg(), flag);
-    }
-
-    /**
-     * @param msg  信息
-     * @param data 数据
-     * @return 通用返回结果
-     */
-    protected <T> Result<T> success(String msg, T data) {
-        return Result.success(msg, data);
-    }
-
-    /**
-     * @param data 数据
-     * @return 通用返回结果
-     */
-    protected <T> Result<T> success(T data) {
-        return Result.success(data);
-    }
-
-    /**
-     * @return 通用返回结果
-     */
-    protected Result<Void> success() {
-        return Result.success();
-    }
-
-    /**
-     * @return 通用返回结果
-     */
-    protected Result<Void> error() {
-        return Result.error();
-    }
-
-    /**
-     * @return 通用返回结果
-     */
-    protected Result<Boolean> toBoolean(boolean flag, String msg) {
-        msg += flag ? ResultCodeEnum.SUCCESS.getMsg() : ResultCodeEnum.FAILURE.getMsg();
-        return success(msg + ResultCodeEnum.SUCCESS.getMsg(), flag);
-    }
-
-    /**
-     * @param data 数据
-     * @return 通用返回结果
-     */
-    protected <T> Result<T> error(T data) {
-        return Result.error(data);
-    }
-
-    /**
-     * @return 通用返回结果
-     */
-    protected Result<Boolean> toBoolean(boolean flag, OperateType operateType) {
-        String msg = flag ? ResultCodeEnum.SUCCESS.getMsg() : ResultCodeEnum.FAILURE.getMsg();
-        return success(operateType.getDesc() + msg, flag);
+    protected Res<Void> success() {
+        return Res.success();
     }
 
     /**
      * @param msg 信息
      * @return 通用返回结果
      */
-    protected Result<Void> success(String msg) {
-        return Result.success(msg);
+    protected Res<Void> success(String msg) {
+        return Res.success(msg);
+    }
+
+    /**
+     * @param data 数据
+     * @return 通用返回结果
+     */
+    protected <T> Res<T> success(T data) {
+        return Res.success(data);
+    }
+
+    /**
+     * @param msg  信息
+     * @param data 数据
+     * @return 通用返回结果
+     */
+    protected <T> Res<T> success(String msg, T data) {
+        return Res.success(msg, data);
+    }
+
+    /**
+     * @return 通用返回结果
+     */
+    protected Res<Void> error() {
+        return Res.failure();
     }
 
     /**
      * @param msg 信息
      * @return 通用返回结果
      */
-    protected Result<Void> error(String msg) {
-        return Result.error(msg);
+    protected Res<Void> error(String msg) {
+        return Res.failure(msg);
     }
 
-    protected <T> PageResult<T> toPageResult(List<T> list) {
-        return PageResult.build(list);
+    /**
+     * @param data 数据
+     * @return 通用返回结果
+     */
+    protected <T> Res<T> error(T data) {
+        return Res.failure(data);
     }
 
-    protected <T> PageResult<T> toPageResult() {
-        return PageResult.build();
+    /**
+     * @param msg  信息
+     * @param data 数据
+     * @return 通用返回结果
+     */
+    protected <T> Res<T> error(String msg, T data) {
+        return Res.failure(msg, data);
     }
 
-    protected <T> PageResult<T> toPageResult(Page<T> page) {
-        return PageResult.build(page);
+    /**
+     * @return 通用返回结果
+     */
+    protected Res<Void> convert(OperateType operateType) {
+        return success(operateType.getDesc() + ResultCodeEnum.SUCCESS.getMsg());
+    }
+
+    protected <T> PageResult<T> convert(List<T> list) {
+        return PageResult.of(list);
+    }
+
+    protected <T> PageResult<T> convert(Page<T> page) {
+        return PageResult.of(page);
     }
 }

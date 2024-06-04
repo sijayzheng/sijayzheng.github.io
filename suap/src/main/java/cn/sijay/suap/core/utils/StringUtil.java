@@ -9,6 +9,7 @@ import org.slf4j.helpers.MessageFormatter;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**

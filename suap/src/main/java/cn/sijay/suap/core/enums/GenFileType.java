@@ -1,16 +1,17 @@
 package cn.sijay.suap.core.enums;
 
-import cn.sijay.suap.core.util.FileUtil;
+import cn.sijay.suap.core.utils.FileUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
+ * <strong>GenFileType</strong>
  * <p>
- * <em>GenFileType 生成文件路径</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/12 15:56
+ * @since 2024-06-01
  */
 @Getter
 @AllArgsConstructor

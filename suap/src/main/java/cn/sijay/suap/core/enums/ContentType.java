@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
+ * <strong>ContentType</strong>
  * <p>
- * <em>ContentType</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/31 15:03
+ * @since 2024-06-01
  */
 @Getter
 @AllArgsConstructor

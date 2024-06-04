@@ -5,16 +5,17 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * <strong>ConfigProperties</strong>
  * <p>
- * <em>ConfigProperties</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/8 15:55
+ * @since 2024-06-01
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "suap.config")
+@ConfigurationProperties(prefix = "config")
 public class ConfigProperties {
     private Integer passwordMaxRetryCount;
     private Integer passwordLockTime;

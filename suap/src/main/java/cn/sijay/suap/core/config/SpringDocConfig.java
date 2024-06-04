@@ -1,24 +1,25 @@
 package cn.sijay.suap.core.config;
 
 import cn.sijay.suap.core.properties.DocsProperties;
-import cn.sijay.suap.core.util.StringUtil;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.Paths;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
+import org.apache.poi.util.StringUtil;
 import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * <strong>SpringDocConfig</strong>
  * <p>
- * <em>ss</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/9 16:13
+ * @since 2024-06-01
  */
 @RequiredArgsConstructor
 @Configuration

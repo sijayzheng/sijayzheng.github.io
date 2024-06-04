@@ -55,4 +55,21 @@ public class TreeUtil {
         return list.stream().map(item -> new Option<>(item.getName(), item.getId(), convertOptionTree(item.getChildren()))).toList();
     }
 
+    /**
+     * <strong>TreeNodeConvert</strong>
+     * <p>
+     *
+     * </p>
+     *
+     * @author Sijay
+     * @since 2024-06-01
+     */
+    public static interface TreeNodeConvert<T, K> {
+        /**
+         * @param entity   实体类
+         * @param treeNode 树节点
+         */
+        void convert(T entity, TreeNode<K> treeNode);
+
+    }
 }

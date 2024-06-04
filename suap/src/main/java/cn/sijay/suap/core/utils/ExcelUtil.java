@@ -20,8 +20,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -97,10 +95,11 @@ public class ExcelUtil {
     }
 
     protected static String getCellValue(Cell cell) {
+
         return switch (cell.getCellType()) {
-            case NUMERIC -> DateUtil.isCellDateFormatted(cell) ?
-                    new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(cell.getDateCellValue()) :
-                    BigDecimal.valueOf(cell.getNumericCellValue()).toString();
+//            case NUMERIC -> XSSFDateUtil.isCellDateFormatted(cell) ?
+//                    new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(cell.getDateCellValue()) :
+//                    BigDecimal.valueOf(cell.getNumericCellValue()).toString();
             case STRING -> cell.getRichStringCellValue().getString();
             case BOOLEAN -> String.valueOf(cell.getBooleanCellValue());
             case FORMULA -> cell.getCellFormula();

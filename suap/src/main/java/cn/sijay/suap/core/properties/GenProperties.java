@@ -5,16 +5,17 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * <strong>GenProperties</strong>
  * <p>
- * <em>GenProperties</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/12 9:45
+ * @since 2024-06-01
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "suap.gen")
+@ConfigurationProperties(prefix = "gen")
 public class GenProperties {
     /**
      * 代码生成路径

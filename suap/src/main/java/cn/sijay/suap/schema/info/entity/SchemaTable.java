@@ -1,11 +1,10 @@
 package cn.sijay.suap.schema.info.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
+import cn.sijay.suap.gen.entity.GenTable;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.Immutable;
 
 /**
@@ -14,9 +13,10 @@ import org.hibernate.annotations.Immutable;
 @Getter
 @Setter
 @Entity
+@ToString
 @Immutable
-@jakarta.persistence.Table(name = "TABLES", schema = "information_schema")
-public class Table {
+@Table(name = "TABLES", schema = "information_schema")
+public class SchemaTable {
     @EmbeddedId
     private TableId id;
 
@@ -24,4 +24,10 @@ public class Table {
     @Column(name = "TABLE_COMMENT")
     private String tableComment;
 
+    public GenTable toGenTable() {
+        GenTable genTable = new GenTable();
+        genTable.setTableName(id.getTableName());
+        genTable.setComment(tableComment);
+        return genTable;
+    }
 }

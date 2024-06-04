@@ -4,22 +4,22 @@ import cn.sijay.suap.core.enums.ExceptionEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.slf4j.helpers.MessageFormatter;
 
 /**
+ * <strong>UtilException</strong>
  * <p>
- * <em>UtilException</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/2/5 17:18
+ * @since 2024-06-01
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class UtilException extends BaseException {
     public UtilException(String msg, Object... args) {
-        this(MessageFormatter.arrayFormat(msg, args).getMessage());
+        super(msg, args);
     }
 
     public UtilException(String msg) {

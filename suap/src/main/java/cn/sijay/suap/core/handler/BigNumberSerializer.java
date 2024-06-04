@@ -8,12 +8,13 @@ import com.fasterxml.jackson.databind.ser.std.NumberSerializer;
 import java.io.IOException;
 
 /**
+ * <strong>BigNumberSerializer</strong>
  * <p>
- * <em>bii</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/8 17:45
+ * @since 2024-06-01
  */
 @JacksonStdImpl
 public class BigNumberSerializer extends NumberSerializer {

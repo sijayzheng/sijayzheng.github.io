@@ -4,12 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
+ * <strong>ExceptionEnum</strong>
  * <p>
- * <em>ExceptionEnum 异常信息</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/10 15:24
+ * @since 2024-06-01
  */
 @Getter
 @AllArgsConstructor
@@ -33,6 +34,8 @@ public enum ExceptionEnum {
     REQUEST_PARAM_ERROR("请求参数错误"),
 
     EXCEL_READ_ERROR("Excel文件读取失败"),
+    EXCEL_EXPORT_ERROR("Excel文件导出失败"),
+    EXCEL_TEMPLATE_EXPORT_ERROR("Excel模板导出失败"),
 
     REFLECT_ERROR("反射错误"),
     REFLECT_CLASS_NOT_FOUND_ERROR("反射错误，类{}找不到"),
@@ -48,7 +51,6 @@ public enum ExceptionEnum {
 
     JSON_SERIAL_ERROR("JSON序列化错误"),
     JSON_PARSE_ERROR("JSON反序列化错误"),
-
     ;
     private final String message;
 }

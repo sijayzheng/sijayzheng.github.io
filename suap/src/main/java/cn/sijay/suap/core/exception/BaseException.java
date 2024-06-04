@@ -10,12 +10,13 @@ import java.io.Serial;
 import java.util.Optional;
 
 /**
+ * <strong>BaseException</strong>
  * <p>
- * <em>BaseException</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/10 15:09
+ * @since 2024-06-01
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

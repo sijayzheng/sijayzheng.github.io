@@ -8,12 +8,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * <strong>QueryColumn</strong>
  * <p>
- * <em>QueryColumn</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/9 15:31
+ * @since 2024-06-01
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

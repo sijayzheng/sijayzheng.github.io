@@ -5,16 +5,17 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
+ * <strong>DocsProperties</strong>
  * <p>
- * <em>DocsProperties</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/8 14:36
+ * @since 2024-06-01
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "suap.docs")
+@ConfigurationProperties(prefix = "doc")
 public class DocsProperties {
     private String title;
     private String description;

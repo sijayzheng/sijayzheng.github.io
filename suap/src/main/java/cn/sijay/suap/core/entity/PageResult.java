@@ -1,23 +1,22 @@
 package cn.sijay.suap.core.entity;
 
 import cn.sijay.suap.core.enums.ResultCodeEnum;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.domain.Page;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 /**
+ * <strong>PageResult</strong>
  * <p>
- * <em>PageResult</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/9 15:06
+ * @since 2024-06-01
  */
 @Data
 @NoArgsConstructor
@@ -39,7 +38,7 @@ public class PageResult<T> implements Serializable {
     /**
      * 消息状态码
      */
-    private String code;
+    private int code;
 
     /**
      * 消息内容
@@ -59,7 +58,7 @@ public class PageResult<T> implements Serializable {
         this.msg = "查询成功";
     }
 
-    public static <T> PageResult<T> build(List<T> list) {
+    public static <T> PageResult<T> of(List<T> list) {
         PageResult<T> rspData = new PageResult<>();
         rspData.setCode(ResultCodeEnum.SUCCESS.getCode());
         rspData.setMsg("查询成功");
@@ -68,19 +67,19 @@ public class PageResult<T> implements Serializable {
         return rspData;
     }
 
-    public static <T> PageResult<T> build() {
+    public static <T> PageResult<T> of() {
         PageResult<T> rspData = new PageResult<>();
         rspData.setCode(ResultCodeEnum.SUCCESS.getCode());
         rspData.setMsg("查询成功");
         return rspData;
     }
 
-    public static <T> PageResult<T> build(Page<T> page) {
+    public static <T> PageResult<T> of(Page<T> page) {
         PageResult<T> rspData = new PageResult<>();
         rspData.setCode(ResultCodeEnum.SUCCESS.getCode());
         rspData.setMsg("查询成功");
-        rspData.setRows(Optional.ofNullable(page.getRecords()).orElse(Collections.emptyList()));
-        rspData.setTotal(page.getTotal());
+        rspData.setRows(page.getContent());
+        rspData.setTotal(page.getTotalElements());
         return rspData;
     }
 }

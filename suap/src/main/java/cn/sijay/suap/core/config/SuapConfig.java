@@ -9,12 +9,13 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 
 /**
+ * <strong>SuapConfig</strong>
  * <p>
- * <em>SuapConfig</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/31 11:29
+ * @since 2024-06-01
  */
 @Slf4j
 @Configuration

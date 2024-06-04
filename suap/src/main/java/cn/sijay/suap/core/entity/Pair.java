@@ -1,12 +1,13 @@
 package cn.sijay.suap.core.entity;
 
 /**
+ * <strong>Pair</strong>
  * <p>
- * <em>Pair</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/8 17:06
+ * @since 2024-06-01
  */
-public record Pair<X, Y>(X x, Y y) {
+public record Pair<K, V>(K key, V value) {
 }

@@ -8,12 +8,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * <strong>Log</strong>
  * <p>
- * <em>Log</em>
+ *
  * </p>
  *
  * @author Sijay
- * @since 2024/1/22 16:13
+ * @since 2024-06-01
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

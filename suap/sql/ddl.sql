@@ -222,7 +222,6 @@ create table sys_notice
     deleted     varchar(1) default 'N' comment '是否删除',
     version     bigint     default 1 comment '版本号'
 ) comment '通知公告';
-
 drop table if exists sys_config;
 create table sys_config
 (
@@ -255,7 +254,6 @@ create table data_dict
     deleted     varchar(1)           default 'N' comment '是否删除',
     version     bigint               default 1 comment '版本号'
 ) comment '数据字典';
-
 drop table if exists data_region;
 create table data_region
 (

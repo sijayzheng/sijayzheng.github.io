@@ -4,11 +4,9 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.time.LocalDateTime;
+import java.util.Random;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -270,28 +268,28 @@ public class SqlGenerate {
         StringBuilder buf = new StringBuilder();
         for (int i = 0; i < 100000; i++) {
             buf.append("(")
-                    .append(getId(18, i + 1))
-                    .append("', '")
-                    .append(getName(true))
-                    .append("','1")
-                    .append(getId(7, i + 1))
-                    .append("', 'admin@example.com', '")
-                    .append(now.toLocalDate()
-                            .toString())
-                    .append("', '")
-                    .append(now.toLocalTime()
-                            .toString())
-                    .append("', 'softname")
-                    .append(i)
-                    .append("', '")
-                    .append(Math.random() < 0.5 ? "正常" : "异常")
-                    .append("', 'contentcontentcontentcontentcontentcontentcontentcontentcontent', 'note'),");
+               .append(getId(18, i + 1))
+               .append("', '")
+               .append(getName(true))
+               .append("','1")
+               .append(getId(7, i + 1))
+               .append("', 'admin@example.com', '")
+               .append(now.toLocalDate()
+                          .toString())
+               .append("', '")
+               .append(now.toLocalTime()
+                          .toString())
+               .append("', 'softname")
+               .append(i)
+               .append("', '")
+               .append(Math.random() < 0.5 ? "正常" : "异常")
+               .append("', 'contentcontentcontentcontentcontentcontentcontentcontentcontent', 'note'),");
         }
         File file = new File("D:\\sql.sql");
         FileOutputStream fos = new FileOutputStream(file);
         PrintWriter pw = new PrintWriter(fos);
         pw.write(buf.toString()
-                .toCharArray());
+                    .toCharArray());
         pw.flush();
         pw.close();
     }
@@ -349,7 +347,7 @@ public class SqlGenerate {
         int[] power = {1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28};
         String creditCode = "91350100M000100Y43";
         String[] pre17s = creditCode.substring(0, 17)
-                .split("");
+                                    .split("");
         int sum = 0;
         for (int i = 0; i < pre17s.length; i++) {
             sum += power[i] * cod.indexOf(pre17s[i]);
@@ -357,7 +355,7 @@ public class SqlGenerate {
         int temp = sum % 31;
         temp = temp == 0 ? 31 : temp;
         return creditCode.substring(17, 18)
-                .equals(code[31 - temp]);
+                         .equals(code[31 - temp]);
     }
 
     /**
@@ -386,7 +384,7 @@ public class SqlGenerate {
      */
     public static boolean checkMobile(String s) {
         return MOBILE_PATTERN.matcher(s)
-                .matches();
+                             .matches();
     }
 
 }
