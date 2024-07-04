@@ -69,6 +69,8 @@ flush privileges;
 ```bash
 # 备份
 mysqldump -uroot -proot [options] db_name [tablems...] > db_name.sql
+# 压缩备份
+mysqldump -uroot -proot --compact --skip-comments db_name > db_name.sql
 #使用powershell时
 mysqldump -uroot -proot [options] db_name [tablems...] --result-file=D:\db_name.sql
 
