@@ -17,7 +17,7 @@ Node.js v18.16.0
 ELIFECYCLE Command failed with exit code 1.
 ```
 
-原因是nodejs版本过高
+原因是 nodejs 版本过高
 
 ### 解决方案
 
@@ -40,3 +40,7 @@ hibernate 映射文件错误
 `Can not find a java.io.InputStream with the name [downloadFile] in the invocation stack. Check the <param name="inputName"> tag specified for this action.`
 
 action 中缺少相应的方法
+
+## Linux 下 jar 运行正常，无报错，但是停止运行
+
+通过`dmesg -T | grep java`发现为 OOM Killer 杀死程序
