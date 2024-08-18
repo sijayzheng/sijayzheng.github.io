@@ -101,7 +101,7 @@ mysql -uroot -proot  db_name < db_name.sql
 
 默认值 151，包括 1 个供具有 coonection_admin 权限的管理员使用、150 个供所有有访问权限的客户端使用
 
-## SQL 命令
+## SQL
 
 ### 建表
 
@@ -109,6 +109,18 @@ mysql -uroot -proot  db_name < db_name.sql
 create database [if not exists] database_name
   [character set charset_name]
   [collate collation_name];
+```
+
+### 递归查询
+
+```sql
+with recursive cte as (
+    select * from sys_menu where id=1
+    union all
+    select sm.* from sys_menu sm join cte on sm.parent_id = cte.id
+)
+select *
+from cte;
 ```
 
 ## 事务
