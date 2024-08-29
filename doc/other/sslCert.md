@@ -1,4 +1,4 @@
-## 本地生成ssl证书
+## 本地生成 ssl 证书
 
 ```bash
 #1.生成私钥文件 会要求设置密码
@@ -35,18 +35,29 @@ openssl x509 -in cert.crt -out cert.cer
 
 _**注意：**_：在生成过程中会有以下内容需要填写
 
-- Country Name (2 letter code) [AU]:  **_国家_**
-- State or Province Name (full name) [Some-State]:  **_州或省_**
-- Locality Name (eg, city) []:  **_市_**
-- Organization Name (eg, company) [Internet Widgits Pty Ltd]:  **_组织名称_**
-- Organizational Unit Name (eg, section) []:  **_组织单位名称_**
-- Common Name (e.g. server FQDN or YOUR name) []:  **_域名_**
-- Email Address []:  **_电子邮件地址_**
+- Country Name (2 letter code) [AU]: **_国家_**
+- State or Province Name (full name) [Some-State]: **_州或省_**
+- Locality Name (eg, city) []: **_市_**
+- Organization Name (eg, company) [Internet Widgits Pty Ltd]: **_组织名称_**
+- Organizational Unit Name (eg, section) []: **_组织单位名称_**
+- Common Name (e.g. server FQDN or YOUR name) []: **_域名_**
+- Email Address []: **_电子邮件地址_**
 
+## 使用 certbot 生成证书
 
+```bash
+ install certbot
+```
 
+### 使用 nginx 服务器时
 
+```bash
+apt python2-certbot-nginx
+certbot --nginx
+```
 
+## 续租
 
-
-
+```bash
+certbot renew
+```
