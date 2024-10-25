@@ -1,11 +1,17 @@
 ## 安装字体
 
-1. 将需要安装字体的ttf文件上传到Ubuntu中
-2. sudo mkfontscale
-3. sudo mkfontdir
-4. sudo fc-cache -fv
+1. 将需要安装字体的 ttf 文件上传到 Ubuntu `/usr/share/fonts`中
+2. `sudo mkfontscale`
+3. `sudo mkfontdir`
+4. `sudo fc-cache -fv`
 
-- 下载在线字体，以Monaco为例
+查看已有字体`fc-list`
+
+查看已有中文字体`fc-list :lang=zh`
+
+当没有`mkfontscale/mkfontdir`命令时，需要安装`xfonts-utils`
+
+- 下载在线字体，以 Monaco 为例
 
 ```shell
 wget https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf
