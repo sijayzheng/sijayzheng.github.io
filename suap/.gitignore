@@ -1,0 +1,15 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+target
+temp
+
+#ui
+ui/node_modules/
+ui/dist/
+ui/pnpm-lock.yaml
+ui/types/
+
+#other

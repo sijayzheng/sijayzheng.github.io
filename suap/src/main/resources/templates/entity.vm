@@ -1,0 +1,114 @@
+package ${packageName}.${moduleName}.entity;
+
+import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+
+#foreach ($import in $imports)
+import ${import};
+#end
+
+/**
+ * <strong>${className}</strong>
+ * <p>
+ * ${functionName}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${createTime}
+ */
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@ExcelIgnoreUnannotated
+@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
+@Entity
+@EntityListeners(AuditingEntityListener.class)
+@Table(name = "${tableName}")
+public class ${className} implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+#set($excelSort=0)
+#foreach($field in $fields)
+    /**
+     * ${field.columnComment}
+     */
+    #if(${field.visible})
+    @JsonIgnoreProperties
+    #end
+    #if(${field.columnKey}=='PRI')
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    #end
+    #if(${field.javaType}=='String')
+    @Size(max = ${field.length}, message = "字段[${field.columnComment}]最大长度为{max}")
+    #elseif(${field.javaType}=='List'||${field.javaType}=='Map'||${field.javaType}=='Set')
+    @JdbcTypeCode(SqlTypes.JSON)
+    #end
+    #if(!${field.nullable}&&${field.columnKey}!='PRI')
+    @NotNull
+    #end
+    #if(${field.excelColumn})
+    @ExcelProperty(value = "${field.columnComment}", order = $excelSort)
+    #set($excelSort=$excelSort+1)
+    #end
+    #if(${field.columnName}=='create_by')
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @CreatedBy
+    #elseif(${field.columnName}=='create_time')
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @CreatedDate
+    #elseif(${field.columnName}=='update_by')
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @LastModifiedBy
+    #elseif(${field.columnName}=='update_time')
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @LastModifiedDate
+    #else
+    @Schema(title = "${field.columnComment}")
+    #end
+    @Column(name = "${field.columnName}"#if(${field.length}), length = ${field.length}#end#if(!${field.nullable}&&${field.columnName}!='id'), nullable = false#end)
+    private #if(${field.javaType}=='List'||${field.javaType}=='Map'||${field.javaType}=='Set')${field.javaType}<Long>#else${field.javaType}#end ${field.fieldName};
+
+#end
+#foreach($field in $fields)
+  #if(${field.queryable}&&${field.queryType}=='between')
+    /**
+     * ${field.columnComment}开始
+     */
+    private transient ${field.javaType} ${field.fieldName}Start;
+
+    /**
+     * ${field.columnComment}结束
+     */
+    private transient ${field.javaType} ${field.fieldName}End;
+
+  #end
+#end
+
+#if(${isTree})
+    /**
+     * 子节点
+     */
+    private transient List<${className}> children;
+#end
+}

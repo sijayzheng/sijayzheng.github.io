@@ -1,0 +1,116 @@
+package ${packageName}.${moduleName}.controller;
+
+import cn.sijay.suap.core.base.BaseController;
+import cn.sijay.suap.core.entity.PageQuery;
+import cn.sijay.suap.core.entity.PageResult;
+import cn.sijay.suap.core.entity.Res;
+import cn.sijay.suap.core.utils.ExcelUtil;
+import ${packageName}.${moduleName}.entity.${className};
+import ${packageName}.${moduleName}.service.I${className}Service;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
+/**
+ * <strong>${className}Controller</strong>
+ * <p>
+ * ${functionName}控制层
+ * </p>
+ *
+ * @author ${author}
+ * @since ${createTime}
+ */
+@Tag(name = "${functionName}")
+@RestController
+@RequestMapping("/${businessName}")
+@RequiredArgsConstructor
+public class ${className}Controller extends BaseController {
+    private final I${className}Service ${businessName}Service;
+#if(${isTree})
+
+    /**
+     * 查询所有记录
+     */
+    @Operation(summary = "查询所有记录")
+    @GetMapping("/listTree")
+    public Res<List<${className}>> listTree(${className} ${businessName}) {
+        return success(${businessName}Service.listTree(${businessName}));
+    }
+#else
+
+    /**
+     * 分页查询
+     */
+    @Operation(summary = "分页查询")
+    @GetMapping("/page")
+    public PageResult<${className}> page(${className} ${businessName}, PageQuery pageQuery) {
+        return toPageResult(${businessName}Service.page(${businessName}, pageQuery));
+    }
+#end
+
+    /**
+     * 根据id查询
+     */
+    @Operation(summary = "根据id查询")
+    @GetMapping("/getById")
+    public Res<${className}> getById(@RequestParam("id") Long id) {
+        return success(${businessName}Service.getById(id));
+    }
+
+    /**
+     * 保存
+     */
+    @Operation(summary = "保存")
+    @PostMapping("/save")
+    public Res<Void> save(@Validated @RequestBody ${className} ${businessName}) {
+        ${businessName}Service.save(${businessName});
+        return success();
+    }
+
+    /**
+     * 删除
+     */
+    @Operation(summary = "删除")
+    @PostMapping("/remove")
+    public Res<Void> remove(@RequestBody List<Long> ids) {
+        ${businessName}Service.remove(ids);
+        return success();
+    }
+
+#if(!${isTree})
+    /**
+     * 导入
+     */
+    @Operation(summary = "导入")
+    @PostMapping("/import")
+    public Res<Void> importData(@RequestPart("file") MultipartFile file) {
+        ${businessName}Service.importData(file);
+        return success();
+    }
+
+    /**
+     * 导出
+     */
+    @Operation(summary = "导出")
+    @PostMapping("/export")
+    public void export(HttpServletResponse response) {
+        ExcelUtil.export(${businessName}Service.list(null), "${functionName}", ${className}.class, response);
+    }
+
+    /**
+     * 下载${functionName}_模板
+     */
+    @Operation(summary = "下载${functionName}_模板")
+    @PostMapping("/downloadTemplate")
+    public void downloadTemplate(HttpServletResponse response) {
+        ExcelUtil.exportTemplate("${functionName}_模板", ${className}.class, response);
+    }
+
+#end
+}

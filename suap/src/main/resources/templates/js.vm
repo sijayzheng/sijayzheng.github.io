@@ -1,0 +1,79 @@
+/**
+ * ${functionName}后台接口
+ */
+export const ${businessName}Api = {
+  /**
+   * 根据id查询
+   */
+  getById(id) {
+    return request({
+      url: '${businessName}/getById',
+      method: 'get',
+      params: {id: id}
+    })
+  },
+#if(${isTree})
+  listTree(queryParam) {
+    return request({
+    url: '${businessName}/listTree',
+    method: 'get',
+    params: queryParam
+    })
+  },
+#else
+  /**
+   * 分页查询
+   */
+  page(queryParam) {
+    return request({
+      url: '${businessName}/page',
+      method: 'get',
+      params: queryParam
+    })
+  },
+#end
+  /**
+   * 新增或修改
+   */
+  save(data) {
+    return request({
+      url: '${businessName}/save',
+      method: 'post',
+      data: data
+    })
+  },
+  /**
+   * 删除
+   */
+  remove(data) {
+    return request({
+      url: '${businessName}/remove',
+      method: 'post',
+      data: data
+    })
+  },
+#if(!${isTree})
+  /**
+   * 下载导入模板
+   */
+  downloadTemplate() {
+    download('${businessName}/downloadTemplate', {}, '${functionName}_模板.xlsx')
+  },
+  /**
+   * 导出数据
+   */
+  exportData() {
+    download('${businessName}/export', {}, '${functionName}.xlsx')
+  },
+  /**
+   * 导入数据
+   */
+  importData(data) {
+    return request({
+      url: '${businessName}/import',
+      method: 'post',
+      data: data
+    })
+  }
+#end
+}

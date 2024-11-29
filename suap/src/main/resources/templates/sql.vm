@@ -1,0 +1,15 @@
+-- 菜单 SQL
+insert into sys_menu (parent_id, name, type, path, component, perms,icon)
+values (${menuId}, '${functionName}', 'MENU', '${businessName}', '${moduleName}/${businessName}', '${moduleName}:${businessName}:list','Folder');
+
+-- 按钮父菜单ID
+SELECT @parentId := LAST_INSERT_ID();
+
+-- 按钮 SQL
+insert into sys_menu (parent_id, name, type, perms, sort)
+values (@parentId, '${functionName}查询', 'BUTTON', '${moduleName}:${businessName}:list', 0),
+(@parentId, '${functionName}新增', 'BUTTON', '${moduleName}:${businessName}:add', 1),
+(@parentId, '${functionName}修改', 'BUTTON', '${moduleName}:${businessName}:edit', 2),
+(@parentId, '${functionName}删除', 'BUTTON', '${moduleName}:${businessName}:remove', 3)#if(!${isTree}),
+(@parentId, '${functionName}导入', 'BUTTON', '${moduleName}:${businessName}:import', 4),
+(@parentId, '${functionName}导出', 'BUTTON', '${moduleName}:${businessName}:export', 5)#end;

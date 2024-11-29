@@ -1,0 +1,39 @@
+{
+  "name": "suap",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production --emptyOutDir",
+    "changeRegistry": "pnpm config set registry https://registry.npmmirror.com",
+    "resetRegistry": "pnpm config set registry https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^11.0.3",
+    "animate.css": "^4.1.1",
+    "await-to-js": "^3.0.0",
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "element-plus": "^2.8.1",
+    "file-saver": "^2.0.5",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.2.2",
+    "unocss": "^0.62.3",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@iconify-json/ep": "^1.1.16",
+    "@iconify-json/ic": "^1.1.18",
+    "@iconify-json/svg-spinners": "^1.1.3",
+    "@types/node": "^22.5.1",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "sass": "^1.77.8",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-icons": "^0.19.2",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.2"
+  }
+}

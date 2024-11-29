@@ -1,0 +1,199 @@
+package ${packageName}.${moduleName}.service.impl;
+
+import cn.sijay.suap.core.base.BaseException;
+import cn.sijay.suap.core.constant.ExceptionConstant;
+import cn.sijay.suap.core.entity.PageQuery;
+import cn.sijay.suap.core.utils.ExcelUtil;
+import cn.sijay.suap.core.utils.ObjectUtil;
+import ${packageName}.${moduleName}.entity.${className};
+import ${packageName}.${moduleName}.repository.${className}Repository;
+import ${packageName}.${moduleName}.service.I${className}Service;
+import jakarta.persistence.criteria.Predicate;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+
+#foreach ($import in $imports)
+import ${import};
+#end
+
+/**
+ * <strong>${className}ServiceImpl</strong>
+ * <p>
+ * ${functionName}服务层实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${createTime}
+ */
+@Slf4j
+@RequiredArgsConstructor
+@Service
+public class ${className}ServiceImpl implements I${className}Service {
+    private final ${className}Repository repository;
+
+#if(${isTree})
+    /**
+     * 根据条件查询所有数据
+     */
+    @Override
+    public List<${className}> listTree(${className} ${businessName}) {
+        List<${className}> children = repository.findAll(buildSpecification(${businessName}));
+        if (children.isEmpty()) {
+            return new ArrayList<>();
+        }
+        List<${className}> all = repository.findAll();
+        Set<Long> parentIds = children.parallelStream()
+                                      .map(${className}::getId)
+                                      .collect(Collectors.toSet());
+        Set<Long> parent = getParent(parentIds, all);
+        return TreeUtil.listToTree(all.parallelStream()
+                                      .filter(item -> parent.contains(item.getId()))
+                                      .toList(),0L,${className}::getId,${className}::getParentId,${className}::setChildren);
+    }
+
+#else
+    /**
+    * 分页查询
+    */
+    @Override
+    public Page<${className}> page(${className} ${businessName}, PageQuery pageQuery) {
+        return repository.findAll(buildSpecification(${businessName}), pageQuery.build());
+    }
+
+#end
+    /**
+     * 根据条件查询所有数据
+     */
+    @Override
+    public List<${className}> list(${className} ${businessName}) {
+        return repository.findAll(buildSpecification(${businessName}));
+    }
+
+    /**
+     * 根据id查询数据
+     */
+    @Override
+    public ${className} getById(Long id) {
+        return repository.getReferenceById(id);
+    }
+
+    /**
+     * 保存，数据库中存在对应主键值时更新，否则新增
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void save(${className} ${businessName}) {
+#if(${unique})
+        checkUnique(${businessName});
+#end
+        repository.save(${businessName});
+    }
+
+    /**
+    * 删除
+    */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void remove(List<Long> ids) {
+#if(${isTree})
+        if (repository.existsByParentIdIn(ids)) {
+            throw new BaseException(ExceptionConstant.HAS_CHILDREN, ids);
+        }
+#end
+        repository.deleteAllByIdInBatch(ids);
+    }
+#if(!${isTree})
+
+    /**
+     * 导入
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void importData(MultipartFile file) {
+        repository.saveAll(ExcelUtil.read(file, ${className}.class));
+    }
+#end
+#if(${unique})
+
+    /**
+     * 唯一性校验
+     */
+    private void checkUnique(${className} ${businessName}) {
+    #set($pkName=${primaryKey.fieldName.substring(0,1).toUpperCase()} + ${primaryKey.fieldName.substring(1)})
+    #foreach($field in $fields)
+        #if(${field.columnKey} == 'UNI')
+            #set($upperName=${field.fieldName.substring(0,1).toUpperCase()} + ${field.fieldName.substring(1)})
+        if (repository.existsBy${upperName}(${businessName}.get${upperName}()) && !repository.existsBy${upperName}And${pkName}(${businessName}.get${upperName}(), ${businessName}.get${pkName}())) {
+            throw new BaseException(ExceptionConstant.VALIDATE_UNIQUE_ERROR, "${field.fieldName}", ${businessName}.get${upperName}());
+        }
+        #end
+    #end
+    }
+#end
+
+    private Specification<${className}> buildSpecification(${className} ${businessName}) {
+        if (${businessName} == null) {
+            return null;
+        }
+        return (root, query, builder) -> {
+            List<Predicate> list = new ArrayList<>();
+#foreach($field in $fields)
+  #if(${field.queryable})
+    #set($upperName=${field.fieldName.substring(0,1).toUpperCase()}+${field.fieldName.substring(1)})
+      #if(${field.queryType}=="between")
+            if (ObjectUtil.isNotNull(${businessName}.get${upperName}Start())&& ObjectUtil.isNotNull(${businessName}.get${upperName}End())) {
+      #else
+            if (ObjectUtil.isNotNull(${businessName}.get${upperName}())) {
+      #end
+      #if(${field.queryType}=="like")
+                list.add(builder.like(root.get("${field.fieldName}"), "%" + ${businessName}.get${upperName}() + "%"));
+      #elseif(${field.queryType}=="equal")
+                list.add(builder.equal(root.get("${field.fieldName}"), ${businessName}.get${upperName}()));
+      #elseif(${field.queryType}=="greater_than")
+                list.add(builder.greaterThan(root.get("${field.fieldName}"), ${businessName}.get${upperName}()));
+      #elseif(${field.queryType}=="greater_or_equal")
+                list.add(builder.greaterThanOrEqualTo(root.get("${field.fieldName}"), ${businessName}.get${upperName}()));
+      #elseif(${field.queryType}=="less_than")
+                list.add(builder.lessThan(root.get("${field.fieldName}"), ${businessName}.get${upperName}()));
+      #elseif(${field.queryType}=="less_or_equal")
+                list.add(builder.lessThanOrEqualTo(root.get("${field.fieldName}"), ${businessName}.get${upperName}()));
+      #elseif(${field.queryType}=="between")
+                list.add(builder.between(root.get("${field.fieldName}"), ${businessName}.get${upperName}Start(), ${businessName}.get${upperName}End()));
+      #elseif(${field.queryType}=="in")
+                list.add(root.get("${field.fieldName}").in(${businessName}.get${upperName}()));
+      #end
+            }
+  #end
+#end
+            return builder.and(list.toArray(Predicate[]::new));
+        };
+    }
+
+#if(${isTree})
+    private Set<Long> getParent(Set<Long> parentIds, List<${className}> all) {
+        Set<Long> parent = new HashSet<>(parentIds);
+        if (!parentIds.isEmpty()) {
+            Set<Long> pIds = all.parallelStream()
+                                .filter(item -> parentIds.contains(item.getId()))
+                                .map(${className}::getParentId)
+                                .filter(parentId -> parentId > 0L)
+                                .collect(Collectors.toSet());
+            parent.addAll(pIds);
+            Set<Long> parentSet = getParent(pIds, all);
+            parent.addAll(parentSet);
+        }
+        return parent;
+    }
+
+#end
+}
