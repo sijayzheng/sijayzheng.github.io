@@ -1,0 +1,45 @@
+package sijay.zheng.leetcode.medium;
+/**
+ 题目1080：从上到下打印二叉树
+<p>从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</p>
+
+<p></p>
+
+<p>例如:<br>
+给定二叉树:<code>[3,9,20,null,null,15,7]</code>,</p>
+
+<pre>    3
+   / \
+  9  20
+    /  \
+   15   7
+</pre>
+
+<p>返回：</p>
+
+<pre>[3,9,20,15,7]
+</pre>
+
+<p></p>
+
+<p><strong>提示：</strong></p>
+
+<ol>
+	<li><code>节点总数 &lt;= 1000</code></li>
+</ol>
+
+*/
+ class Q1080 {public static void main(String[] args) {Solution solution=new Solution();}
+//Definition for a binary tree node.
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+}
+ static class Solution {
+    public int[] levelOrder(TreeNode root) {
+
+    }
+}
+}

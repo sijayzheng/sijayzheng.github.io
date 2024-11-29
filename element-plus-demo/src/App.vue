@@ -24,7 +24,7 @@
   <!--    Cascader 级联选择器-->
   <!--    Checkbox 多选框-->
   <!--    Color Picker 取色器-->
-  <!--    Date Picker 日期选择器-->
+     <!-- Date Picker 日期选择器 -->
   <!--    DateTime Picker 日期时间选择器-->
   <!--    Form 表单-->
   <!--    Input 输入框-->
@@ -102,10 +102,10 @@
 
   <!--  </div>-->
 
-  <!--  <date-range-pick></date-range-pick>-->
+   <date-range-pick></date-range-pick>
   <!--  <tree-table></tree-table>-->
   <!--  <TreeSelect></TreeSelect>-->
-  <Tree></Tree>
+  <!-- <Tree></Tree> -->
 </template>
 
 <script name="App" setup>

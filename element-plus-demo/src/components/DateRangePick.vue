@@ -1,76 +1,47 @@
 <template>
-  <el-radio-group v-model="size" aria-label="size control">
-    <el-radio-button value="large">large</el-radio-button>
-    <el-radio-button value="default">default</el-radio-button>
-    <el-radio-button value="small">small</el-radio-button>
-  </el-radio-group>
   <div class="demo-date-picker">
-    <div class="block">
-      <span class="demonstration">Default</span>
-      <el-date-picker
-          v-model="value1"
-          :disabled-date=" (date) => date >= new Date()"
-          :size="size"
-          end-placeholder="End date"
-          range-separator="To"
-          start-placeholder="Start date"
-          type="daterange"
-      />
+    <div class="container">
+      <div class="block">
+        <span class="demonstration">Week--{{ value1 }}</span>
+        <el-date-picker v-model="value1" type="week" format="[Week] ww" placeholder="Pick a week" />
+      </div>
+      <div class="block">
+        <span class="demonstration">Dates--{{ value2 }}</span>
+        <el-date-picker v-model="value2" type="dates" placeholder="Pick one or more dates" />
+      </div>
     </div>
-    <div class="block">
-      <span class="demonstration">With quick options</span>
-      <el-date-picker
-          v-model="value2"
-          :shortcuts="shortcuts"
-          :size="size"
-          end-placeholder="End date"
-          range-separator="To"
-          start-placeholder="Start date"
-          type="daterange"
-          unlink-panels
-      />
+    <div class="container">
+      <div class="block">
+        <span class="demonstration">Year--{{ value3 }}</span>
+        <el-date-picker v-model="value3" type="year" value-format="YYYY" placeholder="Pick a year" />
+      </div>
+      <div class="block">
+        <span class="demonstration">Years--{{ value4 }}</span>
+        <el-date-picker v-model="value4" type="years" placeholder="Pick one or more years" />
+      </div>
+    </div>
+    <div class="container">
+      <div class="block">
+        <span class="demonstration">Month--{{ value5 }}</span>
+        <el-date-picker v-model="value5" type="month" placeholder="Pick a month" />
+      </div>
+      <div class="block">
+        <span class="demonstration">Months--{{ value6 }}</span>
+        <el-date-picker v-model="value6" type="months" placeholder="Pick one or more months" />
+      </div>
     </div>
   </div>
 </template>
+<script setup>
+import { ref } from 'vue'
 
-<script name="DateRangePick" setup>
-const size = ref('default')
 const value1 = ref('')
 const value2 = ref('')
-
-const shortcuts = [
-  {
-    text: 'Last week',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-      return [start, end]
-    },
-  },
-  {
-    text: 'Last month',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
-      return [start, end]
-    },
-  },
-  {
-    text: 'Last 3 months',
-    value: () => {
-      const end = new Date()
-      const start = new Date()
-      start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
-      return [start, end]
-    },
-  },
-]
-const isDisabled = (date) => date >= new Date()
-
+const value3 = ref('')
+const value4 = ref('')
+const value5 = ref('')
+const value6 = ref('')
 </script>
-
 <style scoped>
 .demo-date-picker {
   display: flex;
@@ -90,6 +61,23 @@ const isDisabled = (date) => date >= new Date()
   border-right: none;
 }
 
+.demo-date-picker .container {
+  flex: 1;
+  border-right: solid 1px var(--el-border-color);
+}
+
+.demo-date-picker .container .block {
+  border-right: none;
+}
+
+.demo-date-picker .container .block:last-child {
+  border-top: solid 1px var(--el-border-color);
+}
+
+.demo-date-picker .container:last-child {
+  border-right: none;
+}
+
 .demo-date-picker .demonstration {
   display: block;
   color: var(--el-text-color-secondary);
@@ -97,4 +85,3 @@ const isDisabled = (date) => date >= new Date()
   margin-bottom: 20px;
 }
 </style>
-
