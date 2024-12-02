@@ -353,3 +353,9 @@ server {
 ## Lvs
 
 ## Lua
+
+## Error
+
+### 500 internal Server Error
+
+- location下地址错误
