@@ -1,0 +1,10 @@
+@use "variables.module";
+/* 只需要重写你需要的即可 */
+/*'element-plus/theme-chalk/dark/css-vars.css'*/
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': variables.$color-primary,
+    ),
+  ),
+);

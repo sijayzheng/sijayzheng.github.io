@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <meta content="webkit" name="renderer" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <link href="/favicon.ico" rel="icon" />
+  <title>BUN开发平台</title>
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 6px solid #30b08f;
+      animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+    }
+
+    @keyframes l20-1 {
+      0% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+      }
+      12.5% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+      }
+      25% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+      }
+      50% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+      }
+      62.5% {
+        clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+      }
+      75% {
+        clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+      }
+      100% {
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+      }
+    }
+
+    @keyframes l20-2 {
+      0% {
+        transform: scaleY(1) rotate(0deg);
+      }
+      49.99% {
+        transform: scaleY(1) rotate(135deg);
+      }
+      50% {
+        transform: scaleY(-1) rotate(0deg);
+      }
+      100% {
+        transform: scaleY(-1) rotate(-135deg);
+      }
+    }
+
+    .loader-title {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+<div id="app">
+  <div id="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-title">加载中▪▫▪▫▪▫</div>
+  </div>
+</div>
+<script src="/src/main.ts" type="module"></script>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+{
+  "name": "BUN",
+  "description": "Develop Platforms",
+  "version": "1.0.0",
+  "author": "Sijay",
+  "license": "LGPL-2.1-only",
+  "type": "module",
+  "scripts": {
+    "dev": "vite serve --mode dev",
+    "build": "vue-tsc -b && vite build --mode prod"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^12.0.0",
+    "await-to-js": "^3.0.0",
+    "axios": "^1.7.8",
+    "crypto-js": "^4.2.0",
+    "dayjs": "^1.11.13",
+    "element-plus": "^2.9.0",
+    "file-saver": "^2.0.5",
+    "jsencrypt": "^3.3.2",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.2.8",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue-types": "^5.1.3",
+    "vue3-clipboard": "^1.0.0",
+    "vxe-table": "^4.6.25"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^22.10.1",
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "prettier": "^3.4.1",
+    "sass": "^1.81.0",
+    "typescript": "~5.7.2",
+    "unplugin-auto-import": "^0.18.6",
+    "unplugin-icons": "^0.20.2",
+    "unplugin-vue-components": "^0.27.5",
+    "vite": "^6.0.2",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-tsc": "^2.1.10"
+  }
+}
