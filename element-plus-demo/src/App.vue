@@ -1,7 +1,4 @@
 <template>
-  <el-row>
-
-  </el-row>
   <!--  <div>-->
   <!--    <h1>Basic 基础组件</h1>-->
 
@@ -102,13 +99,48 @@
 
   <!--  </div>-->
 
-   <date-range-pick></date-range-pick>
+   <!-- <date-range-pick></date-range-pick> -->
   <!--  <tree-table></tree-table>-->
   <!--  <TreeSelect></TreeSelect>-->
   <!-- <Tree></Tree> -->
+  <el-tree
+    style="max-width: 600px"
+    :data="data"
+    show-checkbox
+    default-expand-all
+  />
 </template>
 
 <script name="App" setup>
 
-import Tree from './components/tree.vue'
+import { ref, watch } from 'vue'
+const data = [
+  {
+    id: 1,
+    label: 'Level one 1'
+  },
+       { id: 3,
+        label: 'Level two 2-1'},
+          {
+            id: 4,
+            label: 'Level three 3-1-1',
+          },
+          {
+            id: 5,
+            label: 'Level three 3-1-2',
+          },
+      {
+        id: 2,
+        label: 'Level two 2-2',
+      },
+          {
+            id: 6,
+            label: 'Level three 3-2-1',
+          },
+          {
+            id: 7,
+            label: 'Level three 3-2-2',
+          },
+  
+]
 </script>
