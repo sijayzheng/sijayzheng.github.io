@@ -1,4 +1,4 @@
-package cn.sijay.utils;
+package cn.sijay.demos.util;
 
 import com.itextpdf.awt.geom.Rectangle2D;
 import com.itextpdf.text.DocumentException;

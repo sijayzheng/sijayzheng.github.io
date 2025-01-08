@@ -1,4 +1,4 @@
-package cn.sijay.utils;
+package cn.sijay.demos.util;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
@@ -18,7 +18,8 @@ public class ExcelUtil {
         for (int i = 0; i < 12; i++) {
             String fileName = "C:\\Users\\sijay\\Desktop\\经营指标统计表.xlsx";
             try (ExcelReader excelReader = EasyExcel.read(fileName).build()) {
-                ReadSheet readSheet1 = EasyExcel.readSheet(i).head(DemoData.class).registerReadListener(new DemoDataListener(i)).build();
+                ReadSheet readSheet1 = EasyExcel.readSheet(i).head(DemoData.class).registerReadListener(new DemoDataListener(i))
+                                                .build();
                 excelReader.read(readSheet1);
             }
         }

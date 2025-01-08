@@ -1,10 +1,12 @@
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+const name = ref(1)
+</script>
+
 <template>
-  $END$
 </template>
 
-<script  lang="ts" setup>
-
-</script>
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 
 </style>

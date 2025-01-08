@@ -1,4 +1,4 @@
-package cn.sijay.utils;
+package cn.sijay.demos.util;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
