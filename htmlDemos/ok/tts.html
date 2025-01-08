@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  if (window.speechSynthesis) {
+    let v = window.speechSynthesis.getVoices()
+    console.log(v)
+  }
+
+  //文字转语音合成方法
+  function tts(text) {
+    text = text.replace(/\(%\):/gm, '百分之').replace(/\(%\)/gm, '百分之').replace(/\|/gm, '；').replace(/:\//gm, '盘') //播报信息处理
+    console.log(text)
+    if ('speechSynthesis' in window) {
+      const msg = new SpeechSynthesisUtterance()
+      const voices = window.speechSynthesis.getVoices()
+      msg.voice = voices[0]
+      if (msg.voice.lang !== 'zh-CN') { //语言种类
+        for (let n of voices) {
+          if (n.lang === 'zh-CN') {
+            msg.voice = n
+            return false
+          }
+        }
+      }
+      msg.rate = 1 //语速
+      msg.pitch = 1 //语调
+      msg.text = text
+      speechSynthesis.speak(msg)
+    } else {
+      alert('你的浏览器不支持语音合成')
+    }
+  }
+
+  tts(':D  :)')
+</script>
+</body>
+</html>
