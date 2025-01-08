@@ -1,0 +1,156 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/***
+ */
+*{font-size:9pt;border:0;margin:0;padding:0;}
+body{font-family:'微软雅黑'; margin:0 auto;min-width:980px;}
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style: none;}
+img{border:0;}
+dl,dt,dd,span{margin:0;padding:0;display:block;}
+a,a:focus{text-decoration:none;color:#6AC5FE;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#00a4ac;text-decoration:none;}
+table{border-collapse:collapse;border-spacing: 0;}
+cite{font-style:normal;}
+h2{font-weight:normal;}
+
+
+
+
+/*left.html*/
+.lefttop{background:url(/WPMP/images/loginimages/lefttop.gif) repeat-x;height:40px;color:#fff;font-size:14px;line-height:40px;}
+.lefttop span{margin-left:8px; margin-top:10px;margin-right:8px; background:url(/hwms/images/loginimages/leftico.png) no-repeat; width:20px; height:21px;float:left;}
+.leftmenu{width:187px;padding-bottom: 9999px;margin-bottom: -9999px; overflow:hidden; background:url(/hwms/images/loginimages/leftline.gif) repeat-y right;}
+.leftmenu dd{background:url(/WPMP/images/loginimages/leftmenubg.gif) repeat-x;line-height:35px;font-weight:bold;font-size:14px;border-right:solid 1px #b7d5df;}
+.leftmenu dd span{float:left;margin:10px 8px 0 12px;}
+.leftmenu dd .menuson{display:none;}
+.leftmenu dd:first-child .menuson{display:block;}
+.menuson {line-height:40px; font-weight:normal; }
+.menuson li{cursor:pointer;}
+.menuson li.active{position:relative; background:#244871; line-height:40px; color:#6AC5FE;}
+.menuson li cite{display:block; float:left; margin-left:32px; background:url(/WPMP/images/loginimages/list.gif) no-repeat; width:16px; height:16px; margin-top:15px;}
+.menuson li a{ display:block; *display:inline; *padding-top:5px;}
+.menuson li.active a{color:#6AC5FE;}
+.title{cursor:pointer;}
+
+
+
+/*form*/
+.formbody{padding:10px 18px;}
+.formtitle{border-bottom:solid 1px #d0dee5; line-height:35px; position:relative; height:35px; margin-bottom:28px;}
+.formtitle span{font-weight:bold;font-size:14px; border-bottom:solid 3px #66c9f3;float:left; position:absolute; z-index:100; bottom:-1px; padding:0 3px; height:30px; line-height:30px;}
+.forminfo{padding-left:23px;}
+.forminfo li{margin-bottom:13px; clear:both;}
+.forminfo li label{width:86px;line-height:34px; display:block; float:left;}
+.forminfo li i{color:#7f7f7f; padding-left:20px; font-style:normal;}
+.forminfo li cite{display:block; padding-top:10px;}
+.dfinput{ height:28px; line-height:28px; border-top:solid 1px #183C66; border-left:solid 1px #183C66; border-right:solid 1px #183C66; border-bottom:solid 1px #183C66; background:url(/ITAM/images/loginimages/inputbg.gif) repeat-x; text-indent:10px;}
+.textinput{border-top:solid 1px #183C66; border-left:solid 1px #183C66; border-right:solid 1px #183C66; border-bottom:solid 1px #183C66; background:#183C66; padding:10px;  line-height:20px; overflow:hidden;}
+.btn{width:137px;height:35px; background:url(/ITAM/images/loginimages/btnbg.png) no-repeat; font-size:14px;font-weight:bold;color:#fff; cursor:pointer;}
+
+
+/*tip*/
+.tip{width:485px; height:260px; position:absolute;top:10%; left:30%;background:#fcfdfd;box-shadow:1px 8px 10px 1px #9b9b9b;border-radius:1px;behavior:url(js/pie.htc); display:none; z-index:111111;}
+.tiptop{height:40px; line-height:40px; background:url(/ITAM/images/loginimages/tcbg.gif)  repeat-x; cursor:pointer;}
+.tiptop span{font-size:14px; font-weight:bold; color:#fff;float:left; text-indent:20px;}
+.tiptop a{display:block; background:url(/ITAM/images/loginimages/close.png) no-repeat; width:22px; height:22px;float:right;margin-right:7px; margin-top:10px; cursor:pointer;}
+.tiptop a:hover{background:url(/ITAM/images/loginimages/close1.png) no-repeat;}
+.tipinfo{padding-top:30px;margin-left:65px; height:95px;}
+.tipinfo span{width:95px; height:95px;float:left;}
+.tipright{float:left;padding-top:15px; padding-left:10px;}
+.tipright p{font-size:14px; font-weight:bold; line-height:35px;}
+.tipright cite{color:#858686;}
+.tipbtn{margin-top:25px; margin-left:125px;}
+.sure ,.cancel{width:96px; height:35px; line-height:35px; color:#fff; background:url(/ITAM/images/loginimages/btnbg1.png) repeat-x; font-size:14px; font-weight:bold;border-radius: 3px; cursor:pointer;}
+.cancel{background:url(/ITAM/images/loginimages/btnbg2.png) repeat-x;color:#000;font-weight:normal;}
+
+/*tools*/
+.toolsli{clear:both; overflow:hidden; margin-bottom:20px;}
+.toollist{margin-left:50px; overflow:hidden; float:left;}
+.toollist li{width:96px; text-align:center; float:left; margin-right:82px;}
+.toollist li a{width:95px; height:95px; background:#fafbfb; border-right:solid 1px #dbdbdb;border-bottom:solid 1px #dbdbdb; display:block;}
+.toollist li a:hover{background:#eef4f7;border-right:solid 1px #d0d5d7;border-bottom:solid 1px #d0d5d7;}
+.toollist li h2{line-height:45px;}
+.tooladd{margin-top:25px; width:20px; height:20px; float:left; display:block;}
+.tooladd1{margin-top:15px; width:20px; height:20px; float:left; display:block;}
+.tooladd2{margin-top:5px; width:20px; height:15px; float:left; display:block;}
+/*error 404
+.error{background:url(/ITAM/images/loginimages/404.png) no-repeat; width:490px; margin-top:75px;padding-top:65px;}
+.error h2{font-size:22px; padding-left:154px;}
+.error p{padding-left:154px; line-height:35px;color:#717678;}
+.reindex{padding-left:154px;}
+.reindex a{width:115px; height:35px; font-size:14px; font-weight:bold; color:#fff; background:#3c95c8; display:block; line-height:35px; text-align:center;border-radius: 3px; behavior:url(js/pie.htc);margin-top:20px;}
+*/
+/*computer*/
+.comtitle{padding:20px; clear:both;}
+.comtitle span{width:10px;height:10px; background:url(/ITAM/images/loginimages/clist.png) no-repeat; float:left; background:#fff; padding-top:3px;}
+.comtitle h2{font-size:14px; display:block; float:left;color:#2a3e93; background:#fff; padding-left:5px; padding-right:8px;}
+.rline{border-bottom:solid 1px #e5ecf0; height:10px; margin-left:50px;}
+.disklist{padding-left:20px; padding-right:20px;}
+.disklist li{width:275px;_width:270px;float:left; margin-right:10px;px;height:70px; cursor:pointer; margin-bottom:5px;border:solid 1px #fff;}
+.disklist li a{color:#000;}
+.disklist li:hover{background:#fcfcfc; border:solid 1px #e5ecf0;}
+.dleft{background:url(/ITAM/images/loginimages/c02.png) no-repeat; height:50px; margin-left:12px; float:left; width:50px; margin-top:15px;}
+.dleft1{background:url(/ITAM/images/loginimages/c01.png) no-repeat; height:50px; margin-left:12px; float:left; width:50px; margin-top:15px;}
+.dleft2{background:url(/ITAM/images/loginimages/c03.png) no-repeat; height:50px; margin-left:12px; float:left; width:50px; margin-top:15px;}
+.dright{float:left; margin-left:10px; margin-top:5px;}
+.dright h3{font-weight:normal; padding-top:15px;}
+.dright p{color:#949494;}
+.dinfo{width:189px;height:15px; background:url(/ITAM/images/loginimages/diskbg.png) no-repeat; margin-top:5px; margin-bottom:5px;}
+.dinfo span{background:url(/ITAM/images/loginimages/cbg.png) repeat-x; height:15px;}
+.filetable{width:100%;}
+.filetable thead tr{background:#f5f9fb; line-height:35px;}
+.filetable thead tr th{text-align:left; text-indent:15px;font-weight:normal;color:#597190;}
+.filetable tbody tr td{text-indent:15px; line-height:23px;}
+.filetable tbody tr td img {margin-right:5px;}
+.tdlast{text-align:right;}
+.filetable tbody tr:hover{background:#f5f8fa; cursor:pointer;}
+
+/*imglist*/
+.imglist{clear:both; overflow:hidden; margin-bottom:20px; margin-left:5px;}
+.imglist li{width:188px; border:solid 1px #fff;height:199px;float:left; margin-right:8px; margin-bottom:10px; cursor:pointer;}
+.imglist li:hover{border:solid 1px #d7e4ea;}
+.imglist li span{width:168px; height:126px; margin:8px;}
+.imglist li h2{text-align:center; line-height:25px;}
+.imglist li p{text-align:center; line-height:17px; background:url(/ITAM/images/loginimages/line1.png) center center no-repeat;}
+.imglist li p a{color:#1f7cb6;}
+.imglist li p a:hover{color:#F60;}
+
+/*imgtable*/
+.imgtable{width:100%;border:solid 1px #cbcbcb; }
+.imgtable th{background:url(/ITAM/images/loginimages/th.gif) repeat-x; height:34px; line-height:34px; border-bottom:solid 1px #b6cad2; text-indent:21px; text-align:left;}
+.imgtable td{line-height:20px; text-indent:21px; border-right: dotted 1px #c7c7c7;}
+.imgtable td img{margin:10px 20px 10px 0;}
+.imgtable td p{color:#919191;}
+.imgtable td i{font-style:normal; color:#ea2020;}
+.imgtd{text-indent:0;}
+.imgtable tbody tr.odd{background:#f5f8fa;}
+.imgtable tbody tr:hover{background:#e5ebee;}
+
+/*tab*/
+.itab{height:36px; border-bottom:solid 1px #d0dee5; position:relative; border-left:solid 1px #d3dbde;}
+.itab ul li{float:left;height:37px; line-height:37px; background:url(/ITAM/images/loginimages/itabbg.png) repeat-x; border-right:solid 1px #d3dbde;}
+.itab ul li a{font-size:14px; color:#000; padding-left:25px; padding-right:25px;}
+.itab ul li a.selected{ height:37px; display:block; background:url(/ITAM/images/loginimages/itabbg1.png) repeat-x; font-weight:bold;}
+.tabson{margin:18px 0px;}
+.formtext{height:45px; padding-left:25px; line-height:20px; color:#848383;}
+.formtext b{color:#d70101;}
+.forminfo b{padding-left:3px;}
+
+/*class*/
+.classlist li{float:left;margin-right:10px;margin-bottom:10px;padding:12px;border:1px solid #ebebeb; background:#fcfcfc;}
+.classlist li:hover{border:1px solid #3eafe0; cursor:pointer;}
+.classlist li span{float:left;margin-right:18px;border:3px solid #fff;}
+.classlist li .lright{float:left;width:150px;}
+.classlist li .lright h2{font-size:12px; font-weight:bold;line-height:30px;}
+.classlist li .lright p{line-height:20px;}
+.enter{display:block;margin-top:5px;width:94px;height:30px;color:#fff;background:#3eafe0;font-weight:bold; border-radius:2px; text-align:center;line-height:30px; cursor:pointer;}
+.enter:hover{color:#fff; background:#d98c1d;}
+.clear{clear:both;}
+
+/*seachform*/
+.seachform{ height:42px;}
+.seachform li{float:left; margin-right:15px;}
+.seachform li label{padding-right:10px; float:left; line-height:32px;}
+.scinput{width:150px; height:32px; line-height:32px; border-top:solid 1px #183C66; border-left:solid 1px #183C66; border-right:solid 1px #183C66; border-bottom:solid 1px #183C66; background:#183C66; text-indent:10px;}
+.scbtn{width:85px;height:35px; background:red; font-size:14px;font-weight:bold;color:#fff; cursor:pointer;border-radius:3px; behavior:url(js/pie.htc);}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				setInterval(function(){
+					$('span#a').fadeToggle();
+				},500);
+				setInterval(time,1000);
+				function time(){
+					var date = new Date(); 
+					var hour = date.getHours();
+					var min = date.getMinutes();
+					var sec = date.getSeconds();
+					min = addZero(min);
+					sec = addZero(sec);
+					$('span#h').text(hour);
+					$('span#m').text(min);
+					$('span#s').text(sec);
+					function addZero(x) {
+					if(x < 10) {
+						x = '0' + x;
+						return x;
+					}
+					return x;
+				}
+				}
+			});
+		</script>
+		<style type="text/css">
+			td{
+				width: 6px;
+				text-align: center;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table cellspacing="" cellpadding="">
+			<tr>
+				<td><span id="h"></span></td><!-- h -->
+				<td><span id="a">:</span></td>
+				<td><span id="m"></span></td><!-- m -->
+				<td><span id="a">:</span></td>
+				<td><span id="s"></span></td><!-- s -->
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="echarts4.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<div id="cc" style="height:340px;width:340px;"></div>
+		<script type="text/javascript">
+			console.log(echarts.version);
+			var myChart = echarts.init(document.getElementById('cc'));
+			myChart.setOption({
+				color: ['#FD987C', '#6BE5B2', '#FDCB6C', '#5DB8FD', "#6BE5B2"], // 饼图颜色
+				title: {
+					text: '关注监控项\n\n状态比例',
+					subtext: '',
+					x: 'center',
+					y: '45%',
+					textStyle: {
+						fontWeight: 'bold',
+						fontSize: 14
+					}
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+
+				toolbox: {
+					show: false
+				},
+				calculable: false,
+				series: [{
+					name: '占比',
+					type: 'pie',
+					radius: ['50%', '70%'], // 设置环形的空间大小
+					label: {
+						show: false,
+						position: "center"
+					},
+					labelLine: {
+						show: false
+					},
+					emphasis: {
+						label: {
+							show: true,
+							position: 'center',
+							textStyle: {
+								fontSize: '36',
+								fontWeight: 'bold'
+							}
+						}
+					},
+					data: [{
+							name: "报警",
+							value: 3
+						},
+						{
+							name: "正常",
+							value: 5
+						},
+						{
+							name: "预警",
+							value: 0
+						},
+						{
+							name: "其他",
+							value: 2
+						},
+					]
+				}]
+			});
+		</script>
+	</body>
+</html>

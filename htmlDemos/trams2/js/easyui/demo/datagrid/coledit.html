@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Cell Editing in DataGrid - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+
+	<body>
+		<button onclick="sl()">select</button>
+		<script type="text/javascript">
+			function sl() {
+				var data = $('#dg').datagrid('getSelections');
+				$.each(data, function(i, n) {
+					console.log(n);
+				});
+			}
+		</script>
+		<table id="dg" style="width:500px;height:auto">
+			<thead>
+				<tr>
+					<th data-options="field:'ck',checkbox:true"></th>
+					<th data-options="field:'displayname',width:200,editor:'text'">name</th>
+					<th data-options="field:'ipaddress',width:140,editor:'text'">ip</th>
+					<th data-options="field:'nodetype',width:130,editor:'text'">ip</th>
+				</tr>
+			</thead>
+		</table>
+
+		<script type="text/javascript">
+			$.extend($.fn.datagrid.methods, {
+				editCell: function(jq, param) {
+					return jq.each(function() {
+						var opts = $(this).datagrid('options');
+						var fields = $(this).datagrid('getColumnFields', true).concat($(this).datagrid('getColumnFields'));
+						for(var i = 0; i < fields.length; i++) {
+							var col = $(this).datagrid('getColumnOption', fields[i]);
+							col.editor1 = col.editor;
+							if(fields[i] != param.field) {
+								col.editor = null;
+							}
+						}
+						$(this).datagrid('beginEdit', param.index);
+						for(var i = 0; i < fields.length; i++) {
+							var col = $(this).datagrid('getColumnOption', fields[i]);
+							col.editor = col.editor1;
+						}
+					});
+				}
+			});
+
+			var editIndex = undefined;
+
+			$(function() {
+				$('#dg').datagrid().datagrid('enableCellEditing');
+				var d = '[{"displayname":"WIN-R4ZFVD7QDY9","ipaddress":"192.168.32.7","nodetype":"计算机"},{		"displayname":"H3C","ipaddress":"192.168.32.1","nodetype":"路由交换机"},{"displayname":"cisco2600","ipaddress":"192.168.32.13","nodetype":"CISCOC2600"},{"displayname":"SKY-20180908NZZ","ipaddress":"192.168.32.136","nodetype":"计算机"},{"displayname":"asdfasdf","ipaddress":"192.168.32.113","nodetype":"计算机"}]';
+
+				$('#dg').datagrid('loadData', JSON.parse(d));
+			})
+		</script>
+	</body>
+
+</html>

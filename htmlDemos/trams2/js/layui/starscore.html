@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8">
+		<title>layui</title>
+		<link rel="stylesheet" type="text/css" href="css/layui.css" />
+		<script src="layui.all.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div id="test1"></div>
+		<script>
+			layui.use(['rate'], function() {
+				var rate = layui.rate;
+				//基础效果
+				rate.render({
+					elem: '#test1',
+					choose: function(value) {
+						console.log(value)
+					}
+				})
+			});
+		</script>
+
+	</body>
+
+</html>

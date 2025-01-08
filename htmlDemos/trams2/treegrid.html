@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/easyui_old.css" type="text/css" id="indexcssfile2" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<table id="tt" class="easyui-treegrid" data-options="
+				idField: 'id',
+				treeField: 'name',
+				height:'500px'
+			">
+			<thead>
+				<tr>
+					<th data-options="field:'id'">id</th>
+					<th data-options="field:'name'">name</th>
+					<th data-options="field:'handler'">begin</th>
+				</tr>
+			</thead>
+		</table>
+		<script type="text/javascript">
+			$(function(){
+				var data = {
+					"total": 1,
+					"rows": [{
+						"id": "M000005",
+						"name": "检测设备",
+						"handler": "系统管理员"
+					}]
+				};
+				$('#tt').datagrid('loadData', data);
+			})
+		</script>
+	</body>
+</html>

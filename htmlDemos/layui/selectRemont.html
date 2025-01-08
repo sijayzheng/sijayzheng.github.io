@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="js/layui/css/layui.css" media="all">
+		<script src="js/layui/layui.js" charset="utf-8"></script>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form class="layui-form layui-form-pane1" action="" lay-filter="first">
+			<select id="like" name="like" lay-filter="like">
+
+			</select>
+		</form>
+
+		<script type="text/javascript">
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+				$.ajax({
+					url: 'selectdata.json',
+					type: 'get',
+					dataType: 'json',
+					success: function(res) {
+						let html = ''
+						$(res).each((i, n) => {
+							html += '<option value="' + n.id + '">' + n.name + '</option>'
+						})
+						$('#like').html(html)
+						form.render('select');
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

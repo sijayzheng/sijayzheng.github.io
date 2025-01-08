@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aligning Columns in DataGrid - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<table id="dg" style="display: none;">
+		</table>
+		<script type="text/javascript">
+			$(function() {
+				$('#dg').show()
+				$('#dg').datagrid({
+					columns: [
+						[{
+								field: '0',
+								title: '时间',
+								width: '30%'
+							},
+							{
+								field: '1',
+								title: '数据',
+								width: '70%'
+							}
+						]
+					],
+					data: [
+						["00:08:18", "C:/"],
+						["00:08:18", "D:/"],
+						["00:08:18", "total"],
+						["01:08:19", "C:/"],
+						["01:08:19", "D:/"],
+						["01:08:19", "total"],
+						["02:08:20", "C:/"],
+						["02:08:20", "D:/"],
+						["02:08:20", "total"],
+						["03:08:20", "C:/"],
+						["03:08:20", "D:/"],
+						["03:08:20", "total"],
+						["04:08:22", "C:/"],
+						["04:08:22", "D:/"],
+						["04:08:22", "total"],
+						["05:08:23", "C:/"],
+						["05:08:23", "D:/"],
+						["05:08:23", "total"],
+						["06:08:23", "C:/"],
+						["06:08:23", "D:/"],
+						["06:08:23", "total"],
+						["07:08:24", "C:/"],
+						["07:08:24", "D:/"],
+						["07:08:24", "total"],
+						["08:08:25", "C:/"],
+						["08:08:25", "D:/"],
+						["08:08:25", "total"],
+						["09:08:26", "C:/"],
+						["09:08:26", "D:/"],
+						["09:08:26", "total"],
+						["10:08:27", "C:/"],
+						["10:08:27", "D:/"],
+						["10:08:27", "total"],
+						["11:08:27", "C:/"],
+						["11:08:27", "D:/"],
+						["11:08:27", "total"],
+						["12:08:29", "C:/"],
+						["12:08:29", "D:/"],
+						["12:08:29", "total"],
+						["13:08:29", "C:/"],
+						["13:08:29", "D:/"],
+						["13:08:29", "total"],
+						["14:08:30", "C:/"],
+						["14:08:30", "D:/"],
+						["14:08:30", "total"],
+						["16:10:04", "C:/"],
+						["16:10:04", "D:/"],
+						["16:10:04", "total"]
+					]
+
+				})
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,378 @@
+
+	.alarmdetail-center{
+		height: 98%;
+		width: 100%;
+		margin-left:3px;
+		background: #EDF2F6;
+	}
+	.alarmdetail-center-top{
+		height: 30%;
+		width: 100%;
+		border: 1px solid #eee;
+		border-left:5px solid #eee;
+		border-top: 0px;
+		background: #ffffff;
+	}
+	.alarmdetail-center-center{
+		height: 70%;
+		width: 100%;
+		margin-top:3px;
+		border: 1px solid #eee;
+		border-left:5px solid #eee;
+		background: #ffffff;
+	}
+
+
+
+
+
+
+.chartTitle {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border: 0px solid #E9EDF2;
+    color: #747C87;
+    background-color: #F5F8FA;
+}
+.chartMain{
+    padding: 0;
+    border: 0px solid transparent;
+    color: #6C7480;
+    background-color: transparent;
+}
+
+.btngroup{
+	margin:-35px 10px 0 0;
+ 	float:right;
+}
+.btngroup span:hover{
+opacity:0.5; filter:Alpha(opacity=50);
+}
+.first{
+ border:1px solid transparent;
+ padding:5px 12px 5px 12px;
+ border-radius: 1px;
+ border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+ cursor: pointer;
+ background-color: #F9F9F9;
+}
+.second{
+ margin-left:-3px;
+ border-top:1px solid transparent;
+ border-bottom:1px solid transparent;
+ border-right:1px solid transparent;
+padding:5px 12px 5px 12px;
+cursor: pointer;
+border-radius: 1px;
+background-color: #F9F9F9;
+}
+.active{
+background-color: #53b9f9;
+color: #F9F9F9;
+}
+
+/*===============================================================================*/
+.alarmdetail-center-top-title i,.alarmdetail-center-center-title i{
+	font-size: 14px;
+	color: #000;
+	font-weight: normal;
+}
+.alarmdetail-top{
+	height: 40x;
+	width: 100%;
+}
+
+	
+
+.alarmdetail-center-left{
+	width: 64.5%;
+	height: 100%;	
+	float: left;
+}
+.alarmdetail-center-right{
+	width: 35%;
+	height: 101%;	
+	display: inline-block;
+	float: left;
+	margin-left:3px;
+	border: 1px solid #eee;
+	border-top: 0PX;
+	background: #F5F8FA;
+}
+
+
+
+.alarmdetail-center-top-title{
+	font-size: 14px;
+	color: #000;
+	padding:8px;
+	font-weight: bold;
+}
+
+.alarmdetail-center-top-title-d{
+	font-size: 14px;
+	color: #aaa;
+	padding:0 0 0 5px;
+	font-weight: normal;
+}
+
+.alarmdetail-center-top-title-d-t{
+	color: #FF9F85;
+	padding-left:10px;
+	font-size: 14px;
+}
+.alarmdetail-center-center-title{
+	font-size: 15px;
+	color: #000;
+	padding:10px 10px 1px 10px;
+	font-weight: bold;
+}
+.alarmdetail-center-center-title-db{
+	float: right;
+}
+.alarmdetail-center-center-title-db .no-care ,.alarmdetail-center-center-title-db  .to-be-deal{
+	text-decoration:none;
+	background: #73E6BF;
+	margin-left: 5px;
+	padding:5px 10px;
+	color: #f9f9f9;
+	font-size: 12px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	font-weight: normal;
+	border-radius: 2px;
+}
+
+.alarmdetail-center-center-title-db  .to-be-deal{background: #5DB8FD;}
+
+.alarmdetail-center-top-content{
+	margin:0px 0 0 25px;
+}
+.alarmdetail-center-top-content1{
+	margin:0px 0 0 20px;
+}
+.alarmdetail-center-top-content lable{
+	font-size: 14px;
+	width:100px;
+	display:inline-block; 
+	height:34px;
+	line-height:34px;
+	color: #000;
+	text-align:center;
+	padding:0;
+	margin-left:-5px;
+}
+.alarmdetail-center-top-content lable i{
+	font-size: 14px;
+}
+.alarmdetail-center-top-content span{
+	font-size: 14px;
+	display:inline-block; 
+	height:34px;
+	line-height:34px;
+	text-align:left;
+	color: #111;
+	width: 150px;
+}
+.alarmdetail-center-top-content1 lable{
+	font-size: 14px;
+	display:inline-block; 
+	height:34px;
+	line-height:34px;
+	text-align:left;
+	padding-left:5px;
+	color: #4082E6;
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+	font-weight: bold;
+}
+.alarmdetail-center-top-content1 span{
+	font-size: 14px;
+	display:inline-block; 
+	height:38px;
+	line-height:38px;
+	text-align:left;
+	padding-left:5px;
+	color: #FE642E;
+	padding-left:10px;
+    width: 696px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.alarmdetail-center-center-title-db .to-be-edit{
+	text-decoration:none;
+	background: #5DB8FD;
+	padding:5px 10px;
+	margin:8px 0;
+	color: #f9f9f9;
+	font-size: 12px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 2px;
+	
+}
+.alarmdetail-top .work-total1{
+	color: #000;
+}
+/*===============================================================================*/
+
+.alarmdetail-center-center-content{
+	height: 100%;
+	width: 100%;
+	margin:0 10px 10px 10px;
+}
+
+
+/*====================================================================================================*/
+.alarmdetail-center-center-content-list{
+	margin:0 8px;
+	width: 97%;
+	margin-top:-3px;
+}
+.alarmdetail-center-center-content-l{
+	margin:15px 0 0 0;
+	width: 100%;
+}
+.alarmdetail-center-center-content-t{
+	margin:4px 0 0 0;
+	margin-left:-9px;
+	width: 100%;
+	height: 90%;
+}
+.alarmdetail-center-center-content-list .lableleft{
+	font-size: 12px;
+	width:180px;
+	display:inline-block; 
+	height:42px;
+	line-height:42px;
+	color: #000;
+	text-align:center;
+	padding:0;
+	margin-left:-5px;
+	background: #F0F2F4;
+	border-top:1px solid #E4E7EB;
+	border-left:1px solid #E4E7EB;
+}
+.alarmdetail-center-center-content-list .spanleft{
+	font-size: 12px;
+	display:inline-block; 
+	height:42px;
+	line-height:42px;
+	text-align:left;
+	color: #000;
+	width: 200px;
+	border-top:1px solid #E4E7EB;
+	border-left:1px solid #E4E7EB;
+	padding-left:10px;
+}
+.alarmdetail-center-center-content-list .lableright{
+	font-size: 12px;
+	width:180px;
+	display:inline-block; 
+	height:42px;
+	line-height:42px;
+	color: #000;
+	text-align:center;
+	padding:0 ;
+	margin-left:-5px;
+	background: #F0F2F4;
+	border-top:1px solid #E4E7EB;
+	border-left:1px solid #E4E7EB;
+}
+.alarmdetail-center-center-content-list .spanright{
+	font-size: 12px;
+	display:inline-block; 
+	height:42px;
+	line-height:42px;
+	text-align:left;
+	color: #000;
+	width: 200px;
+	border-top:1px solid #E4E7EB;
+	border-left:1px solid #E4E7EB;
+	border-right:1px solid #E4E7EB;
+	padding-left:10px;
+}
+
+/*===================================================================================================*/
+.alarmdetail-content-bucket-block{
+	width: 97%;
+}
+.alarmdetail-content-bucket-block .b-b-info-list {
+    padding: 10px;
+    padding-top:5px;
+    font-size: 12px;
+    background:#F3FBF2;
+}
+.alarmdetail-content-bucket-block .b-b-info-list .b-b-info-item {
+    padding: 0 25px;
+    line-height: 38px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.alarmdetail-content-bucket-block .b-b-info-list .b-b-info-item-last {
+    padding: 0 25px;
+    line-height: 38px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 0px;
+}
+
+.alarmdetail-content-bucket-block .b-b-info-list .b-b-info-label {
+    float: left;
+    width: 20%;
+    color: #000;
+}
+.alarmdetail-content-bucket-block .b-b-info-list .b-b-info-label-l {
+    float: left;
+    width: 40%;
+    color: #000;
+}
+/*========================================================================*/
+
+#alarmmoredetail {
+    top: 5px;
+    width: 79%;
+    position: fixed;
+    right: 0px;
+    height: 98%;
+    text-align: right;
+    z-index: 9999;
+    background: rgb(247, 247, 247);
+}
+.alarmlist-title{
+	height: 37px;
+	width:100%;
+	background:#5DB8FD ;
+	line-height: 37px;
+	color: #fff;
+	font-size: 14px;
+	padding-left:8px;
+	display: none;
+	margin-top:4px;
+}
+
+#alarmdetail-window-content{
+	width:100%;height:100%;
+}
+#alarmlog-content{
+	width:100%;height:100%;
+}
+
+#history{
+	width:100%;
+	height:650px;
+	padding-right: 5px;
+}
+#timelinesfield{
+	height: 130px;
+	width: 98%;
+	margin:0px 10px
+}

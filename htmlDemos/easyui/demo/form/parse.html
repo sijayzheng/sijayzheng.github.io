@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Validate Form on Submit - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<table id="tb">
+
+		</table>
+		<script>
+			$(function() {
+				for (let i = 0; i < 5; i++) {
+					$('#tb').append(`<tr><td><input id="combo` + i +
+						`" class="easyui-combobox" name="language" style="width:100%" data-options="editable:false,url:'combodata.json',method:'get'"/></td></tr>`
+						)
+				}
+					$.parser.parse();
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.a {
+				height: 200px;
+				width: 100px;
+				border-right: dashed #dcdcdc 1px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="a"></div>
+
+		<span id="kw"></span>
+		<!--<button onclick="parent.ss()">ss</button>-->
+		<script type="text/javascript">
+			var s = 'dfadfab，jgk,';
+			s = s.replace(/，/gm, ',');
+			$('#kw').append();
+			//document.getElementById('kw').innerHTML = $("#kwid", parent.document).val()
+			$("#kwid", parent.document).val("js/easyui/demo/datagrid/datagrid_data1.json")
+
+			var date = new Date()
+			var tody = date.getFullYear() + '-' + (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() +
+				1) + '-' + date.getDate()
+//			console.log(tody);
+			var date1 = new Date(date.getTime() - 7 * 24 * 60 * 60 * 1000)
+			var yest = date1.getFullYear() + '-' + (date1.getMonth() + 1) < 10 ? '0' + (date1.getMonth() + 1) : (date1.getMonth() +
+				1) + '-' + date1.getDate()
+//			console.log(yest);
+
+			var date = new Date(2019,12,1);
+			var year = date.getFullYear();
+			var month = date.getMonth();
+			console.log(new Date(year, month, 1).toLocaleDateString());
+			console.log(new Date(year, month+1, 0).toLocaleDateString());
+		</script>
+	</body>
+
+</html>

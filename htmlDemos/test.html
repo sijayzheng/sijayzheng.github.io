@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>【编程游戏】贺岁放礼花 -- freewind</title>
+    <style type="text/css">
+      html,
+      body {
+        background: #000;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        color: #fff;
+      }
+      .ball {
+        color: #ff0000;
+        position: absolute;
+        font-size: 16px;
+      }
+      .star {
+        color: #ff0000;
+        position: absolute;
+        font-size: 4px;
+      }
+    </style>
+    <script type="text/javascript">
+      function Firework(sky, loop) {
+        this.sky = sky
+        this.skyWidth = document.body.clientWidth || document.documentElement.clientWidth
+        this.skyHeight = document.body.clientHeight || document.documentElement.clientHeight
+        this.x = this.y = 0
+        this.step = 20
+        this.delay = 30
+        this.stars = []
+        this.r = 10
+        this.step2 = 7
+        this.radius = 90
+        this.angle = 45
+        this.num = 16
+        this.loop = loop
+      }
+      Firework.prototype = {
+        init: function () {
+          this.x = parseInt((this.skyWidth / 2) * Math.random()) + this.skyWidth / 4
+          this.y = this.skyHeight
+          this._y = parseInt((this.skyHeight / 4) * Math.random()) + this.skyHeight / 5
+        },
+        showBall: function () {
+          this.ball = document.createElement('div')
+          this.ball.innerHTML = '●'
+          this.ball.className = 'ball'
+          this.ball.style.left = this.x + 'px'
+          this.ball.style.top = this.y + 'px'
+          this.sky.appendChild(this.ball)
+        },
+        moveBall: function () {
+          var self = this
+          if (this.y > this._y) {
+            var p = parseInt(((this.skyHeight - this.y) / (this.skyHeight - this._y)) * 10)
+            this.y -= this.step - p * 1.6
+            this.ball.style.fontSize = 16 - p + 'px'
+            this.ball.style.top = this.y + 'px'
+            setTimeout(function () {
+              self.moveBall()
+            }, this.delay)
+          } else {
+            this.fire()
+          }
+        },
+        hideBall: function () {
+          this.sky.removeChild(this.ball)
+          this.ball = null
+        },
+        showStars: function () {
+          var colors = [
+            '#FF0000',
+            '#FF00FF',
+            '#00FF00',
+            '#00FFFF',
+            '#FFFF00',
+            '#FF0000',
+            '#FF00FF',
+            '#00FF00',
+            '#00FFFF',
+            '#FFFF00',
+          ]
+          var n = (cs = parseInt((Math.random() * colors.length) / 2))
+          var cc = parseInt((Math.random() * colors.length) / 2)
+          var colorMode = parseInt(Math.random() * 2)
+          this.r = 10
+          this.radius = Math.round(Math.random() * 30) + 60
+          this.num = Math.round(Math.random() * 6 + 4) * 2
+          this.angle = (180 / this.num) * 2
+
+          for (var i = 1; i <= this.num; i++) {
+            this.stars[i] = document.createElement('div')
+            this.stars[i].innerHTML = '★'
+            this.stars[i].className = 'star'
+            if (colorMode == 1) {
+              this.stars[i].style.color = colors[n]
+              if (++n > cs + cc) n = cs
+            } else {
+              this.stars[i].style.color = colors[parseInt(Math.random() * colors.length)]
+            }
+            this.sky.appendChild(this.stars[i])
+          }
+        },
+        moveStars: function () {
+          var self = this
+          if (this.r < this.radius) {
+            var p = this.step2 - parseInt((this.r / this.radius) * 5)
+            p = p < 1 ? 1 : p
+            this.r += p
+            p = parseInt((this.r / this.radius) * 100)
+            for (var i = 1; i <= this.num; i++) {
+              this.stars[i].style.left =
+                this.x - Math.round(this.r * Math.sin(Math.PI - (Math.PI / 180) * this.angle * i)) + 'px'
+              this.stars[i].style.top =
+                this.y - Math.round(this.r * Math.cos(Math.PI - (Math.PI / 180) * this.angle * i)) + 'px'
+              this.stars[i].style.fontSize = 4 + p / 10 + 'px'
+              if (p > 85) {
+                var opacity = 100 - (p - 85) * 4
+                if (document.all) {
+                  this.stars[i].style.filter = 'alpha(opacity=' + opacity + ')'
+                } else {
+                  this.stars[i].style.MozOpacity = opacity / 100
+                }
+              }
+            }
+            setTimeout(function () {
+              self.moveStars()
+            }, this.delay)
+          } else {
+            setTimeout(function () {
+              self.hideStars()
+            }, 300 * Math.random())
+          }
+        },
+        hideStars: function () {
+          for (var i = 1; i <= this.num; i++) {
+            this.sky.removeChild(this.stars[i])
+            this.stars[i] = null
+          }
+          if (this.loop) {
+            this.play()
+          }
+        },
+        fire: function () {
+          this.hideBall()
+          this.showStars()
+          this.moveStars()
+        },
+        play: function () {
+          this.init()
+          this.showBall()
+          this.moveBall()
+        },
+      }
+
+      window.onload = function () {
+        for (var i = 0; i < 5; i++) new Firework(document.body, true).play()
+      }
+    </script>
+  </head>
+
+  <body></body>
+</html>

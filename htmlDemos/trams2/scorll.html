@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="util.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="js/layui/css/layui.css" type="text/css" />
+		<script type="text/javascript" src="js/layui/layui.all.js"></script>
+		<style type="text/css">
+			#imgs {
+				border: 1px solid;
+				width: 100px;
+				height: 500px;
+				overflow-y: auto;
+			}
+
+			.max {
+				transform: scale(3);
+				position: absolute;
+				z-index: 100;
+			}
+
+			.min {
+				transform: scale(1);
+				transition: all ease 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fullimg" style="width: 100%;height: 100%;display: none;z-index: 9999999;position: absolute;">
+
+		</div>
+		<script type="text/javascript">
+			layer.open({
+				type: 1,
+				title: 'dfsdf',
+				closeBtn: false,
+				area: '200px;',
+				shade: 0.8,
+				id: 'LAY_layuipro',
+				btn: ['残忍拒绝'],
+				btnAlign: 'c',
+				moveType: 1,
+				content: '<img class="" src="img/android.png" width="98%" style="margin: 1%;" />',
+				success: function(layero) {}
+			});
+			$('img').click(function() {
+				$(this).toggleClass('max')
+				$(this).toggleClass('min')
+			})
+
+			var a=['1','2','3']
+			console.log(a.);
+		</script>
+	</body>
+</html>

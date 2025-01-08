@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Client Side Pagination in DataGrid - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../demo.css" />
+    <script type="text/javascript" src="../../jquery.min.js"></script>
+    <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+  </head>
+  <body>
+    <div style="height: 50px">
+      <input id="date" type="text" value="2021-11-01~2021-11-10" />
+      <button onclick="reload()">加载数据</button>
+    </div>
+    <div style="height: calc(100vh - 50px)">
+      <table
+        id="dg"
+        class="easyui-datagrid"
+        data-options="fitColumns:true,pageSize: 15,pageList: [15,20,30,40,50],pagination: true,border:false,
+					singleSelect:true,fit:true,striped:true"
+      >
+        <thead>
+          <tr>
+            <th data-options="field:'dates',width:100">日期</th>
+            <th data-options="field:'instancename',width:100">主机名</th>
+            <th data-options="field:'ip',width:100">IP</th>
+            <th data-options="field:'itemname',width:100">监控项</th>
+            <th data-options="field:'alarmnum',width:50,align:'center'">告警次数</th>
+            <th data-options="field:'firstnum',width:50,align:'center'">告警频繁度(次)</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <script>
+      $(function () {
+        reload()
+      })
+      function reload() {
+        $('#dg').datagrid({
+          url: 'http://127.0.0.1/TRAMS/logstatus?operateFlag=listlogalarm',
+          queryParams: {
+            status: "'2','3','4','5'",
+            dates: $('#date').val(),
+          },
+        })
+      }
+    </script>
+  </body>
+</html>

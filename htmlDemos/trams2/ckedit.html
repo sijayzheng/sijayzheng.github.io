@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <title>CKEditor 5 – Classic editor</title>
+    <script src="js/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+      .ck-content {
+        min-height: 500px;
+      }
+
+      button {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="re()">readonly</button>
+    <button onclick="ed()">editable</button>
+    <button onclick="get()">editable</button>
+    <textarea name="editor" id="editor" class="editor"></textarea>
+    <script>
+      let editor
+      ClassicEditor.create(document.querySelector('#editor'), {
+        language: 'zh-cn',
+        uiColor: '#CCEAEE',
+      })
+        .then(newEditor => {
+          editor = newEditor
+          console.log(CKEDITOR_VERSION)
+          editor.keystrokes.set('Tab', (data, cancel) => {
+            editor.execute('input', {
+              text: '\u2002\u2002\u2002\u2002',
+            })
+            cancel()
+          })
+          editor.setData('<p>asdlfasdjklkasdjaksdfoajivsuaodas</p>')
+          console.log(editor)
+        })
+        .catch(error => {
+          console.error(error)
+        })
+
+      function re() {
+        editor.isReadOnly = true
+        editor.config.removePlugins = ['Bold', 'Italic']
+      }
+
+      function ed() {
+        editor.isReadOnly = false
+        let cfg = editor.ui._toolbarConfig.items
+        console.log(cfg)
+        cfg = ['bold', 'italic']
+        console.log(cfg)
+      }
+      function get() {
+        console.log(editor.getData())
+      }
+    </script>
+  </body>
+</html>

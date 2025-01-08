@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>Layui</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="js/layui/css/layui.css" media="all">
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/layui/layui.js" charset="utf-8"></script>
+		<style type="text/css">
+			.qu-add-btn {
+				display: inline-block;
+				height: 32px;
+				width: 128px;
+				background-color: #01AAED;
+				text-align: center;
+				line-height: 32px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div id="qu-radio" class="qu-add-btn" onclick="addRadio(this)">
+				添加单选
+			</div>
+			<div id="qu-checkbox" class="qu-add-btn" onclick="addCheckbox(this)">
+				添加多选
+			</div>
+		</div>
+
+		<form class="layui-form">
+			<div class="wj-contain" id="wj-contain">
+
+			</div>
+		</form>
+		<script>
+			const pid = 'wj001'
+			var form, layer, qindex = 1,
+				optindex = 1,
+				questions = [],
+				questionOptions = {}
+
+			layui.use(['form', 'layer'], function() {
+				form = layui.form,
+					layer = layui.layer
+			});
+
+			function addOpt(qid,optname) {
+				layer.prompt({
+					title: '请输入选项内容',
+				}, function(value, index, elem) {
+					layer.close(index);
+					let optid = pid + '-q' + qindex + '-opt' + optindex;
+					optindex++;
+					let opt = [`<div class="layui-input-block"  id="${optid}">`,
+						`<input type="radio" name="${optname}" value="${value}" title="${value}">`,
+						`<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" onclick="optRemove('${optid}')">删除选项</button>`,
+						`</div>`
+					].join('')
+					console.log(opt);
+					$('#wj001-q1').append($(opt));
+					$('.qu-select-remove').on('click', function(event) {
+						console.log(111);
+						console.log();
+						$('#' + this.dataset.selectid).remove()
+					})
+					form.render();
+				});
+			}
+
+			function optRemove(optid) {
+				$('#' + optid).remove();
+				form.render();
+			}
+
+			function addRadio(e) {
+				layer.prompt({
+					title: '请输入选项内容',
+				}, function(value, index, elem) {
+					layer.close(index);
+					let qid = pid + '-q' + qindex;
+					let qu = [`<div class="qu-contain" id="${qid}-contain">`,
+						`<div class="layui-form-item" id="${qid}">`,
+						`<div class="layui-input-block">`,
+						`问题<span class="qu-index">${qindex}</span>：<span class="qu-content">${value}</span>`,
+						`<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" onclick="quRemove('${qid}-contain')">删除题目</button>`,
+						`</div>`,
+						`<div class="layui-input-block">`,
+						`<input type="radio" name="${qid}-opt" value="是" title="是">`,
+						`</div>`,
+						`<div class="layui-input-block">`,
+						`<input type="radio" name="${qid}-opt" value="否" title="否">`,
+						`</div>`,
+						`</div>`,
+						`<button type="button" class="layui-btn  layui-btn-sm" onclick="addOpt('${qid}','${qid}-opt')">新增选项</button>`,
+						`</div>`
+					].join('')
+					$('#wj-contain').append(qu)
+					questions.push(qid)
+					questionOptions[qid] = []
+					form.render();
+					qindex++
+				});
+			}
+			function quRemove(qid){
+				$('#' + qid).remove();
+				form.render();
+
+				questions.splice(questions.indexOf(qid), 1);
+				let qus=$('.qu-index')
+				for (let i = 0; i < questions.length; i++) {
+					questions[i]=qid+'-contain'
+					$(qus[i]).text(i+1)
+				}
+			}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,180 @@
+table{
+	font-size: .8rem;
+}
+.custom-btn-add {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #7AB5F3;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-edit {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #73E6BF;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-delete {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #FF9F85;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.custom-btn-add-l {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    background-color: #266AB3;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-edit-l {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    background-color: #9D9E40;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-delete-l {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    background-color: #C65B60;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-save-l {
+	font-size: .7rem;
+	display:inline-block;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background-color: #1C385E;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-add-w {
+	font-size: .7rem;
+	display:inline-block;
+    width: 94px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #266AB3;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-edit-w {
+	font-size: .7rem;
+	display:inline-block;
+    width: 94px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #9D9E40;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-btn-delete-w {
+	font-size: .7rem;
+	display:inline-block;
+    width: 94px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #C65B60;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.custom-toolbar-bg{
+	height:40px;
+	line-height:40px;
+	background: #162E4D;
+	border-bottom: 1px solid #173356;
+}
+
+table.kv-table {
+    width: 100%;
+}
+.kv-table {
+    border-right: 1px solid #dadada;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table.kv-table tr:first-child td.kv-content:first-child, table.kv-table tr:first-child td.kv-label:first-child {
+    border-top-color: #ffaa05;
+}
+table.kv-table tr:first-child td.kv-content, table.kv-table tr:first-child td.kv-label {
+    border-top: 1px solid #0c9d72;
+}
+table.kv-table td.kv-content, table.kv-table td.kv-label {
+    height: 34px;
+    padding: 5px 0;
+    border-bottom: 1px solid #dadada;
+    font-size: 14px;
+    padding-left: 20px;
+}
+table.kv-table .kv-label {
+    padding: 0 10px;
+    width: 114px;
+    background: #f5f5f5;
+    border: 1px solid #dadada;
+    border-top: none;
+}
+table.kv-table .kv-content {
+    width: 260px;
+    padding: 5px 10px;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}

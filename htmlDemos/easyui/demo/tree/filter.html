@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tree Actions - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../demo.css" />
+    <script type="text/javascript" src="../../jquery.min.js"></script>
+    <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+  </head>
+  <body>
+    <h2>Tree Actions</h2>
+    <p>Click the buttons below to perform actions.</p>
+    <div style="margin: 20px 0">
+      <a href="#" class="easyui-linkbutton" onclick="collapseAll()">CollapseAll</a>
+      <a href="#" class="easyui-linkbutton" onclick="expandAll()">ExpandAll</a>
+      <input
+        id="ss"
+        class="easyui-searchbox"
+        style="width: 200px; height: 36px"
+        data-options="searcher:instancetreefilter,prompt:'IP'"
+      />
+    </div>
+    <div class="easyui-panel" style="padding: 5px">
+      <ul id="tt" class="easyui-tree" data-options="animate:true"></ul>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $('#tt').tree({
+          data: [
+            {
+              port: 0,
+              children: [
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.7',
+                  id: 'INSTANCE0000374',
+                  superid: 'BUSS_0000000003',
+                  text: '周报管理系统\n192.168.32.7',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.3',
+                  id: 'INSTANCE0000250',
+                  superid: 'BUSS_0000000003',
+                  text: 'Linux服务器32.3\n192.168.32.3',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.6',
+                  id: 'INSTANCE0000258',
+                  superid: 'BUSS_0000000003',
+                  text: '惠普物理服务器32.6\n192.168.32.6',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.11',
+                  id: 'INSTANCE0000290',
+                  superid: 'BUSS_0000000003',
+                  text: '联想物理服务器32.11\n192.168.32.11',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.21',
+                  id: 'INSTANCE0000254',
+                  superid: 'BUSS_0000000003',
+                  text: '代码管理服务器32.21\n192.168.32.21',
+                  iconCls: 'icon-deviceserver',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000003',
+              superid: '0',
+              text: '生产系统\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.22',
+                  id: 'INSTANCE0000398',
+                  superid: 'BUSS_0000000004',
+                  text: '银河麒麟测试32.22\n192.168.32.22',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.10',
+                  id: 'INSTANCE0000355',
+                  superid: 'BUSS_0000000004',
+                  text: '华为物理服务器32.10\n192.168.32.10',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 8080,
+                  children: [],
+                  ip: '192.168.32.19',
+                  id: 'INSTANCE0000363',
+                  superid: 'BUSS_0000000004',
+                  text: '动环监控32.19\n192.168.32.19',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.40',
+                  id: 'INSTANCE0000376',
+                  superid: 'BUSS_0000000004',
+                  text: '测试服务器32.40\n192.168.32.40',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 161,
+                  children: [],
+                  ip: '192.168.32.77',
+                  id: 'INSTANCE0000379',
+                  superid: 'BUSS_0000000004',
+                  text: 'SNMP-32.77\n192.168.32.77',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.3',
+                  id: 'INSTANCE0000360',
+                  superid: 'BUSS_0000000004',
+                  text: '业务监控\n192.168.32.3',
+                  iconCls: 'icon-deviceapplication',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.8',
+                  id: 'INSTANCE0000221',
+                  superid: 'BUSS_0000000004',
+                  text: '浪潮物理服务器32.8\n192.168.32.8',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.25',
+                  id: 'INSTANCE0000251',
+                  superid: 'BUSS_0000000004',
+                  text: 'Linux服务器(redhat6.0)32.25\n192.168.32.25',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.31',
+                  id: 'INSTANCE0000232',
+                  superid: 'BUSS_0000000004',
+                  text: 'Windows服务器32.31\n192.168.32.31',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.27',
+                  id: 'INSTANCE0000252',
+                  superid: 'BUSS_0000000004',
+                  text: 'Linux服务器32.27\n192.168.32.27',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 161,
+                  children: [],
+                  ip: '192.168.32.1',
+                  id: 'INSTANCE0000389',
+                  superid: 'BUSS_0000000004',
+                  text: '华三路由交换\n192.168.32.1',
+                  iconCls: 'icon-devicenet',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.29',
+                  id: 'INSTANCE0000391',
+                  superid: 'BUSS_0000000004',
+                  text: 'SUSELinux测试环境\n192.168.32.29',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.3',
+                  id: 'INSTANCE0000427',
+                  superid: 'BUSS_0000000004',
+                  text: '32.3\n192.168.32.3',
+                  iconCls: 'icon-deviceserver',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000004',
+              superid: '0',
+              text: '测试系统\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 161,
+                  children: [],
+                  ip: '192.168.32.33',
+                  id: 'INSTANCE0000371',
+                  superid: 'BUSS_0000000011',
+                  text: '华为交换机32.33\n192.168.32.33',
+                  iconCls: 'icon-devicenet',
+                },
+                {
+                  port: 161,
+                  children: [],
+                  ip: '192.168.32.1',
+                  id: 'INSTANCE0000261',
+                  superid: 'BUSS_0000000011',
+                  text: 'H3C路由器32.1\n192.168.32.1',
+                  iconCls: 'icon-devicenet',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000011',
+              superid: '0',
+              text: '网络设备\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 9000,
+                  children: [],
+                  ip: '192.168.32.8',
+                  id: 'INSTANCE0000269',
+                  superid: 'BUSS_0000000057',
+                  text: 'Tomcat监控\n192.168.32.8',
+                  iconCls: 'icon-devicemiddleware',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000057',
+              superid: '0',
+              text: '中间件监控\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.27',
+                  id: 'INSTANCE0000241',
+                  superid: 'BUSS_0000000043',
+                  text: 'DB2数据库\n192.168.32.27',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.26',
+                  id: 'INSTANCE0000282',
+                  superid: 'BUSS_0000000043',
+                  text: 'Oracle数据库\n192.168.32.26',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 3306,
+                  children: [],
+                  ip: '192.168.32.30',
+                  id: 'INSTANCE0000423',
+                  superid: 'BUSS_0000000043',
+                  text: 'MYSql_主从监控\n192.168.32.30',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.11',
+                  id: 'INSTANCE0000416',
+                  superid: 'BUSS_0000000043',
+                  text: '达梦数据库\n192.168.32.11',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.11',
+                  id: 'INSTANCE0000425',
+                  superid: 'BUSS_0000000043',
+                  text: 'Postgres32.11\n192.168.32.11',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 3306,
+                  children: [],
+                  ip: '192.168.32.12',
+                  id: 'INSTANCE0000249',
+                  superid: 'BUSS_0000000043',
+                  text: 'MySQL数据库\n192.168.32.12',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 6389,
+                  children: [],
+                  ip: '192.168.32.8',
+                  id: 'INSTANCE0000268',
+                  superid: 'BUSS_0000000043',
+                  text: 'Redis监控\n192.168.32.8',
+                  iconCls: 'icon-devicedatabase',
+                },
+                {
+                  port: 39900,
+                  children: [],
+                  ip: '192.168.32.24',
+                  id: 'INSTANCE0000417',
+                  superid: 'BUSS_0000000043',
+                  text: 'MongoDB数据库\n192.168.32.24',
+                  iconCls: 'icon-devicedatabase',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000043',
+              superid: '0',
+              text: '数据库监控\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 5989,
+                  children: [],
+                  ip: '192.168.32.8',
+                  id: 'INSTANCE0000368',
+                  superid: 'BUSS_0000000058',
+                  text: '华为smi-s\n192.168.32.8',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 8088,
+                  children: [],
+                  ip: '192.168.128.101',
+                  id: 'INSTANCE0000367',
+                  superid: 'BUSS_0000000058',
+                  text: '华为存储\n192.168.128.101',
+                  iconCls: 'icon-deviceserver',
+                },
+                {
+                  port: 22,
+                  children: [],
+                  ip: '192.168.128.101',
+                  id: 'INSTANCE0000369',
+                  superid: 'BUSS_0000000058',
+                  text: '华为存储S5500\n192.168.128.101',
+                  iconCls: 'icon-deviceserver',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000058',
+              superid: '0',
+              text: '存储监控\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000372',
+                  superid: 'BUSS_0000000040',
+                  text: '807机房温湿度\n127.0.0.1',
+                  iconCls: 'icon-devicepes',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000273',
+                  superid: 'BUSS_0000000040',
+                  text: '干接点\n127.0.0.1',
+                  iconCls: 'icon-devicecons',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000271',
+                  superid: 'BUSS_0000000040',
+                  text: '电量仪\n127.0.0.1',
+                  iconCls: 'icon-deviceele',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000270',
+                  superid: 'BUSS_0000000040',
+                  text: 'UPS\n127.0.0.1',
+                  iconCls: 'icon-deviceups',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000276',
+                  superid: 'BUSS_0000000040',
+                  text: '山特-UPS\n127.0.0.1',
+                  iconCls: 'icon-deviceups',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000274',
+                  superid: 'BUSS_0000000040',
+                  text: '空调\n127.0.0.1',
+                  iconCls: 'icon-deviceair',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000275',
+                  superid: 'BUSS_0000000040',
+                  text: '漏水\n127.0.0.1',
+                  iconCls: 'icon-devicelea',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000272',
+                  superid: 'BUSS_0000000040',
+                  text: '发电机\n127.0.0.1',
+                  iconCls: 'icon-devicegen',
+                },
+                {
+                  port: 5678,
+                  children: [],
+                  ip: '127.0.0.1',
+                  id: 'INSTANCE0000277',
+                  superid: 'BUSS_0000000040',
+                  text: '新风机\n127.0.0.1',
+                  iconCls: 'icon-devicexinfeng',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000040',
+              superid: '0',
+              text: '动力环境\n',
+              iconCls: 'icon-device',
+            },
+            {
+              port: 0,
+              children: [
+                {
+                  port: 443,
+                  children: [],
+                  ip: '192.168.32.45',
+                  id: 'INSTANCE0000399',
+                  superid: 'BUSS_0000000120',
+                  text: 'Vcenter虚拟机平台\n192.168.32.45',
+                  iconCls: 'icon-devicemiddleware',
+                },
+              ],
+              ip: '',
+              id: 'BUSS_0000000120',
+              superid: '0',
+              text: '虚拟化\n',
+              iconCls: 'icon-device',
+            },
+          ],
+        })
+        $('#tt').tree('expandAll')
+      })
+      function collapseAll() {
+        $('#tt').tree('collapseAll')
+      }
+      function expandAll() {
+        $('#tt').tree('expandAll')
+      }
+      function instancetreefilter(v) {
+        //if (v) {
+
+        //} else {
+        console.log(v)
+        $('#tt').tree('doFilter', v)
+        //}
+      }
+    </script>
+  </body>
+</html>

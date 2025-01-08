@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bmap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="china.js" type="text/javascript" charset="utf-8"></script>
+		<script src="echarts-gl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="echarts-liquidfill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="maps" style="margin-top:5%;width: 100%;height:100%;margin-left:0%;z-index:999999">
+
+		</div>
+
+		<script type="text/javascript">
+
+			var mapData = [{
+				"name": "105康养护理中心",
+				"value": ["118.225261", "35.237657", 60],
+				"depID": "00000000002",
+				"isDrillDown": true
+			}];
+			initECMap(mapData);
+
+			function initECMap(mapData) {
+
+				var option = {
+
+					tooltip: {
+						padding: 0,
+						enterable: true,
+						transitionDuration: 1,
+						textStyle: {
+							color: '#000',
+							decoration: 'none',
+						},
+						// position: function (point, params, dom, rect, size) {
+						//   return [point[0], point[1]];
+						// },
+						formatter: function(params) {
+							// console.log(params)
+							var tipHtml = '';
+							tipHtml =
+								'<div style="width:280px;height:180px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">' +
+								'<div style="width:86%;height:40px;line-height:40px;border-bottom:1px solid rgba(7,166,255,0.7);padding:0 20px">' +
+								'<i style="display:inline-block;width:12px;height:12px;background:#16d6ff;border-radius:40px;">' + '</i>' +
+								'<span style="margin-left:10px;color:#00FFFF;font-size:16px;">' + params.name + '</span>' + '</div>' +
+								'<div style="padding:20px">' +
+								'<p style="color:#00FFFF;font-size:12px;">' +
+								'<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
+								'</i>' +
+								'单位总数：' + '<span style="color:#11ee7d;margin:0 6px;">11</span>' + '个' + '</p>' +
+								'<p style="color:#00FFFF;font-size:12px;">' +
+								'<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
+								'</i>' +
+								'总人数：' + '<span style="color:#f48225;margin:0 6px;">12</span>' + '个' + '</p>' +
+								'<p style="color:#00FFFF;font-size:12px;">' +
+								'<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
+								'</i>' +
+								'总人数：' + '<span style="color:#f4e925;margin:0 6px;">13</span>' + '个' + '</p>' +
+								'<p style="color:#00FFFF;font-size:12px;">' +
+								'<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
+								'</i>' +
+								'总人数：' + '<span style="color:#25f4f2;margin:0 6px;">14</span>' + '个' + '</p>' +
+								'</div>' + '</div>';
+
+							return tipHtml;
+						}
+					},
+
+					grid: {
+						height: '100%',
+						width: '100%'
+					},
+					geo3D: {
+						map: "临沂",
+						roam: true,
+						zoom: 1,
+						itemStyle: {
+							areaColor: '#0605EE',
+							borderColor: '#00D8FF',
+							shadowColor: '#00D8FF',
+							shadowBlur: 10,
+							borderWidth: 3,
+						},
+						label: {
+							show: true,
+							textStyle: {
+								color: "#73FF02",
+								fontSize: 15,
+								opacity: 1,
+								backgroundColor: "rgba(0,0,0,0)"
+							},
+						},
+						emphasis: {
+							label: {
+								show: true,
+								textStyle: {
+									color: "#00FFFF",
+									fontSize: 15,
+									backgroundColor: "rgba(0,23,11,0)"
+								}
+							}
+						},
+						light: { //光照阴影
+							main: {
+								color: '#00FFFF', //光照颜色
+								intensity: 1.8, //光照强度
+								shadowQuality: 'high', //阴影亮度
+								shadow: true, //是否显示阴影
+								alpha: 55,
+								beta: 10
+
+							},
+							ambient: {
+								intensity: 0.3
+							}
+						},
+						viewControl: {
+							distance: 150,
+							alpha: 35,
+							beta: 20
+						},
+					},
+					series: [{
+						name: '点',
+						type: "scatter3D",
+						coordinateSystem: "geo3D",
+						symbol: 'pin', //气泡
+						symbolSize: 30,
+						label: {
+							normal: {
+								show: false,
+								formatter: '{b}',
+								position: 'bottom',
+							}
+						},
+
+						data: mapData
+					}]
+				};
+
+				var myChart = echarts.init(document.getElementById("maps"));
+				myChart.setOption(option);
+
+				myChart.on("click", function(params) {
+					if (params.data.isDrillDown) {
+						mapDrillDown(params.data.depID);
+					}
+				});
+
+			}
+		</script>
+	</body>
+</html>

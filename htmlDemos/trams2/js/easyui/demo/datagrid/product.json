@@ -1,0 +1,23 @@
+[
+	{
+		"displayname": "WIN-R4ZFVD7QDY9",
+		"ipaddress": "192.168.32.7",
+		"nodetype": "计算机"
+	}, {
+		"displayname": "H3C",
+		"ipaddress": "192.168.32.1",
+		"nodetype": "路由交换机"
+	}, {
+		"displayname": "cisco2600",
+		"ipaddress": "192.168.32.13",
+		"nodetype": "CISCO C2600"
+	}, {
+		"displayname": "SKY-20180908NZZ",
+		"ipaddress": "192.168.32.136",
+		"nodetype": "计算机"
+	}, {
+		"displayname": "wangruru",
+		"ipaddress": "192.168.32.113",
+		"nodetype": "计算机"
+	}
+]

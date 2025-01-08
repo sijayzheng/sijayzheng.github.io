@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<p>{{reversedMessage}}</p>
+			<p>{{nowdate}}</p>
+			<p>{{nowc}}</p>
+			<p v-on:click="now">now</p>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					message: 'this is a message',
+					nowdate: new Date()
+				},
+				methods: {
+					now: function() {
+						return this.nowdate = new Date()
+					}
+				},
+				computed: {
+					reversedMessage: function() {
+						return this.message.split('').reverse().join('')
+					},
+					nowc: function() {
+						return new Date()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

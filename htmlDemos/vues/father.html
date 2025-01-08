@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<NavLink url="/childurl"></NavLink>
+		</div>
+		<script type="text/javascript">
+		import NavLink from './child.vue'
+			new Vue({
+				el:'#app',
+				comments:{
+					NavLink
+				}
+			})
+		</script>
+	</body>
+</html>

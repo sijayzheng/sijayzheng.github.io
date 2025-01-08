@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-model="search" @keyup="show()">
+			<input type="text" v-bind:value="search" v-on:input="search=$event.target.value">
+			<br>
+			<span>{{search}}</span>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					search: ''
+				},
+				methods: {
+					show() {
+						console.log(this.search);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>Layui</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="js/layui/css/layui.css" media="all">
+		<script src="js/layui/layui.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<label class="layui-form-label">中文版</label>
+		<div class="layui-input-inline">
+			<input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+		</div>
+
+		<script>
+			layui.use('laydate', function() {
+				var laydate = layui.laydate;
+				//常规用法
+				laydate.render({
+					elem: '#test1',
+					type: 'month',
+					format:'yyyy-MM',
+					value: '2020-01',
+					max: '2020-10-20',
+					done: function(value, date, endDate) {
+						console.log(value); //得到日期生成的值，如：2017-08-18
+						console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+						console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+					}
+				});
+			});
+		</script>
+
+	</body>
+</html>

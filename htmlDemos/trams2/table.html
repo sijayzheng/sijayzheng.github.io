@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let value = '1312312212356235888'
+			if (/[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}/g.test(value)) {
+				let code = "0123456789ABCDEFGHJKLMNPQRTUWXY"
+				let power = [1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28];
+				let pre17s = value.substring(0, 17).split("");
+				let sum = 0;
+				for (let i = 0; i < pre17s.length; i++) {
+					sum += power[i] * code.indexOf(pre17s[i]);
+				}
+				let temp = sum % 31;
+				temp = temp == 0 ? 31 : temp;
+				console.log(value.substring(17, 18) == (code.substring(31 - temp, 32 - temp)));
+			} else {
+				console.log(false);
+			}
+		</script>
+	</body>
+</html>

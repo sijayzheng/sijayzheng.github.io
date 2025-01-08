@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css" />
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form name="form" id="form" method="post" enctype="multipart/form-data"><input type="text" id="exportfiles">
+		</form>
+		<button type="button" onclick="exportExcel()">btt</button>
+		<script type="text/javascript">
+			function exportExcel() {
+				$.ajax({
+					url: "http://127.0.0.1:8080/TRAMS/logpollalarm?operateFlag=exportexcelday&startDate=2021-07-11&endDate=2021-07-11&daystatus=false&deviceid=&instanceIds=",
+					type: "post",
+					dataType: "json",
+					success: function(data) {
+						console.log(data);
+						if (data.flag == "success") {
+							$.ajax({
+								url:'http://127.0.0.1:8080/TRAMS/logpollalarm?operateFlag=download',
+								type:'post',
+								header:{
+									'Content-Type':'application/octet-stream'
+								}
+							})
+						} else {
+							layer.msg('导出失败', {
+								icon: '2'
+							});
+						}
+
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

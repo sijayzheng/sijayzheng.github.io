@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function template(strings, ...keys) {
+				console.log(strings);
+				console.log(keys);
+				return (function(...values) {
+					console.log(values);
+					var dict = values[values.length - 1] || {};
+					console.log(dict);
+					var result = [strings[0]];
+					console.log(result);
+					keys.forEach(function(key, i) {
+						var value = Number.isInteger(key) ? values[key] : dict[key];
+						console.log(value);
+						result.push(value, strings[i + 1]);
+					});
+					return result.join('');
+				});
+			}
+
+			var t1Closure = template `${0}${1}${0}!`;
+			let a = t1Closure('Y', 'A'); // "YAY!"
+			console.log(a);
+			// var t2Closure = template `${0} ${'foo'}!`;
+			// let b = t2Closure('Hello', {
+			// 	foo: 'World'
+			// }); // "Hello World!"
+			// console.log(b);
+		</script>
+	</body>
+</html>

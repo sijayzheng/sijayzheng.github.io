@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>TreeGrid Actions - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<table id="tg" class="easyui-treegrid" title="TreeGrid Actions" style="width:700px;height:250px" data-options="
+				url: 'data.json',
+				method: 'get',
+				idField: 'id',
+				treeField: 'name',
+			">
+			<thead>
+				<tr>
+					<th data-options="field:'name'">Task Name</th>
+				</tr>
+			</thead>
+		</table>
+	</body>
+</html>

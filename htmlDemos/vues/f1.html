@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>using mustaches:{{rawHtml}}</p>
+			<p>using v-html directive <span v-html="rawHtml"></span></p>
+			<hr >
+			<div v-bind:id="dynamicId">1245</div>
+			<button v-bind:disabled="isButtonDisabled">btn</button>
+			<p>
+				{{number+1}}
+			</p>
+			<p>
+				{{ok?'YES':'NO'}}
+			</p>
+			<p>
+				{{message.split('').reverse().join('')}}
+			</p>
+			<p>{{new Date()}}</p>
+			<p>
+				<p v-if="seen">now,you can see me</p>
+			</p>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					rawHtml:'<span style="color:red;">123456</span>',
+					dynamicId:'xx312',
+					isButtonDisabled:false,
+					number:124,
+					ok:false,
+					message:'This is a message.',
+					seen:true
+				}
+			})
+		</script>
+	</body>
+</html>

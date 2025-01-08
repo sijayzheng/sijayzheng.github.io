@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Basic Form - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<form id="ff" method="post" enctype="multipart/form-data">
+			<input class="easyui-filebox" name="file" style="width:100%" data-options="label:'Name:',required:true">
+		</form>
+		<div style="text-align:center;padding:5px 0">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Submit</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Clear</a>
+		</div>
+		<script>
+			function submitForm() {
+				$('#ff').form('submit', {
+					url: 'http://127.0.0.1:888/file',
+					success: function(data) {
+						console.log(data)
+					}
+				});
+			}
+
+			function clearForm() {
+				$('#ff').form('clear');
+			}
+		</script>
+	</body>
+</html>

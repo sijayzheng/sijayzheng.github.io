@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8">
+		<title>table模块快速使用</title>
+		<link rel="stylesheet" type="text/css" href="css/layui.css" />
+		<script src="layui.all.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<table id="demo" lay-filter="test"></table>
+		<script>
+			layui.use(['laypage', 'table', ], function() {
+				var laypage = layui.laypage,
+					table = layui.table
+
+				//执行一个 table 实例
+				table.render({
+					elem: '#demo',
+					height: 420,
+					url: 'da.json' //数据接口
+						,
+					title: '用户表',
+					page: true //开启分页
+						,
+					cols: [
+						[ //表头
+							{
+								field: 'id',
+								templet: '#usernameTpl'
+							}
+						]
+					]
+				});
+			});
+		</script>
+		<script type="text/html" id="sexTpl">
+  {{#  if(d.sex === '女'){ }}
+    <span style="color: #F581B1;">{{ d.sex }}</span>
+  {{#  } else { }}
+    {{ d.sex }}
+  {{#  } }}
+</script>
+	</body>
+
+</html>

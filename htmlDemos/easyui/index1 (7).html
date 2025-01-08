@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.min.js" ></script>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.easyui.min.js" ></script>
+		<link href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link href="jquery-easyui-1.5.5.4/themes/icon.css" />
+	</head>
+	<body>
+		<input id="name" class="easyui-textbox" name="name"  />
+<button onclick="ch()">ch</button>
+		<script type="text/javascript">
+//			$('#name').on('keyup',function(){
+//				console.log($('#name').val())
+//				console.log($('#name').textbox('getValue'))
+//			})
+
+			function ch(){
+				console.log($('#name').val())
+				console.log($('#name').textbox('getValue'))
+			}
+		</script>
+		
+	</body>
+</html>

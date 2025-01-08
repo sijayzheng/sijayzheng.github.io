@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/macarons.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				position: ;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="">
+			<div id="barchart" style="width: 660px;height: 380px;border: 1px black solid;"></div>
+		</div>
+		<script type="text/javascript">
+			var rate = 30;
+			var data = {
+				max: 300,
+				rate: 20
+			}
+			var labelArr = [0, 10, 240, 300];
+			var endFix = '';
+			var barchart = echarts.init(document.getElementById('barchart'), e_macarons);
+			barchart.setOption({
+				tooltip: {
+					formatter: parseFloat(rate)
+				},
+				series: [{
+					splitNumber: parseInt(data.max),
+					max: parseInt(data.max),
+					min: 0,
+					type: 'gauge',
+					startAngle: 180,
+					endAngle: 0,
+					detail: {
+						formatter: function() {
+							return(parseInt(data.rate) / +data.max * 100).toFixed(2) + '%';
+						},
+						offsetCenter: [0, '-130%'],
+						textStyle: {
+							color: '#666',
+							fontSize: 24,
+							fontFamily: 'opensans,Roboto,Helvetica,Arial'
+						}
+					},
+					title: {
+						show: true,
+						offsetCenter: ['0%', '22%'],
+						textStyle: {
+							color: '#000',
+							fontSize: 13
+						}
+					},
+					data: [{
+						value: parseFloat(rate),
+						name: data.name
+					}],
+					itemStyle: { //仪表盘指针样式
+						normal: {
+							color: '#c2cbd6',
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					},
+					pointer: { //仪表盘指针
+						show: true,
+						length: '60%',
+						width: 5
+					},
+					axisTick: { // 刻度样式
+						show: false
+					},
+					axisLabel: {
+						show: true,
+						distance: 1,
+						formatter: function(value) {
+							for(var i = 0; i < labelArr.length; i++) {
+								if(value === Math.floor(labelArr[i])) {
+									return labelArr[i] === 0 ? 0 : labelArr[i] + endFix;
+								}
+							}
+						}
+					},
+					splitLine: { //分割线样式
+						show: false,
+						length: 15
+					},
+					axisLine: {
+						lineStyle: {
+							width: 13, //柱子的宽度
+							"color": [
+								[0, "#B3FFAB"],
+								[0.05, "#ABFFAF"],
+								[0.1, "#A2FFB2"],
+								[0.15, "#9AFFB6"],
+								[0.2, "#92FFBA"],
+								[0.25, "#8BFFBE"],
+								[0.3, "#83FFC2"],
+								[0.35, "#7AFFC5"],
+								[0.4, "#72FFC9"],
+								[0.45, "#6BFFCD"],
+								[0.5, "#62FFD1"],
+								[0.55, "#5AFFD5"],
+								[0.6, "#52FFD9"],
+								[0.65, "#4BFFDD"],
+								[0.7, "#42FFE0"],
+								[0.75, "#3AFFE4"],
+								[0.8, "#32FFE8"],
+								[0.85, "#2AFFEC"],
+								[0.9, "#22FFF0"],
+								[0.95, "#1AFFF3"],
+								[1, "#12FFF7"]
+							]
+						}
+					},
+				}]
+			});
+		</script>
+	</body>
+
+</html>

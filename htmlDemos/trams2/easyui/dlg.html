@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="UTF-8">
+<title>值班管理</title>
+<link rel="stylesheet" type="text/css" href="../css/easyui_old.css" />
+<link rel="stylesheet" type="text/css" href="../js/dist/optiscroll.css" />
+<link rel="stylesheet" type="text/css" href="../css/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="../font2/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+
+<script src="../js/jquery.min.js" type="text/javascript"></script>
+<script src="../js/dist/jquery.optiscroll.js" type="text/javascript"></script>
+<script src="../js/jquery.easyui.min.js" type="text/javascript"></script>
+<script src="../js/easyui-lang-zh_CN.js" type="text/javascript"></script>
+<script src="../js/util.js" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript" src="../js/layer.js"></script>
+<script>
+	$.extend($.fn.validatebox.defaults.rules, {
+		notEmpty: {
+			validator: function(value){
+			console.log((value&&value.trim())!='')
+				return (value&&value.trim())!=''
+			},
+			message: '该字段为必填且不为空'
+		}
+	});
+
+
+	function save() {//保存调班申请
+		var isValid = $('#tbform').form('validate');
+	}
+
+</script>
+
+</head>
+<body>
+	<div id="dlg" class="easyui-dialog" title="调班申请" style="width:960px; height: 460px;"
+	 data-options="modal:true,buttons:'#btns',closed:true">
+		<div style="height: 360px;padding: 10px 50px;">
+			<form id="tbform" class="easyui-form">
+				<table cellpadding="10">
+					<tr height="50">
+						<td width="140">申请人</td>
+						<td>
+							<div style="display: none;">
+								<input class="easyui-textbox" name="preuserid" id="preuserid" />
+							</div>
+							<input id="perusername" name="perusername" class="easyui-textbox" type="text"
+								data-options="height:32,width:300,required:true,prompt:'必填项',readonly:true"></input>
+						</td>
+					</tr>
+					<tr height="50">
+						<td>值班时间</td>
+						<td>
+							<input id="preondutyid" class="easyui-combobox" type="text" name='preondutyid'
+								data-options="loadFilter:treeLoadFilter,valueField: 'id',
+			                         editable:false, textField: 'text',height:32,width:300,prompt:'必填项',required:true"></input>
+						</td>
+						</td>
+					</tr>
+					<tr height="50">
+						<td>调整到</td>
+						<td>
+							<div style="display: none;">
+								<input class="easyui-textbox" name="preparetime" id="preparetime" />
+							</div>
+							<input id='contime' type='text' name='contime' class="easyui-textbox"
+								data-options="height:32,width:300,required:true,prompt:'必填项',readonly:true"></input>
+						</td>
+					</tr>
+					<tr height="50">
+						<td>调班对象</td>
+						<td>
+							<div style="display: none;">
+								<input class="easyui-textbox" name="perbyuserid" id="perbyuserid" /> <input class="easyui-textbox"
+									name="perbyondutyid" id="perbyondutyid" />
+							</div>
+							<input id="perbyusername" name="perbyusername" class="easyui-textbox" type="text"
+								data-options="height:32,width:300,required:true,prompt:'必填项',readonly:true"></input>
+						</td>
+					</tr>
+					<tr height="50">
+						<td>调班原因</td>
+						<td>
+							<input id='preparenote' type='text' name='preparenote' class="easyui-textbox"
+								data-options="height:128,width:300,required:true,validType:'notEmpty',prompt:'必填项',multiline:true"></input>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div id="btns">
+		<div class="custom-btn-save-l" onclick="save()">
+			<i class="iconfont icon-chuangjianshili"></i>&nbsp;保存
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>闭包演示</title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<script type="text/javascript">
+			window.onload = function() {
+				var ps = $("p");
+				for (var i = 0; i < ps.length; i++) {
+					ps[i].onclick = function() {
+						alert(i);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

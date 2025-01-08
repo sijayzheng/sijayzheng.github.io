@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="themes/default/easyui.css" />
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+	<form class="easyui-form" id="ff">
+		<input id="type" class="easyui-combobox" type="" data-options="height:32,width:320,required:true,prompt:'必填项',editable:false,multiple:true,multivalue:true"></input>
+	</form>
+	<button onclick="serl()">xulxhw</button>
+
+		<script type="text/javascript">
+			function serl(){
+				console.log($('#ff').serialize());
+				console.log();
+			}
+
+			$(function(){
+				var data = {
+					"list": [{
+						"code": "1.1",
+						"id": "BUSS_0000000003",
+						"isleaf": "0",
+						"levels": 1,
+						"names": "核心业务系统",
+						"note": "",
+						"orders": 1,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "1.2",
+						"id": "BUSS_0000000004",
+						"isleaf": "0",
+						"levels": 1,
+						"names": "中间业务系统",
+						"note": "",
+						"orders": 2,
+						"ranks": "1",
+						"superid": "0"
+					}, {
+						"code": "1.3",
+						"id": "BUSS_0000000005",
+						"isleaf": "1",
+						"levels": 1,
+						"names": "网银业务系统",
+						"note": "",
+						"orders": 3,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "1.4",
+						"id": "BUSS_0000000010",
+						"isleaf": "0",
+						"levels": 1,
+						"names": "网银业务系统1",
+						"note": "",
+						"orders": 4,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "1.5",
+						"id": "BUSS_0000000011",
+						"isleaf": "0",
+						"levels": 1,
+						"names": "网银业务系统2",
+						"note": "",
+						"orders": 5,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "DLHJ",
+						"id": "BUSS_0000000040",
+						"isleaf": "1",
+						"levels": 1,
+						"names": "动力环境监控",
+						"note": "",
+						"orders": 6,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "1.6",
+						"id": "BUSS_0000000043",
+						"isleaf": "1",
+						"levels": 1,
+						"names": "存储监控",
+						"note": "",
+						"orders": 6,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "1.7",
+						"id": "BUSS_0000000044",
+						"isleaf": "1",
+						"levels": 1,
+						"names": "应用监控",
+						"note": "",
+						"orders": 7,
+						"ranks": "2",
+						"superid": "0"
+					}, {
+						"code": "2.1",
+						"id": "BUSS_0000000047",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "网银业务系统2.1",
+						"note": "",
+						"orders": 0,
+						"ranks": "1",
+						"superid": "BUSS_0000000011"
+					}, {
+						"code": "1.2.2",
+						"id": "BUSS_0000000007",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "结算业务系统",
+						"note": "",
+						"orders": 0,
+						"ranks": "2",
+						"superid": "BUSS_0000000004"
+					}, {
+						"code": "1.4.1",
+						"id": "BUSS_0000000012",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "网银web1",
+						"note": "",
+						"orders": 0,
+						"ranks": "1",
+						"superid": "BUSS_0000000010"
+					}, {
+						"code": "1.4.2",
+						"id": "BUSS_0000000013",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "网银web2",
+						"note": "",
+						"orders": 0,
+						"ranks": "1",
+						"superid": "BUSS_0000000010"
+					}, {
+						"code": "1.2.1",
+						"id": "BUSS_0000000006",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "国际业务系统",
+						"note": "",
+						"orders": 0,
+						"ranks": "2",
+						"superid": "BUSS_0000000004"
+					}, {
+						"code": "1.1.1",
+						"id": "BUSS_0000000009",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "核心业务系统web系统",
+						"note": "",
+						"orders": 1,
+						"ranks": "2",
+						"superid": "BUSS_0000000003"
+					}, {
+						"code": "1.2.3",
+						"id": "BUSS_0000000035",
+						"isleaf": "1",
+						"levels": 2,
+						"names": "存款业务系统",
+						"note": "",
+						"orders": 3,
+						"ranks": "2",
+						"superid": "BUSS_0000000004"
+					}]
+				};
+
+				$('#type').combobox({
+					textField: 'names',
+					valueField: 'id',
+					data: data.list
+				});
+			});
+			$.ajax({
+				type:"get",
+				url:"",
+				async:true
+			});
+		</script>
+	</body>
+
+</html>

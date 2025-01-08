@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.info>p {
+				font-size: 22px;
+				font-weight: bold;
+			}
+
+			.main>div {
+				float: left;
+				width: 6.25rem;
+				height: 6.25rem;
+				margin: 0.625rem;
+				border: 1px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="info">
+			<p>441</p>
+			<span>类型</span>
+		</div>
+		<div class="info">
+			<p>441</p>
+			<span>类型</span>
+		</div>
+
+		<div class="main">
+			<div class="data">data</div>
+			<div class="circle">circle</div>
+			<div class="data1">data1</div>
+			<div class="data2">data2</div>
+			<div class="data3">data3</div>
+			<div class="data4">data4</div>
+		</div>
+		<script type="text/javascript">
+			$('.main>div[class^=data]').on('mouseover', function(e) {
+				console.log($(this).text());
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr'>
+
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+		<meta content='true' name='MSSmartTagsPreventParsing' />
+		<title>Javascript Unpacker Tool - Strictly Software</title>
+		<link rel="canonical" href="/unpack-javascript" />
+		<meta name="keywords" content="Strictly, Software, Javascript, online tool, depack, unpack JS, packer, unpack code, uncompress, de-compress, decompress, depacker, obfuscator" />
+		<meta name="description" content="A Javascript unpacker tool. Quickly unpack Obfuscated Javascript at the click of a button." />
+		<meta name="author" content="Website and Database development: Strictly Software - http://www.strictly-software.com/" />
+		<link rel="alternate" type="application/atom+xml" title="Strictly Software - Atom" href="http://blog.strictly-software.com/feeds/posts/default" />
+		<link rel="alternate" type="application/rss+xml" title="Strictly Software - RSS" href="http://blog.strictly-software.com/feeds/posts/default?alt=rss" />
+		<link rel="service.post" type="application/atom+xml" title="Strictly Software - Atom" href="http://www.blogger.com/feeds/4291664034828038593/posts/default" />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=4291664034828038593" />
+		<link rel="stylesheet" type="text/css" href="http://www.blogger.com/css/blog_controls.css" />
+		<link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=4291664034828038593&zx=5d869542-f9f0-4499-b4e0-de07ab167808" />
+		<link rel="me" href="http://www.blogger.com/profile/05430306492065347012" />
+		<link rel="openid.server" href="http://www.blogger.com/openid-server.g" />
+		<style type="text/css">
+			#navbar-iframe {
+				display: block
+			}
+		</style>
+		<link rel="shortcut icon" href="http://www.strictly-software.com/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="https://www.strictly-software.com/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="https://www.strictly-software.com/css/compressor.css" />
+		<script type="text/javascript" src="https://www.strictly-software.com/scripts/strictly.js"></script>
+
+	</head>
+
+	<body>
+		<div id='outer-wrapper' style="position:relative;">
+			<div id='wrap2'>
+				<!-- skip links for text browsers -->
+				<span id='skiplinks' style='display:none;'> 
+<a href='#main'>skip to main </a>      
+</span>
+				<div id='header-wrapper'>
+
+					<div style="height:90px;" class='header section' id='header'>
+						<div class='widget Header' id='Header1'>
+							<div id='header-inner'>
+								<div class='titlewrapper'>
+									<a href="http://www.strictly-software.com" title="Strictly Software Web Development"><img src="/images/logo.png" title="Strictly Software" alt="Strictly Software" style="position:absolute;top: 20px;left: 84px;" /></a>
+									<img src="http://www.blogblog.com/thisaway_blue/icon_header_left.gif" alt="Strictly Software Web Development" style="position:absolute;top:30px;left:15px;" />
+								</div>
+								<div class='descriptionwrapper'>
+									<p id="sitedesc" class='description' style="padding-top:80px;"><span> 
+ Web based system development specialising in ASP.NET, SQL 2005 and Web 2.0 technologies.</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='content-wrapper'>
+					<div id='crosscol-wrapper' style='text-align:center'>
+
+						<div class='crosscol section' id='crosscol'></div>
+					</div>
+					<div id='main-wrapper'>
+						<div class='main section' id='main' style="width: 740px;">
+							<div class='widget Blog' id='Blog1'>
+								<div class='blog-posts hfeed'>
+
+									<!-- banner_start -->
+									<!-- banner_ad_section_end -->
+
+									<div class='post hentry uncustomized-post-template'>
+										<h3 id="Unpacker" class='post-title entry-title'> 
+Unpack Obfuscated Javascript code
+</h3>
+										<div class='post-header-line-1'></div>
+										<div class='post-body'>
+
+											<p>This <strong>Javascript unpacker tool</strong> has now been upgraded to allow it to <strong>unpack multiple eval statements.</strong> So if your packed code has itself been packed a few times it will loop through until it finds the original source code.</p>
+											<p>If you want to test this <strong>multiple eval depacking</strong> then take this code from
+												<a target="_blank" href="http://www.strictly-software.com/scripts/downloads/multiplepackedcode.txt" title="Multiple Packed Javascript Code">this page</a> and then paste it into my tool. Hey presto, it returns the original code.</p>
+
+											<p>
+												<a href="/unpacker" title="Read more about unpacking Javascript"><strong>Read the related article about packing and unobfuscating Javascript</strong></a>
+											</p>
+
+											<p>If you like this tool why don't you try the
+												<a href="http://www.strictly-software.com/comment-spam-test" title="Comment Spam Test Tool, are you a spammer?">Are you a spammer tool?</a> It checks your details to make sure you are not being blocked by many blogs and sites when you post comments by using the same software they use.</p>
+
+											<form id="frmUnPacker" name="frmUnpacker">
+												<fieldset>
+													<dl>
+														<dt><label for="txtPacked">Paste Packed Code Here</label></dt>
+														<dd><textarea id="txtPacked" name="txtPacked" style="height:500px;width:600px;"></textarea></dd>
+													</dl>
+
+													<p style="text-align:right;margin-right:80px;">
+														<input type="button" class="submit" id="cmdUnpack" name="cmdUnpack" value="Unpack" />
+														<input type="button" class="submit" id="cmdClear" name="cmdClear" value="Clear Form" /></p>
+
+													<dl>
+														<dt><label for="txtUnpacked">Un-Packed Code</label></dt>
+														<dd><textarea id="txtUnpacked" name="txtUnpacked" style="height:500px;width:600px;"></textarea></dd>
+													</dl>
+
+												</fieldset>
+
+											</form>
+
+											<h3>Post Comments</h3>
+											<p style="margin-bottom:15px;">As this script is not part of the blog if you would like to
+												<a href="http://blog.strictly-software.com/2009/03/comments-for-script-articles-css-style.html" title="Post comments about this script">post comments please click this link and then respond to the following article.</a>
+											</p>
+											<div style='clear: both;'></div>
+										</div>
+									</div>
+
+									<!-- amazon_ad_section_start -->
+									<div class='adsense' style='text-align:center; padding: 0px 3px 0.5em 3px;'>
+										<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-eu.amazon-adsystem.com/widgets/q?rt=tf_ssw&ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fstricsoftw-21%2F8003%2F54ed85ff-afc7-4663-ae50-0a90c8e80eb4&Operation=GetScriptTemplate">
+										</SCRIPT>
+										<NOSCRIPT><A HREF="http://ws-eu.amazon-adsystem.com/widgets/q?rt=tf_ssw&ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fstricsoftw-21%2F8003%2F54ed85ff-afc7-4663-ae50-0a90c8e80eb4&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
+									</div>
+									<!-- amazon_ad_section_end -->
+
+									<div id="Socialize">
+										<div id="SocialStumble">
+											<a id="SocialStumbleA" href="//www.stumbleupon.com/submit" target="_blank">
+												<img src="//www.strictly-software.com/images/stumbleupon-48x48.png" border="0" alt="Stumble This" /></a>
+											<a id="SocialStumbleI" href="//www.stumbleupon.com/submit" target="_blank">Stumble this</a>
+										</div>
+										<div id="SocialReddit">
+											<a id="SocialRedditA" href="//reddit.com/submit" target="_blank">
+												<img src="//www.strictly-software.com/images/Reddit-48x48.jpg" border="0" alt="Reddit" /></a>
+											<a id="SocialRedditI" href="//reddit.com/submit" target="_blank">Reddit this</a>
+										</div>
+										<div id="SocialDelicious">
+											<a id="SocialDeliciousA" href="//del.icio.us/post" target="_blank" style="margin-left:14px;">
+												<img src="//www.strictly-software.com/images/Delicious-48x48.jpg" border="0" alt="Delicious" /></a>
+											<a id="SocialDeliciousI" href="//del.icio.us/post" target="_blank" style="margin-left:15px;">Add to Delicious</a>
+										</div>
+										<div id="SocialTechnorati">
+											<a id="SocialTechnoratiA" href="//technorati.com/faves" style="margin-left:17px;" target="_blank">
+												<img src="//www.strictly-software.com/images/Technorati-48x48.jpg" border="0" alt="Technorati" /></a>
+											<a id="SocialTechnoratiI" href="//technorati.com/faves" style="margin-left:15px;" target="_blank">Add to Technorati</a>
+										</div>
+										<div style="clear:both;"></div>
+									</div>
+									<div style="clear:both;"></div>
+
+								</div>
+								<div class='blog-pager' id='blog-pager'>
+								</div>
+								<div class='clear'></div>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- spacer for skins that want sidebar and main to be the same height-->
+					<div class='clear'>&#160;</div>
+				</div>
+				<!-- end content-wrapper -->
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+				<!-- Begin #footer -->
+
+				<div id='footer-wrapper'>
+					<div class='footer section' id='footer'>
+						Copyright &copy; 2008 - 2018 Strictly Software | Design &amp; Development
+						<a href="//www.strictly-software.com/" title="Web Development by Strictly Software">Strictly Software.</a> |
+						<a href="mailto:click@link-to-email" class="contact" id="contact">Contact Us</a> |
+						<a href="//www.strictly-software.com/privacy.asp" title="View the privacy and terms and conditions">Privacy &amp; Terms</a>
+					</div>
+				</div>
+				<!-- End #footer -->
+
+				<script type="text/javascript" src="//www.strictly-software.com/scripts/social.js"></script>
+				<script type="text/javascript" src="//www.strictly-software.com/scripts/ga.js"></script>
+				<script type="text/javascript">
+					//<![CDATA[
+					var p = _gat._getTracker("UA-5936552-1");
+					p._trackPageview();
+					DOM(function() {
+						var ar = GC('contact');
+						for(var x = 0; x < ar.length; x++) {
+							c = ar[x];
+							addEvent(c, "click", function() {
+								var x = this.innerHTML;
+								this.href = 'mailto:' + S.getEmailAddress('admin', 'strictly-software.com');
+								title = '';
+								this.innerHTML = x;
+							})
+							addEvent(c, "mouseover", function() {
+								this.title = S.getEmailAddress('admin', 'strictly-software.com');
+								window.status = this.title;
+							})
+							addEvent(c, "mouseout", function() {
+								_w.status = ''
+							})
+						}
+					})
+					//]]>
+				</script>
+
+				<script type="text/javascript" src="https://www.strictly-software.com/scripts/reformat.js"></script>
+				<script type="text/javascript" src="https://www.strictly-software.com/scripts/gban.js"></script>
+				<script type="text/javascript">
+					function unpack() {
+						var p = G('txtPacked').value,
+							c = p;
+						var a = 10,
+							x = 1;
+						while(x < a) {
+							c = unescape(c);
+							if(/eval\(+function\(/.test(c)) {
+								c = depack(c);
+								x++
+							} else {
+								break
+							}
+						};
+						c = unescape(c);
+						c = R(c, {
+							indent_size: 1,
+							indent_char: '\t'
+						});
+						G('txtUnpacked').value = c
+					}
+
+					function depack(p) {
+						if(p != "") {
+							c = unescape(p);
+							var _e = eval,
+								s = "eval=function(v){c=v;};" + c + ";eval=_e;";
+							eval(s)
+						} else {
+							c = p
+						};
+						return c
+					}
+					W(function() {
+						addEvent(G('cmdUnpack'), 'click', unpack);
+						addEvent(G('cmdClear'), 'click', function() {
+							G('txtPacked').value = G('txtUnpacked').value = '';
+						})
+					});
+				</script>
+			</div>
+		</div>
+		<!-- end outer-wrapper -->
+	</body>
+
+</html>

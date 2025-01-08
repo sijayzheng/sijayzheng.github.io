@@ -1,0 +1,1506 @@
+<html lang="zh">
+
+	<head>
+		<title></title>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var currentYear = 2018;
+			var currentMonth = 9;
+			var currentDay = 7;
+			var currentLunarYear = 2018;
+			var currentLunarMonth = 7;
+			var currentLeapMonth = 0;
+			var currentLunarDay = 28;
+			var currentDate = new Date();
+			var currentLunarDate = null;
+			var lunarMonth = [null, '正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '腊'];
+			var lunarDay = [null, '初一', '初二', '初三', '初四', '初五', '初六', '初七', '初八', '初九', '初十',
+				'十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十',
+				'廿一', '廿二', '廿三', '廿四', '廿五', '廿六', '廿七', '廿八', '廿九', '三十'
+			];
+			var lunar_year = ["\u5e9a\u7533", "\u8f9b\u9149", "\u58ec\u620c", "\u7678\u4ea5", "\u7532\u5b50", "\u4e59\u4e11", "\u4e19\u5bc5", "\u4e01\u536f", "\u620a\u8fb0", "\u5df1\u5df3", "\u5e9a\u5348", "\u8f9b\u672a", "\u58ec\u7533", "\u7678\u9149", "\u7532\u620c", "\u4e59\u4ea5", "\u4e19\u5b50", "\u4e01\u4e11", "\u620a\u5bc5", "\u5df1\u536f", "\u5e9a\u8fb0", "\u8f9b\u5df3", "\u58ec\u5348", "\u7678\u672a", "\u7532\u7533", "\u4e59\u9149", "\u4e19\u620c", "\u4e01\u4ea5", "\u620a\u5b50", "\u5df1\u4e11", "\u5e9a\u5bc5", "\u8f9b\u536f", "\u58ec\u8fb0", "\u7678\u5df3", "\u7532\u5348", "\u4e59\u672a", "\u4e19\u7533", "\u4e01\u9149", "\u620a\u620c", "\u5df1\u4ea5", "\u5e9a\u5b50", "\u8f9b\u4e11", "\u58ec\u5bc5", "\u7678\u536f", "\u7532\u8fb0", "\u4e59\u5df3", "\u4e19\u5348", "\u4e01\u672a", "\u620a\u7533", "\u5df1\u9149", "\u5e9a\u620c", "\u8f9b\u4ea5", "\u58ec\u5b50", "\u7678\u4e11", "\u7532\u5bc5", "\u4e59\u536f", "\u4e19\u8fb0", "\u4e01\u5df3", "\u620a\u5348", "\u5df1\u672a", "\u5e9a\u7533", "\u8f9b\u9149", "\u58ec\u620c", "\u7678\u4ea5", "\u7532\u5b50", "\u4e59\u4e11", "\u4e19\u5bc5", "\u4e01\u536f", "\u620a\u8fb0", "\u5df1\u5df3", "\u5e9a\u5348", "\u8f9b\u672a", "\u58ec\u7533", "\u7678\u9149", "\u7532\u620c", "\u4e59\u4ea5", "\u4e19\u5b50", "\u4e01\u4e11", "\u620a\u5bc5", "\u5df1\u536f", "\u5e9a\u8fb0", "\u8f9b\u5df3", "\u58ec\u5348", "\u7678\u672a", "\u7532\u7533", "\u4e59\u9149", "\u4e19\u620c", "\u4e01\u4ea5", "\u620a\u5b50", "\u5df1\u4e11", "\u5e9a\u5bc5", "\u8f9b\u536f", "\u58ec\u8fb0", "\u7678\u5df3", "\u7532\u5348", "\u4e59\u672a", "\u4e19\u7533", "\u4e01\u9149", "\u620a\u620c", "\u5df1\u4ea5", "\u5e9a\u5b50", "\u8f9b\u4e11", "\u58ec\u5bc5", "\u7678\u536f", "\u7532\u8fb0", "\u4e59\u5df3", "\u4e19\u5348", "\u4e01\u672a", "\u620a\u7533", "\u5df1\u9149", "\u5e9a\u620c", "\u8f9b\u4ea5", "\u58ec\u5b50", "\u7678\u4e11", "\u7532\u5bc5", "\u4e59\u536f", "\u4e19\u8fb0", "\u4e01\u5df3", "\u620a\u5348", "\u5df1\u672a", "\u5e9a\u7533", "\u8f9b\u9149", "\u58ec\u620c", "\u7678\u4ea5", "\u7532\u5b50", "\u4e59\u4e11", "\u4e19\u5bc5", "\u4e01\u536f", "\u620a\u8fb0", "\u5df1\u5df3", "\u5e9a\u5348", "\u8f9b\u672a", "\u58ec\u7533", "\u7678\u9149", "\u7532\u620c", "\u4e59\u4ea5", "\u4e19\u5b50", "\u4e01\u4e11", "\u620a\u5bc5", "\u5df1\u536f", "\u5e9a\u8fb0", "\u8f9b\u5df3", "\u58ec\u5348", "\u7678\u672a", "\u7532\u7533", "\u4e59\u9149", "\u4e19\u620c", "\u4e01\u4ea5", "\u620a\u5b50", "\u5df1\u4e11", "\u5e9a\u5bc5", "\u8f9b\u536f", "\u58ec\u8fb0", "\u7678\u5df3", "\u7532\u5348", "\u4e59\u672a", "\u4e19\u7533", "\u4e01\u9149", "\u620a\u620c", "\u5df1\u4ea5", "\u5e9a\u5b50", "\u8f9b\u4e11", "\u58ec\u5bc5", "\u7678\u536f", "\u7532\u8fb0", "\u4e59\u5df3", "\u4e19\u5348", "\u4e01\u672a", "\u620a\u7533", "\u5df1\u9149", "\u5e9a\u620c", "\u8f9b\u4ea5", "\u58ec\u5b50", "\u7678\u4e11", "\u7532\u5bc5", "\u4e59\u536f", "\u4e19\u8fb0", "\u4e01\u5df3", "\u620a\u5348", "\u5df1\u672a", "\u5e9a\u7533", "\u8f9b\u9149", "\u58ec\u620c", "\u7678\u4ea5", "\u7532\u5b50", "\u4e59\u4e11", "\u4e19\u5bc5", "\u4e01\u536f", "\u620a\u8fb0", "\u5df1\u5df3", "\u5e9a\u5348", "\u8f9b\u672a", "\u58ec\u7533", "\u7678\u9149", "\u7532\u620c", "\u4e59\u4ea5", "\u4e19\u5b50", "\u4e01\u4e11", "\u620a\u5bc5", "\u5df1\u536f", "\u5e9a\u8fb0", "\u8f9b\u5df3", "\u58ec\u5348", "\u7678\u672a", "\u7532\u7533", "\u4e59\u9149", "\u4e19\u620c", "\u4e01\u4ea5", "\u620a\u5b50", "\u5df1\u4e11", "\u5e9a\u5bc5", "\u8f9b\u536f", "\u58ec\u8fb0", "\u7678\u5df3", "\u7532\u5348", "\u4e59\u672a", "\u4e19\u7533", "\u4e01\u9149", "\u620a\u620c", "\u5df1\u4ea5", "\u5e9a\u5b50", "\u8f9b\u4e11", "\u58ec\u5bc5", "\u7678\u536f", "\u7532\u8fb0", "\u4e59\u5df3", "\u4e19\u5348", "\u4e01\u672a", "\u620a\u7533", "\u5df1\u9149", "\u5e9a\u620c", "\u8f9b\u4ea5", "\u58ec\u5b50", "\u7678\u4e11", "\u7532\u5bc5", "\u4e59\u536f", "\u4e19\u8fb0", "\u4e01\u5df3", "\u620a\u5348", "\u5df1\u672a", "\u5e9a\u7533", "\u8f9b\u9149", "\u58ec\u620c", "\u7678\u4ea5", "\u7532\u5b50", "\u4e59\u4e11", "\u4e19\u5bc5", "\u4e01\u536f", "\u620a\u8fb0", "\u5df1\u5df3", "\u5e9a\u5348", "\u8f9b\u672a", "\u58ec\u7533", "\u7678\u9149", "\u7532\u620c", "\u4e59\u4ea5", "\u4e19\u5b50", "\u4e01\u4e11", "\u620a\u5bc5", "\u5df1\u536f", "\u5e9a\u8fb0", "\u8f9b\u5df3", "\u58ec\u5348", "\u7678\u672a", "\u7532\u7533", "\u4e59\u9149", "\u4e19\u620c", "\u4e01\u4ea5", "\u620a\u5b50", "\u5df1\u4e11", "\u5e9a\u5bc5", "\u8f9b\u536f", "\u58ec\u8fb0", "\u7678\u5df3", "\u7532\u5348", "\u4e59\u672a", "\u4e19\u7533", "\u4e01\u9149", "\u620a\u620c", "\u5df1\u4ea5", "\u5e9a\u5b50", "\u8f9b\u4e11", "\u58ec\u5bc5", "\u7678\u536f", "\u7532\u8fb0", "\u4e59\u5df3", "\u4e19\u5348", "\u4e01\u672a", "\u620a\u7533", "\u5df1\u9149", "\u5e9a\u620c", "\u8f9b\u4ea5", "\u58ec\u5b50", "\u7678\u4e11", "\u7532\u5bc5", "\u4e59\u536f", "\u4e19\u8fb0", "\u4e01\u5df3", "\u620a\u5348", "\u5df1\u672a", "\u5e9a\u7533"];
+			var leap_month = [4, 0, 0, 2, 0, 6, 0, 0, 5, 0, 0, 3, 0, 0, 2, 0, 6, 0, 0, 4, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 9, 0, 0, 6, 0, 0, 4, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 8, 0, 0, 7, 0, 0, 5, 0, 0, 3, 0, 8, 0, 0, 5, 0, 0, 4, 0, 10, 0, 0, 6, 0, 0, 5, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 0, 2, 0, 6, 0, 0, 5, 0, 0, 3, 0, 8, 0, 0, 5, 0, 0, 4, 0, 0, 2, 0, 6, 0, 0, 5, 0, 0, 2, 0, 7, 0, 0, 5, 0, 0, 4, 0, 0, 2, 0, 6, 0, 0, 5, 0, 0, 3, 0, 7, 0, 0, 6, 0, 0, 4, 0, 0, 2, 0, 7, 0, 0, 5, 0, 0, 3, 0, 8, 0, 0, 6, 0, 0, 4, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 8, 0, 0, 6, 0, 0, 4, 0, 10, 0, 0, 6, 0, 0, 5, 0, 0, 3, 0, 8, 0, 0, 5, 0, 0, 4, 0, 0, 2, 0, 7, 0, 0, 5, 0, 0, 4, 0, 9, 0, 0, 6, 0, 0, 4, 0, 0, 2, 0, 6, 0, 0, 5, 0, 0, 3, 0, 11, 11, 0, 6, 0, 0, 5, 0, 0, 2, 0, 7, 0, 0, 5, 0, 0, 3, 0, 8, 0, 0, 6, 0, 0, 4, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 8, 0, 0, 6, 0, 0, 4, 0, 0, 3, 0, 7, 0, 0, 5, 0, 0, 4, 0, 8, 0, 0, 6, 0, 0, 4, 0, 0, 2, 0];
+			var lunar_date = [
+				[
+					[4, 0], 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0
+				],
+				[
+					[2, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1
+				],
+				[
+					[6, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[5, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[3, 0], 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[2, 0], 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[6, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[4, 0], 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[3, 0], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[7, 1], 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[5, 1], 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[4, 0], 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[9, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[6, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[4, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[3, 1], 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[7, 1], 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[5, 0], 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[4, 0], 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[8, 0], 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[7, 0], 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[5, 0], 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[3, 1], 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[8, 0], 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[5, 1], 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[4, 0], 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[10, 0], 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[6, 1], 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[5, 0], 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[3, 1], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[7, 0], 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[5, 0], 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[4, 0], 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[2, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[6, 0], 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[5, 0], 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[3, 0], 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[8, 0], 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[5, 0], 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[4, 1], 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[2, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[6, 0], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[5, 1], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[2, 0], 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[7, 1], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[5, 0], 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0
+				],
+				[
+					[4, 1], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[2, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[6, 0], 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[5, 1], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[3, 1], 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[7, 1], 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[6, 1], 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[4, 1], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[2, 0], 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[7, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[5, 1], 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[3, 1], 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[8, 0], 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[6, 0], 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[4, 0], 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[3, 0], 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[7, 0], 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[5, 0], 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[4, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[8, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[6, 1], 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[4, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[10, 0], 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0
+				],
+				[
+					[6, 0], 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[5, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[3, 0], 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[8, 0], 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[5, 0], 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[4, 0], 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[2, 0], 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[7, 0], 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[5, 0], 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[4, 0], 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[9, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[6, 1], 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1
+				],
+				[
+					[4, 0], 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[2, 0], 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[6, 0], 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[5, 0], 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[3, 0], 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[11, 0],
+					[11, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1
+				],
+				[0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1
+				],
+				[
+					[6, 1], 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0
+				],
+				[
+					[5, 0], 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[2, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[7, 0], 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[5, 1], 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[3, 1], 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1
+				],
+				[
+					[8, 0], 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1
+				],
+				[
+					[6, 1], 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[4, 1], 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[3, 0], 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[7, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[5, 0], 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[4, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[8, 0], 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0
+				],
+				[
+					[6, 0], 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0
+				],
+				[
+					[4, 0], 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1
+				],
+				[
+					[3, 0], 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1
+				],
+				[
+					[7, 0], 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1
+				],
+				[
+					[0, 0], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[5, 1], 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1
+				],
+				[
+					[4, 0], 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[8, 0], 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[6, 1], 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0
+				],
+				[
+					[0, 0], 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0
+				],
+				[
+					[4, 0], 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1
+				],
+				[
+					[2, 0], 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1
+				],
+				[
+					[0, 0], 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0
+				]
+			];
+		</script>
+		<script type="text/javascript">
+			$("#span_select_solar_year").click(function() {
+				if($("#div_select_solar_year").is(":hidden")) {
+					switchSolarYear($("#span_select_solar_year").text());
+					$("#div_select_solar_year").slideDown("normal");
+					$("#div_select_solar_month").fadeOut();
+					$("#div_select_solar_day").fadeOut()
+				} else {
+					$("#div_select_solar_year").slideUp("normal")
+				}
+			});
+			$("#span_select_solar_month").click(function() {
+				if($("#div_select_solar_month").is(":hidden")) {
+					showSolarMonth();
+					$("#div_select_solar_month").slideDown("normal");
+					$("#div_select_solar_year").fadeOut();
+					$("#div_select_solar_day").fadeOut()
+				} else {
+					$("#div_select_solar_month").slideUp("normal")
+				}
+			});
+			$("#span_select_solar_day").click(function() {
+				if($("#div_select_solar_day").is(":hidden")) {
+					showSolarDay($("#span_select_solar_year").text(), $("#span_select_solar_month").text());
+					$("#div_select_solar_day").slideDown("normal");
+					$("#div_select_solar_year").fadeOut();
+					$("#div_select_solar_month").fadeOut()
+				} else {
+					$("#div_select_solar_day").slideUp("normal")
+				}
+			});
+			$("#search_lunar").click(function() {
+				searchLunarDate()
+			});
+			$("#span_select_lunar_year").click(function() {
+				if($("#div_select_lunar_year").is(":hidden")) {
+					currentLunarYear = getLunarYearNumber($(this).text());
+					switchLunarYear(currentLunarYear);
+					$("#div_select_lunar_year").slideDown("normal");
+					$("#div_select_lunar_month").fadeOut();
+					$("#div_select_lunar_day").fadeOut()
+				} else {
+					$("#div_select_lunar_year").slideUp("normal")
+				}
+			});
+			$("#span_select_lunar_month").click(function() {
+				if($("#div_select_lunar_month").is(":hidden")) {
+					currentLunarYear = getLunarYearNumber($("#span_select_lunar_year").text());
+					showLunarMonth(currentLunarYear);
+					$("#div_select_lunar_month").slideDown("normal");
+					$("#div_select_lunar_year").fadeOut();
+					$("#div_select_lunar_day").fadeOut()
+				} else {
+					$("#div_select_lunar_month").slideUp("normal")
+				}
+			});
+			$("#span_select_lunar_day").click(function() {
+				if($("#div_select_lunar_day").is(":hidden")) {
+					showLunarDay(currentLunarYear, currentLunarMonth, currentLeapMonth);
+					$("#div_select_lunar_day").slideDown("normal");
+					$("#div_select_lunar_year").fadeOut();
+					$("#div_select_lunar_month").fadeOut()
+				} else {
+					$("#div_select_lunar_day").slideUp("normal")
+				}
+			});
+			$("#search_solar").click(function() {
+				searchSolarDate()
+			});
+			$("#copy_solar_lunar").click(function() {
+				var _clipData = '\n' + $("#solar_td").text() + '\n' + $("#lunar_td").text() + '\n\n我是从农历114查到的：\n' + location.href;
+				window.clipboardData.setData('text', _clipData);
+				$("#copy_solar_lunar").attr('disabled', true);
+				$("#copy_solar_lunar").val('复制成功');
+				setTimeout(function() {
+					$("#copy_solar_lunar").val('复制内容');
+					$("#copy_solar_lunar").attr('disabled', false)
+				}, 3000)
+			});
+			$("#copy_lunar_solar").click(function() {
+				var _clipData = '\n' + $("#lunar_td").text() + '\n' + $("#solar_td").text() + '\n\n我是从农历114查到的：\n' + location.href;
+				window.clipboardData.setData('text', _clipData);
+				$("#copy_lunar_solar").attr('disabled', true);
+				$("#copy_lunar_solar").val('复制成功');
+				setTimeout(function() {
+					$("#copy_lunar_solar").val('复制内容');
+					$("#copy_lunar_solar").attr('disabled', false)
+				}, 3000)
+			});
+			$("#copy_bazi").click(function() {
+				var _clipData = '';
+				$("#bazi td").each(function() {
+					_clipData = _clipData + '\n' + $(this).text()
+				});
+				_clipData = _clipData + '\n\n我是从农历114查到的：\n' + location.href;
+				window.clipboardData.setData('text', _clipData);
+				$("#copy_bazi").attr('disabled', true);
+				$("#copy_bazi").val('复制成功');
+				setTimeout(function() {
+					$("#copy_bazi").val('复制内容');
+					$("#copy_bazi").attr('disabled', false)
+				}, 3000)
+			});
+
+			function dateDiff(startDate, endDate) {
+				var days = 0;
+				if(startDate == endDate) {
+					return days
+				}
+				var sDate = startDate.split('-');
+				var eDate = endDate.split('-');
+				var sYear = parseInt(sDate[0]);
+				var sMonth = parseInt(sDate[1]);
+				var sDay = parseInt(sDate[2]);
+				var eYear = parseInt(eDate[0]);
+				var eMonth = parseInt(eDate[1]);
+				var eDay = parseInt(eDate[2]);
+				for(var y = sYear; y <= eYear; y++) {
+					if(y == eYear) {
+						for(var m = 1; m <= eMonth; m++) {
+							if(m == eMonth) {
+								days = days + eDay - sDay
+							} else if(m >= sMonth) {
+								days = days + getMonthDays(y, m)
+							}
+						}
+					} else {
+						days = days + ((leapYear(y)) ? 366 : 365)
+					}
+				}
+				return days
+			}
+
+			function getMonthDays(year, month) {
+				var ar = new Array();
+				ar[1] = 31;
+				ar[2] = (leapYear(year)) ? 29 : 28;
+				ar[3] = 31;
+				ar[4] = 30;
+				ar[5] = 31;
+				ar[6] = 30;
+				ar[7] = 31;
+				ar[8] = 31;
+				ar[9] = 30;
+				ar[10] = 31;
+				ar[11] = 30;
+				ar[12] = 31;
+				return ar[month]
+			}
+
+			function leapYear(year) {
+				if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+					return true
+				}
+				return false
+			}
+
+			function showObject(obj) {
+				var props;
+				for(var p in obj) {
+					if(typeof(obj[p]) == 'function') {} else if(typeof(obj[p]) == 'object') {} else {
+						props += p + "=" + obj[p] + "\t"
+					}
+				}
+				return props
+			}
+
+			function switchSolarYear(year) {
+				var startYear, endYear;
+				if(year == '') {
+					year = currentYear
+				}
+				year = parseInt(year);
+				if(year < 1980) {
+					startYear = year - (year % 20);
+					endYear = startYear + 19
+				} else if(year > 2014) {
+					startYear = year - (year - 2015) % 20;
+					endYear = startYear + 19
+				} else {
+					startYear = 1980;
+					endYear = 2014
+				}
+				showSolarYear(startYear, endYear)
+			}
+
+			function showSolarYear(startYear, endYear) {
+				var className = '';
+				if(startYear < 1800) {
+					startYear = 1800
+				} else if(startYear >= 2100) {
+					startYear = 2095
+				}
+				if(endYear > 2100) {
+					endYear = 2100
+				} else if(endYear <= 1800) {
+					endYear = 1819
+				}
+				$("#div_select_solar_year_date").html(startYear + '-' + endYear);
+				$("#ul_select_solar_year").empty();
+				for(var i = startYear; i <= endYear; i++) {
+					className = (i == currentYear) ? ' class="currentLi2"' : '';
+					$("#ul_select_solar_year").append("<li" + className + " year='" + i + "'>" + i + "</li>")
+				}
+				bindSolarYear()
+			}
+
+			function bindSolarYear() {
+				$('#div_select_solar_year ul>li').bind({
+					click: function() {
+						currentYear = parseInt($(this).attr('year'));
+						$("#span_select_solar_year").html(currentYear);
+						$("#div_select_solar_month_date").html(currentYear + '年');
+						showSolarMonth();
+						$("#div_select_solar_year").slideUp("normal", function() {
+							$("#div_select_solar_month").slideDown("normal")
+						})
+					},
+					mouseover: function() {
+						$(this).addClass('currentLi')
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function switchSolarMonth(number) {
+				number = parseInt(number);
+				currentYear = currentYear * 1 + number;
+				if(currentYear < 1800) {
+					currentYear = 1800
+				} else if(currentYear > 2100) {
+					currentYear = 2100
+				}
+				$("#div_select_solar_month_date").html(currentYear + '年');
+				$("#span_select_solar_year").html(currentYear)
+			}
+
+			function showSolarMonth() {
+				$("#ul_select_solar_month").empty();
+				for(var i = 1; i <= 12; i++) {
+					className = (i == currentMonth) ? ' class="currentLi2"' : '';
+					$("#ul_select_solar_month").append("<li" + className + " month='" + i + "'>" + i + "月</li>")
+				}
+				bindSolarMonth()
+			}
+
+			function bindSolarMonth() {
+				$('#div_select_solar_month ul>li').bind({
+					click: function() {
+						currentMonth = parseInt($(this).attr('month'));
+						$("#span_select_solar_month").html(currentMonth);
+						$("#div_select_solar_day_date").html(currentYear + '年' + currentMonth + '月');
+						showSolarDay(currentYear, currentMonth);
+						$("#div_select_solar_month").slideUp("normal", function() {
+							$("#div_select_solar_day").slideDown("normal")
+						})
+					},
+					mouseover: function() {
+						$(this).addClass('currentLi')
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function switchSolarDay(number) {
+				number = parseInt(number);
+				currentMonth = currentMonth * 1 + number;
+				if(currentMonth < 1) {
+					currentYear--;
+					currentMonth = 12
+				} else if(currentMonth > 12) {
+					currentYear++;
+					currentMonth = 1
+				}
+				if(currentYear < 1800) {
+					currentYear = 1800
+				} else if(currentYear > 2100) {
+					currentYear = 2100
+				}
+				$("#span_select_solar_year").html(currentYear);
+				$("#span_select_solar_month").html(currentMonth);
+				$("#div_select_solar_day_date").html(currentYear + '年' + currentMonth + '月');
+				showSolarDay(currentYear, currentMonth)
+			}
+
+			function showSolarDay(year, month) {
+				year = parseInt(year);
+				month = parseInt(month);
+				$("#ul_select_solar_day").empty();
+				var w = 3;
+				var diff = dateDiff('1800-1-1', year + '-' + month + '-1');
+				var week = ((diff % 7) + w) % 7;
+				for(var i = 1; i <= week; i++) {
+					$("#ul_select_solar_day").append("<li style='cursor:auto' day='0'></li>")
+				}
+				var days = getMonthDays(year, month);
+				for(var i = 1; i <= days; i++) {
+					className = (i == currentDay) ? ' class="currentLi2"' : '';
+					$("#ul_select_solar_day").append("<li" + className + " day='" + i + "'>" + i + "</li>")
+				}
+				bindSolarDay()
+			}
+
+			function bindSolarDay() {
+				$('#ul_select_solar_day li').bind({
+					click: function() {
+						currentDay = parseInt($(this).attr('day'));
+						if(currentDay) {
+							$(this).css('cursor', 'wait');
+							$("#span_select_solar_day").html(currentDay);
+							searchLunarDate()
+						}
+					},
+					mouseover: function() {
+						if($(this).text() != '') {
+							$(this).addClass('currentLi')
+						}
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function searchLunarDate() {
+				currentDate = currentYear + '-' + currentMonth + '-' + currentDay;
+			}
+
+			function switchLunarYear(year) {
+				var startYear, endYear;
+				if(year == '') {
+					year = currentYear
+				}
+				year = parseInt(year);
+				if(year < 1980) {
+					startYear = year - (year % 20);
+					endYear = startYear + 19
+				} else if(year > 2014) {
+					startYear = year - (year - 2015) % 20;
+					endYear = startYear + 19
+				} else {
+					startYear = 1980;
+					endYear = 2014
+				}
+				showLunarYear(startYear, endYear)
+			}
+
+			function getLunarYearNumber(year) {
+				return year.match(/\d{4}/g)
+			}
+
+			function getLunarFullYear(year) {
+				return lunar_year[year % 1800] + '(' + year + ')'
+			}
+
+			function showLunarYear(startYear, endYear) {
+				var className = '';
+				if(startYear < 1800) {
+					startYear = 1800
+				} else if(startYear >= 2100) {
+					startYear = 2095
+				}
+				if(endYear > 2100) {
+					endYear = 2100
+				} else if(endYear <= 1800) {
+					endYear = 1819
+				}
+				$("#div_select_lunar_year_date").html(getLunarFullYear(startYear) + '-' + getLunarFullYear(endYear));
+				$("#ul_select_lunar_year").empty();
+				for(var i = startYear; i <= endYear; i++) {
+					className = (i == currentLunarYear) ? ' class="currentLi2"' : '';
+					$("#ul_select_lunar_year").append("<li" + className + " year='" + i + "'>" + getLunarFullYear(i) + "</li>")
+				}
+				bindLunarYear()
+			}
+
+			function bindLunarYear() {
+				$('#div_select_lunar_year ul>li').bind({
+					click: function() {
+						currentLunarYear = parseInt($(this).attr('year'));
+						$("#span_select_lunar_year").html(getLunarFullYear(currentLunarYear));
+						showLunarMonth(currentLunarYear);
+						$("#div_select_lunar_year").slideUp("normal", function() {
+							$("#div_select_lunar_month").slideDown("normal")
+						})
+					},
+					mouseover: function() {
+						$(this).addClass('currentLi')
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function switchLunarMonth(number) {
+				number = parseInt(number);
+				currentLunarYear = currentLunarYear * 1 + number;
+				if(currentLunarYear < 1800) {
+					currentLunarYear = 1800
+				} else if(currentLunarYear > 2100) {
+					currentLunarYear = 2100
+				}
+				$("#div_select_lunar_month_date").html(getLunarFullYear(currentLunarYear) + '年');
+				$("#span_select_lunar_year").html(getLunarFullYear(currentLunarYear));
+				showLunarMonth(currentLunarYear)
+			}
+
+			function getLunarLeapMonth(year) {
+				return leap_month[year % 1800]
+			}
+
+			function showLunarMonth(year) {
+				var leapMonth = getLunarLeapMonth(year);
+				$("#div_select_lunar_month_date").html(getLunarFullYear(year) + '年');
+				$("#ul_select_lunar_month").empty();
+				for(var i = 1; i <= 12; i++) {
+					className = (i == currentLunarMonth && !currentLeapMonth) ? ' class="currentLi2"' : '';
+					$("#ul_select_lunar_month").append("<li" + className + " month='" + i + "' leap='0'>" + lunarMonth[i] + "月</li>");
+					if(i == leapMonth) {
+						className = (i == currentLunarMonth && currentLeapMonth) ? ' class="currentLi2"' : '';
+						$("#ul_select_lunar_month").append("<li" + className + " month='" + i + "' leap='1'>闰" + lunarMonth[i] + "月</li>")
+					}
+				}
+				bindLunarMonth()
+			}
+
+			function getLunarFullMonth(month, leapMonth) {
+				if(leapMonth) {
+					return '闰' + lunarMonth[month]
+				} else {
+					return lunarMonth[month]
+				}
+			}
+
+			function bindLunarMonth() {
+				$('#div_select_lunar_month ul>li').bind({
+					click: function() {
+						currentLunarMonth = parseInt($(this).attr('month'));
+						currentLeapMonth = parseInt($(this).attr('leap'));
+						$("#span_select_lunar_month").html(getLunarFullMonth(currentLunarMonth, currentLeapMonth));
+						$("#div_select_lunar_day_date").html(getLunarFullYear(currentLunarYear) + '年' + getLunarFullMonth(currentLunarMonth, currentLeapMonth) + '月');
+						showLunarDay(currentLunarYear, currentLunarMonth, currentLeapMonth);
+						$("#div_select_lunar_month").slideUp("normal", function() {
+							$("#div_select_lunar_day").slideDown("normal")
+						})
+					},
+					mouseover: function() {
+						$(this).addClass('currentLi')
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function switchLunarDay(number) {
+				var leapMonth = getLunarLeapMonth(currentLunarYear);
+				currentLunarMonth = currentLunarMonth + parseInt(number);
+				if(currentLeapMonth) {
+					if(currentLunarMonth < leapMonth) {
+						currentLunarMonth = leapMonth
+					}
+					currentLeapMonth = 0
+				} else if(leapMonth) {
+					if(number > 0 && currentLunarMonth == (leapMonth * 1 + 1)) {
+						currentLeapMonth = 1;
+						currentLunarMonth--
+					} else if(number < 0 && currentLunarMonth == leapMonth) {
+						currentLeapMonth = 1
+					}
+				}
+				if(currentLunarMonth < 1) {
+					currentLunarYear--;
+					currentLunarMonth = 12;
+					var leapMonth = getLunarLeapMonth(currentLunarYear);
+					if(leapMonth == currentLunarMonth) {
+						currentLeapMonth = 1
+					}
+				} else if(currentLunarMonth > 12) {
+					currentLunarYear++;
+					currentLunarMonth = 1
+				}
+				if(currentLunarYear < 1800) {
+					currentLunarYear = 1800
+				} else if(currentLunarYear > 2100) {
+					currentLunarYear = 2100
+				}
+				$("#span_select_lunar_year").html(getLunarFullYear(currentLunarYear));
+				$("#span_select_lunar_month").html(getLunarFullMonth(currentLunarMonth, currentLeapMonth));
+				$("#div_select_lunar_day_date").html(getLunarFullYear(currentLunarYear) + '年' + getLunarFullMonth(currentLunarMonth, currentLeapMonth) + '月');
+				showLunarDay(currentLunarYear, currentLunarMonth, currentLeapMonth)
+			}
+
+			function showLunarDay(year, month, leapMonth) {
+				$("#ul_select_lunar_day").empty();
+				if(leapMonth) {
+					var days = (lunar_date[year % 1800][0][1]) ? 30 : 29
+				} else {
+					var days = (lunar_date[year % 1800][month]) ? 30 : 29
+				}
+				for(var i = 1; i <= days; i++) {
+					className = (i == currentLunarDay) ? ' class="currentLi2"' : '';
+					$("#ul_select_lunar_day").append("<li" + className + " day='" + i + "'>" + lunarDay[i] + "</li>")
+				}
+				bindLunarDay()
+			}
+
+			function bindLunarDay() {
+				$('#ul_select_lunar_day li').bind({
+					click: function() {
+						$(this).css('cursor', 'wait');
+						currentLunarDay = parseInt($(this).attr('day'));
+						$("#span_select_lunar_day").html(lunarDay[currentLunarDay]);
+						searchSolarDate()
+					},
+					mouseover: function() {
+						if($(this).text() != '') {
+							$(this).addClass('currentLi')
+						}
+					},
+					mouseout: function() {
+						$(this).removeClass('currentLi')
+					}
+				})
+			}
+
+			function searchSolarDate() {
+				currentLunarDate = currentLunarYear + '-' + currentLunarMonth + '-' + currentLunarDay;
+				if(currentLeapMonth) {
+					currentLunarDate = currentLunarDate + '-1'
+				}
+			}
+			jQuery.fn.highlight = function(keyword, style) {
+				this.each(function() {
+					var children = this.childNodes;
+					for(var i = 0; i < children.length; i++) {
+						var child = children[i];
+						if(child.nodeType == 3) {
+							var temp_value = child.nodeValue;
+							var index = temp_value.indexOf(keyword);
+							if(index >= 0) {
+								child.nodeValue = temp_value.substr(0, index);
+								$(child).after("<span class='" + style + "'>" + keyword + "</span>" + temp_value.substr(index + keyword.length));
+								i += 1
+							}
+						} else {
+							$(child).highlight(keyword, style)
+						}
+					}
+				})
+			};
+
+			function switchGiftTable(key, count) {
+				var obj1, obj2;
+				for(var i = 0; i < count; i++) {
+					obj1 = document.getElementById('mm_li_' + i);
+					obj2 = document.getElementById('mm_table_' + i);
+					if(i == key) {
+						obj1.className = 'here';
+						obj2.style.display = 'block'
+					} else {
+						obj1.className = '';
+						obj2.style.display = 'none'
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

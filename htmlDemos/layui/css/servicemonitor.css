@@ -1,0 +1,64 @@
+.service-monitor-index{
+	padding:30px;
+	width: 100%;
+	height: 100%;
+}
+.service-monitor-index-left{
+	width: 20%;
+	height: auto;
+	border: 1px solid #efefef;
+	float: left;
+}
+.service-monitor-index-right{
+	width: 78%;
+	height: 100%;
+	border: 0px solid #efefef;
+	float: right;
+}
+.service-monitor-index-left-title{
+	width: 100%;height: 42px;
+	line-height: 42px;
+	border-left: 5px solid #6AC2F7;
+	border-bottom: 1px solid #efefef;
+	background:#7AB5F3;
+	font-size: 13px;
+	padding:0 5px;
+	color: #fff
+}
+.service-monitor-index-left ul li {
+	width: 100%;height: 42px;
+	line-height: 42px;
+	border-bottom: 1px solid #efefef;
+	font-size: 13px;
+	padding:0 0 0 20px;
+}
+.service-monitor-index-left ul li i{
+	font-size: 16px;
+	margin:0 8px 0 0px;
+}
+.service-monitor-index-right-title{
+	width: 100%;height: 42px;
+	line-height: 42px;
+	border: 1px solid #efefef;
+	border-left: 5px solid #6AC2F7;
+	background:#7AB5F3;
+	font-size: 13px;
+	padding:0 5px;
+	color: #ffff
+}
+.crive{
+	color: #4082E6
+}
+.tomcatinfo-title{
+	width: 100%;height: 40px;
+	line-height: 40px;
+	color: #4082E6;
+	font-weight: bold;
+	padding-left: 15px;
+}
+.tomcatinfo-li{
+	width: 100%;height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dashed #efefef;
+	padding-left:10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in dt">
+					<div>
+						{{item.a}}
+					</div>
+					<div>
+						{{item.b}}
+					</div>
+					<div>
+						{{item.c}}
+					</div>
+					<div>
+						{{item.d}}
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			let col=[]
+			for(let i=0;i<10;i++){
+				col.push({
+					a:'aaa'+i,
+					b:'bbb'+i,
+					c:'ccc'+i,
+					d:'ddd'+i
+				})
+			}
+			new Vue({
+				el:'#app',
+				data:{
+					dt:col
+				}
+			})
+		</script>
+	</body>
+</html>

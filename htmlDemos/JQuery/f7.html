@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+//			console.log(this)//window
+//		function fun(){
+//			console.log(this)//window
+//		}
+//		fun();
+//		function func(value){
+//			console.log(this);//window
+//		}
+//		func();
+//		function fa(){
+//			"use strict";
+//			console.log(this); 
+//		}
+//		fa();//undefined
+//		var a = 111;
+//		console.log(this.a);
+//		$('#di').click(function(){
+//			console.log(this);
+//		})
+		//不使用new指向window
+function Person (name) {
+    console.log(this) // window
+    this.name = name;
+}
+//Person('inwe')
+//使用new
+function Person (name) {
+      this.name = name
+      console.log(this) //people
+      self = this
+  }
+var people = new Person('iwen')
+//console.log(self === people) //true
+//这里new改变了this指向，将this由window指向Person的实例对象people
+		
+		
+		</script>
+	</head>
+	<body>
+		<div id="di" style="background: aliceblue;">
+			ddddddddddddddddd
+		</div>
+	</body>
+</html>

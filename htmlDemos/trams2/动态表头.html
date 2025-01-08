@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>日志查询</title>
+		<link rel="stylesheet" type="text/css" href="css/1920/button-white-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/1920/index-white.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/indexall-white-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/ul-white.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/indexjc-white-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/indexbj-white-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/indextj-white-styles.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/jquery.custom.monitordataview.css">
+		<link rel="stylesheet" type="text/css" href="css/sweet-white-alert.css">
+		<link rel="stylesheet" type="text/css" href="css/easyui_old.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/model-white-style.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/model-white-style.css">
+		<link rel="stylesheet" type="text/css" href="css/dots-loading.css" />
+		<link rel="stylesheet" type="text/css" href="css/hover.css" />
+		<link rel="stylesheet" type="text/css" href="css/1920/safe_protect.css">
+		<link rel="stylesheet" type="text/css" href="font2/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/1920/main_old.css">
+		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
+		<link rel="stylesheet" type="text/css" href="js/dist/optiscroll.css">
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui5.min.js"></script>
+		<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="js/layui/layui.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+
+	</head>
+	<body>
+		<table id="dg" style="height: 100%;"></table>
+		<script type="text/javascript">
+			$(function() {
+				let res = {
+					"column": ["时间", "当前温度", "电加热状态", "系统关机原因", "运行模式", "压缩机状态", "报警状态", "报警数量", "报警内容", "预留字段A",
+						"预留字段D", "预留字段E", "预留字段F", "运行状态", "报警内容1", "报警内容2", "报警内容3", "报警内容4", "制冷开启时间",
+						"加湿开启时间", "温度设定点", "风机开启时间", "开机状态", "压缩机1状态", "压缩机2状态", "电加热1状态", "预留字段B", "预留字段C",
+						"当前湿度", "除湿风机状态", "湿度设定点", "系统状态", "制冷状态", "加湿状态", "除湿状态", "风机状态", "电加热2状态", "热气旁通状态",
+						"加湿器状态"
+					],
+					"datalist": [
+						["00:04:57", "23", "0", null, null, null, null, null, "无报警", null, null, null, null,
+							null, null, null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行",
+							null, null, "45", "正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+						],
+						["00:19:58", "23", "0", null, null, null, null, null, "无报警", null, null, null, null,
+							null, null, null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行",
+							null, null, "45", "正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+						],
+						["00:34:59", "23", "0", null, null, null, null, null, "无报警", null, null, null, null,
+							null, null, null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行",
+							null, null, "45", "正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+						]
+					]
+				}
+				let columns = []
+				$(res.column).each(function(i, n) {
+					columns.push({
+						field: i + '',
+						title: n,
+						width: 150,
+						align: i ? 'right' : 'left'
+					})
+				})
+				$('#dg').datagrid({
+					columns: [columns],
+					striped: true,
+					fitColumns: true,
+					data: res.datalist,
+					onLoadSuccess: function(data) {
+						//datagrid头部 table 的第一个tr 的td们，即columns的集合
+						var headerTds = $(".datagrid-header-inner table tr:first-child").children();
+						//datagrid主体 table 的第一个tr 的td们，即第一个数据行
+						var bodyTds = $(".datagrid-body table tr:first-child").children();
+						var totalWidth = 0; //合计宽度，用来为datagrid头部和主体设置宽度
+						//循环设置宽度
+						bodyTds.each(function(i, obj) {
+							var headerTd = $(headerTds.get(i));
+							var bodyTd = $(bodyTds.get(i));
+							$("div:first-child", headerTds.get(i)).css("text-align", "center");
+							var headerTdWidth = headerTd.width(); //获取第i个头部td的宽度
+							//这里加5个像素 是因为数据主体我们取的是第一行数据，不能确保第一行数据宽度最宽，预留5个像素。有兴趣的朋友可以先判断最大的td宽度都在进行设置
+							var bodyTdWidth = bodyTd.width() + 5;
+							var width = 0;
+							//如果头部列名宽度比主体数据宽度宽，则它们的宽度都设为头部的宽度。反之亦然
+							console.log(headerTdWidth +'__'+ bodyTdWidth);
+							if (headerTdWidth > bodyTdWidth) {
+								width = headerTdWidth;
+								bodyTd.width(width);
+								headerTd.width(width);
+								totalWidth += width;
+							} else {
+								width = bodyTdWidth;
+								headerTd.width(width);
+								bodyTd.width(width);
+								totalWidth += width;
+							}
+						});
+						var headerTable = $(".datagrid-header-inner table:first-child");
+						var bodyTable = $(".datagrid-body table:first-child");
+						//循环完毕即能得到总得宽度设置到头部table和数据主体table中
+						headerTable.width(totalWidth);
+						bodyTable.width(totalWidth);
+						bodyTds.each(function(i, obj) {
+							var headerTd = $(headerTds.get(i));
+							var bodyTd = $(bodyTds.get(i));
+							var headerTdWidth = headerTd.width();
+							bodyTd.width(headerTdWidth);
+						});
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

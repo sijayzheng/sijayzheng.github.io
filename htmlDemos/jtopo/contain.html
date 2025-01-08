@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jtopo.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script type="text/javascript">
+			$(function() {
+				let canvas = document.getElementById('canvas');
+				let stage = new JTopo.Stage(canvas);
+				let scene = new JTopo.Scene();
+				stage.add(scene);
+				let layout = JTopo.layout.TreeLayout('down', 30, 107)
+				let container = new JTopo.Container();
+				console.log(container);
+				container.layout = layout
+				container.height = 80
+				container.width = 80
+				scene.add(container);
+				let node = new JTopo.Node("node");
+				node.textPosition = "Middle_Center";
+				scene.add(node);
+				container.add(node);
+				let node3 = new JTopo.Node("node3");
+				node3.y = 40
+				node3.textPosition = "Middle_Center";
+				scene.add(node3);
+				container.add(node3);
+
+
+				let container1 = new JTopo.Container();
+				container1.height = 80
+				container1.width = 80
+				container1.layout = layout
+				container1.x = 200
+				scene.add(container1);
+				let node1 = new JTopo.Node("node1");
+				node1.x = 200
+				node1.textPosition = "Middle_Center";
+				scene.add(node1);
+				container1.add(node1);
+
+				let node2 = new JTopo.Node("node2");
+				node2.x = 100
+				node2.y = 100
+				node2.textPosition = "Middle_Center";
+				scene.add(node2);
+				scene.add(new JTopo.Link(node, node2));
+				scene.add(new JTopo.Link(node2, node1));
+				scene.add(new JTopo.Link(node2, node3));
+
+				console.log(stage.toJson());
+				//		JTopo.createStageFromJson(json, canvas);
+			});
+		</script>
+	</body>
+</html>

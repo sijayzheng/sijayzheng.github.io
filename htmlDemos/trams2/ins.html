@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				overflow: hidden;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="left">
+			<div class="left-header">
+
+			</div>
+			<div class="left-content">
+				<div class="tree" id="tree">
+
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="right-header">
+
+			</div>
+			<div class="right-content">
+				<div class="content" id="content">
+
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var data = [{
+				'id': '00000000003',
+				'pid': '00000000001'
+			}, {
+				'id': '00000000004',
+				'pid': '00000000002'
+			}, {
+				'id': '00000000005',
+				'pid': '00000000003'
+			}, {
+				'id': '00000000006',
+				'pid': '00000000002'
+			}, {
+				'id': '00000000007',
+				'pid': '00000000005'
+			}, {
+				'id': '00000000008',
+				'pid': '00000000007'
+			}, {
+				'id': '00000000009',
+				'pid': '00000000008'
+			}, {
+				'id': '00000000002',
+				'pid': '00000000001'
+			}, {
+				'id': '00000000001',
+				'pid': '00000000001'
+			}, {
+				'id': '00000000010',
+				'pid': '00000000009'
+			}];
+			$.each(data, function(i,n) {
+
+			});
+		</script>
+	</body>
+
+</html>

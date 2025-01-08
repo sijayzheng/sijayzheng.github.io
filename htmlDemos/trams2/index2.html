@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="refresh" content="5" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/easyui/themes/default/easyui.css" />
+
+		<script src="js/easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		div {
+			border: 1px black solid;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.main {
+			width: 100%;
+		}
+
+		.left {
+			width: 80%;
+			float: left;
+		}
+
+		.right {
+			width: 20%;
+			float: left;
+		}
+
+		.edit {
+			width: 100%;
+			float: left;
+		}
+
+		.title {
+			width: 100%;
+			margin: 10px 5px 10px 5px;
+			background-color: #efefef;
+			float: left;
+		}
+
+		.titleinput {
+			display: inline-block;
+			width: 94%;
+			height: 42px;
+			line-height: 42px;
+			padding-left: 1%;
+			border: none;
+			background-color: #efefef;
+			overflow: visible;
+			margin: 0;
+		}
+
+		.maxlength {
+			text-align: right;
+			display: inline-block;
+			width: 4%;
+		}
+
+		.keyword {
+			width: 100%;
+			margin: 0px 0px 10px 5px;
+			background-color: #efefef;
+			float: left;
+		}
+
+		.keywordinput {
+			display: inline-block;
+			width: 99%;
+			height: 42px;
+			line-height: 42px;
+			padding-left: 1%;
+			border: none;
+			background-color: #efefef;
+			overflow: visible;
+			margin: 0;
+		}
+
+		.btns {
+			width: 100%;
+			height: 64px;
+			margin: 10px 0px 0px 0px;
+			padding: 5px 0px;
+		}
+
+		.btn {
+			float: right;
+			margin: 0px 5px 0px 0px;
+			height: 32px;
+			line-height: 32px;
+			width: 70px;
+		}
+
+		.infos {
+			width: 100%;
+			float: left;
+			margin: 5% 0;
+		}
+
+		.info {
+			padding: 0px 10px;
+			margin: 5% 0;
+		}
+
+		.ck-content {
+			height: 650px;
+		}
+	</style>
+
+	<body>
+		<div class="main">
+			<div class="left">
+				<div id="top">
+					<div class="title">
+						<input class="titleinput" id="titleinput" type="text" maxlength="100" placeholder="请输入标题" />
+						<span class="maxlength">
+						<span class="nowlength" id="nowlength">0</span> /100
+						</span>
+					</div>
+					<div class="keyword">
+						<input class="keywordinput" id="keywordinput" type="text" placeholder="请输入关键词,多个关键词以逗号分隔" />
+					</div>
+				</div>
+				<div class="edit">
+					<textarea name="editor" id="editor" class="editor"></textarea>
+				</div>
+			</div>
+			<div class="right">
+				<div class="btns">
+					<div class="custom-btn-add-l btn" onclick="parent.closejsp()">返回</div>
+					<div class="custom-btn-add-l btn" onclick="save()">保存</div>
+				</div>
+				<div class="infos">
+					<form id="ff" class="easyui-form">
+						<div class="info">
+							重要等级:
+							<input id="levels" name="levels" class="easyui-combobox" data-options="textField:'label',valueField:'value',editable:false,height:32,width:200"></input>
+						</div>
+						<div class="info">
+							业务分类:
+							<input id="bussinesstype" name="bussinesstype" class="easyui-combobox" data-options="textField:'label',valueField:'value',editable:false,height:32,width:200"></input>
+						</div>
+						<div class="info">
+							服务种类:
+							<input id="servicetype" name="servicetype" class="easyui-combobox" data-options="textField:'label',valueField:'value',editable:false,height:32,width:200"></input>
+						</div>
+						<div class="info">
+							信息来源:
+							<input id="sourcetype" name="sourcetype" class="easyui-combobox" data-options="textField:'label',valueField:'value',editable:false,height:32,width:200"></input>
+						</div>
+						<div>
+					</form>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				let editor;
+				ClassicEditor
+					.create(document.querySelector('#editor'), {
+						language: 'zh-cn',
+						toolbar: ['undo', 'redo', '|', 'heading', '|', 'bold', 'italic', 'alignment:left', 'alignment:right', 'alignment:center', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', 'blockQuote', 'link', 'numberedList', 'bulletedList', '|', 'ckfinder', 'imageUpload', 'imageStyle:full', 'imageStyle:side', '|', 'insertTable'],
+					})
+					.then(newEditor => {
+						editor = newEditor;
+					})
+					.catch(error => {
+						console.error(error);
+					});
+			</script>
+	</body>
+
+</html>

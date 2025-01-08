@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.div1 {
+				border: 1px red solid;
+				height: 300px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="div1" id="div1" title="第1层" @scroll.passive="onclick('1')">
+				<ul>
+					<li>li1</li>
+					<li>li2</li>
+					<li>li3</li>
+					<li>li4</li>
+					<li>li5</li>
+					<li>li6</li>
+				</ul>
+			</div>
+			{{getmsg()}}
+			{{getmessage}}
+		</div>
+		<script type="text/javascript">
+			var app5 = new Vue({
+				el: '#app',
+				data: {
+					msg: 'hello',
+					message: 'hi'
+				},
+				methods: {
+					onclick: (e) => {
+						console.log(e);
+					},
+					getmsg: () => {
+						console.log('methods');
+						return this.msg
+					}
+				},
+				computed: {
+					getmessage: () => {
+						console.log(computed);
+						return this.message
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

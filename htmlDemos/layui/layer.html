@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>CPU.内存.交换区分析</title>
+	</head>
+	<body style="overflow:hidden;height: 100%;background: #ffffff" scroll="no"">
+	   <div class=" animated
+	 fadeInRightBig" id="alarmscatter" style="display: none">
+		<div class='window-content'>
+			<iframe id='alarmifrm' name='alarmifrm' src='' width='100%' height='100%' scrolling="no" frameborder="0"></iframe>
+		</div>
+		</div>
+			<div id="toolbar5" data-options="border:false ,height: 45px;" style="margin-left: 0px;padding-top:5px;padding-bottom:5px;">
+				<input id="dosearchx" class="easyui-searchbox" data-options="prompt:'请输入实例名称或IP地址',searcher:doSearchx" style="width:380px;height: 38px;"></input>
+			</div>
+			<div class="monitorview-center">
+				<div class="log-search-fanwei" style="padding-top:8px;padding-bottom:6px;padding-left:10px;padding-right:0px;">
+					<form name="form" id="form" style=" top: 0px; border: 0px" method="post" enctype="multipart/form-data">
+						<select id="CMStree" class="easyui-combotreegrid" data-options="
+			    animate: true,
+			    method: 'get',
+			    prompt:'选择监控主机实例(可多选)',
+	            width:'400px',
+	            panelWidth:400,
+	            panelHeight:500,
+	            height: 35,
+	            labelPosition:'top',
+	            url:'<%=request.getContextPath()%>/logstatus?operateFlag=getInstanceTreeGrid1',
+	            idField:'id',
+	            treeField:'text',
+	            toolbar:'#toolbar5',
+	            loadFilter:treeLoadFilter,
+	            onlyLeafCheck:false,
+	            checkbox:true,multiple:true,
+	            columns:[[
+	                 {field:'text',title:'实例名称',width:280},
+	                 {field:'subtext',title:'IP地址',width:200}
+	           	]]"></select>
+						<label class="log-search-lable">
+							<input class="regular-checkbox" name="level" type="text" />
+							<label id="customize" style="background-color: #53B5FE;border: 0px;">
+								<span class="date_title1" id="date1" style="width:200px; height:33px; text-align:center; "></span>
+							</label>
+						</label>
+						<!-- <label class="log-search-lable">
+	                    <a href="javascript:void(0);" class="btn btn-success-alt" onclick="isToday()">今天</a>
+	             </label> -->
+						&nbsp;
+						<label id="host" class="log-search-lable"></label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="custom-btn-add-l md-trigger" style="float: right;margin-top:1px" id="sousuo" onclick="sousou()"><i
+							 class="iconfont icon-sousuo1"></i>搜索</div>
+					</form>
+				</div>
+				<a id="back" class="logdetail-top-index" style="cursor:pointer;margin-top:10px;margin-right:10px;float:right;display:none"
+				 onclick="parent.closejsp()">返回</a>
+				<div class="instancelistview-center">
+					<div class="center-top">
+						<div style="width: 100%;height:100%;padding:0px">
+							<table id="detail-level2" class="easyui-datagrid" data-options="
+								 pageSize: 10,
+								 pageList: [10,20,30,40,50],
+								  pagination: true,
+								  border:false,
+								  singleSelect:true,
+								  fit:true,
+								  striped:true,
+								onClickRow:onClickRow
+								">
+								<thead>
+									<tr>
+										<th data-options="field:'instanceName',align:'left',formatter : format" width="10%">主机名称</th>
+										<th data-options="field:'c_avg',align:'center',sortable:true" width="9%">CPU数值(%)</th>
+										<th data-options="field:'c_dod',align:'center',sortable:true" width="7%">比上日(%)</th>
+										<th data-options="field:'c_wow',align:'center',sortable:true" width="7%">比上周(%)</th>
+										<th data-options="field:'c_mom',align:'center',sortable:true" width="7%">比上月(%)</th>
+										<th data-options="field:'m_avg',align:'center',sortable:true" width="9%">内存数值(%)</th>
+										<th data-options="field:'m_dod',align:'center',sortable:true" width="7%">比上日(%)</th>
+										<th data-options="field:'c_wow',align:'center',sortable:true" width="7%">比上周(%)</th>
+										<th data-options="field:'m_mom',align:'center',sortable:true" width="7%">比上月(%)</th>
+										<th data-options="field:'s_avg',align:'center',sortable:true" width="9%">交换区数值(%)</th>
+										<th data-options="field:'s_dod',align:'center',sortable:true" width="7%">比上日(%)</th>
+										<th data-options="field:'c_wow',align:'center',sortable:true" width="7%">比上周(%)</th>
+										<th data-options="field:'s_mom',align:'center',sortable:true" width="7%">比上月(%)</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+					<div class="center-bottom">
+						<div id='window-title' class='child-window-title'>
+							<div class='window-text' style='float:left;border-right: 1px dashed #E8E8E8; width:100%'><i style="font-size: 16px;"
+								 class="iconfont icon-Traffic-information"></i>CPU.内存.交换趋势<span id="devicetylename"></span></div>
+							<div class="dashwidget-content">
+								<ul class="datapicker-list">
+									<li onclick="opentrend('','1')"><a id='lastmonth1' style="cursor:pointer" class="datapicker-list-nacvite">一月</a></li>
+									<li onclick="opentrend('','3')"><a id='lastmonth3' style="cursor:pointer" class="datapicker-list-nacvite">三月</a></li>
+									<li onclick="opentrend('','6')"><a id='lastmonth6' style="cursor:pointer" class="datapicker-list-nacvite">半年</a></li>
+									<li onclick="opentrend('','12')"><a id='lastmonth12' style="cursor:pointer" class="datapicker-list-nacvite">一年</a></li>
+								</ul>
+							</div>
+							<!-- <div class='window-text' style='float:left;border-right: 1px dashed #E8E8E8; width:50%' ><i style="font-size: 16px;" class="iconfont icon-Traffic-information"></i>趋势预测<span id="devicetylename"></span></div> -->
+						</div>
+						<div id="cmschart" class="center-bottom-left"></div>
+						<!-- <div id="" class="center-bottom-right" ></div> -->
+					</div>
+					<div class="center-foot" id="alarmnum">
+						<div id='window-title' class='child-window-title'>
+							<div class='window-text' style='float:left;border-right: 1px dashed #E8E8E8; width:100%'><i style="font-size: 16px;"
+								 class="iconfont icon-paihang"></i>CPU.内存.交换报警统计<span id="devicetylename"></span></div>
+							<div class="dashwidget-content">
+								<ul class="datapicker-list">
+									<li onclick="openbarchart('','1')"><a id='month1' style="cursor:pointer" class="datapicker-list-nacvite">一月</a></li>
+									<li onclick="openbarchart('','3')"><a id='month3' style="cursor:pointer" class="datapicker-list-nacvite">三月</a></li>
+									<li onclick="openbarchart('','6')"><a id='month6' style="cursor:pointer" class="datapicker-list-nacvite">半年</a></li>
+								</ul>
+							</div>
+						</div>
+						<div id="alarmnumchart" class="center-foot-content"></div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

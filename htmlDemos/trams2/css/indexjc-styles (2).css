@@ -1,0 +1,261 @@
+
+.checkbox-group {
+   	color: #fff;
+	float:right;
+}
+.regular-checkbox {
+	display: none;
+}
+
+.regular-checkbox + label {
+	background-color: #183A63;
+	border: 1px solid #183A63;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 5px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+	opacity:0.5; filter:Alpha(opacity=50);
+}
+
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked + label {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #fff;
+	opacity:1; filter:Alpha(opacity=100);
+}
+.regular-checkbox:checked + label:after { 
+    content: '\2714'; //勾选符号 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    color: #fff; 
+    width: 100%; 
+    text-align: center; 
+    padding: 1px 0 0 0; 
+    vertical-align: text-top; 
+} 
+.titlename{
+	color: #fff;
+	font-size: 15px;
+	margin-left:0px;
+	float:left;
+}
+
+.redio-group {
+   	color: #fff;
+	margin-left:40%;
+	float:left;
+}
+.tab {
+    list-style: none;
+}
+.tab li {
+    display: inline-block;
+    margin-left: -5px;
+    padding: 0;
+    
+}
+.tab li.active a {
+    background-color: #53b9f9;
+}
+.tab li:nth-child(1) a {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.tab li a {
+    width: 70px;
+    height: 28px;
+    text-align: center;
+    display: inline-block;
+    line-height: 28px;
+    background-color: #1F5591;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    color: #fff;
+    text-decoration : none;
+}
+.gs-w {
+	color:#6AC5F4;
+    width:24%;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#112F47, #1F5591); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#112F47, #1F5591); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#112F47, #1F5591); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#112F47, #1F5591); /* 标准的语法 */
+    transition:all 0.3s ease-out;
+  	-webkit-transform: scale(1); 
+  	-ms-transition: all 200ms ease-in;
+  	-ms-transform: scale(1); 
+  	-moz-transition: all 200ms ease-in;
+  	-moz-transform: scale(1);
+  	transition: all 200ms ease-in;
+  	transform: scale(1);
+  	display :inline-block;
+  	margin:0.3%;
+  	opacity:0.8; filter:Alpha(opacity=80);
+}
+.gs-title{
+	position: absolute;
+	padding:10px;
+}
+.gs-title h5{
+	color: #6AC5F4
+}
+.gs-top{
+	width:100%;
+	padding-top: 40px;
+	border-radius: 4px 4px 0 0px;
+	
+}
+
+.health {
+	background: transparent;
+    float: right;
+    padding:5% 20% 5% 5%;
+    color: #4082E6;
+}
+.total{
+	background: transparent;
+	float: left;
+    padding:0 5% 0px 10%;
+}
+
+.gs-types{
+	padding:2px;
+}
+.circle {  
+    border-radius: 50%;  
+    display: inline-block;  
+    margin-right:5px;
+    margin-top:2px;
+    float: left;
+}  
+
+          
+/*渐变色效果的圆形图案*/  
+#advanced {  
+    width: 12px;  
+    height: 12px;  
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #FF4F00 95%);  
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange,#FF4F00);  
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #FF4F00 95%);  
+      
+      
+    /* webkit chrome, safari, mobile */  
+      -webkit-animation-name: spin;   
+      -webkit-animation-duration: 3s; /* 3 seconds */  
+      -webkit-animation-iteration-count: infinite;   /*1：1圈*/  
+      -webkit-animation-timing-function: linear;  
+
+      /* mozilla ff */  
+      -moz-animation-name: spin;   
+      -moz-animation-duration: 3s; /* 3 seconds */  
+      -moz-animation-iteration-count: infinite; 
+
+      -moz-animation-timing-function: linear;  
+
+      /* microsoft ie */  
+      -ms-animation-name: spin;   
+      -ms-animation-duration: 3s; /* 3 seconds */   
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;  
+}  
+/*渐变色效果的圆形图案*/  
+#advancedblue {  
+    width: 12px;  
+    height: 12px;  
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #73E6BF 95%);  
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange,#73E6BF);  
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #73E6BF 95%);  
+      
+      
+    /* webkit chrome, safari, mobile */  
+      -webkit-animation-name: spin;   
+      -webkit-animation-duration: 3s; /* 3 seconds */  
+      -webkit-animation-iteration-count: infinite;   /*1：1圈*/  
+      -webkit-animation-timing-function: linear;  
+
+      /* mozilla ff */  
+      -moz-animation-name: spin;   
+      -moz-animation-duration: 3s; /* 3 seconds */  
+      -moz-animation-iteration-count: infinite; 
+
+      -moz-animation-timing-function: linear;  
+
+      /* microsoft ie */  
+      -ms-animation-name: spin;   
+      -ms-animation-duration: 3s; /* 3 seconds */   
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;  
+} 
+.pointcircle {  
+    border-radius: 50%;  
+    display: inline-block;  
+    margin-right:5px;
+    margin-top:9px;
+    float: left;
+}   
+/*渐变色效果的圆形图案*/  
+#pointblue {  
+    width: 13px;  
+    height: 13px;  
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #73E6BF 95%);  
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange,#73E6BF);  
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #73E6BF 95%);  
+      
+      
+    /* webkit chrome, safari, mobile */  
+      -webkit-animation-name: spin;   
+      -webkit-animation-duration: 3s; /* 3 seconds */  
+      -webkit-animation-iteration-count: infinite;   /*1：1圈*/  
+      -webkit-animation-timing-function: linear;  
+
+      /* mozilla ff */  
+      -moz-animation-name: spin;   
+      -moz-animation-duration: 3s; /* 3 seconds */  
+      -moz-animation-iteration-count: infinite; 
+
+      -moz-animation-timing-function: linear;  
+
+      /* microsoft ie */  
+      -ms-animation-name: spin;   
+      -ms-animation-duration: 3s; /* 3 seconds */   
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;  
+}  
+#pointred {  
+    width: 13px;  
+    height: 13px;  
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #FF4F00 95%);  
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange,#FF4F00);  
+    background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, #FF4F00 95%);  
+      
+      
+    /* webkit chrome, safari, mobile */  
+      -webkit-animation-name: spin;   
+      -webkit-animation-duration: 3s; /* 3 seconds */  
+      -webkit-animation-iteration-count: infinite;   /*1：1圈*/  
+      -webkit-animation-timing-function: linear;  
+
+      /* mozilla ff */  
+      -moz-animation-name: spin;   
+      -moz-animation-duration: 3s; /* 3 seconds */  
+      -moz-animation-iteration-count: infinite; 
+
+      -moz-animation-timing-function: linear;  
+
+      /* microsoft ie */  
+      -ms-animation-name: spin;   
+      -ms-animation-duration: 3s; /* 3 seconds */   
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;  
+} 

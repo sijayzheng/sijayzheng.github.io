@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/dateRange.css" />
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/dateRange.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(function () {
+        var d = new Date()
+        dateRange1 = new pickerDateRange('date1', {
+          stopToday: false,
+          isTodayValid: true,
+          startDate: '2018-11-01',
+          endDate: '2019-11-01',
+          needCompare: true,
+          defaultText: '~',
+          autoSubmit: false,
+
+          inputTrigger: 'input_trigger1',
+          maxValidDate: new Date().getTime() - 24 * 60 * 60 * 1000,
+          theme: 'ta',
+          success: function (obj) {
+            return true
+          },
+          endCompareDate: '2019-11-01',
+        })
+        //自定义日期结束
+        $('#date1').val('') //默认查询的时间范围为全部时间
+        $('#date1').html('设置时间范围')
+        $('#date1').click()
+      })
+    </script>
+    <div class="date_title1" id="date1" style="margin: 6.25rem"></div>
+  </body>
+</html>

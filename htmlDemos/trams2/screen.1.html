@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style type="text/css">
+			div {
+				float: left;
+			}
+
+			html,
+			body {
+				height: 100%;
+				margin: 0px;
+				background-image: url(image/bgimage.png);
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aa">
+		</div>
+		<script type="text/javascript">
+			var color = [
+				'#dbe6ec',
+				'#1d508d',
+				'#297CBB',
+				'#288ad6',
+				'#0FDEBD',
+				'#16c98d',
+				'#feef6d',
+				'#ffc83f',
+				'#fa5e5b',
+				'#bf538d',
+				'#684e79',
+				'#ff708e',
+				'#47a899',
+				'#8abee5',
+				'#c7e6aa',
+				'#cfcbaf',
+				'#582c2b',
+				'#841e1b',
+			];
+			color.forEach((e) => {
+				$('#aa').append('<div style="width: 100px;height: 50px;background: ' + e + ';">' + e + '</div>')
+			})
+		</script>
+	</body>
+</html>

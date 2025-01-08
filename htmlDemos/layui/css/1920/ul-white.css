@@ -1,0 +1,104 @@
+.live {
+  overflow: hidden;
+}
+.live > li {
+  color: #666;
+  list-style: none;
+  position: relative;
+  padding: 0 0 0 1.5em;
+  margin: 0 0 1em 0px;
+  -webkit-transition: .12s;
+          transition: .12s;
+}
+.live > li::before {
+  position: absolute;
+  content: '\2022';
+  font-family: Arial;
+  color: #666;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 2em;
+  opacity: .5;
+  line-height: .75;
+  -webkit-transition: .5s;
+          transition: .5s;
+}
+.live > li:hover {
+  color: #666;
+}
+.live > li:hover::before {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+  text-shadow: 0 0 2px;
+  -webkit-transition: .1s;
+          transition: .1s;
+}
+.live.type2 > li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 3px;
+  line-height: 0;
+  top: .27em;
+  left: 5px;
+}
+.live.type2 > li:hover::before {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  border-radius: 5px;
+  width: 25px;
+  left: -10px;
+  background: #BA5353;
+}
+
+.live.numbers {
+  counter-reset: xxx 0;
+}
+.live.numbers > li::before {
+  content: counter(xxx,decimal) ".";
+  counter-increment: xxx 1;
+  font-family: 'Roboto Condensed';
+  font-size: 1em;
+  opacity: .5;
+  line-height: 1.4;
+  -webkit-transition: .5s;
+          transition: .5s;
+}
+.live.numbers > li:hover:before {
+  opacity: 1;
+  left: -10px;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  text-shadow: none;
+  -webkit-transition: .12s;
+          transition: .12s;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v7/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format("woff");
+}
+
+ .live  {
+  width: 100%;
+  height:100%;
+  display: inline-block;
+  text-align: left;
+  vertical-align: bottom;
+  padding-top: 8%;
+}
+.live-system{
+	color: #666;
+}
+.live-bilv{
+	color: #666;
+	padding:0px;
+}

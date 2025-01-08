@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jtopo-min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="550px" height="400px"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas')
+			canvas.width=300
+			canvas.height=300
+			var stage = new JTopo.Stage(canvas)
+//			stage.eagleEye.visible = true
+//			stage.wheelZoom = -0.9
+//			stage.frames = 0
+
+//			console.log(stage)
+			var scene = new JTopo.Scene(stage)
+			scene.alpha=0.5
+			scene.backgroundColor='125,125,125'
+//			scene.mode='edit'
+//scene.translateX = 100
+			
+			var circleNode = new JTopo.CircleNode('node');
+			circleNode.radius = 32; // 半径
+			circleNode.alpha = 0.7;
+			circleNode.fillColor = '0, 0, 255'; // 填充颜色
+//			circleNode.setLocation(150, 150);
+			circleNode.setCenterLocation(200,200)
+			circleNode.textPosition = 'Middle_Center'; // 文本位置
+			circleNode.borderColor = '255,0,0'
+			circleNode.fillColor = '255,0,0'
+			circleNode.zIndex = 11
+			circleNode._id=11
+			scene.add(circleNode);
+			
+			var node1 = new JTopo.Node()
+						node1._id = 22
+						node1.alpha=0.4
+			//			node1.alarm = 'error errortkdkl'
+			//			node1.alarmAlpha = 0.7
+			//			node1.alarmColor = '55,12,12'
+			//			node1.borderColor = '255,0,0'
+//			node1.borderRadius = 10; // 圆角
+//			node1.borderWidth = 2; // 边框的宽度
+//			node1.borderColor = '255,0,0'; //边框颜色
+						node1.setLocation(0,0)
+						node1.setSize(100,100)
+			//			node1.setImage('./img/green.png', true);
+			//			node1.font = '20px source code pro'
+//			node1.text = 'ltaddddtraormAble'
+//			node1.textPosition = 'Bottom_Center'; // 文本位置
+//			node1.fontColor = '0,0,0'
+			//			node1.textPosition = 'Bottom_Left'
+			//node1.visible = false
+//			node1.setBound(10, 20, 30, 40)
+//			node1.shadow = true
+//
+			node1.dbclick(function(event) {
+				var b;
+				var c = [10,10]
+				var d = [150,150]
+				link.paintArrow(b,c,d)
+//				if(node1.alarm != null) {
+//					delete node1.alarm
+//				} else {
+//					node1.alarm = 'alarm'
+//				}
+			});
+//			node1.addEventListener("click", function(event){
+//				stage.centerAndZoom(0.5)
+//			});
+//			node1.mousemove(function(){
+//				console.log('1111')
+//			})
+			scene.add(node1)
+			
+			var link = new JTopo.Link(node1,circleNode);
+//			link.arrowsOffset=40
+//			link.dashedPattern=30
+//			link.arrowsRadius=30
+//		link.bundleGap=200
+//		link.bundleOffset=2000
+			link.dragable=true
+//			link.nodeIndex=-5
+			link.lineJoin='round'
+//			link.isMouseOver=true
+			console.log(link)
+			
+//			scene.add(link);
+			console.log(link.getPath())
+//			var link1 = new JTopo.Link(node1,circleNode);
+//			scene.add(link1);
+			
+			
+//			console.log(node1.getBound())
+
+//			var el = scene.findElements(function(e){ console.log(e);return e.x > 50; });
+			
+//			console.log(el)
+		</script>
+	</body>
+
+</html>

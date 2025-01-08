@@ -1,0 +1,36 @@
+[
+	{
+		"id": 11,
+		"text": "room1",
+		"children": [
+			{
+				"id": 111,
+				"text": "INSTANCE1"
+			}, {
+				"id": 112,
+				"text": "INSTANCE2"
+			}, {
+				"id": 113,
+				"text": "INSTANCE3"
+			}
+		]
+	}, {
+		"id": 12,
+		"text": "room2",
+		"children": [
+			{
+				"id": 121,
+				"text": "INSTANCE4"
+			}, {
+				"id": 122,
+				"text": "INSTANCE5"
+			}, {
+				"id": 123,
+				"text": "INSTANCE6"
+			}, {
+				"id": 124,
+				"text": "INSTANCE7"
+			}
+		]
+	}
+]

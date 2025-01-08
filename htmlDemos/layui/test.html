@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#aa>div {
+				border: 1px red solid;
+				margin: 5px;
+				height: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aa" style="border: 1px black solid;width: 300px;height: 300px;">
+			<iframe id="ifr" src="table.html" width="100" height="100" style="border: 1px red solid;"></iframe>
+		</div>
+		<script type="text/javascript">
+			setTimeout(()=>{
+				$('#ifr').width($('#aa').width())
+			},5000)
+		</script>
+	</body>
+</html>

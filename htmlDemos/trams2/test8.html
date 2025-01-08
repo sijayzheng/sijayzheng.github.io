@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div{
+				width: 6.25rem;
+				height: 6.25rem;
+				margin: 0.625rem;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let colors = ['#54ABDB','#f49c44','#e4745c','#749ca4','#666633','#99CC99','#117E99','#5c97bf','#4daf7c']
+			for (let s of colors) {
+				$('body').append('<div style="background:'+s+'"></div>')
+			}
+		</script>
+	</body>
+</html>

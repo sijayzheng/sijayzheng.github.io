@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<title>文件系统统计</title>
+		<link rel="stylesheet" type="text/css" href="css/dateRange.css" />
+		<link rel="stylesheet" type="text/css" href="js/dist/optiscroll.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/base-loading.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui5.min.js"></script>
+		<script type="text/javascript" src="js/dist/jquery.optiscroll.js"></script>
+		<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="js/dateRange.js"></script>
+		<script type="text/javascript" src="js/datagrid-groupview.js"></script>
+		<script src="js/sweet-alert.min.js"></script>
+	</head>
+	<script type="text/javascript">
+		var chart = null;
+		var names = null;
+		$(function() {
+			$("#detail-level1").datagrid({
+
+			});
+		});
+	</script>
+	<body>
+		<table id="detail-level1" class="easyui-datagrid" data-options="
+           		url:'data.json',
+           		method:'get',
+               pagination: false,
+               border:false,
+               singleSelect:true,
+               fit:true,
+               remoteSort:false,
+               striped:true,
+               groupField:'instanceName',
+               view: groupview,
+              groupFormatter:function(value, rows){
+                    return value ;
+                },
+                onLoadSuccess:loaddetaillevel1 ">
+			<thead>
+				<tr>
+					<th data-options="field:'instanceName',align:'center'" width="22%">主机名称</th>
+					<th data-options="field:'fileName',align:'center'" width="20%">文件系统名称</th>
+					<th data-options="field:'maxper',align:'center',sortable:true" width="20%">最大使用率(%)</th>
+					<th data-options="field:'avgper',align:'center',sortable:true" width="20%">平均使用率(%)</th>
+					<th data-options="field:'detail',align:'center',formatter:formatter" width="19%">明细</th>
+				</tr>
+			</thead>
+		</table>
+	</body>
+	<script type="text/javascript">
+		function loaddetaillevel1() {
+			$('#detail-level1').datagrid('collapseGroup');
+		}
+
+		function onSortColumn(sort, order) {
+			$('#detail-level1').datagrid('collapseGroup');
+		}
+
+		function formatter(value, row, index) {
+			var dates = $("#date1").text();
+			var itemId = row.monitoritemId;
+			var name = row.instanceName;
+			var file = row.fileName;
+			console.log('<a class="no-care1" style="margin:0px; text-decoration:none;" onclick=trend("' + itemId + '","' + dates +
+				'","' + name + '","' + file + '")>查看趋势</a><a class="no-care" style=" text-decoration:none;" onclick=history("' +
+				itemId + '","' + dates + '","' + name + '","' + file + '")>查看明细</a>');
+			return '<a class="no-care1" style="margin:0px; text-decoration:none;" onclick=trend("' + itemId + '","' + dates +
+				'","' + name + '","' + file + '")>查看趋势</a><a class="no-care" style=" text-decoration:none;" onclick=history("' +
+				itemId + '","' + dates + '","' + name + '","' + file + '")>查看明细</a>'
+
+		}
+
+		function trend(itemId, dates, name, file) {
+			$("#dd").val(name);
+			$("#windowifrm").attr("src", "filedetails/file_echarts.jsp?itemId=" + itemId + "&file=" + file + "&dates=" + dates);
+			openjsp();
+		}
+
+		function history(itemId, dates, name, file) {
+			$("#dd").val(name);
+			$("#windowifrm").attr("src", "filedetails/filevalue_day.jsp?itemId=" + itemId + "&dates=" + dates + "&file=" + file);
+			openjsp();
+		}
+	</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+		<link href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link href="jquery-easyui-1.5.5.4/themes/icon.css" />
+		<script type="text/javascript">
+			$(function() {
+				var timer = null;
+				$("#bt").on("click", function() {
+					clearTimeout(timer);
+					timer = setTimeout(function() {
+						$("#thediv").append("单击事件触发");
+					}, 300);
+				})
+
+				$("#bt").on("dblclick", function() {
+					clearTimeout(timer);
+					$("#thediv").append("双击事件触发");
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="thediv"></div>
+		<input type="button" id="bt" value="查看效果" />
+	</body>
+
+</html>

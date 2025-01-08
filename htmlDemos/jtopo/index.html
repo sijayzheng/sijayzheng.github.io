@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jtopo-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var scene = new JTopo.Scene();
+			var currentNode = null; //增加的新节点
+			var stage = null;
+			var isSelectedMode = true; //是否选中模块
+			var view = null; //拓扑ID
+			var linknodeid = null;
+			var link = null; //连线数据
+			var canvas = null; //画布
+			var cutimage = null; //拓扑截图
+			var root = null; //节点数据
+			var bgimg = null; //背景图片
+			var width = 0; //画布宽
+			var height = 0; //画布高
+			var datanodemap = {};
+			var datalinkmap = {};
+			var nodes = [];
+			var links = []
+
+			function init() {
+				canvas = document.getElementById('canvas');
+				w = canvas.width = window.innerWidth;
+				h = canvas.height = window.innerHeight;
+				stage = new JTopo.Stage(canvas);
+				stage.add(scene);
+				stage.wheelZoom = 1.2;
+				stage.mode = 'normal';
+				scene.backgroundColor = '255,0,0';
+				//				scene.background = './img/bg2.jpg';
+				viewNode('1', '111', '1', -10, 10);
+				viewNode('2', '222', '2', 300, 10);
+				viewNode('3', '333', '3', 100, 100);
+				viewNode('4', '444', '4', 300, 300.877765);
+				viewNode('5', '555', '5', 150, 200);
+				setLink('1', '3', '', 'line', '0,0,0');
+				setLink('1', '5', '15line', 'foldLineH', '0,0,0');
+				setLink('3', '4', '34line', 'foldLineV', '0,0,0');
+				setLink('2', '5', '25line', 'flexLineH', '0,0,0');
+				setLink('3', '2', '32line', 'flexLineV', '0,0,0');
+				setLink('1', '4', '14line', 'curve', '0,0,0');
+
+			}
+
+			function viewNode(text, subtext, nodeid, px, py) {
+				var node = new JTopo.Node();
+				node.text = text;
+				node.textPosition = 'Bottom_Center'; //文字位置 居中
+				node.textOffsetX = 1; //文字偏移量
+				node.textOffsetY = 5; //文字偏移量
+				node.font = '12px 微软雅黑';
+				node.fontColor = '0,0,0'
+				node._id = nodeid;
+				node.subtext = subtext;
+				node.setLocation(px, py);
+				//node.setImage('./img/blue.png', true)
+				node.setSize(30, 30);
+				node.fillStyle = '98,168,248';
+				node.alarmColor = '98,168,248'
+				node.radius = '50%';
+				node.isleaf = 'leaf';
+				node.dragable = false;
+				datanodemap[nodeid] = node;
+				nodes.push(node)
+				scene.add(node)
+			}
+
+			function setLink(begin, end, linkname, linetype, linecolor) {
+				var a = datanodemap[begin],
+					b = datanodemap[end];
+				var link = null;
+				if(linetype == 'line') {
+					link = new JTopo.Link(a, b, linkname);
+					link.linetype = 'line';
+				} else if(linetype == 'foldLineH') {
+					link = new JTopo.FoldLink(a, b);
+					link.direction = 'horizontal';
+					link.linetype = 'foldLineH';
+				} else if(linetype == 'foldLineV') {
+					link = new JTopo.FoldLink(a, b);
+					link.direction = 'vertical';
+					link.linetype = 'foldLineV';
+				} else if(linetype == 'flexLineH') {
+					link = new JTopo.FlexionalLink(a, b);
+					link.direction = 'horizontal';
+					link.linetype = 'flexLineH';
+				} else if(linetype == 'flexLineV') {
+					link = new JTopo.FlexionalLink(a, b);
+					link.direction = 'vertical';
+					link.linetype = 'flexLineV';
+				} else if(linetype == 'curve') {
+					link = new JTopo.CurveLink(a, b);
+					link.linetype = 'curve';
+				}
+				//				link.text = linkname
+				link.strokeColor = linecolor;
+				link.lineWidth = 2;
+				link.font = '12px 微软雅黑';
+				link.fontColor = '0,0,0';
+				link.zIndex = 10;
+				datalinkmap[a.nodeid + b.nodeid] = link;
+				links.push(link)
+				scene.add(link);
+			}
+		</script>
+	</head>
+
+	<body onload="init();">
+		<a id="allprtsc" onclick="changezoom()" href="javascript:void(0)">全屏展示</a>
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+			function changezoom() {
+				stage.childs[0].background = './img/bg2.jpg';
+				showInFullScreen(stage.canvas, 'RequestFullScreen');
+			}
+
+			function showInFullScreen(element, method) {
+				var usablePrefixMethod;
+				["webkit", "moz", "ms", "o", ""].forEach(function(prefix) {
+					if(usablePrefixMethod)
+						return;
+					if(prefix === "") {
+						// 无前缀，方法首字母小写
+						method = method.slice(0, 1).toLowerCase() + method.slice(1);
+					}
+					var typePrefixMethod = typeof element[prefix + method];
+					if(typePrefixMethod + "" !== "undefined") {
+						if(typePrefixMethod === "function") {
+							usablePrefixMethod = element[prefix + method]();
+						} else {
+							usablePrefixMethod = element[prefix + method];
+						}
+					}
+				});
+				return usablePrefixMethod;
+			}
+		</script>
+	</body>
+
+</html>

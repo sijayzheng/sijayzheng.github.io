@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Custom Format in ComboBox - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+
+	<body>
+		<h2>Custom Format in ComboBox</h2>
+		<input class="easyui-combobox" name="language" style="width:100%;" data-options="
+					valueField: 'label',
+					textField: 'value',
+					panelWidth: 350,
+					panelHeight: 'auto',
+					data:[{label:'java',value:'Java',selected:true},{label: 'perl',value: 'Perl'},{label: 'ruby',value: 'Ruby'}]
+					">
+		<input class="easyui-combobox" type="text" data-options="valueField:'label',textField:'value',editable:false,height:32,width:220,data:[{label:'java',value:'Java',selected:true},{label: 'perl',value: 'Perl'},{label: 'ruby',value: 'Ruby'}]"></input>
+		<script>
+			console.log(typeof 123);
+		</script>
+	</body>
+
+</html>

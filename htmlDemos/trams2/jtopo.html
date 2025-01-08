@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jtopo test</title>
+		<link rel="stylesheet" type="text/css" href="./css/treeicon.css">
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jquery-jcinsex.easyui.min.js"></script>
+		<script type="text/javascript" src="./js/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript" src="./js/jtopo.min.js"></script>
+		<script type="text/javascript" src="./js/layer.js"></script>
+		<script type="text/javascript">
+			const data = {
+				"linklist": [{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000221",
+						"id": "INSTANCE0000221INSTANCE000024100000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000241"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000221",
+						"id": "INSTANCE0000221INSTANCE000024900000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000249"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000221",
+						"id": "INSTANCE0000221INSTANCE000026800000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000268"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000221",
+						"id": "INSTANCE0000221INSTANCE000028200000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000282"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000234",
+						"id": "INSTANCE0000234INSTANCE000022100000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000221"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000252",
+						"id": "INSTANCE0000252INSTANCE000025100000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000251"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000254",
+						"id": "INSTANCE0000254INSTANCE000023200000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000232"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000254",
+						"id": "INSTANCE0000254INSTANCE000029000000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000290"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000023400000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000234"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000025200000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000252"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000025400000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000254"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027100000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000271"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027200000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000272"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027300000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000273"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027400000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000274"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027500000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000275"
+					},
+					{
+						"bussinesstopoid": "00000000004",
+						"fromnode": "INSTANCE0000261",
+						"id": "INSTANCE0000261INSTANCE000027700000000004",
+						"linkdesc": "00000000004",
+						"linklinecolor": "",
+						"linklinetype": "line",
+						"linklinewidth": "",
+						"linkname": "",
+						"linktype": "0",
+						"note": "",
+						"tonode": "INSTANCE0000277"
+					}
+				],
+				"right": [{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000234",
+						"ip": "192.168.32.23",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000234",
+						"nodename": "Linux服务器32.23",
+						"nodetype": "",
+						"note": "5",
+						"parentid": "",
+						"posex": "0.5303514376996805",
+						"posey": "0.6577669902912622"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000290",
+						"ip": "192.168.32.11",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000290",
+						"nodename": "联想物理服务器32.11",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.6853035143769968",
+						"posey": "0.40169902912621347"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000254",
+						"ip": "192.168.32.21",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000254",
+						"nodename": "代码管理服务器32.21",
+						"nodetype": "",
+						"note": "4",
+						"parentid": "",
+						"posex": "0.5303514376996805",
+						"posey": "0.4134873318813296"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000252",
+						"ip": "192.168.32.27",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000252",
+						"nodename": "Linux服务器32.27",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.5260915867944622",
+						"posey": "0.2002427184466019"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000251",
+						"ip": "192.168.32.25",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000251",
+						"nodename": "Linux服务器(redhat6.0)32.25",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.6778487752928648",
+						"posey": "0.08009708737864071"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000221",
+						"ip": "192.168.32.8",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000221",
+						"nodename": "浪潮物理服务器32.8",
+						"nodetype": "",
+						"note": "2",
+						"parentid": "",
+						"posex": "0.6847710330138446",
+						"posey": "0.5800970873786407"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000232",
+						"ip": "192.168.32.31",
+						"nodedesc": "",
+						"nodeicon": "server",
+						"nodeid": "INSTANCE0000232",
+						"nodename": "Windows服务器32.31",
+						"nodetype": "",
+						"note": "3",
+						"parentid": "",
+						"posex": "0.6810436634717785",
+						"posey": "0.21844660194174756"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000241",
+						"ip": "192.168.32.27",
+						"nodedesc": "",
+						"nodeicon": "database",
+						"nodeid": "INSTANCE0000241",
+						"nodename": "DB2数据库",
+						"nodetype": "",
+						"note": "3",
+						"parentid": "",
+						"posex": "0.8168264110756124",
+						"posey": "0.38956310679611655"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000282",
+						"ip": "192.168.32.26",
+						"nodedesc": "",
+						"nodeicon": "database",
+						"nodeid": "INSTANCE0000282",
+						"nodename": "Oracle数据库",
+						"nodetype": "",
+						"note": "3",
+						"parentid": "",
+						"posex": "0.820021299254526",
+						"posey": "0.5691747572815534"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000249",
+						"ip": "192.168.32.12",
+						"nodedesc": "",
+						"nodeicon": "database",
+						"nodeid": "INSTANCE0000249",
+						"nodename": "MySQL数据库",
+						"nodetype": "",
+						"note": "0",
+						"parentid": "",
+						"posex": "0.820021299254526",
+						"posey": "0.7531362668733923"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000268",
+						"ip": "192.168.32.8",
+						"nodedesc": "",
+						"nodeicon": "database",
+						"nodeid": "INSTANCE0000268",
+						"nodename": "Redis监控",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.8173588924387647",
+						"posey": "0.20872402082025915"
+					}
+				],
+				"center": [{
+					"bussinesstopoid": "",
+					"id": "INSTANCE0000261",
+					"ip": "192.168.32.1",
+					"nodedesc": "",
+					"nodeicon": "net",
+					"nodeid": "INSTANCE0000261",
+					"nodename": "H3C路由器32.1",
+					"nodetype": "",
+					"note": "1",
+					"parentid": "",
+					"posex": "0.34824281150159747",
+					"posey": "0.45067339756604774"
+				}],
+				"left": [{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000273",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "cons",
+						"nodeid": "INSTANCE0000273",
+						"nodename": "干接点",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.07933972310969116",
+						"posey": "0.33980582524271835"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000271",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "ele",
+						"nodeid": "INSTANCE0000271",
+						"nodename": "电量仪",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.08040468583599573",
+						"posey": "0.5885922330097088"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000274",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "air",
+						"nodeid": "INSTANCE0000274",
+						"nodename": "空调",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.07987220447284345",
+						"posey": "0.20995145631067957"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000275",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "lea",
+						"nodeid": "INSTANCE0000275",
+						"nodename": "漏水",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.08359957401490947",
+						"posey": "0.7025083982428292"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000272",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "gen",
+						"nodeid": "INSTANCE0000272",
+						"nodename": "发电机",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.08040468583599573",
+						"posey": "0.46601941747572806"
+					},
+					{
+						"bussinesstopoid": "",
+						"id": "INSTANCE0000277",
+						"ip": "127.0.0.1",
+						"nodedesc": "",
+						"nodeicon": "xinfeng",
+						"nodeid": "INSTANCE0000277",
+						"nodename": "新风机",
+						"nodetype": "",
+						"note": "1",
+						"parentid": "",
+						"posex": "0.12619808306709265",
+						"posey": "0.07052524394895839"
+					}
+				]
+			}
+
+			var scene = new JTopo.Scene();
+			var currentNode = null; //增加的新节点
+			var stage = null;
+			var isSelectedMode = true; //是否选中模块
+			var view = null; //拓扑ID
+			var linknodeid = null;
+			var link = null; //连线数据
+			var canvas = null; //画布
+			var cutimage = null; //拓扑截图
+			var root = null; //节点数据
+			var bgimg = null; //背景图片
+			var width = 0; //画布宽
+			var height = 0; //画布高
+			var names = "";
+			var code = "";
+			$(function() { //加载必要的JS
+				canvas = document.getElementById('canvas');
+				stage = new JTopo.Stage(canvas);
+				stage.add(scene);
+				stage.wheelZoom = 1.09; //启动缩放，比例为0.85
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight
+				scene.clear();
+				bgimg = data.backicon;
+				names = data.names;
+				code = data.code;
+				scene.background = './img/bgimg/screentopo.png'
+				var container1 = new JTopo.Container('left');
+				container1.textPosition = 'Bottom_Center';
+				container1.fontColor = '100,255,0';
+				container1.font = '18pt 微软雅黑';
+				container1.borderColor = '255,0,0';
+				container1.height = 500
+				container1.width = 500
+				scene.add(container1);
+
+
+				var container2 = new JTopo.Container('right');
+				container2.textPosition = 'Middle_Center';
+				container2.textPosition = 'Bottom_Center';
+				container2.fontColor = '100,255,0';
+				container2.font = '18pt 微软雅黑';
+				container2.borderColor = '255,0,0';
+				container2.x = 1200
+				container2.height = 500
+				scene.add(container2);
+
+				$.each(data.left, function(i, n) {
+					let node = rendnode(n.nodename, n.note, n.nodeid, n.posex * width, n.posey * height, n
+						.nodeicon, n.ip);
+					container1.add(node)
+				});
+				$.each(data.center, function(i, n) {
+					let node = rendnode(n.nodename, n.note, n.nodeid, n.posex * width, n.posey * height, n
+						.nodeicon, n.ip);
+					scene.add(node);
+				});
+				$.each(data.right, function(i, n) {
+					let node = rendnode(n.nodename, n.note, n.nodeid, n.posex * width, n.posey * height, n
+						.nodeicon, n.ip);
+					container2.add(node)
+				});
+			})
+
+			function rendnode(text, status, nodeid, px, py, nodeicon, ipaddress) {
+				var node = new JTopo.Node();
+				node.text = text;
+				node.textPosition = 'Bottom_Center'; // 文字居中
+				node.setImage('./img/devices/' + nodeicon + '-1.png');
+				node.fillStyle = '98,168,248';
+				node.alarmColor = '98,168,248';
+				node.setLocation(px, py);
+				node.setSize(28, 30);
+				node.addEventListener("click", function(event) {
+					// 此事件不可删除
+				});
+				return node
+			}
+			//添加连线
+			function setlink(link) {
+				$.each(link, function(i, n) {
+					var begin = n.fromnode;
+					var end = n.tonode;
+					newLink(datanodemap[begin], datanodemap[end], n.linkname, n.linklinetype, n
+						.linklinecolor);
+				});
+				$("#loadgif").hide();
+			}
+			//加载连线
+			function newLink(tempNodeA, tempNodeZ, text, lineType, linklinecolor) {
+				//alert(tempNodeA);
+				var link = null;
+				if (lineType == 'line') {
+					link = new JTopo.Link(tempNodeA, tempNodeZ);
+					link.linetype = "line";
+				} else if (lineType == 'foldLineH') {
+					link = new JTopo.FoldLink(tempNodeA, tempNodeZ);
+					link.direction = 'horizontal';
+					link.linetype = "foldLineH";
+				} else if (lineType == "foldLineV") {
+					link = new JTopo.FoldLink(tempNodeA, tempNodeZ);
+					link.direction = 'vertical';
+					link.linetype = "foldLineV";
+				} else if (lineType == 'flexLineH') {
+					link = new JTopo.FlexionalLink(tempNodeA, tempNodeZ);
+					link.direction = 'horizontal';
+					link.linetype = "flexLineH";
+				} else if (lineType == "flexLineV") {
+					link = new JTopo.FlexionalLink(tempNodeA, tempNodeZ);
+					link.direction = 'vertical';
+					link.linetype = "flexLineV";
+				} else if (lineType == "curve") {
+					link = new JTopo.CurveLink(tempNodeA, tempNodeZ);
+					link.linetype = "curve";
+				}
+				link.lineWidth = 2; // 线宽
+				link.offsetGap = 35;
+				link.textOffsetY = 10; // 文本偏移量（向下15个像素）
+				link.strokeColor = '1,205,100';
+				link.alpha = 1;
+				link.text = text;
+				link.arrowsRadius = 5;
+				var arrownode = link.drawanimepic("./img/bgimg/testspecialline1.png", scene);
+				nodelinkmap[tempNodeZ.nodeid] = arrownode;
+				datalinkmap[tempNodeA.nodeid + tempNodeZ.nodeid] = link;
+				link.zIndex = 5;
+				scene.add(link);
+			}
+		</script>
+	</head>
+	<body style="height: 100%;width: 100%;">
+		<canvas style="height: 100%;width: 100%;" id="canvas">您的浏览器不支持HTML5!</canvas>
+	</body>
+</html>

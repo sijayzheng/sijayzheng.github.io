@@ -1,0 +1,42 @@
+
+
+.chartTitle {
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    color: #469EDF;
+    background-color: #183559;
+}
+
+.btngroup{
+ float:right;
+}
+.first{
+ border:1px solid transparent;
+ padding:5px 5px 3px 5px;
+ border-radius: 2px;
+ border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+ cursor: pointer;
+ background-color: #1F5591;
+}
+.second{
+ margin-left:-3px;
+ border-top:1px solid transparent;
+ border-bottom:1px solid transparent;
+ border-right:1px solid transparent;
+padding:5px 3px 3px 5px;
+cursor: pointer;
+border-radius: 2px;
+background-color: #1F5591;
+}
+.btngroup span:hover{
+opacity:0.5; filter:Alpha(opacity=50);
+}
+.active{
+background-color: #53b9f9;
+color: #F9F9F9;
+}

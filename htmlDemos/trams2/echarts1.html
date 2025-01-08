@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="js/dist/optiscroll.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/dist/jquery.optiscroll.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/echarts.custom.js"></script>
+		<script type="text/javascript" src="js/macarons.js"></script>
+		<style type="text/css">
+			html {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="jkdchart0" style="width:100%; height: 800px;"></div>
+		<script type="text/javascript">
+			var date = ['15:30:22',
+				'15:20:14',
+				'15:10:07',
+				'14:59:57',
+				'14:49:49',
+				'14:39:40',
+				'14:29:32',
+				'14:19:23',
+				'14:09:15',
+				'13:59:07',
+				'13:48:58',
+				'13:38:50',
+				'13:28:42',
+				'13:18:33',
+				'13:08:25',
+				'12:58:16',
+				'12:48:08',
+				'12:38:00',
+				'12:27:51',
+				'12:17:43',
+				'12:07:35',
+				'11:57:26',
+				'11:47:18',
+				'11:37:09',
+				'11:27:01',
+				'11:16:52',
+				'11:06:44',
+				'10:56:35',
+				'10:46:29',
+				'10:36:19',
+				'10:26:10',
+				'10:16:02',
+				'10:05:54',
+				'09:55:45',
+				'09:45:37',
+				'09:35:28',
+				'09:25:20',
+				'09:15:12',
+				'09:05:04',
+				'08:54:55',
+				'08:44:46',
+				'08:34:38',
+				'08:24:30',
+				'08:14:21',
+				'08:04:14',
+				'07:54:05',
+				'07:43:56',
+				'07:33:48',
+				'07:23:40',
+				'07:13:31',
+				'07:03:23',
+				'06:53:14',
+				'06:43:06',
+				'06:32:58',
+				'06:22:49',
+				'06:12:41',
+				'06:02:33',
+				'05:52:24',
+				'05:42:15',
+				'05:32:07',
+				'05:21:58',
+				'05:11:50',
+				'05:01:42',
+				'04:51:33',
+				'04:41:25',
+				'04:31:16',
+				'04:21:08',
+				'04:11:00',
+				'04:00:52',
+				'03:50:43',
+				'03:40:34',
+				'03:30:27',
+				'03:20:18',
+				'03:10:10',
+				'03:00:01',
+				'02:49:52',
+				'02:39:44',
+				'02:29:36',
+				'02:19:28',
+				'02:09:19',
+				'01:59:11',
+				'01:49:02',
+				'01:38:53',
+				'01:28:45',
+				'01:18:37',
+				'01:08:28',
+				'00:58:20',
+				'00:48:11',
+				'00:38:03',
+				'00:27:55',
+				'00:17:46',
+				'00:07:38'
+			]
+
+			var data = [],
+				yj = 30,
+				bj = 70,
+				colora = [],
+				colorl = [];
+			for (var i = 0; i < date.length; i++) {
+				data.push(Math.floor(Math.random() * 25 + 75))
+			}
+			var max = Math.max(...data);
+			if (max <= yj) {
+				colora = [{
+					offset: 0,
+					color: 'rgb(136,251,205)'
+				}, {
+					offset: 1,
+					color: 'rgb(123,228,186)'
+				}]
+			} else if (max <= bj && max > yj) {
+				colora = [{
+					offset: 0,
+					color: 'rgb(136,251,205)'
+				}, {
+					offset: yj / max,
+					color: 'rgb(123,228,186)'
+				}, {
+					offset: yj / max,
+					color: 'rgb(239, 179, 54)'
+				}, {
+					offset: 1,
+					color: 'rgb(239, 179, 54)'
+				}]
+			} else if (max > bj) {
+				colora = [{
+					offset: 0,
+					color: 'rgb(136,251,205)'
+				}, {
+					offset: yj / max,
+					color: 'rgb(123,228,186)'
+				}, {
+					offset: yj / max,
+					color: 'rgb(239, 179, 54)'
+				}, {
+					offset: bj / max,
+					color: 'rgb(239, 179, 54)'
+				}, {
+					offset: bj / max,
+					color: 'rgb(251, 96, 55)'
+				}, {
+					offset: 1,
+					color: 'rgb(251, 96, 55)'
+				}]
+			}
+
+
+			var datas = [];
+			for (let s of data) {
+				let sta = ''
+				if (s <= yj) {
+					sta = '1'
+				} else if (s <= bj && s > yj) {
+					sta = '2'
+				} else if (s > bj) {
+					sta = '3'
+				}
+				datas.push({
+					value: s,
+					status: sta
+				})
+			}
+
+
+
+
+			var myChart = echarts.init(document.getElementById('jkdchart0'), e_macarons);
+			// 显示标题，图例和空的坐标轴
+			myChart.setOption({
+				tooltip: {
+					trigger: 'axis',
+					position: function(pt) {
+						return [pt[0], '10%'];
+					}
+				},
+				title: {
+					left: 'center',
+					text: '',
+					textStyle: {
+						color: '#609ee9',
+						fontSize: 14
+					}
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: date
+				},
+				yAxis: {
+					type: 'value',
+					max: 100,
+					min: 0,
+					minInterval: 1
+				},
+				grid: {
+					left: '28px',
+					right: '3%',
+					bottom: '20px',
+					top: '10px'
+				},
+				series: [{
+					name: '',
+					type: 'line',
+					smooth: true,
+					symbol: 'none',
+					sampling: 'average',
+					itemStyle: {
+						normal: {
+							color: (param) => {
+								if (param.data.status == '1') {
+									return 'rgb(136,251,205)'
+								} else if (param.data.status == '2') {
+									return 'rgb(239, 179, 54)'
+								} else if (param.data.status == '3') {
+									return 'rgb(251, 96, 55)'
+								}
+							}
+						}
+					},
+					areaStyle: {
+						normal: {
+							color: new echarts.graphic.LinearGradient(0, 1, 0, 0, colora)
+						}
+					},
+					lineStyle: {
+						normal: {
+							color: new echarts.graphic.LinearGradient(0, 1, 0, 0, colorl)
+						}
+					},
+					data: datas
+				}]
+			});
+		</script>
+	</body>
+</html>

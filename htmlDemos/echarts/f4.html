@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function loadcircle(title, subtitle, domid, name, value, top, left) {
+				var myChart = echarts.init(document.getElementById(domid));
+				var num = 100 - value;
+				// 显示标题，图例和空的坐标轴
+				myChart.setOption({
+					title: {
+						text: title,
+						top: '85%',
+						left: '20%',
+						textStyle: {
+							fontSize: 14,
+							color: '#7AB5F2'
+						}
+					},
+					grid: {
+						top: 10,
+						bottom: 10
+					},
+					series: [{
+							name: name,
+							center: ['50%', '50%'],
+							radius: ['49%', '50%'],
+							clockWise: false,
+							hoverAnimation: false,
+							type: 'pie',
+							data: [{
+									value: value,
+									name: '',
+									label: {
+										normal: {
+											show: true,
+											formatter: '{d} %',
+											textStyle: {
+												fontSize: 14,
+												fontWeight: 'bold'
+											},
+											position: 'center'
+										}
+									},
+									labelLine: {
+										show: false
+									},
+									itemStyle: {
+										normal: {
+											color: '#5886f0',
+											borderColor: new echarts.graphic.LinearGradient(
+												0, 0, 0, 1, [{
+													offset: 0,
+													color: '#00a2ff'
+												}, {
+													offset: 1,
+													color: '#70ffac'
+												}]),
+											borderWidth ' : 5
+										},
+										emphasis: {
+											color: '#586f0',
+											borderColor: new echarts.graphic.LinearGradient(
+												0, 0, 0, 1, [{
+													offset: 0,
+													color: '#85b6b2'
+												}, {
+													offset: 1,
+													color: '#6d4f8d'
+												}]),
+											borderWidth: 5
+										}
+									},
+								},
+								{
+									name: ' ',
+									value: num,
+									itemStyle: {
+										normal: {
+											label: {
+												show: false
+											},
+											labelLine: {
+												show: false
+											},
+											color: 'rgba(0,0,0,0)',
+											borderColor: 'rgba(0,0,0,0)',
+											borderWidth: 0
+										},
+										emphasis: {
+											color: 'rgba(0,0,0,0)',
+											borderColor: 'rgba(0,0,0,0)',
+											borderWidth: 0
+										}
+									}
+								}
+							]
+						},
+						{
+							name: name,
+							center: ['50%', '50%'],
+							radius: ['59%', '60%'],
+							clockWise: false,
+							hoverAnimation: false,
+							type: 'pie',
+							data: [{
+									value: value,
+									name: '',
+									label: {
+										normal: {
+											show: true,
+											formatter: '{d} %',
+											textStyle: {
+												fontSize: 14,
+												fontWeight: 'bold'
+											},
+											position: 'center'
+										}
+									},
+									labelLine: {
+										show: false
+									},
+									itemStyle: {
+										normal: {
+											color: '#5886f0',
+											borderColor: new echarts.graphic.LinearGradient(
+												0, 0, 0, 1, [{
+													offset: 0,
+													color: '#00a2ff'
+												}, {
+													offset: 1,
+													color: '#70ffac'
+												}]),
+											borderWidth: 1
+										},
+										emphasis: {
+											color: '#5886f0',
+											borderColor: new echarts.graphic.LinearGradient(
+												0, 0, 0, 1, [{
+													offset: 0,
+													color: '#85b6b2'
+												}, {
+													offset: 1,
+													color: '#6d4f8d'
+												}]),
+											borderWidth: 1
+										}
+									},
+								},
+								{
+									name: ' ',
+									value: num,
+									itemStyle: {
+										normal: {
+											label: {
+												show: false
+											},
+											labelLine: {
+												show: false
+											},
+											color: 'rgba(0,0,0,0)',
+											borderColor: 'rgba(0,0,0,0)',
+											borderWidth: 0
+										},
+										emphasis: {
+											color: 'rgba(0,0,0,0)',
+											borderColor: 'rgba(0,0,0,0)',
+											borderWidth: 0
+										}
+									}
+								}
+							]
+						}
+					]
+				});
+			};
+		</script>
+	</body>
+
+</html>

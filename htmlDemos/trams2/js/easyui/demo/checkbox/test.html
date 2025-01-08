@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>RadioCheckBox - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+
+	<body>
+		<h2>checkbook实现radioButton效果</h2>
+		<div id="ff">
+			<div style="margin-bottom:20px">
+				boy:<input type="checkbox" id="boy" name="boy" value="boy" onchange="chg('boy')">
+			</div>
+			<div style="margin-bottom:20px">
+				girl:<input type="checkbox" id="girl" name="girl" value="girl" checked="checked" onchange="chg('girl')">
+			</div>
+		</div>
+		<script>
+			function chg(v){
+				if($('#'+v).is(':checked')){
+					$('#'+v).attr('checked',true);
+					$('#'+(v=='boy'?'girl':'boy')).attr('checked',false);
+				}
+			}
+		</script>
+	</body>
+
+</html>

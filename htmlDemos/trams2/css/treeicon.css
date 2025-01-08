@@ -1,0 +1,396 @@
+.device-add{
+   background:url(../images/device/add.png) no-repeat 0px 0px;
+}
+
+.device-yadd{
+   background:url(../images/device/yadd.png) no-repeat 0px 0px;
+}
+
+.device-info{
+   background:url(../images/device/info.png) no-repeat 0px 0px;
+}
+.device-group-green{
+   background:url(../images/device/group1.png) no-repeat 0px 0px;
+}
+.device-group-red{
+      background:url(../images/device/group3.png) no-repeat  0px 0px;
+}
+.device-group-grey{
+     background:url(../images/device/group.png) no-repeat 0px 0px;
+}
+.device-group-orange{
+     background:url(../images/device/group2.png) no-repeat 0px 0px;
+}
+.device-group-1{
+   background:url(../images/device/group1.png) no-repeat 0px 0px;
+}
+.device-group-3,.device-group-5,.device-group-4{
+      background:url(../images/device/group3.png) no-repeat  0px 0px;
+}
+.device-group-0{
+     background:url(../images/device/group.png) no-repeat 0px 0px;
+}
+.device-group-2{
+     background:url(../images/device/group2.png) no-repeat 0px 0px;
+}
+
+.device-database-0{
+      background:url(../images/device/database.png) no-repeat 0px 0px;
+}
+.device-database-x{
+      background:url(../images/device/databasex.png) no-repeat 0px 0px;
+}
+.device-database-1{
+   background:url(../images/device/database0.png) no-repeat 0px 0px;
+}
+.device-database-2{
+     background:url(../images/device/database2.png) no-repeat 0px 0px;
+}
+.device-database-3{
+     background:url(../images/device/database3.png) no-repeat 0px 0px;
+}
+.device-database-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-database-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+.device-net-0{
+      background:url(../images/device/net.png) no-repeat 0px 0px;
+}
+.device-net-x{
+      background:url(../images/device/netx.png) no-repeat 0px 0px;
+}
+.device-net-1{
+   background:url(../images/device/net0.png) no-repeat 0px 0px;
+}
+.device-net-2{
+     background:url(../images/device/net2.png) no-repeat 0px 0px;
+}
+.device-net-3{
+     background:url(../images/device/net3.png) no-repeat 0px 0px;
+}
+.device-net-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-net-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+.device-server-0{
+      background:url(../images/device/server.png) no-repeat 0px 0px;
+}
+
+.device-server-x{
+      background:url(../images/device/serverx.png) no-repeat 0px 0px;
+}
+.device-server-1{
+   background:url(../images/device/server0.png) no-repeat 0px 0px;
+}
+.device-server-2{
+     background:url(../images/device/server2.png) no-repeat 0px 0px;
+}
+.device-server-3{
+     background:url(../images/device/server3.png) no-repeat 0px 0px;
+}
+.device-server-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-server-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+.device-application-0{
+      background:url(../images/device/application.png) no-repeat 0px 0px;
+}
+
+.device-application-x{
+      background:url(../images/device/applicationx.png) no-repeat 0px 0px;
+}
+.device-application-1{
+   background:url(../images/device/application0.png) no-repeat 0px 0px;
+}
+.device-application-2{
+     background:url(../images/device/application2.png) no-repeat 0px 0px;
+}
+.device-application-3{
+     background:url(../images/device/application3.png) no-repeat 0px 0px;
+}
+.device-application-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-application-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+.device-middleware-0{
+      background:url(../images/device/middleware.png) no-repeat 0px 0px;
+}
+
+.device-middleware-x{
+      background:url(../images/device/middlewarex.png) no-repeat 0px 0px;
+}
+.device-middleware-1{
+   background:url(../images/device/middleware0.png) no-repeat 0px 0px;
+}
+.device-middleware-2{
+     background:url(../images/device/middleware2.png) no-repeat 0px 0px;
+}
+.device-middleware-3{
+     background:url(../images/device/middleware3.png) no-repeat 0px 0px;
+}
+.device-middleware-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-middleware-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+.device-vmware-0{
+      background:url(../images/device/vmware.png) no-repeat 0px 0px;
+}
+.device-vmware-x{
+      background:url(../images/device/vmwarex.png) no-repeat 0px 0px;
+}
+.device-vmware-1{
+   background:url(../images/device/vmware0.png) no-repeat 0px 0px;
+}
+.device-vmware-2{
+     background:url(../images/device/vmware2.png) no-repeat 0px 0px;
+}
+.device-vmware-3{
+     background:url(../images/device/vmware3.png) no-repeat 0px 0px;
+}
+.device-vmware-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-vmware-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-ele-0{
+      background:url(../images/device/ele.png) no-repeat 0px 0px;
+}
+.device-ele-x{
+      background:url(../images/device/elex.png) no-repeat 0px 0px;
+}
+.device-ele-1{
+   background:url(../images/device/ele0.png) no-repeat 0px 0px;
+}
+.device-ele-2{
+     background:url(../images/device/ele2.png) no-repeat 0px 0px;
+}
+.device-ele-3{
+     background:url(../images/device/ele3.png) no-repeat 0px 0px;
+}
+.device-ele-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-ele-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+.device-pes-0{
+      background:url(../images/device/pes.png) no-repeat 0px 0px;
+}
+.device-pes-x{
+      background:url(../images/device/pesx.png) no-repeat 0px 0px;
+}
+.device-pes-1{
+   background:url(../images/device/pes0.png) no-repeat 0px 0px;
+}
+.device-pes-2{
+     background:url(../images/device/pes2.png) no-repeat 0px 0px;
+}
+.device-pes-3{
+     background:url(../images/device/pes3.png) no-repeat 0px 0px;
+}
+.device-pes-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-pes-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-hardware-0{
+      background:url(../images/device/hardware.png) no-repeat 0px 0px;
+}
+.device-hardware-x{
+      background:url(../images/device/hardwarex.png) no-repeat 0px 0px;
+}
+.device-hardware-1{
+   background:url(../images/device/hardware0.png) no-repeat 0px 0px;
+}
+.device-hardware-2{
+     background:url(../images/device/hardware2.png) no-repeat 0px 0px;
+}
+.device-hardware-3{
+     background:url(../images/device/hardware3.png) no-repeat 0px 0px;
+}
+.device-hardware-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-hardware-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+.device-IPMI-0{
+      background:url(../images/device/IPMI.png) no-repeat 0px 0px;
+}
+.device-IPMI-x{
+      background:url(../images/device/IPMIx.png) no-repeat 0px 0px;
+}
+.device-IPMI-1{
+   background:url(../images/device/IPMI0.png) no-repeat 0px 0px;
+}
+.device-IPMI-2{
+     background:url(../images/device/IPMI2.png) no-repeat 0px 0px;
+}
+.device-IPMI-3{
+     background:url(../images/device/IPMI3.png) no-repeat 0px 0px;
+}
+.device-IPMI-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-IPMI-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-cons-0{
+      background:url(../images/device/cons.png) no-repeat 0px 0px;
+}
+.device-cons-x{
+      background:url(../images/device/consx.png) no-repeat 0px 0px;
+}
+.device-cons-1{
+   background:url(../images/device/cons0.png) no-repeat 0px 0px;
+}
+.device-cons-2{
+     background:url(../images/device/cons2.png) no-repeat 0px 0px;
+}
+.device-cons-3{
+     background:url(../images/device/cons3.png) no-repeat 0px 0px;
+}
+.device-cons-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-cons-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-ups-0{
+      background:url(../images/device/ups.png) no-repeat 0px 0px;
+}
+.device-ups-x{
+      background:url(../images/device/upsx.png) no-repeat 0px 0px;
+}
+.device-ups-1{
+   background:url(../images/device/ups0.png) no-repeat 0px 0px;
+}
+.device-ups-2{
+     background:url(../images/device/ups2.png) no-repeat 0px 0px;
+}
+.device-ups-3{
+     background:url(../images/device/ups3.png) no-repeat 0px 0px;
+}
+.device-ups-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-ups-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-air-0{
+      background:url(../images/device/air.png) no-repeat 0px 0px;
+}
+.device-air-x{
+      background:url(../images/device/airx.png) no-repeat 0px 0px;
+}
+.device-air-1{
+   background:url(../images/device/air0.png) no-repeat 0px 0px;
+}
+.device-air-2{
+     background:url(../images/device/air2.png) no-repeat 0px 0px;
+}
+.device-air-3{
+     background:url(../images/device/air3.png) no-repeat 0px 0px;
+}
+.device-air-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-air-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-lea-0{
+      background:url(../images/device/lea.png) no-repeat 0px 0px;
+}
+.device-lea-x{
+      background:url(../images/device/leax.png) no-repeat 0px 0px;
+}
+.device-lea-1{
+   background:url(../images/device/lea0.png) no-repeat 0px 0px;
+}
+.device-lea-2{
+     background:url(../images/device/lea2.png) no-repeat 0px 0px;
+}
+.device-lea-3{
+     background:url(../images/device/lea3.png) no-repeat 0px 0px;
+}
+.device-lea-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-lea-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-gen-0{
+      background:url(../images/device/gen.png) no-repeat 0px 0px;
+}
+.device-gen-x{
+      background:url(../images/device/genx.png) no-repeat 0px 0px;
+}
+.device-gen-1{
+   background:url(../images/device/gen0.png) no-repeat 0px 0px;
+}
+.device-gen-2{
+     background:url(../images/device/gen2.png) no-repeat 0px 0px;
+}
+.device-gen-3{
+     background:url(../images/device/gen3.png) no-repeat 0px 0px;
+}
+.device-gen-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-gen-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}
+
+
+.device-xinfeng-0{
+      background:url(../images/device/xinfeng.png) no-repeat 0px 0px;
+}
+.device-xinfeng-x{
+      background:url(../images/device/xinfengx.png) no-repeat 0px 0px;
+}
+.device-xinfeng-1{
+   background:url(../images/device/xinfeng0.png) no-repeat 0px 0px;
+}
+.device-xinfeng-2{
+     background:url(../images/device/xinfeng2.png) no-repeat 0px 0px;
+}
+.device-xinfeng-3{
+     background:url(../images/device/xinfeng3.png) no-repeat 0px 0px;
+}
+.device-xinfeng-4{
+     background:url(../images/device/x4.png) no-repeat 0px 0px;
+}
+.device-xinfeng-5{
+     background:url(../images/device/x5.png) no-repeat 0px 0px;
+}

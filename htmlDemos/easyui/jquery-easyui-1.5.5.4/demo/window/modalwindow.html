@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Modal Window - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+
+	<body>
+		<div style="margin:20px 0;">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="op()">Open</a>
+		</div>
+		<div id="w" class="easyui-window" data-options="modal:true,closed:true" >
+			<form id="ff" class="easyui-form" method="post">
+			<table cellpadding="5">
+				<tr>
+					<td>科目编号:</td>
+					<td><input class="easyui-textbox" type="text"
+						name="subjectPO.id" id="id"></input></td>
+				</tr>
+				<tr>
+					<td>科目名字:</td>
+					<td><input class="easyui-textbox" type="text"
+						name="subjectPO.names" id="names"></input></td>
+				</tr>
+				<tr>
+					<td><button class="easyui-linkbutton" onclick="javascript:void(0)">提交</button></td>
+					<td><button class="easyui-linkbutton" onclick="javascript:void(0)">清空</button></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<script type="text/javascript">
+			function op(){
+				$("#w").panel({"title":'jquery'});
+				$('#w').window('open');
+			}
+		</script>
+
+
+	</body>
+
+</html>

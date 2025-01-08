@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<title>index.html</title>
+		<meta charset="UTF-8" />
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var value = 0;
+				setInterval(function() {
+					value = (value + 5) % 360;
+					var element = document.getElementById("imgswitching");
+					if(null != element) {
+						var imgnodestyle = element.style;
+						if(navigator.userAgent.indexOf("MSIE") > 0) {
+							imgnodestyle.msTransform = "rotate(" + value + "deg)";
+						}
+						else if(isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+							imgnodestyle.MozTransform = "rotate(" + value + "deg)";
+						}
+						else {
+							imgnodestyle.webkitTransform = "rotate(" + value + "deg)";
+						}
+					}
+				}, 10);
+			})
+		</script>
+	</head>
+
+	<body>
+		<div style="padding: 15%; background-color: darkgrey;"><img id="imgswitching" src="taiji.png" width="100px" height="100px"></div>
+	</body>
+
+</html>

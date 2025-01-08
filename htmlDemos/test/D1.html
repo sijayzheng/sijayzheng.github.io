@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="checkbox" name="ck" id="ck" checked value="1" onchange="onch(this)" />
+		<br>
+		<input type="checkbox" name="ck1" id="ck1" value="0" onchange="onch(this)" />
+		<script type="text/javascript">
+			function onch(e) {
+				let id = $(e).attr('id')
+				$(e).val($(e).val() == 1 ? '0' : '1');
+				let val = $(e).val()
+				console.log(e);
+				console.log(id + '=====>' + val);
+			}
+		</script>
+	</body>
+</html>

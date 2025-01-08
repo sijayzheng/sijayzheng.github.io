@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>layui</title>
+		<link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		adfsf
+		<div>saf</div>
+		<button onclick="re()">asf</button>
+
+		<script>
+			function re() {
+				Swal.fire({
+						title: '确定签收此工单吗？',
+						type: 'warning',
+						showCancelButton: true,
+						showConfirmButton: true
+					})
+					.then(function(result) {
+						if (result.value) {
+							console.log(111111111);
+							Swal.fire({
+									title: '签收成功! 立即处理此工单吗？',
+									type: 'success',
+									showConfirmButton: true,
+									showCancelButton: true
+								})
+								.then(function(result) {
+									if (result.value) {
+										console.log(22222222222);
+									}
+								});
+						}
+					});
+
+				(() => {
+					let url = "ws://<%=wspath%>chat.ws?username=" + Date.parse(new Date()) + "@@<%=sUserCode%>";
+					if ('WebSocket' in window) {
+						ws = new WebSocket(url);
+					} else if ('MozWebSocket' in window) {
+						ws = new MozWebSocket(url);
+					} else {
+						alert("你的浏览器过时了！都不支持WebSocket！");
+						return;
+					}
+					ws.onopen = () => {};
+					ws.onmessage = (event) => {
+						console.log(eval('(' + event + ')'))
+					};
+					ws.onclose = () => {};
+				})()
+			}
+		</script>
+
+		<script type="text/javascript">
+			var script = document.createElement("script");
+			script.src = "https://cdn.jsdelivr.net/npm/promise-polyfill@7.1.0/dist/promise.min.js";
+			document.body.appendChild(script)
+		</script>
+		<script src="js/sweetalert2.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

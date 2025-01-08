@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+		<link href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link href="jquery-easyui-1.5.5.4/themes/icon.css" />
+
+	</head>
+
+	<body>
+		<table id="dt" border="1" cellspacing="10px" cellpadding="10px">
+			<tr>
+				<th>Header</th>
+				<th>Header2</th>
+				<th>Header3</th>
+				<th>Header4</th>
+			</tr>
+			<tr>
+				<td>Data1</td>
+				<td>Data11</td>
+				<td>Data12</td>
+				<td>Data13</td>
+			</tr>
+			<tr>
+				<td>Data2</td>
+				<td>Data21</td>
+				<td>Data22</td>
+				<td>Data23</td>
+			</tr>
+			<tr>
+				<td>Data3</td>
+				<td>Data31</td>
+				<td>Data32</td>
+				<td>Data33</td>
+			</tr>
+			<tr>
+				<td>Data4</td>
+				<td>Data41</td>
+				<td>Data42</td>
+				<td>Data43</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			//			$("#dt").on("dblclick", "tr", function() {
+			//				var cod = $(this).children('td').text();
+			//				console.log(cod);
+			//			});
+			$("#dt").find("tr").find("td").bind("dblclick", function() {
+				var input = "<input type='text' id='temp' value=" + $(this).text() + " >";
+				$(this).text("");
+				$(this).append(input);
+				$("input#temp").focus();
+				$("input").blur(function() {
+					if($(this).val() == "") {
+						$(this).remove();
+					} else {
+						$(this).closest("td").text($(this).val());
+					}
+				})
+			});
+		</script>
+		
+		
+		<input type="text" value="1111111111" />
+	</body>
+
+</html>

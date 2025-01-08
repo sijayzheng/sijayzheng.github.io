@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SwitchButton Actions - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../demo.css" />
+    <script type="text/javascript" src="../../jquery.min.js"></script>
+    <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+  </head>
+  <body>
+    <h2>SwitchButton Actions</h2>
+    <p>Click the buttons below to perform actions.</p>
+    <div style="margin: 20px 0"></div>
+
+    <div style="margin: 20px 0">
+      <a class="easyui-linkbutton" onclick="$('#sb').switchbutton('disable')">Disable</a>
+      <a class="easyui-linkbutton" onclick="$('#sb').switchbutton('enable')">Enable</a>
+
+      <a class="easyui-linkbutton" onclick="$('#sb').switchbutton('check')">on</a>
+      <a class="easyui-linkbutton" onclick="$('#sb').switchbutton('uncheck')">off</a>
+    </div>
+
+    <input id="sb" class="easyui-switchbutton" data-options="value:0" style="width: 100px; height: 30px" />
+    <script>
+      $('#sb').switchbutton({
+        onText: '是',
+        offText: '否',
+        onChange: function (checked) {
+          $(this).switchbutton('setValue', checked ? 1 : 0)
+          console.log($(this).switchbutton('options').value)
+        },
+      })
+
+      let res = {
+        column: ['时间', '告警状态', '文件', '类型', '总大小[M]', '已使用[M]', '可用[M]', '使用率(%)', '挂载'],
+      }
+      console.time()
+      let columns = []
+      $(res.column).each(function (i, n) {
+        let col = {
+          field: i + '',
+          title: n,
+          width: 100,
+          align: i == 0 ? 'center' : 'left',
+        }
+        if (n == '告警状态') {
+          col.formatter = function (value) {
+            if (value.includes('3')) {
+              return '<span class="jc-status-3">报警</span>'
+            } else if (value.includes('2')) {
+              return '<span class="jc-status-2">预警</span>'
+            } else {
+              return '<span class="jc-status-1">正常</span>'
+            }
+          }
+        } else {
+          col.formatter = function (value) {
+            return '<span title="' + value + '">' + value + '</span>'
+          }
+        }
+        columns.push(col)
+      })
+      console.timeEnd()
+      console.time()
+      let columns2 = [],
+        a = res.column
+      for (let i = 0; i < a.length; i++) {
+        let col = {
+          field: i + '',
+          title: a[i],
+          width: 100,
+          align: i == 0 ? 'center' : 'left',
+        }
+        if (a[i] == '告警状态') {
+          col.formatter = function (value) {
+            if (value.includes('3')) {
+              return '<span class="jc-status-3">报警</span>'
+            } else if (value.includes('2')) {
+              return '<span class="jc-status-2">预警</span>'
+            } else {
+              return '<span class="jc-status-1">正常</span>'
+            }
+          }
+        } else {
+          col.formatter = function (value) {
+            return '<span title="' + value + '">' + value + '</span>'
+          }
+        }
+        columns2.push(col)
+      }
+      console.timeEnd()
+    </script>
+  </body>
+</html>

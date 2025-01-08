@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css"/>
+		<script src="js/sweetalert.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div style="width: 66px;height: 66px;background: red;" onclick="fn1()">fn1</div>
+		<script type="text/javascript">
+			function fn1() {
+				swal({
+					title: "删除？",
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonText: "是的",
+					cancelButtonText: "不",
+					closeOnConfirm: true,
+					closeOnCancel: true
+				},function() {
+					setTimeout(function(){
+						swal({
+							title: "删除成功",
+							type: "success",
+							confirmButtonText: "是的",
+						})
+					},500)
+				})
+			}
+
+		</script>
+	</body>
+</html>

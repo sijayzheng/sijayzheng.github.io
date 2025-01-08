@@ -1,0 +1,20 @@
+{
+	"_DB2_HOST": [{
+		"hostname": "零售信贷移动审批数据库",
+		"instanceId": "590101f170495",
+		"ip": "188.188.12.16"
+	}],
+	"_object_id": "DBTWO",
+	"instanceId": "59253348ccd85",
+	"instanceName": "db2inst",
+	"ip": "188.188.12.16",
+	"name": "AUTO_188.188.12.16:60004",
+	"org": 6009,
+	"ptype": "DB2 Enterprise Server Edition",
+	"status": "Available",
+	"userList": [
+		"db2inst",
+		"db2fenc"
+	],
+	"version": "10.1"
+}

@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jtopo test</title>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-jcinsex.easyui.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="js/jtopo-min.js"></script>
+<script src="<%=request.getContextPath()%>/js/sweet-alert.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/trams/topo/js/dragnode.js"></script>
+<script type="text/javascript" src="${basePath }/trams/topo/js/nodeclick.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/treeicon.css">
+<style type="text/css">
+.nodeStyle {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin-top:8px;
+	padding:3px;
+}
+#contextmenu,#contextmenu1,#mainMenu,#contextmenu_layout,#linkmenu,#saveflag {
+	border: 1px solid #aaa;
+	border-bottom: 0;
+	background: #5DA9F3;
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: none;
+	color:#fff;
+}
+																		   
+#contextmenu li a,#contextmenu1 li a,#mainMenu li a,#contextmenu_layout li a,#linkmenu li a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #fff;
+	cursor: pointer;
+}
+																		   
+#contextmenu li a:hover,#contextmenu1 li a:hover,#mainMenu li a:hover,#contextmenu_layout li a:hover,#linkmenu li a:hover {
+	background: #ADADAD;
+}
+.bussinesstopo-bussinessdetail-title{
+	width:145px;height: 35px;line-height: 35px;
+	background: #fff;
+	color: #A2C6FB;
+	border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding:0 5px;
+}
+.#devicetopo
+{
+	width:100%;
+	position:fixed; 
+	right: 0px;
+	height:100%;
+	background:#f7f7f7;
+	text-align:right;
+	z-index:9999;
+	display: none;
+}
+
+</style>
+<script type="text/javascript">
+	var scene = new JTopo.Scene();
+	var datanodemap={};
+	var currentNode = null;//增加的新节点
+	var stage = null;
+	var isSelectedMode = true;//是否选中模块
+	var view = null;//拓扑ID
+	var linknodeid = null;
+	var link=null;//连线数据
+	var canvas=null;//画布
+	var cutimage=null;//拓扑截图
+	var root = null;//节点数据
+	var bgimg=null;//背景图片
+	var width=0;//画布宽
+	var height=0;//画布高
+	$(function() {//加载必要的JS
+		init();//初始化画布
+		inityk();//右键事件初始化
+		initclick();//连线
+		initdata();
+	});
+	window.addEventListener("resize", resizeCanvas, false);
+	function resizeCanvas() {
+		canvas = document.getElementById('canvas');
+	    w = canvas.width = window.innerWidth;
+	    h = canvas.height = window.innerHeight-80;
+	}
+	//初始化画布
+	function init() {
+		canvas = document.getElementById('canvas');
+		w = canvas.width = window.innerWidth;
+	    h = canvas.height = window.innerHeight-80;
+		stage = new JTopo.Stage(canvas);
+		stage.add(scene);
+		stage.wheelZoom = 1.2;
+		scene.background = "/TRAMS/images/backimg.png";
+	}
+	var PX=10,PY=10;
+	var TNUM=0;
+	
+	//加载拓扑图
+	function initdata() {
+		scene.clear();
+		$.ajax({
+			type : 'post',
+			url : "/TRAMS/physicaltopo?operateFlag=inittopo",
+			dataType : "json",
+			async : false,
+			success : function(data) {
+				$.each(data.nodelist,function (i,n){
+					if(n.posex==-1){
+						TNUM = TNUM+1;
+						viewNodes(n.names,n.ranks,n.health,n.nodeid,PX,PY,n.nodeicon);
+						PX = PX + 190;
+						if(TNUM%6==0){
+							PY = PY + 80;
+							PX = 10;
+						}
+					}else{
+						viewNodes(n.names,n.ranks,n.health,n.nodeid,n.posex,n.posey,n.nodeicon);
+					}
+					if(i==data.nodelist.length-1){
+						setlink(data.linklist);
+					}
+				});
+				
+			}
+		});
+	}
+	//添加基础展示节点
+	function viewNodes(text,subtext,status,nodeid,px,py,nodeicon){
+		
+		var node = new JTopo.Node();
+        node.text=text;
+        node.textPosition = 'Bottom_Center';// 文字居中
+        node.textOffsetY = 5; // 文字向下偏移8个像素
+        node.font = '12px 微软雅黑'; // 字体
+        node.fontColor = "0,0,0";
+        node.nodeid=nodeid;
+        if(nodeicon==""){
+        	nodeicon="default";
+        }
+        node.setImage('./img/devices/'+nodeicon+'-1.png'); 
+        node.setLocation(px, py);
+        node.setSize(44,50);
+        node.fillStyle = '98,168,248';
+        node.alarmColor = '98,168,248';	
+        node.radius = 5;
+        node.isleaf = "leaf";
+        datanodemap[nodeid]=node;
+	    scene.add(node);
+		
+	}
+	 //添加连线
+    function setlink(link){
+    	$.each(link,function (i,n){
+    		var begin=n.fromnode;
+           	var end=n.tonode;
+           	newLink(datanodemap[begin],datanodemap[end],n.linkname,n.linklinetype);
+    	});
+    	$("#loadgif").hide();
+    }
+    //添加连线
+    function newLink(tempNodeA, tempNodeZ, text,lineType){
+        var link =null;
+        if(lineType=='line'){   
+    		link = new JTopo.Link(tempNodeA, tempNodeZ);
+    		link.linetype="line";
+    	}else if(lineType=='foldLineH'){               		
+    		link=new JTopo.FoldLink(tempNodeA,tempNodeZ);
+    		link.direction ='horizontal';
+    		link.linetype="foldLineH";
+    	}else if(lineType=="foldLineV"){
+    		link=new JTopo.FoldLink(tempNodeA,tempNodeZ);
+    		link.direction ='vertical';
+    		link.linetype="foldLineV";
+    	}else if(lineType=='flexLineH'){               		
+    		link=new JTopo.FlexionalLink(tempNodeA,tempNodeZ);
+    		link.direction ='horizontal';
+    		link.linetype="flexLineH";
+    	}else if(lineType=="flexLineV"){
+    		link=new JTopo.FlexionalLink(tempNodeA,tempNodeZ);
+    		link.direction ='vertical';
+    		link.linetype="flexLineV";
+    	}else if(lineType=="curve"){
+    		link=new JTopo.CurveLink(tempNodeA,tempNodeZ);
+    		link.linetype="curve";
+    	}
+    	link.lineWidth = 3; // 线宽
+    	link.font = '12px 微软雅黑'; // 字体
+    	link.fontColor = "0,0,0";
+		scene.add(link)
+    }
+    var deletelink="";
+    var deletenodes="";
+	//保存拓扑
+	function edit() {
+		$("#progress").css("display","block");
+		var elements=scene.getDisplayedElements();//获取页面信息
+		var linkdata="";//连线数据
+		var nodedata="";//节点数据
+		for(var j=0;j<elements.length;j++){
+			var element=elements[j];
+			if(element.elementType=="link"){
+				linkdata+=element.nodeA.nodeid+","+element.nodeZ.nodeid+","+element.linetype+","+encodeURI(encodeURI(element.text))+";";
+			}else if(element.elementType=="node"){
+				nodedata+=element.nodeid+","+encodeURI(encodeURI(element.text))+","+element.x+","+element.y+";";
+			}else{
+				alert("存在未知对象");
+			}
+		}
+		
+		$.ajax({
+			type : 'post',
+			url : "/TRAMS/physicaltopo?operateFlag=savetopo&linkdata="+linkdata+"&nodedata="+nodedata+"&deletelink="+deletelink+"&deletenodes="+deletenodes,
+			dataType : "json",
+			success : function(data) {
+				$("#progress").css("display","none");
+				$("#matrix_dataGrid").datagrid("reload");
+				swal('提示','保存成功！','success');
+			}
+		});
+		
+	}
+	
+	//查询节点
+	function doSearch(value) {
+		findNodeAndFlash(value);
+	}
+	//查找节点,便居中闪动显示
+	function findNodeAndFlash(text) {
+		var text = text.trim();
+		var scene = stage.childs[0];
+		var nodes = scene.childs.filter(function(e){ 
+			return e instanceof JTopo.Node; 
+		});
+		for(var i=0;i<nodes.length;i++){
+			var node = nodes[i];
+			node.selected = false;
+		}
+		nodes = nodes.filter(function(e){
+			if(e.text == null) return false;
+			return e.text.indexOf(text) != -1;
+		});
+		if (nodes.length > 0) {
+			for(var i=0;i<nodes.length;i++){
+				var node = nodes[i];
+				node.selected = true;
+				var location = node.getCenterLocation();
+				// 查询到的节点闪烁
+				function nodeFlash(node, n) {
+					if (n == 0) {
+						return;
+					}
+					node.selected = !node.selected;
+					setTimeout(function() {
+						nodeFlash(node, n - 1);
+					}, 300);
+				}
+				// 闪烁几下
+				nodeFlash(node, 10);
+			}
+		} else {
+			alert("没有找到该节点,请输入完整的节点名称!");
+		}
+	}
+
+	function statusup(obj){
+		
+		
+	}
+	function changezoom(flag){
+		if (flag == 'zoomout') {
+			stage.zoomOut(0.95);
+		} else if (flag == 'zoomin') {
+			stage.zoomIn(0.95);
+		} else if (flag == 'zoomone') {
+			scene.scaleX = 1;
+			scene.scaleY = 1;
+		}else if (flag == 'allprtsc') {
+			showInFullScreen(stage.canvas, 'RequestFullScreen');
+		} 
+	}
+	/**
+	右键处理
+	*/
+	function inityk(){
+		stage.click(function(event){
+			if(event.button == 0){// 右键
+				// 关闭弹出菜单（div）
+				$("#contextmenu").hide();
+				$("#contextmenu1").hide();
+				$("#mainMenu").hide();
+				$("#linkmenu").hide();
+			}
+		});
+		
+		/* 右键菜单处理 */	
+		$("#contextmenu1 a").click(function(){
+			var text = $(this).text();
+			if(text == '删除该设备'){
+				scene.remove(currentNode);
+				deletenodes = deletenodes + currentNode.nodeid+";";
+				delete datanodemap[currentNode.nodeid];
+				$("#_easyui_tree_"+currentNode.nodeid).find(".tree-icon").attr("class", "tree-icon tree-file device-add"); //改变class
+				currentNode = null;
+			}
+			$("#contextmenu1").hide();
+		});
+		
+		/* 右键菜单处理 */	
+		$("#mainMenu a").click(function(){
+			var text = $(this).text();
+			if(text == '放大'){
+				stage.zoomOut(0.95);
+			}else if(text == '缩小'){
+				stage.zoomIn(0.95);
+			}else if(text == '重置大小'){
+				scene.scaleX=1;
+				scene.scaleY=1;
+			}else if(text == '重置'){
+				scene.clear();
+		    	initdata();
+			}else if(text == '全屏查看'){
+				showInFullScreen(stage.canvas,'RequestFullScreen');
+			}
+			$("#mainMenu").hide();
+		});
+		
+		/* 右键菜单处理 */	
+		$("#linkmenu a").click(function(){
+			var text = $(this).text();
+			if(text == '删除该连线'){
+	            scene.remove(currentNode);
+	            deletelink += currentNode.nodeA.nodeid+","+currentNode.nodeZ.nodeid+";";
+	            currentNode=null;
+			}
+			$("#linkmenu").hide();
+		});
+		
+		/* 右键菜单处理 */	
+		$("#contextmenu a").click(function(){
+			var text = $(this).text();
+			if(text == '删除该组'){
+				scene.remove(currentNode);
+			}
+			$("#contextmenu").hide();
+		});
+	}
+	
+	
+
+	
+	function treeLoadFilter(data){
+		$("#loadgif").hide();
+		if(data.treedata){
+			return eval(data.treedata);
+		}
+    	else{
+    		return eval(data);
+    	}
+     }
+	$(function(){   
+	    var addr_tree = $("#matrix_device").tree({   
+	        url:'<%=request.getContextPath()%>/monitortree?operateFlag=getinstancetypetreetopoedit&type=1',   
+	        method:"post",   
+	        onLoadSuccess:function(node,data){  
+	        	draginit();
+	        	$('#matrix_device').tree('expandAll');
+	        }   
+	    });   
+	}) 
+	
+	function returnto(){
+		window.location="physicaltopo.jsp";
+	}
+	
+	function returntohistory(){
+		var selected = $("#matrix_dataGrid").datagrid("getSelected");
+		if(selected){
+			var id = selected.id;
+			swal({
+				title: "恢复拓扑视图，确定该操作吗？",
+				text: selected.versioncode,
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonText: '确定'
+			},
+			function(){
+				$.ajax({
+	            	// 设置数据传输格式
+	            	url:"/TRAMS/physicaltopo?operateFlag=returntohistory&id="+id,
+	            	type:"post",
+	            	dataType:"json",
+	               	success:function(data){
+	                	// 刷新数据
+	                	$("#guanbimodal").click();
+	                	swal("提示",data.message,"warning");
+	                	initdata();
+	                }
+	            })
+			});
+		}else{
+			swal("提示","请选择一行数据！","warning");
+		}		
+
+	}
+</script>
+</head>
+<body   class="easyui-layout" data-options="border:false" style="height: 100%;width: 100%;" >
+	<div id="loadgif" style="width:66px;height:66px;position:absolute;top:45%;left:45%;">
+	　　<span class="dots-loader">Loading&#8230;</span>
+	</div>
+	<div data-options="region:'west'" style="width:260px" title="设备选择区">
+		<div class="m-wrapper optiscroll"  id="lefttreediv">
+    		<ul id="matrix_device" style="padding:5px;display:block;" class="easyui-tree"
+			data-options=" url: '',
+               method: 'get',
+               loadFilter:treeLoadFilter,
+               animate: true">
+			</ul>
+    	</div>
+	</div>
+	<div data-options="region:'center'"  title="拓扑编辑区">
+		<div class="easyui-layout" data-options="fit:true,border:false">
+			<div data-options="region:'north'" style="height: 70px;">
+				<div id="toolbar" data-options="border:false" style="height:68px;line-height: 60px;">
+					<input id="tex" type="text" name="text1" id="text1" style="display:none">
+					<input type="hidden" id="nodeid" name="nodeid" value="">
+					<input type="hidden" id="view" name="view" value>
+					<div style="float: left;color: #444;margin-left:5px;font-size: 13px;padding-top:2px">连线选择</div>
+					<div id="baseLine1" datatype="line" gtype="L" onclick="startline(this);lineType='line'">
+						<img id="simpleLine" name="backGroundImg" src="../../images/line1.png" class="nodeStyle" />
+						<div style="line-height: 25px;">直线</div>
+					</div>
+					<div id="baseLine1" datatype="curve" gtype="L" onclick="startline(this);lineType='curve'">
+						<img id="simpleLine" name="backGroundImg" src="../../images/linec.png" class="nodeStyle" />
+						<div style="line-height: 25px;">弧线</div>
+					</div>
+					<div id="baseLine2" divType="baseMode" gtype="L" datatype="foldLine" draggable="false"
+						onclick="startline(this);lineType='foldLineH';direction='horizontal';">
+						<img id="foldLineH" name="backGroundImg" src="../../images/3t.png" class="nodeStyle" />
+						<div style="line-height: 25px;">折线(横向)</div>
+					</div>
+					<div id="baseLine3" divType="baseMode" gtype="L" datatype="foldLine" draggable="false"
+						onclick="startline(this);lineType='foldLineV';direction='vertical';">
+						<img id="foldLineV" name="backGroundImg" src="../../images/3th.png" class="nodeStyle" />
+						<div style="line-height: 25px;">折线(纵向)</div>
+					</div>
+					<div id="baseLine4" divType="baseMode" gtype="L" datatype="foldLine" draggable="false"
+						onclick="startline(this);lineType='flexLineH';direction='horizontal';">
+						<img id="flexLineH" name="backGroundImg" src="../../images/1th.png" class="nodeStyle" />
+						<div style="line-height: 25px;">二次折线(横向)</div>
+					</div>
+					<div id="baseLine5" divType="baseMode" gtype="L" datatype="foldLine" draggable="false"
+						onclick="startline(this);lineType='flexLineV';direction='horizontal';">
+						<img id="flexLineV" name="backGroundImg" src="../../images/1t.png" class="nodeStyle" />
+						<div style="line-height: 25px;">二次折线(纵向)</div>
+					</div>
+					<div style="padding-right:0px;float: right;">
+						<div style="line-height: 30px;">
+							<label ><a id="zoonout" onclick="changezoom('zoomout')"  href="javascript:void(0)" style="height: 30px;color: #888;font-size:20px;padding-right:10px;opacity:0.8; filter:Alpha(opacity=80);text-decoration: none;">
+								<i style="" class="fa fa-search-plus"></i>
+							</a></label>
+							<label><a id="zoomin" onclick="changezoom('zoomin')"  href="javascript:void(0)" style="height: 30px;color: #888;font-size:20px;padding-right:10px;opacity:0.8; filter:Alpha(opacity=80);text-decoration: none;">
+								<i class="fa fa-search-minus"></i>
+							</a> </label>
+							<label><a id="zoomone" onclick="changezoom('zoomone')"  href="javascript:void(0)" style="height: 30px;color: #888;font-size:20px;padding-right:10px;opacity:0.8; filter:Alpha(opacity=80);text-decoration: none;">
+								<i class="fa fa-undo"></i>
+							</a></label>
+							<label><a id="allprtsc" onclick="changezoom('allprtsc')" href="javascript:void(0)" style="height: 30px;color: #888;font-size:20px;padding-right:10px;opacity:0.8; filter:Alpha(opacity=80);text-decoration: none;">
+								<i class="fa fa-arrows-alt"></i>
+							</a> </label>
+							<label><a id="circle" onclick='edit()' class="easyui-linkbutton" href="javascript:void(0)" style="height: 30px;color: #fff">保存</a> </label>
+							<label><a id="editmodal"  data-modal="modal" class="easyui-linkbutton md-trigger" href="javascript:void(0)" style="height: 30px;color: #fff">历史恢复</a> </label>
+							<label><a id="circle" onclick='returnto()' class="easyui-linkbutton" href="javascript:void(0)" style="height: 30px;color: #fff;background: #FD876A;border: 0px;">返回</a> </label>
+						</div>
+						<div style="line-height: 30px;margin-top:3px;">
+							
+							<input id="queryText" class="easyui-searchbox" style="padding:2px;height:30px;width:380px" data-options="searcher:doSearch" prompt="输入节点名称！" /> 
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-options="region:'center',fit:true,border:false">
+				<canvas id="canvas"  ondrop="drop(event)" ondragover="allowDrop(event)">您的浏览器不支持HTML5!</canvas>
+			</div>
+			
+		</div>
+	</div>
+	<ul id="mainMenu" style="display:none;z-index:1;font-size:9px;">	
+		<li><a>放大</a></li>	
+		<li><a>缩小</a></li>
+		<li><a>重置大小</a></li>
+		<li><a>全屏查看</a></li>
+	</ul>
+	<ul id="linkmenu" style="display:none;z-index:1;font-size:9px;">	
+		<li><a>删除该连线</a></li>	
+	</ul>
+	<ul id="contextmenu1" style="display:none;z-index:9999;font-size:9px;">	
+		<li><a>删除该设备</a></li>
+	</ul>
+	<ul id="contextmenu" style="display:none;z-index:9999;font-size:9px;">	
+		<li><a>删除该组</a></li>
+	</ul>
+	<input id="jtopo_textfield" style="width: 100px;height:30px; position: absolute; top: 281px; left: 732px; display: none;" onkeydown="if(event.keyCode==13)this.blur();" value="">
+	</input>
+	<div id="progress" style="position: absolute; width: 100%; height: 100%; z-index: 2; background-color: rgba(75,74,74,0.4); border: 0px solid #8DB1D1; display: none;text-align:center;">
+		<div style="width: 300px;height: 100px;background: #fff;top: 40%; left: 40%;position: absolute;">
+			<div class="hf" style="height: 40px; margin-top:25px;">正在保存拓扑结构,请稍后......</div>
+			<div>
+				<img src="<%=path %>/images/progress.gif" />
+			</div>
+		</div>
+	</div>
+	<div id="editmodal" class="md-trigger"  data-modal="modal" style="display: none"></div>
+	 	 <div class="md-modal md-effect-1" id="modal" style='width:600px'>
+			<div class="md-content" style="width:100%; height: 500px;">
+				<h3>选择历史版本<button id="guanbimodal" class="md-close"><i style="font-size: 20px;" class="iconfont icon-guanbi"></i></button></h3>
+				<div style='width:100%; height: 415px;'>
+					<table id="matrix_dataGrid" class="easyui-datagrid" data-options="url:'/TRAMS/physicaltopo?operateFlag=inithistorylist&types=physical',pagination:false,border:false,singleSelect:true,fit:true,striped:true,nowrap:true">
+						<thead>
+							<tr>
+								<th data-options="field:'versioncode',align:'center'" width="50%">版本时间</th>
+								<th data-options="field:'usercode',align:'center'" width="50%">操作用户</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="md-content-bottom"><div class="custom-btn-save-l" onclick="returntohistory()"><i class="iconfont icon-chuangjianshili"></i>&nbsp;确认</div></div>
+		    </div>
+		</div>
+		<div class="md-overlay"></div>
+        	<script>
+		var polyfilter_scriptpath = '/js/';
+	</script>
+	<script src="/TRAMS/js/model-index.js"></script>
+</body>
+</html>

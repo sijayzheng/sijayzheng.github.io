@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fa(){
+				var s = $('#state').val();
+				var status ="";
+				for (var i =0;i<s.length;i++) {
+					status+="'"+s[i]+"',";
+				}
+				status = status.substr(0,status.length-1);
+				console.log(status)
+				
+			}
+		</script>
+	</head>
+	<body>
+		<select id="state" class="selectpicker" title="status" multiple="multiple">
+			<option value="0">0000</option>
+			<option value="1">1111</option>
+			<option value="2">2222</option>
+			<option value="3">3333</option>
+		</select>
+		<button onclick="fa()">fafa</button>
+	</body>
+</html>

@@ -1,0 +1,232 @@
+html,
+body {
+	height: 100%;
+	margin: 0px;
+	min-width: 1024px;
+	min-height: 768px;
+	background-image: url(../image/bgimage.png);
+	background-size: 100% 100%;
+}
+
+#mt_text {
+	text-align: center;
+	color: #0ba5ff;
+	position: relative;
+	font-size: 24px;
+	font-weight: bold;
+	top: 35px
+}
+
+#mt_menu {
+	height: 40px;
+	width: 32%;
+	position: absolute;
+	left: 50%;
+	margin-left: -16%;
+	top: 93px;
+}
+
+
+
+#mainTitle {
+	height: 150px;
+	position: absolute;
+	width: 100%;
+	right: 0;
+	top: 0;
+}
+
+#mt_bgimg {
+	background-image: url(../image/topbg.png);
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0px;
+	height: 150px;
+	width: 100%;
+	left: 0px;
+}
+
+#mainShow {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.boxPadding {
+	padding: 5px 5px 9px
+}
+
+.boxSizing {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#mainContent {
+	height: 100%;
+	width: 100%;
+	padding-top: 20px
+}
+
+.mc_title {
+	position: absolute;
+	top: 8px;
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+	left: 5px
+}
+
+
+.boxStyle {
+	background-color: rgba(9, 33, 87, 0.4);
+	height: 100%;
+	border: 2px #153c90 solid;
+}
+
+.boxStyle .bs_leftTop {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	height: 20px;
+	width: 20px;
+	border-left: 2px #07e7ef solid;
+	border-top: 2px #07e7ef solid;
+}
+
+.boxStyle .bs_leftBottm {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	height: 20px;
+	width: 20px;
+	border-left: 2px #07e7ef solid;
+	border-bottom: 2px #07e7ef solid;
+}
+
+.boxStyle .bs_rightTop {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	height: 20px;
+	width: 20px;
+	border-right: 2px #07e7ef solid;
+	border-top: 2px #07e7ef solid;
+}
+
+.boxStyle .bs_rightBottm {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	height: 20px;
+	width: 20px;
+	border-right: 2px #07e7ef solid;
+	border-bottom: 2px #07e7ef solid;
+}
+
+.bs_title {
+	height: 40px;
+	position: absolute;
+	top: 0px;
+}
+
+.mtm_currentText,
+.bst_text {
+	font-size: 18px;
+	font-weight: bolder;
+	background-image: -webkit-linear-gradient(bottom, #e09a4c, #ffd39f);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+	top: 8px
+}
+
+.mtm_text {
+	font-size: 18px;
+	font-weight: bolder;
+	position: relative;
+	top: 8px;
+	color: #9bcefb
+}
+
+#mt_time {
+	height: 100px;
+	width: 20%;
+	background-image: url(../image/timeBorder.png);
+	background-size: 100% 100%;
+	position: absolute;
+	top: 60px;
+	left: 55px;
+	color: #9bcffe;
+	font-weight: bolder;
+}
+
+#mt_statistics {
+	height: 100px;
+	width: 20%;
+	top: 60px;
+	position: absolute;
+	right: 55px;
+}
+
+
+#mt_menu .mtm_currentText,
+#mt_menu .mtm_text {
+	cursor: pointer;
+}
+
+
+
+.mts_box {
+	height: 30px;
+	width: 90%;
+	position: relative;
+	left: 5%;
+	top: 8px;
+	border-radius: 30px;
+	border: 2px #fff solid;
+	color: #ffffff;
+	font-weight: bolder;
+	font-size: 14px;
+}
+
+.mtsb_text {
+	position: absolute;
+	top: 4px;
+	left: 10%
+}
+
+.mtsb_number {
+	height: 30px;
+	width: 45%;
+	right: -2px;
+	top: -2px;
+	border-radius: 30px;
+	position: absolute;
+	text-align: center;
+}
+
+.mtsb_number>span {
+	position: relative;
+	top: 4px
+}
+
+.mtsbn_color1 {
+	border: 2px #c5852d solid;
+	background-color: #c5852d;
+}
+
+.mtsbn_color2 {
+	border: 2px #c25953 solid;
+	background-color: #c25953;
+}
+
+.mtsbn_color3 {
+	border: 2px #30b1c4 solid;
+	background-color: #30b1c4;
+}
+
+.mtsbn_color4 {
+	border: 2px #26105b solid;
+	background-color: #26105b;
+}

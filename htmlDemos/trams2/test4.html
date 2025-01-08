@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/easyui_old.css" type="text/css" id="indexcssfile2" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+		<link rel="stylesheet" href="js/layui/css/layui.css" media="all">
+		<script src="js/layui/layui.js" charset="utf-8"></script>
+		<style type="text/css">
+			.layui-form-checked[lay-skin=primary] i {
+				border-color: #1c97f5!important;
+				background-color: #1c97f5;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+	<input id="ddbegin" name="begintime" class="easyui-datebox" data-options="required:true,editable:false" style="width:180px;"/>
+		<div id="devicetree" class="demo-tree"></div>
+		<div>
+			<ul id="tt" class="easyui-tree" data-options="url:'treedata.json',method:'get',animate:true,checkbox:true"></ul>
+		</div>
+		<table>
+			<tr id="tr-1">
+				<td>1</td>
+			</tr>
+			<tr id="tr-2">
+				<td>2</td>
+			</tr>
+			<tr id="tr-3">
+				<td>3</td>
+			</tr>
+			<tr id="tr-4">
+				<td>4</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			console.log($('#tr-3').remove());
+			//			.remove($('#tr-3')[0])
+
+			var data = [{
+				title: '业务系统',
+				id: 1,
+				state: 'open',
+				children: [{
+					title: '核心业务系统',
+					id: 2,
+					state: 'open',
+					children: [{
+						title: 'windows',
+						id: 3
+					}, {
+						title: 'h3c',
+						id: 4,
+						checked: true
+					}]
+				}, {
+					title: '核心业',
+					id: 12,
+					state: 'open',
+					children: [{
+						title: 'window',
+						id: 13
+					}, {
+						title: 'hc',
+						id: 14,
+						checked: true
+					}]
+				}]
+			}];
+			layui.use(['tree'], function() {
+				var tree = layui.tree,
+					layer = layui.layer
+				tree.render({
+					elem: '#devicetree',
+					data: data,
+					showCheckbox: true,
+					showLine: false
+				});
+			});
+			$('#tt').tree({
+				data: data,
+				animate: true,
+				checkbox: true
+
+			})
+		</script>
+	</body>
+</html>

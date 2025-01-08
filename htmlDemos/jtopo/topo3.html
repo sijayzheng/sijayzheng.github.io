@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jtopo1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="350"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+            var stage = new JTopo.Stage(canvas);
+            var scene = new JTopo.Scene(stage);
+            scene.backgroundColor = '21,21,21';
+            scene.alpha = 1;
+            
+            // 乌龟每走一步留下的脚印被解释为: 在x，y处增加一个节点
+            var tortoise = new Logo.Tortoise(function(x, y){
+                var node = new JTopo.CircleNode();
+                node.fillColor = '255,255,255';
+                node.radius = 5;                
+                node.setCenterLocation(x, y);
+                scene.add(node);
+            });
+            
+            // 步长缩放20倍，即：两个脚印相隔20个像素（默认为1个像素）
+            tortoise.resize(20);
+                        
+            // 爬出一条直线
+            function line(t, n){
+                for(var i=0; i<n; i++){
+                    t.forward(1);
+                }
+            }
+            
+            tortoise.moveTo(200, 400);
+            line(tortoise, 10);
+            
+            // 方形
+            function rectangle(t){                        
+                // 向前走一步
+                t.forward(1);                
+                // 旋转90度            
+                t.turn(Math.PI/2);
+                // 向前走一步
+                t.forward(1);
+                
+                t.turn(Math.PI/2);            
+                t.forward(1);
+                
+                t.turn(Math.PI/2);            
+                t.forward(1);
+            }
+            
+            // 先移动到画布中间
+            tortoise.moveTo(canvas.width/2, canvas.height/2);
+            rectangle(tortoise);
+                    
+            
+            // 按圆形
+            function circle(t, n){
+                var angle = 2*Math.PI / n;
+                for(var i=0; i<n; i++){
+                    t.forward(1);
+                    t.turn(angle);
+                }
+            }
+            
+            tortoise.moveTo(500, 200);
+            circle(tortoise, 10);
+		</script>
+	</body>
+</html>

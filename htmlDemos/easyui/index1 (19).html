@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+		<link href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link href="jquery-easyui-1.5.5.4/themes/icon.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/css1.css" />
+	</head>
+
+	<body>
+
+		<div class="alarmlog-list" style="">
+			<div style="background: #5DA9F3;height:36px;line-height: 36px;color: #fff;width: 30%;float: left">&nbsp;&nbsp;时间</div>
+			<div style="background: #5DA9F3;height:36px;line-height: 36px;color: #fff;width: 70%;float: left">&nbsp;&nbsp;日志内容<i id="colbtn" class="iconfont icon-xia" style="float: right;width:36px;height:36px;text-align:center;" onclick="collapselog()"></i></div>
+			<div style="clear: both;"></div>
+			<div class="alarmlog-list-table">
+				<table id="deallogdg"></table>
+			</div>
+		</div>
+		<!--<div class="alarms-list">
+			<div style="background: red;height:36px;line-height: 36px;color: #fff">&nbsp;<i class="iconfont icon-warnfill" style="color: yellow"></i>&nbsp;告警信息</div>
+			<div class="alarms-list-table">
+				<table id="alarmdg">
+				</table>
+			</div>
+
+		</div>-->
+
+		<script type="text/javascript">
+			function collapselog() {
+				var h = $('.alarmlog-list').css('height')
+				if (h=='36px') {
+					$('.alarmlog-list').css('height', '160px')
+					$('#colbtn').removeClass('icon-shang')
+					$('#colbtn').addClass('icon-xia')
+				} else{
+					$('.alarmlog-list').css('height', '36px')
+					$('#colbtn').removeClass('icon-xia')
+					$('#colbtn').addClass('icon-shang')
+				}
+			}
+		</script>
+	</body>
+
+</html>

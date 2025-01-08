@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+  <div id="chart" style="width: 510px;height:510px;"></div>
+  <script type="text/javascript">
+    const n = 100
+    var data = []
+
+    function getData() {
+      for (var x = -n; x < n; x++) {
+        var y = x * x
+        var tmp = []
+        tmp.push(x)
+        tmp.push(y)
+        data.push(tmp)
+      }
+    }
+    getData()
+
+    var myChart = echarts.init(document.getElementById('chart'))
+    myChart.setOption({
+      xAxis: {
+        type: 'value',
+        min: -n,
+        max: n,
+        interval: 20
+      },
+      yAxis: {
+        type: 'value',
+        min: -n,
+        max: n,
+        interval: 20
+      },
+      series: [{
+        type: 'line',
+        data: data,
+        showSymbol: false,
+
+      }]
+    });
+  </script>
+</body>
+
+</html>

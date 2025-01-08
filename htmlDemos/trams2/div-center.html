@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div {
+				border: black solid;
+			}
+
+			.d1 {
+				display: flex;
+			}
+
+			.d2 {
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1" style="width: 400px;height: 400px;">
+			<div class="d2" style="width: 100px;height: 100px;">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.addEventListener("keydown", function(e) {
+				if(e.keyCode == 13) {
+					toggleFullScreen();
+				}
+			}, false);
+
+			function toggleFullScreen() {
+				if(!document.fullscreenElement) {
+					document.documentElement.requestFullscreen();
+				} else {
+					if(document.exitFullscreen) {
+						document.exitFullscreen();
+					}
+				}
+			}
+
+			var data = [
+				["0", "00", "监控模板库"],
+				["00000000001", "0", "操作系统"],
+				["00000000003", "0", "中间件"],
+				["00000000004", "0", "网络设备"],
+				["00000000005", "0", "应用监控"],
+				["00711012698", "0", "动力环境"],
+				["00000000101", "00000000001", "AIX小型机"],
+				["00000000106", "00000000001", "Linux系列"],
+				["00000000108", "00000000001", "Windows系列"],
+				["00711011473", "00000000003", "Vmware"],
+				["00711012621", "00000000003", "Tomcat(JMX)"],
+				["00000000401", "00000000004", "标准"],
+				["00000000405", "00000000004", "H3C"],
+				["00000000513", "00000000005", "URL访问监控"],
+				["00000040103", "00000000401", "CISCO_SNMPV1"],
+				["00000040513", "00000000405", "H3CSNMPv2"],
+				["00711012720", "00711012698", "UPS"],
+				["00711012721", "00711012698", "新风机"],
+				["00711012722", "00711012698", "漏水"],
+				["00711012723", "00711012698", "空调"],
+				["00711012725", "00711012698", "电量仪"],
+				["00711012726", "00711012698", "发电机"],
+				["00711012727", "00711012698", "干接点"],
+				["00711012728", "00711012720", "UPS_Kelong_B3130"],
+				["00711012730", "00711012723", "空调1"],
+				["00711012744", "00711012721", "新风机1"],
+				["00711012779", "00711012722", "漏水1"],
+				["00711012811", "00711012725", "电量仪1"],
+				["00711012846", "00711012726", "发电机1"],
+				["00711012880", "00711012727", "干接点１"],
+				["INSTANCE0000084", "00000000108", "WindowsPC32.123"],
+				["INSTANCE0000085", "00000000106", "Linux服务器32.3"],
+				["INSTANCE0000087", "00000000108", "Windows服务器32.22"],
+				["INSTANCE0000089", "00000000108", "windows服务器32.7"],
+				["INSTANCE0000093", "00000000106", "linux(redhat6.0)25"],
+				["INSTANCE0000105", "00000040513", "路由器32.1"],
+				["INSTANCE0000116", "00000000106", "Linux服务器32.23"],
+				["INSTANCE0000140", "00000000108", "windows32.115"],
+				["INSTANCE0000142", "00711012621", "Tomcat_JMX监控"],
+				["INSTANCE0000174", "00000000513", "http监控"],
+				["INSTANCE0000175", "00000040103", "H3C交换"],
+				["INSTANCE0000178", "00000000106", "SuSELinux 32.26"],
+				["INSTANCE0000181", "00000000108", "windows32.11"],
+				["INSTANCE0000183", "00000000108", "网银应用APP1"],
+				["INSTANCE0000189", "00000000108", "windows32.100"],
+				["INSTANCE0000200", "00711012880", "干接点"],
+				["INSTANCE0000201", "00711012744", "新风机"],
+				["INSTANCE0000202", "00711012811", "电量仪"],
+				["INSTANCE0000203", "00711012730", "空调"],
+				["INSTANCE0000204", "00711012728", "UPS"],
+				["INSTANCE0000205", "00711012846", "发电机"],
+				["INSTANCE0000206", "00711012779", "漏水"],
+				["INSTANCE0000207", "00000000108", "Windows服务器32.11"],
+				["INSTANCE0000209", "00711011473", "vshpere6.7"],
+				["INSTANCE0000212", "00711011473", "vmware6.5"],
+				["INSTANCE0000213", "00000000108", "测试55"],
+				["INSTANCE0000215", "00711011473", "vsphere server6.5"],
+				["INSTANCE0000217", "00000000101", "测试"],
+				["INSTANCE0000218", "00711012728", "测试ups"]
+			];
+			var tree = [];
+			//			$.each(data, function(i,n) {
+			//				createTree(n,'00')
+			//			});
+			//
+			//			function createTree(dt,pid){
+			//				if (dt[1]==pid) {
+			//					dt.push(createTree(dt,dt[0]));
+			//					tree.push(dt);
+			//				}
+			//			}
+
+
+		</script>
+	</body>
+</html>

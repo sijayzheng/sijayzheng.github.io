@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function dbc() {
+				console.log('double click');
+			}
+
+			function c() {
+				console.log('cilck');
+			}
+		</script>
+	</head>
+
+	<body>
+		<div onclick="c()" ondblclick="dbc()" style="width: 50px; height: 50px; background-color: red;"></div>
+		<div onclick="c()" ondblclick="dbc()" style="width: 50px; height: 50px; background-color: yellow;"></div>
+		<div onclick="c()" ondblclick="dbc()" style="width: 50px; height: 50px; background-color: red;"></div>
+		<div onclick="c()" ondblclick="dbc()" style="width: 50px; height: 50px; background-color: blue;"></div>
+		<div onclick="c()" ondblclick="dbc()" style="width: 50px; height: 50px; background-color: red;"></div>
+	</body>
+
+</html>

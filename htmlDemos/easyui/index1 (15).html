@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+		<link href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link href="jquery-easyui-1.5.5.4/themes/icon.css" />
+		<script type="text/javascript">
+			$(document).ready(function() {
+				json = [{
+						"code": "FI",
+						"name": "qqwe",
+						"price": 10.00
+					},
+					{
+						"code": "K9",
+						"name": "adfa",
+						"price": 12.00
+					},
+					{
+						"code": "RP",
+						"name": "zxcv",
+						"price": 12.00
+					},
+					{
+						"code": "FL",
+						"name": "bcng",
+						"price": 12.00
+					},
+					{
+						"code": "AB",
+						"name": "hdxg",
+						"price": 92.00
+					}
+				];
+
+			});
+			
+			$('#DataGridInbound').datagrid({
+				columns:[[
+					{field:'111',title:'eee',width:'100px'}
+				]]
+			})
+		</script>
+	</head>
+
+	<body>
+		<p>
+			<table id="DataGridInbound"></table>
+		</p>
+	</body>
+
+</html>

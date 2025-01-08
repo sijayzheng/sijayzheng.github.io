@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Basic DataGrid - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../../layui/css/layui.css" />
+		<script src="../../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h2>Basic DataGrid</h2>
+		<p>The DataGrid is created from markup, no JavaScript code needed.</p>
+		<div style="margin:20px 0;"></div>
+
+		<table class="easyui-datagrid" id="dg" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+			<thead>
+				<tr>productname
+					<th data-options="field:'productname',width:120">Product</th>
+					<th data-options="field:'productid',width:160,formatter: format">Pro</th>
+				</tr>
+			</thead>
+		</table>
+		<script type="text/javascript">
+			function format(value, row, index) {
+				var fav = '';
+				fav += '<div class="stars" id="star' + value + '" kwid="' + value + '" title="评分"></div>';
+
+				return fav;
+			}
+			layui.use(['rate'], function() {
+				var rate = layui.rate;
+				var rows = $('#dg').datagrid('getRows');
+				$.each(rows, function(i, n) {
+					console.log(n.productid);
+					rate.render({
+						elem: '#star' + n.productid,
+						choose: function(value) {
+							console.log(value);
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

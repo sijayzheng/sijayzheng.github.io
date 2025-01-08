@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Multiple ComboTree - jQuery EasyUI Demo</title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sweet-alert.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.5.4/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.5.4/themes/icon.css" />
+		<link rel="stylesheet" type="text/css" href="css/sweet-white-alert.css" />
+	</head>
+
+	<body onload="init();">
+		<button onclick="init();">reload</button><br />
+		<input id="instance">
+		<script>
+			function init() {
+				$.ajax({
+					url: 'tree_data1.json',
+					type: 'get',
+					dataType: 'json',
+					success: function(data) {
+						$('#instance').combotree({
+							onClick: test,
+							onCheck: test,
+							height: 32,
+							width: 300,
+							checkbox: true,
+							multiple: true,
+							required: true,
+							panelWidth: 300,
+							panelHeight: 300
+						});
+						$('#instance').combotree('clear');
+						$('#instance').combotree('loadData', data);
+					}
+				});
+			}
+
+			function test() { //文本框中只显示实例
+				var checked = $('#instance').combotree('tree').tree('getChecked'); //所有选中节点
+				var value = [];
+				$.each(checked, function(i, n) {
+					if(n.text.indexOf('INSTANCE') >= 0)
+						value.push(n.text)
+				});
+				console.log(value)
+				$('#instance').combotree('setText', value); //给文本框赋值
+			}
+		</script>
+	</body>
+
+</html>

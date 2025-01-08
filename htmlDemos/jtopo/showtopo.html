@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jtopo-min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body onload="init()">
+		<canvas id="canvas" width="1000" height="400"></canvas>
+		<script type="text/javascript">
+			function init() {
+				var canvas = document.getElementById('canvas')
+				var stage = new JTopo.Stage(canvas)
+				var scene = new JTopo.Scene(stage)
+				scene.backgroundColor='124,124,124';
+				scene.alpha=0.5;
+				initdata(scene);
+			}
+
+			function initdata(scene) {
+				var nodes = {};
+				$.ajax({
+					type: "get",
+					url: "nodedata.json",
+					success: function(data) {
+						$.each(data, function(i, n) {
+							var nodeicon;
+							if(n.health == 1) {
+								nodeicon = 'img/green.png'
+							} else if(n.health == 2) {
+								nodeicon = 'img/blue.png'
+							} else if(n.health >= 3) {
+								nodeicon = 'img/gray.png'
+							}
+							var node = newNode(n.nodeid, n.posex, n.posey, nodeicon, n.names);
+							nodes[n.nodeid] = node;
+							scene.add(node);
+						});
+					}
+				});
+				$.ajax({
+					type: "get",
+					url: "linkdata.json",
+					success: function(data) {
+						$.each(data, function(i, n) {
+							var nodeA = nodes[n.fromnode];
+							var nodeZ = nodes[n.tonode];
+							var link = newLine(nodeA, nodeZ, n.linklinetype, n.linklinecolor, n.linkname);
+							scene.add(link);
+						});
+					}
+				});
+			}
+
+			function newNode(nodeid, x, y, nodeicon, nodetext) {
+				var node = new JTopo.Node();
+				node._id = nodeid;
+				node.x = x;
+				node.y = y;
+				node.setImage(nodeicon);
+				node.text = nodetext;
+				node.font = '12px 微软雅黑';
+				node.fontColor = '0,0,0';
+				return node;
+			}
+
+			function newLine(nodeA, nodeZ, linetype, linecolor, linkname) {
+				var link = null;
+				if(linetype == 'line') {
+					link = new JTopo.Link(nodeA, nodeZ, linkname);
+					link.linetype = 'line';
+				} else if(linetype == 'foldLineH') {
+					link = new JTopo.FoldLink(nodeA, nodeZ);
+					link.direction = 'horizontal';
+					link.linetype = 'foldLineH';
+				} else if(linetype == 'foldLineV') {
+					link = new JTopo.FoldLink(nodeA, nodeZ);
+					link.direction = 'vertical';
+					link.linetype = 'foldLineV';
+				} else if(linetype == 'flexLineH') {
+					link = new JTopo.FlexionalLink(nodeA, nodeZ);
+					link.direction = 'horizontal';
+					link.linetype = 'flexLineH';
+				} else if(linetype == 'flexLineV') {
+					link = new JTopo.FlexionalLink(nodeA, nodeZ);
+					link.direction = 'vertical';
+					link.linetype = 'flexLineV';
+				} else if(linetype == 'curve') {
+					link = new JTopo.CurveLink(nodeA, nodeZ);
+					link.linetype = 'curve';
+				}
+				link.strokeColor = linecolor;
+				link.lineWidth = 2;
+				link.font = '12px 微软雅黑';
+				link.fontColor = '0,0,0';
+				return link;
+			}
+		</script>
+	</body>
+
+</html>

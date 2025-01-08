@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="echarts-gl.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="">
+			<div id="maps" style="width: 660px;height: 380px;border: 1px black solid;"></div>
+		</div>
+		<script type="text/javascript">
+			  //浏览器resize重画
+			  var myChart = echarts.init(document.getElementById('maps'));
+		function resizeChart() {
+		/*   var w = $('body').width();
+		    var h = $('body').height();
+		    myChart.resize({
+		        width: w,
+		        height: h
+		    });
+		   */
+		     window.addEventListener("resize",function(){
+		         myChart.resize();
+		     });
+		   /* option.series = getSeries();*/
+		    myChart.setOption(option, true);
+		}
+
+		var data = [{
+		    name: '净资产收益率',
+		    code: 'node1',
+		    value: {
+		        interfaceNum: '12%',
+		    },
+		    x: 0.5,
+		    y: 0.9
+		}, {
+		    name: '总资产收益率',
+		    code: 'node2',
+		    value: {
+		        interfaceNum: 34,
+		    },
+		    x: 0.4,
+		    y: 0.75
+		}, {
+		    name: '权益系数',
+		    code: 'node3',
+		    value: {
+		        interfaceNum: 42,
+		    },
+		    x: 0.6,
+		    y: 0.75
+		}, {
+		    name: '主营业务利润率',
+		    code: 'node4',
+		    value: {
+		        interfaceNum: 234,
+		    },
+		    x: 0.35,
+		    y: 0.6
+		}, {
+		    name: '总资产周转率',
+		    code: 'node5',
+		    value: {
+		        interfaceNum: 2423,
+		    },
+		    x: 0.65,
+		    y: 0.6
+		}, {
+		    name: '净利润',
+		    code: 'node6',
+		    value: {
+		        interfaceNum: 2343,
+		    },
+		    x: 0.3,
+		    y: 0.45
+		}, {
+		    name: '主营业务收入',
+		    code: 'node7',
+		    value: {
+		        interfaceNum: 342,
+		    },
+		    x: 0.45,
+		    y: 0.45
+		}, {
+		    name: '主营业务收入',
+		    code: 'node8',
+		    value: {
+		        interfaceNum: 42342,
+		    },
+		    x: 0.6,
+		    y: 0.45
+		}, {
+		    name: '资产总额',
+		    code: 'node9',
+		    value: {
+		        interfaceNum: 342342,
+		    },
+		    x: 0.75,
+		    y: 0.45
+		}, {
+		    name: '主营业务成本',
+		    code: 'node10',
+		    value: {
+		        interfaceNum: 234,
+		    },
+		    x: 0.1,
+		    y: 0.25
+		},{
+		    name: '全部成本',
+		    code: 'node11',
+		    value: {
+		        interfaceNum: 343,
+		    },
+		    x: 0.25,
+		    y: 0.25
+		}, {
+		    name: '其他业务利润',
+		    code: 'node12',
+		    value: {
+		        interfaceNum: 234,
+		    },
+		    x: 0.4,
+		    y: 0.25
+		}, {
+		    name: '所得税',
+		    code: 'node13',
+		    value: {
+		        interfaceNum: 243,
+		    },
+		    x: 0.55,
+		    y: 0.25
+		}, {
+		    name: '流动资产',
+		    code: 'node14',
+		    value: {
+		        interfaceNum: 23,
+		    },
+		    x: 0.7,
+		    y: 0.25
+		}, {
+		    name: '长期资产',
+		    code: 'node15',
+		    value: {
+		        interfaceNum: 3423,
+		    },
+		    x: 0.85,
+		    y: 0.25
+		},];
+
+		var links = [{
+		    source: 'node1',
+		    target: 'node2',
+		}, {
+		    source: 'node1',
+		    target: 'node3',
+		}, {
+		    source: 'node3',
+		    target: 'node2',
+		}, {
+		    source: 'node2',
+		    target: 'node4',
+		}, {
+		    source: 'node2',
+		    target: 'node3',
+		},{
+		    source: 'node3',
+		    target: 'node5',
+		}, {
+		    source: 'node4',
+		    target: 'node6',
+		}, {
+		    source: 'node4',
+		    target: 'node7',
+		},{
+		    source: 'node5',
+		    target: 'node8',
+		}, {
+		    source: 'node5',
+		    target: 'node9',
+		}, {
+		    source: 'node6',
+		    target: 'node10',
+		},{
+		    source: 'node6',
+		    target: 'node11',
+		}, {
+		    source: 'node6',
+		    target: 'node12',
+		}, {
+		    source: 'node6',
+		    target: 'node13',
+		},{
+		    source: 'node9',
+		    target: 'node14',
+		},{
+		    source: 'node9',
+		    target: 'node15',
+		}];
+
+		var line = 7; //行：把画布上画几行信息框
+		var column = 4; //列：把画布上画几列信息框
+
+		function getScatterData() {
+		    var scatterData = [];
+
+		    //画布宽高
+		    var c_w = myChart.getWidth();
+		    var c_h = myChart.getHeight();
+		    //计算信息框的宽高
+		    var w = c_w / (column * 2);
+		    var h = c_h / (line * 2);
+		    for (var i = 0; i < data.length; i++) {
+		        //把消息框分为两部分：标题和内容,内容高度为标题高度的3倍，echart是以中心画图，所以要分别计算标题和内容框的中心点位置
+		        scatterData.push({
+		            name: data[i].name,
+		            value: [data[i].x, (data[i].y * c_h + (1 / 3 * h)) / c_h],
+		            type: 'title',
+		            w: w,
+		            h: h / 3,
+		            label: {
+		                normal: {
+		                    textStyle: {
+		                        color: '#fff',
+		                        fontWeight: 'bold',
+		                        fontSize: 15
+		                    }
+		                }
+		            }
+		        }, {
+		            code: data[i].code,
+		            value: [data[i].x, (data[i].y * c_h + (1 / 3 * h) - (7 / 8 * h) / 2) / c_h],
+		            type: 'body',
+		            w: w,
+		            h: 2 / 3 * h,
+		            info: data[i].value,
+		            label: {
+		                normal: {
+		                    textStyle: {
+		                        fontSize: 15,
+		                        color: '#000'
+		                    }
+		                }
+		            }
+		        });
+		    }
+		    return scatterData;
+		}
+
+		function getLinesData() {
+		    var linesData = [];
+		    var map = {};
+		    for (var i = 0; i < data.length; i++) {
+		        map[data[i].code] = data[i];
+		    }
+
+		    for (var i = 0; i < links.length; i++) {
+		        var source = map[links[i].source];
+		        var target = map[links[i].target];
+
+		        //画布宽高
+		        var c_w = myChart.getWidth();
+		        var c_h = myChart.getHeight();
+		        //计算信息框的宽高
+		        var w = c_w / (column * 2);
+		        var h = c_h / (line * 2);
+		        //计算信息框的四个边中点的位置
+		        source.top = {
+		            x: source.x,
+		            y: (source.y * c_h + (1 / 2 * h)) / c_h
+		        };
+		        source.right = {
+		            x: (source.x * c_w + (1 / 2 * w)) / c_w,
+		            y: source.y
+		        };
+		        source.bottom = {
+		            x: source.x,
+		            y: (source.y * c_h - (1 / 2 * h)) / c_h
+		        };
+		        source.left = {
+		            x: (source.x * c_w - (1 / 2 * w)) / c_w,
+		            y: source.y
+		        };
+
+		        target.top = {
+		            x: target.x,
+		            y: (target.y * c_h + (1 / 2 * h)) / c_h
+		        };
+		        target.right = {
+		            x: (target.x * c_w + (1 / 2 * w)) / c_w,
+		            y: target.y
+		        };
+		        target.bottom = {
+		            x: target.x,
+		            y: (target.y * c_h - (1 / 2 * h)) / c_h
+		        };
+		        target.left = {
+		            x: (target.x * c_w - (1 / 2 * w)) / c_w,
+		            y: target.y
+		        };
+
+		        //s->t：s左：t右
+		        if (source.right.x < target.left.x) {
+		            linesData.push(getLine([
+		                [source.right.x, source.right.y],
+		                [target.left.x, target.left.y]
+		            ]));
+		        }
+		        //t<-s：s右：t左
+		        else if (source.left.x > target.right.x) {
+		            linesData.push(getLine([
+		                [source.left.x, source.left.y],
+		                [target.right.x, target.right.y]
+		            ]));
+		        }
+		        //s
+		        //|
+		        //t
+		        else if (source.bottom.y > target.top.y) {
+		            linesData.push(getLine([
+		                [source.bottom.x, source.bottom.y],
+		                [target.top.x, target.top.y]
+		            ]));
+		        }
+		        //t
+		        //|
+		        //s
+		        else if (source.top.y < target.bottom.y) {
+		            linesData.push(getLine([
+		                [source.top.x, source.top.y],
+		                [target.bottom.x, target.bottom.y]
+		            ]));
+		        }
+		    }
+		    return linesData;
+		}
+
+		function getLine(coords) {
+		    return {
+		        name: '',
+		        type: 'lines',
+		        coordinateSystem: 'cartesian2d',
+		        symbol: ['none', 'none'],//线两端的标记类型
+		        symbolSize: 10,//线两端的标记大小
+		        zlevel: 4,
+		        effect: {
+		            show: true,//是否显示特效
+		            period: 6,//特效动画的时间
+		            trailLength: 0.7,//配置特效图形的移动动画是否是固定速度，单位像素/秒
+		            color: '#7480BC',
+		            symbolSize: 3//特效标记的大小，
+		        },
+		        lineStyle: {
+		            type:'dotted',
+		            curveness:'0.4',
+		            normal: {
+		                color: '#9EADD6',
+		                width: 1,
+		                curveness: 0
+		            }
+		        },
+		        data: [{
+		            coords: coords
+		        }]
+		    };
+		}
+
+		function getSeries() {
+		    var series = [];
+		    series.push({
+		        type: 'scatter',
+		        symbol: 'rect',
+		        zlevel: 2,
+		        silent: true,
+		        symbolSize: function(value, params) {
+		            return [params.data.w, params.data.h];
+		        },
+		        itemStyle: {
+		            normal: {
+		                shadowBlur: 10,
+		                shadowColor: 'rgba(120, 36, 50, 0.5)',
+		                shadowOffsetY: 5,
+		                color: function(params) {
+		                    if (params.data.type == 'title') {
+		                        return '#184CD0';
+		                    } else {
+		                        return '#87F3F3';
+		                    }
+		                }
+		            }
+		        },
+		        label: {
+		            normal: {
+		                show: true,
+		                position: 'inside',
+		                formatter: function(params) {
+		                    if (params.data.type == 'title') {
+		                        return params.data.name;
+		                    } else {
+		                        return  params.data.info.interfaceNum;
+		                    }
+
+		                },
+		                textStyle: {
+		                    color: '#000'
+		                }
+		            }
+		        },
+		        data: getScatterData(),
+		    });
+		    return series.concat(getLinesData());
+		}
+		option = null;
+		option = {
+		   /* backgroundColor: '#F3F3F3',*/
+		   /* title: [{
+		        text: "流程图",
+		        x: '5%',
+		        y: 0,
+		        textStyle: {
+		            color: '#333',
+		            fontStyle: 'normal',
+		            fontWeight: 'normal',
+		            fontFamily: 'sans-serif',
+		            fontSize: 14,
+		        }
+		    }],*/
+		    grid: {
+		        left: 0,
+		        right: 0,
+		        top: 0,
+		        bottom: 0
+		    },
+		    xAxis: {
+		        type: 'value',
+		        splitLine: {
+		            show: false,
+		        },
+		        axisLabel: {
+		            show: false
+		        },
+		        max: 1,
+		        min: 0
+		    },
+		    yAxis: {
+		        type: 'value',
+		        splitLine: {
+		            show: false,
+		        },
+		        axisLabel: {
+		            show: false
+		        },
+		        max: 1,
+		        min: 0
+		    },
+		    series: getSeries()
+		};
+		 myChart.setOption(option);
+			</script>
+	</body>
+</html>

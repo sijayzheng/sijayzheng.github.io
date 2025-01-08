@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aligning Columns in DataGrid - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<div id="container" style="min-width: 300px;height: 500px;border: 1px red solid;"></div>
+		<script type="text/javascript">
+			let res = {
+				"column": ["时间", "当前温度", "电加热状态", "系统关机原因", "运行模式", "压缩机状态", "报警状态", "报警数量", "报警内容", "预留字段A", "预留字段D",
+					"预留字段E", "预留字段F", "运行状态", "报警内容1", "报警内容2", "报警内容3", "报警内容4", "制冷开启时间", "加湿开启时间", "温度设定点", "风机开启时间",
+					"开机状态", "压缩机1状态", "压缩机2状态", "电加热1状态", "预留字段B", "预留字段C", "当前湿度", "除湿风机状态", "湿度设定点", "系统状态", "制冷状态",
+					"加湿状态", "除湿状态", "风机状态", "电加热2状态", "热气旁通状态", "加湿器状态"
+				],
+				"datalist": [
+					["00:04:57", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["00:19:58", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["00:34:59", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["00:50:00", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["01:05:02", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["01:20:03", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["01:35:04", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["01:50:05", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["02:05:06", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["02:20:07", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["02:35:09", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["02:50:10", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["03:05:11", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["03:20:12", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["03:35:13", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["03:50:15", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["04:05:16", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["04:20:17", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["04:35:18", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["04:50:20", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["05:05:21", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["05:20:22", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["05:35:23", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["05:50:24", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["06:05:26", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["06:20:27", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["06:35:28", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["06:50:29", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["07:05:30", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["07:20:31", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["07:35:32", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["07:50:34", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["08:05:35", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["08:20:36", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["08:35:37", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["08:50:39", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["09:05:40", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["09:20:41", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["09:35:42", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["09:50:44", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["10:05:45", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["10:20:46", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["10:35:47", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["10:50:48", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					],
+					["11:05:49", "23", "0", null, null, null, null, null, "无报警", null, null, null, null, null, null,
+						null, null, null, null, null, "25", null, "正常运行", "正常运行", "正常运行", "未运行", null, null, "45",
+						"正常运行", "40", null, "1", "0", "1", "0", "未运行", null, null
+					]
+				],
+				"status": "success"
+			}
+			let columns = []
+			$(res.column).each(function(i, n) {
+				columns.push({
+					field: i + '',
+					title: n,
+					width: 100,
+					align: i ? 'right' : 'left'
+				})
+			})
+			$('#container').html('<table id="dg" style="height: 100%;"></table>')
+			$('#dg').datagrid({
+				columns: [columns],
+				striped: true,
+				data: res.datalist,
+				fitColumns: true
+			}).datagrid('resize')
+		</script>
+	</body>
+</html>

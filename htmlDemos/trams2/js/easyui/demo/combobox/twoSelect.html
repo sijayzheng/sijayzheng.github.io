@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Custom Format in ComboBox - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body onload="init()">
+		<input class="easyui-combobox" id="cc" style="width:20%;" data-options="editable:false,onSelect:chg">
+		<input class="easyui-combobox" id="cb" style="width:20%;" data-options="editable:false">
+		<script type="text/javascript">
+			function init() {
+				$('#cc').combobox({
+					textField: 'text',
+					valueField: 'id',
+					data: [{
+						"id": '1',
+						"text": "数据库",
+						"selected": true
+					}, {
+						"id": '2',
+						"text": "前端"
+					}, {
+						"id": '3',
+						"text": "后台"
+					}]
+				});
+			}
+			function chg(obj) {
+				switch(obj.id) {
+					case '1':
+						$('#cb').combobox({
+							textField: 'text',
+							valueField: 'id',
+							data: [{
+								"id": '11',
+								"text": "DB2",
+								"selected": true
+							}, {
+								"id": '12',
+								"text": "MySQL"
+							}, {
+								"id": '13',
+								"text": "SQLServer"
+							}]
+						});
+						break;
+					case '2':
+						$('#cb').combobox({
+							textField: 'text',
+							valueField: 'id',
+							data: [{
+								"id": '21',
+								"text": "HTML",
+								"selected": true
+							}, {
+								"id": '22',
+								"text": "CSS"
+							}, {
+								"id": '23',
+								"text": "JavaScript"
+							}]
+						});
+						break;
+					case '3':
+						$('#cb').combobox({
+							textField: 'text',
+							valueField: 'id',
+							data: [{
+								"id": '31',
+								"text": "Java",
+								"selected": true
+							}, {
+								"id": '32',
+								"text": "PHP"
+							}, {
+								"id": '33',
+								"text": "Python"
+							}]
+						});
+						break;
+				}
+			}
+		</script>
+	</body>
+
+</html>

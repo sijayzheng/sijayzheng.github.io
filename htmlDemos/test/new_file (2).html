@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/echarts.min.js"></script>
+	</head>
+
+	<body>
+		<div id="div3"></div>
+		<script type="text/javascript">
+			echarts.init(document.getElementById('div3')).setOption({
+				series: {
+					type: 'bar',
+					data: [{
+							name: '文学院',
+							value: 12
+						},
+						{
+							name: '数院',
+							value: 23
+						},
+						{
+							name: '物院',
+							value: 34
+						},
+						{
+							name: '商学院',
+							value: 45
+						},
+						{
+							name: '外院',
+							value: 56
+						}
+					]
+				}
+			});
+		</script>
+	</body>
+
+</html>

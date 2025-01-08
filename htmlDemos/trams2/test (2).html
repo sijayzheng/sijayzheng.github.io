@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#aa>div {
+				border: 1px red solid;
+				margin: 5px;
+				height: 32px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aa"></div>
+		<script type="text/javascript">
+			var arr=[],pid='wj-q'
+			for (var i = 0; i < 10; i++) {
+				let quid=pid+i
+				let qu = [`<div class="qu-contain" id="${quid}">`,
+					`问题<span class="qu-index">${i}</span>`,
+					`<button type="button" onclick="quRemove('${quid}')">删除</button>`,
+					`</div>`
+				].join('')
+				$('#aa').append(qu)
+				arr.push(quid)
+			}
+
+			function quRemove(id) {
+				$('#' + id).remove()
+				console.log(arr.indexOf(id));
+				arr.splice(arr.indexOf(id), 1);
+				let qus=$('.qu-index')
+				for (let i = 0; i < arr.length; i++) {
+					arr[i]=pid+i
+					$(qus[i]).text(i)
+				}
+				console.log(arr);
+			}
+		</script>
+	</body>
+</html>

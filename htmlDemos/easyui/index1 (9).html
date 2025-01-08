@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			var str = "2018-09-27 18:18:07";
+//			console.log(str+'--'+str.length);
+//			var s = str.replace(/\s/g,"/");;
+//			console.log(s+'--'+s.length);
+var row = {'id':'001','n3':'0'};
+var str = row.n3=='1'?'取消静音':'静音'
+			var s = '<a href="javascript:;" title="" class="no-care" onclick="openindexdeal(\''+row.id+'\',\'1\')">处理</a>';
+			s+='<a href="javascript:;" class="no-care" title="" onclick="setSilent(\''+row.id+'\',\''+row.n3+'\')">'+str+'</a>';
+			console.log(s)
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

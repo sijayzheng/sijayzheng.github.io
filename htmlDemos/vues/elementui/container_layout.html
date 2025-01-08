@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/element.css" />
+    <script src="/js/vue.js"></script>
+    <script src="/js/element.js"></script>
+
+    <style>
+      .el-header,
+      .el-footer {
+        background-color: #b3c0d1;
+        color: #333;
+        text-align: center;
+        line-height: 60px;
+      }
+
+      .el-aside {
+        background-color: #d3dce6;
+        color: #333;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      .el-main {
+        background-color: #e9eef3;
+        color: #333;
+        text-align: center;
+        line-height: 160px;
+      }
+
+      .el-container:nth-child(5) .el-aside,
+      .el-container:nth-child(6) .el-aside {
+        line-height: 260px;
+      }
+
+      .el-container:nth-child(7) .el-aside {
+        line-height: 320px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <el-container>
+        <el-header>Header</el-header>
+        <el-main>Main1</el-main>
+      </el-container>
+      <hr />
+      <el-container>
+        <el-header>Header</el-header>
+        <el-main>Main2</el-main>
+        <el-footer>Footer</el-footer>
+      </el-container>
+
+      <hr />
+      <el-container>
+        <el-aside width="200px">Aside</el-aside>
+        <el-main>Main3</el-main>
+      </el-container>
+
+      <hr />
+      <el-container>
+        <el-header>Header</el-header>
+        <el-container>
+          <el-aside width="200px">Aside</el-aside>
+          <el-main>Main4</el-main>
+        </el-container>
+      </el-container>
+
+      <hr />
+      <el-container>
+        <el-header>Header</el-header>
+        <el-container>
+          <el-aside width="200px">Aside</el-aside>
+          <el-container>
+            <el-main>Main5</el-main>
+            <el-footer>Footer</el-footer>
+          </el-container>
+        </el-container>
+      </el-container>
+
+      <hr />
+      <el-container>
+        <el-aside width="200px">Aside</el-aside>
+        <el-container>
+          <el-header>Header</el-header>
+          <el-main>Main6</el-main>
+        </el-container>
+      </el-container>
+
+      <hr />
+      <el-container>
+        <el-aside width="200px">Aside</el-aside>
+        <el-container>
+          <el-header>Header</el-header>
+          <el-main>Main7</el-main>
+          <el-footer>Footer</el-footer>
+        </el-container>
+      </el-container>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!',
+        },
+      })
+    </script>
+  </body>
+</html>

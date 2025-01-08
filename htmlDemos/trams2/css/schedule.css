@@ -1,0 +1,57 @@
+
+.scheduleX {
+  width: 340px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.scheduleX .xList {
+  background-color: #2bd74c;
+  border-radius: 5px;
+  width: 0%;
+  height: 100%;
+  position: relative;
+}
+.scheduleX .xList .xNum {
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  color: #fff;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  z-index: 10;
+}
+.scheduleY {
+  width: 25px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: transparent;
+  position: relative;
+}
+.scheduleY .yList {
+  position: absolute;
+  background-color: #2bd74c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+}
+.scheduleY .yList .yNum {
+  font-size: 14px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  color: #fff;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  z-index: 10;
+}

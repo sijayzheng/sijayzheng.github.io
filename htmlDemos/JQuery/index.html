@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#btn').click(function() {
+						$('tr:even').hide();
+				});
+				$('p').mouseenter(function(){
+					$(this).hide();
+				});
+				$('p').mouseleave(function(){
+					$(this).show();				
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<p>
+			testtesttesttesttesttesttesttesttesttesttesttesttesttest
+		</p>
+		<a href="index.html#btn">2222222222222</a><br />
+		<img /><br />
+		<input type="button" value="333" /><br />
+		<input type="text" value="444" /><br />
+		<table border="1">
+			<tr>
+				<td>11</td>
+				<td>12</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td>31</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>41</td>
+				<td>42</td>
+			</tr>
+		</table>
+		
+		
+		
+		<button id="btn">111111</button>
+	</body>
+
+</html>

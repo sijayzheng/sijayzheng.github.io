@@ -1,0 +1,77 @@
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  background: #fff;
+}
+
+.card-holder {  
+  position: fixed;
+  width: 0px;
+  overflow: visible;
+}
+
+.card-wrapper {
+  display: inline-block;
+  float: right;
+  clear: both;
+}
+
+.card {
+  position: relative;
+  left: 30px;
+  top:5px;
+  height: 30px;
+  padding: 16px 1px 16px 64px;
+  margin: 60% 5px 45% 0px;  
+  x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+
+.card-content {
+  display: inline-block;
+  margin:-4px 3px 5px 5px ;  
+  color: #fff;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.cardzh {
+  position: relative;
+  left: 30px;
+  top:5px;
+  height: 30px;
+  margin: 15% 5px 15% 0px;  
+  padding: 16px 1px 16px 64px;
+  x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+
+.cardzh-content {
+  display: inline-block;
+  margin:-4px 3px 5px 5px ; 
+  color: #fff;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: break-word;
+}
+.bg-01 { background: #2460B4; }

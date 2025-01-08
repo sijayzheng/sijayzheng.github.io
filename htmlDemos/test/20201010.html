@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a=["'tcp_actConns':'(piece)',",
+"'tcp_inActConns':'(piece)',",
+"'tcp_conns':'(piece)',",
+"'tcp_inPkts':'(piece)',",
+"'tcp_outPkts':'(piece)',",
+"'tcp_inBytes':'(bytes)',",
+"'tcp_outBytes':'(bytes)',",
+"'tcp_inDPkts':'(piece)',",
+"'tcp_outDPkts':'(piece)',",
+"'tcp_inDBytes':'(bytes)',",
+"'tcp_outDBytes':'(bytes)',",
+"'tcp_dropConns':'(piece)',",
+"'tcp_failConns':'(piece)',",
+"'http_inBytes':'(bytes)',",
+"'http_outBytes':'(bytes)',",
+"'http_reqs':'(piece)',",
+"'http_sucReqs':'(piece)',",
+"'http_reqTime':'(milliseconds)',",
+"'http_actConns':'(piece)',",
+"'http_readConns':'(piece)',",
+"'http_writeConns':'(piece)',",
+"'http_waitConns':'(piece)',",
+"'cpu_util':'(percent)',",
+"'mem_util':'(percent)',",
+"'traffic_bytin':'(bytes_per_second)',",
+"'traffic_bytout':'(bytes_per_second)',",
+"'disk_util':'(percent)',",
+"'load_load1':'(piece)',",
+"'load_load5':'(piece)',",
+"'load_load15':'(piece)',",
+"'io_util':'(percent)',",
+"'cpu_util':'(percent)',",
+"'mem_util':'(percent)',",
+"'traffic_bytin':'(bytes_per_second)',",
+"'traffic_bytout':'(bytes_per_second)',",
+"'disk_util':'(percent)',",
+"'load_load1':'(piece)',",
+"'load_load5':'(piece)',",
+"'load_load15':'(piece)',",
+"'io_util':'(percent)',",
+"'port':'()'"],b=[]
+for (let s of a) {
+	if(!b.includes(s))
+	b.push(s)
+}
+console.log(b);
+		</script>
+	</body>
+</html>

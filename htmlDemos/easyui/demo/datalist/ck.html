@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Checkbox in DataList - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../demo.css">
+		<script type="text/javascript" src="../../jquery.min.js"></script>
+		<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<!-- <div class="easyui-datalist" title="Checkbox in DataList" style="width:400px;height:250px" data-options="
+			url: 'datalist_data1.json',
+			method: 'get',
+			checkbox: true,
+			selectOnCheck: false,
+			onBeforeSelect: function(){return false;}
+			">
+		</div> -->
+
+		<div id="test">
+
+		</div>
+
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+					url: 'datalist_data2.json',
+					type: 'get',
+					dataType: 'json',
+					async: false,
+					success: function(data) {
+						$('#test').html('')
+						for (let i = 0; i < 3; i++) {
+							$('#test').append($(`
+									<div id="a${i}" class="easyui-datalist"
+									 data-options="checkbox:true,selectOnCheck:true,valueField:'code',textField:'text',
+									 onBeforeCheck:function(){return false},singleSelect:false"></div>`))
+							$.parser.parse('#test');
+							$('#a' + i).datalist('loadData', data)
+						}
+						console.log($('#a1'))
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

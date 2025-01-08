@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title>客户入驻</title>
+		<style type="text/css">
+			.savebtn {
+				font-size: 16px;
+				display: inline-block;
+				width: 196px;
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				background-color: #56D3DD;
+				border-radius: 5px;
+				cursor: pointer;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="savebtn" onclick="save()">保&emsp;&emsp;存</div>
+
+		<script type="text/javascript">
+			function save() {
+				console.log(11111111)
+				$('.savebtn').attr("onclick", "");
+			}
+		</script>
+	</body>
+</html>

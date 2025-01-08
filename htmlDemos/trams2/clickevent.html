@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.aa {
+				float: left;
+				width: 100px;
+				height: 100px;
+				background: #CCCCCC;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a"></div>
+		<script type="text/javascript">
+			var s = ''
+			for(var i = 0; i < 10; i++) {
+				s += '<div id="aa" class="aa" onclick="clicked(this)"><div class="aa-id">'
+				+ i +'</div><div class="aa-content">this is the div' + i + '</div></div>';
+			}
+			$('#a').html(s);
+
+			$(function(){
+				$('.aa').on('click',function(event){
+					$('#a>div').css('background', '#ccc')
+					$(this).css('background', 'red')
+				})
+			})
+
+			function clicked(e) {
+				$('#a>div').css('background', '#ccc')
+				$(e).css('background', 'red')
+			}
+		</script>
+	</body>
+</html>

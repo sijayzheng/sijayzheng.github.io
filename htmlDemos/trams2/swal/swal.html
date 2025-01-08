@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swal/sweetalert.css"/>
+		<script src="swal/sweetalert-dev.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div style="width: 66px;height: 66px;background: red;" onclick="fn1()">fn1</div>
+		<script type="text/javascript">
+			function fn1() {
+				swal({
+					title: "sure？",
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonText: "是的",
+					cancelButtonText: "不",
+					closeOnConfirm: false,
+					closeOnCancel: false
+				},function() {
+						swal({
+							title: "你确定？",
+							type: "warning",
+							showCancelButton: true,
+							confirmButtonColor: "#DD6B55",
+							confirmButtonText: "是的",
+							cancelButtonText: "不",
+						}, function() {
+							console.log(11111111)
+						})
+
+				})
+			}
+
+		</script>
+	</body>
+</html>

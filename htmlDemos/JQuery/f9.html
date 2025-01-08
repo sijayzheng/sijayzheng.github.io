@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function cl() {
+				var num = $('#tel').val();
+				var max = (parseInt(num / 20) + 1) * 20;
+				console.log(max)
+			}
+		</script>
+	</head>
+
+	<body onload="cl();">
+		<input type="text" name="tel" id="tel" value="" />
+		<button onclick="cl()">clear</button>
+	</body>
+
+</html>

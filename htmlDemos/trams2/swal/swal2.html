@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="UTF-8">
+<title>值班管理</title>
+<link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+
+<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/sweetalert2.min.js" type="text/javascript"></script>
+</head>
+<body>
+		<div id="aa" style="width: 55px;height: 55px;background: red;"></div>
+		<script type="text/javascript">
+			document.getElementById('aa').addEventListener('click',function(){
+				Swal.fire({
+	                title : '签收',
+	                type : 'warning',
+	                showCancelButton:true
+            	}).then((promise) => {
+            		if (promise.value) {
+            			Swal.fire({
+			                title : '处理',
+			                type : 'warning',
+			                showCancelButton:true
+		            	}).then((promise) => {
+		            		if (promise.value) {
+		            			Swal.fire({
+									title : '提示',
+									text : '处理成功',
+									type : 'success',
+									timer : 1000
+								});
+							}
+						});
+					}
+				});
+			})
+		</script>
+</body>
+</html>

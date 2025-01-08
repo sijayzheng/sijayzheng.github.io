@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.park {
+				border: 1px red solid;
+				width: 100%;
+				width: 6.25rem;
+				height: 6.25rem;
+				margin: 0.625rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div id="aaa"></div> -->
+		<script type="text/javascript">
+			((x) => {
+				var result = true
+				if (x < 0) {
+					result = false
+				} else {
+					x = x + ''
+					var xarr = x.split('');
+					for(var i=0;i<xarr.length/2;i++){
+						console.log(xarr[i]+'__'+xarr[xarr.length-1-i]);
+						if(xarr[i]!=xarr[xarr.length-1-i]){
+							result = false;
+							return false
+						}
+					}
+				}
+				console.log(result);
+			})(100002142341)
+		</script>
+	</body>
+</html>

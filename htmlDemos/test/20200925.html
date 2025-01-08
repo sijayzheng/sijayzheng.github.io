@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = {
+				"eventId": "213334",
+				"msgId": "2435_0015596069",
+				"envName": "58.test2",
+				"envType": "USER",
+				"workspaceId": "0000443020",
+				"workspaceName": "双机房",
+				"monitorTargetType": "ACS",
+				"monitorTargetName": "test1-1-1",
+				"monitorItemType": "cpu_util",
+				"triggerValue": 0.1,
+				"unit": "percent",
+				"triggerOperator": "LESS_THAN_OR_EQUAL",
+				"triggerCountThreshold": 1,
+				"triggerThreshold": 1000.0,
+				"statisticalPeriod": 1,
+				"statisticalMethod": "AVG",
+				"monitorPort": null,
+				"ip": "11.162.67.182",
+				"stateCode": "ALERT",
+				"alertDateTime": "2018-05-25 12: 00: 00",
+				"eventCode": "ALARM-00.12.00241",
+				"traceUrl": "http://cloudwatch.core.cloud.58test.alipay.net/#/monitor/res_view/res_detail/alert_rules?projectName=2&workspaceName=2&resId=72f95540d4184307e88b599e76337405a9282617bf61fb6087e5f25003a1db081543295015&resName=10.105.136.21&resType=MACHINE"
+			}
+
+			document.write(a['alertDateTime'])
+			document.write('<br />')
+			document.write(a['monitorTargetName']+"("+a['ip']+")"+"的"+a['monitorItemType']+(a['stateCode']=='ALERT'?'报警':'报警恢复'))
+			document.write('<br />')
+			document.write("类型为 "+a['monitorTargetType'])
+			document.write('<br />')
+
+			document.write("报警内容："+a['statisticalPeriod']+"分钟内的"+a['statisticalMethod']+a['triggerValue']+""+a['unit']+"有 "+a['triggerCountThreshold']+"次 "+a['triggerOperator']+""+a['triggerThreshold']+""+a['unit']);
+
+			let st='11111100',sum=0;
+			st=st.split('').reverse()
+			console.log(st);
+			for (var i = 0; i < st.length; i++) {
+				sum+=st[i]*Math.pow(2,i)
+			}
+			console.log(sum);
+		</script>
+	</body>
+</html>
