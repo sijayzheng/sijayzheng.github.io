@@ -68,15 +68,18 @@ flush privileges;
 
 ```bash
 # 备份
-mysqldump -uroot -proot [options] db_name [tablems...] > db_name.sql
+mysqldump -uroot -proot [options] db_name [tables...] > db_name.sql
 # 压缩备份
 mysqldump -uroot -proot --compact --skip-comments db_name > db_name.sql
 #使用powershell时
-mysqldump -uroot -proot [options] db_name [tablems...] --result-file=D:\db_name.sql
+mysqldump -uroot -proot [options] db_name [tables...] --result-file=D:\db_name.sql
 
 # 恢复
 mysqladmin -uroot -proot create db_name
 mysql -uroot -proot  db_name < db_name.sql
+
+#需要进入MySQL命令
+source C:\path\your\sql.sql;
 ```
 
 **options**
