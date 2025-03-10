@@ -1,48 +1,48 @@
 <template>
   <div
-    :class="{ collapse: collapse }"
-    :style="{ backgroundColor: sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground }"
-    class="sidebar-logo-container"
+      :class="{ collapse: collapse }"
+      :style="{ backgroundColor: sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground }"
+      class="sidebar-logo-container"
   >
     <transition
-      :enter-active-class="animateUtil.logoAnimate.enter"
-      mode="out-in"
+        :enter-active-class="animateUtil.logoAnimate.enter"
+        mode="out-in"
     >
       <router-link
-        v-if="collapse"
-        key="collapse"
-        class="sidebar-logo-link"
-        to="/"
+          v-if="collapse"
+          key="collapse"
+          class="sidebar-logo-link"
+          to="/"
       >
         <img
-          v-if="logo"
-          :src="logo"
-          alt=""
-          class="sidebar-logo"
+            v-if="logo"
+            :src="logo"
+            alt=""
+            class="sidebar-logo"
         >
         <h1
-          v-else
-          :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }"
-          class="sidebar-title"
+            v-else
+            :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }"
+            class="sidebar-title"
         >
           {{ title }}
         </h1>
       </router-link>
       <router-link
-        v-else
-        key="expand"
-        class="sidebar-logo-link"
-        to="/"
+          v-else
+          key="expand"
+          class="sidebar-logo-link"
+          to="/"
       >
         <img
-          v-if="logo"
-          :src="logo"
-          alt="logo"
-          class="sidebar-logo"
+            v-if="logo"
+            :src="logo"
+            alt="logo"
+            class="sidebar-logo"
         >
         <h1
-          :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }"
-          class="sidebar-title"
+            :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }"
+            class="sidebar-title"
         >
           {{ title }}
         </h1>

@@ -2,34 +2,34 @@
   <section class="app-main">
     <router-view v-slot="{ Component, route }">
       <transition
-        v-if="!route.meta.noCache"
-        :enter-active-class="animante"
-        mode="out-in"
+          v-if="!route.meta.noCache"
+          :enter-active-class="animante"
+          mode="out-in"
       >
         <keep-alive
-          v-if="!route.meta.noCache"
-          :include="tagsViewStore.cachedViews"
+            v-if="!route.meta.noCache"
+            :include="tagsViewStore.cachedViews"
         >
           <component
-            :is="Component"
-            v-if="!route.meta.link"
-            :key="route.path"
+              :is="Component"
+              v-if="!route.meta.link"
+              :key="route.path"
           />
         </keep-alive>
       </transition>
       <transition
-        v-if="route.meta.noCache"
-        :enter-active-class="animante"
-        mode="out-in"
+          v-if="route.meta.noCache"
+          :enter-active-class="animante"
+          mode="out-in"
       >
         <component
-          :is="Component"
-          v-if="!route.meta.link && route.meta.noCache"
-          :key="route.path"
+            :is="Component"
+            v-if="!route.meta.link && route.meta.noCache"
+            :key="route.path"
         />
       </transition>
     </router-view>
-    <iframe-toggle />
+    <iframe-toggle/>
   </section>
 </template>
 
@@ -45,16 +45,16 @@ const tagsViewStore = useTagsViewStore()
 const animante = ref('')
 const animationEnable = ref(useSettingsStore().animationEnable)
 watch(
-  () => useSettingsStore().animationEnable,
-  (val) => {
-    animationEnable.value = val
-    if (val) {
-      animante.value = animateUtil.animateList[Math.round(Math.random() * animateUtil.animateList.length)]
-    } else {
-      animante.value = animateUtil.defaultAnimate
-    }
-  },
-  { immediate: true }
+    () => useSettingsStore().animationEnable,
+    (val) => {
+      animationEnable.value = val
+      if (val) {
+        animante.value = animateUtil.animateList[Math.round(Math.random() * animateUtil.animateList.length)]
+      } else {
+        animante.value = animateUtil.defaultAnimate
+      }
+    },
+    {immediate: true}
 )
 </script>
 

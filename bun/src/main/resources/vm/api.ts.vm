@@ -1,0 +1,42 @@
+export const ${lowerName}Api = {
+    findById(id) {
+        return request({
+            url: '/${lowerName}/findById',
+            method: 'get',
+            params: {id: id},
+        })
+    },
+    page(param) {
+        return request({
+            url: '/${lowerName}/page',
+            method: 'get',
+            params: param,
+        })
+    },
+    save(data) {
+        return request({
+            url: '/${lowerName}/save',
+            method: 'post',
+            data: data,
+        })
+    },
+    remove(ids) {
+        return request({
+            url: '/${lowerName}/remove',
+            method: 'post',
+            data: ids,
+        })
+    },
+    exportData(data) {
+        download('/${lowerName}/export', {}, '${classComment}.xlsx')
+    },
+    importData(file) {
+        download('/${lowerName}/importData', {}, '${classComment}_模板.xlsx')
+    },
+    template() {
+        return request({
+            url: '/${lowerName}/template',
+            method: 'post',
+        })
+    },
+}

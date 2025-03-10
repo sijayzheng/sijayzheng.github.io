@@ -91,7 +91,7 @@ source C:\path\your\sql.sql;
 ### max_connections
 
 |                      |                     |
-| -------------------- | ------------------- |
+|----------------------|---------------------|
 | Command-Line Format  | --max-connections=# |
 | System Variable      | max_connections     |
 | Scope                | Global              |

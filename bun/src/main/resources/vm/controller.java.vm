@@ -1,0 +1,119 @@
+package ${packageName}.${moduleName}.controller;
+
+import cn.sijay.bun.common.entity.PageQuery;
+import cn.sijay.bun.common.entity.ResponseResult;
+import cn.sijay.bun.common.util.ExcelUtil;
+import cn.sijay.bun.core.base.BaseController;
+import ${packageName}.${moduleName}.entity.${className};
+import ${packageName}.${moduleName}.service.${className}Service;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * <strong>${className}Controller</strong>
+ * <p>
+ * ${classComment}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/${lowerName}")
+public class ${className}Controller extends BaseController {
+    private final ${className}Service ${lowerName}Service;
+
+    /**
+     * 查询${classComment}
+     *
+     * @param id 主键
+     * @return ${classComment}
+     */
+    @GetMapping("/findById")
+    public ResponseResult<${className}> findById(@RequestParam("id") Long id) {
+        return success(${lowerName}Service.findById(id));
+    }
+
+    /**
+     * 分页查询${classComment}列表
+     *
+     * @param entity 查询条件
+     * @param pageQuery 分页参数
+     * @return ${classComment}分页列表
+     */
+    @GetMapping("/page")
+    public ResponseResult<${className}> page(${className} entity, PageQuery pageQuery) {
+        return ${lowerName}Service.page(entity, pageQuery);
+    }
+
+    /**
+     * 查询符合条件的${classComment}列表
+     *
+     * @param entity 查询条件
+     * @return ${classComment}列表
+     */
+    @PostMapping("/list")
+    public ResponseResult<List<${className}>> list(@RequestBody ${className} entity) {
+        return success(${lowerName}Service.list(entity));
+    }
+
+    /**
+     * 保存${classComment}
+     *
+     * @param entity ${classComment}
+     * @return 是否成功
+     */
+    @PostMapping("/save")
+    public ResponseResult<String> save(@RequestBody ${className} entity) {
+            ${lowerName}Service.save(entity);
+        return success("保存成功");
+    }
+
+    /**
+     * 校验并批量删除${classComment}信息
+     *
+     * @param ids 待删除的主键集合
+     * @return 是否删除成功
+     */
+    @PostMapping("/remove")
+    public ResponseResult<String> remove(@RequestBody List<Long> ids) {
+            ${lowerName}Service.remove(ids);
+        return success("删除成功");
+    }
+
+    /**
+     * 导出${classComment}
+     */
+    @PostMapping("/export")
+    public void export(${className} entity, HttpServletResponse response) {
+        List<${className}> list = ${lowerName}Service.list(entity);
+        ExcelUtil.exportExcel(list, "${classComment}数据", ${className}. class,response);
+    }
+
+    /**
+     * 导入${classComment}数据
+     *
+     * @param file 导入文件
+     */
+    @PostMapping(value = "/importData", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseResult<String> importData(@RequestPart("file") MultipartFile file) throws Exception {
+        List<${className}> list = ExcelUtil.importExcel(file.getInputStream(), ${className}. class);
+            ${lowerName}Service.save(list);
+        return success("导入成功");
+    }
+
+    /**
+     * 获取${classComment}导入模板
+     */
+    @PostMapping("/template")
+    public void template(HttpServletResponse response) {
+        ExcelUtil.exportExcel(new ArrayList<>(), "${classComment}数据模板", ${className}. class,response);
+    }
+}

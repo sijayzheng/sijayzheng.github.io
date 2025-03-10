@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 
-const name = ref(1)
 </script>
 
 <template>
+  <div flex="~ col" h-full>
+    <div>this is index page</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

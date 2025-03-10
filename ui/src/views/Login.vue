@@ -1,46 +1,46 @@
 <template>
   <div class="login">
     <el-form
-      ref="loginRef"
-      :model="loginForm"
-      :rules="loginRules"
-      class="login-form"
+        ref="loginRef"
+        :model="loginForm"
+        :rules="loginRules"
+        class="login-form"
     >
       <h3>BUN开发平台</h3>
       <el-form-item prop="module">
         <el-select
-          v-model="loginForm.module"
-          auto-complete="off"
-          placeholder="模块"
-          size="large"
-          type="text"
+            v-model="loginForm.module"
+            auto-complete="off"
+            placeholder="模块"
+            size="large"
+            type="text"
         >
           <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
           />
         </el-select>
       </el-form-item>
       <el-form-item prop="username">
         <el-input
-          v-model="loginForm.username"
-          auto-complete="off"
-          placeholder="账号"
-          size="large"
-          type="text"
+            v-model="loginForm.username"
+            auto-complete="off"
+            placeholder="账号"
+            size="large"
+            type="text"
         >
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
         <el-input
-          v-model="loginForm.password"
-          auto-complete="off"
-          placeholder="密码"
-          size="large"
-          type="password"
-          @keyup.enter="handleLogin"
+            v-model="loginForm.password"
+            auto-complete="off"
+            placeholder="密码"
+            size="large"
+            type="password"
+            @keyup.enter="handleLogin"
         >
         </el-input>
       </el-form-item>
@@ -62,11 +62,11 @@
       </el-checkbox>
       <el-form-item style="width: 100%">
         <el-button
-          :loading="loading"
-          size="large"
-          style="width: 100%"
-          type="primary"
-          @click.prevent="handleLogin"
+            :loading="loading"
+            size="large"
+            style="width: 100%"
+            type="primary"
+            @click.prevent="handleLogin"
         >
           <span v-if="!loading">登 录</span>
           <span v-else>登 录 中...</span>
@@ -141,12 +141,12 @@ const options = [
 ]
 
 watch(
-  () => router.currentRoute.value,
-  (newRoute) => {
-    redirect.value =
-      newRoute.query && decodeURIComponent(newRoute.query.redirect)
-  },
-  { immediate: true }
+    () => router.currentRoute.value,
+    (newRoute) => {
+      redirect.value =
+          newRoute.query && decodeURIComponent(newRoute.query.redirect)
+    },
+    {immediate: true}
 )
 
 const handleLogin = () => {
@@ -206,7 +206,7 @@ const getLoginData = () => {
   loginForm.value = {
     username: username === null ? String(loginForm.value.username) : username,
     password:
-      password === null ? String(loginForm.value.password) : String(password),
+        password === null ? String(loginForm.value.password) : String(password),
     rememberMe: rememberMe === null ? false : Boolean(rememberMe)
   }
 }

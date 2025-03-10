@@ -1,35 +1,35 @@
 <template>
   <div
-    :class="{ 'has-logo': showLogo }"
-    :style="{ backgroundColor: bgColor }"
+      :class="{ 'has-logo': showLogo }"
+      :style="{ backgroundColor: bgColor }"
   >
     <logo
-      v-if="showLogo"
-      :collapse="isCollapse"
+        v-if="showLogo"
+        :collapse="isCollapse"
     />
     <el-scrollbar
-      :class="sideTheme"
-      wrap-class="scrollbar-wrapper"
+        :class="sideTheme"
+        wrap-class="scrollbar-wrapper"
     >
       <transition
-        :enter-active-class="animateUtil.menuSearchAnimate.enter"
-        mode="out-in"
+          :enter-active-class="animateUtil.menuSearchAnimate.enter"
+          mode="out-in"
       >
         <el-menu
-          :active-text-color="theme"
-          :background-color="bgColor"
-          :collapse="isCollapse"
-          :collapse-transition="false"
-          :default-active="activeMenu"
-          :text-color="textColor"
-          :unique-opened="true"
-          mode="vertical"
+            :active-text-color="theme"
+            :background-color="bgColor"
+            :collapse="isCollapse"
+            :collapse-transition="false"
+            :default-active="activeMenu"
+            :text-color="textColor"
+            :unique-opened="true"
+            mode="vertical"
         >
           <sidebar-item
-            v-for="(r, index) in sidebarRouters"
-            :key="r.path + index"
-            :base-path="r.path"
-            :item="r"
+              v-for="(r, index) in sidebarRouters"
+              :key="r.path + index"
+              :base-path="r.path"
+              :item="r"
           />
         </el-menu>
       </transition>
@@ -56,7 +56,10 @@ const theme = computed(() => settingsStore.theme)
 const isCollapse = computed(() => !appStore.sidebar.opened)
 
 const activeMenu = computed(() => {
-  const { meta, path } = route
+  const {
+    meta,
+    path
+  } = route
   // if set path, the sidebar will highlight the path you set
   if (meta.activeMenu) {
     return meta.activeMenu

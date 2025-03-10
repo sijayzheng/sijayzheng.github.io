@@ -1,0 +1,144 @@
+package ${packageName}.${moduleName}.service;
+
+import cn.sijay.bun.common.entity.PageQuery;
+import cn.sijay.bun.common.entity.ResponseResult;
+import cn.sijay.bun.common.util.Spec;
+import ${packageName}.${moduleName}.entity.${className};
+import ${packageName}.${moduleName}.repository.${className}Repository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.swing.text.html.parser.Entity;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * <strong>${className}Service</strong>
+ * <p>
+ * ${classComment}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Slf4j
+@RequiredArgsConstructor
+@Transactional(rollbackFor = Exception.class)
+@Service
+public class ${className}Service {
+    private final ${className}Repository ${lowerName}Repository;
+
+    /**
+     * 查询${classComment}
+     *
+     * @param id 主键
+     * @return ${classComment}
+     */
+    public ${className} findById(Long id) {
+        return ${lowerName}Repository.getReferenceById(id);
+    }
+
+    #if(${templateType}=='LIST')
+        /**
+         * 分页查询${classComment}列表
+         *
+         * @param entity 查询条件
+         * @param pageQuery 分页参数
+         * @return ${classComment}分页列表
+         */
+        public ResponseResult<${className}> page(${className} entity, PageQuery pageQuery) {
+            Specification<${className}> specification = buildSpecification(entity);
+            Page<${className}> page = ${lowerName}Repository.findAll(specification, pageQuery.build());
+            return ResponseResult.of(page);
+        }
+
+    #end
+    /**
+     * 查询符合条件的${classComment}列表
+     *
+     * @param entity 查询条件
+     * @return ${classComment}列表
+     */
+    public List<${className}> list(${className} entity) {
+        Specification<${className}> specification = buildSpecification(entity);
+        return ${lowerName}Repository.findAll(specification);
+    }
+
+    /**
+     * 保存${classComment}
+     *
+     * @param entity ${classComment}
+     */
+    public void save(${className} entity) {
+        validate(entity);
+            ${lowerName}Repository.save(entity);
+    }
+
+    /**
+     * 批量保存${classComment}
+     *
+     * @param list ${classComment}集合
+     */
+    public void save(List<${className}> list) {
+        for (${className} entity:
+                          list) {
+            validate(entity);
+        }
+            ${lowerName}Repository.saveAll(list);
+    }
+
+    /**
+     * 校验并批量删除系统${classComment}
+     *
+     * @param ids 待删除的主键集合
+     */
+    public void remove(List<Long> ids) {
+            ${lowerName}Repository.deleteAllById(ids);
+    }
+
+    /**
+     * 数据校验
+     *
+     * @param entity ${classComment}
+     */
+    private void validate(${className} entity) {
+    }
+
+    private Specification<${className}> buildSpecification(${className} entity) {
+        if (ObjectUtils.isEmpty(entity)) {
+            return Specification.allOf();
+        }
+        List<Specification<${className}>> list = new ArrayList<>();
+        #foreach($column in $columns)
+            #if(${column.queryable})
+                #set($getter = "get" + ${column.javaField.substring(0,1).toUpperCase()} + ${column.javaField.substring(1)})
+                #if(${column.queryType}=="EQUAL")
+                    #if(${column.javaType}=="STRING")
+                        if (StringUtils.isNotBlank(entity.${getter}())){
+                        list.add(Spec.equal(${className}::${getter}, entity.${getter}()));
+                    }
+                    #else
+                        if (ObjectUtils.isNotEmpty(entity.${getter}())){
+                        list.add(Spec.equal(${className}::${getter}, entity.${getter}()));
+                    }
+                    #end
+                #elseif(${column.queryType}=="BETWEEN")
+                    if (ObjectUtils.isNotEmpty(entity.${getter}()) &&ObjectUtils.isNotEmpty(entity.${getter}())){
+                    list.add(Spec.between(${className}::${getter}, entity.${getter}Strat(), entity.${getter}End()));
+                }
+                #elseif(${column.queryType}=="LIKE")
+                    if (StringUtils.isNotBlank(entity.${getter}())){
+                    list.add(Spec.like(${className}::${getter}, entity.${getter}()));
+                }
+                #end
+            #end
+        #end
+        return Specification.allOf(list);
+    }
+}

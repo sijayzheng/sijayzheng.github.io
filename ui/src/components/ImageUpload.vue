@@ -1,30 +1,30 @@
 <template>
   <div class="component-upload-image">
     <el-upload
-      ref="imageUpload"
-      :action="uploadImgUrl"
-      :before-remove="handleDelete"
-      :before-upload="handleBeforeUpload"
-      :class="{ hide: fileList.length >= limit }"
-      :file-list="fileList"
-      :headers="headers"
-      :limit="limit"
-      :on-error="handleUploadError"
-      :on-exceed="handleExceed"
-      :on-preview="handlePictureCardPreview"
-      :on-success="handleUploadSuccess"
-      :show-file-list="true"
-      list-type="picture-card"
-      multiple
+        ref="imageUpload"
+        :action="uploadImgUrl"
+        :before-remove="handleDelete"
+        :before-upload="handleBeforeUpload"
+        :class="{ hide: fileList.length >= limit }"
+        :file-list="fileList"
+        :headers="headers"
+        :limit="limit"
+        :on-error="handleUploadError"
+        :on-exceed="handleExceed"
+        :on-preview="handlePictureCardPreview"
+        :on-success="handleUploadSuccess"
+        :show-file-list="true"
+        list-type="picture-card"
+        multiple
     >
       <el-icon class="avatar-uploader-icon">
-        <plus />
+        <plus/>
       </el-icon>
     </el-upload>
     <!-- 上传提示 -->
     <div
-      v-if="showTip"
-      class="el-upload__tip"
+        v-if="showTip"
+        class="el-upload__tip"
     >
       请上传
       <template v-if="fileSize">
@@ -37,24 +37,24 @@
     </div>
 
     <el-dialog
-      v-model="dialogVisible"
-      append-to-body
-      title="预览"
-      width="800px"
+        v-model="dialogVisible"
+        append-to-body
+        title="预览"
+        width="800px"
     >
       <img
-        :src="dialogImageUrl"
-        style="display: block; max-width: 100%; margin: 0 auto"
+          :src="dialogImageUrl"
+          style="display: block; max-width: 100%; margin: 0 auto"
       >
     </el-dialog>
   </div>
 </template>
 
 <script setup>
-import { delOss, listByIds } from '@/api/system/oss'
-import { propTypes } from '@/util/propTypes'
-import { globalHeaders } from '@/util/request'
-import { compressAccurately } from 'image-conversion'
+import {delOss, listByIds} from '@/api/system/oss'
+import {propTypes} from '@/util/propTypes'
+import {globalHeaders} from '@/util/request'
+import {compressAccurately} from 'image-conversion'
 
 const props = defineProps({
   modelValue: {
@@ -81,7 +81,7 @@ const props = defineProps({
   compressTargetSize: propTypes.number.def(300)
 })
 
-const { proxy } = getCurrentInstance()
+const {proxy} = getCurrentInstance()
 const emit = defineEmits(['update:modelValue'])
 const number = ref(0)
 const uploadList = ref([])
@@ -97,45 +97,45 @@ const showTip = computed(() => props.isShowTip && (props.fileType || props.fileS
 const imageUploadRef = ref()
 
 watch(
-  () => props.modelValue,
-  async (val) => {
-    if (val) {
-      // 首先将值转为数组
-      let list
-      if (Array.isArray(val)) {
-        list = val
-      } else {
-        const res = await listByIds(val)
-        list = res.data
-      }
-      // 然后将数组转为对象数组
-      fileList.value = list.map((item) => {
-        // 字符串回显处理 如果此处存的是url可直接回显 如果存的是id需要调用接口查出来
-        let itemData
-        if (typeof item === 'string') {
-          itemData = {
-            name: item,
-            url: item
-          }
+    () => props.modelValue,
+    async (val) => {
+      if (val) {
+        // 首先将值转为数组
+        let list
+        if (Array.isArray(val)) {
+          list = val
         } else {
-          // 此处name使用ossId 防止删除出现重名
-          itemData = {
-            name: item.ossId,
-            url: item.url,
-            ossId: item.ossId
-          }
+          const res = await listByIds(val)
+          list = res.data
         }
-        return itemData
-      })
-    } else {
-      fileList.value = []
-      return []
+        // 然后将数组转为对象数组
+        fileList.value = list.map((item) => {
+          // 字符串回显处理 如果此处存的是url可直接回显 如果存的是id需要调用接口查出来
+          let itemData
+          if (typeof item === 'string') {
+            itemData = {
+              name: item,
+              url: item
+            }
+          } else {
+            // 此处name使用ossId 防止删除出现重名
+            itemData = {
+              name: item.ossId,
+              url: item.url,
+              ossId: item.ossId
+            }
+          }
+          return itemData
+        })
+      } else {
+        fileList.value = []
+        return []
+      }
+    },
+    {
+      deep: true,
+      immediate: true
     }
-  },
-  {
-    deep: true,
-    immediate: true
-  }
 )
 
 /** 上传前loading加载 */

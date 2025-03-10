@@ -1,18 +1,18 @@
 <template>
   <el-drawer
-    v-model="showSettings"
-    :with-header="false"
-    close-on-click-modal
-    direction="rtl"
-    size="300px"
+      v-model="showSettings"
+      :with-header="false"
+      close-on-click-modal
+      direction="rtl"
+      size="300px"
   >
     <div class="drawer-item">
       <span>主题颜色</span>
       <span class="comp-style">
         <el-color-picker
-          v-model="theme"
-          :predefine="predefineColors"
-          @change="themeChange"
+            v-model="theme"
+            :predefine="predefineColors"
+            @change="themeChange"
         />
       </span>
     </div>
@@ -20,27 +20,27 @@
       <span>深色模式</span>
       <span class="comp-style">
         <el-switch
-          v-model="isDark"
-          class="drawer-switch"
-          @change="toggleDark"
+            v-model="isDark"
+            class="drawer-switch"
+            @change="toggleDark"
         />
       </span>
     </div>
 
-    <el-divider />
+    <el-divider/>
 
     <el-button
-      icon="DocumentAdd"
-      plain
-      type="primary"
-      @click="saveSetting"
+        icon="DocumentAdd"
+        plain
+        type="primary"
+        @click="saveSetting"
     >
       保存配置
     </el-button>
     <el-button
-      icon="Refresh"
-      plain
-      @click="resetSetting"
+        icon="Refresh"
+        plain
+        @click="resetSetting"
     >
       重置配置
     </el-button>
@@ -48,12 +48,12 @@
 </template>
 
 <script setup>
-import { useDynamicTitle } from '@/util/dynamicTitle'
+import {useDynamicTitle} from '@/util/dynamicTitle'
 import useAppStore from '@/store/app'
 import useSettingsStore from '@/store/settings'
 import usePermissionStore from '@/store/permission'
-import { handleThemeStyle } from '@/util/theme'
-import { defaultSettings } from '@/store/settings.ts'
+import {handleThemeStyle} from '@/util/theme'
+import {defaultSettings} from '@/store/settings.ts'
 
 const appStore = useAppStore()
 const settingsStore = useSettingsStore()

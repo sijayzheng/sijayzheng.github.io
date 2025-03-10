@@ -6,18 +6,18 @@ import useUserStore from '@/store/user'
  * @returns {Boolean}
  */
 export const checkPermi = (value) => {
-  if (value && value instanceof Array && value.length > 0) {
-    const permissions = useUserStore().permissions
-    const permissionDatas = value
-    const all_permission = '*:*:*'
+    if (value && value instanceof Array && value.length > 0) {
+        const permissions = useUserStore().permissions
+        const permissionDatas = value
+        const all_permission = '*:*:*'
 
-    return permissions.some((permission) => {
-      return all_permission === permission || permissionDatas.includes(permission)
-    })
-  } else {
-    console.error(`need roles! Like checkPermi="['system:user:add','system:user:edit']"`)
-    return false
-  }
+        return permissions.some((permission) => {
+            return all_permission === permission || permissionDatas.includes(permission)
+        })
+    } else {
+        console.error(`need roles! Like checkPermi="['system:user:add','system:user:edit']"`)
+        return false
+    }
 }
 
 /**
@@ -26,16 +26,16 @@ export const checkPermi = (value) => {
  * @returns {Boolean}
  */
 export const checkRole = (value) => {
-  if (value && value instanceof Array && value.length > 0) {
-    const roles = useUserStore().roles
-    const permissionRoles = value
-    const super_admin = 'admin'
+    if (value && value instanceof Array && value.length > 0) {
+        const roles = useUserStore().roles
+        const permissionRoles = value
+        const super_admin = 'admin'
 
-    return roles.some((role) => {
-      return super_admin === role || permissionRoles.includes(role)
-    })
-  } else {
-    console.error(`need roles! Like checkRole="['admin','editor']"`)
-    return false
-  }
+        return roles.some((role) => {
+            return super_admin === role || permissionRoles.includes(role)
+        })
+    } else {
+        console.error(`need roles! Like checkRole="['admin','editor']"`)
+        return false
+    }
 }

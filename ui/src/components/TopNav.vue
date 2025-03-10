@@ -1,20 +1,20 @@
 <template>
   <el-menu
-    :default-active="activeMenu"
-    :ellipsis="false"
-    mode="horizontal"
-    @select="handleSelect"
+      :default-active="activeMenu"
+      :ellipsis="false"
+      mode="horizontal"
+      @select="handleSelect"
   >
     <template v-for="(item, index) in topMenus">
       <el-menu-item
-        v-if="index < visibleNumber"
-        :key="index"
-        :index="item.path"
-        :style="{ '--theme': theme }"
+          v-if="index < visibleNumber"
+          :key="index"
+          :index="item.path"
+          :style="{ '--theme': theme }"
       >
         <svg-icon
-          v-if="item.meta && item.meta.icon && item.meta.icon !== '#'"
-          :icon-class="item.meta ? item.meta.icon : ''"
+            v-if="item.meta && item.meta.icon && item.meta.icon !== '#'"
+            :icon-class="item.meta ? item.meta.icon : ''"
         />
         {{ item.meta?.title }}
       </el-menu-item>
@@ -22,20 +22,20 @@
 
     <!-- 顶部菜单超出数量折叠 -->
     <el-sub-menu
-      v-if="topMenus.length > visibleNumber"
-      :style="{ '--theme': theme }"
-      index="more"
+        v-if="topMenus.length > visibleNumber"
+        :style="{ '--theme': theme }"
+        index="more"
     >
       <template #title>
         更多菜单
       </template>
       <template v-for="(item, index) in topMenus">
         <el-menu-item
-          v-if="index >= visibleNumber"
-          :key="index"
-          :index="item.path"
+            v-if="index >= visibleNumber"
+            :key="index"
+            :index="item.path"
         >
-          <svg-icon :icon-class="item.meta ? item.meta.icon : ''" />
+          <svg-icon :icon-class="item.meta ? item.meta.icon : ''"/>
           {{ item.meta?.title }}
         </el-menu-item>
       </template>
@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { constantRoutes } from '@/router'
+import {constantRoutes} from '@/router'
 import useAppStore from '@/store/app'
 import useSettingsStore from '@/store/settings'
 import usePermissionStore from '@/store/permission'
@@ -146,7 +146,7 @@ const handleSelect = (key) => {
         query: query
       })
     } else {
-      router.push({ path: key })
+      router.push({path: key})
     }
     appStore.toggleSideBarHide(true)
   } else {

@@ -1,31 +1,31 @@
 <template>
   <div
-    :class="classObj"
-    :style="{ '--current-color': theme }"
-    class="app-wrapper"
+      :class="classObj"
+      :style="{ '--current-color': theme }"
+      class="app-wrapper"
   >
     <div
-      v-if="sidebar.opened"
-      class="drawer-bg"
-      @click="handleClickOutside"
+        v-if="sidebar.opened"
+        class="drawer-bg"
+        @click="handleClickOutside"
     />
     <side-bar
-      v-if="!sidebar.hide"
-      class="sidebar-container"
+        v-if="!sidebar.hide"
+        class="sidebar-container"
     />
     <div
-      :class="{ hasTagsView: needTagsView, sidebarHide: sidebar.hide }"
-      class="main-container"
+        :class="{ hasTagsView: needTagsView, sidebarHide: sidebar.hide }"
+        class="main-container"
     >
       <div :class="{ 'fixed-header': true }">
         <navbar
-          ref="navbarRef"
-          @set-layout="setLayout"
+            ref="navbarRef"
+            @set-layout="setLayout"
         />
-        <tags-view v-if="needTagsView" />
+        <tags-view v-if="needTagsView"/>
       </div>
-      <app-main />
-      <settings ref="settingRef" />
+      <app-main/>
+      <settings ref="settingRef"/>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@
 <script setup>
 import useAppStore from '@/store/app'
 import useSettingsStore from '@/store/settings'
-import { initSSE } from '@/util/sse'
+import {initSSE} from '@/util/sse'
 import AppMain from '@/layout/AppMain.vue'
 import Navbar from '@/layout/Navbar.vue'
 import SideBar from '@/layout/Sidebar.vue'
@@ -60,7 +60,7 @@ onMounted(() => {
 })
 
 const handleClickOutside = () => {
-  useAppStore().closeSideBar({ withoutAnimation: false })
+  useAppStore().closeSideBar({withoutAnimation: false})
 }
 
 const setLayout = () => {

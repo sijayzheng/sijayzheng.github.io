@@ -1,81 +1,81 @@
 <template>
   <div class="register">
     <el-form
-      ref="registerRef"
-      :model="registerForm"
-      :rules="registerRules"
-      class="register-form"
+        ref="registerRef"
+        :model="registerForm"
+        :rules="registerRules"
+        class="register-form"
     >
       <h3 class="title">BUN开发平台</h3>
 
       <el-form-item prop="username">
         <el-input
-          v-model="registerForm.username"
-          auto-complete="off"
-          placeholder="账号"
-          size="large"
-          type="text"
+            v-model="registerForm.username"
+            auto-complete="off"
+            placeholder="账号"
+            size="large"
+            type="text"
         >
           <template #prefix>
-            <svg-icon class="el-input__icon input-icon" icon-class="user" />
+            <svg-icon class="el-input__icon input-icon" icon-class="user"/>
           </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
         <el-input
-          v-model="registerForm.password"
-          auto-complete="off"
-          placeholder="密码"
-          size="large"
-          type="password"
-          @keyup.enter="handleRegister"
+            v-model="registerForm.password"
+            auto-complete="off"
+            placeholder="密码"
+            size="large"
+            type="password"
+            @keyup.enter="handleRegister"
         >
           <template #prefix>
-            <svg-icon class="el-input__icon input-icon" icon-class="password" />
+            <svg-icon class="el-input__icon input-icon" icon-class="password"/>
           </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="confirmPassword">
         <el-input
-          v-model="registerForm.confirmPassword"
-          auto-complete="off"
-          placeholder="确认密码"
-          size="large"
-          type="password"
-          @keyup.enter="handleRegister"
+            v-model="registerForm.confirmPassword"
+            auto-complete="off"
+            placeholder="确认密码"
+            size="large"
+            type="password"
+            @keyup.enter="handleRegister"
         >
           <template #prefix>
-            <svg-icon class="el-input__icon input-icon" icon-class="password" />
+            <svg-icon class="el-input__icon input-icon" icon-class="password"/>
           </template>
         </el-input>
       </el-form-item>
       <el-form-item v-if="captchaEnabled" prop="code">
         <el-input
-          v-model="registerForm.code"
-          auto-complete="off"
-          placeholder="验证码"
-          size="large"
-          style="width: 63%"
-          @keyup.enter="handleRegister"
+            v-model="registerForm.code"
+            auto-complete="off"
+            placeholder="验证码"
+            size="large"
+            style="width: 63%"
+            @keyup.enter="handleRegister"
         >
           <template #prefix>
             <svg-icon
-              class="el-input__icon input-icon"
-              icon-class="validCode"
+                class="el-input__icon input-icon"
+                icon-class="validCode"
             />
           </template>
         </el-input>
         <div class="register-code">
-          <img :src="codeUrl" class="register-code-img" @click="getCode" />
+          <img :src="codeUrl" class="register-code-img" @click="getCode"/>
         </div>
       </el-form-item>
       <el-form-item style="width: 100%">
         <el-button
-          :loading="loading"
-          size="large"
-          style="width: 100%"
-          type="primary"
-          @click.prevent="handleRegister"
+            :loading="loading"
+            size="large"
+            style="width: 100%"
+            type="primary"
+            @click.prevent="handleRegister"
         >
           <span v-if="!loading">注 册</span>
           <span v-else>注 册 中...</span>
@@ -92,8 +92,8 @@
 </template>
 
 <script setup>
-import { getCodeImg, register } from '@/api/login'
-import { to } from 'await-to-js'
+import {getCodeImg, register} from '@/api/login'
+import {to} from 'await-to-js'
 
 const router = useRouter()
 
@@ -179,12 +179,12 @@ const handleRegister = () => {
       if (!err) {
         const username = registerForm.value.username
         await ElMessageBox.alert(
-          '恭喜你，您的账号 ' + username + ' 注册成功！',
-          '系统提示',
-          {
-            dangerouslyUseHTMLString: true,
-            type: 'success'
-          }
+            '恭喜你，您的账号 ' + username + ' 注册成功！',
+            '系统提示',
+            {
+              dangerouslyUseHTMLString: true,
+              type: 'success'
+            }
         )
         await router.push('/login')
       } else {
@@ -199,9 +199,9 @@ const handleRegister = () => {
 
 const getCode = async () => {
   const res = await getCodeImg()
-  const { data } = res
+  const {data} = res
   captchaEnabled.value =
-    data.captchaEnabled === undefined ? true : data.captchaEnabled
+      data.captchaEnabled === undefined ? true : data.captchaEnabled
   if (captchaEnabled.value) {
     codeUrl.value = 'data:image/gif;base64,' + data.img
     registerForm.value.uuid = data.uuid

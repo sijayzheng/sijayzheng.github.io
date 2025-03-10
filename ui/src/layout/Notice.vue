@@ -1,62 +1,62 @@
 <template>
   <div
-    v-loading="state.loading"
-    class="layout-navbars-breadcrumb-user-news"
+      v-loading="state.loading"
+      class="layout-navbars-breadcrumb-user-news"
   >
     <div class="head-box">
       <div class="head-box-title">
         通知公告
       </div>
       <div
-        class="head-box-btn"
-        @click="readAll"
+          class="head-box-btn"
+          @click="readAll"
       >
         全部已读
       </div>
     </div>
     <div
-      v-loading="state.loading"
-      class="content-box"
+        v-loading="state.loading"
+        class="content-box"
     >
       <template v-if="newsList.length > 0">
         <div
-          v-for="(v, k) in newsList"
-          :key="k"
-          class="content-box-item"
-          @click="onNewsClick(k)"
+            v-for="(v, k) in newsList"
+            :key="k"
+            class="content-box-item"
+            @click="onNewsClick(k)"
         >
           <div class="item-conten">
             <div>{{ v.message }}</div>
-            <div class="content-box-msg" />
+            <div class="content-box-msg"/>
             <div class="content-box-time">
               {{ v.time }}
             </div>
           </div>
           <!-- 已读/未读 -->
           <span
-            v-if="v.read"
-            class="el-tag el-tag--success el-tag--mini read"
+              v-if="v.read"
+              class="el-tag el-tag--success el-tag--mini read"
           >已读</span>
           <span
-            v-else
-            class="el-tag el-tag--danger el-tag--mini read"
+              v-else
+              class="el-tag el-tag--danger el-tag--mini read"
           >未读</span>
         </div>
       </template>
       <el-empty
-        v-else
-        :description="'消息为空'"
+          v-else
+          :description="'消息为空'"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia'
+import {storeToRefs} from 'pinia'
 import useNoticeStore from '@/store/notice'
 
 const noticeStore = storeToRefs(useNoticeStore())
-const { readAll } = useNoticeStore()
+const {readAll} = useNoticeStore()
 
 // 定义变量内容
 const state = reactive({

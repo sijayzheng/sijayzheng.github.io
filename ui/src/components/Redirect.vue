@@ -1,10 +1,13 @@
 <template>
-  <div />
+  <div/>
 </template>
 
 <script setup>
-const { params, query } = useRoute()
-const { path } = params
+const {
+  params,
+  query
+} = useRoute()
+const {path} = params
 
 useRouter().replace({
   path: '/' + path,

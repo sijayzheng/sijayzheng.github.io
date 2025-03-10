@@ -1,0 +1,14 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger%n %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger%n %msg%n"
+  level:
+    root: warn
+  file:
+    name: logs/${spring.application.name}.log
+

@@ -1,20 +1,20 @@
 export default (ops) => {
-  const visible = ref(false);
-  const title = ref(ops.title || '');
+    const visible = ref(false)
+    const title = ref(ops.title || '')
 
-  const openDialog = () => {
-    visible.value = true;
-  };
+    const openDialog = () => {
+        visible.value = true
+    }
 
-  const closeDialog = () => {
-    visible.value = false;
-  };
+    const closeDialog = () => {
+        visible.value = false
+    }
 
-  return {
-    title,
-    visible,
+    return {
+        title,
+        visible,
 
-    openDialog,
-    closeDialog
-  };
+        openDialog,
+        closeDialog
+    }
 };

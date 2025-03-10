@@ -1,27 +1,27 @@
 <template>
   <div>
     <el-upload
-      v-if="type === 'url'"
-      :action="upload.url"
-      :before-upload="handleBeforeUpload"
-      :headers="upload.headers"
-      :on-error="handleUploadError"
-      :on-success="handleUploadSuccess"
-      :show-file-list="false"
-      class="editor-img-uploader"
-      name="file"
+        v-if="type === 'url'"
+        :action="upload.url"
+        :before-upload="handleBeforeUpload"
+        :headers="upload.headers"
+        :on-error="handleUploadError"
+        :on-success="handleUploadSuccess"
+        :show-file-list="false"
+        class="editor-img-uploader"
+        name="file"
     >
-      <i ref="uploadRef" />
+      <i ref="uploadRef"/>
     </el-upload>
   </div>
   <div class="editor">
     <quill-editor
-      ref="quillEditorRef"
-      v-model:content="content"
-      :options="options"
-      :style="styles"
-      content-type="html"
-      @text-change="(e) => $emit('update:modelValue', content)"
+        ref="quillEditorRef"
+        v-model:content="content"
+        :options="options"
+        :style="styles"
+        content-type="html"
+        @text-change="(e) => $emit('update:modelValue', content)"
     />
   </div>
 </template>
@@ -29,9 +29,9 @@
 <script setup>
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
 
-import { Quill, QuillEditor } from '@vueup/vue-quill'
-import { propTypes } from '@/util/propTypes'
-import { globalHeaders } from '@/util/request'
+import {Quill, QuillEditor} from '@vueup/vue-quill'
+import {propTypes} from '@/util/propTypes'
+import {globalHeaders} from '@/util/request'
 
 defineEmits(['update:modelValue'])
 
@@ -50,7 +50,7 @@ const props = defineProps({
   type: propTypes.string.def('url')
 })
 
-const { proxy } = getCurrentInstance()
+const {proxy} = getCurrentInstance()
 
 const upload = reactive({
   headers: globalHeaders(),
@@ -69,12 +69,12 @@ const options = ref({
       container: [
         ['bold', 'italic', 'underline', 'strike'], // 加粗 斜体 下划线 删除线
         ['blockquote', 'code-block'], // 引用  代码块
-        [{ list: 'ordered' }, { list: 'bullet' }], // 有序、无序列表
-        [{ indent: '-1' }, { indent: '+1' }], // 缩进
-        [{ size: ['small', false, 'large', 'huge'] }], // 字体大小
-        [{ header: [1, 2, 3, 4, 5, 6, false] }], // 标题
-        [{ color: [] }, { background: [] }], // 字体颜色、字体背景颜色
-        [{ align: [] }], // 对齐方式
+        [{list: 'ordered'}, {list: 'bullet'}], // 有序、无序列表
+        [{indent: '-1'}, {indent: '+1'}], // 缩进
+        [{size: ['small', false, 'large', 'huge']}], // 字体大小
+        [{header: [1, 2, 3, 4, 5, 6, false]}], // 标题
+        [{color: []}, {background: []}], // 字体颜色、字体背景颜色
+        [{align: []}], // 对齐方式
         ['clean'], // 清除文本格式
         ['link', 'image', 'video'] // 链接、图片、视频
       ],
@@ -107,13 +107,13 @@ const styles = computed(() => {
 
 const content = ref('')
 watch(
-  () => props.modelValue,
-  (v) => {
-    if (v !== content.value) {
-      content.value = v || '<p></p>'
-    }
-  },
-  { immediate: true }
+    () => props.modelValue,
+    (v) => {
+      if (v !== content.value) {
+        content.value = v || '<p></p>'
+      }
+    },
+    {immediate: true}
 )
 
 // 图片上传成功返回图片地址

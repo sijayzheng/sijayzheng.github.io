@@ -1,20 +1,20 @@
 <template>
   <el-breadcrumb
-    class="app-breadcrumb"
-    separator="/"
+      class="app-breadcrumb"
+      separator="/"
   >
     <transition-group name="breadcrumb">
       <el-breadcrumb-item
-        v-for="(item, index) in levelList"
-        :key="item.path"
+          v-for="(item, index) in levelList"
+          :key="item.path"
       >
         <span
-          v-if="item.redirect === 'noRedirect' || index === levelList.length - 1"
-          class="no-redirect"
+            v-if="item.redirect === 'noRedirect' || index === levelList.length - 1"
+            class="no-redirect"
         >{{ item.meta?.title }}</span>
         <a
-          v-else
-          @click.prevent="handleLink(item)"
+            v-else
+            @click.prevent="handleLink(item)"
         >{{ item.meta?.title }}</a>
       </el-breadcrumb-item>
     </transition-group>
@@ -35,7 +35,7 @@ const getBreadcrumb = () => {
     matched = [
       {
         path: '/index',
-        meta: { title: '首页' }
+        meta: {title: '首页'}
       }
     ].concat(matched)
   }
@@ -49,7 +49,10 @@ const isDashboard = (route) => {
   return name.trim() === 'Index'
 }
 const handleLink = (item) => {
-  const { redirect, path } = item
+  const {
+    redirect,
+    path
+  } = item
   redirect ? router.push(redirect) : router.push(path)
 }
 

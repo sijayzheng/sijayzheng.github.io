@@ -2,18 +2,18 @@
   <div v-if="!item.hidden">
     <template v-if="hasOneShowingChild(item, item.children) && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && !item.alwaysShow">
       <app-link
-        v-if="onlyOneChild.meta"
-        :to="resolvePath(onlyOneChild.path, onlyOneChild.query)"
+          v-if="onlyOneChild.meta"
+          :to="resolvePath(onlyOneChild.path, onlyOneChild.query)"
       >
         <el-menu-item
-          :class="{ 'submenu-title-noDropdown': !isNest }"
-          :index="resolvePath(onlyOneChild.path)"
+            :class="{ 'submenu-title-noDropdown': !isNest }"
+            :index="resolvePath(onlyOneChild.path)"
         >
-          <svg-icon :icon-class="onlyOneChild.meta.icon || (item.meta && item.meta.icon)" />
+          <svg-icon :icon-class="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"/>
           <template #title>
             <span
-              :title="hasTitle(onlyOneChild.meta.title)"
-              class="menu-title"
+                :title="hasTitle(onlyOneChild.meta.title)"
+                class="menu-title"
             >{{ onlyOneChild.meta.title }}</span>
           </template>
         </el-menu-item>
@@ -21,29 +21,29 @@
     </template>
 
     <el-sub-menu
-      v-else
-      ref="subMenu"
-      :index="resolvePath(item.path)"
-      teleported
+        v-else
+        ref="subMenu"
+        :index="resolvePath(item.path)"
+        teleported
     >
       <template
-        v-if="item.meta"
-        #title
+          v-if="item.meta"
+          #title
       >
-        <svg-icon :icon-class="item.meta ? item.meta.icon : ''" />
+        <svg-icon :icon-class="item.meta ? item.meta.icon : ''"/>
         <span
-          :title="hasTitle(item.meta?.title)"
-          class="menu-title"
+            :title="hasTitle(item.meta?.title)"
+            class="menu-title"
         >{{ item.meta?.title }}</span>
       </template>
 
       <sidebar-item
-        v-for="(child, index) in item.children"
-        :key="child.path + index"
-        :base-path="resolvePath(child.path)"
-        :is-nest="true"
-        :item="child"
-        class="nest-menu"
+          v-for="(child, index) in item.children"
+          :key="child.path + index"
+          :base-path="resolvePath(child.path)"
+          :is-nest="true"
+          :item="child"
+          class="nest-menu"
       />
     </el-sub-menu>
   </div>
@@ -51,8 +51,8 @@
 
 <script setup>
 import AppLink from './Link.vue'
-import { getNormalPath } from '@/util/ruoyi'
-import { validateUtil } from '@/util/validate.ts'
+import {getNormalPath} from '@/util/ruoyi'
+import {validateUtil} from '@/util/validate.ts'
 
 const props = defineProps({
   item: {

@@ -1,60 +1,60 @@
 <template>
   <div
-    :style="{ 'width': width }"
-    class="relative"
+      :style="{ 'width': width }"
+      class="relative"
   >
     <el-input
-      v-model="modelValue"
-      placeholder="点击选择图标"
-      readonly
-      @click="visible = !visible"
+        v-model="modelValue"
+        placeholder="点击选择图标"
+        readonly
+        @click="visible = !visible"
     >
       <template #prepend>
-        <svg-icon :icon-class="modelValue" />
+        <svg-icon :icon-class="modelValue"/>
       </template>
     </el-input>
 
     <el-popover
-      :visible="visible"
-      :width="450"
-      placement="bottom-end"
-      shadow="none"
-      trigger="click"
+        :visible="visible"
+        :width="450"
+        placement="bottom-end"
+        shadow="none"
+        trigger="click"
     >
       <template #reference>
         <div
-          class="cursor-pointer text-[#999] absolute right-[10px] top-0 height-[32px] leading-[32px]"
-          @click="visible = !visible"
+            class="cursor-pointer text-[#999] absolute right-[10px] top-0 height-[32px] leading-[32px]"
+            @click="visible = !visible"
         >
-          <i-ep-caret-top v-show="visible" />
-          <i-ep-caret-bottom v-show="!visible" />
+          <i-ep-caret-top v-show="visible"/>
+          <i-ep-caret-bottom v-show="!visible"/>
         </div>
       </template>
 
       <el-input
-        v-model="filterValue"
-        class="p-2"
-        clearable
-        placeholder="搜索图标"
-        @input="filterIcons"
+          v-model="filterValue"
+          class="p-2"
+          clearable
+          placeholder="搜索图标"
+          @input="filterIcons"
       />
 
       <el-scrollbar height="w-[200px]">
         <ul class="icon-list">
           <el-tooltip
-            v-for="(iconName, index) in iconNames"
-            :key="index"
-            :content="iconName"
-            effect="light"
-            placement="bottom"
+              v-for="(iconName, index) in iconNames"
+              :key="index"
+              :content="iconName"
+              effect="light"
+              placement="bottom"
           >
             <li
-              :class="['icon-item', { active: modelValue === iconName }]"
-              @click="selectedIcon(iconName)"
+                :class="['icon-item', { active: modelValue === iconName }]"
+                @click="selectedIcon(iconName)"
             >
               <svg-icon
-                :icon-class="iconName"
-                color="var(--el-text-color-regular)"
+                  :icon-class="iconName"
+                  color="var(--el-text-color-regular)"
               />
             </li>
           </el-tooltip>
@@ -66,7 +66,7 @@
 
 <script setup>
 import icons from '@/components/IconSelect/requireIcons'
-import { propTypes } from '@/util/propTypes'
+import {propTypes} from '@/util/propTypes'
 
 const props = defineProps({
   modelValue: propTypes.string.isRequired,
@@ -75,7 +75,10 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue'])
 const visible = ref(false)
-const { modelValue, width } = toRefs(props)
+const {
+  modelValue,
+  width
+} = toRefs(props)
 const iconNames = ref(icons)
 
 const filterValue = ref('')

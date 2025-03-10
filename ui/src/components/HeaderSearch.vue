@@ -1,29 +1,29 @@
 <template>
   <div
-    :class="{ show: show }"
-    class="header-search"
+      :class="{ show: show }"
+      class="header-search"
   >
     <svg-icon
-      class-name="search-icon"
-      icon-class="search"
-      @click.stop="click"
+        class-name="search-icon"
+        icon-class="search"
+        @click.stop="click"
     />
     <el-select
-      ref="headerSearchSelectRef"
-      v-model="search"
-      :remote-method="querySearch"
-      class="header-search-select"
-      default-first-option
-      filterable
-      placeholder="Search"
-      remote
-      @change="change"
+        ref="headerSearchSelectRef"
+        v-model="search"
+        :remote-method="querySearch"
+        class="header-search-select"
+        default-first-option
+        filterable
+        placeholder="Search"
+        remote
+        @change="change"
     >
       <el-option
-        v-for="option in options"
-        :key="option.item.path"
-        :label="option.item.title.join(' > ')"
-        :value="option.item"
+          v-for="option in options"
+          :key="option.item.path"
+          :label="option.item.title.join(' > ')"
+          :value="option.item"
       />
     </el-select>
   </div>
@@ -31,8 +31,8 @@
 
 <script setup>
 import Fuse from 'fuse.js'
-import { getNormalPath } from '@/util/ruoyi'
-import { isHttp } from '@/util/validate'
+import {getNormalPath} from '@/util/ruoyi'
+import {isHttp} from '@/util/validate'
 import usePermissionStore from '@/store/permission'
 
 const search = ref('')

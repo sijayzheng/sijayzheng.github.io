@@ -1,18 +1,18 @@
 <template>
   <div class="upload-file">
     <el-upload
-      ref="fileUploadRef"
-      :action="uploadFileUrl"
-      :before-upload="handleBeforeUpload"
-      :file-list="fileList"
-      :headers="headers"
-      :limit="limit"
-      :on-error="handleUploadError"
-      :on-exceed="handleExceed"
-      :on-success="handleUploadSuccess"
-      :show-file-list="false"
-      class="upload-file-uploader"
-      multiple
+        ref="fileUploadRef"
+        :action="uploadFileUrl"
+        :before-upload="handleBeforeUpload"
+        :file-list="fileList"
+        :headers="headers"
+        :limit="limit"
+        :on-error="handleUploadError"
+        :on-exceed="handleExceed"
+        :on-success="handleUploadSuccess"
+        :show-file-list="false"
+        class="upload-file-uploader"
+        multiple
     >
       <!-- 上传按钮 -->
       <el-button type="primary">
@@ -21,8 +21,8 @@
     </el-upload>
     <!-- 上传提示 -->
     <div
-      v-if="showTip"
-      class="el-upload__tip"
+        v-if="showTip"
+        class="el-upload__tip"
     >
       请上传
       <template v-if="fileSize">
@@ -35,27 +35,27 @@
     </div>
     <!-- 文件列表 -->
     <transition-group
-      class="upload-file-list el-upload-list el-upload-list--text"
-      name="el-fade-in-linear"
-      tag="ul"
+        class="upload-file-list el-upload-list el-upload-list--text"
+        name="el-fade-in-linear"
+        tag="ul"
     >
       <li
-        v-for="(file, index) in fileList"
-        :key="file.uid"
-        class="el-upload-list__item ele-upload-list__item-content"
+          v-for="(file, index) in fileList"
+          :key="file.uid"
+          class="el-upload-list__item ele-upload-list__item-content"
       >
         <el-link
-          :href="`${file.url}`"
-          :underline="false"
-          target="_blank"
+            :href="`${file.url}`"
+            :underline="false"
+            target="_blank"
         >
           <span class="el-icon-document"> {{ getFileName(file.name) }} </span>
         </el-link>
         <div class="ele-upload-list__item-content-action">
           <el-button
-            link
-            type="danger"
-            @click="handleDelete(index)"
+              link
+              type="danger"
+              @click="handleDelete(index)"
           >
             删除
           </el-button>
@@ -66,9 +66,9 @@
 </template>
 
 <script setup>
-import { propTypes } from '@/util/propTypes'
-import { delOss, listByIds } from '@/api/system/oss'
-import { globalHeaders } from '@/util/request'
+import {propTypes} from '@/util/propTypes'
+import {delOss, listByIds} from '@/api/system/oss'
+import {globalHeaders} from '@/util/request'
 
 const props = defineProps({
   modelValue: {
@@ -85,7 +85,7 @@ const props = defineProps({
   isShowTip: propTypes.bool.def(true)
 })
 
-const { proxy } = getCurrentInstance()
+const {proxy} = getCurrentInstance()
 const emit = defineEmits(['update:modelValue'])
 const number = ref(0)
 const uploadList = ref([])
@@ -99,43 +99,43 @@ const showTip = computed(() => props.isShowTip && (props.fileType || props.fileS
 const fileUploadRef = ref()
 
 watch(
-  () => props.modelValue,
-  async (val) => {
-    if (val) {
-      let temp = 1
-      // 首先将值转为数组
-      let list = []
-      if (Array.isArray(val)) {
-        list = val
-      } else {
-        const res = await listByIds(val)
-        list = res.data.map((oss) => {
-          return {
-            name: oss.originalName,
-            url: oss.url,
-            ossId: oss.ossId
-          }
-        })
-      }
-      // 然后将数组转为对象数组
-      fileList.value = list.map((item) => {
-        item = {
-          name: item.name,
-          url: item.url,
-          ossId: item.ossId
+    () => props.modelValue,
+    async (val) => {
+      if (val) {
+        let temp = 1
+        // 首先将值转为数组
+        let list = []
+        if (Array.isArray(val)) {
+          list = val
+        } else {
+          const res = await listByIds(val)
+          list = res.data.map((oss) => {
+            return {
+              name: oss.originalName,
+              url: oss.url,
+              ossId: oss.ossId
+            }
+          })
         }
-        item.uid = item.uid || new Date().getTime() + temp++
-        return item
-      })
-    } else {
-      fileList.value = []
-      return []
+        // 然后将数组转为对象数组
+        fileList.value = list.map((item) => {
+          item = {
+            name: item.name,
+            url: item.url,
+            ossId: item.ossId
+          }
+          item.uid = item.uid || new Date().getTime() + temp++
+          return item
+        })
+      } else {
+        fileList.value = []
+        return []
+      }
+    },
+    {
+      deep: true,
+      immediate: true
     }
-  },
-  {
-    deep: true,
-    immediate: true
-  }
 )
 
 // 上传前校检格式和大小

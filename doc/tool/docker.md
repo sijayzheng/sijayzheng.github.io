@@ -568,5 +568,6 @@ docker run \
    -e "MINIO_ROOT_PASSWORD=root@123" \
    quay.io/minio/minio server /data --console-address ":9090"
 ```
+
 ## 修改容器端口
 

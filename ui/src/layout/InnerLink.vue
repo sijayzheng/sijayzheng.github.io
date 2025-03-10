@@ -1,9 +1,9 @@
 <template>
   <div :style="'height:' + height">
     <iframe
-      :id="iframeId"
-      :src="src"
-      style="width: 100%; height: 100%; border: 0"
+        :id="iframeId"
+        :src="src"
+        style="width: 100%; height: 100%; border: 0"
     />
   </div>
 </template>

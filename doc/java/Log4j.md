@@ -1,6 +1,7 @@
 ## 配置文件
 
-可以自动加载配置，配置文件包括四种格式：properties,yml,json,xml，配置文件优先级依次为 `log4j2.configurationFile > log4j2-test.properties > log4j2-test.yaml或log4j2-test.yml > log4j2-test.json或log4j2-test.jsn > log4j2-test.xml > log4j2.properties > log4j2.yaml或log4j2.yml > log4j2.json或log4j2.jsn > log4j2.xml > DefaultConfiguration`
+可以自动加载配置，配置文件包括四种格式：properties,yml,json,xml，配置文件优先级依次为
+`log4j2.configurationFile > log4j2-test.properties > log4j2-test.yaml或log4j2-test.yml > log4j2-test.json或log4j2-test.jsn > log4j2-test.xml > log4j2.properties > log4j2.yaml或log4j2.yml > log4j2.json或log4j2.jsn > log4j2.xml > DefaultConfiguration`
 ，配置文件需要放在 classpath 路径下
 
 yml和json的配置文件需要额外引入相应的解析类库
@@ -321,7 +322,8 @@ OutputStreamManager）来实际执行文件 I / O 并执行归档。参数如下
 TriggeringPolicy 是控制日志文件归档的触发条件。总共有四种类型的 TriggeringPolicy，可以组合（CompositeTriggeringPolicy）多种触发策略来控制归档，标签为，如果配置了多种策略，则只要有一种策略返回
 true，就返回 true。
 
-`<Policies>` `<!-- <CronTriggeringPolicy schedule="0 0 * * * ?"/> -->` `<OnStartupTriggeringPolicy minSize="2" />` `<SizeBasedTriggeringPolicy size="20 MB" />` `<TimeBasedTriggeringPolicy /></Policies>`
+`<Policies>` `<!-- <CronTriggeringPolicy schedule="0 0 * * * ?"/> -->` `<OnStartupTriggeringPolicy minSize="2" />`
+`<SizeBasedTriggeringPolicy size="20 MB" />` `<TimeBasedTriggeringPolicy /></Policies>`
 
 四种类型如下：
 

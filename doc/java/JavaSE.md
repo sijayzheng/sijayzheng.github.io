@@ -41,10 +41,10 @@ public class HelloWorld {
 - `java [-options] class [args…]`：执行类
 - `java [-options] -jar jarfile [args…]`：执行 jar 文件
 - 常见 options
-  - `java -version`
-  - `java -classpath <目录> com.demo.hello.HelloWorld`：运行指定目录下的字节码文件
-  - `java -cp .;myClass.jar com.demo.hello.HelloWorld`：指定各个 JAR 文件具体的存放路径（用 ; 分隔）
-  - `java -D<名称>=<值> com.demo.hello.HelloWorld`： 设置系统属性（Java system property）
+    - `java -version`
+    - `java -classpath <目录> com.demo.hello.HelloWorld`：运行指定目录下的字节码文件
+    - `java -cp .;myClass.jar com.demo.hello.HelloWorld`：指定各个 JAR 文件具体的存放路径（用 ; 分隔）
+    - `java -D<名称>=<值> com.demo.hello.HelloWorld`： 设置系统属性（Java system property）
 
 ### Java 基本语法
 
@@ -138,8 +138,8 @@ double pi=3.14;  // 浮点数常量默认是 double 类型
 #### 加号 +
 
 - 加号在操作数值、 字符 、字符串时，其结果是不同的
-  - 当两个**字符**相加得到的是 **ASCII 码表值**
-  - 作为**字符串连接运算符**
+    - 当两个**字符**相加得到的是 **ASCII 码表值**
+    - 作为**字符串连接运算符**
 
 #### 除号 /
 
@@ -173,8 +173,8 @@ double pi=3.14;  // 浮点数常量默认是 double 类型
 - 比较运算符的结果是 boolean 类型
 - == != < > <= >= instanceof
 - 使用 == 判断两个两个变量是否相等
-  - 基本类型变量：只要两个变量的**值相等**（ 不一定要求数据类型严格相同），就返回 true
-  - 引用类型变量：只有两个变量**指向同一个对象**时，返回 true（不可用于比较类型上没有**继承关系**的两个对象，否则编译报错）
+    - 基本类型变量：只要两个变量的**值相等**（ 不一定要求数据类型严格相同），就返回 true
+    - 引用类型变量：只有两个变量**指向同一个对象**时，返回 true（不可用于比较类型上没有**继承关系**的两个对象，否则编译报错）
 
 ### 三元运算符 / 三目运算符
 
@@ -392,15 +392,15 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 - 降低资源消耗
 - 便于线程管理
 
-  - corePoolSize 核心池大小
-  - maximumPoolSize 最大线程数
-  - keepAliveTime 线程没任务最多保留多长时间
+    - corePoolSize 核心池大小
+    - maximumPoolSize 最大线程数
+    - keepAliveTime 线程没任务最多保留多长时间
 
 - ExecutorService 线程池接口
 
-  - void execute(Runnable command);无返回的执行
-  - Future<?> submit(Runnable task);有返回的执行
-  - void shutdown();关闭线程池
+    - void execute(Runnable command);无返回的执行
+    - Future<?> submit(Runnable task);有返回的执行
+    - void shutdown();关闭线程池
 
 - Executors
   用于创建不同类型的线程池
@@ -525,8 +525,8 @@ synchronized(Obj){}，Obj 是同步监视器（是一个改变的量）
 - setAccessible 作用是开关安全访问检查
 - 参数值为 true 时关闭安全访问检查，即允许访问私有成员
 
-  - 提高反射效率
-  - 使私有成员可以访问
+    - 提高反射效率
+    - 使私有成员可以访问
 
 - 参数值为 false 则开启安全访问检查，即不允许访问私有成员
 
@@ -667,14 +667,14 @@ StringBuilder 的性能却高于 StringBuffer，所以在单线程环境下推�
 - 加载：将 class 文件加载到内存并将静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的 Class 对象
 - 连接：将 Java 类的二进制代码合并到 JVM 的运行状态之中
 
-  - 验证：确保加载的类信息符号 JVM 规范，没有安全方面的问题
-  - 准备：正式类变量（static）在方法区中分配内存并设置默认初始值
-  - 解析：常量池中的符号（常量名）引用替换为直接（地址）引用
+    - 验证：确保加载的类信息符号 JVM 规范，没有安全方面的问题
+    - 准备：正式类变量（static）在方法区中分配内存并设置默认初始值
+    - 解析：常量池中的符号（常量名）引用替换为直接（地址）引用
 
 - 初始化：
-  - 执行类构造器<clinit>()方法。该方法由编译期自动收集类中所有的变量赋值动作和静态代码块中的语句合并产生
-  - 初始化一个类时，如果父类还没初始化，则触发父类初始化
-  - 虚拟机保证类的<clinit>()方法在多线程中正确的加锁及同步
+    - 执行类构造器<clinit>()方法。该方法由编译期自动收集类中所有的变量赋值动作和静态代码块中的语句合并产生
+    - 初始化一个类时，如果父类还没初始化，则触发父类初始化
+    - 虚拟机保证类的<clinit>()方法在多线程中正确的加锁及同步
 
 ## 其他
 

@@ -78,24 +78,24 @@ jekyll serve --no-watch
 
 除了下边的选项， serve 命令还可以接收 build 的选项，当运行网站服务之前的编译时候使用。
 
-| 设置                                         | 选项                         |
-| -------------------------------------------- | ---------------------------- |
-| 修改 Jekyll 读取文件的路径                   | source: DIR                  |
-| 修改 Jekyll 写入文件的路径                   | destination: DIR             |
-| 禁用自定义插件                               | safe: BOOL                   |
-| 转换时排除某些文件、文件夹                   | exclude: [DIR, FILE, ...]    |
-| 转换时强制包含某些文件、文件夹               | include: [DIR, FILE, ...]    |
-| 当生成站点时，保留选择的文件。               | keep_files: [DIR, FILE, ...] |
-| 设置时区，默认值为操作系统的时区。           | timezone: TIMEZONE           |
-| 设置文件的编码。                             | encoding: ENCODING           |
-| 用将来的日期发布文章                         | future: BOOL                 |
-| 为相关文章生成索引                           | lsi: BOOL                    |
-| 限制文章的数量                               | limit_posts: NUM             |
+| 设置                         | 选项                           |
+|----------------------------|------------------------------|
+| 修改 Jekyll 读取文件的路径          | source: DIR                  |
+| 修改 Jekyll 写入文件的路径          | destination: DIR             |
+| 禁用自定义插件                    | safe: BOOL                   |
+| 转换时排除某些文件、文件夹              | exclude: [DIR, FILE, ...]    |
+| 转换时强制包含某些文件、文件夹            | include: [DIR, FILE, ...]    |
+| 当生成站点时，保留选择的文件。            | keep_files: [DIR, FILE, ...] |
+| 设置时区，默认值为操作系统的时区。          | timezone: TIMEZONE           |
+| 设置文件的编码。                   | encoding: ENCODING           |
+| 用将来的日期发布文章                 | future: BOOL                 |
+| 为相关文章生成索引                  | lsi: BOOL                    |
+| 限制文章的数量                    | limit_posts: NUM             |
 | 生成一个 Liquid 概述文档来帮助你发现性能瓶颈 | profile: BOOL                |
-| 监听端口                                     | port: PORT                   |
-| 监听主机名                                   | host: HOSTNAME               |
-| 网站的根路径                                 | baseurl: URL                 |
-| 从终端命令行中分离出来                       | detach: BOOL                 |
+| 监听端口                       | port: PORT                   |
+| 监听主机名                      | host: HOSTNAME               |
+| 网站的根路径                     | baseurl: URL                 |
+| 从终端命令行中分离出来                | detach: BOOL                 |
 
 ## 目录结构
 

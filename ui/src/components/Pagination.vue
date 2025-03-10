@@ -1,18 +1,18 @@
 <template>
   <div
-    :class="{ hidden: hidden }"
-    class="pagination-container"
+      :class="{ hidden: hidden }"
+      class="pagination-container"
   >
     <el-pagination
-      v-model:current-page="currentPage"
-      v-model:page-size="pageSize"
-      :background="background"
-      :layout="layout"
-      :page-sizes="pageSizes"
-      :pager-count="pagerCount"
-      :total="total"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
+        v-model:current-page="currentPage"
+        v-model:page-size="pageSize"
+        :background="background"
+        :layout="layout"
+        :page-sizes="pageSizes"
+        :pager-count="pagerCount"
+        :total="total"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
     />
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <script setup>
-import { scrollTo } from '@/util/scroll-to'
+import {scrollTo} from '@/util/scroll-to'
 
 const props = defineProps({
   total: propTypes.number,

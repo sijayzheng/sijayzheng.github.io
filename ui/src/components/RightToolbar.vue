@@ -1,61 +1,61 @@
 <template>
   <div
-    :style="style"
-    class="top-right-btn"
+      :style="style"
+      class="top-right-btn"
   >
     <el-row>
       <el-tooltip
-        v-if="search"
-        :content="showSearch ? '隐藏搜索' : '显示搜索'"
-        class="item"
-        effect="dark"
-        placement="top"
+          v-if="search"
+          :content="showSearch ? '隐藏搜索' : '显示搜索'"
+          class="item"
+          effect="dark"
+          placement="top"
       >
         <el-button
-          circle
-          icon="Search"
-          @click="toggleSearch()"
+            circle
+            icon="Search"
+            @click="toggleSearch()"
         />
       </el-tooltip>
       <el-tooltip
-        class="item"
-        content="刷新"
-        effect="dark"
-        placement="top"
+          class="item"
+          content="刷新"
+          effect="dark"
+          placement="top"
       >
         <el-button
-          circle
-          icon="Refresh"
-          @click="refresh()"
+            circle
+            icon="Refresh"
+            @click="refresh()"
         />
       </el-tooltip>
       <el-tooltip
-        v-if="columns"
-        class="item"
-        content="显示/隐藏列"
-        effect="dark"
-        placement="top"
+          v-if="columns"
+          class="item"
+          content="显示/隐藏列"
+          effect="dark"
+          placement="top"
       >
         <div class="show-btn">
           <el-popover
-            placement="bottom"
-            trigger="click"
+              placement="bottom"
+              trigger="click"
           >
             <div class="tree-header">
               显示/隐藏列
             </div>
             <el-tree
-              ref="columnRef"
-              :data="columns"
-              :props="{ label: 'label', children: 'children' }"
-              node-key="key"
-              show-checkbox
-              @check="columnChange"
+                ref="columnRef"
+                :data="columns"
+                :props="{ label: 'label', children: 'children' }"
+                node-key="key"
+                show-checkbox
+                @check="columnChange"
             />
             <template #reference>
               <el-button
-                circle
-                icon="Menu"
+                  circle
+                  icon="Menu"
               />
             </template>
           </el-popover>

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: bun
+  profiles:
+    active: @profiles.active@
+
+gen:
+  packageName: cn.sijay.bun
+  templateType: list
+  author: sijay
+  genType: zip
+  genPath: /
+
+

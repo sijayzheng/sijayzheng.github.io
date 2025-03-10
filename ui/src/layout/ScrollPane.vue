@@ -1,11 +1,11 @@
 <template>
   <el-scrollbar
-    ref="scrollContainerRef"
-    :vertical="false"
-    class="scroll-container"
-    @wheel.prevent="handleScroll"
+      ref="scrollContainerRef"
+      :vertical="false"
+      class="scroll-container"
+      @wheel.prevent="handleScroll"
   >
-    <slot />
+    <slot/>
   </el-scrollbar>
 </template>
 

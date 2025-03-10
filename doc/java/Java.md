@@ -7,14 +7,14 @@
 _以Java8为例_
 
 - Windows
-  - 下载jdk并安装
-  - 新建系统变量,点击新建，变量名为`JAVA_HOME`，变量值为Java的安装路径。
-  - 编辑环境变量Path,删除变量`C:\Program Files (x86)\Common Files\Oracle\Java\javapath`
-    新增`%JAVA_HOME%\bin`和`%JAVA_HOME%\jre\bin`
-  - 新建环境变量CLASSPATH，变量值为`.;%JAVA_HOME%\bin;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
+    - 下载jdk并安装
+    - 新建系统变量,点击新建，变量名为`JAVA_HOME`，变量值为Java的安装路径。
+    - 编辑环境变量Path,删除变量`C:\Program Files (x86)\Common Files\Oracle\Java\javapath`
+      新增`%JAVA_HOME%\bin`和`%JAVA_HOME%\jre\bin`
+    - 新建环境变量CLASSPATH，变量值为`.;%JAVA_HOME%\bin;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
 
 - Linux
-  - `sudo apt install openjdk-8-jdk`
+    - `sudo apt install openjdk-8-jdk`
 
 ## 命名
 
@@ -193,24 +193,24 @@ _以Java8为例_
 8种基本数据类型：
 
 - 4种整型（byte，shot，int，long）
-  - 整形表示没有小数的数值，可以为负
-  - long数值需要后缀`L`或`l`
-  - 十六进制需要前缀`0X`或`0x`
-  - 八进制需要一个前缀`0`
-  - 二进制需要前缀`0B`或`0b`
-  - 可以在数字中添加下划线便于阅读，如：`123_456_789`
+    - 整形表示没有小数的数值，可以为负
+    - long数值需要后缀`L`或`l`
+    - 十六进制需要前缀`0X`或`0x`
+    - 八进制需要一个前缀`0`
+    - 二进制需要前缀`0B`或`0b`
+    - 可以在数字中添加下划线便于阅读，如：`123_456_789`
 - 2种浮点型（double，float）
-  - double的数值精度为float的两倍
-  - double数值需要后缀`0D`或`0d`
-  - float数值需要后缀`0F`或`0f`
-  - 特殊数值：正无穷（`POSITIVE_INFINITY = 1.0 / 0.0`）、负无穷（`NEGATIVE_INFINITY = -1.0 / 0.0`）、NaN（not a
-    number  `NaN = 0.0d / 0.0`）
-  - 判断一个值是否为NaN使用`Double.isNaN(x)`方法
-  - 由于二进制无法准确的表示`1/10`，所有浮点数会存在舍入误差
+    - double的数值精度为float的两倍
+    - double数值需要后缀`0D`或`0d`
+    - float数值需要后缀`0F`或`0f`
+    - 特殊数值：正无穷（`POSITIVE_INFINITY = 1.0 / 0.0`）、负无穷（`NEGATIVE_INFINITY = -1.0 / 0.0`）、NaN（not a
+      number  `NaN = 0.0d / 0.0`）
+    - 判断一个值是否为NaN使用`Double.isNaN(x)`方法
+    - 由于二进制无法准确的表示`1/10`，所有浮点数会存在舍入误差
 - 1种字符型（char）
-  - 表示一个Unicode字符（`\u0000-\uFFFF`之间）
-  - 使用单引号包围
-  - 转义序列`\u`还可以出现在加引号的字符常量或字符串之外（其他所有转义序列不可以）
+    - 表示一个Unicode字符（`\u0000-\uFFFF`之间）
+    - 使用单引号包围
+    - 转义序列`\u`还可以出现在加引号的字符常量或字符串之外（其他所有转义序列不可以）
 
 **特殊字符转义序列及Unicode值**
 
@@ -352,8 +352,8 @@ public class Main {
 
 - String
 - 字符串构建器
-  - StringBuilder
-  - StringBuffer
+    - StringBuilder
+    - StringBuffer
 
 | StringBuilder | StringBuffer |
 |---------------|--------------|
@@ -383,28 +383,28 @@ StringBuilder与StringBuffer的方法基本相同
 常用方法：
 
 - [BigInteger]大整数
-  - BigInteger add( BigInteger other) 加
-  - BigInteger subtract(BigInteger other ) 减
-  - BigInteger multiply(BigInteger other) 乘
-  - BigInteger divide(BigInteger other) 除
-  - BigInteger mod(BigInteger other) 取余
-  - int compareTo(BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
-  - static BigInteger valueOf(long x ) 返回值等于 x 的大整数。
+    - BigInteger add( BigInteger other) 加
+    - BigInteger subtract(BigInteger other ) 减
+    - BigInteger multiply(BigInteger other) 乘
+    - BigInteger divide(BigInteger other) 除
+    - BigInteger mod(BigInteger other) 取余
+    - int compareTo(BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
+    - static BigInteger valueOf(long x ) 返回值等于 x 的大整数。
 - [BigDecimal]大浮点数
-  - BigDecimal add(BigDecimal other)加
-  - BigDecimal subtract(BigDecimal other )减
-  - BigDecimal multiply(BigDecimal other )乘
-  - BigDecimal divide(BigDecimal other) 除
-  - BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) 除并指定舍入方式
-  - int compareTo(BigDecimal other ) 与other相等，返回0；小于other，返回负数；否则，返回正数。
-  - static BigDecimal valueOf( long x )
+    - BigDecimal add(BigDecimal other)加
+    - BigDecimal subtract(BigDecimal other )减
+    - BigDecimal multiply(BigDecimal other )乘
+    - BigDecimal divide(BigDecimal other) 除
+    - BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) 除并指定舍入方式
+    - int compareTo(BigDecimal other ) 与other相等，返回0；小于other，返回负数；否则，返回正数。
+    - static BigDecimal valueOf( long x )
 
 ## 输入输出
 
 - 输出
 
-  - 输出后换行 `System.out.println()`
-  - 格式化输出 `System.out.printf()`
+    - 输出后换行 `System.out.println()`
+    - 格式化输出 `System.out.printf()`
 
 | printf转换符 | 类 型        | 举 例      |
 |-----------|------------|----------|
@@ -436,17 +436,17 @@ StringBuilder与StringBuffer的方法基本相同
 | <             | 格式化前面说明的数值  |
 
 - 输入
-  - > Scanner，并与“标准输人流”System.in关联。`Scanner scanner = new Scanner(System.in);`
-    >
-    > `nextLine()` 获取下一行；
-    >
-    > `next()` 获取截止到空白字符的内容
+    - > Scanner，并与“标准输人流”System.in关联。`Scanner scanner = new Scanner(System.in);`
+      >
+      > `nextLine()` 获取下一行；
+      >
+      > `next()` 获取截止到空白字符的内容
 
-  - > Console类，`Console console = System.console();`
-    >
-    >    `readPassword()` 读取用户输入的密码
-    >
-    > `readLine()` 读取用户输入内容
+    - > Console类，`Console console = System.console();`
+      >
+      >    `readPassword()` 读取用户输入的密码
+      >
+      > `readLine()` 读取用户输入内容
 
 ## 控制流程
 
@@ -934,8 +934,8 @@ parallelStream 并行流
 - 通过Array.stream(array,from,to)将数组中[from,to)的元素创建为流
 - 通过Stream.empty创建空流
 - 无限流
-  - Stream.generate 通过指定函数生成数据
-  - Stream.iterate 通过种子+函数生成
+    - Stream.generate 通过指定函数生成数据
+    - Stream.iterate 通过种子+函数生成
 
 ### 中间操作
 
@@ -962,19 +962,19 @@ class Test {
 ### 终结操作
 
 - 约简操作
-  - `count` 计算流中元素数量
-  - `max` 返回最大值
-  - `min` 返回最小值
-  - `findFirst` 返回第一个元素
-  - `findAny` 返回任一元素
-  - `anyMatch` 存在任一元素匹配
-  - `allMatch` 所有元素匹配
-  - `noneMatch` 全不匹配
+    - `count` 计算流中元素数量
+    - `max` 返回最大值
+    - `min` 返回最小值
+    - `findFirst` 返回第一个元素
+    - `findAny` 返回任一元素
+    - `anyMatch` 存在任一元素匹配
+    - `allMatch` 所有元素匹配
+    - `noneMatch` 全不匹配
 - 收集操作
-  - `iterator` 返回一个流中元素的迭代器
-  - `forEach` 遍历流中的元素
-  - `toArray` 将流转为数组
-  - `collect` 收集流中的元素
+    - `iterator` 返回一个流中元素的迭代器
+    - `forEach` 遍历流中的元素
+    - `toArray` 将流转为数组
+    - `collect` 收集流中的元素
 
 **收集器collector**
 

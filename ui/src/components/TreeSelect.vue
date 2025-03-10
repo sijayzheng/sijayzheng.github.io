@@ -1,30 +1,30 @@
 <template>
   <div class="el-tree-select">
     <el-select
-      ref="treeSelect"
-      v-model="valueId"
-      :clearable="true"
-      :filter-method="selectFilterData"
-      :filterable="true"
-      :placeholder="placeholder"
-      style="width: 100%"
-      @clear="clearHandle"
+        ref="treeSelect"
+        v-model="valueId"
+        :clearable="true"
+        :filter-method="selectFilterData"
+        :filterable="true"
+        :placeholder="placeholder"
+        style="width: 100%"
+        @clear="clearHandle"
     >
       <el-option
-        :label="valueTitle"
-        :value="valueId"
+          :label="valueTitle"
+          :value="valueId"
       >
         <el-tree
-          id="tree-option"
-          ref="selectTree"
-          :accordion="accordion"
-          :data="options"
-          :default-expanded-keys="defaultExpandedKey"
-          :expand-on-click-node="false"
-          :filter-node-method="filterNode"
-          :node-key="objMap.value"
-          :props="objMap"
-          @node-click="handleNodeClick"
+            id="tree-option"
+            ref="selectTree"
+            :accordion="accordion"
+            :data="options"
+            :default-expanded-keys="defaultExpandedKey"
+            :expand-on-click-node="false"
+            :filter-node-method="filterNode"
+            :node-key="objMap.value"
+            :props="objMap"
+            @node-click="handleNodeClick"
         />
       </el-option>
     </el-select>

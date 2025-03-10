@@ -1,89 +1,89 @@
 <template>
   <div class="navbar">
     <hamburger
-      id="hamburger-container"
-      :is-active="appStore.sidebar.opened"
-      class="hamburger-container"
-      @toggle-click="toggleSideBar"
+        id="hamburger-container"
+        :is-active="appStore.sidebar.opened"
+        class="hamburger-container"
+        @toggle-click="toggleSideBar"
     />
     <breadcrumb
-      v-if="!settingsStore.topNav"
-      id="breadcrumb-container"
-      class="breadcrumb-container"
+        v-if="!settingsStore.topNav"
+        id="breadcrumb-container"
+        class="breadcrumb-container"
     />
     <top-nav
-      v-if="settingsStore.topNav"
-      id="topmenu-container"
-      class="topmenu-container"
+        v-if="settingsStore.topNav"
+        id="topmenu-container"
+        class="topmenu-container"
     />
 
     <div class="right-menu flex align-center">
       <template>
         <!-- 消息 -->
         <el-tooltip
-          content="消息"
-          effect="dark"
-          placement="bottom"
+            content="消息"
+            effect="dark"
+            placement="bottom"
         >
           <div>
             <el-popover
-              :persistent="false"
-              :width="300"
-              placement="bottom"
-              transition="el-zoom-in-top"
-              trigger="click"
+                :persistent="false"
+                :width="300"
+                placement="bottom"
+                transition="el-zoom-in-top"
+                trigger="click"
             >
               <template #reference>
                 <el-badge
-                  :max="99"
-                  :value="newNotice > 0 ? newNotice : ''"
+                    :max="99"
+                    :value="newNotice > 0 ? newNotice : ''"
                 >
-                  <svg-icon icon-class="message" />
+                  <svg-icon icon-class="message"/>
                 </el-badge>
               </template>
               <template #default>
-                <notice />
+                <notice/>
               </template>
             </el-popover>
           </div>
         </el-tooltip>
 
         <el-tooltip
-          content="全屏"
-          effect="dark"
-          placement="bottom"
+            content="全屏"
+            effect="dark"
+            placement="bottom"
         >
           <screen-full
-            id="screenfull"
-            class="right-menu-item hover-effect"
+              id="screenfull"
+              class="right-menu-item hover-effect"
           />
         </el-tooltip>
 
         <el-tooltip
-          content="布局大小"
-          effect="dark"
-          placement="bottom"
+            content="布局大小"
+            effect="dark"
+            placement="bottom"
         >
           <size-select
-            id="size-select"
-            class="right-menu-item hover-effect"
+              id="size-select"
+              class="right-menu-item hover-effect"
           />
         </el-tooltip>
       </template>
       <div class="avatar-container">
         <el-dropdown
-          class="right-menu-item hover-effect"
-          trigger="click"
-          @command="handleCommand"
+            class="right-menu-item hover-effect"
+            trigger="click"
+            @command="handleCommand"
         >
           <div class="avatar-wrapper">
             <img
-              :src="userStore.avatar"
-              alt="头像"
-              class="user-avatar"
+                :src="userStore.avatar"
+                alt="头像"
+                class="user-avatar"
             >
             <el-icon>
-              <caret-bottom />
+              <caret-bottom/>
             </el-icon>
           </div>
           <template #dropdown>
@@ -92,14 +92,14 @@
                 <el-dropdown-item>个人中心</el-dropdown-item>
               </router-link>
               <el-dropdown-item
-                v-if="settingsStore.showSettings"
-                command="setLayout"
+                  v-if="settingsStore.showSettings"
+                  command="setLayout"
               >
                 <span>布局设置</span>
               </el-dropdown-item>
               <el-dropdown-item
-                command="logout"
-                divided
+                  command="logout"
+                  divided
               >
                 <span>退出登录</span>
               </el-dropdown-item>
@@ -118,13 +118,13 @@ import useSettingsStore from '@/store/settings'
 import useNoticeStore from '@/store/notice'
 import notice from './Notice.vue'
 import SvgIcon from '@/components/SvgIcon.vue'
-import { CaretBottom } from '@element-plus/icons-vue'
+import {CaretBottom} from '@element-plus/icons-vue'
 import ScreenFull from '@/components/ScreenFull.vue'
 import SizeSelect from '@/components/SizeSelect.vue'
 import Hamburger from '@/components/Hamburger.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 import TopNav from '@/components/TopNav.vue'
-import { ElMessageBox } from 'element-plus'
+import {ElMessageBox} from 'element-plus'
 
 const appStore = useAppStore()
 const userStore = useUserStore()
@@ -165,11 +165,11 @@ const handleCommand = (command) => {
 }
 //用深度监听 消息
 watch(
-  () => noticeStore.state.value.notices,
-  (newVal) => {
-    newNotice.value = newVal.filter((item) => !item.read).length
-  },
-  { deep: true }
+    () => noticeStore.state.value.notices,
+    (newVal) => {
+      newNotice.value = newVal.filter((item) => !item.read).length
+    },
+    {deep: true}
 )
 </script>
 

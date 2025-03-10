@@ -1,25 +1,30 @@
+// ElementPlus
 import ElementPlus from 'element-plus'
-import { createApp } from 'vue'
 
-import { createRouter, createWebHistory } from 'vue-router'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
-import { routes } from 'vue-router/auto-routes'
+import {createApp} from 'vue'
 import App from './App.vue'
-
-import '~/styles/element/index.scss'
-
-import 'element-plus/dist/index.css'
-import '~/styles/index.scss'
-import 'uno.css'
-
-// If you want to use ElMessage, import it.
-import 'element-plus/theme-chalk/src/message.scss'
-import 'element-plus/theme-chalk/src/message-box.scss'
+import '@/styles/index.scss'
+// unocss
+import 'virtual:uno.css'
+import 'uno:icons.css'
+// dayjs
+import 'dayjs/locale/zh-cn'
 
 const app = createApp(App)
-app.use(createRouter({
-  history: createWebHistory(),
-  routes,
-}))
-app.use(ElementPlus)
+app.use(createPinia())
+
+app.use(router)
+
+app.use(ElementPlus, {
+  locale: zhCn,
+  button: {
+    autoInsertSpace: true,
+  },
+  message: {
+    max: 5,
+    showClose: true,
+  },
+})
 app.mount('#app')

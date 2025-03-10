@@ -2,9 +2,9 @@
   <!-- 代码构建 -->
   <div>
     <v-form-designer
-      ref="buildRef"
-      :designer-config="{ importJsonButton: true, exportJsonButton: true, exportCodeButton: true, generateSFCButton: true, formTemplates: true }"
-      class="build"
+        ref="buildRef"
+        :designer-config="{ importJsonButton: true, exportJsonButton: true, exportCodeButton: true, generateSFCButton: true, formTemplates: true }"
+        class="build"
     >
       <template v-if="showBtn" #customToolButtons>
         <el-button icon="Select" link type="primary" @click="getJson">保存</el-button>
@@ -13,31 +13,31 @@
   </div>
 </template>
 
-<script  setup>
+<script setup>
 const props = withDefaults(defineProps(), {
   showBtn: true,
   formJson: ''
-});
+})
 
-const buildRef = ref();
-const emits = defineEmits(['reJson', 'saveDesign']);
+const buildRef = ref()
+const emits = defineEmits(['reJson', 'saveDesign'])
 
 //获取表单json
 const getJson = () => {
-  const formJson = JSON.stringify(buildRef.value.getFormJson());
-  const fieldJson = JSON.stringify(buildRef.value.getFieldWidgets());
+  const formJson = JSON.stringify(buildRef.value.getFormJson())
+  const fieldJson = JSON.stringify(buildRef.value.getFieldWidgets())
   let data = {
     formJson,
     fieldJson
-  };
-  emits('saveDesign', data);
-};
+  }
+  emits('saveDesign', data)
+}
 
 onMounted(() => {
   if (props.formJson) {
-    buildRef.value.setFormJson(props.formJson);
+    buildRef.value.setFormJson(props.formJson)
   }
-});
+})
 </script>
 
 <style lang="scss">

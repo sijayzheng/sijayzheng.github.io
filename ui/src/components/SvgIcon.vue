@@ -1,11 +1,11 @@
 <template>
   <svg
-    :class="svgClass"
-    aria-hidden="true"
+      :class="svgClass"
+      aria-hidden="true"
   >
     <use
-      :fill="color"
-      :xlink:href="iconName"
+        :fill="color"
+        :xlink:href="iconName"
     />
   </svg>
 </template>

@@ -172,7 +172,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是在过去
 
-###      
+###        
 
 检查该字段的 size 是否在 min 和 max 之间,可以是字符串、数组、集合、Map 等
 
@@ -565,7 +565,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是在过去
 
-###   
+###     
 
 检查该字段的 size 是否在 min 和 max 之间,可以是字符串、数组、集合、Map 等
 

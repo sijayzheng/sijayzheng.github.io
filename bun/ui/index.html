@@ -1,18 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <link href="/favicon.ico" rel="icon" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Element Plus Vite Starter</title>
-  <!-- element css cdn, if you use custom theme, remove it. -->
-  <!-- <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/element-plus/dist/index.css"
-  /> -->
+    <meta charset="UTF-8"/>
+    <link href="/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vite App</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="src/styles/animation.css" rel="stylesheet"/>
+    <style>
+        html,
+        body,
+        #app {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 6px solid #30b08f;
+            animation: loding1 0.8s infinite linear alternate,
+            loding2 1.6s infinite linear;
+        }
+
+        .loader-title {
+            font-size: 1.5rem;
+        }
+
+        .dot-solid,
+        .dot-blank {
+            position: relative;
+            animation-name: dance;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+        .dot-solid {
+            animation-direction: alternate;
+        }
+
+        .dot-blank {
+            animation-direction: alternate-reverse;
+        }
+    </style>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loader-title">
+            <span>加载中</span>
+            <span class="dot-solid">▪</span>
+            <span class="dot-blank">▫</span>
+            <span class="dot-solid">▪</span>
+            <span class="dot-blank">▫</span>
+            <span class="dot-solid">▪</span>
+            <span class="dot-blank">▫</span>
+        </div>
+    </div>
+</div>
 <script src="/src/main.ts" type="module"></script>
 </body>
 </html>

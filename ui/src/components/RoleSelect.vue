@@ -1,59 +1,59 @@
 <template>
   <div>
     <el-dialog
-      v-model="roleDialog.visible.value"
-      :title="roleDialog.title.value"
-      append-to-body
-      width="80%"
+        v-model="roleDialog.visible.value"
+        :title="roleDialog.title.value"
+        append-to-body
+        width="80%"
     >
       <transition
-        :enter-active-class="animateUtil.searchAnimate.enter"
-        :leave-active-class="animateUtil.searchAnimate.leave"
+          :enter-active-class="animateUtil.searchAnimate.enter"
+          :leave-active-class="animateUtil.searchAnimate.leave"
       >
         <div
-          v-show="showSearch"
-          class="mb-[10px]"
+            v-show="showSearch"
+            class="mb-[10px]"
         >
           <el-card shadow="hover">
             <el-form
-              ref="queryFormRef"
-              :inline="true"
-              :model="queryParams"
+                ref="queryFormRef"
+                :inline="true"
+                :model="queryParams"
             >
               <el-form-item
-                label="角色名称"
-                prop="roleName"
+                  label="角色名称"
+                  prop="roleName"
               >
                 <el-input
-                  v-model="queryParams.roleName"
-                  clearable
-                  placeholder="请输入角色名称"
-                  @keyup.enter="handleQuery"
+                    v-model="queryParams.roleName"
+                    clearable
+                    placeholder="请输入角色名称"
+                    @keyup.enter="handleQuery"
                 />
               </el-form-item>
               <el-form-item
-                label="权限字符"
-                prop="roleKey"
+                  label="权限字符"
+                  prop="roleKey"
               >
                 <el-input
-                  v-model="queryParams.roleKey"
-                  clearable
-                  placeholder="请输入权限字符"
-                  @keyup.enter="handleQuery"
+                    v-model="queryParams.roleKey"
+                    clearable
+                    placeholder="请输入权限字符"
+                    @keyup.enter="handleQuery"
                 />
               </el-form-item>
 
               <el-form-item>
                 <el-button
-                  icon="Search"
-                  type="primary"
-                  @click="handleQuery"
+                    icon="Search"
+                    type="primary"
+                    @click="handleQuery"
                 >
                   搜索
                 </el-button>
                 <el-button
-                  icon="Refresh"
-                  @click="resetQuery"
+                    icon="Refresh"
+                    @click="resetQuery"
                 >
                   重置
                 </el-button>
@@ -66,68 +66,68 @@
       <el-card shadow="hover">
         <template #header>
           <el-tag
-            v-for="role in selectRoleList"
-            :key="role.roleId"
-            closable
-            style="margin: 2px"
-            @close="handleCloseTag(role)"
+              v-for="role in selectRoleList"
+              :key="role.roleId"
+              closable
+              style="margin: 2px"
+              @close="handleCloseTag(role)"
           >
             {{ role.roleName }}
           </el-tag>
         </template>
 
         <vxe-table
-          ref="tableRef"
-          :checkbox-config="{ reserve: true, checkRowKeys: defaultSelectRoleIds }"
-          :data="roleList"
-          :loading="loading"
-          :row-config="{ keyField: 'roleId' }"
-          border
-          height="400px"
-          highlight-current-row
-          show-overflow
-          @checkbox-all="handleCheckboxAll"
-          @checkbox-change="handleCheckboxChange"
+            ref="tableRef"
+            :checkbox-config="{ reserve: true, checkRowKeys: defaultSelectRoleIds }"
+            :data="roleList"
+            :loading="loading"
+            :row-config="{ keyField: 'roleId' }"
+            border
+            height="400px"
+            highlight-current-row
+            show-overflow
+            @checkbox-all="handleCheckboxAll"
+            @checkbox-change="handleCheckboxChange"
         >
           <vxe-column
-            align="center"
-            type="checkbox"
-            width="50"
+              align="center"
+              type="checkbox"
+              width="50"
           />
           <vxe-column
-            v-if="false"
-            key="roleId"
-            label="角色编号"
+              v-if="false"
+              key="roleId"
+              label="角色编号"
           />
           <vxe-column
-            field="roleName"
-            title="角色名称"
+              field="roleName"
+              title="角色名称"
           />
           <vxe-column
-            field="roleKey"
-            title="权限字符"
+              field="roleKey"
+              title="权限字符"
           />
           <vxe-column
-            field="roleSort"
-            title="显示顺序"
-            width="100"
+              field="roleSort"
+              title="显示顺序"
+              width="100"
           />
           <vxe-column
-            align="center"
-            title="状态"
-            width="100"
+              align="center"
+              title="状态"
+              width="100"
           >
             <template #default="scope">
               <dict-tag
-                :options="sys_normal_disable"
-                :value="scope.row.status"
+                  :options="sys_normal_disable"
+                  :value="scope.row.status"
               />
             </template>
           </vxe-column>
           <vxe-column
-            align="center"
-            field="createTime"
-            title="创建时间"
+              align="center"
+              field="createTime"
+              title="创建时间"
           >
             <template #default="scope">
               <span>{{ parseTime(scope.row.createTime) }}</span>
@@ -136,11 +136,11 @@
         </vxe-table>
 
         <pagination
-          v-if="total > 0"
-          v-model:limit="queryParams.pageSize"
-          v-model:page="queryParams.pageNum"
-          v-model:total="total"
-          @pagination="pageList"
+            v-if="total > 0"
+            v-model:limit="queryParams.pageSize"
+            v-model:page="queryParams.pageNum"
+            v-model:total="total"
+            @pagination="pageList"
         />
       </el-card>
       <template #footer>
@@ -148,8 +148,8 @@
           取消
         </el-button>
         <el-button
-          type="primary"
-          @click="confirm"
+            type="primary"
+            @click="confirm"
         >
           确定
         </el-button>
@@ -170,8 +170,8 @@ const prop = withDefaults(defineProps(), {
 const emit = defineEmits(['update:modelValue', 'confirmCallBack'])
 
 const router = useRouter()
-const { proxy } = getCurrentInstance()
-const { sys_normal_disable } = toRefs(proxy?.useDict('sys_normal_disable'))
+const {proxy} = getCurrentInstance()
+const {sys_normal_disable} = toRefs(proxy?.useDict('sys_normal_disable'))
 
 const roleList = ref()
 const loading = ref(true)
@@ -291,7 +291,7 @@ const handleCloseTag = (user) => {
  */
 const initSelectRole = async () => {
   if (defaultSelectRoleIds.value.length > 0) {
-    const { data } = await api.optionSelect(defaultSelectRoleIds.value)
+    const {data} = await api.optionSelect(defaultSelectRoleIds.value)
     selectRoleList.value = data
     const users = roleList.value.filter((item) => {
       return defaultSelectRoleIds.value.includes(String(item.roleId))
@@ -305,17 +305,17 @@ const close = () => {
   roleDialog.closeDialog()
 }
 watch(
-  () => roleDialog.visible.value,
-  (newValue) => {
-    if (newValue) {
-      initSelectRole()
-    } else {
-      tableRef.value.clearCheckboxReserve()
-      tableRef.value.clearCheckboxRow()
-      resetQuery()
-      selectRoleList.value = []
+    () => roleDialog.visible.value,
+    (newValue) => {
+      if (newValue) {
+        initSelectRole()
+      } else {
+        tableRef.value.clearCheckboxReserve()
+        tableRef.value.clearCheckboxRow()
+        resetQuery()
+        selectRoleList.value = []
+      }
     }
-  }
 )
 onMounted(() => {
   getList() // 初始化列表数据
