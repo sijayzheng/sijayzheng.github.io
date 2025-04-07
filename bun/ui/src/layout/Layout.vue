@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import logo from '@/assets/logo.png'
-import {toggleDark} from '@/composables/dark'
+import { toggleDark } from '@/composables/dark'
 
 const settingStore = useSettingStore()
 const permissionStore = usePermissionStore()
@@ -38,7 +37,7 @@ function csize() {
           <div v-for="item in permissionStore.routes" :key="item.name">
             {{ item.name }}
           </div>
-          <el-menu :default-active="activeMenu" unique-opened/>
+          <el-menu :default-active="activeMenu" unique-opened />
         </el-scrollbar>
       </div>
     </el-aside>
@@ -54,21 +53,15 @@ function csize() {
           切换size
         </el-button>
         <el-button type="primary" @click="toggleDark">
-          <span
-            dark:i-ri-moon-line
-            i-ri-sun-line
-            icon-btn
-          />
+          <span dark:i-ri-moon-line i-ri-sun-line icon-btn />
         </el-button>
       </el-header>
       <el-main>
         main
-        <router-view/>
+        <router-view />
       </el-main>
     </el-container>
   </el-container>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
