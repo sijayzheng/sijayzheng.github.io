@@ -1,6 +1,7 @@
 ## 收藏的网站
 
-- [阿 B](http://www.bilibili.com/)
+- [jb](https://www.jetbrains.com/shop/eform/opensource?product=ALL)
+- [Bili](http://www.bilibili.com/)
 - [开发速查](https://devhints.io/)
 - [Maven](https://central.sonatype.com/)
 - [GayHub](https://github.com/)
