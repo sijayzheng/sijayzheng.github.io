@@ -19,7 +19,7 @@ import java.io.Serializable;
  * 代码生成表定义
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-01
  */
 @AllArgsConstructor

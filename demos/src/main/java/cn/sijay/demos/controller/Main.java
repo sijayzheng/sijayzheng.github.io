@@ -6,7 +6,7 @@ package cn.sijay.demos.controller;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-12-13
  */
 public class Main {

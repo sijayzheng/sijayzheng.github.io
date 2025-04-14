@@ -14,7 +14,7 @@ import java.util.HashSet;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-23
  */
 public class Main {

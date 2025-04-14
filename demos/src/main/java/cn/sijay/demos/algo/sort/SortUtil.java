@@ -10,7 +10,7 @@ import java.util.*;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-11
  */
 public class SortUtil {

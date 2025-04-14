@@ -16,7 +16,7 @@ import java.math.BigDecimal;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-21
  */
 public class ExcelBigNumberConvert implements Converter<Long> {

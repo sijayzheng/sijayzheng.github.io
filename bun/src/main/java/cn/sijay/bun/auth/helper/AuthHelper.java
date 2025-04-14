@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-12-04
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

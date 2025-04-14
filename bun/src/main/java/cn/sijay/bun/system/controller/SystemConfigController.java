@@ -21,7 +21,7 @@ import java.util.List;
  * 系统配置
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-11
  */
 @RequiredArgsConstructor

@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-01
  */
 @SpringBootTest(classes = BunApplication.class)

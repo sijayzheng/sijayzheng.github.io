@@ -14,7 +14,7 @@ import java.util.Optional;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-07
  */
 @Data

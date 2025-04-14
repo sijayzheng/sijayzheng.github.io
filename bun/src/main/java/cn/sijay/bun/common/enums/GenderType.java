@@ -9,7 +9,7 @@ import lombok.Getter;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-14
  */
 @Getter

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
  * 系统模块
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-11
  */
 public interface SystemModuleRepository extends JpaRepositoryImplementation<SystemModule, Long> {

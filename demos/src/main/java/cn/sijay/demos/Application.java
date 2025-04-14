@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-10-23
  */
 @EnableJpaRepositories

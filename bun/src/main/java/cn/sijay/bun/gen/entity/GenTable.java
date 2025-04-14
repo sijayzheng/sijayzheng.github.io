@@ -18,7 +18,7 @@ import java.util.List;
  * 代码生成列定义
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-01
  */
 @AllArgsConstructor

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-21
  */
 @Slf4j

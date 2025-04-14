@@ -12,7 +12,7 @@ import java.util.function.Function;
  * 可序列化的Function
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-12-11
  */
 @FunctionalInterface

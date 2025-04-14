@@ -23,7 +23,7 @@ import java.util.Objects;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-20
  */
 public class PdfUtil {

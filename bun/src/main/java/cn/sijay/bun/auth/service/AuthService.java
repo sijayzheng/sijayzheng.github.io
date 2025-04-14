@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-12-03
  */
 @RequiredArgsConstructor

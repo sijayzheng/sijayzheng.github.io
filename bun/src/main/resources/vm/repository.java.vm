@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
  * ${classComment}
  * </p>
  *
- * @author ${author}
+ * @author Sijay
  * @since ${date}
  */
 public interface ${className}Repository extends JpaRepositoryImplementation<${className}, Long> {

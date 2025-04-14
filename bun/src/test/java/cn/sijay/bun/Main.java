@@ -6,7 +6,7 @@ package cn.sijay.bun;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-06
  */
 public class Main {

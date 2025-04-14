@@ -23,7 +23,7 @@ import java.util.List;
  * 系统字典
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-11
  */
 @Slf4j

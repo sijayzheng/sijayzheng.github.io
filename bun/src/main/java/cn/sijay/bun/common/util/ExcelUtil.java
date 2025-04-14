@@ -32,7 +32,7 @@ import java.util.*;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-20
  */
 @Slf4j

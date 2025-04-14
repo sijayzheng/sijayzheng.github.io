@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-01
  */
 @RequiredArgsConstructor

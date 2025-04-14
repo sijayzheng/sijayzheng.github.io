@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-15
  */
 public class BaseController {

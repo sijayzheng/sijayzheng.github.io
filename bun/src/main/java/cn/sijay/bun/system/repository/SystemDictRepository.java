@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
  * 系统字典
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-11
  */
 public interface SystemDictRepository extends JpaRepositoryImplementation<SystemDict, Long> {

@@ -10,7 +10,7 @@ import com.alibaba.excel.read.metadata.ReadSheet;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-06
  */
 public class ExcelUtil {

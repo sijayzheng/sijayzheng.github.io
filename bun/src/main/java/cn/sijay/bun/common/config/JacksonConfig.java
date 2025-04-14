@@ -34,7 +34,7 @@ import java.util.TimeZone;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-15
  */
 @Slf4j

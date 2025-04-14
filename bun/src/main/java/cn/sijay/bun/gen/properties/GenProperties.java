@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-08
  */
 @Data

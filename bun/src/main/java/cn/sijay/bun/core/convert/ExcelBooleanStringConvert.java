@@ -13,7 +13,7 @@ import com.alibaba.excel.metadata.property.ExcelContentProperty;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-21
  */
 public class ExcelBooleanStringConvert implements Converter<Boolean> {

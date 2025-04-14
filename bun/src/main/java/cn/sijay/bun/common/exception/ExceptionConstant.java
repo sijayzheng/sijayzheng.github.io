@@ -6,7 +6,7 @@ package cn.sijay.bun.common.exception;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-07
  */
 public interface ExceptionConstant {

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
  * 系统权限
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-11-11
  */
 public interface SystemRoleRepository extends JpaRepositoryImplementation<SystemRole, Long> {
