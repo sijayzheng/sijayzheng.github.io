@@ -9,7 +9,7 @@ import java.util.Map;
  * 继承该接口以进行数据翻译
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 public interface ITrans {

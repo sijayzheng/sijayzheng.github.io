@@ -18,7 +18,7 @@ import java.util.Objects;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 public interface BaseService<T> {

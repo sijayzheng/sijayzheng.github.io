@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  * 菜单服务层实现类
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Slf4j

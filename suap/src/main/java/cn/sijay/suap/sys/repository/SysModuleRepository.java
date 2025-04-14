@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * 模块数据层
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Repository

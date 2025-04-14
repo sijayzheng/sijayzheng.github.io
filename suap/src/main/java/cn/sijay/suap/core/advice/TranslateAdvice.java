@@ -35,7 +35,7 @@ import java.util.*;
  * 拦截返回数据进行翻译
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Slf4j

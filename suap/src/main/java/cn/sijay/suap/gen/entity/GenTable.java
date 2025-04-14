@@ -17,7 +17,7 @@ import java.util.Set;
  * 表信息
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @AllArgsConstructor

@@ -25,7 +25,7 @@ import java.util.List;
  * 菜单
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @AllArgsConstructor

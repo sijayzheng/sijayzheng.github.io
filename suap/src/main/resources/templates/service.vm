@@ -8,53 +8,54 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 /**
- * <strong>I${className}Service</strong>
- * <p>
- * ${functionName}服务层
- * </p>
- *
- * @author ${author}
- * @since ${createTime}
- */
+* <strong>I${className}Service</strong>
+* <p>
+    * ${functionName}服务层
+    * </p>
+*
+* @author Sijay
+* @since ${createTime}
+*/
 public interface I${className}Service {
 #if(${isTree})
-    /**
-     * 查询所有数据
-     */
-    List<${className}> listTree(${className} ${businessName});
+/**
+* 查询所有数据
+*/
+List<${className}> listTree(${className} ${businessName});
 
 #else
-    /**
-     * 分页查询
-     */
-    Page<${className}> page(${className} ${businessName}, PageQuery pageQuery);
+/**
+* 分页查询
+*/
+Page<${className}> page(${className} ${businessName}, PageQuery pageQuery);
 
 #end
-    /**
-     * 查询所有数据
-     */
-    List<${className}> list(${className} ${businessName});
+/**
+* 查询所有数据
+*/
+List<${className}> list(${className} ${businessName});
 
-    /**
-     * 根据id查询数据
-     */
-    ${className} getById(Long id);
+/**
+* 根据id查询数据
+*/
+${className} getById(Long id);
 
-    /**
-     * 保存，数据库中存在对应主键值时更新，否则新增
-     */
-    void save(${className} ${businessName});
+/**
+* 保存，数据库中存在对应主键值时更新，否则新增
+*/
+void save(${className} ${businessName});
 
-    /**
-     * 删除
-     */
-    void remove(List<Long> ids);
+/**
+* 删除
+*/
+void remove(List
+<Long> ids);
 
-#if(!${isTree})
-    /**
-     * 导入
-     */
-    void importData(MultipartFile file);
+    #if(!${isTree})
+        /**
+        * 导入
+        */
+        void importData(MultipartFile file);
 
-#end
-}
+    #end
+    }

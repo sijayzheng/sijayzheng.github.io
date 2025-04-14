@@ -13,7 +13,7 @@ import java.util.List;
  * 模块服务层
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 public interface ISysModuleService {

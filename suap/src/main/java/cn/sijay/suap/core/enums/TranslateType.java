@@ -9,7 +9,7 @@ import lombok.Getter;
  * 翻译类型
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @AllArgsConstructor

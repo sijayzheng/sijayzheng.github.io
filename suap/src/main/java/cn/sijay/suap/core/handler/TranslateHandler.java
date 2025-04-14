@@ -28,7 +28,7 @@ import static cn.sijay.suap.core.constant.Constants.REDIS_PREFIX_TRANS;
  * 翻译服务
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Slf4j

@@ -25,7 +25,7 @@ import static cn.sijay.suap.core.constant.Constants.WEB_SOCKET_TOPIC;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Slf4j

@@ -10,29 +10,30 @@ import ${import};
 #end
 
 /**
- * <strong>${className}Repository</strong>
- * <p>
- * ${functionName}数据层
- * </p>
- *
- * @author ${author}
- * @since ${createTime}
- */
+* <strong>${className}Repository</strong>
+* <p>
+    * ${functionName}数据层
+    * </p>
+*
+* @author Sijay
+* @since ${createTime}
+*/
 @Repository
 public interface ${className}Repository extends JpaRepositoryImplementation<${className}, ${primaryKey.javaType}> {
 
 #if(${isTree})
-    boolean existsByParentIdIn(List<Long> parentIds);
+boolean existsByParentIdIn(List
+<Long> parentIds);
 #end
 
 #set($pkName=${primaryKey.fieldName.substring(0,1).toUpperCase()} + ${primaryKey.fieldName.substring(1)})
 #foreach($field in $fields)
-  #if(${field.columnKey} == 'UNI')
-  #set($upperName=${field.fieldName.substring(0,1).toUpperCase()} + ${field.fieldName.substring(1)})
-    boolean existsBy${upperName}(${field.javaType} ${field.fieldName});
+    #if(${field.columnKey} == 'UNI')
+        #set($upperName=${field.fieldName.substring(0,1).toUpperCase()} + ${field.fieldName.substring(1)})
+        boolean existsBy${upperName}(${field.javaType} ${field.fieldName});
 
-    boolean existsBy${upperName}And${pkName}(${field.javaType} ${field.fieldName}, ${primaryKey.javaType} ${primaryKey.fieldName});
-    
-  #end
+        boolean existsBy${upperName}And${pkName}(${field.javaType} ${field.fieldName}, ${primaryKey.javaType} ${primaryKey.fieldName});
+
+    #end
 #end
-}
+    }

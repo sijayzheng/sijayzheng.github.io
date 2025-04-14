@@ -24,14 +24,14 @@ import ${import};
 #end
 
 /**
- * <strong>${className}</strong>
- * <p>
- * ${functionName}
- * </p>
- *
- * @author ${author}
- * @since ${createTime}
- */
+* <strong>${className}</strong>
+* <p>
+    * ${functionName}
+    * </p>
+*
+* @author Sijay
+* @since ${createTime}
+*/
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -44,14 +44,14 @@ import ${import};
 @Table(name = "${tableName}")
 public class ${className} implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
+@Serial
+private static final long serialVersionUID = 1L;
 
 #set($excelSort=0)
 #foreach($field in $fields)
-    /**
-     * ${field.columnComment}
-     */
+/**
+* ${field.columnComment}
+*/
     #if(${field.visible})
     @JsonIgnoreProperties
     #end
@@ -69,7 +69,7 @@ public class ${className} implements Serializable {
     #end
     #if(${field.excelColumn})
     @ExcelProperty(value = "${field.columnComment}", order = $excelSort)
-    #set($excelSort=$excelSort+1)
+        #set($excelSort=$excelSort+1)
     #end
     #if(${field.columnName}=='create_by')
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
@@ -86,29 +86,31 @@ public class ${className} implements Serializable {
     #else
     @Schema(title = "${field.columnComment}")
     #end
-    @Column(name = "${field.columnName}"#if(${field.length}), length = ${field.length}#end#if(!${field.nullable}&&${field.columnName}!='id'), nullable = false#end)
-    private #if(${field.javaType}=='List'||${field.javaType}=='Map'||${field.javaType}=='Set')${field.javaType}<Long>#else${field.javaType}#end ${field.fieldName};
+@Column(name = "${field.columnName}"#if(${field.length}), length = ${field.length}#end#if(!${field.nullable}&&${field.columnName}!=
+    'id'), nullable = false#end)
+private #if(${field.javaType}=='List'||${field.javaType}=='Map'||${field.javaType}=='Set')${field.javaType}
+<Long>#else${field.javaType}#end ${field.fieldName};
 
 #end
 #foreach($field in $fields)
-  #if(${field.queryable}&&${field.queryType}=='between')
-    /**
-     * ${field.columnComment}开始
-     */
-    private transient ${field.javaType} ${field.fieldName}Start;
+    #if(${field.queryable}&&${field.queryType}=='between')
+        /**
+        * ${field.columnComment}开始
+        */
+        private transient ${field.javaType} ${field.fieldName}Start;
 
-    /**
-     * ${field.columnComment}结束
-     */
-    private transient ${field.javaType} ${field.fieldName}End;
+        /**
+        * ${field.columnComment}结束
+        */
+        private transient ${field.javaType} ${field.fieldName}End;
 
-  #end
+    #end
 #end
 
 #if(${isTree})
     /**
-     * 子节点
-     */
+    * 子节点
+    */
     private transient List<${className}> children;
 #end
-}
+    }

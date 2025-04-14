@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Data

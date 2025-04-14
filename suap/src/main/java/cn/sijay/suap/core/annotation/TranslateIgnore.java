@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 用于controller中的方法上，禁用翻译
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Retention(RetentionPolicy.RUNTIME)

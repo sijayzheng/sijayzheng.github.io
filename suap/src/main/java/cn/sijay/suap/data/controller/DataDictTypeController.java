@@ -23,7 +23,7 @@ import java.util.List;
  * 数据字典类型控制层
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Tag(name = "数据字典类型")

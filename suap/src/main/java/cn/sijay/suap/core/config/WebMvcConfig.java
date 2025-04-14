@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-09-13
  */
 @Configuration

@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  * 数据字典项
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @AllArgsConstructor

@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
  * 类信息
  * </p>
  *
- * @author sijay
+ * @author Sijay
  * @since 2024-07-18
  */
 @Slf4j
