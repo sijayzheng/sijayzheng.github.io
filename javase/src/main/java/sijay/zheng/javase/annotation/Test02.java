@@ -3,7 +3,7 @@ package sijay.zheng.javase.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author sijay
+ * @author Sijay
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(value = RetentionPolicy.RUNTIME)
