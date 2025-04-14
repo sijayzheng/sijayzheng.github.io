@@ -1,0 +1,43 @@
+/**
+ * ${classComment}定义
+ */
+export interface ${ClassName} #if(${superEntityClass})extends ${superEntityClass} {#end
+#foreach(${column} in ${columns})
+  ${column.javaField}?: ${column.javaType.tsType}
+#end
+}
+
+/**
+ * ${classComment}接口
+ */
+export const ${className}Api = {
+  // 查询${classComment}
+  getById(id: ${pkColumn.javaType.tsType}): AxiosPromise<${ClassName}> {
+    return request({ url: '/${className}/getById', method: 'get', params: { id } })
+  },
+  // 分页查询${classComment}列表
+  page(params: ${ClassName}): AxiosPromise<${ClassName}> {
+    return request({ url: '/${className}/page', method: 'get', params })
+  },
+  // 查询${classComment}列表
+  list(params: ${ClassName}): AxiosPromise<${ClassName}> {
+    return request({ url: '/${className}/list', method: 'get', params })
+  },
+  // 保存${classComment}
+  save(data: ${ClassName}): AxiosPromise<${ClassName}> {
+    return request({ url: '/${className}/save', method: 'post', data })
+  },
+  // 批量删除${classComment}信息
+  remove(data: ${pkColumn.javaType.tsType}[]): AxiosPromise<${ClassName}> {
+    return request({ url: '/${className}/remove', method: 'delete', data })
+  },
+  // 导出${classComment}
+  exportData(data: ${ClassName}) {
+    download('/${className}/export', data, `${classComment}_￥{getNowDate('_')}.xlsx`)
+  },
+  // 获取${classComment}导入模板
+  downloadTemplate() {
+    downloadTemplate('/${className}/downloadTemplate', `${classComment}_模板_￥{getNowDate('_')}.xlsx`)
+  },
+  importUrl: '/${className}/importData',
+}

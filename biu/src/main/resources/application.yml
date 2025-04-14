@@ -1,0 +1,125 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: biu
+    version: 0.0.1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/biu
+    username: root
+    password: root
+    name: biu
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 6
+      #      password:
+      lettuce:
+        pool:
+          # 连接池最大连接数（使用负值表示没有限制）column_key
+          max-active: 8
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 8
+          # 连接池中的最小空闲连接
+          min-idle: 0
+      # 连接超时时间（毫秒）
+      timeout: 3000ms
+      repositories:
+        enabled: false
+  jpa:
+    open-in-view: true
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  main:
+    banner-mode: off
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+    serialization:
+      fail-on-empty-beans: false
+    date-format: yyyy-MM-dd HH:mm:ss
+
+logging:
+  level:
+    org.hibernate: warn
+    com.zaxxer.hikari: warn
+  pattern:
+    console: "%red(%d{HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger%n) - %msg%n"
+
+decorator:
+  datasource:
+    p6spy:
+      log-format: '%(sqlSingleLine)'
+
+springdoc:
+  api-docs:
+    enabled: true
+  info:
+    title: '标题：${spring.application.name}_接口文档'
+    description: '描述：……'
+    version: '版本号: ${spring.application.version}'
+    contact:
+      name: sj
+      email: sj@163.com
+      url: http://baidu.com
+#  components:
+#    # 鉴权方式配置
+#    security-schemes:
+#      apiKey:
+#        type: APIKEY
+#        in: HEADER
+#        name: ${sa-token.token-name}
+
+sa-token:
+  # 允许动态设置 token 有效期
+  dynamic-active-timeout: true
+  # 允许从 请求参数 读取 token
+  is-read-body: true
+  # 允许从 header 读取 token
+  is-read-header: true
+  # 关闭 cookie 鉴权 从根源杜绝 csrf 漏洞风险
+  is-read-cookie: false
+  # token前缀
+  token-prefix: "Bearer"
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # jwt秘钥
+  jwt-secret-key: abcdefghijklmnopqrstuvwxyz
+  is-print: false
+  active-timeout: -1
+  timeout: -1
+
+gen:
+  #作者
+  author: sijay
+  #生成包路径
+  packageName: cn.sijay.biu
+
+config:
+  user:
+    password:
+      maxRetryCount: 5
+      lockTime: 10
+  captcha:
+    enable: false
+    expire: 30
+  sse:
+    enabled: true
+    path: /resource/sse
+  xss:
+    enabled: true
+    excludeUrls:
+      - a
+      - b
+
+

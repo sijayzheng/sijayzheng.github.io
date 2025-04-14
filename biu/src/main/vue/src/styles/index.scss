@@ -1,0 +1,94 @@
+@use 'loading';
+@use 'variables.module';
+
+:root {
+  font-size: 16px;
+}
+
+html,
+body,
+#app,
+.layout {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .el-container {
+    .el-header {
+      height: 50px;
+    }
+
+    .el-main {
+      height: calc(100vh - 50px);
+      padding: 5px 10px 5px 10px;
+    }
+  }
+}
+
+.dark {
+  color-scheme: dark;
+  background: #080808;
+  color: white;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2147483646;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 2147483646;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+
+a {
+  color: variables.$color-primary;
+  text-decoration: none;
+}
+
+.layout {
+  .sys-logo {
+    display: flex;
+    line-height: 48px;
+    justify-content: center;
+    height: 48px;
+    font-size: 28px;
+  }
+
+  .sys-menu {
+    height: calc(100vh - 48px);
+  }
+
+  .menu-expand {
+
+  }
+}
+
+.el-card__body {
+  padding: 0.5rem !important;
+}
+
+.main-search {
+  margin-bottom: 0.5rem;
+}
+
+.main-display {
+}
+
+.main-pagination {
+  margin-top: 0.5rem;
+}

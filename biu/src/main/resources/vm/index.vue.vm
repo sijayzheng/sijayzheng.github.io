@@ -1,0 +1,441 @@
+<template>
+  <el-card class="main-search" shadow="hover">
+    <el-form ref="queryFormRef" :model="queryForm" inline>
+#foreach($column in $columns)
+  #if(${column.queryable}&&${column.queryType}!="NONE")
+    #if(${column.queryType}=="BETWEEN")
+      #if(${column.htmlType}=="DATE_PICKER")
+        <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+          <el-date-picker v-model="queryForm.${column.javaField}Range" placeholder="选择${column.javaField}日期" type="date" />
+        </el-form-item>
+      #elseif(${column.htmlType}=="DATETIME_PICKER")
+        <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+          <el-date-picker v-model="queryForm.${column.javaField}Range" placeholder="选择${column.javaField}时间" type="datetime" />
+        </el-form-item>
+      #elseif(${column.htmlType}=="TIME_PICKER")
+        <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+          <el-time-picker v-model="queryForm.${column.javaField}Range" placeholder="选择${column.javaField}时间" />
+        </el-form-item>
+      #end
+    #else
+      #if(${column.htmlType}=="INPUT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input v-model="queryForm.${column.javaField}" clearable placeholder="请输入${column.columnComment}" />
+      </el-form-item>
+      #elseif(${column.htmlType}=="TEXTAREA")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input v-model="queryForm.${column.javaField}" autosize placeholder="请输入${column.columnComment}" type="textarea" />
+      </el-form-item>
+      #elseif(${column.htmlType}=="INPUT_NUMBER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input-number v-model="queryForm.${column.javaField}" :precision="0" :step="1" />
+      </el-form-item>
+      #elseif(${column.htmlType}=="RADIO")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-radio-group v-model="queryForm.${column.javaField}">
+          <el-radio v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-radio-group>
+      </el-form-item>
+      #elseif(${column.htmlType}=="CHECKBOX")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-checkbox-group v-model="queryForm.${column.javaField}">
+          <el-checkbox v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-checkbox-group>
+      </el-form-item>
+      #elseif(${column.htmlType}=="SELECT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-select v-model="queryForm.${column.javaField}" clearable placeholder="请选择${column.columnComment}">
+          <el-option v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-select>
+      </el-form-item>
+      #elseif(${column.htmlType}=="TREE_SELECT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-tree-select
+                v-model="queryForm.${column.javaField}" :data="${column.javaField}Options" :filter-node-method=" (v, data) => data.label.includes(v)"
+                check-strictly
+        />
+      </el-form-item>
+      #elseif(${column.htmlType}=="DATE_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-date-picker v-model="queryForm.${column.javaField}" placeholder="选择${column.javaField}日期" type="date" />
+      </el-form-item>
+      #elseif(${column.htmlType}=="DATETIME_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-date-picker v-model="queryForm.${column.javaField}" placeholder="选择${column.javaField}时间" type="datetime" />
+      </el-form-item>
+      #elseif(${column.htmlType}=="TIME_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-time-picker v-model="queryForm.${column.javaField}" placeholder="选择${column.javaField}时间" />
+      </el-form-item>
+      #end
+    #end
+  #end
+#end
+      <el-form-item>
+        <el-button icon="search" type="primary" @click="listData">
+          搜索
+        </el-button>
+        <el-button icon="refresh" type="primary" @click="resetQueryForm">
+          重置
+        </el-button>
+      </el-form-item>
+    </el-form>
+  </el-card>
+  <el-card class="main-display" shadow="never">
+    <template #header>
+      <el-row :gutter="10" align="middle" justify="start">
+        <el-button icon="plus" plain type="primary" @click="handleAdd">
+          新增
+        </el-button>
+        <el-button :disabled="selection.length < 1" icon="delete" plain type="danger" @click="handleDelete()">
+          删除
+        </el-button>
+        <el-button icon="upload" plain type="warning" @click="handleImport">
+          导入
+        </el-button>
+        <el-button icon="download" plain type="warning" @click="handleExport">
+          导出
+        </el-button>
+        <!--        <right-toolbar v-model:show-search="showSearch" @query-table="getList" /> -->
+      </el-row>
+    </template>
+    <el-table
+      v-loading="tableDataLoading" :data="tableData" max-height="700px" @sort-change="sorted"
+      @selection-change="(rows) => selection = rows.map(r => r.id)"
+    >
+      <el-table-column align="center" fixed type="selection" width="32" />
+#foreach($column in $columns)
+  #if(${column.editable})
+    #if(${column.htmlType}=="INPUT_NUMBER"&&(${column.javaType}=="BIG_DECIMAL"||${column.javaType}=="FLOAT"||${column.javaType}=="DOUBLE"))
+      <el-table-column :formatter="columnFormatter.number" label="${column.columnComment}" min-width="180" prop="${column.javaField}" sortable />
+    #elseif(${column.htmlType}=="DATE_PICKER")
+      <el-table-column :formatter="columnFormatter.zhDate" label="${column.columnComment}" min-width="180" prop="${column.javaField}" sortable />
+    #elseif(${column.htmlType}=="DATETIME_PICKER")
+      <el-table-column :formatter="columnFormatter.zhDateTime" label="${column.columnComment}" min-width="180" prop="${column.javaField}" sortable />
+    #elseif(${column.htmlType}=="TIME_PICKER")
+      <el-table-column :formatter="columnFormatter.zhTime" label="${column.columnComment}" min-width="180" prop="${column.javaField}" sortable />
+    #else
+      <el-table-column label="${column.columnComment}" min-width="180" prop="${column.javaField}" sortable />
+    #end
+  #end
+#end
+      <el-table-column align="center" fixed="right" label="操作" width="90px">
+        <template #default="scope">
+          <el-tooltip content="修改" placement="top">
+            <el-button icon="edit" link type="primary" @click="handleUpdate(scope.row)" />
+          </el-tooltip>
+          <el-tooltip content="删除" placement="top">
+            <el-button icon="delete" link type="primary" @click="handleDelete(scope.row.id)" />
+          </el-tooltip>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-row align="middle" class="main-pagination" justify="end">
+      <el-pagination
+        v-model:current-page="queryForm.pageNum"
+        v-model:page-size="queryForm.pageSize"
+        :page-sizes="[10, 20, 50, 100]"
+        :total="total"
+        background
+        layout="total, sizes, prev, pager, next, jumper"
+        @size-change="listData"
+        @current-change="listData"
+      />
+    </el-row>
+  </el-card>
+  <el-dialog v-model="dialog.visible" :title="dialog.title" append-to-body width="1000px">
+    <el-form ref="formRef" :model="dataForm" :rules="formRules" label-width="120px" status-icon>
+#foreach($column in $columns)
+  #if(${column.editable})
+    #if(${column.htmlType}=="INPUT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input v-model="dataForm.${column.javaField}" clearable placeholder="请输入${column.columnComment}" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="TEXTAREA")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input v-model="dataForm.${column.javaField}" autosize placeholder="请输入${column.columnComment}" type="textarea" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="INPUT_NUMBER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-input-number v-model="dataForm.${column.javaField}" :precision="0" :step="1" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="RADIO")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-radio-group v-model="dataForm.${column.javaField}">
+          <el-radio v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-radio-group>
+      </el-form-item>
+    #elseif(${column.htmlType}=="CHECKBOX")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-checkbox-group v-model="dataForm.${column.javaField}">
+          <el-checkbox v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-checkbox-group>
+      </el-form-item>
+    #elseif(${column.htmlType}=="SELECT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-select v-model="dataForm.${column.javaField}" clearable multiple placeholder="请选择${column.columnComment}">
+          <el-option v-for="item in ${column.javaField}Options" :key="item.value" :label="item.label" :value="item.value" />
+        </el-select>
+      </el-form-item>
+    #elseif(${column.htmlType}=="TREE_SELECT")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-tree-select
+            v-model="dataForm.${column.javaField}" :data="${column.javaField}Options" :filter-node-method=" (v, data) => data.label.includes(v)"
+            check-strictly
+        />
+      </el-form-item>
+    #elseif(${column.htmlType}=="DATE_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-date-picker v-model="dataForm.${column.javaField}" placeholder="选择${column.javaField}日期" type="date" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="DATETIME_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-date-picker v-model="dataForm.${column.javaField}" placeholder="选择${column.javaField}时间" type="datetime" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="TIME_PICKER")
+      <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <el-time-picker v-model="dataForm.${column.javaField}" placeholder="选择${column.javaField}时间" />
+      </el-form-item>
+    #elseif(${column.htmlType}=="IMAGE_UPLOAD")
+    <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <!--      IMAGE_UPLOAD("图片上传"), -->
+      </el-form-item>
+    #elseif(${column.htmlType}=="FILE_UPLOAD")
+    <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <!--      FILE_UPLOAD("文件上传"), -->
+      </el-form-item>
+    #elseif(${column.htmlType}=="EDITOR")
+    <el-form-item label="${column.columnComment}" prop="${column.javaField}">
+        <!--      EDITOR("富文本"), -->
+      </el-form-item>
+    #end
+  #end
+#end
+    </el-form>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button :loading="buttonLoading" type="primary" @click="submitForm">
+          确定
+        </el-button>
+        <el-button @click="cancel">
+          取消
+        </el-button>
+      </div>
+    </template>
+  </el-dialog>
+  <el-dialog v-model="upload.visible" append-to-body title="上传标题" width="1000px">
+    <el-upload
+      ref="uploadRef"
+      :action="`${upload.url}?updateSupport=${upload.updateSupport}`"
+      :auto-upload="false"
+      :disabled="upload.isUploading"
+      :limit="1"
+      :on-progress="() => upload.isUploading = true"
+      :on-success="handleFileSuccess"
+      accept=".xlsx"
+      drag
+    >
+      <el-icon class="el-icon--upload">
+        <UploadFilled />
+      </el-icon>
+      <div class="el-upload__text">
+        将文件拖到此处，或<em>点击上传</em>
+      </div>
+      <template #tip>
+        <div class="el-upload__tip text-center">
+          <b>仅允许导入xlsx格式文件。</b>
+          <el-link :underline="false" style="font-size: 12px; vertical-align: baseline" type="primary" @click="downloadTemplate">
+            下载模板
+          </el-link>
+        </div>
+      </template>
+    </el-upload>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button :loading="upload.isUploading" type="primary" @click="importData">
+          确定
+        </el-button>
+        <el-button @click="upload.visible = false">
+          取消
+        </el-button>
+      </div>
+    </template>
+  </el-dialog>
+</template>
+
+<script lang="ts" setup>
+
+  const queryFormRef = ref<FormInstance>()
+const queryForm = ref<${ClassName} & PageQuery & { any?: any, arr?: any[] }>({
+#foreach($column in $columns)
+  #if(${column.queryable})
+  ${column.javaField}: undefined,
+  #end
+#end
+  pageNum: 1,
+  pageSize: 10,
+})
+const formRef = ref<FormInstance>()
+const dataForm = ref<${ClassName}>({
+#foreach($column in $columns)
+  #if(${column.editable})
+  ${column.javaField}: undefined,
+  #end
+#end
+})
+const formRules = ref<FormRules<${ClassName}>>({
+#foreach($column in $columns)
+  #if(${column.editable}&&(!${column.nullable}||(${column.length}&&${column.length}>0)))
+  ${column.javaField}: [
+    #if(!${column.nullable})
+    { required: true, message: '${column.columnComment}不可为空', trigger: 'blur' },
+    #end
+    #if(${column.length}&&${column.length}>0)
+    { max: ${column.length}, message: '${column.columnComment}最大长度为${column.length}', trigger: 'blur' },
+    #end
+  ],
+  #end
+#end
+})
+const buttonLoading = ref(false)
+const tableData = ref<${ClassName}[]>([])
+const tableDataLoading = ref(false)
+const total = ref<number>(0)
+const dialog = ref({ title: '', visible: false })
+const selection = ref<number[]>([])
+const uploadRef = ref()
+const upload = ref({
+  visible: false,
+  url: systemDeptApi.importUrl,
+  updateSupport: false,
+  isUploading: false,
+  headers: '',
+})
+#foreach($column in $columns)
+  #if(${column.editable})
+    #if(${column.htmlType}=="RADIO")
+const ${column.javaField}Options = ref<Option[]>([])
+    #elseif(${column.htmlType}=="CHECKBOX")
+const ${column.javaField}Options = ref<Option[]>([])
+    #elseif(${column.htmlType}=="SELECT")
+const ${column.javaField}Options = ref<Option[]>([])
+    #elseif(${column.htmlType}=="TREE_SELECT")
+const ${column.javaField}Options = ref<Option[]>([])
+    #end
+  #end
+#end
+
+function resetQueryForm() {
+  queryFormRef.value?.resetFields()
+  listData()
+}
+
+function sorted(sort: { order: string, prop: string }) {
+  if (sort.order) {
+    queryForm.value.field = sort.prop
+    queryForm.value.asc = sort.order === 'ascending'
+  } else {
+    queryForm.value.field = ''
+  }
+}
+
+function listData() {
+  tableDataLoading.value = true
+  ${className}Api.page(queryForm.value).then((res) => {
+    tableData.value = res.rows
+    total.value = res.total
+    tableDataLoading.value = false
+  })
+}
+
+function cancel() {
+  dialog.value.visible = false
+}
+
+function resetForm() {
+  formRef.value?.resetFields()
+}
+
+function handleAdd() {
+  resetForm()
+  dialog.value = { title: '新增部门', visible: true }
+}
+
+function handleUpdate(row: ${ClassName}) {
+  resetForm()
+  ${className}Api.getById(row.id).then((res) => {
+    dataForm.value = res.data
+    dialog.value = { title: '修改部门', visible: true }
+  })
+}
+
+function submitForm() {
+  formRef.value?.validate((valid) => {
+    if (valid) {
+      ${className}Api.save(dataForm.value).then((res) => {
+        ElMessage.success(res.message)
+        dialog.value.visible = false
+        listData()
+      })
+    }
+  })
+}
+
+function handleDelete(id?: number) {
+  const ids = id ? [id] : selection.value
+  modal.confirm(`是否确认删除部门编号为"${ids}"的数据项？`)
+    .then(() => {
+      ${className}Api.remove(ids).then((res) => {
+        ElMessage.success(res.message)
+        listData()
+      })
+    })
+}
+
+function handleImport() {
+  upload.value.visible = true
+}
+
+function handleExport() {
+  ${className}Api.exportData(queryForm.value)
+}
+
+function handleFileSuccess(response: any, file: UploadFile) {
+  upload.value.visible = false
+  upload.value.isUploading = false
+  uploadRef.value?.handleRemove(file)
+  ElMessageBox.alert(`<div style='overflow: auto;overflow-x: hidden;max-height: 70vh;padding: 10px 20px 0;'>${response.message}</div>`, '导入结果', {
+    dangerouslyUseHTMLString: true,
+  })
+  listData()
+}
+
+function downloadTemplate() {
+  ${className}Api.downloadTemplate()
+}
+
+function importData() {
+  uploadRef.value?.submit()
+}
+
+onMounted(() => {
+  listData()
+#foreach($column in $columns)
+  #if(${column.editable})
+    #if(${column.htmlType}=="RADIO")
+  ${column.javaField}Options.value = []
+    #elseif(${column.htmlType}=="CHECKBOX")
+  ${column.javaField}Options.value = []
+    #elseif(${column.htmlType}=="SELECT")
+  ${column.javaField}Options.value = []
+    #elseif(${column.htmlType}=="TREE_SELECT")
+  ${column.javaField}Options.value = []
+    #end
+  #end
+#end
+})
+</script>
+
+<style lang="scss" scoped>
+
+</style>

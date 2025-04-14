@@ -1,0 +1,30 @@
+@use 'variables.module';
+@use 'animation.css';
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#lc-spinner {
+  position: fixed;
+  z-index: 9999;
+  top: 15px;
+  right: 15px;
+
+  .spinner-icon {
+    width: 18px;
+    height: 18px;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    border: solid 4px variables.$color-primary;
+    border-radius: 50%;
+    animation:
+      loding1 0.8s infinite linear alternate,
+      loding2 1.6s infinite linear;
+  }
+}

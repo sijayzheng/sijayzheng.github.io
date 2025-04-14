@@ -1,0 +1,15 @@
+package ${packageName}.${moduleName}.repository;
+
+import ${packageName}.${moduleName}.entity.${ClassName};
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
+
+/**
+ * ${ClassName}Repository
+ * ${classComment}数据访问层
+ *
+ * @author Sijay
+ * @since ${date}
+ */
+public interface ${ClassName}Repository extends JpaRepositoryImplementation<${ClassName}, ${pkColumn.javaType.value}> {
+
+}

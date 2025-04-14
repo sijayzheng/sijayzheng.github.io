@@ -1,0 +1,136 @@
+package ${packageName}.${moduleName}.service;
+
+import cn.sijay.biu.core.base.BaseService;
+import cn.sijay.biu.core.entity.PageQuery;
+import cn.sijay.biu.core.util.CollectionUtil;
+import ${packageName}.${moduleName}.entity.${ClassName};
+import ${packageName}.${moduleName}.repository.${ClassName}Repository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/**
+ * ${ClassName}Service
+ * ${classComment}逻辑处理层
+ *
+ * @author Sijay
+ * @since ${date}
+ */
+@Slf4j
+@RequiredArgsConstructor
+@Transactional(rollbackFor = Exception.class)
+@Service
+public class ${ClassName}Service implements BaseService {
+    private final ${ClassName}Repository ${className}Repository;
+
+    /**
+     * 查询${classComment}
+     *
+     * @param id 主键
+     * @return ${classComment}
+     */
+    public ${ClassName} getById(${pkColumn.javaType.value} id) {
+        return ${className}Repository.getReferenceById(id);
+    }
+
+#if(${template}=='LIST')
+    /**
+     * 分页查询${classComment}列表
+     *
+     * @param entity 查询条件
+     * @param pageQuery 分页参数
+     * @return ${classComment}分页列表
+     */
+    public Page<${ClassName}> page(${ClassName} entity, PageQuery pageQuery) {
+        return ${className}Repository.findAll(buildSpecification(entity), pageQuery.build());
+    }
+
+#end
+    /**
+     * 查询符合条件的${classComment}列表
+     *
+     * @param entity 查询条件
+     * @return ${classComment}列表
+     */
+    public List<${ClassName}> list(${ClassName} entity) {
+        return ${className}Repository.findAll(buildSpecification(entity));
+    }
+
+    /**
+     * 保存${classComment}
+     *
+     * @param entity ${classComment}
+     */
+    public void save(${ClassName} entity) {
+        validate(entity);
+        ${className}Repository.save(entity);
+    }
+
+    /**
+     * 批量保存${classComment}
+     *
+     * @param list ${classComment}集合
+     */
+    public void save(List<${ClassName}> list) {
+        for (${ClassName} entity:
+                          list) {
+            validate(entity);
+        }
+        ${className}Repository.saveAll(list);
+    }
+
+    /**
+     * 校验并批量删除系统${classComment}
+     *
+     * @param ids 待删除的主键集合
+     */
+    public void remove(List<${pkColumn.javaType.value}> ids) {
+        ${className}Repository.deleteAllById(ids);
+    }
+
+    /**
+     * 导入数据
+     *
+     * @param list 导入的数据
+     */
+    public void importData(List<${ClassName}> list) {
+        if (CollectionUtil.isNotEmpty(list)) {
+            list = list.stream()
+                       .peek(item -> {
+                       })
+                       .toList();
+            save(list);
+        }
+    }
+
+    /**
+     * 数据校验
+     *
+     * @param entity ${classComment}
+     */
+    private void validate(${ClassName} entity) {
+    }
+
+    private Specification<${ClassName}> buildSpecification(${ClassName} entity) {
+        if (ObjectUtils.isEmpty(entity)) {
+            return Specification.allOf();
+        }
+        return Specification.allOf(
+    #foreach($column in $queryColumns)
+        #if(${column.queryType}=="EQUAL")
+            equal("${column.javaField}", entity.${column.getter}())#if($foreach.hasNext),#end
+        #elseif(${column.queryType}=="BETWEEN")
+            between("${column.javaField}", entity.${column.getter}Start(), entity.${column.getter}End())#if($foreach.hasNext),#end
+        #elseif(${column.queryType}=="LIKE")
+            like("${column.javaField}", entity.${column.getter}())#if($foreach.hasNext),#end
+        #end
+    #end
+        );
+    }
+}

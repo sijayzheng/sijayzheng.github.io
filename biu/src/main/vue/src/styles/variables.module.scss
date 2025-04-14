@@ -1,0 +1,24 @@
+// base color
+$blue: #324157;
+$light-blue: #3a71a8;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #30b08f;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+
+$color-primary: $panGreen;
+$color-success: #67c23a;
+$color-warning: #e6a23c;
+$color-danger: #f56c6c;
+$color-info: #909399;
+
+
+:export {
+  primaryColor: $color-primary;
+  successColor: $color-success;
+  dangerColor: $color-danger;
+  infoColor: $color-info;
+  warningColor: $color-warning;
+}

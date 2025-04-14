@@ -1,0 +1,112 @@
+package ${packageName}.${moduleName}.entity;
+
+import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
+import com.alibaba.excel.annotation.ExcelProperty;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.Comment;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+#if(${superEntityClass}!="BaseEntity")
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+#end
+
+#if(!${superEntityClass})
+import java.io.Serial;
+import java.io.Serializable;
+#end
+#foreach($import in $imports)
+import $import;
+#end
+
+/**
+ * ${ClassName}
+ * ${classComment}实体类
+ *
+ * @author Sijay
+ * @since ${date}
+ */
+@ExcelIgnoreUnannotated
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Comment("${classComment}")
+@Entity
+@Table(name = "${tableName}")
+#if(${superEntityClass})
+public class ${ClassName} extends ${superEntityClass} {
+#else
+public class ${ClassName} implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+#end
+
+#foreach($column in $columns)
+    /**
+     * ${column.columnComment}
+     */
+    #if(${column.isPk})
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    #end
+    #if(${column.exportable})
+    @ExcelProperty("${column.columnComment}")
+    #end
+    #if(${column.length})
+    @Size(max = ${column.length}, message = "${column.columnComment}最大长度为{max}")
+    #end
+    #if(${column.defaultValue})
+        #if(${column.quotesType()}=="N")
+    @ColumnDefault("${column.defaultValue}")
+        #elseif(${column.quotesType()}=="Y")
+    @ColumnDefault("'${column.defaultValue}'")
+        #end
+    #end
+    #if(!${column.nullable})
+    @NotNull
+    #end
+    #if(${column.javaType}=="LIST_LONG")
+    @JdbcTypeCode(SqlTypes.JSON)
+    #end
+    #if(${column.columnName}=="create_by")
+    @CreatedBy
+    #end
+    #if(${column.columnName}=="create_time")
+    @CreatedDate
+    #end
+    #if(${column.columnName}=="update_by")
+    @LastModifiedBy
+    #end
+    #if(${column.columnName}=="update_time")
+    @LastModifiedDate
+    #end
+    @Comment("${column.columnComment}")
+    @Column(name = "${column.columnName}"#if(!${column.nullable}), nullable = false#end#if(!${column.isUnique()}), unique = true#end#if(${column.length}), length = ${column.length}#end)
+    private ${column.javaType.value} ${column.javaField};
+
+#end
+#foreach(${column} in ${columns})
+    #if(${column.queryable}&&${column.queryType}=="BETWEEN")
+    /**
+     * ${column.columnComment}开始
+     */
+    @Transient
+    private transient ${column.javaType.value} ${column.javaField}Start;
+
+    /**
+     * ${column.columnComment}结束
+     */
+    @Transient
+    private transient ${column.javaType.value} ${column.javaField}End;
+
+    #end
+#end
+}
