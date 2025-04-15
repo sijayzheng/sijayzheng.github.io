@@ -36,7 +36,6 @@
 
         <sa-token.version>1.41.0</sa-token.version>
         <easyexcel.version>4.0.3</easyexcel.version>
-        <commons-compress.version>1.27.1</commons-compress.version>
         <redisson.version>3.45.0</redisson.version>
     </properties>
 
@@ -114,8 +113,20 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>${commons-compress.version}</version>
+            <version>1.27.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.12.0</version>
+            <scope>compile</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>com.github.gavlyukovskiy</groupId>
@@ -154,7 +165,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -1,8 +1,8 @@
 {
   "name": "biu",
-  "private": true,
-  "version": "1.0.0",
   "type": "module",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite dev --mode dev",
     "build": "vite build --mode prod",

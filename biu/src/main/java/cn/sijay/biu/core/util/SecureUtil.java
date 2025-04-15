@@ -1,7 +1,7 @@
 package cn.sijay.biu.core.util;
 
 import cn.sijay.biu.core.entity.Pair;
-import cn.sijay.biu.core.exception.ServiceException;
+import cn.sijay.biu.core.exception.UtilException;
 import org.bouncycastle.asn1.gm.GMNamedCurves;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.crypto.AsymmetricCipherKeyPair;
@@ -30,15 +30,6 @@ import java.util.Base64;
  * @since 2025-03-04
  */
 public class SecureUtil {
-    /**
-     * 公钥
-     */
-    public static final String PUBLIC_KEY = "publicKey";
-    /**
-     * 私钥
-     */
-    public static final String PRIVATE_KEY = "privateKey";
-
     static {
         Security.addProvider(new BouncyCastleProvider());
     }
@@ -53,6 +44,12 @@ public class SecureUtil {
         return base64Encrypt(data.getBytes(StandardCharsets.UTF_8));
     }
 
+    /**
+     * Base64加密
+     *
+     * @param data 待加密数据
+     * @return 加密后字符串
+     */
     public static String base64Encrypt(byte[] data) {
         return new String(Base64.getEncoder().encode(data), StandardCharsets.UTF_8);
     }
@@ -67,6 +64,9 @@ public class SecureUtil {
         return new String(Base64.getDecoder().decode(data.getBytes(StandardCharsets.UTF_8)), StandardCharsets.UTF_8);
     }
 
+    /**
+     * SHA256散列
+     */
     public static String sha256(String str) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -82,11 +82,13 @@ public class SecureUtil {
             }
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            throw new ServiceException("SHA256加密错误");
+            throw new UtilException("SHA256加密错误");
         }
     }
 
+    /**
+     * 生成RSA密钥对
+     */
     public static KeyPair generateRsaKeyPair() throws NoSuchAlgorithmException {
         // 获取 RSA 算法的 KeyPairGenerator 实例
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
@@ -95,6 +97,9 @@ public class SecureUtil {
         return keyPairGenerator.generateKeyPair();
     }
 
+    /**
+     * RSA加密
+     */
     public static String rsaEncrypt(String plainText, PublicKey publicKey) throws Exception {
         // 获取 RSA 算法的 Cipher 实例
         Cipher cipher = Cipher.getInstance("RSA");
@@ -106,6 +111,9 @@ public class SecureUtil {
         return Base64.getEncoder().encodeToString(encryptedBytes);
     }
 
+    /**
+     * RSA解密
+     */
     public static String rsaDecrypt(String encryptedText, PrivateKey privateKey) throws Exception {
         // 获取 RSA 算法的 Cipher 实例
         Cipher cipher = Cipher.getInstance("RSA");
@@ -118,6 +126,9 @@ public class SecureUtil {
         return new String(decryptedBytes, StandardCharsets.UTF_8);
     }
 
+    /**
+     * AES加密
+     */
     public static String aesEncrypt(String plainText, SecretKey secretKey) throws Exception {
         // 获取 AES 算法的 Cipher 实例
         Cipher cipher = Cipher.getInstance("AES");
@@ -129,6 +140,9 @@ public class SecureUtil {
         return Base64.getEncoder().encodeToString(encryptedBytes);
     }
 
+    /**
+     * AES解密
+     */
     public static String aesDecrypt(String encryptedText, SecretKey secretKey) throws Exception {
         // 获取 AES 算法的 Cipher 实例
         Cipher cipher = Cipher.getInstance("AES");
@@ -141,7 +155,9 @@ public class SecureUtil {
         return new String(decryptedBytes, StandardCharsets.UTF_8);
     }
 
-    // SM2生成密钥对
+    /**
+     * SM2生成密钥对
+     */
     public static Pair<ECPrivateKeyParameters, ECPublicKeyParameters> genSm2KeyPair() {
         X9ECParameters ecParameters = GMNamedCurves.getByName("sm2p256v1");
         ECDomainParameters domainParameters = new ECDomainParameters(
@@ -158,7 +174,9 @@ public class SecureUtil {
         return new Pair<>(privateKey, publicKey);
     }
 
-    // SM2加密
+    /**
+     * SM2加密
+     */
     public static String sm2Encrypt(ECPublicKeyParameters publicKey, String plainText) throws InvalidCipherTextException {
         byte[] bytes = plainText.getBytes(StandardCharsets.UTF_8);
         byte[] publicKeyBytes = publicKey.getQ().getEncoded(false);
@@ -176,7 +194,9 @@ public class SecureUtil {
         return new String(sm2Engine.processBlock(bytes, 0, bytes.length));
     }
 
-    // SM2解密
+    /**
+     * SM2解密
+     */
     public static String sm2Decrypt(ECPrivateKeyParameters privateKey, String cipherText) throws InvalidCipherTextException {
         byte[] privateKeyBytes = privateKey.getD().toByteArray();
         X9ECParameters ecParameters = GMNamedCurves.getByName("sm2p256v1");
@@ -193,7 +213,9 @@ public class SecureUtil {
         return new String(sm2Engine.processBlock(bytes, 0, bytes.length));
     }
 
-    // SM3
+    /**
+     * SM3
+     */
     public static String sm3(String input) {
         byte[] bytes = input.getBytes(StandardCharsets.UTF_8);
         SM3Digest digest = new SM3Digest();
@@ -203,7 +225,9 @@ public class SecureUtil {
         return new String(output);
     }
 
-    // SM4加密
+    /**
+     * SM4加密
+     */
     public static String sm4Encrypt(byte[] key, String plainText) throws InvalidCipherTextException {
         byte[] bytes = plainText.getBytes(StandardCharsets.UTF_8);
         PaddedBufferedBlockCipher cipher = new PaddedBufferedBlockCipher(CBCBlockCipher.newInstance(new SM4Engine()));
@@ -215,7 +239,9 @@ public class SecureUtil {
         return new String(out);
     }
 
-    // SM4解密
+    /**
+     * SM4解密
+     */
     public static String sm4Decrypt(byte[] key, String cipherText) throws InvalidCipherTextException {
         PaddedBufferedBlockCipher cipher = new PaddedBufferedBlockCipher(CBCBlockCipher.newInstance(new SM4Engine()));
         CipherParameters params = new ParametersWithIV(new KeyParameter(key), new byte[16]);
@@ -227,7 +253,14 @@ public class SecureUtil {
         return new String(out);
     }
 
+    /**
+     * 加密密码
+     */
     public static String hashPasswd(String password) {
         return base64Encrypt(sha256(password));
+    }
+
+    public static boolean verifyPasswd(String password, String hashedPassword) {
+        return hashedPassword.equals(hashPasswd(password));
     }
 }

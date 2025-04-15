@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.StringSubstitutor;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.util.AntPathMatcher;
 
@@ -22,8 +23,31 @@ import java.util.stream.Collectors;
 public class StringUtil {
     public static final String EMPTY = "";
 
+    /**
+     * 字符串格式化 eg: format("abc{}","123") -> abc123
+     *
+     * @param msg
+     * @param args
+     * @return
+     */
     public static String format(String msg, Object... args) {
         return MessageFormatter.arrayFormat(msg, args).getMessage();
+    }
+
+    /**
+     * 字符串格式化
+     * <p>
+     * eg:
+     * obj:123
+     * abc${obj} -> abc123
+     * </p>
+     *
+     * @param template
+     * @param valuesMap
+     * @return
+     */
+    public static String format(String template, Map<String, String> valuesMap) {
+        return new StringSubstitutor(valuesMap).replace(template);
     }
 
     /**

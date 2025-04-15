@@ -46,11 +46,13 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
 
 logging:
+  charset:
+    console: utf-8
   level:
     org.hibernate: warn
     com.zaxxer.hikari: warn
   pattern:
-    console: "%red(%d{HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger%n) - %msg%n"
+    console: '%red(%d{HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger%n) - %msg%n'
 
 decorator:
   datasource:
@@ -86,7 +88,7 @@ sa-token:
   # 关闭 cookie 鉴权 从根源杜绝 csrf 漏洞风险
   is-read-cookie: false
   # token前缀
-  token-prefix: "Bearer"
+  token-prefix: 'Bearer'
   # token名称 (同时也是cookie名称)
   token-name: Authorization
   # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
@@ -121,5 +123,3 @@ config:
     excludeUrls:
       - a
       - b
-
-
