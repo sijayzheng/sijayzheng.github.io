@@ -1,6 +1,7 @@
 package cn.sijay.biu.auth.entity;
 
 import cn.sijay.biu.core.entity.RoleDto;
+import cn.sijay.biu.core.exception.ServiceException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -78,7 +79,7 @@ public class LoginUser implements Serializable {
      */
     public Long getLoginId() {
         if (id == null) {
-            throw new IllegalArgumentException("用户ID不能为空");
+            throw new ServiceException("用户ID为空");
         }
         return id;
     }

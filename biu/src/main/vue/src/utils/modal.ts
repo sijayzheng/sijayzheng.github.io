@@ -6,7 +6,7 @@ export const modal = {
     return ElMessageBox.confirm(message, '系统提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
-      type: 'warning',
+      type: 'info',
     })
   },
   prompt(message?: string) {

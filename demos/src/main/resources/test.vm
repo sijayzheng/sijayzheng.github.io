@@ -1,2 +1,0 @@
-source ${name}
-target ${org.apache.commons.lang3.StringUtils.StringUtils.capitalize(${name})}

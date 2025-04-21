@@ -3,6 +3,7 @@ package cn.sijay.biu.auth.controller;
 import cn.dev33.satoken.annotation.SaIgnore;
 import cn.sijay.biu.auth.entity.Captcha;
 import cn.sijay.biu.auth.entity.LoginParam;
+import cn.sijay.biu.auth.entity.LoginUser;
 import cn.sijay.biu.auth.service.LoginService;
 import cn.sijay.biu.core.annotation.ApiEncrypt;
 import cn.sijay.biu.core.base.BaseController;
@@ -130,8 +131,8 @@ public class AuthController extends BaseController {
      * @return 用户信息
      */
     @GetMapping("/userinfo")
-    public Result<String> userinfo() {
-        return success("获取成功", "admin");
+    public Result<LoginUser> userinfo() {
+        return success(LoginHelper.getLoginUser());
     }
 
 }

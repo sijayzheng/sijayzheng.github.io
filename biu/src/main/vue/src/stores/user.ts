@@ -54,7 +54,7 @@ export const useUserStore = defineStore('user', () => {
     token.value = ''
     roles.value = []
     permissions.value = []
-    // removeToken()
+    clearToken()
   }
 
   const setAvatar = (value) => {

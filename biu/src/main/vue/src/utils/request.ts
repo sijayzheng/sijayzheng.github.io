@@ -1,7 +1,5 @@
 import type { AxiosResponse } from 'axios'
 import router from '@/router'
-import useUserStore from '@/stores/user'
-import { getToken } from '@/utils/index'
 import FileSaver from 'file-saver'
 
 export function globalHeaders() {
@@ -40,16 +38,17 @@ request.interceptors.response.use(
     }
     if (data.code === 401) {
       if (router.currentRoute.value.fullPath !== '/login') {
-        useUserStore().logout().then(() => {
-          router.replace({
-            path: '/login',
-            query: {
-              redirect: encodeURIComponent(router.currentRoute.value.fullPath || '/'),
-            },
+        modal.confirm('重新登录').then(() => {
+          useUserStore().logout().then(() => {
+            router.replace({
+              path: '/login',
+              query: {
+                redirect: router.currentRoute.value.fullPath || '/',
+              },
+            })
           })
         })
       }
-      ElMessage.error('无效的会话，或者会话已过期，请重新登录。')
       return Promise.reject(new Error('无效的会话，或者会话已过期，请重新登录。'))
     } else if (data.code === 200) { /* empty */
     } else if (data.code === 500) {

@@ -6,6 +6,7 @@ import cn.sijay.biu.auth.entity.LoginUser;
 import cn.sijay.biu.core.constant.CommonConstants;
 import cn.sijay.biu.core.constant.RedisConstants;
 import cn.sijay.biu.core.entity.LoginInfoEvent;
+import cn.sijay.biu.core.entity.RoleDto;
 import cn.sijay.biu.core.exception.CaptchaException;
 import cn.sijay.biu.core.exception.CaptchaExpireException;
 import cn.sijay.biu.core.exception.UserException;
@@ -18,6 +19,8 @@ import cn.sijay.biu.core.util.SpringUtil;
 import cn.sijay.biu.system.entity.SystemDept;
 import cn.sijay.biu.system.entity.SystemUser;
 import cn.sijay.biu.system.repository.SystemDeptRepository;
+import cn.sijay.biu.system.repository.SystemMenuRepository;
+import cn.sijay.biu.system.repository.SystemRoleRepository;
 import cn.sijay.biu.system.repository.SystemUserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +28,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * LoginService
@@ -42,9 +47,8 @@ public class LoginService {
     private final SystemDeptRepository deptRepository;
     private final SystemUserRepository userRepository;
     private final CommonProperties commonProperties;
-    private final SpringUtil springUtil;
-//    private final SystemRoleRepository roleRepository;
-//    private final SystemMenuRepository menuRepository;
+    private final SystemRoleRepository roleRepository;
+    private final SystemMenuRepository menuRepository;
 
     public String login(LoginParam param) {
         String username = param.getUsername();
@@ -114,17 +118,17 @@ public class LoginService {
         if (!Objects.isNull(user.getDeptId())) {
             loginUser.setDeptName(deptRepository.findById(user.getDeptId()).orElse(new SystemDept()).getName());
         }
-//        SystemUser systemUser = userRepository.getReferenceById(user.getId());
-//        List<RoleDto> roles = roleRepository.findAllById(systemUser.getRoles())
-//                                            .stream().map(role -> {
-//                    RoleDto dto = new RoleDto();
-//                    dto.setId(role.getId());
-//                    dto.setName(role.getName());
-//                    dto.setCode(role.getCode());
-//                    dto.setDataScope(role.getDataScope());
-//                    return dto;
-//                }).collect(Collectors.toList());
-//        loginUser.setRoles(roles);
+        SystemUser systemUser = userRepository.getReferenceById(user.getId());
+        List<RoleDto> roles = roleRepository.findAllById(systemUser.getRoles())
+                                            .stream().map(role -> {
+                    RoleDto dto = new RoleDto();
+                    dto.setId(role.getId());
+                    dto.setName(role.getName());
+                    dto.setCode(role.getCode());
+                    dto.setDataScope(role.getDataScope());
+                    return dto;
+                }).collect(Collectors.toList());
+        loginUser.setRoles(roles);
         // 生成token
         LoginHelper.login(loginUser);
         return StpUtil.getTokenValue();
