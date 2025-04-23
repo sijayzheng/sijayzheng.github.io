@@ -158,6 +158,26 @@ public class StreamUtil {
     }
 
     /**
+     * 将collection按照规则(比如有相同的班级id)分类成map<br>
+     * <B>{@code Collection<E> -------> Map<K,List<E>> } </B>
+     *
+     * @param collection 需要分类的集合
+     * @param key        分类的规则
+     * @param <E>        collection中的泛型
+     * @param <K>        map中的key类型
+     * @param <T>        map中的value泛型
+     * @return 分类后的map
+     */
+    public static <E, T, K> Map<K, List<T>> groupByKey(Collection<E> collection, Function<E, K> key, Function<E, T> value) {
+        if (collection.isEmpty()) {
+            return new HashMap<>();
+        }
+        return collection
+                .stream().filter(Objects::nonNull)
+                .collect(Collectors.groupingBy(key, Collectors.mapping(value, Collectors.toList())));
+    }
+
+    /**
      * 将collection按照两个规则(比如有相同的年级id,班级id)分类成双层map<br>
      * <B>{@code Collection<E>  --->  Map<T,Map<U,List<E>>> } </B>
      *
