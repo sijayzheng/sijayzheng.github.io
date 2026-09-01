@@ -24,59 +24,59 @@ _以Java8为例_
 
 **Java保留字**
 
-| 关键字          | 含 义                                                                              |
-|--------------|----------------------------------------------------------------------------------|
-| abstract     | 抽象类或方法                                                                           |
-| assert       | 用来查找内部程序错误                                                                       |
-| boolean      | 布尔类型                                                                             |
-| break        | 跳出一个 switch 或循环                                                                  |
-| byte         | 8 位整数类型                                                                          |
-| case         | switch 的一个分支                                                                     |
-| catch        | 捕获异常的 try 块子句                                                                    |
-| char         | Unicode 字符类型                                                                     |
-| class        | 定义一个类类型                                                                          |
-| const        | 未使用                                                                              |
-| continue     | 在循环末尾继续                                                                          |
-| default      | switch 的缺省子句                                                                     |
-| do           | do/while 循环最前面的语句                                                                |
-| double       | 双精度浮点数类型                                                                         |
-| else         | if 语句的 else 子句                                                                   |
-| enum         | 枚举类型                                                                             |
-| extends      | 定义一个类的父类                                                                         |
+| 关键字       | 含 义                                                                                                                                          |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| abstract     | 抽象类或方法                                                                                                                                   |
+| assert       | 用来查找内部程序错误                                                                                                                           |
+| boolean      | 布尔类型                                                                                                                                       |
+| break        | 跳出一个 switch 或循环                                                                                                                         |
+| byte         | 8 位整数类型                                                                                                                                   |
+| case         | switch 的一个分支                                                                                                                              |
+| catch        | 捕获异常的 try 块子句                                                                                                                          |
+| char         | Unicode 字符类型                                                                                                                               |
+| class        | 定义一个类类型                                                                                                                                 |
+| const        | 未使用                                                                                                                                         |
+| continue     | 在循环末尾继续                                                                                                                                 |
+| default      | switch 的缺省子句                                                                                                                              |
+| do           | do/while 循环最前面的语句                                                                                                                      |
+| double       | 双精度浮点数类型                                                                                                                               |
+| else         | if 语句的 else 子句                                                                                                                            |
+| enum         | 枚举类型                                                                                                                                       |
+| extends      | 定义一个类的父类                                                                                                                               |
 | final        | 一个常量， 或不能覆盖的一个类或方法 ,final类不能被继承。final方法不能被重写。final修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改。 |
-| finally      | try 块中总会执行的部分                                                                    |
-| float        | 单精度浮点数类型                                                                         |
-| for          | 一种循环类型                                                                           |
-| goto         | 未使用                                                                              |
-| if           | 一个条件语句                                                                           |
-| implements   | 定义一个类实现的接口                                                                       |
-| import       | 导入一个包                                                                            |
-| instanceof   | 测试一个对象是否为一个类的实例                                                                  |
-| int          | 32 位整数类型                                                                         |
-| interface    | —种抽象类型， 其中包含可以由类实现的方法                                                            |
-| long         | 64 位长整数类型                                                                        |
-| native       | 由宿主系统实现的一个方法                                                                     |
-| new          | 分配一个新对象或数组                                                                       |
-| null         | 一个空引用（null 从技术上讲是一个直接量，而不是关键字）                                                   |
-| package      | 包含类的一个包                                                                          |
-| private      | 这个特性只能由该类的方法访问                                                                   |
-| protected    | 这个特性只能由该类、 其子类以及同一个包中的其他类的方法访问                                                   |
-| public       | 这个特性可以由所有类的方法访问                                                                  |
-| return       | 从一个方法返回                                                                          |
-| short        | 16 位整数类型                                                                         |
-| static       | 这个特性是这个类特有的， 而不属于这个类的对象                                                          |
-| strictfp     | 对浮点数计算使用严格的规则                                                                    |
-| super        | 超类对象或构造函数                                                                        |
-| switch       | 一个选择语句                                                                           |
-| synchronized | 对线程而言是原子的方法或代码块                                                                  |
-| this         | 当前类的一个方法或构造函数的隐含参数                                                               |
-| throw        | 抛出一个异常                                                                           |
-| throws       | 一个方法可能拋出的异常                                                                      |
-| transient    | 标志非永久的数据                                                                         |
-| try          | 捕获异常的代码块                                                                         |
-| void         | 指示一个方法不返回任何值                                                                     |
-| volatile     | 确保一个字段可以由多个线程访问                                                                  |
-| while        | 一种循环                                                                             |
+| finally      | try 块中总会执行的部分                                                                                                                         |
+| float        | 单精度浮点数类型                                                                                                                               |
+| for          | 一种循环类型                                                                                                                                   |
+| goto         | 未使用                                                                                                                                         |
+| if           | 一个条件语句                                                                                                                                   |
+| implements   | 定义一个类实现的接口                                                                                                                           |
+| import       | 导入一个包                                                                                                                                     |
+| instanceof   | 测试一个对象是否为一个类的实例                                                                                                                 |
+| int          | 32 位整数类型                                                                                                                                  |
+| interface    | —种抽象类型， 其中包含可以由类实现的方法                                                                                                       |
+| long         | 64 位长整数类型                                                                                                                                |
+| native       | 由宿主系统实现的一个方法                                                                                                                       |
+| new          | 分配一个新对象或数组                                                                                                                           |
+| null         | 一个空引用（null 从技术上讲是一个直接量，而不是关键字）                                                                                        |
+| package      | 包含类的一个包                                                                                                                                 |
+| private      | 这个特性只能由该类的方法访问                                                                                                                   |
+| protected    | 这个特性只能由该类、 其子类以及同一个包中的其他类的方法访问                                                                                    |
+| public       | 这个特性可以由所有类的方法访问                                                                                                                 |
+| return       | 从一个方法返回                                                                                                                                 |
+| short        | 16 位整数类型                                                                                                                                  |
+| static       | 这个特性是这个类特有的， 而不属于这个类的对象                                                                                                  |
+| strictfp     | 对浮点数计算使用严格的规则                                                                                                                     |
+| super        | 超类对象或构造函数                                                                                                                             |
+| switch       | 一个选择语句                                                                                                                                   |
+| synchronized | 对线程而言是原子的方法或代码块                                                                                                                 |
+| this         | 当前类的一个方法或构造函数的隐含参数                                                                                                           |
+| throw        | 抛出一个异常                                                                                                                                   |
+| throws       | 一个方法可能拋出的异常                                                                                                                         |
+| transient    | 标志非永久的数据                                                                                                                               |
+| try          | 捕获异常的代码块                                                                                                                               |
+| void         | 指示一个方法不返回任何值                                                                                                                       |
+| volatile     | 确保一个字段可以由多个线程访问                                                                                                                 |
+| while        | 一种循环                                                                                                                                       |
 
 > 标准的命名规范为：类名是以大写字母开头的名词。如果名字由多个单词组成，每个单词的第一个字母都应该大写。
 
@@ -102,8 +102,8 @@ _以Java8为例_
 
 自由格式文本的第一句应该是一个概要性的句子。javadoc 实用程序自动地将这些句子抽取出来形成概要页。
 
-在自由格式文本中，可以使用 HTML 修饰符，但不可使用 `<hl>` 或`<hr>`, 因为它们会与文档的格式产生冲突。若要键入等宽代码， 需使用
-{@code ... } 而不是`<code>...</code>`——如此就不用对代码中的 `<` 字符转义了。
+在自由格式文本中，可以使用 HTML 修饰符，但不可使用 `<hl>` 或`<hr>`, 因为它们会与文档的格式产生冲突。若要键入等宽代码， 需使用 {@code ... } 而不是`<code>...</code>`——如此就不用对代码中的
+`<` 字符转义了。
 
 > **标记**
 >
@@ -142,8 +142,7 @@ _以Java8为例_
 
 **@param 变量描述**
 
-对当前方法的“ param” （参数）部分添加一个条目。这个描述可以占据多行， 并可以使用 HTML 标记。一个方法的所有@param
-标记必须放在一起。
+对当前方法的“ param” （参数）部分添加一个条目。这个描述可以占据多行， 并可以使用 HTML 标记。一个方法的所有@param 标记必须放在一起。
 
 **@return 描述**
 
@@ -161,13 +160,10 @@ _以Java8为例_
 
 包注释需要在每一个包目录中添加一个单独的文件。有两种方法：
 
-1. 提供一个以 package.html 命名的 HTML 文件。在标记 `<body>—</body>` 之间的所有
-   文本都会被抽取出来。
-2. 提供一个以 package-info.java 命名的 Java 文件。这个文件必须包含一个初始的以 `/**`和 `*/` 界定的 Javadoc 注释，
-   跟随在一个包语句之后。它不应该包含更多的代码或注释。
+1. 提供一个以 package.html 命名的 HTML 文件。在标记 `<body>—</body>` 之间的所有 文本都会被抽取出来。
+2. 提供一个以 package-info.java 命名的 Java 文件。这个文件必须包含一个初始的以 `/**`和 `*/` 界定的 Javadoc 注释， 跟随在一个包语句之后。它不应该包含更多的代码或注释。
 
-还可以为所有的源文件提供一个概述性的注释。这个注释将被放置在一个名为 overview.html
-的文件中，这个文件位于包含所有源文件的父目录中。标记 `<body>... </body>` 之间的所
+还可以为所有的源文件提供一个概述性的注释。这个注释将被放置在一个名为 overview.html 的文件中，这个文件位于包含所有源文件的父目录中。标记 `<body>... </body>` 之间的所
 有文本将被抽取出来。当用户从导航栏中选择 `Overview` 时，就会显示出这些注释内容。
 
 > **注释的抽取**
@@ -176,17 +172,13 @@ _以Java8为例_
 >
 > 执行以下步骤：
 > 1. 切换到包含想要生成文档的源文件目录。
-> 2. 如果是一个包，应该运行命令:`javadoc -d docDirectory nameOfPackage`或对于多个包生成文档，
-     运行:`javadoc -d docDirectory nameOfPackage\ nameOfPackage . . .`
+> 2. 如果是一个包，应该运行命令:`javadoc -d docDirectory nameOfPackage`或对于多个包生成文档， 运行:`javadoc -d docDirectory nameOfPackage\ nameOfPackage . . .`
      如果文件在默认包中， 就应该运行：
      `javadoc -d docDirectory *. java`
-     如果省略了 `-d docDirectory` 选项， 那 HTML 文件就会被提取到当前目录下。这样有可能
-     会带来混乱，因此不提倡这种做法。
-     可以使用多种形式的命令行选项对 javadoc 程序进行调整。例如， 可以使用`-author` 和
-     `-version` 选项在文档中包含@author 和@version 标记（默认情况下， 这些标记会被省
-     略 )。另一个很有用的选项是 -link, 用来为标准类添加超链接。
-     如果使用`-linksource` 选项， 则每个源文件被转换为 HTML (不对代码着色，但包含行编号) 并且每个类和方法名将转变为指向源代码的超链接。
-     有关其他的选项，参考[javadoc](http://docs.orade.eom/javase/8/docs/guides/javadoc)
+     如果省略了 `-d docDirectory` 选项， 那 HTML 文件就会被提取到当前目录下。这样有可能 会带来混乱，因此不提倡这种做法。 可以使用多种形式的命令行选项对 javadoc 程序进行调整。例如， 可以使用
+     `-author` 和
+     `-version` 选项在文档中包含@author 和@version 标记（默认情况下， 这些标记会被省 略 )。另一个很有用的选项是 -link, 用来为标准类添加超链接。 如果使用`-linksource` 选项， 则每个源文件被转换为
+     HTML (不对代码着色，但包含行编号) 并且每个类和方法名将转变为指向源代码的超链接。 有关其他的选项，参考[javadoc](http://docs.orade.eom/javase/8/docs/guides/javadoc)
 
 ## 数据类型
 
@@ -203,8 +195,7 @@ _以Java8为例_
     - double的数值精度为float的两倍
     - double数值需要后缀`0D`或`0d`
     - float数值需要后缀`0F`或`0f`
-    - 特殊数值：正无穷（`POSITIVE_INFINITY = 1.0 / 0.0`）、负无穷（`NEGATIVE_INFINITY = -1.0 / 0.0`）、NaN（not a
-      number  `NaN = 0.0d / 0.0`）
+    - 特殊数值：正无穷（`POSITIVE_INFINITY = 1.0 / 0.0`）、负无穷（`NEGATIVE_INFINITY = -1.0 / 0.0`）、NaN（not a number  `NaN = 0.0d / 0.0`）
     - 判断一个值是否为NaN使用`Double.isNaN(x)`方法
     - 由于二进制无法准确的表示`1/10`，所有浮点数会存在舍入误差
 - 1种字符型（char）
@@ -215,14 +206,14 @@ _以Java8为例_
 **特殊字符转义序列及Unicode值**
 
 | 字符名 | 转义序列 | Unicode值 |
-|-----|------|----------|
-| 退格  | `\b` | `\u0008` |
-| 制表  | `\t` | `\u0009` |
-| 换行  | `\n` | `\u000a` |
-| 回车  | `\r` | `\u000d` |
-| 双引号 | `\"` | `\u0022` |
-| 单引号 | `\'` | `\u0027` |
-| 反斜杠 | `\\` | `\u005c` |
+|--------|----------|-----------|
+| 退格   | `\b`     | `\u0008`  |
+| 制表   | `\t`     | `\u0009`  |
+| 换行   | `\n`     | `\u000a`  |
+| 回车   | `\r`     | `\u000d`  |
+| 双引号 | `\"`     | `\u0022`  |
+| 单引号 | `\'`     | `\u0027`  |
+| 反斜杠 | `\\`     | `\u005c`  |
 
 - 1种布尔型（boolean）
 
@@ -239,16 +230,16 @@ _以Java8为例_
 
 **所有数据类型的值范围**
 
-| 类型      | 占位（byte 字节） | 数据范围                                                             |
-|---------|-------------|------------------------------------------------------------------|
-| byte    | 1           | [-128, 127]                                                      |
-| short   | 2           | [-32768,32767]                                                   |
-| int     | 4           | [-2^31, 2^31-1]                                                  |
-| long    | 8           | [-2^63, 2^63-1]                                                  |
-| float   | 4           | [2<sup>-149</sup>,(2-2<sup>-23</sup>)&middot;2<sup>127</sup>]    |
-| double  | 8           | [2<sup>-1074</sup>.,(2-2<sup>-52</sup>)&middot;2<sup>1023</sup>] |
-| char    | 2           | [\u0000,\uFFFF]                                                  |
-| boolean | 1           | true,false                                                       |
+| 类型    | 占位（byte 字节） | 数据范围                                                         |
+|---------|-------------------|------------------------------------------------------------------|
+| byte    | 1                 | [-128, 127]                                                      |
+| short   | 2                 | [-32768,32767]                                                   |
+| int     | 4                 | [-2^31, 2^31-1]                                                  |
+| long    | 8                 | [-2^63, 2^63-1]                                                  |
+| float   | 4                 | [2<sup>-149</sup>,(2-2<sup>-23</sup>)&middot;2<sup>127</sup>]    |
+| double  | 8                 | [2<sup>-1074</sup>.,(2-2<sup>-52</sup>)&middot;2<sup>1023</sup>] |
+| char    | 2                 | [\u0000,\uFFFF]                                                  |
+| boolean | 1                 | true,false                                                       |
 
 ## 变量
 
@@ -279,11 +270,11 @@ _以Java8为例_
 - 算术运算符
 
 | 运算符 | 含义 |
-|-----|----|
-| +   | 加  |
-| -   | 减  | 
-| *   | 乘  |
-| /   | 除  | 
+|--------|------|
+| +      | 加   |
+| -      | 减   | 
+| *      | 乘   |
+| /      | 除   | 
 
 > 数值在进行算数运算时会发生数据类型转换
 >
@@ -292,7 +283,8 @@ _以Java8为例_
 > 否则， 如果其中一个操作数是 long 类型， 另一个操作数将会转换为 long 类型。
 > 否则， 两个操作数都将被转换为 int 类型
 
-以下为合法数据类型转换，实线表示没有精度损失，虚线表示可能存在精度损失。**强制类型转换可能会导致信息丢失**
+以下为合法数据类型转换，实线表示没有精度损失，虚线表示可能存在精度损失。 **强制类型转换可能会导致信息丢失**
+
 ![数据类型转换](img/20230331150433.png)
 
 - 赋值和运算符结合 `+=`、`-=`、`*=`、`/=`
@@ -315,22 +307,22 @@ public class Main {
 
 - 比较运算符
 
-| 运算符  | 含义   |
-|------|------|
-| `==` | 相等   |
-| `!=` | 不相等  |
-| `<`  | 小于   |
-| `>`  | 大于   |
-| `<=` | 小于等于 |
-| `>=` | 大于等于 |
+| 运算符 | 含义     |
+|--------|----------|
+| `==`   | 相等     |
+| `!=`   | 不相等   |
+| `<`    | 小于     |
+| `>`    | 大于     |
+| `<=`   | 小于等于 |
+| `>=`   | 大于等于 |
 
 - 逻辑运算符
 
-| 运算符            | 含义  |
-|----------------|-----|
+| 运算符         | 含义   |
+|----------------|--------|
 | `&&`           | 短路与 |
 | `&#124;&#124;` | 短路或 |
-| `!`            | 非   |
+| `!`            | 非     |
 
 - 三元操作符 `?:`
 
@@ -338,14 +330,14 @@ public class Main {
 
 - 位运算符
 
-| 运算符      | 含义          |
-|----------|-------------|
-| `&`      | 与           |
-| `&#124;` | 或           |
-| `^`      | 异或          |
-| `~`      | 非           |
-| `<<`     | 左移          |
-| `>>`     | 右移          |
+| 运算符   | 含义                  |
+|----------|-----------------------|
+| `&`      | 与                    |
+| `&#124;` | 或                    |
+| `^`      | 异或                  |
+| `~`      | 非                    |
+| `<<`     | 左移                  |
+| `>>`     | 右移                  |
 | `>>>`    | 右移，并使用0填充高位 |
 
 ## 字符串
@@ -357,20 +349,20 @@ public class Main {
 
 | StringBuilder | StringBuffer |
 |---------------|--------------|
-| 线程不安全         | 线程安全         |
-| 速度快           | 速度慢          |
+| 线程不安全    | 线程安全     |
+| 速度快        | 速度慢       |
 
-| 方法                                                   | 作用                                        |
-|------------------------------------------------------|-------------------------------------------|
-| `int length()`                                       | 返回构建器或缓冲器中的代码单元数量                         |
-| `String Builder append(String str)`                  | 追加一个字符串并返回 this                           |
-| `String Builder append(char c)`                      | 追加一个代码单元并返回 this                          |
-| `String Builder appendCodePoint(int cp)`             | 追加一个代码点，并将其转换为一个或两个代码单元并返回 this           |
-| `void setCharAt(int i ,char c)`                      | 将第 i 个代码单元设置为 c                           |
-| `String Builder insert(int offset,String str)`       | 在 offset 位置插入一个字符串并返回 this                |
-| `String Builder insert(int offset,Char c)`           | 在 offset 位置插入一个代码单元并返回 this               |
-| `String Builder delete(int startIndex,int endIndex)` | 删除偏移量从startIndex到endIndex-1 的代码单元并返回 this |
-| `String toString()`                                  | 返回一个与构建器或缓冲器内容相同的字符串                      |
+| 方法                                                 | 作用                                                      |
+|------------------------------------------------------|-----------------------------------------------------------|
+| `int length()`                                       | 返回构建器或缓冲器中的代码单元数量                        |
+| `String Builder append(String str)`                  | 追加一个字符串并返回 this                                 |
+| `String Builder append(char c)`                      | 追加一个代码单元并返回 this                               |
+| `String Builder appendCodePoint(int cp)`             | 追加一个代码点，并将其转换为一个或两个代码单元并返回 this |
+| `void setCharAt(int i ,char c)`                      | 将第 i 个代码单元设置为 c                                 |
+| `String Builder insert(int offset,String str)`       | 在 offset 位置插入一个字符串并返回 this                   |
+| `String Builder insert(int offset,Char c)`           | 在 offset 位置插入一个代码单元并返回 this                 |
+| `String Builder delete(int startIndex,int endIndex)` | 删除偏移量从startIndex到endIndex-1 的代码单元并返回 this  |
+| `String toString()`                                  | 返回一个与构建器或缓冲器内容相同的字符串                  |
 
 StringBuilder与StringBuffer的方法基本相同
 
@@ -383,21 +375,21 @@ StringBuilder与StringBuffer的方法基本相同
 常用方法：
 
 - [BigInteger]大整数
-    - BigInteger add( BigInteger other) 加
-    - BigInteger subtract(BigInteger other ) 减
-    - BigInteger multiply(BigInteger other) 乘
-    - BigInteger divide(BigInteger other) 除
-    - BigInteger mod(BigInteger other) 取余
-    - int compareTo(BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
-    - static BigInteger valueOf(long x ) 返回值等于 x 的大整数。
+    - BigInteger add (BigInteger other) 加
+    - BigInteger subtract (BigInteger other ) 减
+    - BigInteger multiply (BigInteger other) 乘
+    - BigInteger divide (BigInteger other) 除
+    - BigInteger mod (BigInteger other) 取余
+    - int compareTo (BigInteger other) 与other相等，返回 0；小于other，返回负数；否则，返回正数。
+    - static BigInteger valueOf (long x ) 返回值等于 x 的大整数。
 - [BigDecimal]大浮点数
-    - BigDecimal add(BigDecimal other)加
-    - BigDecimal subtract(BigDecimal other )减
-    - BigDecimal multiply(BigDecimal other )乘
-    - BigDecimal divide(BigDecimal other) 除
-    - BigDecimal divide(BigDecimal divisor, RoundingMode roundingMode) 除并指定舍入方式
-    - int compareTo(BigDecimal other ) 与other相等，返回0；小于other，返回负数；否则，返回正数。
-    - static BigDecimal valueOf( long x )
+    - BigDecimal add (BigDecimal other)加
+    - BigDecimal subtract (BigDecimal other )减
+    - BigDecimal multiply (BigDecimal other )乘
+    - BigDecimal divide (BigDecimal other) 除
+    - BigDecimal divide (BigDecimal divisor, RoundingMode roundingMode) 除并指定舍入方式
+    - int compareTo (BigDecimal other ) 与other相等，返回0；小于other，返回负数；否则，返回正数。
+    - static BigDecimal valueOf (long x )
 
 ## 输入输出
 
@@ -406,34 +398,34 @@ StringBuilder与StringBuffer的方法基本相同
     - 输出后换行 `System.out.println()`
     - 格式化输出 `System.out.printf()`
 
-| printf转换符 | 类 型        | 举 例      |
-|-----------|------------|----------|
-| d         | 十进制整数      | 159      |
-| x         | 十六进制整数     | 9f       |
-| o         | 八进制整数      | 237      |
-| f         | 定点浮点数      | 15.9     |
-| e         | 指数浮点数      | 1.59e+01 |
-| g         | 通用浮点数      | —        |
-| a         | 十六进制浮点数    | Ox1.fdp3 |
-| s         | 字符串        | Hello    |
-| c         | 字符         | H        |
-| b         | 布尔         | True     |
-| h         | 散列码        | 42628b2  |
-| %         | 百分号        | %        |
-| n         | 与平台有关的行分隔符 | —        |
+| printf转换符 | 类 型                | 举 例    |
+|--------------|----------------------|----------|
+| d            | 十进制整数           | 159      |
+| x            | 十六进制整数         | 9f       |
+| o            | 八进制整数           | 237      |
+| f            | 定点浮点数           | 15.9     |
+| e            | 指数浮点数           | 1.59e+01 |
+| g            | 通用浮点数           | —        |
+| a            | 十六进制浮点数       | Ox1.fdp3 |
+| s            | 字符串               | Hello    |
+| c            | 字符                 | H        |
+| b            | 布尔                 | True     |
+| h            | 散列码               | 42628b2  |
+| %            | 百分号               | %        |
+| n            | 与平台有关的行分隔符 | —        |
 
-| printf 的标志    | 目 的         |
-|---------------|-------------|
-| +             | 打印正数和负数的符号  | 
-| 空格            | 在正数之前添加空格   |
-| 0             | 数字前面补 0     |
-| -             | 左对齐         |
-| (             | 将负数括在括号内    |
-| ,             | 添加分组分隔符     |
-| #（对于 f格式）     | 包含小数点       |
-| #（对于 X 或0 格式） | 添加前缀 0x 或 0 |
-| $             | 给定被格式化的参数索引 |
-| <             | 格式化前面说明的数值  |
+| printf 的标志        | 目 的                  |
+|----------------------|------------------------|
+| +                    | 打印正数和负数的符号   | 
+| 空格                 | 在正数之前添加空格     |
+| 0                    | 数字前面补 0           |
+| -                    | 左对齐                 |
+| (                    | 将负数括在括号内       |
+| ,                    | 添加分组分隔符         |
+| #（对于 f格式）      | 包含小数点             |
+| #（对于 X 或0 格式） | 添加前缀 0x 或 0       |
+| $                    | 给定被格式化的参数索引 |
+| <                    | 格式化前面说明的数值   | 
 
 - 输入
     - > Scanner，并与“标准输人流”System.in关联。`Scanner scanner = new Scanner(System.in);`
@@ -534,8 +526,7 @@ default: statement; break;
 
 类是构造对象的模板
 
-**封装**：将数据和行为组合到一起，并隐藏数据的实现方式。
-实现封装的关键是不直接访问类的属性，而是通过对象的方法进行访问操作，以提高重用性和可靠性
+**封装**：将数据和行为组合到一起，并隐藏数据的实现方式。 实现封装的关键是不直接访问类的属性，而是通过对象的方法进行访问操作，以提高重用性和可靠性
 
 类之间的关系：
 
@@ -559,8 +550,7 @@ default: statement; break;
 
 使用`-classpath`指定类路径
 
-包含基目录，当前目录，jar文件
-当前目录用`.`表示
+包含基目录，当前目录，jar文件 当前目录用`.`表示
 
 Windows下以分号分隔
 
@@ -605,8 +595,7 @@ Object是所有类的始祖，在未明确指出父类时，可认为父类为Ob
 Java中出基本类型外都是对象
 
 **equals方法：**
-通过判断两个对象是否有相同的引用来检测两个对象是否相等
-特点：
+通过判断两个对象是否有相同的引用来检测两个对象是否相等 特点：
 
 1. 自反性，x非null时，`x.equals(x)`总为true
 2. 对称性，只有`x.equals(y)`为true时`y.equals(x)`才为true
@@ -616,7 +605,7 @@ Java中出基本类型外都是对象
 
 **覆写equals方法必须覆写hashCode方法**
 
-toString()方法，默认是完整类名+@+hashCode的十六进制表示
+toString ()方法，默认是完整类名+@+hashCode的十六进制表示
 
 ### 枚举
 
@@ -634,7 +623,7 @@ toString()方法，默认是完整类名+@+hashCode的十六进制表示
 
 保存运行时的类型标志
 
-通过newInstance()方法调用无参构造器来实例化类
+通过newInstance ()方法调用无参构造器来实例化类
 
 Class类中的getFields、getMethods和getConstructors方法将分别返回类提供的public域、方法和构造器数组，其中包括超类的公有成员。Class类的getDeclareFields、getDeclareMethods和getDeclaredConstructors方法将分别返回类中声明的全部域、方法和构造器，其中包括私有和受保护成员，但不包括超类的成员。
 
@@ -673,35 +662,35 @@ lambda中使用的外部变量需要为初始化后不再改变的变量
 
 **常用函数式接口：**
 
-| 函数式接口               | 参数类型 | 返回类型    | 抽象方法名  | 描述               | 其他方法                       |
-|---------------------|------|---------|--------|------------------|----------------------------|
-| Runnable            | 无    | void    | run    | 作为无参数或返回值的动作运行   |
-| Supplier<T>         | 无    | T       | get    | 提供一个 T 类型的值      |
-| Consumer<T>         | T    | void    | accept | 处理一个 T 类型的值      | andThen                    |
-| BiConsumer<T, U>    | T,U  | void    | accept | 处理 T 和 U 类型的值    | andThen                    |
-| Function<T, R>      | T    | R       | apply  | 有一个 T 类型参数的函数    | compose, andThen, identity |
-| BiFunction<T, U, R> | T,U  | R       | apply  | 有 T 和 U 类型 参数的函数 | andThen                    |
-| UnaryOperator<T>    | T    | T       | apply  | 类型 T 上的一元操作符     | compose, andThen, identity |
-| BinaryOperator<T>   | T,T  | T       | apply  | 类型 T 上的二元操作符     | andThen, maxBy, minBy      |
-| Predicate<T>        | T    | boolean | test   | 布尔值函数            | and, or, negate, isEqual   |
-| BiPredicate<T, U>   | T,U  | boolean | test   | 有两个参数的布尔值函数      | and, or, negate            |
+| 函数式接口          | 参数类型 | 返回类型 | 抽象方法名 | 描述                         | 其他方法                   |
+|---------------------|----------|----------|------------|------------------------------|----------------------------|
+| Runnable            | 无       | void     | run        | 作为无参数或返回值的动作运行 |
+| Supplier<T>         | 无       | T        | get        | 提供一个 T 类型的值          |
+| Consumer<T>         | T        | void     | accept     | 处理一个 T 类型的值          | andThen                    |
+| BiConsumer<T, U>    | T,U      | void     | accept     | 处理 T 和 U 类型的值         | andThen                    |
+| Function<T, R>      | T        | R        | apply      | 有一个 T 类型参数的函数      | compose, andThen, identity |
+| BiFunction<T, U, R> | T,U      | R        | apply      | 有 T 和 U 类型 参数的函数    | andThen                    |
+| UnaryOperator<T>    | T        | T        | apply      | 类型 T 上的一元操作符        | compose, andThen, identity |
+| BinaryOperator<T>   | T,T      | T        | apply      | 类型 T 上的二元操作符        | andThen, maxBy, minBy      |
+| Predicate<T>        | T        | boolean  | test       | 布尔值函数                   | and, or, negate, isEqual   |
+| BiPredicate<T, U>   | T,U      | boolean  | test       | 有两个参数的布尔值函数       | and, or, negate            |
 
 **基本类型的函数式接口**
 注： _p_, _q_ 为 int, long, double; _P_, _Q_ 为 Integer, Long, Double
 
-| 函数式接口                 | 参数类型    | 返回类型    | 抽象方法名        |
-|-----------------------|---------|---------|--------------|
-| BooleanSupplier       | none    | boolean | getAsBoolean |
-| *P*Supplier           | none    | _P_     | getAs*P*     |
-| *P*Consumer           | _p_     | void    | accept       |
-| Obj*P*Consumer<T>     | T,_p_   | void    | accept       |
-| *P*Function<T>        | _p_     | T       | apply        |
-| *P*To*Q*Function      | _p_     | _q_     | applyAs*Q*   |
-| To*P*Function<T>      | T       | _p_     | applyAs*P*   |
-| To*P*BiFunction<T, U> | T, U    | _p_     | applyAs*P*   |
-| *P*UnaryOperator      | _p_     | _p_     | applyAs*P*   |
-| *P*BinaryOperator     | _p_,_p_ | _p_     | applyAs*P*   |
-| *P*Predicate          | _p_     | boolean | test         |
+| 函数式接口            | 参数类型 | 返回类型 | 抽象方法名   |
+|-----------------------|----------|----------|--------------|
+| BooleanSupplier       | none     | boolean  | getAsBoolean |
+| *P*Supplier           | none     | _P_      | getAs*P*     |
+| *P*Consumer           | _p_      | void     | accept       |
+| Obj*P*Consumer<T>     | T,_p_    | void     | accept       |
+| *P*Function<T>        | _p_      | T        | apply        |
+| *P*To*Q*Function      | _p_      | _q_      | applyAs*Q*   |
+| To*P*Function<T>      | T        | _p_      | applyAs*P*   |
+| To*P*BiFunction<T, U> | T, U     | _p_      | applyAs*P*   |
+| *P*UnaryOperator      | _p_      | _p_      | applyAs*P*   |
+| *P*BinaryOperator     | _p_,_p_  | _p_      | applyAs*P*   |
+| *P*Predicate          | _p_      | boolean  | test         |
 
 ## 异常
 
@@ -709,8 +698,7 @@ lambda中使用的外部变量需要为初始化后不再改变的变量
 
 `Error`类层次结构描述了Java运行时系统的内部错误和资源耗尽错误
 
-`Exception`层次结构分为两个分支：一个分支派生于`RuntimeException`；另一个分支包含其他异常。划分两个分支的规则是：由
-程序错误导致的异常属于`RuntimeException`；而程序本身没有问题，但由于像I/O错误这类
+`Exception`层次结构分为两个分支：一个分支派生于`RuntimeException`；另一个分支包含其他异常。划分两个分支的规则是：由 程序错误导致的异常属于`RuntimeException`；而程序本身没有问题，但由于像I/O错误这类
 问题导致的异常属于其他异常
 
 派生于`Error`类或`RuntimeException`类的所有异常称为非受查（unchecked）异常，所有其他的异常称为受查（checked）异常
@@ -756,14 +744,11 @@ Java提供的日志处理器FileHandler和SocketHandler
 
 ## 泛型
 
-E表示集合的元素类型，
-K和V分别表示表的关键字与值的类型，
-T(或者U和S)表示任意类型
+E表示集合的元素类型， K和V分别表示表的关键字与值的类型， T (或者U和S)表示任意类型
 
 变量类型使用`< >`括起来放在类名后，多个用逗号隔开
 
-变量类型的限定：如`public static <T extends Comparable> T min(T[] a) {}`，
-将变量extends一个类，当有多个限定时用`&`隔开，如`T extends Comparable&Serializable`，且标签接口（没有方法的接口）在最后，以便提高效率
+变量类型的限定：如`public static <T extends Comparable> T min(T[] a) {}`， 将变量extends一个类，当有多个限定时用`&`隔开，如`T extends Comparable&Serializable`，且标签接口（没有方法的接口）在最后，以便提高效率
 
 局限性：
 
@@ -771,7 +756,7 @@ T(或者U和S)表示任意类型
 2. 类型检查只适用于原始类型
 3. 不能创建参数化类型数组
 4. 可变参数警告，可以使用@SafeVarargs注解消除
-5. 不能实例化类型变量，如new T()，T.class都是非法的
+5. 不能实例化类型变量，如new T ()，T.class都是非法的
 6. 不能构造泛型数组
 7. 不能再静态域或方法中引用类型变量
 8. 不能抛出或补货泛型类的实例
@@ -785,6 +770,7 @@ T(或者U和S)表示任意类型
 ## 集合
 
 **集合框架中的接口**
+
 ![集合框架中的接口](img/20230413174430.png)
 
 集合类的基本接口为`Collection`，基本方法如下
@@ -815,29 +801,29 @@ public interface Iterator<E> {
 
 **集合类**
 
-| 集合类型            | 描述                        |
-|-----------------|---------------------------|
-| ArrayList       | 可以动态增长和缩减的索引序列            |
-| LinkedList      | 可以在任何位置进行高效地插入和删除操作的有序序列  |
-| ArrayDeque      | 用循环数组实现的双端队列              |
-| HashSet         | 没有重复元素的无序集合               |
-| TreeSet         | 有序集                       |
-| EnumSet         | 包含枚举类型值的集                 |
-| LinkedHashSet   | 可以记住元素插入次序的集              |
-| PriorityQueue   | 允许高效删除最小元素的集合             |
-| HashMap         | 存储键 / 值关联的数据结构            |
-| TreeMap         | 键值有序排列的映射表                |
-| EnumMap         | 键值属于枚举类型的映射表              |
-| LinkedHashMap   | 可以记住键 / 值项添加次序的映射表        |
-| WeakHashMap     | 其值无用武之地后可以被垃圾回收器回收的映射表    |
-| IdentityHashMap | 用`==`而不是用`equals`比较键值的映射表 |
+| 集合类型        | 描述                                             |
+|-----------------|--------------------------------------------------|
+| ArrayList       | 可以动态增长和缩减的索引序列                     |
+| LinkedList      | 可以在任何位置进行高效地插入和删除操作的有序序列 |
+| ArrayDeque      | 用循环数组实现的双端队列                         |
+| HashSet         | 没有重复元素的无序集合                           |
+| TreeSet         | 有序集                                           |
+| EnumSet         | 包含枚举类型值的集                               |
+| LinkedHashSet   | 可以记住元素插入次序的集                         |
+| PriorityQueue   | 允许高效删除最小元素的集合                       |
+| HashMap         | 存储键 / 值关联的数据结构                        |
+| TreeMap         | 键值有序排列的映射表                             |
+| EnumMap         | 键值属于枚举类型的映射表                         |
+| LinkedHashMap   | 可以记住键 / 值项添加次序的映射表                |
+| WeakHashMap     | 其值无用武之地后可以被垃圾回收器回收的映射表     |
+| IdentityHashMap | 用`==`而不是用`equals`比较键值的映射表           |
 
 **ArrayList和LinkedList**
 
-| ArrayList           | LinkedList           |
-|---------------------|----------------------|
+| ArrayList                              | LinkedList                               |
+|----------------------------------------|------------------------------------------|
 | 在中间插入删除元素需要移动后面所有元素 | 中间插入删除元素只需要改变前后节点的引用 |
-| 随机读取性能好             | 随机读取性能差              |
+| 随机读取性能好                         | 随机读取性能差                           |
 
 散列表：使用链表数组组成，每个列表被称为桶，桶满时会由链表变为平衡二叉树
 
@@ -924,14 +910,13 @@ class Bank {
 
 ## Stream
 
-stream 顺序流
-parallelStream 并行流
+stream 顺序流 parallelStream 并行流
 
 ### 创建
 
 - 通过Collection的stream方法
 - 通过Stream.of方法
-- 通过Array.stream(array,from,to)将数组中[from,to)的元素创建为流
+- 通过Array.stream (array,from,to)将数组中[from,to)的元素创建为流
 - 通过Stream.empty创建空流
 - 无限流
     - Stream.generate 通过指定函数生成数据
@@ -1050,4 +1035,4 @@ ZipInputStream和ZipOutputStream读写ZIP文件
    `==` 对于基本类型来说是值比较，对于引用类型来说是比较的是引用；
    `equals` 默认情况下是引用比较，只是很多类重写了 equals 方法，比如 String、Integer 等把它变成了值比较，所以一般情况下 equals 比较的是值是否相等。
 
-2. 两个对象的 hashCode()相同， equals()不一定 true,因为在散列表中，hashCode()相等即两个键值对的哈希值相等，然而哈希值相等，并不一定能得出键值对相等。
+2. 两个对象的 hashCode ()相同， equals ()不一定 true,因为在散列表中，hashCode ()相等即两个键值对的哈希值相等，然而哈希值相等，并不一定能得出键值对相等。

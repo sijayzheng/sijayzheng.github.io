@@ -66,3 +66,13 @@ done
 ```shell
 find -type d -empty -exec rm -rf {} \;
 ```
+
+### 将命令执行的结果赋值给变量
+
+使用`$( )`
+例子：`a=$(echo “hello world”)`
+将命令 `echo "hello world"`的输出赋给变量 `a`
+
+### 常用shell
+
+- for line in `ls`;echo $line

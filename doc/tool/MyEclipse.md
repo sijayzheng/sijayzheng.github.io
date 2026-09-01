@@ -1,7 +1,6 @@
 ## 准备
 
-如果安装有旧版的 MyEclipse，先卸载旧版的 MyEclipse，然后将其残留文件（用户目录下的.myeclipse.properties 文件及.myeclipse
-和.webclipse 文件夹，工作空间中的.metadata 文件夹）删除
+如果安装有旧版的 MyEclipse，先卸载旧版的 MyEclipse，然后将其残留文件（用户目录下的.myeclipse.properties 文件及.myeclipse 和.webclipse 文件夹，工作空间中的.metadata 文件夹）删除
 
 ## 安装
 
@@ -21,7 +20,7 @@
 
 ![pic31.png](img/pic31.png)
 
-5. 不要取消 Lauch MyEclipse CodeMix Bundles，点击 Finish，完成安装
+5. 不要取消 Launch MyEclipse CodeMix Bundles，点击 Finish，完成安装
 
 ![pic43.png](img/pic43.png)
 
@@ -63,14 +62,12 @@
 
 ![pic15.png](img/pic15.png)
 
-2. 填写 Usercode，选择 BLING(图文不符，建议 BLING)，点击 SystemId（不出现再点击一次），
-   点击 Tools-\>RebuildKey， 点击 Active，点击 Tools-\>SaveProperties
+2. 填写 Usercode，选择 BLING (图文不符，建议 BLING)，点击 SystemId（不出现再点击一次）， 点击 Tools-\>RebuildKey， 点击 Active，点击 Tools-\>SaveProperties
 
 ![pic32.png](img/pic32.png)
 
 3. 将生成的 publicKey.bytes 替换 MyEclipse 安装目录 D:
-   \\MyEclipse\\plugins\\com.genuitec.eclipse.core_16.0.0.202009011746.jar 中的 com\\genuitec\\eclipse\\core 下的
-   publicKey.bytes
+   \\MyEclipse\\plugins\\com.genuitec.eclipse.core_16.0.0.202009011746.jar 中的 com\\genuitec\\eclipse\\core 下的 publicKey.bytes
 
 ![pic30.png](img/pic30.png)
 
@@ -113,7 +110,7 @@
 
    ![pic57.png](img/pic57.png)
 
-10. 选择 I alrady have an activation code，点击 Continue
+10. 选择 I already have an activation code，点击 Continue
 
     ![pic58.png](img/pic58.png)
 
@@ -149,15 +146,13 @@
 
 ![pic33.png](img/pic33.png)
 
-找到 General-\>Editors-\>Autosave，选中 Enable autosave for dirty
-editors，修改一个合适的自动保存时间，点击 Apply
+找到 General-\>Editors-\>Autosave，选中 Enable autosave for dirty editors，修改一个合适的自动保存时间，点击 Apply
 
 3. 关闭拼写检查
 
 ![pic25.png](img/pic25.png)
 
-找到 General-\>Editors-\>Text Editors-\>Spelling，取消选中 Enable spell
-checking，点击 Apply
+找到 General-\>Editors-\>Text Editors-\>Spelling，取消选中 Enable spell checking，点击 Apply
 
 4. 关闭不需要的启动项（根据自己的需要关闭，也可全部关闭）
 
@@ -197,7 +192,7 @@ checking，点击 Apply
 
 ### 编辑器由于行太长，光标自动向左跑到最左边的问题
 
-Preference -> File and Editors -> Common Editor Preferences
+Preference → File and Editors → Common Editor Preferences
 
 取消勾选 enable folding
 
@@ -207,8 +202,7 @@ Preference -> File and Editors -> Common Editor Preferences
 
 启动 MyEclipse，打开 window-\>preferences
 
-找到 DevStyle，取消 Use enhanced DevStyle Themes，点击 Apply and
-Close，并重新启动 MyEclipse
+找到 DevStyle，取消 Use enhanced DevStyle Themes，点击 Apply and Close，并重新启动 MyEclipse
 
 ![pic19.png](img/pic19.png)
 
@@ -222,8 +216,8 @@ Close，并重新启动 MyEclipse
 
 ### 进入后界面缺失
 
-解决方案：重新安装，安装按完成后先启动 MyEclipse，选择试用，然后等待 MyEclipse 中的 Progress 完成后，关闭 MyEclipse，然后删除
-C:\\User\\Administrator\\.myeclipse.properties（Administrator 为当前用户的用户名），并激活。
+解决方案：重新安装，安装按完成后先启动 MyEclipse，选择试用，然后等待 MyEclipse 中的 Progress 完成后，关闭 MyEclipse，然后删除 C:\\User\\Administrator\\.myeclipse.properties（Administrator
+为当前用户的用户名），并激活。
 
 ### 卡顿
 

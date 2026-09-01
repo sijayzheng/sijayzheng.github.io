@@ -25,13 +25,13 @@ wget https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.
 
 将如下内容取消注释
 
-![img.png](img/img.png)
+![20260901212939.png](img/20260901212939.png)
 
 ### 设置 DNS NameServer
 
 `cd /etc/netplan`
 
-![b7319eea](img/b7319eea.png)
+![20260901212956.png](img/20260901212956.png)
 
 ### 安装 zsh 后再安装 docker，提示 `compinit:503: no such file or directory: /usr/share/zsh/vendor-completions/\_docker`
 

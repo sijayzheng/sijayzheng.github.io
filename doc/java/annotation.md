@@ -20,7 +20,7 @@
 
 ### @RestController:
 
-用于标注控制层组件(如 struts 中的 action)，包含@Controller 和@ResponseBody；
+用于标注控制层组件 (如 struts 中的 action)，包含@Controller 和@ResponseBody；
 
 ### @Controller:
 
@@ -64,9 +64,9 @@ byType 方式。把配置好的 Bean 拿来用，完成属性、方法的组装�
 
 ### @Qualifier:
 
-当有多个同一类型的 Bean 时，可以用@Qualifier(“name”)来指定。与@Autowired 配合使用；
+当有多个同一类型的 Bean 时，可以用@Qualifier (“name”)来指定。与@Autowired 配合使用；
 
-### @Resource(name=”name”,type=”type”)：
+### @Resource (name=”name”,type=”type”)：
 
 没有括号内内容的话，默认 byName。与@Autowired 干类似的事；
 
@@ -86,7 +86,7 @@ RequestMapping 是一个用来处理请求地址映射的注解，可用于类�
 >
 > consumes:指定处理请求的提交内容类型（Content-Type），如 application/json,text/html;
 >
-> produces:指定返回的内容类型，仅当 request 请求头中的(Accept)类型中包含该指定类型才返回。
+> produces:指定返回的内容类型，仅当 request 请求头中的 (Accept)类型中包含该指定类型才返回。
 
 ### @GetMapping、@PostMapping、@PutMapping、@DeleteMapping:
 
@@ -94,11 +94,11 @@ RequestMapping 是一个用来处理请求地址映射的注解，可用于类�
 
 ### @RequestParam:
 
-用在方法的参数前面。相当于 request.getParameter()；
+用在方法的参数前面。相当于 request.getParameter ()；
 
 ### @PathVariable:
 
-路径变量。如 RequestMapping(“user/get/mac/{macAddress}”) ；
+路径变量。如 RequestMapping (“user/get/mac/{macAddress}”) ；
 
 ```
 public String getByMacAddress(@PathVariable(“macAddress”) String macAddress) {
@@ -128,7 +128,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 只能大于或等于该值
 
-### @Digits(Integer=2, fraction=20)
+### @Digits (Integer=2, fraction=20)
 
 检查是否是一种数字的整数、分数,小数位数的数字。
 
@@ -140,7 +140,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是否是属于将来的日期
 
-### @Length(min=0,max=10)
+### @Length (min=0,max=10)
 
 检查所属的字段的长度是否在 min 和 max 之间,只能用于字符串
 
@@ -172,11 +172,11 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是在过去
 
-###        
+###         
 
 检查该字段的 size 是否在 min 和 max 之间,可以是字符串、数组、集合、Map 等
 
-### @URL( protocol=host,port)
+### @URL (protocol=host,port)
 
 检查是否是一个有效的 RL,如果提供了 protocol,host 等,则该 URL 还需满足提供的条件
 
@@ -188,7 +188,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 ### @Entity:
 
-### @Table(name=”“):
+### @Table (name=”“):
 
 表明这是一个实体类。一般用于 jpa ，这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table 可以省略；
 
@@ -208,11 +208,11 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 表示该属性为主键；
 
-### @GeneratedValue(strategy=GenerationType.SEQUENCE,generator = “repair_seq”):
+### @GeneratedValue (strategy=GenerationType.SEQUENCE,generator = “repair_seq”):
 
 表示主键生成策略是 sequence（可以为 Auto、IDENTITY、native 等，Auto 表示可在多个数据库间切换），指定 sequence 的名字是 repair_seq；
 
-### @SequenceGenerator(name = “repair_seq”, sequenceName = “seq_repair”, allocationSize = 1):
+### @SequenceGenerator (name = “repair_seq”, sequenceName = “seq_repair”, allocationSize = 1):
 
 name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequence 名称，两个名称可以一致；
 
@@ -222,7 +222,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 如果一个属性并非数据库表的字段映射,就务必将其标示为@Transient,否则,ORM 框架默认其注解为@Basic；
 
-### @Basic(fetch=FetchType.LAZY):
+### @Basic (fetch=FetchType.LAZY):
 
 标记可以指定实体属性的加载方式；
 
@@ -230,7 +230,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 作用是 json 序列化时将 java bean 中的一些属性忽略掉,序列化和反序列化都受影响；
 
-### @JoinColumn(name=”loginId”):
+### @JoinColumn (name=”loginId”):
 
 一对一：本表中指向另一个表的外键。
 
@@ -250,7 +250,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 包含@Component。可以被扫描到。统一处理异常；
 
-### @ExceptionHandler(Exception.class):
+### @ExceptionHandler (Exception.class):
 
 用在方法上面表示遇到这个异常就执行以下方法。
 
@@ -272,7 +272,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 用在启动类上，开启断路器功能；
 
-### @HystrixCommand(fallbackMethod=”backMethod”):
+### @HystrixCommand (fallbackMethod=”backMethod”):
 
 用在方法上，fallbackMethod 指定断路回调方法；
 
@@ -294,58 +294,57 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 @EnableCircuitBreaker
 
-分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication
-这一注解集合
+分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication 这一注解集合
 
 ## Hibernate-Validator 主要的校验注解：
 
-| 注解                        | 功能                                              |
-|---------------------------|-------------------------------------------------|
-| @Null                     | 验证对象是否为 null                                    |
-| @NotNull                  | 验证对象是否不为 null                                   |
-| @AssertTrue               | 验证 Boolean 对象是否为 true                           |
-| @AssertFalse              | 验证 Boolean 对象是否为 false                          |
-| @Max(value)               | 验证 Number 和 String 对象是否小于等于指定值                  |
-| @Min(value)               | 验证 Number 和 String 对象是否大于等于指定值                  |
-| @DecimalMax(value)        | 验证注解的元素值小于等于 @DecimalMax 指定的 value 值            |
-| @DecimalMin(value)        | 验证注解的元素值大于等于 @DecimalMin 指定的 value 值            |
+| 注解                      | 功能                                                                          |
+|---------------------------|-------------------------------------------------------------------------------|
+| @Null                     | 验证对象是否为 null                                                           |
+| @NotNull                  | 验证对象是否不为 null                                                         |
+| @AssertTrue               | 验证 Boolean 对象是否为 true                                                  |
+| @AssertFalse              | 验证 Boolean 对象是否为 false                                                 |
+| @Max(value)               | 验证 Number 和 String 对象是否小于等于指定值                                  |
+| @Min(value)               | 验证 Number 和 String 对象是否大于等于指定值                                  |
+| @DecimalMax(value)        | 验证注解的元素值小于等于 @DecimalMax 指定的 value 值                          |
+| @DecimalMin(value)        | 验证注解的元素值大于等于 @DecimalMin 指定的 value 值                          |
 | @Digits(integer,fraction) | 验证字符串是否符合指定格式的数字，integer 指定整数精度，fraction 指定小数精度 |
 |
-| @Past                     | 验证 Date 和 Calendar 对象是否在当前时间之前                  |
-| @Future                   | 验证 Date 和 Calendar 对象是否在当前时间之后                  |
+| @Past                     | 验证 Date 和 Calendar 对象是否在当前时间之前                                  |
+| @Future                   | 验证 Date 和 Calendar 对象是否在当前时间之后                                  |
 |
-| @NotBlank                 | 检查字符串是不是 Null，被 Trim 的长度是否大于 0，只对字符串，且会去掉前后空格   |
-| @URL                      | 验证是否是合法的 url                                    |
-| @Email                    | 验证是否是合法的邮箱                                      |
-| @CreditCardNumber         | 验证是否是合法的信用卡号                                    |
-| @Length(min,max)          | 验证字符串的长度必须在指定范围内                                |
-| @NotEmpty                 | 检查元素是否为 Null 或 Empty                            |
-| @Range(min,max,message)   | 验证属性值必须在合适的范围内                                  |
+| @NotBlank                 | 检查字符串是不是 Null，被 Trim 的长度是否大于 0，只对字符串，且会去掉前后空格 |
+| @URL                      | 验证是否是合法的 url                                                          |
+| @Email                    | 验证是否是合法的邮箱                                                          |
+| @CreditCardNumber         | 验证是否是合法的信用卡号                                                      |
+| @Length(min,max)          | 验证字符串的长度必须在指定范围内                                              |
+| @NotEmpty                 | 检查元素是否为 Null 或 Empty                                                  |
+| @Range(min,max,message)   | 验证属性值必须在合适的范围内                                                  |
 
 ## Hibernate-Validator 主要的校验注解：
 
-| 注解                        | 功能                                              |
-|---------------------------|-------------------------------------------------|
-| @Null                     | 验证对象是否为 null                                    |
-| @NotNull                  | 验证对象是否不为 null                                   |
-| @AssertTrue               | 验证 Boolean 对象是否为 true                           |
-| @AssertFalse              | 验证 Boolean 对象是否为 false                          |
-| @Max(value)               | 验证 Number 和 String 对象是否小于等于指定值                  |
-| @Min(value)               | 验证 Number 和 String 对象是否大于等于指定值                  |
-| @DecimalMax(value)        | 验证注解的元素值小于等于 @DecimalMax 指定的 value 值            |
-| @DecimalMin(value)        | 验证注解的元素值大于等于 @DecimalMin 指定的 value 值            |
+| 注解                      | 功能                                                                          |
+|---------------------------|-------------------------------------------------------------------------------|
+| @Null                     | 验证对象是否为 null                                                           |
+| @NotNull                  | 验证对象是否不为 null                                                         |
+| @AssertTrue               | 验证 Boolean 对象是否为 true                                                  |
+| @AssertFalse              | 验证 Boolean 对象是否为 false                                                 |
+| @Max(value)               | 验证 Number 和 String 对象是否小于等于指定值                                  |
+| @Min(value)               | 验证 Number 和 String 对象是否大于等于指定值                                  |
+| @DecimalMax(value)        | 验证注解的元素值小于等于 @DecimalMax 指定的 value 值                          |
+| @DecimalMin(value)        | 验证注解的元素值大于等于 @DecimalMin 指定的 value 值                          |
 | @Digits(integer,fraction) | 验证字符串是否符合指定格式的数字，integer 指定整数精度，fraction 指定小数精度 |
 |
-| @Past                     | 验证 Date 和 Calendar 对象是否在当前时间之前                  |
-| @Future                   | 验证 Date 和 Calendar 对象是否在当前时间之后                  |
+| @Past                     | 验证 Date 和 Calendar 对象是否在当前时间之前                                  |
+| @Future                   | 验证 Date 和 Calendar 对象是否在当前时间之后                                  |
 |
-| @NotBlank                 | 检查字符串是不是 Null，被 Trim 的长度是否大于 0，只对字符串，且会去掉前后空格   |
-| @URL                      | 验证是否是合法的 url                                    |
-| @Email                    | 验证是否是合法的邮箱                                      |
-| @CreditCardNumber         | 验证是否是合法的信用卡号                                    |
-| @Length(min,max)          | 验证字符串的长度必须在指定范围内                                |
-| @NotEmpty                 | 检查元素是否为 Null 或 Empty                            |
-| @Range(min,max,message)   | 验证属性值必须在合适的范围内                                  |
+| @NotBlank                 | 检查字符串是不是 Null，被 Trim 的长度是否大于 0，只对字符串，且会去掉前后空格 |
+| @URL                      | 验证是否是合法的 url                                                          |
+| @Email                    | 验证是否是合法的邮箱                                                          |
+| @CreditCardNumber         | 验证是否是合法的信用卡号                                                      |
+| @Length(min,max)          | 验证字符串的长度必须在指定范围内                                              |
+| @NotEmpty                 | 检查元素是否为 Null 或 Empty                                                  |
+| @Range(min,max,message)   | 验证属性值必须在合适的范围内                                                  |
 
 ## Spring注解
 
@@ -367,9 +366,9 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 ## @Autowired
 
-@Autowired 可以用来装配 bean，都可以写在字段上，或者方法上。使用 @Autowired，首先要在在 applicationContext.xml
-中加入 `<bean class = "org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>`。@Autowired
-默认按类型装配，默认情况下要求依赖对象必须存在，如果要允许 null 值，可以设置它的 required 属性为 false。
+@Autowired 可以用来装配 bean，都可以写在字段上，或者方法上。使用 @Autowired，首先要在在 applicationContext.xml 中加入
+`<bean class = "org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>`。@Autowired 默认按类型装配，默认情况下要求依赖对象必须存在，如果要允许 null
+值，可以设置它的 required 属性为 false。
 
 ## @Configuration
 
@@ -413,7 +412,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 ### @RestController:
 
-用于标注控制层组件(如 struts 中的 action)，包含@Controller 和@ResponseBody；
+用于标注控制层组件 (如 struts 中的 action)，包含@Controller 和@ResponseBody；
 
 ### @Controller:
 
@@ -457,9 +456,9 @@ byType 方式。把配置好的 Bean 拿来用，完成属性、方法的组装�
 
 ### @Qualifier:
 
-当有多个同一类型的 Bean 时，可以用@Qualifier(“name”)来指定。与@Autowired 配合使用；
+当有多个同一类型的 Bean 时，可以用@Qualifier (“name”)来指定。与@Autowired 配合使用；
 
-### @Resource(name=”name”,type=”type”)：
+### @Resource (name=”name”,type=”type”)：
 
 没有括号内内容的话，默认 byName。与@Autowired 干类似的事；
 
@@ -479,7 +478,7 @@ RequestMapping 是一个用来处理请求地址映射的注解，可用于类�
 >
 > consumes:指定处理请求的提交内容类型（Content-Type），如 application/json,text/html;
 >
-> produces:指定返回的内容类型，仅当 request 请求头中的(Accept)类型中包含该指定类型才返回。
+> produces:指定返回的内容类型，仅当 request 请求头中的 (Accept)类型中包含该指定类型才返回。
 
 ### @GetMapping、@PostMapping、@PutMapping、@DeleteMapping:
 
@@ -487,11 +486,11 @@ RequestMapping 是一个用来处理请求地址映射的注解，可用于类�
 
 ### @RequestParam:
 
-用在方法的参数前面。相当于 request.getParameter()；
+用在方法的参数前面。相当于 request.getParameter ()；
 
 ### @PathVariable:
 
-路径变量。如 RequestMapping(“user/get/mac/{macAddress}”) ；
+路径变量。如 RequestMapping (“user/get/mac/{macAddress}”) ；
 
 ```
 public String getByMacAddress(@PathVariable(“macAddress”) String macAddress) {
@@ -521,7 +520,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 只能大于或等于该值
 
-### @Digits(Integer=2, fraction=20)
+### @Digits (Integer=2, fraction=20)
 
 检查是否是一种数字的整数、分数,小数位数的数字。
 
@@ -533,7 +532,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是否是属于将来的日期
 
-### @Length(min=0,max=10)
+### @Length (min=0,max=10)
 
 检查所属的字段的长度是否在 min 和 max 之间,只能用于字符串
 
@@ -565,11 +564,11 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 检查该字段的日期是在过去
 
-###     
+###      
 
 检查该字段的 size 是否在 min 和 max 之间,可以是字符串、数组、集合、Map 等
 
-### @URL( protocol=host,port)
+### @URL (protocol=host,port)
 
 检查是否是一个有效的 RL,如果提供了 protocol,host 等,则该 URL 还需满足提供的条件
 
@@ -581,7 +580,7 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 ### @Entity:
 
-### @Table(name=”“):
+### @Table (name=”“):
 
 表明这是一个实体类。一般用于 jpa ，这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table 可以省略；
 
@@ -601,11 +600,11 @@ public String getByMacAddress(@PathVariable(“macAddress”) String macAddress)
 
 表示该属性为主键；
 
-### @GeneratedValue(strategy=GenerationType.SEQUENCE,generator = “repair_seq”):
+### @GeneratedValue (strategy=GenerationType.SEQUENCE,generator = “repair_seq”):
 
 表示主键生成策略是 sequence（可以为 Auto、IDENTITY、native 等，Auto 表示可在多个数据库间切换），指定 sequence 的名字是 repair_seq；
 
-### @SequenceGenerator(name = “repair_seq”, sequenceName = “seq_repair”, allocationSize = 1):
+### @SequenceGenerator (name = “repair_seq”, sequenceName = “seq_repair”, allocationSize = 1):
 
 name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequence 名称，两个名称可以一致；
 
@@ -615,7 +614,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 如果一个属性并非数据库表的字段映射,就务必将其标示为@Transient,否则,ORM 框架默认其注解为@Basic；
 
-### @Basic(fetch=FetchType.LAZY):
+### @Basic (fetch=FetchType.LAZY):
 
 标记可以指定实体属性的加载方式；
 
@@ -623,7 +622,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 作用是 json 序列化时将 java bean 中的一些属性忽略掉,序列化和反序列化都受影响；
 
-### @JoinColumn(name=”loginId”):
+### @JoinColumn (name=”loginId”):
 
 一对一：本表中指向另一个表的外键。
 
@@ -643,7 +642,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 包含@Component。可以被扫描到。统一处理异常；
 
-### @ExceptionHandler(Exception.class):
+### @ExceptionHandler (Exception.class):
 
 用在方法上面表示遇到这个异常就执行以下方法。
 
@@ -665,7 +664,7 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 用在启动类上，开启断路器功能；
 
-### @HystrixCommand(fallbackMethod=”backMethod”):
+### @HystrixCommand (fallbackMethod=”backMethod”):
 
 用在方法上，fallbackMethod 指定断路回调方法；
 
@@ -687,7 +686,6 @@ name 为 sequence 的名称，以便使用，sequenceName 为数据库的 sequen
 
 @EnableCircuitBreaker
 
-分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication
-这一注解集合
+分别是 SpringBoot 注解、注册服务中心 Eureka 注解、断路器注解。对于 SpringCloud 来说，这是每一微服务必须应有的三个注解，所以才推出了@SpringCloudApplication 这一注解集合
 
 ## other

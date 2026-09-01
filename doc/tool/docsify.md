@@ -5,7 +5,7 @@
 安装工具
 
 ```bash
-npm i -g docsify-cli
+npm i -g docsify-cli --ignore-scripts
 ```
 
 初始化项目
@@ -14,7 +14,7 @@ npm i -g docsify-cli
 docsify init
 ```
 
-启动预览服务器(默认访问地址 http://localhost:3000)
+启动预览服务器 (默认访问地址 http://localhost:3000)
 
 ```bash
 docsify serve

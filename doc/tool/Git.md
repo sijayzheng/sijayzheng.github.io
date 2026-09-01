@@ -14,7 +14,7 @@ _全局配置_
 _为单个仓库配置需要先进入到该仓库_
 
 - `git config user.name "UserName"`
-
+ 
 _配置查看_
 
 - `git config -l`
@@ -34,7 +34,7 @@ _配置查看_
 
 ### `git status`
 
-- 作用： 查看当前仓库的状态(即文件的变动)
+- 作用： 查看当前仓库的状态 (即文件的变动)
 - 参数：
 
 ### `git diff filename`
@@ -44,7 +44,7 @@ _配置查看_
 
 ### `git add filename`
 
-- 作用： 添加 filename 文件到暂存区(`git add .` 添加所有改动到暂存区)
+- 作用： 添加 filename 文件到暂存区 (`git add .` 添加所有改动到暂存区)
 - 参数：
 
 ### `git commit -m "message"`
@@ -69,7 +69,7 @@ _配置查看_
 
 ### `git checkout -- filename`
 
-- 作用： 将 filename 文件恢复到最近一次`git add`或`git commit`的状态(取决于最近执行的命令)
+- 作用： 将 filename 文件恢复到最近一次`git add`或`git commit`的状态 (取决于最近执行的命令)
 - 参数：
 
 ### `git reset HEAD filename`
