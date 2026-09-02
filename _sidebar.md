@@ -51,7 +51,6 @@
     - [Git](doc/other/Git.md)
     - [Gitea](doc/other/gitea.md)
     - [GitLab](doc/other/GitLab.md)
-    - [GitLabRunner](doc/other/GitLabRunner.md)
     - [IDEA](doc/other/IDEA.md)
     - [MyEclipse](doc/other/MyEclipse.md)
     - [SpringToolSuite](doc/other/SpringToolSuite.md)

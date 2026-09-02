@@ -1,6 +1,6 @@
 ## 安装
 
-在Ubuntu中
+在Ubuntu中，参考[官方文档](https://docs.gitea.com/zh-cn)
 
 ### 下载
 
@@ -176,7 +176,54 @@ chmod 640 /etc/gitea/app.ini
 5. 运行`./runner daemon`
 
 > **注意**：instance使用访问地址或局域网地址（如：http://192.168.8.8:3000），不要使用回环地址。
-> token使用管理员账户登录后在工作流→运行器下可找到。
+> 全局注册token使用管理员账户登录后在工作流→运行器下可找到。
 > 需要docker
 
+### 配置为服务
 
+```shell
+install -m 0755 "gitea-runner-$VERSION-linux-amd64^C/usr/local/bin/gitea-runner
+sudo useradd --system --home-dir /var/lib/gitea-runner --create-home gitea-runner
+sudo install -d /etc/gitea-runner
+sudo -u gitea-runner gitea-runner config generate | sudo tee /etc/gitea-runner/config.yaml >/dev/null
+cd /var/lib/gitea-runner
+cd /var/lib/gitea-runner
+sudo -u gitea-runner gitea-runner register -c /etc/gitea-runner/config.yaml --instance <instance> --token <token>
+gitea-runner -c config.yaml daemon #测试运行
+```
+
+新建服务`/etc/systemd/system/gitea-runner.service`，并写入以下内容
+
+```shell
+[Unit]
+Description=Gitea Actions runner
+Documentation=https://gitea.com/gitea/runner
+After=network-online.target
+Wants=network-online.target
+# Uncomment when jobs use the local Docker daemon:
+# After=docker.service
+# Requires=docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/gitea-runner daemon --config /etc/gitea-runner/config.yaml
+WorkingDirectory=/var/lib/gitea-runner
+User=gitea-runner
+Group=gitea-runner
+Restart=on-failure
+RestartSec=5s
+# Allow running jobs to finish before the runner is stopped. Keep this in sync
+# with runner.shutdown_timeout in the config.
+TimeoutStopSec=3h
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl enable --now gitea-runner
+sudo systemctl status gitea-runner
+```
+
+## 更新
