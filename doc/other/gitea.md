@@ -169,7 +169,7 @@ chmod 640 /etc/gitea/app.ini
 
 ## 安装runner
 
-1. 从https://gitea.com/gitea/runner/releases下载最新的runner
+1. [下载最新的runner](https://gitea.com/gitea/runner/releases)
 2. 上传到服务器
 3. 添加可执行权限
 4. 注册`./runner register --no-interactive --instance <instance> --token <token>`
@@ -182,11 +182,10 @@ chmod 640 /etc/gitea/app.ini
 ### 配置为服务
 
 ```shell
-install -m 0755 "gitea-runner-$VERSION-linux-amd64^C/usr/local/bin/gitea-runner
-sudo useradd --system --home-dir /var/lib/gitea-runner --create-home gitea-runner
-sudo install -d /etc/gitea-runner
-sudo -u gitea-runner gitea-runner config generate | sudo tee /etc/gitea-runner/config.yaml >/dev/null
-cd /var/lib/gitea-runner
+install -m 0755 "gitea-runner-$VERSION-linux-amd64" /usr/local/bin/gitea-runner
+useradd --system --home-dir /var/lib/gitea-runner --create-home gitea-runner
+install -d /etc/gitea-runner
+sudo -u gitea-runner gitea-runner config generate | tee /etc/gitea-runner/config.yaml >/dev/null
 cd /var/lib/gitea-runner
 sudo -u gitea-runner gitea-runner register -c /etc/gitea-runner/config.yaml --instance <instance> --token <token>
 gitea-runner -c config.yaml daemon #测试运行
@@ -221,9 +220,9 @@ WantedBy=multi-user.target
 ```
 
 ```shell
-sudo systemctl daemon-reload
-sudo systemctl enable --now gitea-runner
-sudo systemctl status gitea-runner
+systemctl daemon-reload
+systemctl enable --now gitea-runner
+systemctl status gitea-runner
 ```
 
 ## 更新
